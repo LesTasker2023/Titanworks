@@ -9,7 +9,6 @@ export default function Home() {
         alignItems: "center",
         justifyContent: "center",
         height: "100vh",
-        background: "radial-gradient(circle at top, #111 0%, #000 100%)",
         color: "#fff",
         fontFamily: "'Bebas Neue', sans-serif",
         textAlign: "center",

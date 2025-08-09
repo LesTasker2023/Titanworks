@@ -50,3 +50,10 @@ a {
   background-repeat: no-repeat;
   background-position:  center;
 }
+
+main{
+  background-image: url('./tk.avif');
+  background-position: left;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
