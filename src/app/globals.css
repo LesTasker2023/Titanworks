@@ -40,3 +40,13 @@ a {
     color-scheme: dark;
   }
 }
+
+.logo{
+  height: 300px;
+  width: 100%;
+  margin: auto;
+  background-image: url('./TKLogo.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position:  center;
+}
