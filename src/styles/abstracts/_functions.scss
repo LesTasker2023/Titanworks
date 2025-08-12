@@ -1,6 +1,9 @@
-// Function to create color variations
+// Function to create color variations - Updated for modern SASS
+@use "sass:color";
+@use "sass:math";
+
 @function create-color-variant($color, $lightness) {
-  @return scale-color($color, $lightness: $lightness);
+  @return color.scale($color, $lightness: $lightness);
 }
 
 // Function to create alpha variants
@@ -8,9 +11,9 @@
   @return rgba($color, $alpha);
 }
 
-// Convert px to rem
+// Convert px to rem - Updated to use math.div
 @function rem($pixels, $context: 16) {
-  @return ($pixels / $context) * 1rem;
+  @return math.div($pixels, $context) * 1rem;
 }
 
 // Spacing scale

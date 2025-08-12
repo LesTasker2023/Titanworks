@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/nextjs'
 import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from './card'
-import { Button } from '../button/button'
+import { Button } from '../button'
 
 const meta = {
   title: 'TriggerKings/Card',

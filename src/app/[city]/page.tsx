@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Paintball Parties in [City] | TriggerKings",
@@ -36,7 +37,7 @@ export default function CityPage() {
         brings the mobile paintball range to you—perfect for birthdays, stag
         dos, and corporate events. Book now and claim your crown!
       </p>
-      <a
+      <Link
         href="/contact"
         style={{
           background: "#ff3b3b",
@@ -48,7 +49,7 @@ export default function CityPage() {
         }}
       >
         Enquire Now
-      </a>
+      </Link>
     </main>
   );
 }

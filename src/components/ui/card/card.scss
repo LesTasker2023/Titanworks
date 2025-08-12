@@ -1,5 +1,5 @@
 // TriggerKings Card Component SCSS - Exact shadcn/ui styling with pure SCSS
-@use "@/styles/abstracts/variables" as *;
+@use "../../../styles/abstracts/variables" as *;
 
 .card {
   border-radius: calc(var(--radius) - 2px);
