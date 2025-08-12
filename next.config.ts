@@ -1,7 +1,26 @@
 import type { NextConfig } from 'next';
+import bundleAnalyzer from '@next/bundle-analyzer';
+
+// Bundle analyzer for performance optimization
+const withBundleAnalyzer = bundleAnalyzer({
+  enabled: process.env.ANALYZE === 'true',
+});
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  // Performance optimizations
+  compress: true,
+  poweredByHeader: false,
+
+  // Image optimization
+  images: {
+    formats: ['image/avif', 'image/webp'],
+    minimumCacheTTL: 31536000, // 1 year
+  },
+
+  // Experimental features for performance
+  experimental: {
+    optimizePackageImports: ['@radix-ui/react-slot', 'class-variance-authority'],
+  },
 };
 
-export default nextConfig;
+export default withBundleAnalyzer(nextConfig);

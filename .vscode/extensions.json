@@ -1,0 +1,30 @@
+{
+  "recommendations": [
+    // Essential Code Quality
+    "esbenp.prettier-vscode",
+    "dbaeumer.vscode-eslint",
+    "bradlc.vscode-tailwindcss",
+
+    // TypeScript & React
+    "ms-vscode.vscode-typescript-next",
+    "bradlc.vscode-tailwindcss",
+    "formulahendry.auto-rename-tag",
+    "christian-kohler.path-intellisense",
+
+    // Developer Experience
+    "ms-vscode.vscode-json",
+    "yzhang.markdown-all-in-one",
+    "streetsidesoftware.code-spell-checker",
+
+    // Git & Collaboration
+    "eamodio.gitlens",
+    "github.vscode-pull-request-github",
+
+    // Performance & Analysis
+    "ms-vscode.vscode-node-azure-pack",
+    "bradlc.vscode-tailwindcss",
+
+    // Storybook
+    "chromatic.storybook"
+  ]
+}
