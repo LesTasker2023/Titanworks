@@ -1885,6 +1885,20 @@
   resolved "https://registry.yarnpkg.com/@rushstack/eslint-patch/-/eslint-patch-1.12.0.tgz#326a7b46f6d4cfa54ae25bb888551697873069b4"
   integrity sha512-5EwMtOqvJMMa3HbmxLlF74e+3/HhwBTMcvt3nqVJgGCozO6hzIPOBlwm8mGVNR9SN2IJpxSnlxczyDjcn7qIyw==
 
+"@shadcn/ui@^0.0.4":
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/@shadcn/ui/-/ui-0.0.4.tgz#a0835202fa79073245bc2cb5f837bc514d96b4cb"
+  integrity sha512-0dtu/5ApsOZ24qgaZwtif8jVwqol7a4m1x5AxPuM1k5wxhqU7t/qEfBGtaSki1R8VlbTQfCj5PAlO45NKCa7Gg==
+  dependencies:
+    chalk "5.2.0"
+    commander "^10.0.0"
+    execa "^7.0.0"
+    fs-extra "^11.1.0"
+    node-fetch "^3.3.0"
+    ora "^6.1.2"
+    prompts "^2.4.2"
+    zod "^3.20.2"
+
 "@storybook/addon-a11y@9.1.2":
   version "9.1.2"
   resolved "https://registry.yarnpkg.com/@storybook/addon-a11y/-/addon-a11y-9.1.2.tgz#a68aa57bfc967a043285ee69612cff88c8c1f0f5"
@@ -3347,6 +3361,11 @@ chai@^5.2.0:
     deep-eql "^5.0.1"
     loupe "^3.1.0"
     pathval "^2.0.0"
+
+chalk@5.2.0:
+  version "5.2.0"
+  resolved "https://registry.yarnpkg.com/chalk/-/chalk-5.2.0.tgz#249623b7d66869c673699fb66d65723e54dfcfb3"
+  integrity sha512-ree3Gqw/nazQAPuJJEy+avdl7QfZMcUvmHIKgEZkGL+xOBzRvup5Hxo6LHuMceSxOabuJLJm5Yp/92R9eMmMvA==
 
 chalk@^2.4.1:
   version "2.4.2"

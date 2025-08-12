@@ -25,7 +25,9 @@
 
   // Semantic colors
   --color-success: #10b981;
+  --color-success-background: #f0fdf4;
   --color-warning: #f59e0b;
+  --color-warning-background: #fffbeb;
   --color-error: #ef4444;
   --color-info: #3b82f6;
 
@@ -47,6 +49,7 @@
   --color-card: #ffffff;
   --color-card-foreground: var(--color-neutral-900);
   --color-border: var(--color-neutral-200);
+  --color-border-hover: var(--color-neutral-300);
   --color-input: var(--color-neutral-200);
   --color-accent: var(--color-neutral-100);
   --color-accent-foreground: var(--color-neutral-900);
@@ -54,9 +57,11 @@
   --color-secondary-foreground: var(--color-neutral-900);
   --color-muted: var(--color-neutral-100);
   --color-muted-foreground: var(--color-neutral-500);
+  --color-muted-hover: var(--color-neutral-50);
   --color-primary-foreground: #ffffff;
   --color-secondary-hover: #f1f5f9;
   --color-destructive: var(--color-error);
+  --color-destructive-background: #fef2f2;
 
   // Border radius
   --radius-sm: 0.25rem;
@@ -80,6 +85,7 @@
   --color-card: var(--color-neutral-800);
   --color-card-foreground: var(--color-neutral-50);
   --color-border: var(--color-neutral-700);
+  --color-border-hover: var(--color-neutral-600);
   --color-input: var(--color-neutral-700);
   --color-accent: var(--color-neutral-800);
   --color-accent-foreground: var(--color-neutral-50);
@@ -87,6 +93,10 @@
   --color-secondary-foreground: var(--color-neutral-50);
   --color-muted: var(--color-neutral-800);
   --color-muted-foreground: var(--color-neutral-400);
+  --color-muted-hover: var(--color-neutral-750);
+  --color-success-background: #064e3b;
+  --color-warning-background: #78350f;
+  --color-destructive-background: #7f1d1d;
 }
 
 // Global styles

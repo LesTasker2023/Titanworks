@@ -1,6 +1,8 @@
 import type { Preview } from '@storybook/nextjs-vite';
 // Import your global styles for Storybook
 import '../src/styles/globals.scss';
+// Import Storybook-specific overrides
+import './storybook.css';
 
 const preview: Preview = {
   parameters: {
@@ -10,6 +12,28 @@ const preview: Preview = {
         date: /Date$/i,
       },
     },
+
+    // Background options for Storybook
+    backgrounds: {
+      default: 'light',
+      values: [
+        {
+          name: 'light',
+          value: '#ffffff',
+        },
+        {
+          name: 'dark',
+          value: '#111827',
+        },
+        {
+          name: 'gray',
+          value: '#f3f4f6',
+        },
+      ],
+    },
+
+    // Layout and viewport settings
+    layout: 'centered',
 
     a11y: {
       // 'todo' - show a11y violations in the test UI only

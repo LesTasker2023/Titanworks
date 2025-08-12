@@ -1,0 +1,39 @@
+/* Storybook-specific overrides */
+/* Override the dark theme from global styles for better component visibility */
+
+.sb-show-main {
+  background-color: #ffffff !important;
+}
+
+/* Ensure story canvas has proper background */
+.docs-story {
+  background-color: transparent;
+}
+
+/* Override body styles in Storybook */
+body[class*='sb-'] {
+  background-color: #ffffff !important;
+  color: #1f2937 !important;
+}
+
+/* Story wrapper should be clean */
+#storybook-root {
+  background-color: transparent;
+}
+
+/* Individual story containers */
+.sb-story {
+  background-color: transparent;
+}
+
+/* Dark theme support - when explicitly selected */
+[data-color-mode='dark'] {
+  .sb-show-main {
+    background-color: #111827 !important;
+  }
+
+  body[class*='sb-'] {
+    background-color: #111827 !important;
+    color: #f9fafb !important;
+  }
+}
