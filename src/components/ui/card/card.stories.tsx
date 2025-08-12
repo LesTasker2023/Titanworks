@@ -1,6 +1,6 @@
-import type { Meta, StoryObj } from '@storybook/nextjs'
-import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from './card'
-import { Button } from '../button'
+import type { Meta, StoryObj } from '@storybook/nextjs';
+import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from './card';
+import { Button } from '../button';
 
 const meta = {
   title: 'TriggerKings/Card',
@@ -9,21 +9,22 @@ const meta = {
     layout: 'centered',
     docs: {
       description: {
-        component: 'A card component built with shadcn/ui API and pure SCSS styling. Perfect for displaying content in a contained, elevated surface.'
-      }
-    }
+        component:
+          'A card component built with shadcn/ui API and pure SCSS styling. Perfect for displaying content in a contained, elevated surface.',
+      },
+    },
   },
   tags: ['autodocs'],
   argTypes: {
     className: {
       control: 'text',
-      description: 'Additional CSS classes to apply to the card'
-    }
-  }
-} satisfies Meta<typeof Card>
+      description: 'Additional CSS classes to apply to the card',
+    },
+  },
+} satisfies Meta<typeof Card>;
 
-export default meta
-type Story = StoryObj<typeof meta>
+export default meta;
+type Story = StoryObj<typeof meta>;
 
 // Basic Card Example
 export const Default: Story = {
@@ -58,8 +59,8 @@ export const Default: Story = {
         <Button>Deploy</Button>
       </CardFooter>
     </Card>
-  )
-}
+  ),
+};
 
 // Simple Card with just content
 export const Simple: Story = {
@@ -75,8 +76,8 @@ export const Simple: Story = {
         <p>Card Content. This is where the main content of the card goes.</p>
       </CardContent>
     </Card>
-  )
-}
+  ),
+};
 
 // Card with footer actions
 export const WithFooter: Story = {
@@ -84,19 +85,13 @@ export const WithFooter: Story = {
     <Card className="w-[350px]">
       <CardHeader>
         <CardTitle>Notifications</CardTitle>
-        <CardDescription>
-          You have 3 unread messages.
-        </CardDescription>
+        <CardDescription>You have 3 unread messages.</CardDescription>
       </CardHeader>
       <CardContent className="grid gap-4">
         <div className=" flex items-center space-x-4 rounded-md border p-4">
           <div className="flex-1 space-y-1">
-            <p className="text-sm font-medium leading-none">
-              Push Notifications
-            </p>
-            <p className="text-sm text-muted-foreground">
-              Send notifications to device.
-            </p>
+            <p className="text-sm font-medium leading-none">Push Notifications</p>
+            <p className="text-sm text-muted-foreground">Send notifications to device.</p>
           </div>
         </div>
       </CardContent>
@@ -104,8 +99,8 @@ export const WithFooter: Story = {
         <Button className="w-full">Mark all as read</Button>
       </CardFooter>
     </Card>
-  )
-}
+  ),
+};
 
 // Interactive Card (with hover effects)
 export const Interactive: Story = {
@@ -113,16 +108,14 @@ export const Interactive: Story = {
     <Card className="w-[350px] card--interactive">
       <CardHeader>
         <CardTitle>Interactive Card</CardTitle>
-        <CardDescription>
-          This card has hover effects and is clickable.
-        </CardDescription>
+        <CardDescription>This card has hover effects and is clickable.</CardDescription>
       </CardHeader>
       <CardContent>
         <p>Hover over this card to see the interaction effects.</p>
       </CardContent>
     </Card>
-  )
-}
+  ),
+};
 
 // Elevated Card variant
 export const Elevated: Story = {
@@ -130,16 +123,14 @@ export const Elevated: Story = {
     <Card className="w-[350px] card--elevated">
       <CardHeader>
         <CardTitle>Elevated Card</CardTitle>
-        <CardDescription>
-          This card has more prominent shadow elevation.
-        </CardDescription>
+        <CardDescription>This card has more prominent shadow elevation.</CardDescription>
       </CardHeader>
       <CardContent>
         <p>This card stands out more with elevated styling.</p>
       </CardContent>
     </Card>
-  )
-}
+  ),
+};
 
 // Flat Card variant (no shadow)
 export const Flat: Story = {
@@ -147,16 +138,14 @@ export const Flat: Story = {
     <Card className="w-[350px] card--flat">
       <CardHeader>
         <CardTitle>Flat Card</CardTitle>
-        <CardDescription>
-          This card has no shadow for a flatter appearance.
-        </CardDescription>
+        <CardDescription>This card has no shadow for a flatter appearance.</CardDescription>
       </CardHeader>
       <CardContent>
         <p>Simple, flat styling without elevation.</p>
       </CardContent>
     </Card>
-  )
-}
+  ),
+};
 
 // Card Showcase - Multiple cards
 export const Showcase: Story = {
@@ -165,42 +154,38 @@ export const Showcase: Story = {
       <Card>
         <CardHeader>
           <CardTitle>Team</CardTitle>
-          <CardDescription>
-            Invite your team members to collaborate.
-          </CardDescription>
+          <CardDescription>Invite your team members to collaborate.</CardDescription>
         </CardHeader>
         <CardContent>
           <Button className="w-full">Invite Team</Button>
         </CardContent>
       </Card>
-      
+
       <Card className="card--interactive">
         <CardHeader>
           <CardTitle>Analytics</CardTitle>
-          <CardDescription>
-            View your project analytics and insights.
-          </CardDescription>
+          <CardDescription>View your project analytics and insights.</CardDescription>
         </CardHeader>
         <CardContent>
           <div className="text-2xl font-bold">24,567</div>
           <p className="text-xs text-muted-foreground">+12% from last month</p>
         </CardContent>
       </Card>
-      
+
       <Card className="card--elevated">
         <CardHeader>
           <CardTitle>Premium</CardTitle>
-          <CardDescription>
-            Upgrade to unlock premium features.
-          </CardDescription>
+          <CardDescription>Upgrade to unlock premium features.</CardDescription>
         </CardHeader>
         <CardContent>
-          <Button variant="default" className="w-full">Upgrade Now</Button>
+          <Button variant="default" className="w-full">
+            Upgrade Now
+          </Button>
         </CardContent>
       </Card>
     </div>
   ),
   parameters: {
-    layout: 'fullscreen'
-  }
-}
+    layout: 'fullscreen',
+  },
+};

@@ -1,51 +1,49 @@
-import { Metadata } from "next";
-import Link from "next/link";
+import { Metadata } from 'next';
+import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: "Paintball Parties in [City] | TriggerKings",
+  title: 'Paintball Parties in [City] | TriggerKings',
   description:
-    "Book the ultimate mobile paintball experience for parties, stag dos, and events in [City]. Real-time scoring, prizes, and unforgettable fun!",
+    'Book the ultimate mobile paintball experience for parties, stag dos, and events in [City]. Real-time scoring, prizes, and unforgettable fun!',
 };
 
 export default function CityPage() {
   return (
     <main
       style={{
-        minHeight: "100vh",
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        justifyContent: "center",
-        background: "#181818",
-        color: "#fff",
+        minHeight: '100vh',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        background: '#181818',
+        color: '#fff',
       }}
     >
-      <h1
-        style={{ fontSize: "2.5rem", marginBottom: "1rem", color: "#ff3b3b" }}
-      >
+      <h1 style={{ fontSize: '2.5rem', marginBottom: '1rem', color: '#ff3b3b' }}>
         Paintball Parties in [City]
       </h1>
       <p
         style={{
           maxWidth: 600,
-          marginBottom: "2rem",
-          fontSize: "1.2rem",
-          color: "#ccc",
+          marginBottom: '2rem',
+          fontSize: '1.2rem',
+          color: '#ccc',
         }}
       >
-        Looking for a unique, adrenaline-fueled event in [City]? TriggerKings
-        brings the mobile paintball range to you—perfect for birthdays, stag
-        dos, and corporate events. Book now and claim your crown!
+        Looking for a unique, adrenaline-fueled event in [City]? TriggerKings brings the mobile
+        paintball range to you—perfect for birthdays, stag dos, and corporate events. Book now and
+        claim your crown!
       </p>
       <Link
         href="/contact"
         style={{
-          background: "#ff3b3b",
-          color: "#fff",
-          padding: "1rem 2rem",
+          background: '#ff3b3b',
+          color: '#fff',
+          padding: '1rem 2rem',
           borderRadius: 8,
-          fontWeight: "bold",
-          textDecoration: "none",
+          fontWeight: 'bold',
+          textDecoration: 'none',
         }}
       >
         Enquire Now

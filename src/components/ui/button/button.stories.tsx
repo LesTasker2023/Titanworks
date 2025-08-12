@@ -1,31 +1,24 @@
-import type { Meta, StoryObj } from "@storybook/nextjs";
-import { Button } from "./button";
+import type { Meta, StoryObj } from '@storybook/nextjs';
+import { Button } from './button';
 
 const meta: Meta<typeof Button> = {
-  title: "TriggerKings/Button",
+  title: 'TriggerKings/Button',
   component: Button,
   parameters: {
-    layout: "centered",
+    layout: 'centered',
   },
-  tags: ["autodocs"],
+  tags: ['autodocs'],
   argTypes: {
     variant: {
-      control: "select",
-      options: [
-        "default",
-        "destructive",
-        "outline",
-        "secondary",
-        "ghost",
-        "link",
-      ],
+      control: 'select',
+      options: ['default', 'destructive', 'outline', 'secondary', 'ghost', 'link'],
     },
     size: {
-      control: "select",
-      options: ["default", "sm", "lg", "icon"],
+      control: 'select',
+      options: ['default', 'sm', 'lg', 'icon'],
     },
     disabled: {
-      control: "boolean",
+      control: 'boolean',
     },
   },
 };
@@ -36,64 +29,64 @@ type Story = StoryObj<typeof Button>;
 // Basic variants
 export const Default: Story = {
   args: {
-    children: "Button",
+    children: 'Button',
   },
 };
 
 export const Secondary: Story = {
   args: {
-    variant: "secondary",
-    children: "Secondary",
+    variant: 'secondary',
+    children: 'Secondary',
   },
 };
 
 export const Destructive: Story = {
   args: {
-    variant: "destructive",
-    children: "Destructive",
+    variant: 'destructive',
+    children: 'Destructive',
   },
 };
 
 export const Outline: Story = {
   args: {
-    variant: "outline",
-    children: "Outline",
+    variant: 'outline',
+    children: 'Outline',
   },
 };
 
 export const Ghost: Story = {
   args: {
-    variant: "ghost",
-    children: "Ghost",
+    variant: 'ghost',
+    children: 'Ghost',
   },
 };
 
 export const Link: Story = {
   args: {
-    variant: "link",
-    children: "Link",
+    variant: 'link',
+    children: 'Link',
   },
 };
 
 // Size variants
 export const Large: Story = {
   args: {
-    size: "lg",
-    children: "Large Button",
+    size: 'lg',
+    children: 'Large Button',
   },
 };
 
 export const Small: Story = {
   args: {
-    size: "sm",
-    children: "Small Button",
+    size: 'sm',
+    children: 'Small Button',
   },
 };
 
 export const Icon: Story = {
   args: {
-    size: "icon",
-    children: "🚀",
+    size: 'icon',
+    children: '🚀',
   },
 };
 
@@ -101,7 +94,7 @@ export const Icon: Story = {
 export const Disabled: Story = {
   args: {
     disabled: true,
-    children: "Disabled",
+    children: 'Disabled',
   },
 };
 
@@ -120,16 +113,16 @@ export const Loading: Story = {
 // Combination examples
 export const DestructiveOutline: Story = {
   args: {
-    variant: "destructive",
-    children: "Delete Account",
+    variant: 'destructive',
+    children: 'Delete Account',
   },
 };
 
 export const SecondarySmall: Story = {
   args: {
-    variant: "secondary",
-    size: "sm",
-    children: "Secondary Small",
+    variant: 'secondary',
+    size: 'sm',
+    children: 'Secondary Small',
   },
 };
 
@@ -147,8 +140,8 @@ export const WithIcon: Story = {
 
 export const IconOnly: Story = {
   args: {
-    size: "icon",
-    children: "❤️",
+    size: 'icon',
+    children: '❤️',
   },
 };
 
@@ -181,8 +174,9 @@ export const AllVariants: Story = {
   parameters: {
     docs: {
       description: {
-        story: "A showcase of all button variants and sizes available in the TriggerKings design system."
-      }
-    }
-  }
+        story:
+          'A showcase of all button variants and sizes available in the TriggerKings design system.',
+      },
+    },
+  },
 };

@@ -39,27 +39,22 @@ Our typography system uses a modular scale with responsive sizing.
 ### Font Sizes
 
 ```scss
---text-xs: 0.75rem    // 12px
---text-sm: 0.875rem   // 14px
---text-base: 1rem     // 16px
---text-lg: 1.125rem   // 18px
---text-xl: 1.25rem    // 20px
---text-2xl: 1.5rem    // 24px
---text-3xl: 1.875rem  // 30px
---text-4xl: 2.25rem   // 36px
---text-5xl: 3rem      // 48px
+--text-xs: 0.75rem // 12px
+  --text-sm: 0.875rem // 14px
+  --text-base: 1rem // 16px
+  --text-lg: 1.125rem // 18px
+  --text-xl: 1.25rem // 20px
+  --text-2xl: 1.5rem // 24px
+  --text-3xl: 1.875rem // 30px
+  --text-4xl: 2.25rem // 36px
+  --text-5xl: 3rem; // 48px
 ```
 
 ### Font Weights
 
 ```scss
---font-thin: 100
---font-light: 300
---font-normal: 400
---font-medium: 500
---font-semibold: 600
---font-bold: 700
---font-extrabold: 800
+--font-thin: 100 --font-light: 300 --font-normal: 400 --font-medium: 500 --font-semibold: 600 --font-bold: 700
+  --font-extrabold: 800;
 ```
 
 ## Colors
@@ -70,31 +65,21 @@ Our color system is built around a primary red color with dynamic shades and sem
 
 ```scss
 --color-primary-50: // Lightest shade
---color-primary-100:
---color-primary-200:
---color-primary-300:
---color-primary-400:
---color-primary: // Base color (#ff3b3b)
---color-primary-600:
---color-primary-700:
---color-primary-800:
---color-primary-900: // Darkest shade
+  --color-primary-100: --color-primary-200: --color-primary-300: --color-primary-400: --color-primary:
+  // Base color (#ff3b3b)
+  --color-primary-600: --color-primary-700: --color-primary-800: --color-primary-900: ; // Darkest shade
 ```
 
 ### Semantic Colors
 
 ```scss
---color-success: #10B981
---color-warning: #F59E0B
---color-error: #EF4444
---color-info: #3B82F6
+--color-success: #10b981 --color-warning: #f59e0b --color-error: #ef4444 --color-info: #3b82f6;
 ```
 
 ### Neutral Colors
 
 ```scss
---color-neutral-50: #F9FAFB
---color-neutral-900: #111827
+--color-neutral-50: #f9fafb --color-neutral-900: #111827;
 ```
 
 ## Spacing
@@ -102,17 +87,8 @@ Our color system is built around a primary red color with dynamic shades and sem
 Our spacing system uses a consistent scale based on 0.25rem units.
 
 ```scss
---spacing-0: 0
---spacing-1: 0.25rem
---spacing-2: 0.5rem
---spacing-3: 0.75rem
---spacing-4: 1rem
---spacing-5: 1.25rem
---spacing-6: 1.5rem
---spacing-8: 2rem
---spacing-10: 2.5rem
---spacing-12: 3rem
---spacing-16: 4rem
+--spacing-0: 0 --spacing-1: 0.25rem --spacing-2: 0.5rem --spacing-3: 0.75rem --spacing-4: 1rem --spacing-5: 1.25rem
+  --spacing-6: 1.5rem --spacing-8: 2rem --spacing-10: 2.5rem --spacing-12: 3rem --spacing-16: 4rem;
 ```
 
 ## Components
@@ -195,7 +171,7 @@ Modifiers:
 
    ```scss
    // Use the respond-to mixin
-   @include respond-to("md") {
+   @include respond-to('md') {
      // Styles for medium screens and up
    }
    ```

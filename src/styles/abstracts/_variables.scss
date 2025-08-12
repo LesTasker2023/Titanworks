@@ -126,8 +126,7 @@ $color-red-base: #ff3b3b;
 
   // Transitions
   --transition-all: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-  --transition-colors: background-color, border-color, color, fill,
-    stroke 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-colors: background-color, border-color, color, fill, stroke 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   --transition-opacity: opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   --transition-shadow: box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   --transition-transform: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);

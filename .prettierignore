@@ -1,0 +1,29 @@
+# Dependencies
+node_modules/
+.next/
+out/
+
+# Build outputs
+dist/
+build/
+
+# Environment files
+.env*
+
+# Logs
+*.log
+
+# Package manager files
+yarn.lock
+package-lock.json
+pnpm-lock.yaml
+
+# Generated files
+.storybook/public/
+storybook-static/
+
+# Data files
+data/*.json
+
+# Documentation that should preserve formatting
+docs/location-cleanup-summary.md

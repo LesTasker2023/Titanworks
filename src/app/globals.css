@@ -1,17 +1,17 @@
 /* TriggerKings Global Styles - Clean Import Only */
 /* Main styles are in src/styles/globals.scss */
 
-.logo{
+.logo {
   height: 300px;
   width: 100%;
   margin: auto;
   background-image: url('./TKLogo.png');
   background-size: cover;
   background-repeat: no-repeat;
-  background-position:  center;
+  background-position: center;
 }
 
-main{
+main {
   background-image: url('./tk.avif');
   background-position: left;
   background-size: contain;
