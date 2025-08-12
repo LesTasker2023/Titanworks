@@ -1,5 +1,5 @@
-import type { NextConfig } from 'next';
 import bundleAnalyzer from '@next/bundle-analyzer';
+import type { NextConfig } from 'next';
 
 // Bundle analyzer for performance optimization
 const withBundleAnalyzer = bundleAnalyzer({
