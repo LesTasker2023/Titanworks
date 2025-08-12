@@ -1,0 +1,88 @@
+// Function to create color variations
+@function create-color-variant($color, $lightness) {
+  @return scale-color($color, $lightness: $lightness);
+}
+
+// Function to create alpha variants
+@function create-alpha-variant($color, $alpha) {
+  @return rgba($color, $alpha);
+}
+
+// Convert px to rem
+@function rem($pixels, $context: 16) {
+  @return ($pixels / $context) * 1rem;
+}
+
+// Spacing scale
+@function spacing($scale) {
+  $base: 0.25rem;
+  @return $base * $scale;
+}
+
+// Media query manager
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == "sm" {
+    @media (min-width: 640px) {
+      @content;
+    }
+  }
+  @if $breakpoint == "md" {
+    @media (min-width: 768px) {
+      @content;
+    }
+  }
+  @if $breakpoint == "lg" {
+    @media (min-width: 1024px) {
+      @content;
+    }
+  }
+  @if $breakpoint == "xl" {
+    @media (min-width: 1280px) {
+      @content;
+    }
+  }
+  @if $breakpoint == "2xl" {
+    @media (min-width: 1536px) {
+      @content;
+    }
+  }
+}
+
+// Container mixin
+@mixin container($max-width: 1200px, $padding: spacing(4)) {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: $padding;
+  padding-left: $padding;
+  max-width: $max-width;
+}
+
+// Flex layouts
+@mixin flex($direction: row, $justify: flex-start, $align: stretch, $gap: 0) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+  gap: $gap;
+}
+
+// Grid layouts
+@mixin grid($columns: 1, $gap: spacing(4)) {
+  display: grid;
+  gap: $gap;
+  grid-template-columns: repeat($columns, minmax(0, 1fr));
+}
+
+// Typography scale
+@mixin font-scale($scale) {
+  $base: 1rem;
+  font-size: $base * $scale;
+  line-height: 1.5;
+}
+
+// Focus styles
+@mixin focus-ring($color: var(--color-primary), $offset: 2px) {
+  outline: none;
+  box-shadow: 0 0 0 $offset $color;
+}

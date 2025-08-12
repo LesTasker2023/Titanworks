@@ -1,0 +1,134 @@
+@use "functions" as *;
+
+// Color System
+$color-red-base: #ff3b3b;
+
+// Dynamic Color System
+:root {
+  // Primary Colors
+  --color-primary: #{$color-red-base};
+  --color-primary-50: #{create-color-variant($color-red-base, 40%)};
+  --color-primary-100: #{create-color-variant($color-red-base, 30%)};
+  --color-primary-200: #{create-color-variant($color-red-base, 20%)};
+  --color-primary-300: #{create-color-variant($color-red-base, 10%)};
+  --color-primary-400: #{create-color-variant($color-red-base, 5%)};
+  --color-primary-500: #{$color-red-base};
+  --color-primary-600: #{create-color-variant($color-red-base, -10%)};
+  --color-primary-700: #{create-color-variant($color-red-base, -20%)};
+  --color-primary-800: #{create-color-variant($color-red-base, -30%)};
+  --color-primary-900: #{create-color-variant($color-red-base, -40%)};
+
+  // Semantic Colors
+  --color-success: #10b981;
+  --color-warning: #f59e0b;
+  --color-error: #ef4444;
+  --color-info: #3b82f6;
+
+  // Neutral Colors
+  --color-neutral-50: #f9fafb;
+  --color-neutral-100: #f3f4f6;
+  --color-neutral-200: #e5e7eb;
+  --color-neutral-300: #d1d5db;
+  --color-neutral-400: #9ca3af;
+  --color-neutral-500: #6b7280;
+  --color-neutral-600: #4b5563;
+  --color-neutral-700: #374151;
+  --color-neutral-800: #1f2937;
+  --color-neutral-900: #111827;
+
+  // Background Colors
+  --color-background: var(--color-neutral-900);
+  --color-surface: var(--color-neutral-800);
+  --color-overlay: #{create-alpha-variant(#000000, 0.5)};
+
+  // Text Colors
+  --color-text: var(--color-neutral-50);
+  --color-text-muted: var(--color-neutral-400);
+  --color-text-inverted: var(--color-neutral-900);
+
+  // Border Colors
+  --color-border: var(--color-neutral-700);
+  --color-border-focus: var(--color-primary-500);
+
+  // Shadow Colors
+  --shadow-sm: 0 1px 2px 0 #{create-alpha-variant(#000000, 0.05)};
+  --shadow-md: 0 4px 6px -1px #{create-alpha-variant(#000000, 0.1)};
+  --shadow-lg: 0 10px 15px -3px #{create-alpha-variant(#000000, 0.1)};
+
+  // Typography
+  --font-sans: ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-mono: ui-monospace, monospace;
+  --font-display: var(--font-sans);
+
+  // Font Sizes
+  --text-xs: #{rem(12)};
+  --text-sm: #{rem(14)};
+  --text-base: #{rem(16)};
+  --text-lg: #{rem(18)};
+  --text-xl: #{rem(20)};
+  --text-2xl: #{rem(24)};
+  --text-3xl: #{rem(30)};
+  --text-4xl: #{rem(36)};
+  --text-5xl: #{rem(48)};
+
+  // Font Weights
+  --font-thin: 100;
+  --font-extralight: 200;
+  --font-light: 300;
+  --font-normal: 400;
+  --font-medium: 500;
+  --font-semibold: 600;
+  --font-bold: 700;
+  --font-extrabold: 800;
+  --font-black: 900;
+
+  // Line Heights
+  --leading-none: 1;
+  --leading-tight: 1.25;
+  --leading-snug: 1.375;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.625;
+  --leading-loose: 2;
+
+  // Spacing
+  --spacing-0: 0;
+  --spacing-px: 1px;
+  --spacing-1: #{spacing(1)}; // 0.25rem
+  --spacing-2: #{spacing(2)}; // 0.5rem
+  --spacing-3: #{spacing(3)}; // 0.75rem
+  --spacing-4: #{spacing(4)}; // 1rem
+  --spacing-5: #{spacing(5)}; // 1.25rem
+  --spacing-6: #{spacing(6)}; // 1.5rem
+  --spacing-8: #{spacing(8)}; // 2rem
+  --spacing-10: #{spacing(10)}; // 2.5rem
+  --spacing-12: #{spacing(12)}; // 3rem
+  --spacing-16: #{spacing(16)}; // 4rem
+
+  // Border Radius
+  --radius-none: 0;
+  --radius-sm: 0.125rem;
+  --radius-md: 0.375rem;
+  --radius-lg: 0.5rem;
+  --radius-xl: 0.75rem;
+  --radius-2xl: 1rem;
+  --radius-3xl: 1.5rem;
+  --radius-full: 9999px;
+
+  // Z-index
+  --z-negative: -1;
+  --z-0: 0;
+  --z-10: 10;
+  --z-20: 20;
+  --z-30: 30;
+  --z-40: 40;
+  --z-50: 50;
+  --z-max: 999999;
+
+  // Transitions
+  --transition-all: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-colors: background-color, border-color, color, fill,
+    stroke 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-opacity: opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-shadow: box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-transform: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}

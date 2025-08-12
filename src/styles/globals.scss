@@ -1,0 +1,14 @@
+// Import all partials
+@use "abstracts/functions";
+@use "abstracts/variables";
+
+// Base styles
+@use "base/reset";
+@use "base/utilities";
+
+// Layout components
+@use "layouts/grid";
+
+// UI Components
+@use "components/button";
+@use "components/card";

@@ -1,0 +1,211 @@
+@use "../abstracts/functions" as *;
+@use "../abstracts/variables" as *;
+
+// Text alignment
+.text {
+  &-left {
+    text-align: left;
+  }
+  &-center {
+    text-align: center;
+  }
+  &-right {
+    text-align: right;
+  }
+  &-justify {
+    text-align: justify;
+  }
+}
+
+// Font weights
+.font {
+  &-thin {
+    font-weight: var(--font-thin);
+  }
+  &-light {
+    font-weight: var(--font-light);
+  }
+  &-normal {
+    font-weight: var(--font-normal);
+  }
+  &-medium {
+    font-weight: var(--font-medium);
+  }
+  &-semibold {
+    font-weight: var(--font-semibold);
+  }
+  &-bold {
+    font-weight: var(--font-bold);
+  }
+}
+
+// Text colors
+.text {
+  &-primary {
+    color: var(--color-primary);
+  }
+  &-muted {
+    color: var(--color-text-muted);
+  }
+  &-success {
+    color: var(--color-success);
+  }
+  &-warning {
+    color: var(--color-warning);
+  }
+  &-error {
+    color: var(--color-error);
+  }
+  &-info {
+    color: var(--color-info);
+  }
+}
+
+// Background colors
+.bg {
+  &-primary {
+    background-color: var(--color-primary);
+  }
+  &-surface {
+    background-color: var(--color-surface);
+  }
+  &-success {
+    background-color: var(--color-success);
+  }
+  &-warning {
+    background-color: var(--color-warning);
+  }
+  &-error {
+    background-color: var(--color-error);
+  }
+  &-info {
+    background-color: var(--color-info);
+  }
+}
+
+// Margins
+@each $size in (0, 1, 2, 3, 4, 5, 6, 8, 10, 12, 16) {
+  .m-#{$size} {
+    margin: var(--spacing-#{$size});
+  }
+  .mt-#{$size} {
+    margin-top: var(--spacing-#{$size});
+  }
+  .mr-#{$size} {
+    margin-right: var(--spacing-#{$size});
+  }
+  .mb-#{$size} {
+    margin-bottom: var(--spacing-#{$size});
+  }
+  .ml-#{$size} {
+    margin-left: var(--spacing-#{$size});
+  }
+  .mx-#{$size} {
+    margin-left: var(--spacing-#{$size});
+    margin-right: var(--spacing-#{$size});
+  }
+  .my-#{$size} {
+    margin-top: var(--spacing-#{$size});
+    margin-bottom: var(--spacing-#{$size});
+  }
+}
+
+// Padding
+@each $size in (0, 1, 2, 3, 4, 5, 6, 8, 10, 12, 16) {
+  .p-#{$size} {
+    padding: var(--spacing-#{$size});
+  }
+  .pt-#{$size} {
+    padding-top: var(--spacing-#{$size});
+  }
+  .pr-#{$size} {
+    padding-right: var(--spacing-#{$size});
+  }
+  .pb-#{$size} {
+    padding-bottom: var(--spacing-#{$size});
+  }
+  .pl-#{$size} {
+    padding-left: var(--spacing-#{$size});
+  }
+  .px-#{$size} {
+    padding-left: var(--spacing-#{$size});
+    padding-right: var(--spacing-#{$size});
+  }
+  .py-#{$size} {
+    padding-top: var(--spacing-#{$size});
+    padding-bottom: var(--spacing-#{$size});
+  }
+}
+
+// Display
+.d {
+  &-none {
+    display: none;
+  }
+  &-inline {
+    display: inline;
+  }
+  &-inline-block {
+    display: inline-block;
+  }
+  &-block {
+    display: block;
+  }
+  &-flex {
+    display: flex;
+  }
+  &-grid {
+    display: grid;
+  }
+}
+
+// Position
+.position {
+  &-relative {
+    position: relative;
+  }
+  &-absolute {
+    position: absolute;
+  }
+  &-fixed {
+    position: fixed;
+  }
+  &-sticky {
+    position: sticky;
+  }
+}
+
+// Rounded corners
+.rounded {
+  &-none {
+    border-radius: var(--radius-none);
+  }
+  &-sm {
+    border-radius: var(--radius-sm);
+  }
+  &-md {
+    border-radius: var(--radius-md);
+  }
+  &-lg {
+    border-radius: var(--radius-lg);
+  }
+  &-full {
+    border-radius: var(--radius-full);
+  }
+}
+
+// Shadow
+.shadow {
+  &-sm {
+    box-shadow: var(--shadow-sm);
+  }
+  &-md {
+    box-shadow: var(--shadow-md);
+  }
+  &-lg {
+    box-shadow: var(--shadow-lg);
+  }
+  &-none {
+    box-shadow: none;
+  }
+}

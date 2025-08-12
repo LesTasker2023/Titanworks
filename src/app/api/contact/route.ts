@@ -1,5 +1,4 @@
 import { NextRequest, NextResponse } from "next/server";
-// @ts-expect-error: Resend types may not be present, but runtime should work
 import { Resend } from "resend";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
