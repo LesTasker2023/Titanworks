@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/nextjs";
-import { Button } from "@/components/ui/button-clean";
+import { Button } from "@/components/ui/button";
 
 const meta: Meta<typeof Button> = {
   title: "shadcn/Button",
@@ -131,11 +131,11 @@ export const AllSizes: Story = {
   ),
 };
 
-// Real-world examples
+// Real-world examples for TriggerKings
 export const CallToAction: Story = {
   args: {
     size: "lg",
-    children: "Book Your Event",
+    children: "Book Your Event →",
   },
 };
 
@@ -151,4 +151,37 @@ export const NavigationLink: Story = {
     variant: "link",
     children: "Learn More →",
   },
+};
+
+// TriggerKings business examples
+export const PricingCTA: Story = {
+  render: () => (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', alignItems: 'center' }}>
+      <Button size="lg">Get Started Today</Button>
+      <Button variant="outline">View Pricing</Button>
+      <Button variant="ghost">Contact Sales</Button>
+    </div>
+  ),
+};
+
+export const ServiceButtons: Story = {
+  render: () => (
+    <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+      <Button>Wedding Photography</Button>
+      <Button variant="secondary">Corporate Events</Button>
+      <Button variant="outline">Product Shoots</Button>
+      <Button variant="ghost">Consultation</Button>
+    </div>
+  ),
+};
+
+export const ActionStates: Story = {
+  render: () => (
+    <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+      <Button>Normal State</Button>
+      <Button disabled>Loading...</Button>
+      <Button variant="destructive">Delete Project</Button>
+      <Button variant="outline" disabled>Unavailable</Button>
+    </div>
+  ),
 };

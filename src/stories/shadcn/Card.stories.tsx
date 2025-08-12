@@ -7,7 +7,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Button } from "@/components/ui/button-clean";
+import { Button } from "@/components/ui/button";
 
 const meta: Meta<typeof Card> = {
   title: "shadcn/Card",
