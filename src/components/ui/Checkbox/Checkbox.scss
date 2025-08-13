@@ -1,0 +1,173 @@
+// Checkbox component SCSS overrides
+// Use this file for ENHANCEMENTS that can't be achieved with Tailwind classes
+// Avoid duplicating what Tailwind already provides
+
+.checkbox {
+  // Enhanced focus styles for better accessibility
+  &:focus-visible {
+    outline: 2px solid hsl(var(--ring));
+    outline-offset: 2px;
+    box-shadow: 0 0 0 2px hsl(var(--ring) / 0.2);
+  }
+
+  // Smooth transitions for all interactive states
+  transition:
+    border-color 0.15s ease-in-out,
+    background-color 0.15s ease-in-out,
+    box-shadow 0.15s ease-in-out,
+    transform 0.15s ease-in-out;
+
+  // Custom hover effects (enhanced interaction feedback)
+  &:hover:not(:disabled):not([data-state="checked"]) {
+    border-color: hsl(var(--ring) / 0.6);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  }
+
+  // Enhanced checked state animation
+  &[data-state="checked"] {
+    transform: scale(1.02);
+
+    .checkbox-indicator {
+      animation: checkboxCheck 0.2s ease-in-out;
+    }
+  }
+
+  // Loading state with subtle pulse
+  &--loading {
+    position: relative;
+    opacity: 0.7;
+    pointer-events: none;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 8px;
+      height: 8px;
+      margin: -4px 0 0 -4px;
+      border: 1px solid;
+      border-radius: 50%;
+      border-color: currentColor transparent currentColor currentColor;
+      animation: checkboxSpin 1s linear infinite;
+    }
+  }
+
+  // Error state styling
+  &--error {
+    border-color: hsl(var(--destructive));
+    box-shadow: 0 0 0 1px hsl(var(--destructive) / 0.2);
+
+    &:focus-visible {
+      outline-color: hsl(var(--destructive));
+      box-shadow: 0 0 0 2px hsl(var(--destructive) / 0.2);
+    }
+  }
+
+  // Indeterminate state custom styling
+  &--indeterminate {
+    &[data-state="indeterminate"] {
+      background-color: hsl(var(--primary));
+      border-color: hsl(var(--primary));
+
+      .checkbox-indicator {
+        animation: checkboxIndeterminate 0.2s ease-in-out;
+      }
+    }
+  }
+
+  // Enhanced disabled state
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+    transform: none;
+  }
+}
+
+// Checkbox wrapper enhancements
+.checkbox-wrapper {
+  // Enhanced spacing and layout
+  .checkbox + .grid {
+    min-height: 16px; // Align with checkbox height
+  }
+
+  // Label enhancements
+  label {
+    cursor: pointer;
+    user-select: none;
+
+    // Required indicator styling
+    &::after {
+      color: hsl(var(--destructive));
+      font-weight: bold;
+    }
+  }
+
+  // Helper text enhancements
+  p {
+    margin: 0;
+    line-height: 1.3;
+  }
+
+  // Error text specific styling
+  .text-destructive {
+    font-weight: 500;
+  }
+}
+
+// Animations
+@keyframes checkboxCheck {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes checkboxIndeterminate {
+  0% {
+    opacity: 0;
+    transform: scaleX(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+}
+
+@keyframes checkboxSpin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+// Accessibility enhancements
+@media (prefers-reduced-motion: reduce) {
+  .checkbox,
+  .checkbox-indicator,
+  .checkbox::after {
+    animation: none;
+    transition: none;
+  }
+}
+
+// High contrast mode support
+@media (prefers-contrast: high) {
+  .checkbox {
+    border-width: 2px;
+
+    &:focus-visible {
+      outline-width: 3px;
+    }
+  }
+}
