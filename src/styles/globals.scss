@@ -41,6 +41,8 @@
   --color-neutral-600: #4b5563;
   --color-neutral-700: #374151;
   --color-neutral-800: #1f2937;
+  --color-error-background: #1f2937;
+  --color-ring: var(--color-primary); // Focus ring color
   --color-neutral-900: #111827;
 
   // Component colors
@@ -58,10 +60,12 @@
   --color-muted: var(--color-neutral-100);
   --color-muted-foreground: var(--color-neutral-500);
   --color-muted-hover: var(--color-neutral-50);
+  --color-primary: #ef4444;
   --color-primary-foreground: #ffffff;
   --color-secondary-hover: #f1f5f9;
   --color-destructive: var(--color-error);
   --color-destructive-background: #fef2f2;
+  --color-ring: var(--color-primary); // Focus ring color
 
   // Border radius
   --radius-sm: 0.25rem;
@@ -78,7 +82,28 @@
   --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
 }
 
-// Dark theme
+// Light theme (explicit)
+[data-theme="light"] {
+  --color-background: #ffffff;
+  --color-foreground: var(--color-neutral-900);
+  --color-card: #ffffff;
+  --color-card-foreground: var(--color-neutral-900);
+  --color-border: var(--color-neutral-200);
+  --color-border-hover: var(--color-neutral-300);
+  --color-input: var(--color-neutral-200);
+  --color-accent: var(--color-neutral-100);
+  --color-accent-foreground: var(--color-neutral-900);
+  --color-secondary: var(--color-neutral-100);
+  --color-secondary-foreground: var(--color-neutral-900);
+  --color-muted: var(--color-neutral-100);
+  --color-muted-foreground: var(--color-neutral-500);
+  --color-muted-hover: var(--color-neutral-50);
+  --color-success-background: #f0fdf4;
+  --color-warning-background: #fffbeb;
+  --color-destructive-background: #fef2f2;
+}
+
+// Dark theme - manual data attribute
 [data-theme="dark"] {
   --color-background: var(--color-neutral-900);
   --color-foreground: var(--color-neutral-50);
@@ -86,17 +111,40 @@
   --color-card-foreground: var(--color-neutral-50);
   --color-border: var(--color-neutral-700);
   --color-border-hover: var(--color-neutral-600);
-  --color-input: var(--color-neutral-700);
+  --color-input: var(--color-neutral-800);
   --color-accent: var(--color-neutral-800);
   --color-accent-foreground: var(--color-neutral-50);
   --color-secondary: var(--color-neutral-800);
   --color-secondary-foreground: var(--color-neutral-50);
   --color-muted: var(--color-neutral-800);
   --color-muted-foreground: var(--color-neutral-400);
-  --color-muted-hover: var(--color-neutral-750);
+  --color-muted-hover: var(--color-neutral-700);
   --color-success-background: #064e3b;
   --color-warning-background: #78350f;
   --color-destructive-background: #7f1d1d;
+}
+
+// System dark mode preference
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-background: var(--color-neutral-900);
+    --color-foreground: var(--color-neutral-50);
+    --color-card: var(--color-neutral-800);
+    --color-card-foreground: var(--color-neutral-50);
+    --color-border: var(--color-neutral-700);
+    --color-border-hover: var(--color-neutral-600);
+    --color-input: var(--color-neutral-800);
+    --color-accent: var(--color-neutral-800);
+    --color-accent-foreground: var(--color-neutral-50);
+    --color-secondary: var(--color-neutral-800);
+    --color-secondary-foreground: var(--color-neutral-50);
+    --color-muted: var(--color-neutral-800);
+    --color-muted-foreground: var(--color-neutral-400);
+    --color-muted-hover: var(--color-neutral-700);
+    --color-success-background: #064e3b;
+    --color-warning-background: #78350f;
+    --color-destructive-background: #7f1d1d;
+  }
 }
 
 // Global styles

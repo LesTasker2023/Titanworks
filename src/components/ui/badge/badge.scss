@@ -18,9 +18,9 @@
 
   // Focus Management - Enhanced Accessibility
   &:focus-visible {
-    outline: 2px solid hsl(var(--ring));
+    outline: 2px solid var(--color-ring);
     outline-offset: 2px;
-    box-shadow: 0 0 0 2px hsl(var(--ring) / 0.2);
+    box-shadow: 0 0 0 2px rgb(var(--color-ring) / 0.2);
   }
 
   // SVG Icons Support - Consistent Sizing
@@ -37,87 +37,87 @@
 
   // Variant: Default (Primary Brand) - Enhanced
   &--default {
-    background-color: hsl(var(--primary));
-    color: hsl(var(--primary-foreground));
+    background-color: var(--color-primary);
+    color: var(--color-primary-foreground);
     border-color: transparent;
-    box-shadow: 0 1px 3px 0 hsl(var(--primary) / 0.3);
+    box-shadow: 0 1px 3px 0 rgb(239 68 68 / 0.3);
 
     // Interactive States
     &:hover {
-      background-color: hsl(var(--primary) / 0.85);
-      box-shadow: 0 2px 4px 0 hsl(var(--primary) / 0.4);
+      background-color: var(--color-primary-600);
+      box-shadow: 0 2px 4px 0 rgb(239 68 68 / 0.4);
       transform: translateY(-1px);
     }
 
     // Active/Pressed State
     &:active {
-      background-color: hsl(var(--primary) / 0.9);
+      background-color: var(--color-primary-700);
       transform: translateY(0);
-      box-shadow: 0 1px 2px 0 hsl(var(--primary) / 0.3);
+      box-shadow: 0 1px 2px 0 rgb(239 68 68 / 0.3);
     }
   }
 
   // Variant: Secondary (Muted) - Enhanced
   &--secondary {
-    background-color: hsl(var(--secondary));
-    color: hsl(var(--secondary-foreground));
-    border-color: hsl(var(--border) / 0.3);
+    background-color: var(--color-secondary);
+    color: var(--color-secondary-foreground);
+    border-color: var(--color-border);
     box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
 
     // Interactive States
     &:hover {
-      background-color: hsl(var(--secondary) / 0.85);
-      border-color: hsl(var(--border) / 0.5);
+      background-color: var(--color-secondary-hover);
+      border-color: var(--color-border-hover);
       box-shadow: 0 2px 4px 0 rgb(0 0 0 / 0.1);
       transform: translateY(-1px);
     }
 
     // Active/Pressed State
     &:active {
-      background-color: hsl(var(--secondary) / 0.9);
+      background-color: var(--color-muted);
       transform: translateY(0);
     }
   }
 
   // Variant: Destructive (Error/Warning) - Enhanced
   &--destructive {
-    background-color: hsl(var(--destructive));
-    color: hsl(var(--destructive-foreground));
+    background-color: var(--color-destructive);
+    color: var(--color-primary-foreground);
     border-color: transparent;
-    box-shadow: 0 1px 3px 0 hsl(var(--destructive) / 0.3);
+    box-shadow: 0 1px 3px 0 rgb(239 68 68 / 0.3);
 
     // Interactive States
     &:hover {
-      background-color: hsl(var(--destructive) / 0.85);
-      box-shadow: 0 2px 4px 0 hsl(var(--destructive) / 0.4);
+      background-color: #dc2626;
+      box-shadow: 0 2px 4px 0 rgb(239 68 68 / 0.4);
       transform: translateY(-1px);
     }
 
     // Active/Pressed State
     &:active {
-      background-color: hsl(var(--destructive) / 0.9);
+      background-color: #b91c1c;
       transform: translateY(0);
     }
 
     // Enhanced focus for destructive actions
     &:focus-visible {
       box-shadow:
-        0 0 0 2px hsl(var(--background)),
-        0 0 0 4px hsl(var(--destructive) / 0.5);
+        0 0 0 2px var(--color-background),
+        0 0 0 4px rgb(239 68 68 / 0.5);
     }
   }
 
   // Variant: Outline (Subtle) - Enhanced
   &--outline {
     background-color: transparent;
-    color: hsl(var(--foreground));
-    border-color: hsl(var(--border));
+    color: var(--color-foreground);
+    border-color: var(--color-border);
     border-width: 1.5px; /* slightly thicker border */
     box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
 
     // Interactive States
     &:hover {
-      background-color: hsl(var(--accent));
+      background-color: var(--color-accent);
       color: hsl(var(--accent-foreground));
       border-color: hsl(var(--border) / 0.8);
       box-shadow: 0 2px 4px 0 rgb(0 0 0 / 0.1);
@@ -138,7 +138,7 @@
   }
 
   &:focus-visible:is(a, button) {
-    outline: 2px solid hsl(var(--ring));
+    outline: 2px solid var(--color-ring);
     outline-offset: 2px;
   }
 

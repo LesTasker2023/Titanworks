@@ -20,7 +20,7 @@
   outline-offset: 2px;
 
   &:focus-visible {
-    outline: 2px solid hsl(240, 5%, 10%);
+    outline: 2px solid var(--color-ring);
     outline-offset: 2px;
   }
 
@@ -31,65 +31,65 @@
 
   // Exact shadcn default variant
   &--default {
-    background-color: hsl(240, 5.9%, 10%); /* bg-primary */
-    color: hsl(0, 0%, 98%); /* text-primary-foreground */
+    background-color: var(--color-primary); /* bg-primary */
+    color: var(--color-primary-foreground); /* text-primary-foreground */
     box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05); /* shadow */
 
     &:hover {
-      background-color: hsl(240, 5.9%, 10%, 0.9); /* hover:bg-primary/90 */
+      background-color: var(--color-primary-600); /* hover:bg-primary/90 */
     }
   }
 
   // Exact shadcn destructive variant
   &--destructive {
-    background-color: hsl(0, 84.2%, 60.2%); /* bg-destructive */
-    color: hsl(0, 0%, 98%); /* text-destructive-foreground */
+    background-color: var(--color-destructive); /* bg-destructive */
+    color: var(--color-primary-foreground); /* text-destructive-foreground */
     box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05); /* shadow-sm */
 
     &:hover {
-      background-color: hsl(0, 84.2%, 60.2%, 0.9); /* hover:bg-destructive/90 */
+      background-color: #dc2626; /* hover:bg-destructive/90 */
     }
   }
 
   // Exact shadcn outline variant
   &--outline {
-    border: 1px solid hsl(240, 5.9%, 90%); /* border-input */
-    background-color: hsl(0, 0%, 100%); /* bg-background */
-    color: hsl(240, 10%, 3.9%); /* text-foreground */
+    border: 1px solid var(--color-border); /* border-input */
+    background-color: var(--color-background); /* bg-background */
+    color: var(--color-foreground); /* text-foreground */
     box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05); /* shadow-sm */
 
     &:hover {
-      background-color: hsl(240, 4.8%, 95.9%); /* hover:bg-accent */
-      color: hsl(240, 5.9%, 10%); /* hover:text-accent-foreground */
+      background-color: var(--color-accent); /* hover:bg-accent */
+      color: var(--color-accent-foreground); /* hover:text-accent-foreground */
     }
   }
 
   // Exact shadcn secondary variant
   &--secondary {
-    background-color: hsl(240, 4.8%, 95.9%); /* bg-secondary */
-    color: hsl(240, 5.9%, 10%); /* text-secondary-foreground */
+    background-color: var(--color-secondary); /* bg-secondary */
+    color: var(--color-secondary-foreground); /* text-secondary-foreground */
     box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05); /* shadow-sm */
 
     &:hover {
-      background-color: hsl(240, 4.8%, 95.9%, 0.8); /* hover:bg-secondary/80 */
+      background-color: var(--color-secondary-hover); /* hover:bg-secondary/80 */
     }
   }
 
   // Exact shadcn ghost variant
   &--ghost {
     background-color: transparent;
-    color: hsl(240, 10%, 3.9%);
+    color: var(--color-foreground);
 
     &:hover {
-      background-color: hsl(240, 4.8%, 95.9%); /* hover:bg-accent */
-      color: hsl(240, 5.9%, 10%); /* hover:text-accent-foreground */
+      background-color: var(--color-accent); /* hover:bg-accent */
+      color: var(--color-accent-foreground); /* hover:text-accent-foreground */
     }
   }
 
   // Exact shadcn link variant
   &--link {
     background-color: transparent;
-    color: hsl(240, 5.9%, 10%); /* text-primary */
+    color: var(--color-primary); /* text-primary */
     text-decoration: underline;
     text-underline-offset: 4px;
 

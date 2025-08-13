@@ -1,5 +1,4 @@
 // Input Titan Component - Enhanced SCSS
-@use "../../../styles/tokens" as *;
 
 .tk-input-container {
   display: flex;
@@ -21,11 +20,11 @@
   width: 100%;
   border-radius: 0.375rem;
   border: 1px solid var(--color-border);
-  background-color: var(--color-background);
+  background-color: var(--color-input);
   padding: 0.5rem 0.75rem;
   font-size: 0.875rem;
   line-height: 1.25rem;
-  color: var(--color-foreground);
+  color: var(--color-foreground); // Use theme-aware text color
   transition: all 0.2s ease-in-out;
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
 
@@ -33,11 +32,18 @@
     color: var(--color-muted-foreground);
   }
 
+  // Placeholder text accessibility
+  &::placeholder {
+    color: var(--color-muted-foreground);
+    opacity: 0.8; /* Ensure sufficient contrast */
+  }
+
+  // Enhanced focus state for accessibility
   &:focus {
-    outline: none;
-    border-color: var(--color-ring);
+    outline: 2px solid var(--color-ring);
+    outline-offset: 2px;
     box-shadow:
-      0 0 0 2px var(--color-ring),
+      0 0 0 3px rgba(var(--color-ring) / 0.1),
       0 4px 6px -1px rgba(0, 0, 0, 0.1),
       0 2px 4px -1px rgba(0, 0, 0, 0.06);
     transform: translateY(-1px);

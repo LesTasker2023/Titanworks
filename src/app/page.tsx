@@ -1,4 +1,6 @@
 'use client';
+import { Badge, Button } from '@/components/ui';
+import Link from 'next/link';
 
 export default function Home() {
   return (
@@ -73,6 +75,46 @@ export default function Home() {
       >
         Coming Soon
       </span>
+
+      {/* Component Test Pages */}
+      <div
+        style={{
+          marginTop: '3rem',
+          display: 'flex',
+          gap: '1rem',
+          flexWrap: 'wrap',
+          justifyContent: 'center',
+        }}
+      >
+        <Link href="/button-test">
+          <Button variant="outline" size="sm">
+            Button Tests
+          </Button>
+        </Link>
+        <Link href="/card-test">
+          <Button variant="outline" size="sm">
+            Card Tests
+          </Button>
+        </Link>
+        <Link href="/badge-test">
+          <Button variant="outline" size="sm">
+            Badge Tests
+          </Button>
+        </Link>
+        <Link href="/input-test">
+          <Button variant="outline" size="sm">
+            Input Tests
+          </Button>
+        </Link>
+        <Link href="/form-example">
+          <Button variant="default" size="sm">
+            <Badge variant="destructive" style={{ marginRight: '0.5rem' }}>
+              NEW
+            </Badge>
+            Form Example
+          </Button>
+        </Link>
+      </div>
     </main>
   );
 }
