@@ -1,5 +1,6 @@
 'use client';
 import Link from 'next/link';
+import { Button } from '@/components/ui/button';
 
 export default function Home() {
   return (
@@ -85,6 +86,15 @@ export default function Home() {
           justifyContent: 'center',
         }}
       >
+        {/* shadcn Button Tests */}
+        <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
+          <Button>Default</Button>
+          <Button variant="outline">Outline</Button>
+          <Button variant="secondary">Secondary</Button>
+          <Button variant="destructive">Delete</Button>
+          <Button variant="ghost">Ghost</Button>
+        </div>
+
         <Link href="/input-test">
           <button
             style={{
