@@ -1,0 +1,82 @@
+// RadioGroup component SCSS overrides
+// Use this file for ENHANCEMENTS that can't be achieved with Tailwind classes
+// Avoid duplicating what Tailwind already provides
+
+.radiogroup-wrapper {
+  // Enhanced focus styles for better accessibility
+  .radiogroup--loading {
+    opacity: 0.7;
+    pointer-events: none;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 16px;
+      height: 16px;
+      margin: -8px 0 0 -8px;
+      border: 2px solid transparent;
+      border-top-color: hsl(var(--primary));
+      border-radius: 50%;
+      animation: radiogroup-spin 1s linear infinite;
+    }
+  }
+
+  // Error state styling handled by Tailwind classes in component
+}
+
+@keyframes radiogroup-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+// Enhanced radio item styles
+.radiogroup-item {
+  // Enhanced focus styles for better accessibility
+  &:focus-visible {
+    outline: 2px solid hsl(var(--ring));
+    outline-offset: 2px;
+  }
+
+  // Smooth transitions
+  transition: all 0.2s ease-in-out;
+
+  // Enhanced hover states
+  &:hover:not(:disabled) {
+    border-color: hsl(var(--primary));
+    box-shadow: 0 0 0 1px hsl(var(--primary) / 0.3);
+  }
+
+  // Loading state
+  &--loading {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
+
+// High contrast mode support
+@media (prefers-contrast: high) {
+  .radiogroup-item {
+    border-width: 2px;
+
+    &:focus-visible {
+      outline-width: 3px;
+    }
+  }
+}
+
+// Reduced motion support
+@media (prefers-reduced-motion: reduce) {
+  .radiogroup--loading::after {
+    animation: none;
+  }
+
+  .radiogroup-item {
+    transition: none;
+  }
+}
