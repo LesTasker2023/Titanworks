@@ -1,5 +1,4 @@
 'use client';
-import { Badge, Button } from '@/components/ui';
 import Link from 'next/link';
 
 export default function Home() {
@@ -86,33 +85,35 @@ export default function Home() {
           justifyContent: 'center',
         }}
       >
-        <Link href="/button-test">
-          <Button variant="outline" size="sm">
-            Button Tests
-          </Button>
-        </Link>
-        <Link href="/card-test">
-          <Button variant="outline" size="sm">
-            Card Tests
-          </Button>
-        </Link>
-        <Link href="/badge-test">
-          <Button variant="outline" size="sm">
-            Badge Tests
-          </Button>
-        </Link>
         <Link href="/input-test">
-          <Button variant="outline" size="sm">
+          <button
+            style={{
+              padding: '0.5rem 1rem',
+              border: '1px solid #ccc',
+              borderRadius: '0.375rem',
+              backgroundColor: 'transparent',
+              cursor: 'pointer',
+              textDecoration: 'none',
+              fontSize: '0.875rem',
+            }}
+          >
             Input Tests
-          </Button>
+          </button>
         </Link>
-        <Link href="/form-example">
-          <Button variant="default" size="sm">
-            <Badge variant="destructive" style={{ marginRight: '0.5rem' }}>
-              NEW
-            </Badge>
-            Form Example
-          </Button>
+        <Link href="/contact">
+          <button
+            style={{
+              padding: '0.5rem 1rem',
+              border: '1px solid #ccc',
+              borderRadius: '0.375rem',
+              backgroundColor: 'transparent',
+              cursor: 'pointer',
+              textDecoration: 'none',
+              fontSize: '0.875rem',
+            }}
+          >
+            Contact Form
+          </button>
         </Link>
       </div>
     </main>
