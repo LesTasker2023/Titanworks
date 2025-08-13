@@ -114,6 +114,21 @@ export default function Home() {
             Input Tests
           </button>
         </Link>
+        <Link href="/textarea-test">
+          <button
+            style={{
+              padding: '0.5rem 1rem',
+              border: '1px solid #ccc',
+              borderRadius: '0.375rem',
+              backgroundColor: 'transparent',
+              cursor: 'pointer',
+              textDecoration: 'none',
+              fontSize: '0.875rem',
+            }}
+          >
+            Textarea Tests
+          </button>
+        </Link>
         <Link href="/contact">
           <button
             style={{

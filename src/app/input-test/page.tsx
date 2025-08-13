@@ -1,8 +1,8 @@
 'use client';
-import React, { useState } from 'react';
-import Link from 'next/link';
-import Input from '@/components/ui/Input';
 import Button from '@/components/ui/Button';
+import Input from '@/components/ui/Input';
+import Link from 'next/link';
+import React, { useState } from 'react';
 
 export default function InputTestPage() {
   const [formData, setFormData] = useState({

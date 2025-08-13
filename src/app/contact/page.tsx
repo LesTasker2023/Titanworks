@@ -1,4 +1,8 @@
 'use client';
+import Button from '@/components/ui/Button';
+import Input from '@/components/ui/Input';
+import Textarea from '@/components/ui/Textarea';
+import Link from 'next/link';
 import { useState } from 'react';
 
 export default function ContactPage() {
@@ -43,79 +47,103 @@ export default function ContactPage() {
         justifyContent: 'center',
         background: '#181818',
         color: '#fff',
+        padding: '2rem',
       }}
     >
-      <h1 style={{ fontSize: '2.5rem', marginBottom: '1rem', color: '#ff3b3b' }}>
-        Contact TriggerKings
-      </h1>
+      <div style={{ marginBottom: '2rem', textAlign: 'center' }}>
+        <h1 style={{ fontSize: '2.5rem', marginBottom: '1rem', color: '#ff3b3b' }}>
+          Contact TriggerKings
+        </h1>
+        <Link href="/" style={{ color: '#ccc', textDecoration: 'underline' }}>
+          ← Back to Home
+        </Link>
+      </div>
+
       {submitted ? (
-        <div style={{ color: '#0f0', fontWeight: 'bold' }}>Thank you! We’ll be in touch soon.</div>
+        <div
+          style={{
+            color: '#0f0',
+            fontWeight: 'bold',
+            fontSize: '1.2rem',
+            textAlign: 'center',
+            padding: '2rem',
+            border: '2px solid #0f0',
+            borderRadius: '0.5rem',
+            backgroundColor: 'rgba(0, 255, 0, 0.1)',
+          }}
+        >
+          🎉 Thank you! We&apos;ll be in touch soon to make your event unforgettable!
+        </div>
       ) : (
         <form
           onSubmit={handleSubmit}
           style={{
             display: 'flex',
             flexDirection: 'column',
-            gap: '1rem',
+            gap: '2rem',
             width: '100%',
-            maxWidth: 400,
+            maxWidth: '500px',
+            padding: '2rem',
+            border: '1px solid #333',
+            borderRadius: '0.5rem',
+            backgroundColor: '#0a0a0a',
           }}
         >
-          <input
+          <Input
             name="name"
-            placeholder="Name"
+            label="Name"
+            placeholder="Your full name"
             value={form.name}
             onChange={handleChange}
             required
-            style={{ padding: 10, borderRadius: 6, border: '1px solid #333' }}
+            helperText="Let us know what to call you"
           />
-          <input
+
+          <Input
             name="email"
             type="email"
-            placeholder="Email"
+            label="Email"
+            placeholder="your@email.com"
             value={form.email}
             onChange={handleChange}
             required
-            style={{ padding: 10, borderRadius: 6, border: '1px solid #333' }}
+            helperText="We'll use this to send you event details"
           />
-          <input
+
+          <Input
             name="event"
-            placeholder="Event Type (party, stag, etc)"
+            label="Event Type"
+            placeholder="Birthday party, stag do, corporate event..."
             value={form.event}
             onChange={handleChange}
             required
-            style={{ padding: 10, borderRadius: 6, border: '1px solid #333' }}
+            helperText="What kind of event are you planning?"
           />
-          <input
+
+          <Input
             name="location"
-            placeholder="Location/City"
+            label="Location"
+            placeholder="City or venue name"
             value={form.location}
             onChange={handleChange}
             required
-            style={{ padding: 10, borderRadius: 6, border: '1px solid #333' }}
+            helperText="Where should we bring the action?"
           />
-          <textarea
+
+          <Textarea
             name="message"
-            placeholder="What would make this unforgettable?"
+            label="Event Details"
+            placeholder="Tell us about your event! Number of players, date preferences, special requirements, or anything that would make this unforgettable..."
             value={form.message}
             onChange={handleChange}
-            rows={3}
-            style={{ padding: 10, borderRadius: 6, border: '1px solid #333' }}
+            maxLength={500}
+            showCount
+            helperText="The more details you share, the better we can customize your experience!"
           />
-          <button
-            type="submit"
-            style={{
-              background: '#ff3b3b',
-              color: '#fff',
-              border: 'none',
-              borderRadius: 6,
-              padding: 12,
-              fontWeight: 'bold',
-              cursor: 'pointer',
-            }}
-          >
-            Send
-          </button>
+
+          <Button type="submit" size="lg" style={{ marginTop: '1rem' }}>
+            Send Inquiry
+          </Button>
         </form>
       )}
     </main>
