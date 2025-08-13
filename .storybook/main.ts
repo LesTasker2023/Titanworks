@@ -13,5 +13,11 @@ const config: StorybookConfig = {
     options: {},
   },
   staticDirs: ['..\\public'],
+  viteFinal: async config => {
+    // Ensure PostCSS config is used from postcss.config.js
+    config.css = config.css || {};
+    config.css.postcss = '../postcss.config.js';
+    return config;
+  },
 };
 export default config;

@@ -1,0 +1,142 @@
+// Button component SCSS overrides
+// Use this file for ENHANCEMENTS that can't be achieved with Tailwind classes
+// Avoid duplicating what Tailwind already provides
+
+.button {
+  // Enhanced focus styles for better accessibility (supplements Tailwind's focus-visible)
+  &:focus-visible {
+    outline: 2px solid hsl(var(--ring));
+    outline-offset: 2px;
+    box-shadow: 0 0 0 2px hsl(var(--ring) / 0.2);
+  }
+
+  // Smooth transitions for all interactive states (enhance Tailwind's basic transitions)
+  transition: all 0.15s ease-in-out;
+
+  // Custom hover lift effect (not available in Tailwind)
+  &:hover:not(:disabled) {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  // Enhanced disabled state (supplement Tailwind's disabled styles)
+  &:disabled,
+  &[aria-disabled="true"] {
+    cursor: not-allowed;
+    transform: none !important;
+    box-shadow: none !important;
+  }
+
+  // Loading state with spinner (completely custom - not in Tailwind)
+  &--loading {
+    position: relative;
+    color: transparent !important;
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 16px;
+      height: 16px;
+      top: 50%;
+      left: 50%;
+      margin-left: -8px;
+      margin-top: -8px;
+      border: 2px solid;
+      border-radius: 50%;
+      border-color: transparent;
+      animation: spin 1s linear infinite;
+    }
+
+    // Spinner colors for different variants (use CSS custom properties for consistency)
+    &::after {
+      border-color: currentColor transparent currentColor currentColor;
+      opacity: 0.8;
+    }
+  }
+
+  // Dark mode enhancements (supplement Tailwind's dark mode)
+  [data-theme="dark"] & {
+    &:hover:not(:disabled) {
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+  }
+
+  // Mobile touch targets (accessibility enhancement)
+  @media (max-width: 640px) {
+    min-height: 44px; // iOS accessibility requirement
+    min-width: 44px;
+  }
+
+  // Reduced motion respect (accessibility - not in Tailwind)
+  @media (prefers-reduced-motion: reduce) {
+    transition: none;
+    animation: none;
+
+    &:hover:not(:disabled) {
+      transform: none;
+    }
+
+    &--loading::after {
+      animation: none;
+      border: 2px solid currentColor;
+      border-top-color: transparent;
+    }
+  }
+
+  // High contrast mode (accessibility - not in Tailwind)
+  @media (prefers-contrast: high) {
+    border: 2px solid;
+
+    &:hover:not(:disabled) {
+      border-width: 3px;
+    }
+  }
+}
+
+// Loading spinner animation
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+// Button group utilities (custom layouts not available in Tailwind)
+.button-group {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+
+  // Connected button styling (custom design pattern)
+  &--connected {
+    gap: 0;
+
+    .button {
+      border-radius: 0;
+      margin-left: -1px; // Overlap borders to avoid double thickness
+
+      &:first-child {
+        border-top-left-radius: var(--radius);
+        border-bottom-left-radius: var(--radius);
+        margin-left: 0;
+      }
+
+      &:last-child {
+        border-top-right-radius: var(--radius);
+        border-bottom-right-radius: var(--radius);
+      }
+
+      &:only-child {
+        border-radius: var(--radius);
+        margin-left: 0;
+      }
+
+      // Focus state handling for connected buttons
+      &:focus-visible {
+        z-index: 1; // Ensure focus ring appears above adjacent buttons
+      }
+    }
+  }
+}

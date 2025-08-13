@@ -1,6 +1,6 @@
 'use client';
+import Button from '@/components/ui/Button';
 import Link from 'next/link';
-import { Button } from '@/components/ui/button';
 
 export default function Home() {
   return (
@@ -93,6 +93,10 @@ export default function Home() {
           <Button variant="secondary">Secondary</Button>
           <Button variant="destructive">Delete</Button>
           <Button variant="ghost">Ghost</Button>
+          <Button loading>Loading</Button>
+          <Button variant="destructive" loading>
+            Deleting...
+          </Button>
         </div>
 
         <Link href="/input-test">

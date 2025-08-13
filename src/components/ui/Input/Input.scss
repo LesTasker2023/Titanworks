@@ -1,0 +1,234 @@
+// Input component SCSS overrides
+// Use this file for ENHANCEMENTS that can't be achieved with Tailwind classes
+// Avoid duplicating what Tailwind already provides
+
+.input {
+  // Enhanced focus styles for better accessibility (supplements Tailwind's focus-visible)
+  &:focus-visible {
+    outline: 2px solid hsl(var(--ring));
+    outline-offset: 2px;
+    box-shadow: 0 0 0 2px hsl(var(--ring) / 0.2);
+  }
+
+  // Smooth transitions for all interactive states (enhance Tailwind's basic transitions)
+  transition: all 0.15s ease-in-out;
+
+  // Enhanced hover effect (not available in Tailwind)
+  &:hover:not(:disabled):not(:focus-visible) {
+    border-color: hsl(var(--ring) / 0.6);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  }
+
+  // Error state styling
+  &--error {
+    border-color: hsl(var(--destructive));
+    box-shadow: 0 0 0 1px hsl(var(--destructive) / 0.2);
+
+    &:focus-visible {
+      outline-color: hsl(var(--destructive));
+      box-shadow: 0 0 0 2px hsl(var(--destructive) / 0.2);
+    }
+  }
+
+  // Loading state with subtle animation
+  &--loading {
+    position: relative;
+    pointer-events: none;
+
+    &::after {
+      content: "";
+      position: absolute;
+      right: 12px;
+      top: 50%;
+      margin-top: -8px;
+      width: 16px;
+      height: 16px;
+      border: 2px solid;
+      border-radius: 50%;
+      border-color: hsl(var(--muted-foreground)) transparent hsl(var(--muted-foreground)) hsl(var(--muted-foreground));
+      animation: spin 1s linear infinite;
+      opacity: 0.7;
+    }
+  }
+
+  // Enhanced disabled state (supplement Tailwind's disabled styles)
+  &:disabled {
+    background-color: hsl(var(--muted) / 0.5);
+    cursor: not-allowed;
+  }
+
+  // File input enhancements
+  &[type="file"] {
+    cursor: pointer;
+
+    &::file-selector-button {
+      margin-right: 12px;
+      padding: 4px 12px;
+      border-radius: 4px;
+      border: 1px solid hsl(var(--border));
+      background: hsl(var(--background));
+      color: hsl(var(--foreground));
+      font-size: 0.875rem;
+      cursor: pointer;
+      transition: all 0.15s ease-in-out;
+
+      &:hover {
+        background: hsl(var(--accent));
+      }
+    }
+  }
+
+  // Search input enhancements
+  &[type="search"] {
+    &::-webkit-search-cancel-button {
+      appearance: none;
+      width: 16px;
+      height: 16px;
+      background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='currentColor'%3e%3cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M6 18L18 6M6 6l12 12'/%3e%3c/svg%3e");
+      cursor: pointer;
+    }
+  }
+
+  // Number input spinner styling
+  &[type="number"] {
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      appearance: none;
+      margin: 0;
+    }
+
+    // For Firefox
+    appearance: textfield;
+    -moz-appearance: textfield;
+  }
+
+  // Dark mode enhancements (supplement Tailwind's dark mode)
+  [data-theme="dark"] & {
+    &:hover:not(:disabled):not(:focus-visible) {
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    }
+  }
+
+  // Mobile touch targets (accessibility enhancement)
+  @media (max-width: 640px) {
+    min-height: 44px; // iOS accessibility requirement
+    font-size: 16px; // Prevent zoom on iOS
+  }
+
+  // Reduced motion respect (accessibility - not in Tailwind)
+  @media (prefers-reduced-motion: reduce) {
+    transition: none;
+    animation: none;
+
+    &--loading::after {
+      animation: none;
+      border: 2px solid hsl(var(--muted-foreground));
+      border-top-color: transparent;
+    }
+  }
+
+  // High contrast mode (accessibility - not in Tailwind)
+  @media (prefers-contrast: high) {
+    border: 2px solid;
+
+    &:focus-visible {
+      outline-width: 3px;
+    }
+  }
+}
+
+// Input wrapper styling
+.input-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+// Label styling
+.input-label {
+  font-weight: 500;
+  color: hsl(var(--foreground));
+
+  // Required indicator
+  &--required::after {
+    content: " *";
+    color: hsl(var(--destructive));
+  }
+}
+
+// Error message styling
+.input-error {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  color: hsl(var(--destructive));
+  font-size: 0.875rem;
+
+  &::before {
+    content: "⚠";
+    font-size: 0.75rem;
+  }
+}
+
+// Helper text styling
+.input-helper {
+  color: hsl(var(--muted-foreground));
+  font-size: 0.875rem;
+}
+
+// Loading spinner animation
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+// Input group utilities (for combining inputs with buttons/icons)
+.input-group {
+  display: flex;
+  position: relative;
+
+  .input {
+    &:not(:first-child) {
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+      border-left: none;
+    }
+
+    &:not(:last-child) {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+
+    &:focus-visible {
+      z-index: 1; // Ensure focus ring appears above adjacent elements
+    }
+  }
+
+  // Input group addon styling
+  &-addon {
+    display: flex;
+    align-items: center;
+    padding: 0 12px;
+    background: hsl(var(--muted));
+    border: 1px solid hsl(var(--border));
+    color: hsl(var(--muted-foreground));
+    font-size: 0.875rem;
+
+    &:first-child {
+      border-top-left-radius: var(--radius);
+      border-bottom-left-radius: var(--radius);
+      border-right: none;
+    }
+
+    &:last-child {
+      border-top-right-radius: var(--radius);
+      border-bottom-right-radius: var(--radius);
+      border-left: none;
+    }
+  }
+}
