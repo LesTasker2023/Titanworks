@@ -1,6 +1,12 @@
 'use client';
 import Button from '@/components/ui/Button';
 import Input from '@/components/ui/Input';
+import Select, {
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from '@/components/ui/Select';
 import Textarea from '@/components/ui/Textarea';
 import Link from 'next/link';
 import { useState } from 'react';
@@ -10,6 +16,7 @@ export default function ContactPage() {
     name: '',
     email: '',
     event: '',
+    eventType: '', // New field for Select component
     location: '',
     message: '',
   });
@@ -17,6 +24,10 @@ export default function ContactPage() {
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setForm({ ...form, [e.target.name]: e.target.value });
+  };
+
+  const handleSelectChange = (value: string) => {
+    setForm({ ...form, eventType: value });
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -110,15 +121,32 @@ export default function ContactPage() {
             helperText="We'll use this to send you event details"
           />
 
-          <Input
-            name="event"
-            label="Event Type"
-            placeholder="Birthday party, stag do, corporate event..."
-            value={form.event}
-            onChange={handleChange}
-            required
-            helperText="What kind of event are you planning?"
-          />
+          <div className="space-y-2">
+            <label
+              htmlFor="eventType"
+              className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+            >
+              Event Type *
+            </label>
+            <Select value={form.eventType} onValueChange={handleSelectChange}>
+              <SelectTrigger>
+                <SelectValue placeholder="Select your event type" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="birthday">Birthday Party</SelectItem>
+                <SelectItem value="wedding">Wedding</SelectItem>
+                <SelectItem value="stag">Stag/Hen Do</SelectItem>
+                <SelectItem value="corporate">Corporate Event</SelectItem>
+                <SelectItem value="anniversary">Anniversary</SelectItem>
+                <SelectItem value="graduation">Graduation</SelectItem>
+                <SelectItem value="retirement">Retirement Party</SelectItem>
+                <SelectItem value="other">Other Celebration</SelectItem>
+              </SelectContent>
+            </Select>
+            <p className="text-sm text-muted-foreground">
+              Choose the type of event you&rsquo;re planning
+            </p>
+          </div>
 
           <Input
             name="location"
