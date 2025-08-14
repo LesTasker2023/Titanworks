@@ -16,6 +16,15 @@ export { default as NavigationMenu } from './NavigationMenu';
 export { default as Alert } from './Alert';
 export { default as Avatar } from './Avatar';
 export { default as Badge } from './Badge';
+export {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+  type CardProps,
+} from './Card/card';
 export { default as Dialog } from './Dialog';
 export { default as Progress } from './Progress';
 export { default as RadioGroup } from './RadioGroup';

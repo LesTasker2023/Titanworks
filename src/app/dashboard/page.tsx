@@ -1,10 +1,10 @@
 'use client';
 
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui';
 import Alert from '@/components/ui/Alert';
 import Avatar from '@/components/ui/Avatar';
 import Badge from '@/components/ui/Badge';
 import Button from '@/components/ui/Button';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import Checkbox from '@/components/ui/Checkbox';
 import Input from '@/components/ui/Input';
 import Progress from '@/components/ui/Progress';
