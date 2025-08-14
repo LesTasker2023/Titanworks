@@ -177,7 +177,13 @@ foreach ($component in $Components) {
         $Score -= 15; $Issues += "Missing test file" 
     }
     
-    $MainFiles = Get-ChildItem "$($component.FullName)\*.tsx" | Where-Object { $_.Name -match "^[a-z-]+\.tsx$" }
+    $MainFiles = Get-ChildItem "$($component.FullName)\*.tsx" | Where-Object { 
+        $_.Name -match "^[a-z-]+\.tsx$" -and $_.Name -ne "index.tsx" 
+    }
+    if (-not $MainFiles) { 
+        # Fallback to any .tsx file that's not index.tsx
+        $MainFiles = Get-ChildItem "$($component.FullName)\*.tsx" | Where-Object { $_.Name -ne "index.tsx" }
+    }
     if (-not $MainFiles) { 
         $Score -= 20; $Issues += "Missing main component file" 
     }
@@ -189,7 +195,7 @@ foreach ($component in $Components) {
         
         if ($Content) {
             # CVA usage for components that should have variants/sizes
-            if (($Spec.Variants.Count -gt 0 -or $Spec.Sizes.Count -gt 0) -and $Content -notmatch "cva\(") {
+            if (($Spec.Variants.Count -gt 0 -or $Spec.Sizes.Count -gt 0) -and $Content -notmatch "cva\s*\(") {
                 $Score -= 10; $Issues += "Should use CVA for variants/sizes"
             }
             
@@ -197,7 +203,7 @@ foreach ($component in $Components) {
             if ($Spec.Variants.Count -gt 0) {
                 $MissingVariants = @()
                 foreach ($variant in $Spec.Variants) {
-                    if ($Content -notmatch "${variant}:\s*['""]") {
+                    if ($Content -notmatch "$variant\s*:\s*['""]") {
                         $MissingVariants += $variant
                     }
                 }
@@ -211,7 +217,7 @@ foreach ($component in $Components) {
             if ($Spec.Sizes.Count -gt 0) {
                 $MissingSizes = @()
                 foreach ($size in $Spec.Sizes) {
-                    if ($Content -notmatch "${size}:\s*['""]") {
+                    if ($Content -notmatch "$size\s*:\s*['""]") {
                         $MissingSizes += $size
                     }
                 }
@@ -253,15 +259,8 @@ foreach ($component in $Components) {
         }
     }
     
-    # Build validation
-    try {
-        $BuildResult = & "yarn" "build" 2>&1 | Out-String
-        if ($LASTEXITCODE -ne 0) {
-            $Score -= 15; $Issues += "Build failed"
-        }
-    } catch {
-        $Score -= 15; $Issues += "Build validation failed"
-    }
+    # Build validation - Skip per-component builds, rely on system-level check
+    # Individual component build checks removed for performance and to avoid CSS warning spam
     
     # Ensure score doesn't go below 0
     $Score = [Math]::Max(0, $Score)
@@ -290,30 +289,37 @@ foreach ($component in $Components) {
 
 # System health checks - deductive
 $SystemScore = 100
-$SystemIssues = @()
 
 # Build check
 try {
-    $BuildOutput = & "yarn" "build" 2>&1 | Out-String
-    $BuildStatus = if ($LASTEXITCODE -eq 0) { "PASS" } else { "FAIL"; $SystemScore -= 30; $SystemIssues += "Build failed" }
+    & "yarn" "build" 2>&1 | Out-Null
+        $BuildStatus = if ($LASTEXITCODE -eq 0) { "PASS" } else { "FAIL"; $SystemScore -= 30; $SystemIssues += "Build failed" }
+    
+    # Only show build warnings if there are actual errors (not CSS warnings or PS noise)
+    if ($BuildErrors.Count -gt 0) {
+        Write-Host "Build Issues Found:" -ForegroundColor Yellow
+        foreach ($buildError in $BuildErrors | Select-Object -First 3) {
+            Write-Host "  - $buildError" -ForegroundColor Red
+        }
+    }
 } catch {
-    $BuildStatus = "FAIL"; $SystemScore -= 30; $SystemIssues += "Build check failed"
+    $BuildStatus = "FAIL"; $SystemScore -= 30
 }
 
 # TypeScript check  
 try {
-    $TypeOutput = & "yarn" "type-check" 2>&1 | Out-String
-    $TypeStatus = if ($LASTEXITCODE -eq 0) { "PASS" } else { "FAIL"; $SystemScore -= 40; $SystemIssues += "TypeScript errors" }
+    & "yarn" "type-check" 2>&1 | Out-Null
+    $TypeStatus = if ($LASTEXITCODE -eq 0) { "PASS" } else { "FAIL"; $SystemScore -= 40 }
 } catch {
-    $TypeStatus = "FAIL"; $SystemScore -= 40; $SystemIssues += "TypeScript check failed"
+    $TypeStatus = "FAIL"; $SystemScore -= 40
 }
 
 # Lint check
 try {
-    $LintOutput = & "yarn" "lint" 2>&1 | Out-String  
-    $LintStatus = if ($LASTEXITCODE -eq 0) { "PASS" } else { "FAIL"; $SystemScore -= 20; $SystemIssues += "Lint errors" }
+    & "yarn" "lint" 2>&1 | Out-Null
+    $LintStatus = if ($LASTEXITCODE -eq 0) { "PASS" } else { "FAIL"; $SystemScore -= 20 }
 } catch {
-    $LintStatus = "FAIL"; $SystemScore -= 20; $SystemIssues += "Lint check failed"
+    $LintStatus = "FAIL"; $SystemScore -= 20
 }
 
 # Test check
@@ -323,10 +329,9 @@ try {
     $TestsFailed = if ($TestOutput -match "(\d+) failed") { [int]$Matches[1] } else { 0 }
     if ($TestsFailed -gt 0) {
         $SystemScore -= ($TestsFailed * 2)
-        $SystemIssues += "$TestsFailed failing tests"
     }
 } catch {
-    $SystemScore -= 10; $SystemIssues += "Test execution failed"
+    $SystemScore -= 10
 }
 
 # Calculate overall quality

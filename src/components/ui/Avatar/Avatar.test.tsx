@@ -25,5 +25,39 @@ describe('Avatar', () => {
       );
       expect(screen.getByTestId('avatar')).toBeInTheDocument();
     });
+
+    it('renders with different sizes', () => {
+      const { rerender } = render(
+        <Avatar size="sm" data-testid="avatar-sm">
+          <AvatarImage src="/test.jpg" alt="Test" />
+          <AvatarFallback>TK</AvatarFallback>
+        </Avatar>
+      );
+      expect(screen.getByTestId('avatar-sm')).toBeInTheDocument();
+
+      rerender(
+        <Avatar size="default" data-testid="avatar-default">
+          <AvatarImage src="/test.jpg" alt="Test" />
+          <AvatarFallback>TK</AvatarFallback>
+        </Avatar>
+      );
+      expect(screen.getByTestId('avatar-default')).toBeInTheDocument();
+
+      rerender(
+        <Avatar size="lg" data-testid="avatar-lg">
+          <AvatarImage src="/test.jpg" alt="Test" />
+          <AvatarFallback>TK</AvatarFallback>
+        </Avatar>
+      );
+      expect(screen.getByTestId('avatar-lg')).toBeInTheDocument();
+
+      rerender(
+        <Avatar size="xl" data-testid="avatar-xl">
+          <AvatarImage src="/test.jpg" alt="Test" />
+          <AvatarFallback>TK</AvatarFallback>
+        </Avatar>
+      );
+      expect(screen.getByTestId('avatar-xl')).toBeInTheDocument();
+    });
   });
 });
