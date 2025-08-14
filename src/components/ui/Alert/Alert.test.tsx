@@ -1,8 +1,8 @@
-import React from 'react';
-import { render, screen, fireEvent, act } from '@testing-library/react';
-import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
+import { act, fireEvent, render, screen } from '@testing-library/react';
 import { AlertTriangle, CheckCircle, Info } from 'lucide-react';
-import Alert, { AlertTitle, AlertDescription } from './alert';
+import React from 'react';
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
+import Alert, { AlertDescription, AlertTitle } from './alert';
 
 // Mock timers for auto-hide functionality
 beforeEach(() => {

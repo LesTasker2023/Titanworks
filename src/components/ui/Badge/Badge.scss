@@ -1,0 +1,76 @@
+// Badge component SCSS enhancements
+// Only add what Tailwind can't do
+
+.badge {
+  // Enhanced dot animation
+  &--dot {
+    .badge-dot {
+      animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    }
+  }
+
+  // Enhanced remove button interactions
+  &__remove-btn {
+    &:hover {
+      transform: scale(1.1);
+    }
+
+    &:active {
+      transform: scale(0.95);
+    }
+
+    // Enhanced focus styles for accessibility
+    &:focus-visible {
+      outline: 2px solid hsl(var(--ring));
+      outline-offset: 1px;
+    }
+  }
+
+  // Status-specific animations
+  &--success {
+    animation: gentle-glow 3s ease-in-out infinite alternate;
+  }
+
+  &--warning {
+    animation: subtle-pulse 2s ease-in-out infinite;
+  }
+}
+
+// Keyframe animations
+@keyframes gentle-glow {
+  0% {
+    box-shadow: 0 0 5px rgba(34, 197, 94, 0.3);
+  }
+  100% {
+    box-shadow: 0 0 10px rgba(34, 197, 94, 0.5);
+  }
+}
+
+@keyframes subtle-pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.85;
+  }
+}
+
+// High contrast support
+@media (prefers-contrast: high) {
+  .badge {
+    border-width: 2px;
+    font-weight: 700;
+  }
+}
+
+// Reduced motion support
+@media (prefers-reduced-motion: reduce) {
+  .badge {
+    animation: none;
+
+    .badge-dot {
+      animation: none;
+    }
+  }
+}

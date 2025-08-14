@@ -1,6 +1,6 @@
-import * as React from 'react';
 import { cva, type VariantProps } from 'class-variance-authority';
 import { X } from 'lucide-react';
+import * as React from 'react';
 
 import { cn } from '@/lib/utils';
 import './Alert.scss';
@@ -138,4 +138,4 @@ const AlertDescription = React.forwardRef<
 AlertDescription.displayName = 'AlertDescription';
 
 export default Alert;
-export { AlertTitle, AlertDescription, alertVariants };
+export { AlertDescription, AlertTitle, alertVariants };
