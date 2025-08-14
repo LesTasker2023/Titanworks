@@ -185,7 +185,11 @@ describe('NavigationMenu Component', () => {
   // 4. Enhanced Features (5-10 tests)
   describe('Enhanced Features', () => {
     it('shows loading spinner when loading prop is true', () => {
-      render(<NavigationMenu loading />);
+      render(
+        <NavigationMenu loading>
+          <NavigationMenu.List />
+        </NavigationMenu>
+      );
       
       const spinner = document.querySelector('.animate-spin');
       expect(spinner).toBeInTheDocument();
@@ -227,7 +231,11 @@ describe('NavigationMenu Component', () => {
   // 5. Edge Cases (3-5 tests)
   describe('Edge Cases', () => {
     it('handles empty navigation menu', () => {
-      render(<NavigationMenu />);
+      render(
+        <NavigationMenu>
+          <NavigationMenu.List />
+        </NavigationMenu>
+      );
       expect(screen.getByRole('navigation')).toBeInTheDocument();
     });
 
