@@ -1,6 +1,5 @@
-import { fireEvent, render, screen, waitFor } from '@testing-library/react';
+import { act, fireEvent, render, screen, waitFor } from '@testing-library/react';
 import { describe, expect, it, vi } from 'vitest';
-import { act } from '@testing-library/react';
 import Slider from './slider';
 
 describe('Slider Component', () => {
@@ -132,21 +131,19 @@ describe('Slider Component', () => {
     it('calls onValueChange when value changes', () => {
       const handleChange = vi.fn();
       render(<Slider defaultValue={[50]} onValueChange={handleChange} />);
-      
+
       const slider = screen.getByRole('slider');
       fireEvent.keyDown(slider, { key: 'ArrowRight' });
-      
+
       expect(handleChange).toHaveBeenCalled();
     });
 
     it('handles controlled value changes', () => {
       const handleChange = vi.fn();
-      const { rerender } = render(
-        <Slider value={[50]} onValueChange={handleChange} />
-      );
-      
+      const { rerender } = render(<Slider value={[50]} onValueChange={handleChange} />);
+
       rerender(<Slider value={[75]} onValueChange={handleChange} />);
-      
+
       const slider = screen.getByRole('slider');
       expect(slider).toHaveAttribute('aria-valuenow', '75');
     });
@@ -154,82 +151,82 @@ describe('Slider Component', () => {
     it('handles keyboard navigation (Arrow Right)', () => {
       const handleChange = vi.fn();
       render(<Slider defaultValue={[50]} onValueChange={handleChange} />);
-      
+
       const slider = screen.getByRole('slider');
       fireEvent.keyDown(slider, { key: 'ArrowRight' });
-      
+
       expect(handleChange).toHaveBeenCalled();
     });
 
     it('handles keyboard navigation (Arrow Left)', () => {
       const handleChange = vi.fn();
       render(<Slider defaultValue={[50]} onValueChange={handleChange} />);
-      
+
       const slider = screen.getByRole('slider');
       fireEvent.keyDown(slider, { key: 'ArrowLeft' });
-      
+
       expect(handleChange).toHaveBeenCalled();
     });
 
     it('handles keyboard navigation (Arrow Up)', () => {
       const handleChange = vi.fn();
       render(<Slider orientation="vertical" defaultValue={[50]} onValueChange={handleChange} />);
-      
+
       const slider = screen.getByRole('slider');
       fireEvent.keyDown(slider, { key: 'ArrowUp' });
-      
+
       expect(handleChange).toHaveBeenCalled();
     });
 
     it('handles keyboard navigation (Arrow Down)', () => {
       const handleChange = vi.fn();
       render(<Slider orientation="vertical" defaultValue={[50]} onValueChange={handleChange} />);
-      
+
       const slider = screen.getByRole('slider');
       fireEvent.keyDown(slider, { key: 'ArrowDown' });
-      
+
       expect(handleChange).toHaveBeenCalled();
     });
 
     it('handles Home key navigation', () => {
       const handleChange = vi.fn();
       render(<Slider defaultValue={[50]} min={0} max={100} onValueChange={handleChange} />);
-      
+
       const slider = screen.getByRole('slider');
       fireEvent.keyDown(slider, { key: 'Home' });
-      
+
       expect(handleChange).toHaveBeenCalledWith([0]);
     });
 
     it('handles End key navigation', () => {
       const handleChange = vi.fn();
       render(<Slider defaultValue={[50]} min={0} max={100} onValueChange={handleChange} />);
-      
+
       const slider = screen.getByRole('slider');
       fireEvent.keyDown(slider, { key: 'End' });
-      
+
       expect(handleChange).toHaveBeenCalledWith([100]);
     });
 
     it('does not call onValueChange when disabled', () => {
       const handleChange = vi.fn();
       render(<Slider defaultValue={[50]} disabled onValueChange={handleChange} />);
-      
+
       const slider = screen.getByRole('slider');
       fireEvent.keyDown(slider, { key: 'ArrowRight' });
-      
+
       expect(handleChange).not.toHaveBeenCalled();
     });
 
     it('handles mouse interactions', () => {
       const handleChange = vi.fn();
       render(<Slider defaultValue={[50]} onValueChange={handleChange} />);
-      
+
       const slider = screen.getByRole('slider');
       // Test more direct interaction
       fireEvent.focus(slider);
       fireEvent.keyDown(slider, { key: 'ArrowRight' });
-      
+
       // Verify change was triggered
       expect(handleChange).toHaveBeenCalled();
     });
@@ -349,7 +346,7 @@ describe('Slider Component', () => {
     it('has proper ARIA attributes', () => {
       render(<Slider defaultValue={[50]} min={0} max={100} />);
       const slider = screen.getByRole('slider');
-      
+
       expect(slider).toHaveAttribute('role', 'slider');
       expect(slider).toHaveAttribute('aria-valuenow', '50');
       expect(slider).toHaveAttribute('aria-valuemin', '0');
@@ -359,7 +356,7 @@ describe('Slider Component', () => {
     it('supports keyboard navigation', () => {
       render(<Slider defaultValue={[50]} />);
       const slider = screen.getByRole('slider');
-      
+
       expect(slider).toHaveAttribute('tabindex', '0');
       slider.focus();
       expect(slider).toHaveFocus();
@@ -368,10 +365,10 @@ describe('Slider Component', () => {
     it('announces value changes to screen readers', async () => {
       const handleChange = vi.fn();
       render(<Slider defaultValue={[50]} onValueChange={handleChange} />);
-      
+
       const slider = screen.getByRole('slider');
       fireEvent.keyDown(slider, { key: 'ArrowRight' });
-      
+
       // Verify that aria-valuenow updates (handled by Radix UI)
       await waitFor(() => {
         expect(handleChange).toHaveBeenCalled();
@@ -381,7 +378,7 @@ describe('Slider Component', () => {
     it('maintains focus visibility', () => {
       render(<Slider defaultValue={[50]} />);
       const slider = screen.getByRole('slider');
-      
+
       slider.focus();
       expect(slider).toHaveFocus();
       expect(slider).toHaveClass('focus-visible:ring-1');
@@ -390,7 +387,7 @@ describe('Slider Component', () => {
     it('properly disables interaction when disabled', () => {
       render(<Slider defaultValue={[50]} disabled />);
       const slider = screen.getByRole('slider');
-      
+
       // Check disabled styling classes
       expect(slider).toHaveClass('disabled:pointer-events-none');
       expect(slider).toHaveClass('disabled:opacity-50');
@@ -407,22 +404,20 @@ describe('Slider Component', () => {
           <button type="submit">Submit</button>
         </form>
       );
-      
+
       fireEvent.click(screen.getByRole('button'));
       expect(handleSubmit).toHaveBeenCalled();
     });
 
     it('integrates with controlled form libraries', () => {
       const handleChange = vi.fn();
-      const { rerender } = render(
-        <Slider value={[25]} onValueChange={handleChange} />
-      );
-      
+      const { rerender } = render(<Slider value={[25]} onValueChange={handleChange} />);
+
       const slider = screen.getByRole('slider');
       fireEvent.keyDown(slider, { key: 'ArrowRight' });
-      
+
       expect(handleChange).toHaveBeenCalled();
-      
+
       // Simulate form library updating the value
       rerender(<Slider value={[26]} onValueChange={handleChange} />);
       expect(screen.getByRole('slider')).toHaveAttribute('aria-valuenow', '26');
@@ -431,16 +426,16 @@ describe('Slider Component', () => {
     it('maintains performance with rapid value changes', () => {
       const handleChange = vi.fn();
       render(<Slider defaultValue={[50]} onValueChange={handleChange} />);
-      
+
       const slider = screen.getByRole('slider');
-      
+
       // Simulate rapid key presses
       act(() => {
         fireEvent.keyDown(slider, { key: 'ArrowRight' });
         fireEvent.keyDown(slider, { key: 'ArrowRight' });
         fireEvent.keyDown(slider, { key: 'ArrowRight' });
       });
-      
+
       // Should have called handler for each event
       expect(handleChange).toHaveBeenCalledTimes(3);
     });

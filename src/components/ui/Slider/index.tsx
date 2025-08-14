@@ -1,2 +1,2 @@
-export { default } from './slider'
-export * from './slider'
+export * from './slider';
+export { default } from './slider';

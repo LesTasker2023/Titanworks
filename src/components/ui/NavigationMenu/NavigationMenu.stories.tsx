@@ -7,7 +7,8 @@ const meta = {
     layout: 'centered',
     docs: {
       description: {
-        component: 'Enhanced Navigation Menu component with responsive design, keyboard navigation, and advanced accessibility features.',
+        component:
+          'Enhanced Navigation Menu component with responsive design, keyboard navigation, and advanced accessibility features.',
       },
     },
   },
@@ -65,7 +66,7 @@ export const MobileVariant = {
   args: {
     mobile: true,
   },
-  render: (args: any) => (
+  render: (args: object) => (
     <NavigationMenu {...args}>
       <NavigationMenu.List>
         <NavigationMenu.Item>
@@ -97,25 +98,18 @@ export const InteractiveExample = {
                   <NavigationMenu.Link asChild>
                     <a
                       className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
-                      href="/"
+                      href="https://ui.shadcn.com"
                     >
-                      <div className="mb-2 mt-4 text-lg font-medium">
-                        shadcn/ui
-                      </div>
+                      <div className="mb-2 mt-4 text-lg font-medium">shadcn/ui</div>
                       <p className="text-sm leading-tight text-muted-foreground">
-                        Beautifully designed components built with Radix UI and
-                        Tailwind CSS.
+                        Beautifully designed components built with Radix UI and Tailwind CSS.
                       </p>
                     </a>
                   </NavigationMenu.Link>
                 </div>
                 <div className="grid gap-1">
-                  <NavigationMenu.Link href="/docs/introduction">
-                    Introduction
-                  </NavigationMenu.Link>
-                  <NavigationMenu.Link href="/docs/installation">
-                    Installation
-                  </NavigationMenu.Link>
+                  <NavigationMenu.Link href="/docs/introduction">Introduction</NavigationMenu.Link>
+                  <NavigationMenu.Link href="/docs/installation">Installation</NavigationMenu.Link>
                   <NavigationMenu.Link href="/docs/primitives/typography">
                     Typography
                   </NavigationMenu.Link>
@@ -129,41 +123,40 @@ export const InteractiveExample = {
               <div className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
                 {[
                   {
-                    title: "Alert Dialog",
-                    href: "/docs/primitives/alert-dialog",
+                    title: 'Alert Dialog',
+                    href: '/docs/primitives/alert-dialog',
                     description:
-                      "A modal dialog that interrupts the user with important content and expects a response.",
+                      'A modal dialog that interrupts the user with important content and expects a response.',
                   },
                   {
-                    title: "Hover Card",
-                    href: "/docs/primitives/hover-card",
-                    description:
-                      "For sighted users to preview content available behind a link.",
+                    title: 'Hover Card',
+                    href: '/docs/primitives/hover-card',
+                    description: 'For sighted users to preview content available behind a link.',
                   },
                   {
-                    title: "Progress",
-                    href: "/docs/primitives/progress",
+                    title: 'Progress',
+                    href: '/docs/primitives/progress',
                     description:
-                      "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",
+                      'Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.',
                   },
                   {
-                    title: "Scroll-area",
-                    href: "/docs/primitives/scroll-area",
-                    description: "Visually or semantically separates content.",
+                    title: 'Scroll-area',
+                    href: '/docs/primitives/scroll-area',
+                    description: 'Visually or semantically separates content.',
                   },
                   {
-                    title: "Tabs",
-                    href: "/docs/primitives/tabs",
+                    title: 'Tabs',
+                    href: '/docs/primitives/tabs',
                     description:
-                      "A set of layered sections of content—known as tab panels—that are displayed one at a time.",
+                      'A set of layered sections of content—known as tab panels—that are displayed one at a time.',
                   },
                   {
-                    title: "Tooltip",
-                    href: "/docs/primitives/tooltip",
+                    title: 'Tooltip',
+                    href: '/docs/primitives/tooltip',
                     description:
-                      "A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.",
+                      'A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.',
                   },
-                ].map((component) => (
+                ].map(component => (
                   <div key={component.title} className="grid gap-1">
                     <NavigationMenu.Link
                       href={component.href}
@@ -195,7 +188,7 @@ export const EnhancedFeatures = {
     loading: true,
     mobile: false,
   },
-  render: (args: any) => (
+  render: (args: object) => (
     <NavigationMenu {...args}>
       <NavigationMenu.List>
         <NavigationMenu.Item>
