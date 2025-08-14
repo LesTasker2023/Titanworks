@@ -6,7 +6,7 @@ import { useState } from 'react';
 
 export default function Home() {
   const [sliderValue, setSliderValue] = useState([75]);
-  
+
   return (
     <main
       style={{
@@ -21,6 +21,23 @@ export default function Home() {
         padding: '2rem',
       }}
     >
+      {/* Navigation Links */}
+      <div className="flex gap-4 mb-8">
+        <Link href="/component-showcase">
+          <Button
+            variant="outline"
+            className="text-white border-white hover:bg-white hover:text-black"
+          >
+            Component Showcase
+          </Button>
+        </Link>
+        <Link href="/dashboard">
+          <Button variant="default" className="bg-blue-600 hover:bg-blue-700">
+            Quality Dashboard
+          </Button>
+        </Link>
+      </div>
+
       {/* Logo */}
       <div className="logo" />
 
@@ -104,11 +121,17 @@ export default function Home() {
         </div>
 
         {/* Slider Integration Test */}
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', alignItems: 'center', minWidth: '200px' }}>
-          <div style={{ fontSize: '0.875rem', color: '#ccc' }}>
-            Slider: {sliderValue[0]}%
-          </div>
-          <Slider 
+        <div
+          style={{
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '0.5rem',
+            alignItems: 'center',
+            minWidth: '200px',
+          }}
+        >
+          <div style={{ fontSize: '0.875rem', color: '#ccc' }}>Slider: {sliderValue[0]}%</div>
+          <Slider
             value={sliderValue}
             onValueChange={setSliderValue}
             size="lg"
