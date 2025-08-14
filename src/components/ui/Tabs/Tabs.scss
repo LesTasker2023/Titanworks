@@ -1,0 +1,183 @@
+// Tabs SCSS Enhancements
+// Only features Tailwind can't handle
+
+.tabs {
+  // Smooth content transitions
+  &__content {
+    &[data-state="inactive"] {
+      animation: fadeOut 150ms ease-out forwards;
+    }
+
+    &[data-state="active"] {
+      animation: fadeIn 200ms ease-in forwards;
+    }
+  }
+
+  // Enhanced focus indicators
+  &__trigger {
+    position: relative;
+
+    &:focus-visible {
+      &::after {
+        content: "";
+        position: absolute;
+        inset: -2px;
+        border: 2px solid hsl(var(--ring));
+        border-radius: inherit;
+        animation: pulseRing 200ms ease-out;
+      }
+    }
+
+    // Active state indicator
+    &[data-state="active"] {
+      &::before {
+        content: "";
+        position: absolute;
+        bottom: -1px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: calc(100% - 8px);
+        height: 2px;
+        background: hsl(var(--primary));
+        border-radius: 1px;
+        animation: slideIn 200ms ease-out;
+      }
+    }
+  }
+
+  // Loading states
+  &__trigger--loading {
+    &::after {
+      content: "";
+      width: 12px;
+      height: 12px;
+      border: 2px solid hsl(var(--muted-foreground));
+      border-top-color: hsl(var(--primary));
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin-left: 6px;
+    }
+  }
+
+  // Badge indicators on tabs
+  &__trigger--badge {
+    &::after {
+      content: attr(data-badge);
+      position: absolute;
+      top: -4px;
+      right: -4px;
+      min-width: 16px;
+      height: 16px;
+      padding: 0 4px;
+      background: hsl(var(--destructive));
+      color: hsl(var(--destructive-foreground));
+      border-radius: 8px;
+      font-size: 10px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      line-height: 1;
+      animation: bounceIn 300ms ease-out;
+    }
+  }
+}
+
+// Animations
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    width: 0;
+  }
+  to {
+    width: calc(100% - 8px);
+  }
+}
+
+@keyframes pulseRing {
+  0% {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0;
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes bounceIn {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+// Vertical tabs variant
+.tabs--vertical {
+  .tabs__list {
+    flex-direction: column;
+    height: auto;
+    width: fit-content;
+  }
+
+  .tabs__trigger {
+    width: 100%;
+    justify-content: flex-start;
+
+    &[data-state="active"]::before {
+      left: -1px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 2px;
+      height: calc(100% - 8px);
+    }
+  }
+}
+
+// Responsive behavior
+@media (max-width: 640px) {
+  .tabs__list {
+    flex-wrap: wrap;
+    height: auto;
+  }
+
+  .tabs__trigger {
+    flex: 1;
+    min-width: fit-content;
+  }
+}

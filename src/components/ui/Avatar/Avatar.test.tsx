@@ -1,6 +1,6 @@
-import { describe, it, expect, vi } from 'vitest';
 import { render, screen } from '@testing-library/react';
-import Avatar, { AvatarImage, AvatarFallback } from './avatar';
+import { describe, expect, it, vi } from 'vitest';
+import Avatar from './avatar';
 
 describe('Avatar', () => {
   // ACTION 12: Debug-First DOM Investigation

@@ -1,8 +1,8 @@
 'use client';
 
-import * as React from 'react';
 import * as AvatarPrimitive from '@radix-ui/react-avatar';
 import { cva, type VariantProps } from 'class-variance-authority';
+import * as React from 'react';
 
 import { cn } from '@/lib/utils';
 // import './Avatar.scss'; // ✅ DISABLED FOR TESTING
@@ -106,4 +106,4 @@ const AvatarFallback = React.forwardRef<
 AvatarFallback.displayName = AvatarPrimitive.Fallback.displayName;
 
 export default Avatar;
-export { AvatarImage, AvatarFallback, avatarVariants };
+export { AvatarFallback, AvatarImage, avatarVariants };

@@ -1,15 +1,14 @@
 'use client';
 
+import { AlertCircle, CheckCircle, Info, Mail, XCircle } from 'lucide-react';
 import React, { useState } from 'react';
-import { AlertCircle, CheckCircle, Info, XCircle, Mail } from 'lucide-react';
 
 // Import all components
-import Button from '@/components/ui/Button/button';
-import Input from '@/components/ui/Input/input';
-import Badge from '@/components/ui/Badge/badge';
 import Alert from '@/components/ui/Alert/alert';
+import Avatar from '@/components/ui/Avatar/avatar';
+import Badge from '@/components/ui/Badge/badge';
+import Button from '@/components/ui/Button/button';
 import Checkbox from '@/components/ui/Checkbox/checkbox';
-import RadioGroup, { RadioGroupItem } from '@/components/ui/RadioGroup/radio-group';
 import Dialog, {
   DialogContent,
   DialogDescription,
@@ -18,15 +17,16 @@ import Dialog, {
   DialogTitle,
   DialogTrigger,
 } from '@/components/ui/Dialog/dialog';
+import Input from '@/components/ui/Input/input';
 import Progress from '@/components/ui/Progress/progress';
-import Textarea from '@/components/ui/Textarea/textarea';
+import RadioGroup, { RadioGroupItem } from '@/components/ui/RadioGroup/radio-group';
 import Select, {
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/Select/select';
-import Avatar from '@/components/ui/Avatar/avatar';
+import Textarea from '@/components/ui/Textarea/textarea';
 
 export default function ComponentShowcase() {
   const [progress, setProgress] = useState(33);
