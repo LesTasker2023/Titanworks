@@ -136,66 +136,60 @@ export default function ComponentLibraryShowcase() {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div className="max-w-7xl mx-auto px-6 py-8">
         {/* Header Section */}
-        <div className="text-center space-y-8 mb-20">
-          <div className="space-y-4">
-            <h1 className="text-4xl sm:text-5xl font-bold text-foreground tracking-tight">
+        <div className="text-center space-y-6 mb-16">
+          <div className="space-y-2">
+            <h1 className="text-5xl font-bold text-foreground tracking-tight">
               Component Library Showcase
             </h1>
-            <p className="text-lg sm:text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               Complete shadcn/ui component library with style guide compliance, enterprise-grade
               quality, and comprehensive accessibility support.
             </p>
           </div>
 
-          <div className="flex flex-wrap justify-center gap-3 max-w-4xl mx-auto">
+          <div className="flex flex-wrap justify-center gap-3">
             <Badge size="lg">✅ 100% Style Guide Compliant</Badge>
-            <Badge size="lg">🧪 604 Comprehensive Tests</Badge>
+            <Badge size="lg">🧪 539 Comprehensive Tests</Badge>
             <Badge size="lg">♿ Full Accessibility</Badge>
             <Badge size="lg">⚡ Production Ready</Badge>
           </div>
 
-          <div className="max-w-3xl mx-auto">
-            <Alert>
-              <CheckCircle className="h-4 w-4" />
+          <Alert>
+            <CheckCircle className="h-4 w-4" />
+            <div>
+              <div className="font-semibold">Library Complete!</div>
               <div>
-                <div className="font-semibold">Library Complete!</div>
-                <div>
-                  All 15 components successfully developed using our streamlined 6-step process.
-                </div>
+                All 15 components successfully developed using our streamlined 6-step process.
               </div>
-            </Alert>
-          </div>
+            </div>
+          </Alert>
         </div>
 
         {/* Component Sections */}
-        <div className="space-y-24">
-          {/* 1. INTERACTIVE COMPONENTS SECTION */}
-          <section id="buttons" className="space-y-12">
-            <div className="text-center space-y-3">
+        <div className="space-y-20">
+          {/* 1. BUTTONS SECTION */}
+          <section id="buttons" className="space-y-8">
+            <div className="text-center space-y-2">
               <h2 className="text-3xl font-bold text-foreground">Interactive Components</h2>
-              <p className="text-muted-foreground text-lg">Buttons, inputs, and form controls</p>
+              <p className="text-muted-foreground">Buttons, inputs, and form controls</p>
             </div>
 
             {/* Button Showcase */}
-            <div className="bg-card border border-border rounded-lg p-8 space-y-8">
-              <div className="text-center">
-                <h3 className="text-2xl font-semibold text-foreground flex items-center justify-center gap-3">
-                  <span className="w-10 h-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-sm font-bold">
-                    1
-                  </span>
-                  Button Component
-                </h3>
-              </div>
+            <div className="space-y-6">
+              <h3 className="text-2xl font-semibold text-foreground flex items-center gap-2">
+                <span className="w-8 h-8 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-sm font-bold">
+                  1
+                </span>
+                Button Component
+              </h3>
 
-              <div className="grid gap-10">
+              <div className="grid gap-8">
                 {/* Color Variants */}
-                <div className="space-y-6">
-                  <h4 className="text-lg font-medium text-foreground text-center">
-                    Color Variants
-                  </h4>
-                  <div className="flex flex-wrap justify-center gap-4">
+                <div className="space-y-4">
+                  <h4 className="text-lg font-medium text-foreground">Color Variants</h4>
+                  <div className="flex flex-wrap gap-4">
                     <Button variant="default">Default Button</Button>
                     <Button variant="destructive">Destructive Button</Button>
                     <Button variant="secondary">Secondary</Button>
@@ -205,9 +199,9 @@ export default function ComponentLibraryShowcase() {
                 </div>
 
                 {/* Size Variants */}
-                <div className="space-y-6">
-                  <h4 className="text-lg font-medium text-foreground text-center">Size Variants</h4>
-                  <div className="flex flex-wrap justify-center items-center gap-4">
+                <div className="space-y-4">
+                  <h4 className="text-lg font-medium text-foreground">Size Variants</h4>
+                  <div className="flex flex-wrap items-center gap-4">
                     <Button size="sm">Small</Button>
                     <Button size="default">Default</Button>
                     <Button size="lg">Large</Button>
@@ -216,9 +210,9 @@ export default function ComponentLibraryShowcase() {
                 </div>
 
                 {/* States */}
-                <div className="space-y-6">
-                  <h4 className="text-lg font-medium text-foreground text-center">States</h4>
-                  <div className="flex flex-wrap justify-center gap-4">
+                <div className="space-y-4">
+                  <h4 className="text-lg font-medium text-foreground">States</h4>
+                  <div className="flex flex-wrap gap-4">
                     <Button loading>Loading Button</Button>
                     <Button disabled>Disabled Button</Button>
                     <Button variant="destructive" loading>
@@ -233,20 +227,18 @@ export default function ComponentLibraryShowcase() {
             </div>
 
             {/* Input Showcase */}
-            <div className="bg-card border border-border rounded-lg p-8 space-y-8">
-              <div className="text-center">
-                <h3 className="text-2xl font-semibold text-foreground flex items-center justify-center gap-3">
-                  <span className="w-10 h-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-sm font-bold">
-                    2
-                  </span>
-                  Input Component
-                </h3>
-              </div>
+            <div className="space-y-6">
+              <h3 className="text-2xl font-semibold text-foreground flex items-center gap-2">
+                <span className="w-8 h-8 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-sm font-bold">
+                  2
+                </span>
+                Input Component
+              </h3>
 
-              <div className="grid gap-8 max-w-2xl mx-auto">
+              <div className="grid gap-8 max-w-2xl">
                 {/* Basic Inputs */}
-                <div className="space-y-6">
-                  <h4 className="text-lg font-medium text-foreground text-center">Basic Inputs</h4>
+                <div className="space-y-4">
+                  <h4 className="text-lg font-medium text-foreground">Basic Inputs</h4>
                   <div className="space-y-4">
                     <Input
                       placeholder="Default input..."
@@ -259,8 +251,8 @@ export default function ComponentLibraryShowcase() {
                 </div>
 
                 {/* States */}
-                <div className="space-y-6">
-                  <h4 className="text-lg font-medium text-foreground text-center">States</h4>
+                <div className="space-y-4">
+                  <h4 className="text-lg font-medium text-foreground">States</h4>
                   <div className="space-y-4">
                     <Input loading placeholder="Loading input..." />
                     <Input disabled placeholder="Disabled input..." />
@@ -270,43 +262,41 @@ export default function ComponentLibraryShowcase() {
             </div>
 
             {/* Textarea Showcase */}
-            <div className="bg-card border border-border rounded-lg p-8 space-y-8">
-              <div className="text-center">
-                <h3 className="text-2xl font-semibold text-foreground flex items-center justify-center gap-3">
-                  <span className="w-10 h-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-sm font-bold">
-                    3
-                  </span>
-                  Textarea Component
-                </h3>
-              </div>
+            <div className="space-y-6">
+              <h3 className="text-2xl font-semibold text-foreground flex items-center gap-2">
+                <span className="w-8 h-8 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-sm font-bold">
+                  3
+                </span>
+                Textarea Component
+              </h3>
 
-              <div className="grid gap-6 max-w-2xl mx-auto">
+              <div className="grid gap-8 max-w-2xl">
                 <div className="space-y-4">
-                  <Textarea
-                    placeholder="Enter your message..."
-                    value={textareaValue}
-                    onChange={e => setTextareaValue(e.target.value)}
-                    rows={4}
-                  />
-                  <Textarea placeholder="With error..." error="Message is required" rows={3} />
-                  <Textarea loading placeholder="Loading..." rows={3} />
-                  <Textarea disabled placeholder="Disabled textarea..." rows={3} />
+                  <div className="space-y-4">
+                    <Textarea
+                      placeholder="Enter your message..."
+                      value={textareaValue}
+                      onChange={e => setTextareaValue(e.target.value)}
+                      rows={4}
+                    />
+                    <Textarea placeholder="With error..." error="Message is required" rows={3} />
+                    <Textarea loading placeholder="Loading..." rows={3} />
+                    <Textarea disabled placeholder="Disabled textarea..." rows={3} />
+                  </div>
                 </div>
               </div>
             </div>
 
             {/* Select Showcase */}
-            <div className="bg-card border border-border rounded-lg p-8 space-y-8">
-              <div className="text-center">
-                <h3 className="text-2xl font-semibold text-foreground flex items-center justify-center gap-3">
-                  <span className="w-10 h-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-sm font-bold">
-                    4
-                  </span>
-                  Select Component
-                </h3>
-              </div>
+            <div className="space-y-6">
+              <h3 className="text-2xl font-semibold text-foreground flex items-center gap-2">
+                <span className="w-8 h-8 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-sm font-bold">
+                  4
+                </span>
+                Select Component
+              </h3>
 
-              <div className="grid gap-6 max-w-md mx-auto">
+              <div className="grid gap-8 max-w-md">
                 <div className="space-y-4">
                   <Select value={selectValue} onValueChange={setSelectValue}>
                     <SelectTrigger>
@@ -332,22 +322,20 @@ export default function ComponentLibraryShowcase() {
             </div>
 
             {/* Checkbox & Radio Showcase */}
-            <div className="bg-card border border-border rounded-lg p-8 space-y-8">
-              <div className="text-center">
-                <h3 className="text-2xl font-semibold text-foreground flex items-center justify-center gap-3">
-                  <span className="w-10 h-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-sm font-bold">
-                    5
-                  </span>
-                  Checkbox & RadioGroup Components
-                </h3>
-              </div>
+            <div className="space-y-6">
+              <h3 className="text-2xl font-semibold text-foreground flex items-center gap-2">
+                <span className="w-8 h-8 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-sm font-bold">
+                  5
+                </span>
+                Checkbox & RadioGroup Components
+              </h3>
 
-              <div className="grid md:grid-cols-2 gap-10 max-w-4xl mx-auto">
+              <div className="grid md:grid-cols-2 gap-8">
                 {/* Checkboxes */}
-                <div className="space-y-6">
-                  <h4 className="text-lg font-medium text-foreground text-center">Checkboxes</h4>
+                <div className="space-y-4">
+                  <h4 className="text-lg font-medium text-foreground">Checkboxes</h4>
                   <div className="space-y-4">
-                    <div className="flex items-center space-x-3">
+                    <div className="flex items-center space-x-2">
                       <Checkbox
                         id="checkbox-1"
                         checked={checkboxState === true}
@@ -357,13 +345,13 @@ export default function ComponentLibraryShowcase() {
                         Default checkbox
                       </label>
                     </div>
-                    <div className="flex items-center space-x-3">
+                    <div className="flex items-center space-x-2">
                       <Checkbox id="checkbox-2" checked="indeterminate" />
                       <label htmlFor="checkbox-2" className="text-sm">
                         Indeterminate state
                       </label>
                     </div>
-                    <div className="flex items-center space-x-3">
+                    <div className="flex items-center space-x-2">
                       <Checkbox id="checkbox-3" disabled />
                       <label htmlFor="checkbox-3" className="text-sm text-muted-foreground">
                         Disabled checkbox
@@ -373,22 +361,22 @@ export default function ComponentLibraryShowcase() {
                 </div>
 
                 {/* Radio Groups */}
-                <div className="space-y-6">
-                  <h4 className="text-lg font-medium text-foreground text-center">Radio Groups</h4>
+                <div className="space-y-4">
+                  <h4 className="text-lg font-medium text-foreground">Radio Groups</h4>
                   <RadioGroup value={radioValue} onValueChange={setRadioValue}>
-                    <div className="flex items-center space-x-3">
+                    <div className="flex items-center space-x-2">
                       <RadioGroupItem value="option1" id="radio-1" />
                       <label htmlFor="radio-1" className="text-sm">
                         Option 1
                       </label>
                     </div>
-                    <div className="flex items-center space-x-3">
+                    <div className="flex items-center space-x-2">
                       <RadioGroupItem value="option2" id="radio-2" />
                       <label htmlFor="radio-2" className="text-sm">
                         Option 2
                       </label>
                     </div>
-                    <div className="flex items-center space-x-3">
+                    <div className="flex items-center space-x-2">
                       <RadioGroupItem value="option3" id="radio-3" disabled />
                       <label htmlFor="radio-3" className="text-sm text-muted-foreground">
                         Disabled option
@@ -400,19 +388,17 @@ export default function ComponentLibraryShowcase() {
             </div>
 
             {/* Slider Showcase */}
-            <div className="bg-card border border-border rounded-lg p-8 space-y-8">
-              <div className="text-center">
-                <h3 className="text-2xl font-semibold text-foreground flex items-center justify-center gap-3">
-                  <span className="w-10 h-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-sm font-bold">
-                    6
-                  </span>
-                  Slider Component
-                </h3>
-              </div>
+            <div className="space-y-6">
+              <h3 className="text-2xl font-semibold text-foreground flex items-center gap-2">
+                <span className="w-8 h-8 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-sm font-bold">
+                  6
+                </span>
+                Slider Component
+              </h3>
 
-              <div className="space-y-10 max-w-lg mx-auto">
-                <div className="space-y-6">
-                  <h4 className="text-lg font-medium text-foreground text-center">Basic Slider</h4>
+              <div className="space-y-8 max-w-md">
+                <div className="space-y-4">
+                  <h4 className="text-lg font-medium text-foreground">Basic Slider</h4>
                   <Slider
                     value={sliderValue}
                     onValueChange={setSliderValue}
@@ -423,11 +409,9 @@ export default function ComponentLibraryShowcase() {
                   />
                 </div>
 
-                <div className="space-y-6">
-                  <h4 className="text-lg font-medium text-foreground text-center">
-                    Variants & States
-                  </h4>
-                  <div className="space-y-6">
+                <div className="space-y-4">
+                  <h4 className="text-lg font-medium text-foreground">Variants & States</h4>
+                  <div className="space-y-4">
                     <div className="space-y-2">
                       <label className="text-sm text-muted-foreground">Success variant</label>
                       <Slider defaultValue={[75]} variant="success" showValue />
@@ -447,26 +431,22 @@ export default function ComponentLibraryShowcase() {
           </section>
 
           {/* 2. FEEDBACK & STATUS SECTION */}
-          <section className="space-y-12">
-            <div className="text-center space-y-3">
+          <section className="space-y-8">
+            <div className="text-center space-y-2">
               <h2 className="text-3xl font-bold text-foreground">Feedback & Status</h2>
-              <p className="text-muted-foreground text-lg">
-                Alerts, progress, and status indicators
-              </p>
+              <p className="text-muted-foreground">Alerts, progress, and status indicators</p>
             </div>
 
             {/* Alert Showcase */}
-            <div className="bg-card border border-border rounded-lg p-8 space-y-8">
-              <div className="text-center">
-                <h3 className="text-2xl font-semibold text-foreground flex items-center justify-center gap-3">
-                  <span className="w-10 h-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-sm font-bold">
-                    7
-                  </span>
-                  Alert Component
-                </h3>
-              </div>
+            <div className="space-y-6">
+              <h3 className="text-2xl font-semibold text-foreground flex items-center gap-2">
+                <span className="w-8 h-8 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-sm font-bold">
+                  7
+                </span>
+                Alert Component
+              </h3>
 
-              <div className="space-y-6 max-w-3xl mx-auto">
+              <div className="space-y-4 max-w-2xl">
                 <Alert variant="default">
                   <Info className="h-4 w-4" />
                   <div>
@@ -502,21 +482,19 @@ export default function ComponentLibraryShowcase() {
             </div>
 
             {/* Progress Showcase */}
-            <div className="bg-card border border-border rounded-lg p-8 space-y-8">
-              <div className="text-center">
-                <h3 className="text-2xl font-semibold text-foreground flex items-center justify-center gap-3">
-                  <span className="w-10 h-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-sm font-bold">
-                    8
-                  </span>
-                  Progress Component
-                </h3>
-              </div>
+            <div className="space-y-6">
+              <h3 className="text-2xl font-semibold text-foreground flex items-center gap-2">
+                <span className="w-8 h-8 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-sm font-bold">
+                  8
+                </span>
+                Progress Component
+              </h3>
 
-              <div className="space-y-10 max-w-lg mx-auto">
-                <div className="space-y-6">
-                  <h4 className="text-lg font-medium text-foreground text-center">Variants</h4>
-                  <div className="space-y-6">
-                    <div className="space-y-3">
+              <div className="space-y-6 max-w-md">
+                <div className="space-y-4">
+                  <h4 className="text-lg font-medium text-foreground">Variants</h4>
+                  <div className="space-y-4">
+                    <div className="space-y-2">
                       <div className="flex justify-between text-sm">
                         <span>Default Progress</span>
                         <span>{progress}%</span>
@@ -524,7 +502,7 @@ export default function ComponentLibraryShowcase() {
                       <Progress value={progress} />
                     </div>
 
-                    <div className="space-y-3">
+                    <div className="space-y-2">
                       <div className="flex justify-between text-sm">
                         <span>Success Progress</span>
                         <span>90%</span>
@@ -532,7 +510,7 @@ export default function ComponentLibraryShowcase() {
                       <Progress value={90} variant="success" />
                     </div>
 
-                    <div className="space-y-3">
+                    <div className="space-y-2">
                       <div className="flex justify-between text-sm">
                         <span>Warning Progress</span>
                         <span>70%</span>
@@ -542,21 +520,12 @@ export default function ComponentLibraryShowcase() {
                   </div>
                 </div>
 
-                <div className="space-y-6">
-                  <h4 className="text-lg font-medium text-foreground text-center">Sizes</h4>
+                <div className="space-y-4">
+                  <h4 className="text-lg font-medium text-foreground">Sizes</h4>
                   <div className="space-y-4">
-                    <div className="space-y-2">
-                      <span className="text-sm text-muted-foreground">Small</span>
-                      <Progress value={75} size="sm" />
-                    </div>
-                    <div className="space-y-2">
-                      <span className="text-sm text-muted-foreground">Default</span>
-                      <Progress value={75} size="default" />
-                    </div>
-                    <div className="space-y-2">
-                      <span className="text-sm text-muted-foreground">Large</span>
-                      <Progress value={75} size="lg" />
-                    </div>
+                    <Progress value={75} size="sm" />
+                    <Progress value={75} size="default" />
+                    <Progress value={75} size="lg" />
                   </div>
                 </div>
               </div>
