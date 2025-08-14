@@ -10,5 +10,5 @@ export {
   type ToastActionElement,
   type ToastProps,
 } from './toast';
-export { useToast, toast } from './use-toast';
 export { Toaster } from './toaster';
+export { toast, useToast } from './use-toast';
