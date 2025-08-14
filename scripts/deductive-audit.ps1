@@ -1,12 +1,17 @@
 # TriggerKings Deductive Smart Audit - Start at 100, lose points for failures
 param(
-    [string]$OutputFile = "QUALITY_REPORT.md",
-    [string]$JsonReport = "quality-report.json",
+    [string]$OutputFile = "reports\QUALITY_REPORT.md",
+    [string]$JsonReport = "reports\quality-report.json",
     [string[]]$ComponentFilter = @(),
     [switch]$ListComponents
 )
 
 Write-Host "TRIGGERKINGS DEDUCTIVE SMART AUDIT" -ForegroundColor Cyan
+
+# Ensure reports directory exists
+if (-not (Test-Path "reports")) {
+    New-Item -ItemType Directory -Path "reports" | Out-Null
+}
 
 # Component-specific prop requirements - only test what should exist
 $ComponentSpecs = @{
@@ -489,7 +494,7 @@ if ($IsFullAudit) {
     
 } else {
     # Component-specific audit - individual report
-    $ComponentReportFile = "quality-report-$($ComponentFilter -join '-').json"
+    $ComponentReportFile = "reports\quality-report-$($ComponentFilter -join '-').json"
     Write-Host "Generating component-specific JSON report..." -ForegroundColor Yellow
     
     $ComponentReport = @{
@@ -693,5 +698,5 @@ if ($IsFullAudit) {
     Write-Host "  - Markdown: $OutputFile" -ForegroundColor Cyan
     Write-Host "  - JSON: $JsonReport" -ForegroundColor Cyan
 } else {
-    Write-Host "  - Component JSON: quality-report-$($ComponentFilter -join '-').json" -ForegroundColor Cyan
+    Write-Host "  - Component JSON: $ComponentReportFile" -ForegroundColor Cyan
 }

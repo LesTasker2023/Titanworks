@@ -13,6 +13,9 @@ _Complete quality assurance and testing guide_
 # Full validation
 node scripts\validate-component.js src\components\ui\Button
 
+# Run deductive audit (outputs to reports/ folder)
+powershell scripts\deductive-audit.ps1
+
 # Build test
 yarn build
 
