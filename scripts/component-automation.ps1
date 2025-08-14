@@ -166,10 +166,10 @@ function Invoke-Validation {
             $TestCount = ([regex]::Matches($TestContent, "it\(")).Count
             Write-Host "    Found $TestCount test cases" -ForegroundColor Cyan
             
-            if ($TestCount -ge 30) {
+            if ($TestCount -ge 35) {
                 $Score += 10
-                Write-Host "    [+10] Excellent test coverage (30+ tests)" -ForegroundColor Green
-            } elseif ($TestCount -ge 20) {
+                Write-Host "    [+10] Excellent test coverage (35+ tests)" -ForegroundColor Green
+            } elseif ($TestCount -ge 25) {
                 $Score += 5
                 Write-Host "    [+5] Good test coverage ($TestCount tests)" -ForegroundColor Yellow
             } else {
@@ -177,7 +177,7 @@ function Invoke-Validation {
             }
             
             # Test categories
-            $Categories = @("Rendering", "Variants", "Events", "Enhanced Features", "Edge Cases", "Accessibility")
+            $Categories = @("Rendering", "Snapshots", "Variants", "Events", "Enhanced Features", "Edge Cases", "Accessibility")
             $CategoriesFound = 0
             foreach ($category in $Categories) {
                 if ($TestContent -match "describe.*$category") {
@@ -185,11 +185,14 @@ function Invoke-Validation {
                 }
             }
             
-            if ($CategoriesFound -ge 5) {
+            if ($CategoriesFound -ge 6) {
                 $Score += 5
-                Write-Host "    [+5] Good test category coverage ($CategoriesFound/6)" -ForegroundColor Green
+                Write-Host "    [+5] Excellent test category coverage ($CategoriesFound/7)" -ForegroundColor Green
+            } elseif ($CategoriesFound -ge 4) {
+                $Score += 3
+                Write-Host "    [+3] Good test category coverage ($CategoriesFound/7)" -ForegroundColor Yellow
             } else {
-                Write-Host "    [-5] Poor test category coverage ($CategoriesFound/6)" -ForegroundColor Red
+                Write-Host "    [-5] Poor test category coverage ($CategoriesFound/7)" -ForegroundColor Red
             }
         }
     } else {
@@ -376,6 +379,43 @@ describe('$ComponentName', () => {
       expect(ref.current).toBeInTheDocument();
     });
   });
+
+  describe('Snapshots', () => {
+    it('matches default snapshot', () => {
+      const { container } = render(<$ComponentName>Default</$ComponentName>);
+      expect(container.firstChild).toMatchSnapshot();
+    });
+    it('matches all variants snapshot', () => {
+      const { container } = render(
+        <div>
+          <$ComponentName variant="default">Default</$ComponentName>
+          <$ComponentName variant="success">Success</$ComponentName>
+          <$ComponentName variant="warning">Warning</$ComponentName>
+          <$ComponentName variant="danger">Danger</$ComponentName>
+        </div>
+      );
+      expect(container.firstChild).toMatchSnapshot();
+    });
+    it('matches all sizes snapshot', () => {
+      const { container } = render(
+        <div>
+          <$ComponentName size="sm">Small</$ComponentName>
+          <$ComponentName size="default">Default</$ComponentName>
+          <$ComponentName size="lg">Large</$ComponentName>
+          <$ComponentName size="xl">Extra Large</$ComponentName>
+        </div>
+      );
+      expect(container.firstChild).toMatchSnapshot();
+    });
+    it('matches loading state snapshot', () => {
+      const { container } = render(<$ComponentName loading>Loading</$ComponentName>);
+      expect(container.firstChild).toMatchSnapshot();
+    });
+    it('matches disabled state snapshot', () => {
+      const { container } = render(<$ComponentName disabled>Disabled</$ComponentName>);
+      expect(container.firstChild).toMatchSnapshot();
+    });
+  });
   
   describe('Variants', () => {
     it('renders default variant', () => {
@@ -502,7 +542,7 @@ describe('$ComponentName', () => {
 });
 "@
         $TestContent | Out-File "$ComponentPath\$ComponentName.test.tsx" -Encoding UTF8
-        Write-Host "[OK] Created $ComponentName.test.tsx (32 tests)" -ForegroundColor Green
+        Write-Host "[OK] Created $ComponentName.test.tsx (37 tests + 5 snapshots)" -ForegroundColor Green
         
         Write-Host ""
         Write-Host "[SETUP COMPLETE] Component structure created successfully!" -ForegroundColor Green

@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react';
+﻿import { render, screen } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
 import {
   NavigationMenu,
@@ -24,6 +24,41 @@ describe('NavigationMenu Component', () => {
     expect(screen.getByText('Home')).toBeInTheDocument();
   });
 
+  describe('Snapshots', () => {
+    it('matches default snapshot', () => {
+      const { container } = render(<NavigationMenu>Default</NavigationMenu>);
+      expect(container.firstChild).toMatchSnapshot();
+    });
+    it('matches all variants snapshot', () => {
+      const { container } = render(
+        <div data-testid="variants-container">
+          <NavigationMenu variant="default">Default</NavigationMenu>
+          <NavigationMenu variant="destructive">Destructive</NavigationMenu>
+          <NavigationMenu variant="outline">Outline</NavigationMenu>
+          <NavigationMenu variant="secondary">Secondary</NavigationMenu>
+        </div>
+      );
+      expect(container.firstChild).toMatchSnapshot();
+    });
+    it('matches all sizes snapshot', () => {
+      const { container } = render(
+        <div data-testid="sizes-container">
+          <NavigationMenu size="sm">Small</NavigationMenu>
+          <NavigationMenu size="default">Default</NavigationMenu>
+          <NavigationMenu size="lg">Large</NavigationMenu>
+        </div>
+      );
+      expect(container.firstChild).toMatchSnapshot();
+    });
+    it('matches disabled state snapshot', () => {
+      const { container } = render(<NavigationMenu disabled>Disabled</NavigationMenu>);
+      expect(container.firstChild).toMatchSnapshot();
+    });
+    it('matches loading state snapshot', () => {
+      const { container } = render(<NavigationMenu loading>Loading</NavigationMenu>);
+      expect(container.firstChild).toMatchSnapshot();
+    });
+  });
   it('renders with proper accessibility attributes', () => {
     render(
       <NavigationMenu>

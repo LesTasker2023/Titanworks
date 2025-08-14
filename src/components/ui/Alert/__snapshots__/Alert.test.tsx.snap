@@ -1,0 +1,85 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Enhanced Alert Component > ðŸ”§ Basic Functionality (6 tests) > Snapshots > matches all sizes snapshot 1`] = `
+<div
+  data-testid="sizes-container"
+>
+  <div
+    class="relative w-full rounded-lg border px-4 py-3 text-sm [&>svg+div]:translate-y-[-3px] [&>svg]:absolute [&>svg]:left-4 [&>svg]:top-4 [&>svg]:text-foreground [&>svg~*]:pl-7 bg-background text-foreground alert"
+    role="alert"
+  >
+    Small
+  </div>
+  <div
+    class="relative w-full rounded-lg border px-4 py-3 text-sm [&>svg+div]:translate-y-[-3px] [&>svg]:absolute [&>svg]:left-4 [&>svg]:top-4 [&>svg]:text-foreground [&>svg~*]:pl-7 bg-background text-foreground alert"
+    role="alert"
+  >
+    Default
+  </div>
+  <div
+    class="relative w-full rounded-lg border px-4 py-3 text-sm [&>svg+div]:translate-y-[-3px] [&>svg]:absolute [&>svg]:left-4 [&>svg]:top-4 [&>svg]:text-foreground [&>svg~*]:pl-7 bg-background text-foreground alert"
+    role="alert"
+  >
+    Large
+  </div>
+</div>
+`;
+
+exports[`Enhanced Alert Component > ðŸ”§ Basic Functionality (6 tests) > Snapshots > matches all variants snapshot 1`] = `
+<div
+  data-testid="variants-container"
+>
+  <div
+    class="relative w-full rounded-lg border px-4 py-3 text-sm [&>svg+div]:translate-y-[-3px] [&>svg]:absolute [&>svg]:left-4 [&>svg]:top-4 [&>svg]:text-foreground [&>svg~*]:pl-7 bg-background text-foreground alert"
+    role="alert"
+  >
+    Default
+  </div>
+  <div
+    class="relative w-full rounded-lg border px-4 py-3 text-sm [&>svg+div]:translate-y-[-3px] [&>svg]:absolute [&>svg]:left-4 [&>svg]:top-4 [&>svg~*]:pl-7 border-destructive/50 text-destructive dark:border-destructive [&>svg]:text-destructive alert"
+    role="alert"
+  >
+    Destructive
+  </div>
+  <div
+    class="relative w-full rounded-lg border px-4 py-3 text-sm [&>svg+div]:translate-y-[-3px] [&>svg]:absolute [&>svg]:left-4 [&>svg]:top-4 [&>svg]:text-foreground [&>svg~*]:pl-7 alert"
+    role="alert"
+  >
+    Outline
+  </div>
+  <div
+    class="relative w-full rounded-lg border px-4 py-3 text-sm [&>svg+div]:translate-y-[-3px] [&>svg]:absolute [&>svg]:left-4 [&>svg]:top-4 [&>svg]:text-foreground [&>svg~*]:pl-7 alert"
+    role="alert"
+  >
+    Secondary
+  </div>
+</div>
+`;
+
+exports[`Enhanced Alert Component > ðŸ”§ Basic Functionality (6 tests) > Snapshots > matches default snapshot 1`] = `
+<div
+  class="relative w-full rounded-lg border px-4 py-3 text-sm [&>svg+div]:translate-y-[-3px] [&>svg]:absolute [&>svg]:left-4 [&>svg]:top-4 [&>svg]:text-foreground [&>svg~*]:pl-7 bg-background text-foreground alert"
+  role="alert"
+>
+  Default
+</div>
+`;
+
+exports[`Enhanced Alert Component > ðŸ”§ Basic Functionality (6 tests) > Snapshots > matches disabled state snapshot 1`] = `
+<div
+  class="relative w-full rounded-lg border px-4 py-3 text-sm [&>svg+div]:translate-y-[-3px] [&>svg]:absolute [&>svg]:left-4 [&>svg]:top-4 [&>svg]:text-foreground [&>svg~*]:pl-7 bg-background text-foreground alert"
+  disabled=""
+  role="alert"
+>
+  Disabled
+</div>
+`;
+
+exports[`Enhanced Alert Component > ðŸ”§ Basic Functionality (6 tests) > Snapshots > matches loading state snapshot 1`] = `
+<div
+  class="relative w-full rounded-lg border px-4 py-3 text-sm [&>svg+div]:translate-y-[-3px] [&>svg]:absolute [&>svg]:left-4 [&>svg]:top-4 [&>svg]:text-foreground [&>svg~*]:pl-7 bg-background text-foreground alert"
+  role="alert"
+>
+  Loading
+</div>
+`;

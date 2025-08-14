@@ -1,4 +1,4 @@
-import { act, fireEvent, render, screen, waitFor } from '@testing-library/react';
+﻿import { act, fireEvent, render, screen, waitFor } from '@testing-library/react';
 import { describe, expect, it, vi } from 'vitest';
 import Slider from './slider';
 
@@ -10,6 +10,41 @@ describe('Slider Component', () => {
       expect(screen.getByRole('slider')).toBeInTheDocument();
     });
 
+    describe('Snapshots', () => {
+      it('matches default snapshot', () => {
+        const { container } = render(<Slider>Default</Slider>);
+        expect(container.firstChild).toMatchSnapshot();
+      });
+      it('matches all variants snapshot', () => {
+        const { container } = render(
+          <div data-testid="variants-container">
+            <Slider variant="default">Default</Slider>
+            <Slider variant="destructive">Destructive</Slider>
+            <Slider variant="outline">Outline</Slider>
+            <Slider variant="secondary">Secondary</Slider>
+          </div>
+        );
+        expect(container.firstChild).toMatchSnapshot();
+      });
+      it('matches all sizes snapshot', () => {
+        const { container } = render(
+          <div data-testid="sizes-container">
+            <Slider size="sm">Small</Slider>
+            <Slider size="default">Default</Slider>
+            <Slider size="lg">Large</Slider>
+          </div>
+        );
+        expect(container.firstChild).toMatchSnapshot();
+      });
+      it('matches disabled state snapshot', () => {
+        const { container } = render(<Slider disabled>Disabled</Slider>);
+        expect(container.firstChild).toMatchSnapshot();
+      });
+      it('matches loading state snapshot', () => {
+        const { container } = render(<Slider loading>Loading</Slider>);
+        expect(container.firstChild).toMatchSnapshot();
+      });
+    });
     it('renders with default value', () => {
       render(<Slider defaultValue={[75]} />);
       const slider = screen.getByRole('slider');

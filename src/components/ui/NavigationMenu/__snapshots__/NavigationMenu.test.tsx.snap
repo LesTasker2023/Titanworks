@@ -1,0 +1,139 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`NavigationMenu Component > Snapshots > matches all sizes snapshot 1`] = `
+<div
+  data-testid="sizes-container"
+>
+  <nav
+    aria-label="Main"
+    class="relative z-10 flex max-w-max flex-1 items-center justify-center"
+    data-orientation="horizontal"
+    dir="ltr"
+  >
+    Small
+    <div
+      class="absolute left-0 top-full flex justify-center"
+    />
+  </nav>
+  <nav
+    aria-label="Main"
+    class="relative z-10 flex max-w-max flex-1 items-center justify-center"
+    data-orientation="horizontal"
+    dir="ltr"
+  >
+    Default
+    <div
+      class="absolute left-0 top-full flex justify-center"
+    />
+  </nav>
+  <nav
+    aria-label="Main"
+    class="relative z-10 flex max-w-max flex-1 items-center justify-center"
+    data-orientation="horizontal"
+    dir="ltr"
+  >
+    Large
+    <div
+      class="absolute left-0 top-full flex justify-center"
+    />
+  </nav>
+</div>
+`;
+
+exports[`NavigationMenu Component > Snapshots > matches all variants snapshot 1`] = `
+<div
+  data-testid="variants-container"
+>
+  <nav
+    aria-label="Main"
+    class="relative z-10 flex max-w-max flex-1 items-center justify-center"
+    data-orientation="horizontal"
+    dir="ltr"
+    variant="default"
+  >
+    Default
+    <div
+      class="absolute left-0 top-full flex justify-center"
+    />
+  </nav>
+  <nav
+    aria-label="Main"
+    class="relative z-10 flex max-w-max flex-1 items-center justify-center"
+    data-orientation="horizontal"
+    dir="ltr"
+    variant="destructive"
+  >
+    Destructive
+    <div
+      class="absolute left-0 top-full flex justify-center"
+    />
+  </nav>
+  <nav
+    aria-label="Main"
+    class="relative z-10 flex max-w-max flex-1 items-center justify-center"
+    data-orientation="horizontal"
+    dir="ltr"
+    variant="outline"
+  >
+    Outline
+    <div
+      class="absolute left-0 top-full flex justify-center"
+    />
+  </nav>
+  <nav
+    aria-label="Main"
+    class="relative z-10 flex max-w-max flex-1 items-center justify-center"
+    data-orientation="horizontal"
+    dir="ltr"
+    variant="secondary"
+  >
+    Secondary
+    <div
+      class="absolute left-0 top-full flex justify-center"
+    />
+  </nav>
+</div>
+`;
+
+exports[`NavigationMenu Component > Snapshots > matches default snapshot 1`] = `
+<nav
+  aria-label="Main"
+  class="relative z-10 flex max-w-max flex-1 items-center justify-center"
+  data-orientation="horizontal"
+  dir="ltr"
+>
+  Default
+  <div
+    class="absolute left-0 top-full flex justify-center"
+  />
+</nav>
+`;
+
+exports[`NavigationMenu Component > Snapshots > matches disabled state snapshot 1`] = `
+<nav
+  aria-label="Main"
+  class="relative z-10 flex max-w-max flex-1 items-center justify-center"
+  data-orientation="horizontal"
+  dir="ltr"
+  disabled=""
+>
+  Disabled
+  <div
+    class="absolute left-0 top-full flex justify-center"
+  />
+</nav>
+`;
+
+exports[`NavigationMenu Component > Snapshots > matches loading state snapshot 1`] = `
+<nav
+  aria-label="Main"
+  class="relative z-10 flex max-w-max flex-1 items-center justify-center"
+  data-orientation="horizontal"
+  dir="ltr"
+>
+  Loading
+  <div
+    class="absolute left-0 top-full flex justify-center"
+  />
+</nav>
+`;

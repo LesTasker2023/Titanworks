@@ -1,4 +1,4 @@
-import { fireEvent, render, screen, waitFor } from '@testing-library/react';
+﻿import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import { beforeEach, describe, expect, test, vi } from 'vitest';
 import Checkbox from './checkbox';
 
@@ -13,7 +13,42 @@ describe('Enhanced Checkbox Component', () => {
     vi.clearAllMocks();
   });
 
-  describe('🎨 Rendering Tests (8 tests)', () => {
+  describe('Snapshots', () => {
+    it('matches default snapshot', () => {
+      const { container } = render(<Checkbox>Default</Checkbox>);
+      expect(container.firstChild).toMatchSnapshot();
+    });
+    it('matches all variants snapshot', () => {
+      const { container } = render(
+        <div data-testid="variants-container">
+          <Checkbox variant="default">Default</Checkbox>
+          <Checkbox variant="destructive">Destructive</Checkbox>
+          <Checkbox variant="outline">Outline</Checkbox>
+          <Checkbox variant="secondary">Secondary</Checkbox>
+        </div>
+      );
+      expect(container.firstChild).toMatchSnapshot();
+    });
+    it('matches all sizes snapshot', () => {
+      const { container } = render(
+        <div data-testid="sizes-container">
+          <Checkbox size="sm">Small</Checkbox>
+          <Checkbox size="default">Default</Checkbox>
+          <Checkbox size="lg">Large</Checkbox>
+        </div>
+      );
+      expect(container.firstChild).toMatchSnapshot();
+    });
+    it('matches disabled state snapshot', () => {
+      const { container } = render(<Checkbox disabled>Disabled</Checkbox>);
+      expect(container.firstChild).toMatchSnapshot();
+    });
+    it('matches loading state snapshot', () => {
+      const { container } = render(<Checkbox loading>Loading</Checkbox>);
+      expect(container.firstChild).toMatchSnapshot();
+    });
+  });
+  describe('ðŸŽ¨ Rendering Tests (8 tests)', () => {
     test('renders basic checkbox without wrapper', () => {
       render(<Checkbox />);
       const checkbox = getCheckbox();
@@ -67,7 +102,7 @@ describe('Enhanced Checkbox Component', () => {
     });
   });
 
-  describe('⚡ Enhanced Features Tests (10 tests)', () => {
+  describe('âš¡ Enhanced Features Tests (10 tests)', () => {
     test('error takes precedence over helper text', () => {
       render(<Checkbox error="Error message" helperText="Helper text" />);
       expect(getError('Error message')).toBeInTheDocument();
@@ -157,7 +192,7 @@ describe('Enhanced Checkbox Component', () => {
     });
   });
 
-  describe('🖱️ Interaction Tests (8 tests)', () => {
+  describe('ðŸ–±ï¸ Interaction Tests (8 tests)', () => {
     test('toggles checked state on click', () => {
       const handleChange = vi.fn();
       render(<Checkbox onCheckedChange={handleChange} />);
@@ -256,7 +291,7 @@ describe('Enhanced Checkbox Component', () => {
     });
   });
 
-  describe('🎛️ Controlled Component Tests (6 tests)', () => {
+  describe('ðŸŽ›ï¸ Controlled Component Tests (6 tests)', () => {
     test('respects controlled checked value', () => {
       render(<Checkbox checked={true} />);
       const checkbox = getCheckbox();
@@ -310,7 +345,7 @@ describe('Enhanced Checkbox Component', () => {
     });
   });
 
-  describe('♿ Accessibility Tests (6 tests)', () => {
+  describe('â™¿ Accessibility Tests (6 tests)', () => {
     test('has correct ARIA attributes', () => {
       render(<Checkbox />);
       const checkbox = getCheckbox();
@@ -362,7 +397,7 @@ describe('Enhanced Checkbox Component', () => {
     });
   });
 
-  describe('🔬 Edge Cases Tests (8 tests)', () => {
+  describe('ðŸ”¬ Edge Cases Tests (8 tests)', () => {
     test('handles null/undefined checked values', () => {
       const { rerender } = render(<Checkbox checked={null as unknown as boolean} />);
       expect(getCheckbox()).toHaveAttribute('data-state', 'unchecked');
@@ -423,7 +458,7 @@ describe('Enhanced Checkbox Component', () => {
     });
 
     test('supports special characters in text', () => {
-      const specialText = 'Checkbox with émojis 🎯 & special chars: @#$%^&*()';
+      const specialText = 'Checkbox with Ã©mojis ðŸŽ¯ & special chars: @#$%^&*()';
       render(<Checkbox label={specialText} />);
       expect(getLabel(specialText)).toBeInTheDocument();
     });

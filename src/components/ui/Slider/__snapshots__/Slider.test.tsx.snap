@@ -1,0 +1,343 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Slider Component > Rendering > Snapshots > matches all sizes snapshot 1`] = `
+<div
+  data-testid="sizes-container"
+>
+  <span
+    aria-disabled="false"
+    class="relative flex w-full touch-none select-none items-center data-[orientation=vertical]:flex-col h-3"
+    data-orientation="horizontal"
+    dir="ltr"
+    style="--radix-slider-thumb-transform: translateX(-50%);"
+  >
+    <span
+      class="relative grow overflow-hidden rounded-full bg-primary/20 bg-primary/20 h-1 w-full"
+      data-orientation="horizontal"
+    >
+      <span
+        class="absolute bg-primary bg-primary h-full"
+        data-orientation="horizontal"
+        style="left: 0%; right: 100%;"
+      />
+    </span>
+    <span
+      style="transform: var(--radix-slider-thumb-transform); position: absolute; left: calc(0% + 0px);"
+    >
+      <span
+        aria-orientation="horizontal"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="0"
+        class="block rounded-full border bg-background shadow transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 border-primary/50 h-3 w-3"
+        data-orientation="horizontal"
+        data-radix-collection-item=""
+        role="slider"
+        style=""
+        tabindex="0"
+      />
+    </span>
+  </span>
+  <span
+    aria-disabled="false"
+    class="relative flex w-full touch-none select-none items-center data-[orientation=vertical]:flex-col h-4"
+    data-orientation="horizontal"
+    dir="ltr"
+    style="--radix-slider-thumb-transform: translateX(-50%);"
+  >
+    <span
+      class="relative grow overflow-hidden rounded-full bg-primary/20 bg-primary/20 h-1.5 w-full"
+      data-orientation="horizontal"
+    >
+      <span
+        class="absolute bg-primary bg-primary h-full"
+        data-orientation="horizontal"
+        style="left: 0%; right: 100%;"
+      />
+    </span>
+    <span
+      style="transform: var(--radix-slider-thumb-transform); position: absolute; left: calc(0% + 0px);"
+    >
+      <span
+        aria-orientation="horizontal"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="0"
+        class="block rounded-full border bg-background shadow transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 border-primary/50 h-4 w-4"
+        data-orientation="horizontal"
+        data-radix-collection-item=""
+        role="slider"
+        style=""
+        tabindex="0"
+      />
+    </span>
+  </span>
+  <span
+    aria-disabled="false"
+    class="relative flex w-full touch-none select-none items-center data-[orientation=vertical]:flex-col h-5"
+    data-orientation="horizontal"
+    dir="ltr"
+    style="--radix-slider-thumb-transform: translateX(-50%);"
+  >
+    <span
+      class="relative grow overflow-hidden rounded-full bg-primary/20 bg-primary/20 h-2 w-full"
+      data-orientation="horizontal"
+    >
+      <span
+        class="absolute bg-primary bg-primary h-full"
+        data-orientation="horizontal"
+        style="left: 0%; right: 100%;"
+      />
+    </span>
+    <span
+      style="transform: var(--radix-slider-thumb-transform); position: absolute; left: calc(0% + 0px);"
+    >
+      <span
+        aria-orientation="horizontal"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="0"
+        class="block rounded-full border bg-background shadow transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 border-primary/50 h-5 w-5"
+        data-orientation="horizontal"
+        data-radix-collection-item=""
+        role="slider"
+        style=""
+        tabindex="0"
+      />
+    </span>
+  </span>
+</div>
+`;
+
+exports[`Slider Component > Rendering > Snapshots > matches all variants snapshot 1`] = `
+<div
+  data-testid="variants-container"
+>
+  <span
+    aria-disabled="false"
+    class="relative flex w-full touch-none select-none items-center data-[orientation=vertical]:flex-col h-4"
+    data-orientation="horizontal"
+    dir="ltr"
+    style="--radix-slider-thumb-transform: translateX(-50%);"
+  >
+    <span
+      class="relative grow overflow-hidden rounded-full bg-primary/20 bg-primary/20 h-1.5 w-full"
+      data-orientation="horizontal"
+    >
+      <span
+        class="absolute bg-primary bg-primary h-full"
+        data-orientation="horizontal"
+        style="left: 0%; right: 100%;"
+      />
+    </span>
+    <span
+      style="transform: var(--radix-slider-thumb-transform); position: absolute; left: calc(0% + 0px);"
+    >
+      <span
+        aria-orientation="horizontal"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="0"
+        class="block rounded-full border bg-background shadow transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 border-primary/50 h-4 w-4"
+        data-orientation="horizontal"
+        data-radix-collection-item=""
+        role="slider"
+        style=""
+        tabindex="0"
+      />
+    </span>
+  </span>
+  <span
+    aria-disabled="false"
+    class="relative flex w-full touch-none select-none items-center h-4"
+    data-orientation="horizontal"
+    dir="ltr"
+    style="--radix-slider-thumb-transform: translateX(-50%);"
+  >
+    <span
+      class="relative grow overflow-hidden rounded-full bg-primary/20 h-1.5 w-full"
+      data-orientation="horizontal"
+    >
+      <span
+        class="absolute bg-primary h-full"
+        data-orientation="horizontal"
+        style="left: 0%; right: 100%;"
+      />
+    </span>
+    <span
+      style="transform: var(--radix-slider-thumb-transform); position: absolute; left: calc(0% + 0px);"
+    >
+      <span
+        aria-orientation="horizontal"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="0"
+        class="block rounded-full border bg-background shadow transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 h-4 w-4"
+        data-orientation="horizontal"
+        data-radix-collection-item=""
+        role="slider"
+        style=""
+        tabindex="0"
+      />
+    </span>
+  </span>
+  <span
+    aria-disabled="false"
+    class="relative flex w-full touch-none select-none items-center h-4"
+    data-orientation="horizontal"
+    dir="ltr"
+    style="--radix-slider-thumb-transform: translateX(-50%);"
+  >
+    <span
+      class="relative grow overflow-hidden rounded-full bg-primary/20 h-1.5 w-full"
+      data-orientation="horizontal"
+    >
+      <span
+        class="absolute bg-primary h-full"
+        data-orientation="horizontal"
+        style="left: 0%; right: 100%;"
+      />
+    </span>
+    <span
+      style="transform: var(--radix-slider-thumb-transform); position: absolute; left: calc(0% + 0px);"
+    >
+      <span
+        aria-orientation="horizontal"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="0"
+        class="block rounded-full border bg-background shadow transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 h-4 w-4"
+        data-orientation="horizontal"
+        data-radix-collection-item=""
+        role="slider"
+        style=""
+        tabindex="0"
+      />
+    </span>
+  </span>
+  <span
+    aria-disabled="false"
+    class="relative flex w-full touch-none select-none items-center h-4"
+    data-orientation="horizontal"
+    dir="ltr"
+    style="--radix-slider-thumb-transform: translateX(-50%);"
+  >
+    <span
+      class="relative grow overflow-hidden rounded-full bg-primary/20 h-1.5 w-full"
+      data-orientation="horizontal"
+    >
+      <span
+        class="absolute bg-primary h-full"
+        data-orientation="horizontal"
+        style="left: 0%; right: 100%;"
+      />
+    </span>
+    <span
+      style="transform: var(--radix-slider-thumb-transform); position: absolute; left: calc(0% + 0px);"
+    >
+      <span
+        aria-orientation="horizontal"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        aria-valuenow="0"
+        class="block rounded-full border bg-background shadow transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 h-4 w-4"
+        data-orientation="horizontal"
+        data-radix-collection-item=""
+        role="slider"
+        style=""
+        tabindex="0"
+      />
+    </span>
+  </span>
+</div>
+`;
+
+exports[`Slider Component > Rendering > Snapshots > matches default snapshot 1`] = `
+<span
+  aria-disabled="false"
+  class="relative flex w-full touch-none select-none items-center data-[orientation=vertical]:flex-col h-4"
+  data-orientation="horizontal"
+  dir="ltr"
+  style="--radix-slider-thumb-transform: translateX(-50%);"
+>
+  <span
+    class="relative grow overflow-hidden rounded-full bg-primary/20 bg-primary/20 h-1.5 w-full"
+    data-orientation="horizontal"
+  >
+    <span
+      class="absolute bg-primary bg-primary h-full"
+      data-orientation="horizontal"
+      style="left: 0%; right: 100%;"
+    />
+  </span>
+  <span
+    style="transform: var(--radix-slider-thumb-transform); position: absolute; left: calc(0% + 0px);"
+  >
+    <span
+      aria-orientation="horizontal"
+      aria-valuemax="100"
+      aria-valuemin="0"
+      aria-valuenow="0"
+      class="block rounded-full border bg-background shadow transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 border-primary/50 h-4 w-4"
+      data-orientation="horizontal"
+      data-radix-collection-item=""
+      role="slider"
+      style=""
+      tabindex="0"
+    />
+  </span>
+</span>
+`;
+
+exports[`Slider Component > Rendering > Snapshots > matches disabled state snapshot 1`] = `
+<span
+  aria-disabled="true"
+  class="relative flex w-full touch-none select-none items-center data-[orientation=vertical]:flex-col h-4"
+  data-disabled=""
+  data-orientation="horizontal"
+  dir="ltr"
+  style="--radix-slider-thumb-transform: translateX(-50%);"
+>
+  <span
+    class="relative grow overflow-hidden rounded-full bg-primary/20 bg-primary/20 h-1.5 w-full"
+    data-disabled=""
+    data-orientation="horizontal"
+  >
+    <span
+      class="absolute bg-primary bg-primary h-full"
+      data-disabled=""
+      data-orientation="horizontal"
+      style="left: 0%; right: 100%;"
+    />
+  </span>
+  <span
+    style="transform: var(--radix-slider-thumb-transform); position: absolute; left: calc(0% + 0px);"
+  >
+    <span
+      aria-orientation="horizontal"
+      aria-valuemax="100"
+      aria-valuemin="0"
+      aria-valuenow="0"
+      class="block rounded-full border bg-background shadow transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 border-primary/50 h-4 w-4"
+      data-disabled=""
+      data-orientation="horizontal"
+      data-radix-collection-item=""
+      role="slider"
+      style=""
+    />
+  </span>
+</span>
+`;
+
+exports[`Slider Component > Rendering > Snapshots > matches loading state snapshot 1`] = `
+<div
+  class="gap-2 relative flex w-full touch-none select-none items-center data-[orientation=vertical]:flex-col h-4"
+>
+  <div
+    class="animate-pulse rounded-full bg-muted h-1.5 w-full"
+  />
+  <div
+    class="animate-spin w-3 h-3 border border-gray-300 border-t-gray-600 rounded-full"
+  />
+</div>
+`;

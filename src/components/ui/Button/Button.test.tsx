@@ -1,4 +1,4 @@
-import { fireEvent, render, screen } from '@testing-library/react';
+﻿import { fireEvent, render, screen } from '@testing-library/react';
 import { describe, expect, it, vi } from 'vitest';
 import Button, { buttonVariants } from './button';
 
@@ -11,6 +11,41 @@ describe('Button Component', () => {
       expect(button).toBeInTheDocument();
     });
 
+    describe('Snapshots', () => {
+      it('matches default snapshot', () => {
+        const { container } = render(<Button>Default</Button>);
+        expect(container.firstChild).toMatchSnapshot();
+      });
+      it('matches all variants snapshot', () => {
+        const { container } = render(
+          <div data-testid="variants-container">
+            <Button variant="default">Default</Button>
+            <Button variant="destructive">Destructive</Button>
+            <Button variant="outline">Outline</Button>
+            <Button variant="secondary">Secondary</Button>
+          </div>
+        );
+        expect(container.firstChild).toMatchSnapshot();
+      });
+      it('matches all sizes snapshot', () => {
+        const { container } = render(
+          <div data-testid="sizes-container">
+            <Button size="sm">Small</Button>
+            <Button size="default">Default</Button>
+            <Button size="lg">Large</Button>
+          </div>
+        );
+        expect(container.firstChild).toMatchSnapshot();
+      });
+      it('matches disabled state snapshot', () => {
+        const { container } = render(<Button disabled>Disabled</Button>);
+        expect(container.firstChild).toMatchSnapshot();
+      });
+      it('matches loading state snapshot', () => {
+        const { container } = render(<Button loading>Loading</Button>);
+        expect(container.firstChild).toMatchSnapshot();
+      });
+    });
     it('renders with custom text', () => {
       render(<Button>Custom Text</Button>);
       expect(screen.getByText('Custom Text')).toBeInTheDocument();
@@ -83,7 +118,7 @@ describe('Button Component', () => {
     });
 
     it('applies icon size classes', () => {
-      render(<Button size="icon">🎯</Button>);
+      render(<Button size="icon">ðŸŽ¯</Button>);
       const button = screen.getByRole('button');
       expect(button).toHaveClass('h-9', 'w-9');
     });
@@ -243,25 +278,25 @@ describe('Button Component', () => {
     it('renders with JSX content', () => {
       render(
         <Button>
-          <span>🚀</span>
+          <span>ðŸš€</span>
           <span>Launch</span>
         </Button>
       );
 
-      expect(screen.getByText('🚀')).toBeInTheDocument();
+      expect(screen.getByText('ðŸš€')).toBeInTheDocument();
       expect(screen.getByText('Launch')).toBeInTheDocument();
     });
 
     it('renders with loading state', () => {
       render(
         <Button disabled>
-          <span className="animate-spin">⚪</span>
+          <span className="animate-spin">âšª</span>
           Loading...
         </Button>
       );
 
       expect(screen.getByText('Loading...')).toBeInTheDocument();
-      expect(screen.getByText('⚪')).toHaveClass('animate-spin');
+      expect(screen.getByText('âšª')).toHaveClass('animate-spin');
     });
   });
 

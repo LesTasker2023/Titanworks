@@ -1,0 +1,99 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Tabs Component > Snapshots > matches all sizes snapshot 1`] = `
+<div
+  data-testid="sizes-container"
+>
+  <div
+    class=""
+    data-orientation="horizontal"
+    dir="ltr"
+  >
+    Small
+  </div>
+  <div
+    class=""
+    data-orientation="horizontal"
+    dir="ltr"
+  >
+    Default
+  </div>
+  <div
+    class=""
+    data-orientation="horizontal"
+    dir="ltr"
+  >
+    Large
+  </div>
+</div>
+`;
+
+exports[`Tabs Component > Snapshots > matches all variants snapshot 1`] = `
+<div
+  data-testid="variants-container"
+>
+  <div
+    class=""
+    data-orientation="horizontal"
+    dir="ltr"
+    variant="default"
+  >
+    Default
+  </div>
+  <div
+    class=""
+    data-orientation="horizontal"
+    dir="ltr"
+    variant="destructive"
+  >
+    Destructive
+  </div>
+  <div
+    class=""
+    data-orientation="horizontal"
+    dir="ltr"
+    variant="outline"
+  >
+    Outline
+  </div>
+  <div
+    class=""
+    data-orientation="horizontal"
+    dir="ltr"
+    variant="secondary"
+  >
+    Secondary
+  </div>
+</div>
+`;
+
+exports[`Tabs Component > Snapshots > matches default snapshot 1`] = `
+<div
+  class=""
+  data-orientation="horizontal"
+  dir="ltr"
+>
+  Default
+</div>
+`;
+
+exports[`Tabs Component > Snapshots > matches disabled state snapshot 1`] = `
+<div
+  class=""
+  data-orientation="horizontal"
+  dir="ltr"
+  disabled=""
+>
+  Disabled
+</div>
+`;
+
+exports[`Tabs Component > Snapshots > matches loading state snapshot 1`] = `
+<div
+  class=""
+  data-orientation="horizontal"
+  dir="ltr"
+>
+  Loading
+</div>
+`;

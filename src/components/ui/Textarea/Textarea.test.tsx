@@ -1,4 +1,4 @@
-import { fireEvent, render, screen } from '@testing-library/react';
+﻿import { fireEvent, render, screen } from '@testing-library/react';
 import React from 'react';
 import { describe, expect, it, vi } from 'vitest';
 import Textarea from './textarea';
@@ -12,6 +12,41 @@ describe('Textarea Component', () => {
       expect(textarea).toBeInTheDocument();
     });
 
+    describe('Snapshots', () => {
+      it('matches default snapshot', () => {
+        const { container } = render(<Textarea>Default</Textarea>);
+        expect(container.firstChild).toMatchSnapshot();
+      });
+      it('matches all variants snapshot', () => {
+        const { container } = render(
+          <div data-testid="variants-container">
+            <Textarea variant="default">Default</Textarea>
+            <Textarea variant="destructive">Destructive</Textarea>
+            <Textarea variant="outline">Outline</Textarea>
+            <Textarea variant="secondary">Secondary</Textarea>
+          </div>
+        );
+        expect(container.firstChild).toMatchSnapshot();
+      });
+      it('matches all sizes snapshot', () => {
+        const { container } = render(
+          <div data-testid="sizes-container">
+            <Textarea size="sm">Small</Textarea>
+            <Textarea size="default">Default</Textarea>
+            <Textarea size="lg">Large</Textarea>
+          </div>
+        );
+        expect(container.firstChild).toMatchSnapshot();
+      });
+      it('matches disabled state snapshot', () => {
+        const { container } = render(<Textarea disabled>Disabled</Textarea>);
+        expect(container.firstChild).toMatchSnapshot();
+      });
+      it('matches loading state snapshot', () => {
+        const { container } = render(<Textarea loading>Loading</Textarea>);
+        expect(container.firstChild).toMatchSnapshot();
+      });
+    });
     it('renders with custom placeholder', () => {
       render(<Textarea placeholder="Custom placeholder" />);
       expect(screen.getByPlaceholderText('Custom placeholder')).toBeInTheDocument();

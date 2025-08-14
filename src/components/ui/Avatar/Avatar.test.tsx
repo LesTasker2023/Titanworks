@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react';
+﻿import { render, screen } from '@testing-library/react';
 import { describe, expect, it, vi } from 'vitest';
 import Avatar from './avatar';
 
@@ -12,6 +12,41 @@ describe('Avatar', () => {
     expect(avatar).toBeInTheDocument();
   });
 
+  describe('Snapshots', () => {
+    it('matches default snapshot', () => {
+      const { container } = render(<Avatar>Default</Avatar>);
+      expect(container.firstChild).toMatchSnapshot();
+    });
+    it('matches all variants snapshot', () => {
+      const { container } = render(
+        <div data-testid="variants-container">
+          <Avatar variant="default">Default</Avatar>
+          <Avatar variant="destructive">Destructive</Avatar>
+          <Avatar variant="outline">Outline</Avatar>
+          <Avatar variant="secondary">Secondary</Avatar>
+        </div>
+      );
+      expect(container.firstChild).toMatchSnapshot();
+    });
+    it('matches all sizes snapshot', () => {
+      const { container } = render(
+        <div data-testid="sizes-container">
+          <Avatar size="sm">Small</Avatar>
+          <Avatar size="default">Default</Avatar>
+          <Avatar size="lg">Large</Avatar>
+        </div>
+      );
+      expect(container.firstChild).toMatchSnapshot();
+    });
+    it('matches disabled state snapshot', () => {
+      const { container } = render(<Avatar disabled>Disabled</Avatar>);
+      expect(container.firstChild).toMatchSnapshot();
+    });
+    it('matches loading state snapshot', () => {
+      const { container } = render(<Avatar loading>Loading</Avatar>);
+      expect(container.firstChild).toMatchSnapshot();
+    });
+  });
   // 1. Rendering (5-8 tests)
   describe('Rendering', () => {
     it('renders default avatar with fallback', () => {
@@ -198,7 +233,13 @@ describe('Avatar', () => {
     });
 
     it('handles complex name scenarios', () => {
-      const complexNames = ['João da Silva', 'Mary-Kate Olsen', 'Dr. John Smith Jr.', '王小明', ''];
+      const complexNames = [
+        'JoÃ£o da Silva',
+        'Mary-Kate Olsen',
+        'Dr. John Smith Jr.',
+        'çŽ‹å°æ˜Ž',
+        '',
+      ];
 
       complexNames.forEach((name, index) => {
         if (name) {

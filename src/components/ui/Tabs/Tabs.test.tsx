@@ -1,4 +1,4 @@
-import { fireEvent, render, screen, waitFor } from '@testing-library/react';
+﻿import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import React from 'react';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 import Tabs from './tabs';
@@ -31,6 +31,41 @@ describe('Tabs Component', () => {
     vi.clearAllMocks();
   });
 
+  describe('Snapshots', () => {
+    it('matches default snapshot', () => {
+      const { container } = render(<Tabs>Default</Tabs>);
+      expect(container.firstChild).toMatchSnapshot();
+    });
+    it('matches all variants snapshot', () => {
+      const { container } = render(
+        <div data-testid="variants-container">
+          <Tabs variant="default">Default</Tabs>
+          <Tabs variant="destructive">Destructive</Tabs>
+          <Tabs variant="outline">Outline</Tabs>
+          <Tabs variant="secondary">Secondary</Tabs>
+        </div>
+      );
+      expect(container.firstChild).toMatchSnapshot();
+    });
+    it('matches all sizes snapshot', () => {
+      const { container } = render(
+        <div data-testid="sizes-container">
+          <Tabs size="sm">Small</Tabs>
+          <Tabs size="default">Default</Tabs>
+          <Tabs size="lg">Large</Tabs>
+        </div>
+      );
+      expect(container.firstChild).toMatchSnapshot();
+    });
+    it('matches disabled state snapshot', () => {
+      const { container } = render(<Tabs disabled>Disabled</Tabs>);
+      expect(container.firstChild).toMatchSnapshot();
+    });
+    it('matches loading state snapshot', () => {
+      const { container } = render(<Tabs loading>Loading</Tabs>);
+      expect(container.firstChild).toMatchSnapshot();
+    });
+  });
   // === 1. RENDERING TESTS (8 tests) ===
   describe('Rendering', () => {
     it('renders tabs root element', () => {

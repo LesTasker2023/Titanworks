@@ -1,0 +1,28 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Dialog Component > Basic Functionality > Snapshots > matches all sizes snapshot 1`] = `
+<div
+  data-testid="sizes-container"
+>
+  Small
+  Default
+  Large
+</div>
+`;
+
+exports[`Dialog Component > Basic Functionality > Snapshots > matches all variants snapshot 1`] = `
+<div
+  data-testid="variants-container"
+>
+  Default
+  Destructive
+  Outline
+  Secondary
+</div>
+`;
+
+exports[`Dialog Component > Basic Functionality > Snapshots > matches default snapshot 1`] = `Default`;
+
+exports[`Dialog Component > Basic Functionality > Snapshots > matches disabled state snapshot 1`] = `Disabled`;
+
+exports[`Dialog Component > Basic Functionality > Snapshots > matches loading state snapshot 1`] = `Loading`;

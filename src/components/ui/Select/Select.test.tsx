@@ -1,4 +1,4 @@
-import { fireEvent, render, screen, waitFor } from '@testing-library/react';
+﻿import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import React, { useState } from 'react';
 import { describe, expect, it, vi } from 'vitest';
@@ -54,6 +54,41 @@ describe('Select Component', () => {
       expect(wrapper).not.toBeInTheDocument();
     });
 
+    describe('Snapshots', () => {
+      it('matches default snapshot', () => {
+        const { container } = render(<Select>Default</Select>);
+        expect(container.firstChild).toMatchSnapshot();
+      });
+      it('matches all variants snapshot', () => {
+        const { container } = render(
+          <div data-testid="variants-container">
+            <Select variant="default">Default</Select>
+            <Select variant="destructive">Destructive</Select>
+            <Select variant="outline">Outline</Select>
+            <Select variant="secondary">Secondary</Select>
+          </div>
+        );
+        expect(container.firstChild).toMatchSnapshot();
+      });
+      it('matches all sizes snapshot', () => {
+        const { container } = render(
+          <div data-testid="sizes-container">
+            <Select size="sm">Small</Select>
+            <Select size="default">Default</Select>
+            <Select size="lg">Large</Select>
+          </div>
+        );
+        expect(container.firstChild).toMatchSnapshot();
+      });
+      it('matches disabled state snapshot', () => {
+        const { container } = render(<Select disabled>Disabled</Select>);
+        expect(container.firstChild).toMatchSnapshot();
+      });
+      it('matches loading state snapshot', () => {
+        const { container } = render(<Select loading>Loading</Select>);
+        expect(container.firstChild).toMatchSnapshot();
+      });
+    });
     it('renders with wrapper when enhanced props are provided', () => {
       render(
         <Select label="Test Label">
@@ -1144,7 +1179,7 @@ describe('Select Component', () => {
           </SelectTrigger>
           <SelectContent>
             <SelectItem value="special-chars!@#$%">Special: !@#$%</SelectItem>
-            <SelectItem value="unicode-💻🚀">Unicode: 💻🚀</SelectItem>
+            <SelectItem value="unicode-ðŸ’»ðŸš€">Unicode: ðŸ’»ðŸš€</SelectItem>
             <SelectItem value="quotes-and-stuff">
               Quotes &apos;and&apos; &quot;stuff&quot;
             </SelectItem>
@@ -1155,7 +1190,7 @@ describe('Select Component', () => {
       fireEvent.click(screen.getByRole('combobox'));
 
       expect(screen.getByText('Special: !@#$%')).toBeInTheDocument();
-      expect(screen.getByText('Unicode: 💻🚀')).toBeInTheDocument();
+      expect(screen.getByText('Unicode: ðŸ’»ðŸš€')).toBeInTheDocument();
       expect(screen.getByText('Quotes \'and\' "stuff"')).toBeInTheDocument();
     });
 

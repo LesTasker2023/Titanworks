@@ -1,4 +1,4 @@
-import { render, screen, waitFor } from '@testing-library/react';
+﻿import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { describe, expect, it, vi } from 'vitest';
 import Button from '../Button/button';
@@ -53,6 +53,41 @@ describe('Dialog Component', () => {
       expect(screen.getByRole('button', { name: 'Open Dialog' })).toBeInTheDocument();
     });
 
+    describe('Snapshots', () => {
+      it('matches default snapshot', () => {
+        const { container } = render(<Dialog>Default</Dialog>);
+        expect(container.firstChild).toMatchSnapshot();
+      });
+      it('matches all variants snapshot', () => {
+        const { container } = render(
+          <div data-testid="variants-container">
+            <Dialog variant="default">Default</Dialog>
+            <Dialog variant="destructive">Destructive</Dialog>
+            <Dialog variant="outline">Outline</Dialog>
+            <Dialog variant="secondary">Secondary</Dialog>
+          </div>
+        );
+        expect(container.firstChild).toMatchSnapshot();
+      });
+      it('matches all sizes snapshot', () => {
+        const { container } = render(
+          <div data-testid="sizes-container">
+            <Dialog size="sm">Small</Dialog>
+            <Dialog size="default">Default</Dialog>
+            <Dialog size="lg">Large</Dialog>
+          </div>
+        );
+        expect(container.firstChild).toMatchSnapshot();
+      });
+      it('matches disabled state snapshot', () => {
+        const { container } = render(<Dialog disabled>Disabled</Dialog>);
+        expect(container.firstChild).toMatchSnapshot();
+      });
+      it('matches loading state snapshot', () => {
+        const { container } = render(<Dialog loading>Loading</Dialog>);
+        expect(container.firstChild).toMatchSnapshot();
+      });
+    });
     it('opens dialog when trigger is clicked', async () => {
       const user = userEvent.setup();
       render(<TestDialog />);

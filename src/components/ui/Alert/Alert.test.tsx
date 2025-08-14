@@ -1,4 +1,4 @@
-import { act, fireEvent, render, screen } from '@testing-library/react';
+﻿import { act, fireEvent, render, screen } from '@testing-library/react';
 import { AlertTriangle, CheckCircle, Info } from 'lucide-react';
 import React from 'react';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
@@ -14,7 +14,7 @@ afterEach(() => {
 });
 
 describe('Enhanced Alert Component', () => {
-  describe('🔧 Basic Functionality (6 tests)', () => {
+  describe('ðŸ”§ Basic Functionality (6 tests)', () => {
     it('renders basic alert correctly', () => {
       render(
         <Alert>
@@ -28,6 +28,41 @@ describe('Enhanced Alert Component', () => {
       expect(screen.getByText('Test Description')).toBeInTheDocument();
     });
 
+    describe('Snapshots', () => {
+      it('matches default snapshot', () => {
+        const { container } = render(<Alert>Default</Alert>);
+        expect(container.firstChild).toMatchSnapshot();
+      });
+      it('matches all variants snapshot', () => {
+        const { container } = render(
+          <div data-testid="variants-container">
+            <Alert variant="default">Default</Alert>
+            <Alert variant="destructive">Destructive</Alert>
+            <Alert variant="outline">Outline</Alert>
+            <Alert variant="secondary">Secondary</Alert>
+          </div>
+        );
+        expect(container.firstChild).toMatchSnapshot();
+      });
+      it('matches all sizes snapshot', () => {
+        const { container } = render(
+          <div data-testid="sizes-container">
+            <Alert size="sm">Small</Alert>
+            <Alert size="default">Default</Alert>
+            <Alert size="lg">Large</Alert>
+          </div>
+        );
+        expect(container.firstChild).toMatchSnapshot();
+      });
+      it('matches disabled state snapshot', () => {
+        const { container } = render(<Alert disabled>Disabled</Alert>);
+        expect(container.firstChild).toMatchSnapshot();
+      });
+      it('matches loading state snapshot', () => {
+        const { container } = render(<Alert loading>Loading</Alert>);
+        expect(container.firstChild).toMatchSnapshot();
+      });
+    });
     it('renders with custom className', () => {
       render(
         <Alert className="custom-class">
@@ -86,7 +121,7 @@ describe('Enhanced Alert Component', () => {
     });
   });
 
-  describe('🎨 Variant Tests (5 tests)', () => {
+  describe('ðŸŽ¨ Variant Tests (5 tests)', () => {
     it('renders default variant', () => {
       render(
         <Alert variant="default">
@@ -147,7 +182,7 @@ describe('Enhanced Alert Component', () => {
     });
   });
 
-  describe('❌ Dismissible Functionality (6 tests)', () => {
+  describe('âŒ Dismissible Functionality (6 tests)', () => {
     it('renders dismiss button when dismissible', () => {
       render(
         <Alert dismissible>
@@ -219,7 +254,7 @@ describe('Enhanced Alert Component', () => {
     });
   });
 
-  describe('⏰ Auto-Hide Functionality (8 tests)', () => {
+  describe('â° Auto-Hide Functionality (8 tests)', () => {
     it('auto-hides alert after specified delay', () => {
       render(
         <Alert autoHide autoHideDelay={2000}>
@@ -332,7 +367,7 @@ describe('Enhanced Alert Component', () => {
     });
   });
 
-  describe('🔄 Combined Features (4 tests)', () => {
+  describe('ðŸ”„ Combined Features (4 tests)', () => {
     it('works with both dismissible and auto-hide', () => {
       const handleDismiss = vi.fn();
       render(
@@ -412,7 +447,7 @@ describe('Enhanced Alert Component', () => {
     });
   });
 
-  describe('♿ Accessibility Tests (4 tests)', () => {
+  describe('â™¿ Accessibility Tests (4 tests)', () => {
     it('has proper ARIA role', () => {
       render(
         <Alert>
@@ -464,7 +499,7 @@ describe('Enhanced Alert Component', () => {
     });
   });
 
-  describe('🔬 Edge Cases Tests (5 tests)', () => {
+  describe('ðŸ”¬ Edge Cases Tests (5 tests)', () => {
     it('handles empty children gracefully', () => {
       render(<Alert />);
       expect(screen.getByRole('alert')).toBeInTheDocument();

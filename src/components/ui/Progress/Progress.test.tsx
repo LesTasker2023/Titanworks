@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react';
+﻿import { render, screen } from '@testing-library/react';
 import React from 'react';
 import { describe, expect, it } from 'vitest';
 import Progress from './progress';
@@ -12,6 +12,41 @@ describe('Progress Component', () => {
       expect(progress).toBeInTheDocument();
     });
 
+    describe('Snapshots', () => {
+      it('matches default snapshot', () => {
+        const { container } = render(<Progress>Default</Progress>);
+        expect(container.firstChild).toMatchSnapshot();
+      });
+      it('matches all variants snapshot', () => {
+        const { container } = render(
+          <div data-testid="variants-container">
+            <Progress variant="default">Default</Progress>
+            <Progress variant="destructive">Destructive</Progress>
+            <Progress variant="outline">Outline</Progress>
+            <Progress variant="secondary">Secondary</Progress>
+          </div>
+        );
+        expect(container.firstChild).toMatchSnapshot();
+      });
+      it('matches all sizes snapshot', () => {
+        const { container } = render(
+          <div data-testid="sizes-container">
+            <Progress size="sm">Small</Progress>
+            <Progress size="default">Default</Progress>
+            <Progress size="lg">Large</Progress>
+          </div>
+        );
+        expect(container.firstChild).toMatchSnapshot();
+      });
+      it('matches disabled state snapshot', () => {
+        const { container } = render(<Progress disabled>Disabled</Progress>);
+        expect(container.firstChild).toMatchSnapshot();
+      });
+      it('matches loading state snapshot', () => {
+        const { container } = render(<Progress loading>Loading</Progress>);
+        expect(container.firstChild).toMatchSnapshot();
+      });
+    });
     it('renders with default value of 0 when no value provided', () => {
       render(<Progress />);
       const progress = screen.getByRole('progressbar');

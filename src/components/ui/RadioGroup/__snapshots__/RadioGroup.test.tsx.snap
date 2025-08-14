@@ -1,0 +1,130 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`RadioGroup Component > Rendering > Snapshots > matches all sizes snapshot 1`] = `
+<div
+  data-testid="sizes-container"
+>
+  <div
+    aria-required="false"
+    class="grid gap-2"
+    dir="ltr"
+    role="radiogroup"
+    style="outline: none;"
+    tabindex="-1"
+  >
+    Small
+  </div>
+  <div
+    aria-required="false"
+    class="grid gap-2"
+    dir="ltr"
+    role="radiogroup"
+    style="outline: none;"
+    tabindex="-1"
+  >
+    Default
+  </div>
+  <div
+    aria-required="false"
+    class="grid gap-2"
+    dir="ltr"
+    role="radiogroup"
+    style="outline: none;"
+    tabindex="-1"
+  >
+    Large
+  </div>
+</div>
+`;
+
+exports[`RadioGroup Component > Rendering > Snapshots > matches all variants snapshot 1`] = `
+<div
+  data-testid="variants-container"
+>
+  <div
+    aria-required="false"
+    class="grid gap-2"
+    dir="ltr"
+    role="radiogroup"
+    style="outline: none;"
+    tabindex="-1"
+    variant="default"
+  >
+    Default
+  </div>
+  <div
+    aria-required="false"
+    class="grid gap-2"
+    dir="ltr"
+    role="radiogroup"
+    style="outline: none;"
+    tabindex="-1"
+    variant="destructive"
+  >
+    Destructive
+  </div>
+  <div
+    aria-required="false"
+    class="grid gap-2"
+    dir="ltr"
+    role="radiogroup"
+    style="outline: none;"
+    tabindex="-1"
+    variant="outline"
+  >
+    Outline
+  </div>
+  <div
+    aria-required="false"
+    class="grid gap-2"
+    dir="ltr"
+    role="radiogroup"
+    style="outline: none;"
+    tabindex="-1"
+    variant="secondary"
+  >
+    Secondary
+  </div>
+</div>
+`;
+
+exports[`RadioGroup Component > Rendering > Snapshots > matches default snapshot 1`] = `
+<div
+  aria-required="false"
+  class="grid gap-2"
+  dir="ltr"
+  role="radiogroup"
+  style="outline: none;"
+  tabindex="-1"
+>
+  Default
+</div>
+`;
+
+exports[`RadioGroup Component > Rendering > Snapshots > matches disabled state snapshot 1`] = `
+<div
+  aria-required="false"
+  class="grid gap-2"
+  data-disabled=""
+  dir="ltr"
+  role="radiogroup"
+  style="outline: none;"
+  tabindex="-1"
+>
+  Disabled
+</div>
+`;
+
+exports[`RadioGroup Component > Rendering > Snapshots > matches loading state snapshot 1`] = `
+<div
+  aria-required="false"
+  class="grid gap-2 radiogroup--loading"
+  data-disabled=""
+  dir="ltr"
+  role="radiogroup"
+  style="outline: none;"
+  tabindex="-1"
+>
+  Loading
+</div>
+`;

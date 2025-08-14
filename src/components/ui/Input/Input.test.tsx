@@ -1,4 +1,4 @@
-import { fireEvent, render, screen } from '@testing-library/react';
+﻿import { fireEvent, render, screen } from '@testing-library/react';
 import React from 'react';
 import { describe, expect, it, vi } from 'vitest';
 import Input from './input';
@@ -12,6 +12,41 @@ describe('Input Component', () => {
       expect(input).toBeInTheDocument();
     });
 
+    describe('Snapshots', () => {
+      it('matches default snapshot', () => {
+        const { container } = render(<Input>Default</Input>);
+        expect(container.firstChild).toMatchSnapshot();
+      });
+      it('matches all variants snapshot', () => {
+        const { container } = render(
+          <div data-testid="variants-container">
+            <Input variant="default">Default</Input>
+            <Input variant="destructive">Destructive</Input>
+            <Input variant="outline">Outline</Input>
+            <Input variant="secondary">Secondary</Input>
+          </div>
+        );
+        expect(container.firstChild).toMatchSnapshot();
+      });
+      it('matches all sizes snapshot', () => {
+        const { container } = render(
+          <div data-testid="sizes-container">
+            <Input size="sm">Small</Input>
+            <Input size="default">Default</Input>
+            <Input size="lg">Large</Input>
+          </div>
+        );
+        expect(container.firstChild).toMatchSnapshot();
+      });
+      it('matches disabled state snapshot', () => {
+        const { container } = render(<Input disabled>Disabled</Input>);
+        expect(container.firstChild).toMatchSnapshot();
+      });
+      it('matches loading state snapshot', () => {
+        const { container } = render(<Input loading>Loading</Input>);
+        expect(container.firstChild).toMatchSnapshot();
+      });
+    });
     it('renders with custom placeholder', () => {
       render(<Input placeholder="Custom placeholder" />);
       expect(screen.getByPlaceholderText('Custom placeholder')).toBeInTheDocument();

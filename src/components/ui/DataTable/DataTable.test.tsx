@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react';
+﻿import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 import DataTable from './DataTable';
@@ -22,6 +22,41 @@ describe('DataTable Component', () => {
     vi.clearAllMocks();
   });
 
+  describe('Snapshots', () => {
+    it('matches default snapshot', () => {
+      const { container } = render(<DataTable>Default</DataTable>);
+      expect(container.firstChild).toMatchSnapshot();
+    });
+    it('matches all variants snapshot', () => {
+      const { container } = render(
+        <div data-testid="variants-container">
+          <DataTable variant="default">Default</DataTable>
+          <DataTable variant="destructive">Destructive</DataTable>
+          <DataTable variant="outline">Outline</DataTable>
+          <DataTable variant="secondary">Secondary</DataTable>
+        </div>
+      );
+      expect(container.firstChild).toMatchSnapshot();
+    });
+    it('matches all sizes snapshot', () => {
+      const { container } = render(
+        <div data-testid="sizes-container">
+          <DataTable size="sm">Small</DataTable>
+          <DataTable size="default">Default</DataTable>
+          <DataTable size="lg">Large</DataTable>
+        </div>
+      );
+      expect(container.firstChild).toMatchSnapshot();
+    });
+    it('matches disabled state snapshot', () => {
+      const { container } = render(<DataTable disabled>Disabled</DataTable>);
+      expect(container.firstChild).toMatchSnapshot();
+    });
+    it('matches loading state snapshot', () => {
+      const { container } = render(<DataTable loading>Loading</DataTable>);
+      expect(container.firstChild).toMatchSnapshot();
+    });
+  });
   describe('Rendering', () => {
     it('renders with basic props', () => {
       render(<DataTable data={mockData} columns={mockColumns} />);

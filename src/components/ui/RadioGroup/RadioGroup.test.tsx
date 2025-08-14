@@ -1,4 +1,4 @@
-import { fireEvent, render, screen } from '@testing-library/react';
+﻿import { fireEvent, render, screen } from '@testing-library/react';
 import React from 'react';
 import { describe, expect, it, vi } from 'vitest';
 import RadioGroup, { RadioGroupItem } from './radio-group';
@@ -23,6 +23,41 @@ describe('RadioGroup Component', () => {
       expect(screen.queryByText('radiogroup-wrapper')).not.toBeInTheDocument();
     });
 
+    describe('Snapshots', () => {
+      it('matches default snapshot', () => {
+        const { container } = render(<RadioGroup>Default</RadioGroup>);
+        expect(container.firstChild).toMatchSnapshot();
+      });
+      it('matches all variants snapshot', () => {
+        const { container } = render(
+          <div data-testid="variants-container">
+            <RadioGroup variant="default">Default</RadioGroup>
+            <RadioGroup variant="destructive">Destructive</RadioGroup>
+            <RadioGroup variant="outline">Outline</RadioGroup>
+            <RadioGroup variant="secondary">Secondary</RadioGroup>
+          </div>
+        );
+        expect(container.firstChild).toMatchSnapshot();
+      });
+      it('matches all sizes snapshot', () => {
+        const { container } = render(
+          <div data-testid="sizes-container">
+            <RadioGroup size="sm">Small</RadioGroup>
+            <RadioGroup size="default">Default</RadioGroup>
+            <RadioGroup size="lg">Large</RadioGroup>
+          </div>
+        );
+        expect(container.firstChild).toMatchSnapshot();
+      });
+      it('matches disabled state snapshot', () => {
+        const { container } = render(<RadioGroup disabled>Disabled</RadioGroup>);
+        expect(container.firstChild).toMatchSnapshot();
+      });
+      it('matches loading state snapshot', () => {
+        const { container } = render(<RadioGroup loading>Loading</RadioGroup>);
+        expect(container.firstChild).toMatchSnapshot();
+      });
+    });
     it('renders with wrapper when enhanced props are provided', () => {
       render(
         <RadioGroup label="Test Label">
