@@ -2,13 +2,13 @@
 
 /**
  * 🎯 Component Style Guide Validator
- * 
+ *
  * This script validates that components follow our style guide standards.
  * Run this before shipping any component to ensure consistency.
  */
 
-const fs = require('fs');
-const path = require('path');
+import fs from 'fs';
+import path from 'path';
 
 class StyleGuideValidator {
   constructor(componentPath) {
@@ -25,7 +25,7 @@ class StyleGuideValidator {
    */
   validate() {
     console.log(`🔍 Validating ${this.componentName} against style guide...`);
-    
+
     this.validateFileStructure();
     this.validateComponentInterface();
     this.validateVariants();
@@ -34,7 +34,7 @@ class StyleGuideValidator {
     this.validateTesting();
     this.validateDocumentation();
     this.validateStyling();
-    
+
     this.generateReport();
     return this.score >= 80; // Pass threshold
   }
@@ -47,11 +47,11 @@ class StyleGuideValidator {
       'index.tsx',
       `${this.componentName.toLowerCase()}.tsx`,
       `${this.componentName}.stories.tsx`,
-      `${this.componentName}.test.tsx`
+      `${this.componentName}.test.tsx`,
     ];
 
     let structureScore = 0;
-    
+
     requiredFiles.forEach(file => {
       const filePath = path.join(this.componentPath, file);
       if (fs.existsSync(filePath)) {
@@ -325,7 +325,7 @@ class StyleGuideValidator {
     const possibleNames = [
       `${this.componentName.toLowerCase()}.tsx`,
       `${this.componentName}.tsx`,
-      'index.tsx'
+      'index.tsx',
     ];
 
     for (const name of possibleNames) {
@@ -344,36 +344,41 @@ class StyleGuideValidator {
   generateReport() {
     console.log('\n📊 VALIDATION REPORT');
     console.log('='.repeat(50));
-    
+
     const percentage = Math.round((this.score / this.maxScore) * 100);
     console.log(`📈 Overall Score: ${this.score}/${this.maxScore} (${percentage}%)`);
-    
+
     // Grade assignment
     let grade, emoji;
     if (percentage >= 90) {
-      grade = 'A+'; emoji = '🏆';
+      grade = 'A+';
+      emoji = '🏆';
     } else if (percentage >= 80) {
-      grade = 'A'; emoji = '✅';
+      grade = 'A';
+      emoji = '✅';
     } else if (percentage >= 70) {
-      grade = 'B'; emoji = '⚠️';
+      grade = 'B';
+      emoji = '⚠️';
     } else if (percentage >= 60) {
-      grade = 'C'; emoji = '😐';
+      grade = 'C';
+      emoji = '😐';
     } else {
-      grade = 'F'; emoji = '❌';
+      grade = 'F';
+      emoji = '❌';
     }
-    
+
     console.log(`${emoji} Grade: ${grade}`);
-    
+
     if (this.errors.length > 0) {
       console.log('\n❌ ERRORS (Must Fix):');
       this.errors.forEach(error => console.log(`  ${error}`));
     }
-    
+
     if (this.warnings.length > 0) {
       console.log('\n⚠️  WARNINGS (Recommended):');
       this.warnings.forEach(warning => console.log(`  ${warning}`));
     }
-    
+
     console.log('\n🎯 NEXT STEPS:');
     if (percentage >= 80) {
       console.log('  ✅ Component meets style guide standards!');
@@ -383,7 +388,7 @@ class StyleGuideValidator {
       console.log('  📖 Review style guide: docs/COMPONENT_STYLE_GUIDE.md');
       console.log(`  🎯 Target: 80% (current: ${percentage}%)`);
     }
-    
+
     console.log('\n' + '='.repeat(50));
   }
 }
@@ -393,23 +398,23 @@ class StyleGuideValidator {
  */
 function main() {
   const args = process.argv.slice(2);
-  
+
   if (args.length === 0) {
     console.log('Usage: node validate-component.js <component-path>');
     console.log('Example: node validate-component.js src/components/ui/Button');
     process.exit(1);
   }
-  
+
   const componentPath = args[0];
-  
+
   if (!fs.existsSync(componentPath)) {
     console.error(`❌ Component path not found: ${componentPath}`);
     process.exit(1);
   }
-  
+
   const validator = new StyleGuideValidator(componentPath);
   const passed = validator.validate();
-  
+
   process.exit(passed ? 0 : 1);
 }
 

@@ -12,9 +12,6 @@
 /* Component System Standards */
 @import './component-system.css';
 
-/* Global Base Styles */
-@import './globals.css';
-
 /* Theme System (if using custom themes) */
 @import './themes/light.css';
 
@@ -36,7 +33,7 @@
   colorWarning: hsl(var(--color-warning));
   colorDanger: hsl(var(--color-danger));
   colorRing: hsl(var(--color-ring));
-  
+
   /* Spacing */
   spacing1: var(--spacing-1);
   spacing2: var(--spacing-2);
@@ -44,25 +41,25 @@
   spacing4: var(--spacing-4);
   spacing6: var(--spacing-6);
   spacing8: var(--spacing-8);
-  
+
   /* Sizes */
   heightSm: var(--height-sm);
   heightDefault: var(--height-default);
   heightLg: var(--height-lg);
   heightXl: var(--height-xl);
-  
+
   /* Typography */
   textXs: var(--text-xs);
   textSm: var(--text-sm);
   textBase: var(--text-base);
   textLg: var(--text-lg);
   textXl: var(--text-xl);
-  
+
   /* Transitions */
   transitionFast: var(--transition-fast);
   transitionDefault: var(--transition-default);
   transitionSlow: var(--transition-slow);
-  
+
   /* Border Radius */
   radiusSm: var(--radius-sm);
   radius: var(--radius);
