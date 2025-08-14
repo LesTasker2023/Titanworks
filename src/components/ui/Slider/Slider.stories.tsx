@@ -1,6 +1,6 @@
-import type { Meta, StoryObj } from '@storybook/nextjs'
-import { useState } from 'react'
-import Slider from './slider'
+import type { Meta, StoryObj } from '@storybook/nextjs';
+import { useState } from 'react';
+import Slider from './slider';
 
 const meta: Meta<typeof Slider> = {
   title: 'UI/Slider',
@@ -15,7 +15,7 @@ const meta: Meta<typeof Slider> = {
       options: ['default', 'success', 'warning', 'danger'],
     },
     size: {
-      control: 'select', 
+      control: 'select',
       options: ['sm', 'default', 'lg', 'xl'],
     },
     orientation: {
@@ -45,10 +45,10 @@ const meta: Meta<typeof Slider> = {
       control: 'number',
     },
   },
-}
+};
 
-export default meta
-type Story = StoryObj<typeof meta>
+export default meta;
+type Story = StoryObj<typeof meta>;
 
 // Core Stories
 export const Default: Story = {
@@ -58,7 +58,7 @@ export const Default: Story = {
     max: 100,
     step: 1,
   },
-}
+};
 
 export const WithValue: Story = {
   args: {
@@ -68,14 +68,14 @@ export const WithValue: Story = {
     max: 100,
     step: 1,
   },
-}
+};
 
 export const Loading: Story = {
   args: {
     loading: true,
     defaultValue: [50],
   },
-}
+};
 
 export const Disabled: Story = {
   args: {
@@ -83,7 +83,7 @@ export const Disabled: Story = {
     disabled: true,
     showValue: true,
   },
-}
+};
 
 // Variant Stories
 export const AllVariants: Story = {
@@ -107,7 +107,7 @@ export const AllVariants: Story = {
       </div>
     </div>
   ),
-}
+};
 
 // Size Stories
 export const AllSizes: Story = {
@@ -131,7 +131,7 @@ export const AllSizes: Story = {
       </div>
     </div>
   ),
-}
+};
 
 // Orientation Stories
 export const Vertical: Story = {
@@ -139,17 +139,13 @@ export const Vertical: Story = {
     <div className="flex items-center space-x-8 h-60">
       <div>
         <h3 className="text-sm font-medium mb-4">Basic Vertical</h3>
-        <Slider 
-          orientation="vertical" 
-          defaultValue={[40]} 
-          className="h-40"
-        />
+        <Slider orientation="vertical" defaultValue={[40]} className="h-40" />
       </div>
       <div>
         <h3 className="text-sm font-medium mb-4">With Value (Right)</h3>
-        <Slider 
-          orientation="vertical" 
-          defaultValue={[70]} 
+        <Slider
+          orientation="vertical"
+          defaultValue={[70]}
           showValue
           valuePosition="right"
           className="h-40"
@@ -157,9 +153,9 @@ export const Vertical: Story = {
       </div>
       <div>
         <h3 className="text-sm font-medium mb-4">With Value (Left)</h3>
-        <Slider 
-          orientation="vertical" 
-          defaultValue={[85]} 
+        <Slider
+          orientation="vertical"
+          defaultValue={[85]}
           showValue
           valuePosition="left"
           variant="success"
@@ -168,7 +164,7 @@ export const Vertical: Story = {
       </div>
     </div>
   ),
-}
+};
 
 // Value Position Stories
 export const ValuePositions: Story = {
@@ -176,31 +172,22 @@ export const ValuePositions: Story = {
     <div className="space-y-8 w-80">
       <div>
         <h3 className="text-sm font-medium mb-2">Value on Top</h3>
-        <Slider 
-          defaultValue={[45]} 
-          showValue 
-          valuePosition="top"
-        />
+        <Slider defaultValue={[45]} showValue valuePosition="top" />
       </div>
       <div>
         <h3 className="text-sm font-medium mb-2">Value on Bottom</h3>
-        <Slider 
-          defaultValue={[65]} 
-          showValue 
-          valuePosition="bottom"
-          variant="success"
-        />
+        <Slider defaultValue={[65]} showValue valuePosition="bottom" variant="success" />
       </div>
     </div>
   ),
-}
+};
 
 // Interactive Examples
 export const InteractiveExample: Story = {
   render: () => {
-    const [value, setValue] = useState([50])
-    const [range, setRange] = useState([20, 80])
-    
+    const [value, setValue] = useState([50]);
+    const [range, setRange] = useState([20, 80]);
+
     return (
       <div className="space-y-8 w-96">
         <div>
@@ -220,33 +207,29 @@ export const InteractiveExample: Story = {
             />
           </div>
         </div>
-        
+
         <div>
           <h3 className="text-lg font-semibold mb-4">Price Range</h3>
           <div className="space-y-2">
             <div className="flex justify-between text-sm text-muted-foreground">
               <span>Price Range</span>
-              <span>${range[0]} - ${range[1]}</span>
+              <span>
+                ${range[0]} - ${range[1]}
+              </span>
             </div>
-            <Slider
-              value={range}
-              onValueChange={setRange}
-              max={100}
-              step={1}
-              variant="success"
-            />
+            <Slider value={range} onValueChange={setRange} max={100} step={1} variant="success" />
           </div>
         </div>
       </div>
-    )
+    );
   },
-}
+};
 
-// Enhanced Features Stories  
+// Enhanced Features Stories
 export const EnhancedFeatures: Story = {
   render: () => {
-    const [temperature, setTemperature] = useState([22])
-    
+    const [temperature, setTemperature] = useState([22]);
+
     return (
       <div className="space-y-8 w-80">
         <div>
@@ -258,26 +241,21 @@ export const EnhancedFeatures: Story = {
             max={35}
             step={0.5}
             showValue
-            formatValue={(val) => `${val}°C`}
+            formatValue={val => `${val}°C`}
             variant={temperature[0] > 28 ? 'danger' : temperature[0] > 24 ? 'warning' : 'success'}
           />
         </div>
-        
+
         <div>
           <h3 className="text-sm font-medium mb-2">Loading State</h3>
           <Slider loading />
         </div>
-        
+
         <div>
           <h3 className="text-sm font-medium mb-2">Disabled State</h3>
-          <Slider 
-            defaultValue={[75]} 
-            disabled 
-            showValue
-            formatValue={(val) => `${val}% locked`}
-          />
+          <Slider defaultValue={[75]} disabled showValue formatValue={val => `${val}% locked`} />
         </div>
-        
+
         <div>
           <h3 className="text-sm font-medium mb-2">Custom Step & Range</h3>
           <Slider
@@ -286,71 +264,50 @@ export const EnhancedFeatures: Story = {
             max={1000}
             step={50}
             showValue
-            formatValue={(val) => `$${val.toLocaleString()}`}
+            formatValue={val => `$${val.toLocaleString()}`}
             variant="success"
             size="lg"
           />
         </div>
       </div>
-    )
+    );
   },
-}
+};
 
 // Real-world Use Cases
 export const FormIntegration: Story = {
   render: () => {
-    const [brightness, setBrightness] = useState([75])
-    const [contrast, setContrast] = useState([50])
-    const [saturation, setSaturation] = useState([60])
-    
+    const [brightness, setBrightness] = useState([75]);
+    const [contrast, setContrast] = useState([50]);
+    const [saturation, setSaturation] = useState([60]);
+
     return (
       <div className="p-6 border rounded-lg space-y-6 w-96">
         <h3 className="text-lg font-semibold">Display Settings</h3>
-        
+
         <div className="space-y-4">
           <div>
-            <label className="text-sm font-medium block mb-2">
-              Brightness: {brightness[0]}%
-            </label>
-            <Slider
-              value={brightness}
-              onValueChange={setBrightness}
-              max={100}
-              variant="default"
-            />
+            <label className="text-sm font-medium block mb-2">Brightness: {brightness[0]}%</label>
+            <Slider value={brightness} onValueChange={setBrightness} max={100} variant="default" />
           </div>
-          
+
           <div>
-            <label className="text-sm font-medium block mb-2">
-              Contrast: {contrast[0]}%
-            </label>
-            <Slider
-              value={contrast}
-              onValueChange={setContrast}
-              max={100}
-              variant="success"
-            />
+            <label className="text-sm font-medium block mb-2">Contrast: {contrast[0]}%</label>
+            <Slider value={contrast} onValueChange={setContrast} max={100} variant="success" />
           </div>
-          
+
           <div>
-            <label className="text-sm font-medium block mb-2">
-              Saturation: {saturation[0]}%
-            </label>
-            <Slider
-              value={saturation}
-              onValueChange={setSaturation}
-              max={100}
-              variant="warning"
-            />
+            <label className="text-sm font-medium block mb-2">Saturation: {saturation[0]}%</label>
+            <Slider value={saturation} onValueChange={setSaturation} max={100} variant="warning" />
           </div>
         </div>
-        
+
         <div className="pt-4 border-t">
           <div className="text-xs text-muted-foreground">
             Preview values: B:{brightness[0]}% C:{contrast[0]}% S:{saturation[0]}%
           </div>
         </div>
       </div>
-    )
+    );
   },
-}
+};

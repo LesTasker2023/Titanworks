@@ -56,6 +56,8 @@ import Select, {
 import Slider from '@/components/ui/Slider/slider';
 import Tabs, { TabsContent, TabsList, TabsTrigger } from '@/components/ui/Tabs/tabs';
 import Textarea from '@/components/ui/Textarea/textarea';
+import { Toaster } from '@/components/ui/Toast/toaster';
+import { useToast } from '@/components/ui/Toast/use-toast';
 
 /**
  * ðŸŽ¯ TriggerKings Component Library Showcase
@@ -67,6 +69,9 @@ import Textarea from '@/components/ui/Textarea/textarea';
  * - Real-world usage examples
  */
 export default function ComponentLibraryShowcase() {
+  // Toast hook for notifications
+  const { toast } = useToast();
+
   // Component state management
   const [progress, setProgress] = useState(65);
   const [animatedProgress, setAnimatedProgress] = useState(0);
@@ -1885,6 +1890,85 @@ export default function ComponentLibraryShowcase() {
             </div>
           </section>
 
+          {/* Toast Notifications Section */}
+          <section className="space-y-8">
+            <div className="text-center space-y-2">
+              <h2 className="text-3xl font-bold text-foreground">Toast Notifications</h2>
+              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                Enterprise-grade notification system with multiple variants and seamless user
+                experience.
+              </p>
+            </div>
+
+            <div className="grid gap-8">
+              <Card>
+                <CardHeader>
+                  <CardTitle>Toast Variants</CardTitle>
+                  <CardDescription>
+                    Comprehensive notification system with semantic variants and proper
+                    accessibility.
+                  </CardDescription>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                  <div className="flex flex-wrap gap-3">
+                    <Button
+                      onClick={() =>
+                        toast({
+                          title: 'Success!',
+                          description: 'Operation completed successfully',
+                          variant: 'success',
+                        })
+                      }
+                    >
+                      Success Toast
+                    </Button>
+                    <Button
+                      onClick={() =>
+                        toast({
+                          title: 'Error Occurred',
+                          description: 'Something went wrong',
+                          variant: 'error',
+                        })
+                      }
+                    >
+                      Error Toast
+                    </Button>
+                    <Button
+                      onClick={() =>
+                        toast({
+                          title: 'Warning',
+                          description: 'Please check your settings',
+                          variant: 'warning',
+                        })
+                      }
+                    >
+                      Warning Toast
+                    </Button>
+                    <Button
+                      onClick={() =>
+                        toast({
+                          title: 'Information',
+                          description: "Here's something you should know",
+                          variant: 'info',
+                        })
+                      }
+                    >
+                      Info Toast
+                    </Button>
+                    <Button
+                      variant="outline"
+                      onClick={() =>
+                        toast({ title: 'Default', description: 'This is a default notification' })
+                      }
+                    >
+                      Default Toast
+                    </Button>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          </section>
+
           {/* Footer Section */}
           <section className="text-center space-y-6 py-16 border-t border-border">
             <div className="space-y-2">
@@ -1919,6 +2003,7 @@ export default function ComponentLibraryShowcase() {
           </section>
         </div>
       </div>
+      <Toaster />
     </div>
   );
 }

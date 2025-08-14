@@ -29,6 +29,7 @@ export { default as Dialog } from './Dialog';
 export { default as Progress } from './Progress';
 export { default as RadioGroup } from './RadioGroup';
 export { default as Tabs } from './Tabs';
+export { Toast, Toaster, useToast, type ToastProps } from './Toast';
 
 // Component Library Stats:
 // ✅ NavigationMenu: 20 tests, mobile responsive with loading states

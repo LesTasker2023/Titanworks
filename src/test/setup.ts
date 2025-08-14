@@ -10,7 +10,7 @@ global.ResizeObserver = class ResizeObserver {
   disconnect() {}
 };
 
-// Mock IntersectionObserver for Radix UI  
+// Mock IntersectionObserver for Radix UI
 Object.defineProperty(window, 'IntersectionObserver', {
   writable: true,
   value: class IntersectionObserver {
@@ -18,7 +18,7 @@ Object.defineProperty(window, 'IntersectionObserver', {
     observe() {}
     unobserve() {}
     disconnect() {}
-  }
+  },
 });
 
 // Extend Vitest's expect with jest-dom matchers

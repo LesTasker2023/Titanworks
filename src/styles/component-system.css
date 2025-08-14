@@ -13,16 +13,16 @@
   background-color: hsl(var(--color-background));
   color: hsl(var(--color-foreground));
   transition: var(--transition-default);
-  
+
   /* Focus ring standard */
   &:focus-visible {
     outline: 2px solid hsl(var(--color-ring));
     outline-offset: 2px;
   }
-  
+
   /* Disabled state standard */
   &:disabled,
-  &[aria-disabled="true"] {
+  &[aria-disabled='true'] {
     opacity: 0.5;
     pointer-events: none;
     cursor: not-allowed;
@@ -61,7 +61,7 @@
   background-color: hsl(var(--color-muted));
   color: hsl(var(--color-muted-foreground));
   border-color: hsl(var(--color-border));
-  
+
   &:hover:not(:disabled) {
     background-color: hsl(var(--color-muted) / 0.8);
   }
@@ -71,7 +71,7 @@
   background-color: hsl(var(--color-success));
   color: hsl(var(--color-success-foreground));
   border-color: hsl(var(--color-success));
-  
+
   &:hover:not(:disabled) {
     background-color: hsl(var(--color-success) / 0.9);
   }
@@ -81,7 +81,7 @@
   background-color: hsl(var(--color-warning));
   color: hsl(var(--color-warning-foreground));
   border-color: hsl(var(--color-warning));
-  
+
   &:hover:not(:disabled) {
     background-color: hsl(var(--color-warning) / 0.9);
   }
@@ -91,7 +91,7 @@
   background-color: hsl(var(--color-danger));
   color: hsl(var(--color-danger-foreground));
   border-color: hsl(var(--color-danger));
-  
+
   &:hover:not(:disabled) {
     background-color: hsl(var(--color-danger) / 0.9);
   }
@@ -103,7 +103,7 @@
   background-color: transparent;
   color: hsl(var(--color-foreground));
   border-color: hsl(var(--color-border));
-  
+
   &:hover:not(:disabled) {
     background-color: hsl(var(--color-muted));
   }
@@ -113,7 +113,7 @@
   background-color: transparent;
   color: hsl(var(--color-success));
   border-color: hsl(var(--color-success));
-  
+
   &:hover:not(:disabled) {
     background-color: hsl(var(--color-success) / 0.1);
   }
@@ -123,7 +123,7 @@
   background-color: transparent;
   color: hsl(var(--color-warning));
   border-color: hsl(var(--color-warning));
-  
+
   &:hover:not(:disabled) {
     background-color: hsl(var(--color-warning) / 0.1);
   }
@@ -133,7 +133,7 @@
   background-color: transparent;
   color: hsl(var(--color-danger));
   border-color: hsl(var(--color-danger));
-  
+
   &:hover:not(:disabled) {
     background-color: hsl(var(--color-danger) / 0.1);
   }
@@ -145,9 +145,9 @@
   position: relative;
   color: transparent;
   pointer-events: none;
-  
+
   &::after {
-    content: "";
+    content: '';
     position: absolute;
     top: 50%;
     left: 50%;
@@ -167,7 +167,7 @@
   align-items: center;
   justify-content: center;
   gap: var(--spacing-2);
-  
+
   .spinner {
     width: var(--icon-sm);
     height: var(--icon-sm);
@@ -183,7 +183,7 @@
 .state-error {
   border-color: hsl(var(--color-danger));
   color: hsl(var(--color-danger));
-  
+
   /* Error message styling */
   & + .error-message {
     margin-top: var(--spacing-1);
@@ -202,12 +202,12 @@
 .interactive {
   cursor: pointer;
   user-select: none;
-  
+
   &:hover:not(:disabled) {
     transform: translateY(-1px);
     box-shadow: var(--shadow-md);
   }
-  
+
   &:active:not(:disabled) {
     transform: translateY(0);
     box-shadow: var(--shadow-sm);
@@ -224,11 +224,11 @@
   color: hsl(var(--color-foreground));
   font-family: inherit;
   transition: var(--transition-default);
-  
+
   &::placeholder {
     color: hsl(var(--color-muted-foreground));
   }
-  
+
   &:focus {
     outline: none;
     border-color: hsl(var(--color-ring));
@@ -324,7 +324,7 @@
   .component-base {
     border-width: 2px;
   }
-  
+
   .component-base:focus-visible {
     outline-width: 3px;
   }
@@ -352,7 +352,7 @@
     background: #fff !important;
     color: #000 !important;
   }
-  
+
   .state-loading::after {
     display: none;
   }

@@ -268,4 +268,95 @@ describe('DataTable', () => {
       expect(screen.getByText('Failed to load data')).toBeInTheDocument();
     });
   });
+
+  describe('Snapshots', () => {
+    it('matches default data table snapshot', () => {
+      const { container } = render(
+        <DataTable data={mockData} columns={mockColumns} data-testid="default-table" />
+      );
+      expect(container.firstChild).toMatchSnapshot();
+    });
+
+    it('matches all variants snapshot', () => {
+      const { container } = render(
+        <div>
+          <DataTable
+            data={mockData}
+            columns={mockColumns}
+            variant="default"
+            data-testid="variant-default"
+          />
+          <DataTable
+            data={mockData}
+            columns={mockColumns}
+            variant="success"
+            data-testid="variant-success"
+          />
+          <DataTable
+            data={mockData}
+            columns={mockColumns}
+            variant="warning"
+            data-testid="variant-warning"
+          />
+          <DataTable
+            data={mockData}
+            columns={mockColumns}
+            variant="danger"
+            data-testid="variant-danger"
+          />
+        </div>
+      );
+      expect(container.firstChild).toMatchSnapshot();
+    });
+
+    it('matches all sizes snapshot', () => {
+      const { container } = render(
+        <div>
+          <DataTable data={mockData} columns={mockColumns} size="sm" data-testid="size-small" />
+          <DataTable
+            data={mockData}
+            columns={mockColumns}
+            size="default"
+            data-testid="size-default"
+          />
+          <DataTable data={mockData} columns={mockColumns} size="lg" data-testid="size-large" />
+          <DataTable
+            data={mockData}
+            columns={mockColumns}
+            size="xl"
+            data-testid="size-extra-large"
+          />
+        </div>
+      );
+      expect(container.firstChild).toMatchSnapshot();
+    });
+
+    it('matches empty state snapshot', () => {
+      const { container } = render(
+        <DataTable data={[]} columns={mockColumns} emptyMessage="No data available" />
+      );
+      expect(container.firstChild).toMatchSnapshot();
+    });
+
+    it('matches loading state snapshot', () => {
+      const { container } = render(
+        <DataTable data={mockData} columns={mockColumns} loading={true} />
+      );
+      expect(container.firstChild).toMatchSnapshot();
+    });
+
+    it('matches disabled state snapshot', () => {
+      const { container } = render(
+        <DataTable data={mockData} columns={mockColumns} disabled={true} />
+      );
+      expect(container.firstChild).toMatchSnapshot();
+    });
+
+    it('matches error state snapshot', () => {
+      const { container } = render(
+        <DataTable data={mockData} columns={mockColumns} error="Something went wrong" />
+      );
+      expect(container.firstChild).toMatchSnapshot();
+    });
+  });
 });

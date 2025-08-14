@@ -6,7 +6,7 @@ param(
     [switch]$ListComponents
 )
 
-Write-Host "TRIGGERKINGS DEDUCTIVE SMART AUDIT" -ForegroundColor Cyan
+Write-Host "TITAN DEDUCTIVE SMART AUDIT" -ForegroundColor Cyan
 
 # Ensure reports directory exists
 if (-not (Test-Path "reports")) {
@@ -339,6 +339,8 @@ try {
 # Test check
 try {
     $TestOutput = & "yarn" "test:run" 2>&1 | Out-String
+    Write-Host "\n---\nTEST OUTPUT (verbose):\n---" -ForegroundColor Yellow
+    Write-Output $TestOutput
     $TestsPassed = if ($TestOutput -match "(\d+) passed") { [int]$Matches[1] } else { 0 }
     $TestsFailed = if ($TestOutput -match "(\d+) failed") { [int]$Matches[1] } else { 0 }
     if ($TestsFailed -gt 0) {

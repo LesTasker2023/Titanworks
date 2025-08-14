@@ -5,7 +5,9 @@
   // Enhanced focus states for accessibility
   &:focus-within {
     .slider__thumb {
-      box-shadow: 0 0 0 2px var(--ring), 0 0 0 4px var(--ring-offset);
+      box-shadow:
+        0 0 0 2px var(--ring),
+        0 0 0 4px var(--ring-offset);
       transition: box-shadow 0.2s ease-in-out;
     }
   }
@@ -18,10 +20,12 @@
   // Enhanced thumb hover states
   .slider__thumb {
     transition: all 0.15s ease-in-out;
-    
+
     &:hover:not(:disabled) {
       transform: scale(1.05);
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12), 0 2px 4px rgba(0, 0, 0, 0.08);
+      box-shadow:
+        0 4px 8px rgba(0, 0, 0, 0.12),
+        0 2px 4px rgba(0, 0, 0, 0.08);
     }
 
     &:active:not(:disabled) {
@@ -43,7 +47,7 @@
       width: 6px;
       min-height: 100px;
     }
-    
+
     .slider__thumb {
       margin-left: -1px;
       margin-top: -8px;
@@ -53,12 +57,7 @@
   // Loading state animation
   &.slider--loading {
     .slider__track {
-      background: linear-gradient(
-        90deg,
-        var(--muted) 25%,
-        var(--muted-foreground) 50%,
-        var(--muted) 75%
-      );
+      background: linear-gradient(90deg, var(--muted) 25%, var(--muted-foreground) 50%, var(--muted) 75%);
       background-size: 200% 100%;
       animation: loading-shimmer 2s infinite;
     }
@@ -68,7 +67,7 @@
 // Smooth value label animations
 .slider__value {
   transition: all 0.2s ease-in-out;
-  
+
   &--appearing {
     opacity: 0;
     transform: translateY(-4px);
@@ -98,11 +97,11 @@
     .slider__track {
       border: 1px solid currentColor;
     }
-    
+
     .slider__range {
       background: currentColor;
     }
-    
+
     .slider__thumb {
       border: 2px solid currentColor;
       background: var(--background);

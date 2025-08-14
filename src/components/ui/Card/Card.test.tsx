@@ -201,4 +201,88 @@ describe('Card Components', () => {
       expect(card).toHaveClass('text-lg');
     });
   });
+
+  describe('Snapshots', () => {
+    it('matches default card snapshot', () => {
+      const { container } = render(
+        <Card>
+          <CardHeader>
+            <CardTitle>Default Card</CardTitle>
+            <CardDescription>This is a default card</CardDescription>
+          </CardHeader>
+          <CardContent>Card content goes here</CardContent>
+          <CardFooter>Card footer</CardFooter>
+        </Card>
+      );
+      expect(container.firstChild).toMatchSnapshot();
+    });
+
+    it('matches all variants snapshot', () => {
+      const { container } = render(
+        <div>
+          <Card variant="default">
+            <CardContent>Default variant</CardContent>
+          </Card>
+          <Card variant="success">
+            <CardContent>Success variant</CardContent>
+          </Card>
+          <Card variant="warning">
+            <CardContent>Warning variant</CardContent>
+          </Card>
+          <Card variant="danger">
+            <CardContent>Danger variant</CardContent>
+          </Card>
+        </div>
+      );
+      expect(container.firstChild).toMatchSnapshot();
+    });
+
+    it('matches all sizes snapshot', () => {
+      const { container } = render(
+        <div>
+          <Card size="sm">
+            <CardContent>Small card</CardContent>
+          </Card>
+          <Card size="default">
+            <CardContent>Default card</CardContent>
+          </Card>
+          <Card size="lg">
+            <CardContent>Large card</CardContent>
+          </Card>
+        </div>
+      );
+      expect(container.firstChild).toMatchSnapshot();
+    });
+
+    it('matches complete card structure snapshot', () => {
+      const { container } = render(
+        <Card variant="success" size="lg">
+          <CardHeader>
+            <CardTitle>Complete Card</CardTitle>
+            <CardDescription>Full card structure with all components</CardDescription>
+          </CardHeader>
+          <CardContent>
+            <p>This card demonstrates all possible card components working together.</p>
+          </CardContent>
+          <CardFooter>
+            <button>Action</button>
+          </CardFooter>
+        </Card>
+      );
+      expect(container.firstChild).toMatchSnapshot();
+    });
+
+    it('matches card components individually snapshot', () => {
+      const { container } = render(
+        <div>
+          <CardHeader>Header Component</CardHeader>
+          <CardTitle>Title Component</CardTitle>
+          <CardDescription>Description Component</CardDescription>
+          <CardContent>Content Component</CardContent>
+          <CardFooter>Footer Component</CardFooter>
+        </div>
+      );
+      expect(container.firstChild).toMatchSnapshot();
+    });
+  });
 });

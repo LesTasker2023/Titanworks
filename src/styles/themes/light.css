@@ -2,30 +2,30 @@
 
 :root {
   /* Light theme color overrides */
-  --color-background: 0 0% 100%;          /* Pure white */
-  --color-foreground: 224 71% 4%;         /* Dark gray text */
-  --color-muted: 220 14% 96%;             /* Light gray backgrounds */
-  --color-muted-foreground: 220 9% 46%;   /* Medium gray text */
-  --color-border: 220 13% 91%;            /* Light gray borders */
-  --color-input: 220 13% 91%;             /* Input field backgrounds */
-  --color-ring: 221 83% 53%;              /* Blue focus rings */
-  --color-accent: 220 14% 96%;            /* Accent backgrounds */
-  --color-accent-foreground: 220 9% 46%;  /* Accent text */
-  
+  --color-background: 0 0% 100%; /* Pure white */
+  --color-foreground: 224 71% 4%; /* Dark gray text */
+  --color-muted: 220 14% 96%; /* Light gray backgrounds */
+  --color-muted-foreground: 220 9% 46%; /* Medium gray text */
+  --color-border: 220 13% 91%; /* Light gray borders */
+  --color-input: 220 13% 91%; /* Input field backgrounds */
+  --color-ring: 221 83% 53%; /* Blue focus rings */
+  --color-accent: 220 14% 96%; /* Accent backgrounds */
+  --color-accent-foreground: 220 9% 46%; /* Accent text */
+
   /* Card and surface colors */
-  --color-card: 0 0% 100%;                /* Card backgrounds */
-  --color-card-foreground: 224 71% 4%;    /* Card text */
-  
+  --color-card: 0 0% 100%; /* Card backgrounds */
+  --color-card-foreground: 224 71% 4%; /* Card text */
+
   /* Popover colors */
-  --color-popover: 0 0% 100%;             /* Popover backgrounds */
+  --color-popover: 0 0% 100%; /* Popover backgrounds */
   --color-popover-foreground: 224 71% 4%; /* Popover text */
-  
+
   /* Secondary colors */
-  --color-secondary: 220 14% 96%;         /* Secondary button bg */
+  --color-secondary: 220 14% 96%; /* Secondary button bg */
   --color-secondary-foreground: 220 9% 46%; /* Secondary button text */
-  
+
   /* Destructive colors */
-  --color-destructive: 0 84% 60%;         /* Red for destructive actions */
+  --color-destructive: 0 84% 60%; /* Red for destructive actions */
   --color-destructive-foreground: 210 40% 98%; /* White text on red */
 }
 
@@ -41,8 +41,8 @@
 /* High contrast adjustments for light theme */
 @media (prefers-contrast: high) {
   :root {
-    --color-border: 0 0% 0%;              /* Pure black borders */
+    --color-border: 0 0% 0%; /* Pure black borders */
     --color-muted-foreground: 224 71% 4%; /* Darker text */
-    --color-ring: 221 83% 40%;            /* Darker focus ring */
+    --color-ring: 221 83% 40%; /* Darker focus ring */
   }
 }
