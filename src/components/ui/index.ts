@@ -13,8 +13,12 @@ export { default as Textarea, type TextareaProps } from './Textarea';
 export { default as NavigationMenu } from './NavigationMenu';
 
 // UI Components
+export { default as Alert } from './Alert';
+export { default as Avatar } from './Avatar';
 export { default as Badge } from './Badge';
+export { default as Dialog } from './Dialog';
 export { default as Progress } from './Progress';
+export { default as RadioGroup } from './RadioGroup';
 export { default as Tabs } from './Tabs';
 
 // Component Library Stats:

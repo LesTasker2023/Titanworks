@@ -4,7 +4,7 @@ import { afterEach, expect } from 'vitest';
 
 // Mock ResizeObserver for Radix UI
 global.ResizeObserver = class ResizeObserver {
-  constructor(_callback: ResizeObserverCallback) {}
+  constructor() {}
   observe() {}
   unobserve() {}
   disconnect() {}
@@ -14,7 +14,7 @@ global.ResizeObserver = class ResizeObserver {
 Object.defineProperty(window, 'IntersectionObserver', {
   writable: true,
   value: class IntersectionObserver {
-    constructor(_callback: IntersectionObserverCallback) {}
+    constructor() {}
     observe() {}
     unobserve() {}
     disconnect() {}
