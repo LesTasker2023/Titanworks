@@ -1,8 +1,12 @@
 'use client';
 import Button from '@/components/ui/Button';
+import Slider from '@/components/ui/Slider';
 import Link from 'next/link';
+import { useState } from 'react';
 
 export default function Home() {
+  const [sliderValue, setSliderValue] = useState([75]);
+  
   return (
     <main
       style={{
@@ -97,6 +101,21 @@ export default function Home() {
           <Button variant="destructive" loading>
             Deleting...
           </Button>
+        </div>
+
+        {/* Slider Integration Test */}
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', alignItems: 'center', minWidth: '200px' }}>
+          <div style={{ fontSize: '0.875rem', color: '#ccc' }}>
+            Slider: {sliderValue[0]}%
+          </div>
+          <Slider 
+            value={sliderValue}
+            onValueChange={setSliderValue}
+            size="lg"
+            variant="success"
+            showValue={false}
+            style={{ width: '200px' }}
+          />
         </div>
 
         <Link href="/input-test">

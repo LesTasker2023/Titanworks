@@ -1,0 +1,121 @@
+// Enhanced SCSS for Slider component
+// Only add what Tailwind can't do: complex animations, transitions, touch interactions
+
+.slider {
+  // Enhanced focus states for accessibility
+  &:focus-within {
+    .slider__thumb {
+      box-shadow: 0 0 0 2px var(--ring), 0 0 0 4px var(--ring-offset);
+      transition: box-shadow 0.2s ease-in-out;
+    }
+  }
+
+  // Smooth value transitions
+  .slider__range {
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  // Enhanced thumb hover states
+  .slider__thumb {
+    transition: all 0.15s ease-in-out;
+    
+    &:hover:not(:disabled) {
+      transform: scale(1.05);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12), 0 2px 4px rgba(0, 0, 0, 0.08);
+    }
+
+    &:active:not(:disabled) {
+      transform: scale(0.95);
+    }
+
+    // Touch-friendly sizing on mobile
+    @media (max-width: 768px) {
+      width: 20px;
+      height: 20px;
+      min-width: 20px;
+      min-height: 20px;
+    }
+  }
+
+  // Vertical orientation enhancements
+  &[data-orientation="vertical"] {
+    .slider__track {
+      width: 6px;
+      min-height: 100px;
+    }
+    
+    .slider__thumb {
+      margin-left: -1px;
+      margin-top: -8px;
+    }
+  }
+
+  // Loading state animation
+  &.slider--loading {
+    .slider__track {
+      background: linear-gradient(
+        90deg,
+        var(--muted) 25%,
+        var(--muted-foreground) 50%,
+        var(--muted) 75%
+      );
+      background-size: 200% 100%;
+      animation: loading-shimmer 2s infinite;
+    }
+  }
+}
+
+// Smooth value label animations
+.slider__value {
+  transition: all 0.2s ease-in-out;
+  
+  &--appearing {
+    opacity: 0;
+    transform: translateY(-4px);
+    animation: slideIn 0.2s ease-out forwards;
+  }
+}
+
+@keyframes loading-shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes slideIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// High contrast mode support
+@media (prefers-contrast: high) {
+  .slider {
+    .slider__track {
+      border: 1px solid currentColor;
+    }
+    
+    .slider__range {
+      background: currentColor;
+    }
+    
+    .slider__thumb {
+      border: 2px solid currentColor;
+      background: var(--background);
+    }
+  }
+}
+
+// Reduced motion support
+@media (prefers-reduced-motion: reduce) {
+  .slider {
+    * {
+      transition: none !important;
+      animation: none !important;
+    }
+  }
+}
