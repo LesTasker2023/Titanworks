@@ -1,6 +1,6 @@
-import * as React from 'react';
-import { cva, type VariantProps } from 'class-variance-authority';
 import { cn } from '@/lib/utils';
+import { cva, type VariantProps } from 'class-variance-authority';
+import * as React from 'react';
 
 // Enhanced Card component following shadcn/ui pattern with variants
 const cardVariants = cva(
@@ -99,4 +99,4 @@ const CardFooter = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDiv
 );
 CardFooter.displayName = 'CardFooter';
 
-export { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter, cardVariants };
+export { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle, cardVariants };

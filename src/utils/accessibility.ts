@@ -1,5 +1,5 @@
 /**
- * TriggerKings Accessibility Utilities
+ * Daedalus Accessibility Utilities
  * Contrast ratio calculations and validation helpers
  */
 
@@ -67,7 +67,7 @@ export function hexToRgb(hex: string): [number, number, number] | null {
 }
 
 /**
- * TriggerKings color palette with accessibility info
+ * Daedalus color palette with accessibility info
  */
 export const TK_COLORS = {
   // Primary palette
@@ -82,9 +82,9 @@ export const TK_COLORS = {
 } as const;
 
 /**
- * Test common TriggerKings color combinations
+ * Test common Daedalus color combinations
  */
-export function auditTriggerKingsColors(): void {
+export function auditDaedalusColors(): void {
   const combinations = [
     {
       name: 'Primary on White',
@@ -101,7 +101,7 @@ export function auditTriggerKingsColors(): void {
     { name: 'Muted on Dark', fg: TK_COLORS.neutral400.rgb, bg: TK_COLORS.neutral800.rgb },
   ];
 
-  console.group('🎨 TriggerKings Color Accessibility Audit');
+  console.group('🎨 Daedalus Color Accessibility Audit');
 
   combinations.forEach(({ name, fg, bg }) => {
     const ratio = getContrastRatio(fg, bg);
@@ -121,5 +121,5 @@ export function auditTriggerKingsColors(): void {
 
 // Run audit in development
 if (typeof window !== 'undefined' && process.env.NODE_ENV === 'development') {
-  // auditTriggerKingsColors();
+  // auditDaedalusColors();
 }

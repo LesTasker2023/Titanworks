@@ -1,5 +1,5 @@
-import TopNav from '@/components/layout/TopNav';
 import Footer from '@/components/layout/Footer';
+import TopNav from '@/components/layout/TopNav';
 import '@/styles/globals.scss';
 import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';

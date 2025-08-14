@@ -143,8 +143,8 @@ export default function QualityDashboard() {
     <div className="container mx-auto p-8 space-y-8">
       {/* Header */}
       <div className="text-center space-y-4">
-        <h1 className="text-4xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-          TriggerKings Quality Dashboard
+        <h1 className="text-4xl font-bold bg-clip-text text-transparent">
+          Daedalus Quality Dashboard
         </h1>
         <p className="text-xl text-gray-600">
           Real-time component quality monitoring and system health
@@ -161,7 +161,7 @@ export default function QualityDashboard() {
       </div>
 
       {/* Overall Score */}
-      <Card className="bg-gradient-to-r from-green-50 to-blue-50">
+      <Card>
         <CardHeader className="text-center">
           <CardTitle className="text-3xl">Overall Quality Score</CardTitle>
           <CardDescription>
@@ -216,7 +216,7 @@ export default function QualityDashboard() {
             {systemHealthItems.map((item, index) => (
               <div key={index} className="flex items-center gap-3 p-4 rounded-lg border">
                 <div
-                  className={`w-3 h-3 rounded-full ${item.passed ? 'bg-green-500' : 'bg-red-500'}`}
+                  className={`w-3 h-3 rounded-full ${item.passed ? 'text-green-500' : 'text-red-500'}`}
                 />
                 <div>
                   <div className="font-medium">{item.label}</div>
@@ -271,7 +271,7 @@ export default function QualityDashboard() {
                         <Avatar src="" alt={name} size="sm" fallback={name[0]} />
                         <div>
                           <h3 className="font-semibold">{name}</h3>
-                          <p className="text-sm text-gray-600">{data.context}</p>
+                          <p className="text-sm text-gray-300">{data.context}</p>
                         </div>
                       </div>
 
@@ -295,7 +295,7 @@ export default function QualityDashboard() {
                       ((Array.isArray(data.issues) && data.issues.length > 0) ||
                         (typeof data.issues === 'string' && data.issues.trim() !== '')) && (
                         <div className="mt-4 pt-4 border-t">
-                          <h4 className="text-sm font-medium text-gray-700 mb-2">
+                          <h4 className="text-sm font-medium text-red-500 mb-2">
                             Issues to Address:
                           </h4>
                           <div className="space-y-1">
@@ -303,7 +303,7 @@ export default function QualityDashboard() {
                               (issue, index) => (
                                 <div
                                   key={index}
-                                  className="text-sm text-red-600 bg-red-50 px-2 py-1 rounded"
+                                  className="text-sm text-white-300 px-2 py-1 rounded"
                                 >
                                   • {issue}
                                 </div>
@@ -470,7 +470,7 @@ export default function QualityDashboard() {
           <CardDescription>Complete audit data for development and integration</CardDescription>
         </CardHeader>
         <CardContent>
-          <pre className="bg-gray-50 p-4 rounded-lg overflow-auto max-h-64 text-xs">
+          <pre className="p-4 rounded-lg overflow-auto max-h-64 text-xs">
             {JSON.stringify(qualityData, null, 2)}
           </pre>
         </CardContent>

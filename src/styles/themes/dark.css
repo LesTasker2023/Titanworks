@@ -1,4 +1,4 @@
-/* 🌙 Dark Theme - Optional dark mode for TriggerKings */
+/* 🌙 Dark Theme - Optional dark mode for Daedalus */
 
 @media (prefers-color-scheme: dark) {
   :root {
@@ -6,12 +6,12 @@
     --color-background: 224 71% 4%; /* Dark background */
     --color-foreground: 210 40% 98%; /* Light text */
     --color-muted: 223 47% 11%; /* Dark muted backgrounds */
-    --color-muted-foreground: 215 20% 65%; /* Medium light text */
+    --color-muted-foreground: 220 13% 85%; /* Much lighter for readability */
     --color-border: 216 34% 17%; /* Dark borders */
     --color-input: 216 34% 17%; /* Dark input backgrounds */
     --color-ring: 224 76% 78%; /* Light blue focus rings */
-    --color-accent: 216 34% 17%; /* Dark accent backgrounds */
-    --color-accent-foreground: 210 40% 98%; /* Light accent text */
+    --color-accent: 220 13% 22%; /* Softer accent for badges/notifications */
+    --color-accent-foreground: 220 13% 85%; /* Lighter, but not pure white */
 
     /* Card and surface colors */
     --color-card: 224 71% 4%; /* Dark card backgrounds */

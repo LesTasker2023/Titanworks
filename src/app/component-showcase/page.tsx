@@ -60,7 +60,7 @@ import { Toaster } from '@/components/ui/Toast/toaster';
 import { useToast } from '@/components/ui/Toast/use-toast';
 
 /**
- * ðŸŽ¯ TriggerKings Component Library Showcase
+ * 🎯 Daedalus Component Library Showcase
  *
  * Complete demonstration of all 15 components with full style guide compliance:
  * - All available variants and sizes per component
@@ -131,13 +131,13 @@ export default function ComponentLibraryShowcase() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen">
       {/* Navigation Header */}
-      <div className="border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 sticky top-0 z-40">
+      <div className="border-b border-border backdrop-blur supports-[backdrop-filter]:bg-background/60 sticky top-0 z-40">
         <div className="max-w-7xl mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-4">
-              <h1 className="text-2xl font-bold text-foreground">TriggerKings</h1>
+              <h1 className="text-2xl font-bold text-foreground">Daedalus</h1>
               <Badge>15 Components</Badge>
               <Badge size="sm">539 Tests</Badge>
             </div>
@@ -220,7 +220,7 @@ export default function ComponentLibraryShowcase() {
             </div>
 
             {/* Button Showcase */}
-            <div className="bg-card border border-border rounded-lg p-8 space-y-8">
+            <div className="border border-border rounded-lg p-8 space-y-8">
               <div className="text-center">
                 <h3 className="text-2xl font-semibold text-foreground flex items-center justify-center gap-3">
                   <span className="w-10 h-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-sm font-bold">
@@ -314,7 +314,7 @@ export default function ComponentLibraryShowcase() {
             </div>
 
             {/* Input Showcase */}
-            <div className="bg-card border border-border rounded-lg p-8 space-y-8">
+            <div className="border border-border rounded-lg p-8 space-y-8">
               <div className="text-center">
                 <h3 className="text-2xl font-semibold text-foreground flex items-center justify-center gap-3">
                   <span className="w-10 h-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-sm font-bold">
@@ -544,7 +544,7 @@ export default function ComponentLibraryShowcase() {
             </div>
 
             {/* Textarea Showcase */}
-            <div className="bg-card border border-border rounded-lg p-8 space-y-8">
+            <div className="border border-border rounded-lg p-8 space-y-8">
               <div className="text-center">
                 <h3 className="text-2xl font-semibold text-foreground flex items-center justify-center gap-3">
                   <span className="w-10 h-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-sm font-bold">
@@ -570,7 +570,7 @@ export default function ComponentLibraryShowcase() {
             </div>
 
             {/* Select Showcase */}
-            <div className="bg-card border border-border rounded-lg p-8 space-y-8">
+            <div className="border border-border rounded-lg p-8 space-y-8">
               <div className="text-center">
                 <h3 className="text-2xl font-semibold text-foreground flex items-center justify-center gap-3">
                   <span className="w-10 h-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-sm font-bold">
@@ -606,7 +606,7 @@ export default function ComponentLibraryShowcase() {
             </div>
 
             {/* Checkbox & Radio Showcase */}
-            <div className="bg-card border border-border rounded-lg p-8 space-y-8">
+            <div className="border border-border rounded-lg p-8 space-y-8">
               <div className="text-center">
                 <h3 className="text-2xl font-semibold text-foreground flex items-center justify-center gap-3">
                   <span className="w-10 h-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-sm font-bold">
@@ -678,7 +678,7 @@ export default function ComponentLibraryShowcase() {
             </div>
 
             {/* Slider Showcase */}
-            <div className="bg-card border border-border rounded-lg p-8 space-y-8">
+            <div className="border border-border rounded-lg p-8 space-y-8">
               <div className="text-center">
                 <h3 className="text-2xl font-semibold text-foreground flex items-center justify-center gap-3">
                   <span className="w-10 h-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-sm font-bold">
@@ -734,7 +734,7 @@ export default function ComponentLibraryShowcase() {
             </div>
 
             {/* Alert Showcase */}
-            <div className="bg-card border border-border rounded-lg p-8 space-y-8">
+            <div className="border border-border rounded-lg p-8 space-y-8">
               <div className="text-center">
                 <h3 className="text-2xl font-semibold text-foreground flex items-center justify-center gap-3">
                   <span className="w-10 h-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-sm font-bold">

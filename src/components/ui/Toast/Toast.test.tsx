@@ -2,7 +2,7 @@
  * 🧪 Toast Component Test Suite
  *
  * Comprehensive test coverage for Toast notification system following
- * TriggerKings enterprise testing standards.
+ * Daedalus enterprise testing standards.
  */
 
 import { fireEvent, render, screen, waitFor } from '@testing-library/react';

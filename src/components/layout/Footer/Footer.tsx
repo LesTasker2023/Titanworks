@@ -6,20 +6,34 @@ export default function Footer() {
       style={{
         width: '100%',
         padding: '2rem 0',
-        borderTop: '1px solid var(--border-color, #eaeaea)',
-        background: 'var(--footer-bg, #fafafa)',
+        borderTop: '1px solid hsl(var(--border))',
+        background: 'hsl(var(--background))',
         textAlign: 'center',
         fontSize: 14,
-        color: 'var(--footer-fg, #888)',
+        color: 'hsl(var(--muted-foreground))',
         marginTop: 'auto',
+        transition: 'background 0.3s, color 0.3s',
       }}
     >
-      <div>&copy; 2025 TriggerKings. All rights reserved.</div>
+      <div>&copy; 2025 Daedalus. All rights reserved.</div>
       <div style={{ marginTop: 8 }}>
-        <Link href="/privacy" style={{ marginRight: 16 }}>
+        <Link
+          href="/privacy"
+          style={{
+            marginRight: 16,
+            color: 'inherit',
+            textDecoration: 'underline',
+            textUnderlineOffset: 2,
+          }}
+        >
           Privacy Policy
         </Link>
-        <Link href="/terms">Terms of Service</Link>
+        <Link
+          href="/terms"
+          style={{ color: 'inherit', textDecoration: 'underline', textUnderlineOffset: 2 }}
+        >
+          Terms of Service
+        </Link>
       </div>
     </footer>
   );

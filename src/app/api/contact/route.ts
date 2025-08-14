@@ -36,7 +36,7 @@ export async function POST(req: NextRequest) {
     console.log('Attempting to send email with Resend...');
 
     // Email configuration
-    const fromEmail = process.env.FROM_EMAIL || 'TriggerKings <noreply@resend.dev>';
+    const fromEmail = process.env.FROM_EMAIL || 'Daedalus <noreply@resend.dev>';
     console.log('Using FROM_EMAIL:', fromEmail);
 
     // Send email with proper error handling
@@ -44,10 +44,10 @@ export async function POST(req: NextRequest) {
       from: fromEmail,
       to: ['leseatfire@gmail.com'], // Your verified email address
       replyTo: email, // Allow replies to go to the submitter
-      subject: `TriggerKings Contact Form: ${event} in ${location}`,
+      subject: `Daedalus Contact Form: ${event} in ${location}`,
       html: `
         <h2>New Contact Form Submission</h2>
-        <p>Someone has contacted TriggerKings about <strong>${event}</strong> in <strong>${location}</strong>.</p>
+  <p>Someone has contacted Daedalus about <strong>${event}</strong> in <strong>${location}</strong>.</p>
         
         <h3>Contact Details:</h3>
         <ul>
@@ -63,7 +63,7 @@ export async function POST(req: NextRequest) {
       text: `
         New Contact Form Submission
         
-        Someone has contacted TriggerKings about ${event} in ${location}.
+  Someone has contacted Daedalus about ${event} in ${location}.
         
         Contact Details:
         Name: ${name}
