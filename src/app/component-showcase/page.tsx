@@ -354,28 +354,30 @@ export default function ComponentLibraryShowcase() {
                 {/* Checkboxes */}
                 <div className="space-y-6">
                   <h4 className="text-lg font-medium text-foreground text-center">Checkboxes</h4>
-                  <div className="space-y-4">
-                    <div className="flex items-center space-x-3">
-                      <Checkbox
-                        id="checkbox-1"
-                        checked={checkboxState === true}
-                        onCheckedChange={checked => setCheckboxState(checked)}
-                      />
-                      <label htmlFor="checkbox-1" className="text-sm">
-                        Default checkbox
-                      </label>
-                    </div>
-                    <div className="flex items-center space-x-3">
-                      <Checkbox id="checkbox-2" checked="indeterminate" />
-                      <label htmlFor="checkbox-2" className="text-sm">
-                        Indeterminate state
-                      </label>
-                    </div>
-                    <div className="flex items-center space-x-3">
-                      <Checkbox id="checkbox-3" disabled />
-                      <label htmlFor="checkbox-3" className="text-sm text-muted-foreground">
-                        Disabled checkbox
-                      </label>
+                  <div className="flex justify-center">
+                    <div className="space-y-4">
+                      <div className="flex items-center space-x-3">
+                        <Checkbox
+                          id="checkbox-1"
+                          checked={checkboxState === true}
+                          onCheckedChange={checked => setCheckboxState(checked)}
+                        />
+                        <label htmlFor="checkbox-1" className="text-sm">
+                          Default checkbox
+                        </label>
+                      </div>
+                      <div className="flex items-center space-x-3">
+                        <Checkbox id="checkbox-2" checked="indeterminate" />
+                        <label htmlFor="checkbox-2" className="text-sm">
+                          Indeterminate state
+                        </label>
+                      </div>
+                      <div className="flex items-center space-x-3">
+                        <Checkbox id="checkbox-3" disabled />
+                        <label htmlFor="checkbox-3" className="text-sm text-muted-foreground">
+                          Disabled checkbox
+                        </label>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -383,26 +385,28 @@ export default function ComponentLibraryShowcase() {
                 {/* Radio Groups */}
                 <div className="space-y-6">
                   <h4 className="text-lg font-medium text-foreground text-center">Radio Groups</h4>
-                  <RadioGroup value={radioValue} onValueChange={setRadioValue}>
-                    <div className="flex items-center space-x-3">
-                      <RadioGroupItem value="option1" id="radio-1" />
-                      <label htmlFor="radio-1" className="text-sm">
-                        Option 1
-                      </label>
-                    </div>
-                    <div className="flex items-center space-x-3">
-                      <RadioGroupItem value="option2" id="radio-2" />
-                      <label htmlFor="radio-2" className="text-sm">
-                        Option 2
-                      </label>
-                    </div>
-                    <div className="flex items-center space-x-3">
-                      <RadioGroupItem value="option3" id="radio-3" disabled />
-                      <label htmlFor="radio-3" className="text-sm text-muted-foreground">
-                        Disabled option
-                      </label>
-                    </div>
-                  </RadioGroup>
+                  <div className="flex justify-center">
+                    <RadioGroup value={radioValue} onValueChange={setRadioValue}>
+                      <div className="flex items-center space-x-3">
+                        <RadioGroupItem value="option1" id="radio-1" />
+                        <label htmlFor="radio-1" className="text-sm">
+                          Option 1
+                        </label>
+                      </div>
+                      <div className="flex items-center space-x-3">
+                        <RadioGroupItem value="option2" id="radio-2" />
+                        <label htmlFor="radio-2" className="text-sm">
+                          Option 2
+                        </label>
+                      </div>
+                      <div className="flex items-center space-x-3">
+                        <RadioGroupItem value="option3" id="radio-3" disabled />
+                        <label htmlFor="radio-3" className="text-sm text-muted-foreground">
+                          Disabled option
+                        </label>
+                      </div>
+                    </RadioGroup>
+                  </div>
                 </div>
               </div>
             </div>
@@ -571,19 +575,21 @@ export default function ComponentLibraryShowcase() {
             </div>
 
             {/* Badge Showcase */}
-            <div className="space-y-6">
-              <h3 className="text-2xl font-semibold text-foreground flex items-center gap-2">
-                <span className="w-8 h-8 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-sm font-bold">
-                  9
-                </span>
-                Badge Component
-              </h3>
+            <div className="bg-card border border-border rounded-lg p-8 space-y-8">
+              <div className="text-center">
+                <h3 className="text-2xl font-semibold text-foreground flex items-center justify-center gap-3">
+                  <span className="w-10 h-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-sm font-bold">
+                    9
+                  </span>
+                  Badge Component
+                </h3>
+              </div>
 
-              <div className="space-y-6">
+              <div className="space-y-8">
                 {/* Color Variants */}
-                <div className="space-y-4">
+                <div className="space-y-4 text-center">
                   <h4 className="text-lg font-medium text-foreground">Color Variants</h4>
-                  <div className="flex flex-wrap gap-3">
+                  <div className="flex flex-wrap justify-center gap-3">
                     <Badge variant="default">Default</Badge>
                     <Badge variant="destructive">Destructive</Badge>
                     <Badge variant="secondary">Secondary</Badge>
@@ -592,9 +598,9 @@ export default function ComponentLibraryShowcase() {
                 </div>
 
                 {/* Size Variants */}
-                <div className="space-y-4">
+                <div className="space-y-4 text-center">
                   <h4 className="text-lg font-medium text-foreground">Size Variants</h4>
-                  <div className="flex flex-wrap items-center gap-3">
+                  <div className="flex flex-wrap justify-center items-center gap-3">
                     <Badge size="sm">Small</Badge>
                     <Badge size="default">Default</Badge>
                     <Badge size="lg">Large</Badge>
@@ -602,9 +608,9 @@ export default function ComponentLibraryShowcase() {
                 </div>
 
                 {/* Interactive Badges */}
-                <div className="space-y-4">
+                <div className="space-y-4 text-center">
                   <h4 className="text-lg font-medium text-foreground">Interactive Features</h4>
-                  <div className="flex flex-wrap gap-3">
+                  <div className="flex flex-wrap justify-center gap-3">
                     <Badge removable onRemove={() => console.log('Badge removed')}>
                       Removable Badge
                     </Badge>
@@ -615,19 +621,21 @@ export default function ComponentLibraryShowcase() {
             </div>
 
             {/* Avatar Showcase */}
-            <div className="space-y-6">
-              <h3 className="text-2xl font-semibold text-foreground flex items-center gap-2">
-                <span className="w-8 h-8 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-sm font-bold">
-                  10
-                </span>
-                Avatar Component
-              </h3>
+            <div className="bg-card border border-border rounded-lg p-8 space-y-8">
+              <div className="text-center">
+                <h3 className="text-2xl font-semibold text-foreground flex items-center justify-center gap-3">
+                  <span className="w-10 h-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-sm font-bold">
+                    10
+                  </span>
+                  Avatar Component
+                </h3>
+              </div>
 
-              <div className="space-y-6">
+              <div className="space-y-8">
                 {/* Basic Avatars */}
-                <div className="space-y-4">
+                <div className="space-y-4 text-center">
                   <h4 className="text-lg font-medium text-foreground">Basic Types</h4>
-                  <div className="flex flex-wrap gap-6 items-center">
+                  <div className="flex flex-wrap justify-center gap-6 items-center">
                     <div className="text-center space-y-2">
                       <Avatar src="https://github.com/shadcn.png" alt="@shadcn" />
                       <p className="text-xs text-muted-foreground">With Image</p>
@@ -648,9 +656,9 @@ export default function ComponentLibraryShowcase() {
                 </div>
 
                 {/* Status Indicators */}
-                <div className="space-y-4">
+                <div className="space-y-4 text-center">
                   <h4 className="text-lg font-medium text-foreground">Status Indicators</h4>
-                  <div className="flex flex-wrap gap-6 items-center">
+                  <div className="flex flex-wrap justify-center gap-6 items-center">
                     <div className="text-center space-y-2">
                       <Avatar name="Online User" status="online" />
                       <p className="text-xs text-muted-foreground">Online</p>
@@ -663,9 +671,9 @@ export default function ComponentLibraryShowcase() {
                 </div>
 
                 {/* Sizes */}
-                <div className="space-y-4">
+                <div className="space-y-4 text-center">
                   <h4 className="text-lg font-medium text-foreground">Size Variants</h4>
-                  <div className="flex flex-wrap gap-6 items-center">
+                  <div className="flex flex-wrap justify-center gap-6 items-center">
                     <div className="text-center space-y-2">
                       <Avatar name="SM" size="sm" />
                       <p className="text-xs text-muted-foreground">Small</p>
@@ -685,22 +693,26 @@ export default function ComponentLibraryShowcase() {
           </section>
 
           {/* 3. LAYOUT & NAVIGATION SECTION */}
-          <section className="space-y-8">
-            <div className="text-center space-y-2">
+          <section className="space-y-12">
+            <div className="text-center space-y-3">
               <h2 className="text-3xl font-bold text-foreground">Layout & Navigation</h2>
-              <p className="text-muted-foreground">Dialogs, tabs, and navigation components</p>
+              <p className="text-muted-foreground text-lg">
+                Dialogs, tabs, and navigation components
+              </p>
             </div>
 
             {/* Tabs Showcase */}
-            <div className="space-y-6">
-              <h3 className="text-2xl font-semibold text-foreground flex items-center gap-2">
-                <span className="w-8 h-8 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-sm font-bold">
-                  11
-                </span>
-                Tabs Component
-              </h3>
+            <div className="bg-card border border-border rounded-lg p-8 space-y-8">
+              <div className="text-center">
+                <h3 className="text-2xl font-semibold text-foreground flex items-center justify-center gap-3">
+                  <span className="w-10 h-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-sm font-bold">
+                    11
+                  </span>
+                  Tabs Component
+                </h3>
+              </div>
 
-              <div className="max-w-2xl">
+              <div className="max-w-2xl mx-auto">
                 <Tabs defaultValue="overview" className="w-full">
                   <TabsList className="grid w-full grid-cols-4">
                     <TabsTrigger value="overview">Overview</TabsTrigger>
@@ -784,16 +796,23 @@ export default function ComponentLibraryShowcase() {
             </div>
 
             {/* Dialog Showcase */}
-            <div className="space-y-6">
-              <h3 className="text-2xl font-semibold text-foreground flex items-center gap-2">
-                <span className="w-8 h-8 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-sm font-bold">
-                  12
-                </span>
-                Dialog Component
-              </h3>
+            <div className="bg-card border border-border rounded-lg p-8 space-y-8">
+              <div className="text-center">
+                <h3 className="text-2xl font-semibold text-foreground flex items-center justify-center gap-3">
+                  <span className="w-10 h-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-sm font-bold">
+                    12
+                  </span>
+                  Dialog Component
+                </h3>
+              </div>
 
-              <div className="space-y-4">
-                <div className="flex flex-wrap gap-4">
+              <div className="space-y-6">
+                <p className="text-muted-foreground text-center">
+                  Modal dialogs for user interactions with proper accessibility and keyboard
+                  navigation.
+                </p>
+
+                <div className="flex flex-wrap justify-center gap-4">
                   <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
                     <DialogTrigger asChild>
                       <Button>Open Dialog</Button>
@@ -828,24 +847,26 @@ export default function ComponentLibraryShowcase() {
           </section>
 
           {/* 4. DATA DISPLAY SECTION */}
-          <section id="data" className="space-y-8">
-            <div className="text-center space-y-2">
+          <section id="data" className="space-y-12">
+            <div className="text-center space-y-3">
               <h2 className="text-3xl font-bold text-foreground">Data Display</h2>
-              <p className="text-muted-foreground">Tables and complex data structures</p>
+              <p className="text-muted-foreground text-lg">Tables and complex data structures</p>
             </div>
 
             {/* DataTable Showcase */}
-            <div className="space-y-6">
-              <h3 className="text-2xl font-semibold text-foreground flex items-center gap-2">
-                <span className="w-8 h-8 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-sm font-bold">
-                  13
-                </span>
-                DataTable Component
-                <Badge size="sm">Enterprise</Badge>
-              </h3>
+            <div className="bg-card border border-border rounded-lg p-8 space-y-8">
+              <div className="text-center">
+                <h3 className="text-2xl font-semibold text-foreground flex items-center justify-center gap-3">
+                  <span className="w-10 h-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-sm font-bold">
+                    13
+                  </span>
+                  DataTable Component
+                  <Badge size="sm">Enterprise</Badge>
+                </h3>
+              </div>
 
-              <div className="space-y-4">
-                <p className="text-muted-foreground">
+              <div className="space-y-6">
+                <p className="text-muted-foreground text-center">
                   Our most complex component with sorting, filtering, pagination, and full
                   accessibility support.
                 </p>
@@ -875,24 +896,26 @@ export default function ComponentLibraryShowcase() {
           </section>
 
           {/* 5. REAL-WORLD EXAMPLES SECTION */}
-          <section id="real-world" className="space-y-8">
-            <div className="text-center space-y-2">
+          <section id="real-world" className="space-y-12">
+            <div className="text-center space-y-3">
               <h2 className="text-3xl font-bold text-foreground">Real-World Examples</h2>
-              <p className="text-muted-foreground">Complete form and dashboard patterns</p>
+              <p className="text-muted-foreground text-lg">Complete form and dashboard patterns</p>
             </div>
 
             {/* Card Component Showcase */}
-            <div className="space-y-6">
-              <h3 className="text-2xl font-semibold text-foreground flex items-center gap-2">
-                <span className="w-8 h-8 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-sm font-bold">
-                  14
-                </span>
-                Card Component
-                <Badge size="sm">Enterprise</Badge>
-              </h3>
+            <div className="bg-card border border-border rounded-lg p-8 space-y-8">
+              <div className="text-center">
+                <h3 className="text-2xl font-semibold text-foreground flex items-center justify-center gap-3">
+                  <span className="w-10 h-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-sm font-bold">
+                    14
+                  </span>
+                  Card Component
+                  <Badge size="sm">Enterprise</Badge>
+                </h3>
+              </div>
 
-              <div className="space-y-4">
-                <p className="text-muted-foreground">
+              <div className="space-y-6">
+                <p className="text-muted-foreground text-center">
                   Flexible card component with CVA variants, states, and complete shadcn/ui pattern
                   support.
                 </p>
@@ -1088,13 +1111,15 @@ export default function ComponentLibraryShowcase() {
             </div>
 
             {/* Complete Form Example */}
-            <div className="space-y-6">
-              <h3 className="text-2xl font-semibold text-foreground flex items-center gap-2">
-                <span className="w-8 h-8 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-sm font-bold">
-                  15
-                </span>
-                Complete Contact Form
-              </h3>
+            <div className="bg-card border border-border rounded-lg p-8 space-y-8">
+              <div className="text-center">
+                <h3 className="text-2xl font-semibold text-foreground flex items-center justify-center gap-3">
+                  <span className="w-10 h-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-sm font-bold">
+                    15
+                  </span>
+                  Complete Contact Form
+                </h3>
+              </div>
 
               <div className="max-w-2xl mx-auto border rounded-lg p-8 bg-card">
                 <form className="space-y-6">
@@ -1158,13 +1183,15 @@ export default function ComponentLibraryShowcase() {
             </div>
 
             {/* Dashboard Example */}
-            <div className="space-y-6">
-              <h3 className="text-2xl font-semibold text-foreground flex items-center gap-2">
-                <span className="w-8 h-8 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-sm font-bold">
-                  16
-                </span>
-                Dashboard Layout
-              </h3>
+            <div className="bg-card border border-border rounded-lg p-8 space-y-8">
+              <div className="text-center">
+                <h3 className="text-2xl font-semibold text-foreground flex items-center justify-center gap-3">
+                  <span className="w-10 h-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-sm font-bold">
+                    16
+                  </span>
+                  Dashboard Layout
+                </h3>
+              </div>
 
               <div className="grid gap-6">
                 {/* Stats Cards */}
