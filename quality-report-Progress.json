@@ -1,0 +1,66 @@
+﻿{
+  "systemHealth": {
+    "typescript": {
+      "status": "PASS",
+      "passed": true
+    },
+    "build": {
+      "status": "PASS",
+      "passed": true
+    },
+    "linting": {
+      "status": "PASS",
+      "passed": true
+    },
+    "tests": {
+      "total": 15,
+      "failed": 0,
+      "passed": 15
+    }
+  },
+  "components": {
+    "Progress": {
+      "passing": false,
+      "timestamp": "2025-08-14T12:50:55Z",
+      "score": 70,
+      "context": "Progress indicators",
+      "status": "IMPROVING",
+      "issues": [
+        "Should use CVA for variants/sizes",
+        "Missing variants: default, success, warning, danger",
+        "Missing sizes: sm, default, lg, xl"
+      ]
+    }
+  },
+  "issues": {
+    "Progress": {
+      "total": 3,
+      "breakdown": [
+        {
+          "description": "Should use CVA for variants/sizes",
+          "type": "NEEDS_CVA",
+          "severity": "MEDIUM"
+        },
+        {
+          "description": "Missing variants: default, success, warning, danger",
+          "type": "MISSING_VARIANTS",
+          "severity": "MEDIUM"
+        },
+        {
+          "description": "Missing sizes: sm, default, lg, xl",
+          "type": "MISSING_SIZES",
+          "severity": "LOW"
+        }
+      ]
+    }
+  },
+  "metadata": {
+    "version": "20250814-1250",
+    "reportType": "component-audit",
+    "timestamp": "2025-08-14T12:50:55Z",
+    "overallScore": 85,
+    "duration": null,
+    "targetComponents": ["Progress"],
+    "totalComponents": 1
+  }
+}

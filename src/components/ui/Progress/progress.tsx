@@ -5,7 +5,6 @@ import { cva, type VariantProps } from 'class-variance-authority';
 import * as React from 'react';
 
 import { cn } from '@/lib/utils';
-// import './Progress.scss'; // ✅ DISABLED FOR TESTING
 
 const progressVariants = cva('relative w-full overflow-hidden rounded-full bg-primary/20', {
   variants: {
@@ -44,72 +43,23 @@ const indicatorVariants = cva('h-full w-full flex-1 transition-all duration-300 
 
 export interface ProgressProps
   extends React.ComponentPropsWithoutRef<typeof ProgressPrimitive.Root>,
-    VariantProps<typeof progressVariants> {
-  showLabel?: boolean;
-  labelPosition?: 'inside' | 'outside';
-  animated?: boolean;
-  striped?: boolean;
-}
+    VariantProps<typeof progressVariants> {}
 
 const Progress = React.forwardRef<React.ElementRef<typeof ProgressPrimitive.Root>, ProgressProps>(
-  (
-    {
-      className,
-      value,
-      size,
-      variant,
-      showLabel = false,
-      labelPosition = 'outside',
-      animated = false,
-      striped = false,
-      ...props
-    },
-    ref
-  ) => {
-    const progressValue = value || 0;
-
-    const progressElement = (
-      <ProgressPrimitive.Root
-        ref={ref}
-        className={cn(
-          progressVariants({ size, variant }),
-          animated && 'progress--animated',
-          striped && 'progress--striped',
-          className
-        )}
-        {...props}
-      >
-        <ProgressPrimitive.Indicator
-          className={cn(
-            indicatorVariants({ variant }),
-            animated && 'progress__indicator--animated'
-          )}
-          style={{ transform: `translateX(-${100 - progressValue}%)` }}
-        >
-          {showLabel && labelPosition === 'inside' && (
-            <span className="progress__label progress__label--inside">
-              {Math.round(progressValue)}%
-            </span>
-          )}
-        </ProgressPrimitive.Indicator>
-      </ProgressPrimitive.Root>
-    );
-
-    if (showLabel && labelPosition === 'outside') {
-      return (
-        <div className="progress-wrapper">
-          {progressElement}
-          <span className="progress__label progress__label--outside">
-            {Math.round(progressValue)}%
-          </span>
-        </div>
-      );
-    }
-
-    return progressElement;
-  }
+  ({ className, value, size, variant, ...props }, ref) => (
+    <ProgressPrimitive.Root
+      ref={ref}
+      className={cn(progressVariants({ size, variant }), className)}
+      {...props}
+    >
+      <ProgressPrimitive.Indicator
+        className={cn(indicatorVariants({ variant }), 'rounded-full')}
+        style={{ transform: `translateX(-${100 - (value || 0)}%)` }}
+      />
+    </ProgressPrimitive.Root>
+  )
 );
-
 Progress.displayName = ProgressPrimitive.Root.displayName;
 
+export { Progress };
 export default Progress;

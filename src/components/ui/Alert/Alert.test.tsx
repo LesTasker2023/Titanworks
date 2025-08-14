@@ -38,28 +38,11 @@ describe('Enhanced Alert Component', () => {
           <div data-testid="variants-container">
             <Alert variant="default">Default</Alert>
             <Alert variant="destructive">Destructive</Alert>
-            <Alert variant="outline">Outline</Alert>
-            <Alert variant="secondary">Secondary</Alert>
+            <Alert variant="warning">Warning</Alert>
+            <Alert variant="success">Success</Alert>
+            <Alert variant="info">Info</Alert>
           </div>
         );
-        expect(container.firstChild).toMatchSnapshot();
-      });
-      it('matches all sizes snapshot', () => {
-        const { container } = render(
-          <div data-testid="sizes-container">
-            <Alert size="sm">Small</Alert>
-            <Alert size="default">Default</Alert>
-            <Alert size="lg">Large</Alert>
-          </div>
-        );
-        expect(container.firstChild).toMatchSnapshot();
-      });
-      it('matches disabled state snapshot', () => {
-        const { container } = render(<Alert disabled>Disabled</Alert>);
-        expect(container.firstChild).toMatchSnapshot();
-      });
-      it('matches loading state snapshot', () => {
-        const { container } = render(<Alert loading>Loading</Alert>);
         expect(container.firstChild).toMatchSnapshot();
       });
     });

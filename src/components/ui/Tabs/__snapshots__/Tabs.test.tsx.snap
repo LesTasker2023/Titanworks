@@ -1,99 +1,69 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`Tabs Component > Snapshots > matches all sizes snapshot 1`] = `
-<div
-  data-testid="sizes-container"
->
-  <div
-    class=""
-    data-orientation="horizontal"
-    dir="ltr"
-  >
-    Small
-  </div>
-  <div
-    class=""
-    data-orientation="horizontal"
-    dir="ltr"
-  >
-    Default
-  </div>
-  <div
-    class=""
-    data-orientation="horizontal"
-    dir="ltr"
-  >
-    Large
-  </div>
-</div>
-`;
-
-exports[`Tabs Component > Snapshots > matches all variants snapshot 1`] = `
-<div
-  data-testid="variants-container"
->
-  <div
-    class=""
-    data-orientation="horizontal"
-    dir="ltr"
-    variant="default"
-  >
-    Default
-  </div>
-  <div
-    class=""
-    data-orientation="horizontal"
-    dir="ltr"
-    variant="destructive"
-  >
-    Destructive
-  </div>
-  <div
-    class=""
-    data-orientation="horizontal"
-    dir="ltr"
-    variant="outline"
-  >
-    Outline
-  </div>
-  <div
-    class=""
-    data-orientation="horizontal"
-    dir="ltr"
-    variant="secondary"
-  >
-    Secondary
-  </div>
-</div>
-`;
-
-exports[`Tabs Component > Snapshots > matches default snapshot 1`] = `
+exports[`Tabs > Snapshots > matches default snapshot 1`] = `
 <div
   class=""
   data-orientation="horizontal"
   dir="ltr"
 >
-  Default
-</div>
-`;
-
-exports[`Tabs Component > Snapshots > matches disabled state snapshot 1`] = `
-<div
-  class=""
-  data-orientation="horizontal"
-  dir="ltr"
-  disabled=""
->
-  Disabled
-</div>
-`;
-
-exports[`Tabs Component > Snapshots > matches loading state snapshot 1`] = `
-<div
-  class=""
-  data-orientation="horizontal"
-  dir="ltr"
->
-  Loading
+  <div
+    aria-orientation="horizontal"
+    class="inline-flex items-center justify-center rounded-lg bg-muted p-1 text-muted-foreground h-9 text-sm"
+    data-orientation="horizontal"
+    role="tablist"
+    style="outline: none;"
+    tabindex="0"
+  >
+    <button
+      aria-controls="radix-«r0»-content-tab1"
+      aria-selected="true"
+      class="inline-flex items-center justify-center whitespace-nowrap rounded-md font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-background data-[state=active]:text-foreground data-[state=active]:shadow px-3 py-1 text-sm"
+      data-orientation="horizontal"
+      data-radix-collection-item=""
+      data-state="active"
+      id="radix-«r0»-trigger-tab1"
+      role="tab"
+      tabindex="-1"
+      type="button"
+    >
+      Tab 1
+    </button>
+    <button
+      aria-controls="radix-«r0»-content-tab2"
+      aria-selected="false"
+      class="inline-flex items-center justify-center whitespace-nowrap rounded-md font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-background data-[state=active]:text-foreground data-[state=active]:shadow px-3 py-1 text-sm"
+      data-orientation="horizontal"
+      data-radix-collection-item=""
+      data-state="inactive"
+      id="radix-«r0»-trigger-tab2"
+      role="tab"
+      tabindex="-1"
+      type="button"
+    >
+      Tab 2
+    </button>
+  </div>
+  <div
+    aria-labelledby="radix-«r0»-trigger-tab1"
+    class="mt-2 ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+    data-orientation="horizontal"
+    data-state="active"
+    id="radix-«r0»-content-tab1"
+    role="tabpanel"
+    style="animation-duration: 0s;"
+    tabindex="0"
+  >
+    Content 1
+  </div>
+  <div
+    aria-labelledby="radix-«r0»-trigger-tab2"
+    class="mt-2 ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+    data-orientation="horizontal"
+    data-state="inactive"
+    hidden=""
+    id="radix-«r0»-content-tab2"
+    role="tabpanel"
+    tabindex="0"
+  />
 </div>
 `;

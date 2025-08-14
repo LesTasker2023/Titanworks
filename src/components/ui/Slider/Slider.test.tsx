@@ -19,9 +19,9 @@ describe('Slider Component', () => {
         const { container } = render(
           <div data-testid="variants-container">
             <Slider variant="default">Default</Slider>
-            <Slider variant="destructive">Destructive</Slider>
-            <Slider variant="outline">Outline</Slider>
-            <Slider variant="secondary">Secondary</Slider>
+            <Slider variant="danger">Destructive</Slider>
+            <Slider variant="warning">Outline</Slider>
+            <Slider variant="success">Secondary</Slider>
           </div>
         );
         expect(container.firstChild).toMatchSnapshot();

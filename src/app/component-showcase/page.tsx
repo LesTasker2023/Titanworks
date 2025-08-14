@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import {
   AlertCircle,
@@ -37,7 +37,7 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from '@/components/ui/NavigationMenu/navigation-menu';
-import Progress from '@/components/ui/Progress/progress';
+import { Progress } from '@/components/ui/Progress/progress';
 import RadioGroup, { RadioGroupItem } from '@/components/ui/RadioGroup/radio-group';
 import Select, {
   SelectContent,
@@ -50,7 +50,7 @@ import Tabs, { TabsContent, TabsList, TabsTrigger } from '@/components/ui/Tabs/t
 import Textarea from '@/components/ui/Textarea/textarea';
 
 /**
- * 🎯 TriggerKings Component Library Showcase
+ * ðŸŽ¯ TriggerKings Component Library Showcase
  *
  * Complete demonstration of all 15 components with full style guide compliance:
  * - All available variants and sizes per component
@@ -150,10 +150,10 @@ export default function ComponentLibraryShowcase() {
           </div>
 
           <div className="flex flex-wrap justify-center gap-3 max-w-4xl mx-auto">
-            <Badge size="lg">✅ 100% Style Guide Compliant</Badge>
-            <Badge size="lg">🧪 604 Comprehensive Tests</Badge>
-            <Badge size="lg">♿ Full Accessibility</Badge>
-            <Badge size="lg">⚡ Production Ready</Badge>
+            <Badge size="lg">âœ… 100% Style Guide Compliant</Badge>
+            <Badge size="lg">ðŸ§ª 604 Comprehensive Tests</Badge>
+            <Badge size="lg">â™¿ Full Accessibility</Badge>
+            <Badge size="lg">âš¡ Production Ready</Badge>
           </div>
 
           <div className="max-w-3xl mx-auto">
@@ -211,7 +211,7 @@ export default function ComponentLibraryShowcase() {
                     <Button size="sm">Small</Button>
                     <Button size="default">Default</Button>
                     <Button size="lg">Large</Button>
-                    <Button size="icon">🎯</Button>
+                    <Button size="icon">ðŸŽ¯</Button>
                   </div>
                 </div>
 
@@ -728,11 +728,11 @@ export default function ComponentLibraryShowcase() {
                     <div className="space-y-2">
                       <h4 className="text-lg font-semibold">Key Features</h4>
                       <ul className="space-y-2 text-muted-foreground">
-                        <li>✅ Full TypeScript support</li>
-                        <li>✅ Comprehensive accessibility</li>
-                        <li>✅ Style guide compliance</li>
-                        <li>✅ Enterprise-grade testing</li>
-                        <li>✅ Responsive design</li>
+                        <li>âœ… Full TypeScript support</li>
+                        <li>âœ… Comprehensive accessibility</li>
+                        <li>âœ… Style guide compliance</li>
+                        <li>âœ… Enterprise-grade testing</li>
+                        <li>âœ… Responsive design</li>
                       </ul>
                     </div>
                   </TabsContent>
@@ -1046,7 +1046,9 @@ export default function ComponentLibraryShowcase() {
           {/* Footer Section */}
           <section className="text-center space-y-6 py-16 border-t border-border">
             <div className="space-y-2">
-              <h2 className="text-3xl font-bold text-foreground">Component Library Complete! 🎉</h2>
+              <h2 className="text-3xl font-bold text-foreground">
+                Component Library Complete! ðŸŽ‰
+              </h2>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
                 All 15 components successfully developed using our streamlined methodology with
                 style guide compliance, comprehensive testing, and enterprise-grade quality.
@@ -1054,11 +1056,11 @@ export default function ComponentLibraryShowcase() {
             </div>
 
             <div className="flex flex-wrap justify-center gap-4">
-              <Badge size="lg">✅ 100% Style Guide Compliant</Badge>
-              <Badge size="lg">🧪 539 Tests (100% Pass Rate)</Badge>
-              <Badge size="lg">📚 190+ Storybook Stories</Badge>
-              <Badge size="lg">♿ Full Accessibility</Badge>
-              <Badge size="lg">🏆 Production Ready</Badge>
+              <Badge size="lg">âœ… 100% Style Guide Compliant</Badge>
+              <Badge size="lg">ðŸ§ª 539 Tests (100% Pass Rate)</Badge>
+              <Badge size="lg">ðŸ“š 190+ Storybook Stories</Badge>
+              <Badge size="lg">â™¿ Full Accessibility</Badge>
+              <Badge size="lg">ðŸ† Production Ready</Badge>
             </div>
 
             <Alert className="max-w-3xl mx-auto">

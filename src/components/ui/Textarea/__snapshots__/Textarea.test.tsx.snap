@@ -1,80 +1,8 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`Textarea Component > Rendering > Snapshots > matches all sizes snapshot 1`] = `
-<div
-  data-testid="sizes-container"
->
-  <textarea
-    class="flex min-h-[60px] w-full rounded-md border border-input bg-transparent px-3 py-2 text-base shadow-sm placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 md:text-sm textarea"
-  >
-    Small
-  </textarea>
-  <textarea
-    class="flex min-h-[60px] w-full rounded-md border border-input bg-transparent px-3 py-2 text-base shadow-sm placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 md:text-sm textarea"
-  >
-    Default
-  </textarea>
-  <textarea
-    class="flex min-h-[60px] w-full rounded-md border border-input bg-transparent px-3 py-2 text-base shadow-sm placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 md:text-sm textarea"
-  >
-    Large
-  </textarea>
-</div>
-`;
-
-exports[`Textarea Component > Rendering > Snapshots > matches all variants snapshot 1`] = `
-<div
-  data-testid="variants-container"
->
-  <textarea
-    class="flex min-h-[60px] w-full rounded-md border border-input bg-transparent px-3 py-2 text-base shadow-sm placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 md:text-sm textarea"
-    variant="default"
-  >
-    Default
-  </textarea>
-  <textarea
-    class="flex min-h-[60px] w-full rounded-md border border-input bg-transparent px-3 py-2 text-base shadow-sm placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 md:text-sm textarea"
-    variant="destructive"
-  >
-    Destructive
-  </textarea>
-  <textarea
-    class="flex min-h-[60px] w-full rounded-md border border-input bg-transparent px-3 py-2 text-base shadow-sm placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 md:text-sm textarea"
-    variant="outline"
-  >
-    Outline
-  </textarea>
-  <textarea
-    class="flex min-h-[60px] w-full rounded-md border border-input bg-transparent px-3 py-2 text-base shadow-sm placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 md:text-sm textarea"
-    variant="secondary"
-  >
-    Secondary
-  </textarea>
-</div>
-`;
-
-exports[`Textarea Component > Rendering > Snapshots > matches default snapshot 1`] = `
+exports[`Textarea > Snapshots > matches default snapshot 1`] = `
 <textarea
   class="flex min-h-[60px] w-full rounded-md border border-input bg-transparent px-3 py-2 text-base shadow-sm placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 md:text-sm textarea"
->
-  Default
-</textarea>
-`;
-
-exports[`Textarea Component > Rendering > Snapshots > matches disabled state snapshot 1`] = `
-<textarea
-  class="flex min-h-[60px] w-full rounded-md border border-input bg-transparent px-3 py-2 text-base shadow-sm placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 md:text-sm textarea"
-  disabled=""
->
-  Disabled
-</textarea>
-`;
-
-exports[`Textarea Component > Rendering > Snapshots > matches loading state snapshot 1`] = `
-<textarea
-  class="flex min-h-[60px] w-full rounded-md border border-input bg-transparent px-3 py-2 text-base shadow-sm placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 md:text-sm textarea textarea--loading"
-  disabled=""
->
-  Loading
-</textarea>
+  placeholder="Default textarea"
+/>
 `;

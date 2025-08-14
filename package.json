@@ -21,8 +21,11 @@
     "prepare": "husky",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "component": "powershell -ExecutionPolicy Bypass -File .\\scripts\\component-automation.ps1",
-    "snapshots": "powershell -ExecutionPolicy Bypass -File .\\scripts\\snapshot-all-components.ps1"
+    "component": "powershell -ExecutionPolicy Bypass -File scripts/component-automation.ps1",
+    "snapshots": "powershell -ExecutionPolicy Bypass -File scripts/snapshot-all-components.ps1",
+    "quality-audit": "powershell -ExecutionPolicy Bypass -File scripts/deductive-audit.ps1",
+    "audit-list": "powershell -ExecutionPolicy Bypass -File scripts/deductive-audit.ps1 -ListComponents",
+    "audit-quick": "powershell -ExecutionPolicy Bypass -File scripts/deductive-audit.ps1 -ComponentFilter"
   },
   "dependencies": {
     "@radix-ui/react-avatar": "^1.1.10",

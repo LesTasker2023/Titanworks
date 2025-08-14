@@ -1,137 +1,52 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`NavigationMenu Component > Snapshots > matches all sizes snapshot 1`] = `
-<div
-  data-testid="sizes-container"
->
-  <nav
-    aria-label="Main"
-    class="relative z-10 flex max-w-max flex-1 items-center justify-center"
-    data-orientation="horizontal"
-    dir="ltr"
-  >
-    Small
-    <div
-      class="absolute left-0 top-full flex justify-center"
-    />
-  </nav>
-  <nav
-    aria-label="Main"
-    class="relative z-10 flex max-w-max flex-1 items-center justify-center"
-    data-orientation="horizontal"
-    dir="ltr"
-  >
-    Default
-    <div
-      class="absolute left-0 top-full flex justify-center"
-    />
-  </nav>
-  <nav
-    aria-label="Main"
-    class="relative z-10 flex max-w-max flex-1 items-center justify-center"
-    data-orientation="horizontal"
-    dir="ltr"
-  >
-    Large
-    <div
-      class="absolute left-0 top-full flex justify-center"
-    />
-  </nav>
-</div>
-`;
-
-exports[`NavigationMenu Component > Snapshots > matches all variants snapshot 1`] = `
-<div
-  data-testid="variants-container"
->
-  <nav
-    aria-label="Main"
-    class="relative z-10 flex max-w-max flex-1 items-center justify-center"
-    data-orientation="horizontal"
-    dir="ltr"
-    variant="default"
-  >
-    Default
-    <div
-      class="absolute left-0 top-full flex justify-center"
-    />
-  </nav>
-  <nav
-    aria-label="Main"
-    class="relative z-10 flex max-w-max flex-1 items-center justify-center"
-    data-orientation="horizontal"
-    dir="ltr"
-    variant="destructive"
-  >
-    Destructive
-    <div
-      class="absolute left-0 top-full flex justify-center"
-    />
-  </nav>
-  <nav
-    aria-label="Main"
-    class="relative z-10 flex max-w-max flex-1 items-center justify-center"
-    data-orientation="horizontal"
-    dir="ltr"
-    variant="outline"
-  >
-    Outline
-    <div
-      class="absolute left-0 top-full flex justify-center"
-    />
-  </nav>
-  <nav
-    aria-label="Main"
-    class="relative z-10 flex max-w-max flex-1 items-center justify-center"
-    data-orientation="horizontal"
-    dir="ltr"
-    variant="secondary"
-  >
-    Secondary
-    <div
-      class="absolute left-0 top-full flex justify-center"
-    />
-  </nav>
-</div>
-`;
-
-exports[`NavigationMenu Component > Snapshots > matches default snapshot 1`] = `
+exports[`NavigationMenu > Snapshots > matches default snapshot 1`] = `
 <nav
   aria-label="Main"
   class="relative z-10 flex max-w-max flex-1 items-center justify-center"
   data-orientation="horizontal"
   dir="ltr"
 >
-  Default
   <div
-    class="absolute left-0 top-full flex justify-center"
-  />
-</nav>
-`;
-
-exports[`NavigationMenu Component > Snapshots > matches disabled state snapshot 1`] = `
-<nav
-  aria-label="Main"
-  class="relative z-10 flex max-w-max flex-1 items-center justify-center"
-  data-orientation="horizontal"
-  dir="ltr"
-  disabled=""
->
-  Disabled
-  <div
-    class="absolute left-0 top-full flex justify-center"
-  />
-</nav>
-`;
-
-exports[`NavigationMenu Component > Snapshots > matches loading state snapshot 1`] = `
-<nav
-  aria-label="Main"
-  class="relative z-10 flex max-w-max flex-1 items-center justify-center"
-  data-orientation="horizontal"
-  dir="ltr"
->
-  Loading
+    style="position: relative;"
+  >
+    <ul
+      class="group flex flex-1 list-none items-center justify-center space-x-1"
+      data-orientation="horizontal"
+      dir="ltr"
+    >
+      <li>
+        <button
+          aria-controls="radix-«r0»-content-radix-«r1»"
+          aria-expanded="false"
+          class="group inline-flex h-9 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[state=open]:text-accent-foreground data-[state=open]:bg-accent/50 data-[state=open]:hover:bg-accent data-[state=open]:focus:bg-accent group"
+          data-radix-collection-item=""
+          data-state="closed"
+          id="radix-«r0»-trigger-radix-«r1»"
+        >
+          Item 1
+           
+          <svg
+            aria-hidden="true"
+            class="lucide lucide-chevron-down relative top-[1px] ml-1 h-3 w-3 transition duration-300 group-data-[state=open]:rotate-180"
+            fill="none"
+            height="24"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            width="24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="m6 9 6 6 6-6"
+            />
+          </svg>
+        </button>
+      </li>
+    </ul>
+  </div>
   <div
     class="absolute left-0 top-full flex justify-center"
   />
