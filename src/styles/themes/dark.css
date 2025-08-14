@@ -1,0 +1,63 @@
+/* 🌙 Dark Theme - Optional dark mode for TriggerKings */
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Dark theme color overrides */
+    --color-background: 224 71% 4%;         /* Dark background */
+    --color-foreground: 210 40% 98%;        /* Light text */
+    --color-muted: 223 47% 11%;             /* Dark muted backgrounds */
+    --color-muted-foreground: 215 20% 65%;  /* Medium light text */
+    --color-border: 216 34% 17%;            /* Dark borders */
+    --color-input: 216 34% 17%;             /* Dark input backgrounds */
+    --color-ring: 224 76% 78%;              /* Light blue focus rings */
+    --color-accent: 216 34% 17%;            /* Dark accent backgrounds */
+    --color-accent-foreground: 210 40% 98%; /* Light accent text */
+    
+    /* Card and surface colors */
+    --color-card: 224 71% 4%;               /* Dark card backgrounds */
+    --color-card-foreground: 210 40% 98%;   /* Light card text */
+    
+    /* Popover colors */
+    --color-popover: 224 71% 4%;            /* Dark popover backgrounds */
+    --color-popover-foreground: 210 40% 98%; /* Light popover text */
+    
+    /* Secondary colors */
+    --color-secondary: 215 27% 17%;         /* Dark secondary button bg */
+    --color-secondary-foreground: 210 40% 98%; /* Light secondary button text */
+    
+    /* Destructive colors - slightly adjusted for dark mode */
+    --color-destructive: 0 62% 50%;         /* Slightly darker red */
+    --color-destructive-foreground: 210 40% 98%; /* White text on red */
+  }
+}
+
+/* Force dark theme class (for manual toggle) */
+.theme-dark {
+  /* Same colors as media query above */
+  --color-background: 224 71% 4%;
+  --color-foreground: 210 40% 98%;
+  --color-muted: 223 47% 11%;
+  --color-muted-foreground: 215 20% 65%;
+  --color-border: 216 34% 17%;
+  --color-input: 216 34% 17%;
+  --color-ring: 224 76% 78%;
+  --color-accent: 216 34% 17%;
+  --color-accent-foreground: 210 40% 98%;
+  --color-card: 224 71% 4%;
+  --color-card-foreground: 210 40% 98%;
+  --color-popover: 224 71% 4%;
+  --color-popover-foreground: 210 40% 98%;
+  --color-secondary: 215 27% 17%;
+  --color-secondary-foreground: 210 40% 98%;
+  --color-destructive: 0 62% 50%;
+  --color-destructive-foreground: 210 40% 98%;
+}
+
+/* High contrast adjustments for dark theme */
+@media (prefers-color-scheme: dark) and (prefers-contrast: high) {
+  :root {
+    --color-border: 210 40% 98%;          /* Light borders for high contrast */
+    --color-muted-foreground: 210 40% 98%; /* Lighter text */
+    --color-ring: 224 76% 90%;            /* Very light focus ring */
+  }
+}
