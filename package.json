@@ -20,7 +20,8 @@
     "test:watch": "vitest --watch",
     "prepare": "husky",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "component": "powershell -ExecutionPolicy Bypass -File .\\scripts\\component-automation.ps1"
   },
   "dependencies": {
     "@radix-ui/react-avatar": "^1.1.10",
