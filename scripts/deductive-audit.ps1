@@ -289,11 +289,20 @@ foreach ($component in $Components) {
 
 # System health checks - deductive
 $SystemScore = 100
+$SystemIssues = @()
 
 # Build check
 try {
-    & "yarn" "build" 2>&1 | Out-Null
-        $BuildStatus = if ($LASTEXITCODE -eq 0) { "PASS" } else { "FAIL"; $SystemScore -= 30; $SystemIssues += "Build failed" }
+    $BuildOutput = & "yarn" "build" 2>&1 | Out-String
+    # Filter out harmless CSS nesting warnings and PowerShell errors - build still succeeds
+    $BuildErrors = $BuildOutput -split "`n" | Where-Object { 
+        $_ -match "Error|Failed|failed" -and 
+        $_ -notmatch "CSS nesting" -and 
+        $_ -notmatch "Nested CSS was detected" -and
+        $_ -notmatch "FullyQualifiedErrorId" -and
+        $_ -notmatch "NativeCommandError"
+    }
+    $BuildStatus = if ($LASTEXITCODE -eq 0) { "PASS" } else { "FAIL"; $SystemScore -= 30; $SystemIssues += "Build failed" }
     
     # Only show build warnings if there are actual errors (not CSS warnings or PS noise)
     if ($BuildErrors.Count -gt 0) {
@@ -303,23 +312,23 @@ try {
         }
     }
 } catch {
-    $BuildStatus = "FAIL"; $SystemScore -= 30
+    $BuildStatus = "FAIL"; $SystemScore -= 30; $SystemIssues += "Build check failed"
 }
 
 # TypeScript check  
 try {
     & "yarn" "type-check" 2>&1 | Out-Null
-    $TypeStatus = if ($LASTEXITCODE -eq 0) { "PASS" } else { "FAIL"; $SystemScore -= 40 }
+    $TypeStatus = if ($LASTEXITCODE -eq 0) { "PASS" } else { "FAIL"; $SystemScore -= 40; $SystemIssues += "TypeScript errors" }
 } catch {
-    $TypeStatus = "FAIL"; $SystemScore -= 40
+    $TypeStatus = "FAIL"; $SystemScore -= 40; $SystemIssues += "TypeScript check failed"
 }
 
 # Lint check
 try {
     & "yarn" "lint" 2>&1 | Out-Null
-    $LintStatus = if ($LASTEXITCODE -eq 0) { "PASS" } else { "FAIL"; $SystemScore -= 20 }
+    $LintStatus = if ($LASTEXITCODE -eq 0) { "PASS" } else { "FAIL"; $SystemScore -= 20; $SystemIssues += "Lint errors" }
 } catch {
-    $LintStatus = "FAIL"; $SystemScore -= 20
+    $LintStatus = "FAIL"; $SystemScore -= 20; $SystemIssues += "Lint check failed"
 }
 
 # Test check
@@ -329,9 +338,10 @@ try {
     $TestsFailed = if ($TestOutput -match "(\d+) failed") { [int]$Matches[1] } else { 0 }
     if ($TestsFailed -gt 0) {
         $SystemScore -= ($TestsFailed * 2)
+        $SystemIssues += "$TestsFailed failing tests"
     }
 } catch {
-    $SystemScore -= 10
+    $SystemScore -= 10; $SystemIssues += "Test execution failed"
 }
 
 # Calculate overall quality
