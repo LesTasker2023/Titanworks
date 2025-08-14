@@ -1,0 +1,103 @@
+// Dialog component SCSS enhancements
+// Focus on accessibility, animations, and advanced features
+
+.dialog {
+  // Enhanced overlay animations
+  &-overlay {
+    backdrop-filter: blur(2px);
+    transition: backdrop-filter 200ms ease-in-out;
+
+    // Support reduced motion
+    @media (prefers-reduced-motion: reduce) {
+      transition: none;
+      backdrop-filter: none;
+    }
+  }
+
+  // Enhanced content animations
+  &-content {
+    // Improved focus trap visibility
+    &:focus-visible {
+      outline: 2px solid hsl(var(--ring));
+      outline-offset: 2px;
+    }
+
+    // Enhanced shadow for better depth perception
+    box-shadow:
+      0 10px 15px -3px rgb(0 0 0 / 0.1),
+      0 4px 6px -4px rgb(0 0 0 / 0.1),
+      0 0 0 1px rgb(0 0 0 / 0.05);
+
+    // Mobile optimization
+    @media (max-width: 640px) {
+      margin: 1rem;
+      width: calc(100% - 2rem);
+      max-width: none;
+    }
+  }
+
+  // Enhanced close button
+  &-close {
+    transition: all 200ms ease-in-out;
+
+    &:hover {
+      transform: scale(1.1);
+      background-color: hsl(var(--accent));
+    }
+
+    &:focus-visible {
+      outline: 2px solid hsl(var(--ring));
+      outline-offset: 2px;
+    }
+
+    // High contrast mode support
+    @media (prefers-contrast: high) {
+      border: 1px solid;
+    }
+  }
+
+  // Loading state (for future enhancement)
+  &--loading {
+    .dialog-content {
+      pointer-events: none;
+      opacity: 0.7;
+    }
+  }
+}
+
+// Size-specific enhancements
+.dialog-content {
+  &--sm {
+    // Compact padding for small dialogs
+    padding: 1rem;
+  }
+
+  &--lg,
+  &--xl {
+    // Increased padding for larger dialogs
+    padding: 2rem;
+  }
+}
+
+// Animation improvements for better UX
+@keyframes dialog-fade-in {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -48%) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+@keyframes dialog-fade-out {
+  from {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translate(-50%, -48%) scale(0.95);
+  }
+}
