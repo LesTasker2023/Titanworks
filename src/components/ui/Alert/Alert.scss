@@ -1,0 +1,89 @@
+// Alert component SCSS overrides
+// Use this file for ENHANCEMENTS that can't be achieved with Tailwind classes
+// Avoid duplicating what Tailwind already provides
+
+.alert {
+  // Enhanced alert animations for smooth entry/exit
+  animation: alert-enter 0.3s ease-out;
+
+  &.alert--dismissible {
+    // Extra padding for dismiss button
+    padding-right: 2.5rem;
+  }
+
+  // Auto-hide progress indicator (optional enhancement)
+  &.alert--auto-hide {
+    position: relative;
+    overflow: hidden;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 2px;
+      background: currentColor;
+      opacity: 0.3;
+      animation: alert-progress var(--auto-hide-delay, 5000ms) linear;
+    }
+  }
+
+  // Enhanced focus styles for dismiss button
+  .alert-dismiss {
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+
+    &:focus-visible {
+      outline: 2px solid currentColor;
+      outline-offset: 2px;
+      border-radius: 4px;
+    }
+  }
+}
+
+// Alert animations
+@keyframes alert-enter {
+  from {
+    opacity: 0;
+    transform: translateY(-0.5rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes alert-progress {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0%;
+  }
+}
+
+// Reduced motion support
+@media (prefers-reduced-motion: reduce) {
+  .alert {
+    animation: none;
+
+    &.alert--auto-hide::after {
+      animation: none;
+      display: none;
+    }
+  }
+}
+
+// High contrast mode support
+@media (prefers-contrast: high) {
+  .alert {
+    border-width: 2px;
+
+    .alert-dismiss {
+      outline: 1px solid currentColor;
+    }
+  }
+}
