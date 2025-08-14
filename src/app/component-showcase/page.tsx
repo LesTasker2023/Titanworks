@@ -14,10 +14,6 @@ import {
 import React, { useState } from 'react';
 
 // Import ALL components following style guide standards
-import Alert from '@/components/ui/Alert/alert';
-import Avatar from '@/components/ui/Avatar/avatar';
-import Badge from '@/components/ui/Badge/badge';
-import Button from '@/components/ui/Button/button';
 import {
   Card,
   CardContent,
@@ -26,6 +22,10 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui';
+import Alert from '@/components/ui/Alert/alert';
+import Avatar from '@/components/ui/Avatar/avatar';
+import Badge from '@/components/ui/Badge/badge';
+import Button from '@/components/ui/Button/button';
 import Checkbox from '@/components/ui/Checkbox/checkbox';
 import DataTable from '@/components/ui/DataTable/DataTable';
 import Dialog, {
@@ -69,6 +69,7 @@ import Textarea from '@/components/ui/Textarea/textarea';
 export default function ComponentLibraryShowcase() {
   // Component state management
   const [progress, setProgress] = useState(65);
+  const [animatedProgress, setAnimatedProgress] = useState(0);
   const [sliderValue, setSliderValue] = useState([50]);
   const [checkboxState, setCheckboxState] = useState<boolean | 'indeterminate'>(false);
   const [radioValue, setRadioValue] = useState('option1');
@@ -95,6 +96,33 @@ export default function ComponentLibraryShowcase() {
   React.useEffect(() => {
     const timer = setTimeout(() => setProgress(85), 1000);
     return () => clearTimeout(timer);
+  }, []);
+
+  // Animated progress bar (0 to 100% over 6 seconds)
+  React.useEffect(() => {
+    const startTime = Date.now();
+    const duration = 6000; // 6 seconds
+
+    const animate = () => {
+      const elapsed = Date.now() - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      const easedProgress = 1 - Math.pow(1 - progress, 3); // Ease out cubic
+
+      setAnimatedProgress(Math.round(easedProgress * 100));
+
+      if (progress < 1) {
+        requestAnimationFrame(animate);
+      } else {
+        // Restart animation after a brief pause
+        setTimeout(() => {
+          setAnimatedProgress(0);
+          setTimeout(animate, 100);
+        }, 2000);
+      }
+    };
+
+    const initialDelay = setTimeout(animate, 500); // Start after 500ms
+    return () => clearTimeout(initialDelay);
   }, []);
 
   return (
@@ -237,6 +265,46 @@ export default function ComponentLibraryShowcase() {
                     </Button>
                   </div>
                 </div>
+
+                {/* Kitchen Sink - Ultimate Button */}
+                <div className="space-y-6">
+                  <h4 className="text-lg font-medium text-foreground text-center">
+                    Kitchen Sink - Ultimate Button
+                  </h4>
+                  <div className="flex flex-col items-center gap-6">
+                    <div className="text-center text-sm text-muted-foreground max-w-md">
+                      The ultimate button demonstration combining hover effects, click animations,
+                      and state transitions
+                    </div>
+                    <div className="space-y-4">
+                      <Button
+                        size="lg"
+                        className="relative overflow-hidden group transition-all duration-300 hover:scale-105 hover:shadow-lg active:scale-95"
+                        onClick={event => {
+                          const btn = event.currentTarget as HTMLButtonElement;
+                          btn.classList.add('animate-pulse');
+                          setTimeout(() => btn.classList.remove('animate-pulse'), 600);
+                        }}
+                      >
+                        <span className="relative z-10 flex items-center gap-2">
+                          🚀 Launch Ultimate Action
+                        </span>
+                        <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-primary/40 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 ease-out" />
+                      </Button>
+
+                      <Button
+                        variant="outline"
+                        size="lg"
+                        className="relative group hover:bg-primary hover:text-primary-foreground transition-all duration-300 border-2 hover:border-primary hover:shadow-md"
+                      >
+                        <span className="flex items-center gap-2">
+                          ⭐ Premium Feature
+                          <span className="inline-block w-2 h-2 bg-green-500 rounded-full animate-pulse" />
+                        </span>
+                      </Button>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
 
@@ -272,6 +340,199 @@ export default function ComponentLibraryShowcase() {
                   <div className="space-y-4">
                     <Input loading placeholder="Loading input..." />
                     <Input disabled placeholder="Disabled input..." />
+                  </div>
+                </div>
+
+                {/* Kitchen Sink - Ultimate Input */}
+                <div className="space-y-6">
+                  <h4 className="text-lg font-medium text-foreground text-center">
+                    Kitchen Sink - Ultimate Smart Input
+                  </h4>
+                  <div className="text-center text-sm text-muted-foreground max-w-2xl mx-auto mb-6">
+                    Advanced input with real-time validation, character counting, focus animations,
+                    and smart suggestions
+                  </div>
+                  <div className="space-y-6">
+                    {/* Smart Email Input */}
+                    <div className="relative group">
+                      <Input
+                        type="email"
+                        placeholder="Enter your email for smart validation..."
+                        className="pr-24 transition-all duration-300 focus:scale-[1.01] focus:shadow-lg border-2 focus:border-blue-500/50"
+                        onChange={e => {
+                          const value = e.target.value;
+                          const isValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+                          const indicator =
+                            e.target.parentElement?.querySelector('[data-email-indicator]');
+                          if (indicator) {
+                            if (value.length === 0) {
+                              indicator.textContent = '';
+                              indicator.className =
+                                'absolute right-3 top-1/2 transform -translate-y-1/2 text-xs';
+                            } else if (isValid) {
+                              indicator.textContent = '✅';
+                              indicator.className =
+                                'absolute right-3 top-1/2 transform -translate-y-1/2 text-xs text-green-600 animate-bounce';
+                            } else {
+                              indicator.textContent = '⚠️';
+                              indicator.className =
+                                'absolute right-3 top-1/2 transform -translate-y-1/2 text-xs text-orange-500';
+                            }
+                          }
+                        }}
+                      />
+                      <span
+                        data-email-indicator
+                        className="absolute right-3 top-1/2 transform -translate-y-1/2 text-xs"
+                      ></span>
+                      <div className="absolute -bottom-6 left-0 text-xs text-muted-foreground">
+                        <span className="inline-flex items-center gap-1">
+                          <span className="w-1 h-1 bg-blue-500 rounded-full animate-pulse"></span>
+                          Smart validation enabled
+                        </span>
+                      </div>
+                    </div>
+
+                    {/* Character-Counted Input */}
+                    <div className="relative">
+                      <Input
+                        placeholder="Smart message with character count..."
+                        maxLength={120}
+                        className="pr-16 border-2 focus:border-purple-500/50 transition-all duration-300"
+                        onChange={e => {
+                          const value = e.target.value;
+                          const counter =
+                            e.target.parentElement?.querySelector('[data-char-counter]');
+                          if (counter) {
+                            const remaining = 120 - value.length;
+                            counter.textContent = remaining.toString();
+                            if (remaining < 20) {
+                              counter.className =
+                                'absolute right-3 top-1/2 transform -translate-y-1/2 text-xs text-orange-500 font-medium';
+                            } else if (remaining < 10) {
+                              counter.className =
+                                'absolute right-3 top-1/2 transform -translate-y-1/2 text-xs text-red-500 font-bold animate-pulse';
+                            } else {
+                              counter.className =
+                                'absolute right-3 top-1/2 transform -translate-y-1/2 text-xs text-muted-foreground';
+                            }
+                          }
+                        }}
+                      />
+                      <span
+                        data-char-counter
+                        className="absolute right-3 top-1/2 transform -translate-y-1/2 text-xs text-muted-foreground"
+                      >
+                        120
+                      </span>
+                      <div className="mt-2 flex justify-between items-center text-xs">
+                        <span className="text-muted-foreground">Characters remaining</span>
+                        <div className="flex items-center gap-2">
+                          <div className="w-16 h-1 bg-muted rounded-full overflow-hidden">
+                            <div
+                              className="h-full bg-gradient-to-r from-green-500 via-yellow-500 to-red-500 w-0 transition-all duration-300"
+                              data-progress-bar
+                            ></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Multi-Feature Input */}
+                    <div className="relative p-4 border-2 border-dashed border-muted rounded-lg hover:border-primary/50 transition-colors duration-300">
+                      <div className="flex items-center gap-3 mb-3">
+                        <span className="text-sm font-medium">🎯 Ultimate Form Field</span>
+                        <Badge variant="secondary" className="text-xs">
+                          Premium
+                        </Badge>
+                      </div>
+                      <Input
+                        placeholder="Type here for real-time suggestions..."
+                        className="border-0 bg-transparent focus:ring-0 text-lg p-0 placeholder:text-muted-foreground/70"
+                        onFocus={e => {
+                          const container = e.target.closest('.relative');
+                          container?.classList.add('ring-2', 'ring-blue-500/20');
+                        }}
+                        onBlur={e => {
+                          const container = e.target.closest('.relative');
+                          container?.classList.remove('ring-2', 'ring-blue-500/20');
+
+                          // Hide suggestions after a short delay to allow for clicks
+                          setTimeout(() => {
+                            const suggestions = container?.querySelector('[data-suggestions]');
+                            if (suggestions) {
+                              suggestions.classList.add('hidden');
+                            }
+                          }, 150);
+                        }}
+                        onChange={e => {
+                          const value = e.target.value;
+                          const suggestions =
+                            e.target.parentElement?.querySelector('[data-suggestions]');
+                          const inputField = e.target;
+
+                          if (suggestions && value.length > 2) {
+                            const mockSuggestions = [
+                              `${value}@gmail.com`,
+                              `${value}@outlook.com`,
+                              `${value}@company.com`,
+                            ];
+
+                            // Create clickable suggestions with event listeners
+                            suggestions.innerHTML = mockSuggestions
+                              .map(
+                                s =>
+                                  `<div class="px-2 py-1 hover:bg-muted cursor-pointer text-xs rounded transition-colors duration-150" data-suggestion="${s}">${s}</div>`
+                              )
+                              .join('');
+
+                            // Add click event listeners to each suggestion
+                            const suggestionElements =
+                              suggestions.querySelectorAll('[data-suggestion]');
+                            suggestionElements.forEach(element => {
+                              element.addEventListener('click', () => {
+                                const suggestionText = element.getAttribute('data-suggestion');
+                                if (suggestionText) {
+                                  // Set the input value
+                                  inputField.value = suggestionText;
+
+                                  // Trigger change event for any validation
+                                  const changeEvent = new Event('change', { bubbles: true });
+                                  inputField.dispatchEvent(changeEvent);
+
+                                  // Hide suggestions
+                                  suggestions.classList.add('hidden');
+
+                                  // Focus back to input
+                                  inputField.focus();
+                                }
+                              });
+                            });
+
+                            suggestions.classList.remove('hidden');
+                          } else if (suggestions) {
+                            suggestions.classList.add('hidden');
+                          }
+                        }}
+                      />
+                      <div
+                        data-suggestions
+                        className="absolute left-4 right-4 top-full mt-1 bg-background border rounded-md shadow-lg z-10 hidden"
+                      ></div>
+                      <div className="flex justify-between items-center mt-2 text-xs text-muted-foreground">
+                        <div className="flex items-center gap-4">
+                          <span className="flex items-center gap-1">
+                            <span className="w-1 h-1 bg-green-500 rounded-full animate-pulse"></span>
+                            Auto-suggestions
+                          </span>
+                          <span className="flex items-center gap-1">
+                            <span className="w-1 h-1 bg-blue-500 rounded-full animate-pulse"></span>
+                            Smart validation
+                          </span>
+                        </div>
+                        <span>Premium features active</span>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -571,6 +832,32 @@ export default function ComponentLibraryShowcase() {
                     </div>
                   </div>
                 </div>
+
+                {/* Kitchen Sink - Animated Progress */}
+                <div className="space-y-4 text-center">
+                  <h4 className="text-lg font-medium text-foreground">
+                    Kitchen Sink - Animated Progress
+                  </h4>
+                  <div className="max-w-md mx-auto space-y-6">
+                    <div className="space-y-3">
+                      <div className="flex justify-between items-center">
+                        <span className="text-sm font-medium text-foreground">
+                          Loading Progress
+                        </span>
+                        <span className="text-sm font-bold text-primary">{animatedProgress}%</span>
+                      </div>
+                      <Progress
+                        value={animatedProgress}
+                        variant="success"
+                        size="lg"
+                        className="transition-all duration-100 ease-out"
+                      />
+                      <p className="text-xs text-muted-foreground">
+                        Smooth 0→100% animation over 6 seconds with easing
+                      </p>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
 
@@ -615,6 +902,162 @@ export default function ComponentLibraryShowcase() {
                       Removable Badge
                     </Badge>
                     <Badge dot>With Dot</Badge>
+                  </div>
+                </div>
+
+                {/* Kitchen Sink - Ultimate Badge Collection */}
+                <div className="space-y-6">
+                  <h4 className="text-lg font-medium text-foreground text-center">
+                    Kitchen Sink - Ultimate Badge Showcase
+                  </h4>
+                  <div className="text-center text-sm text-muted-foreground max-w-2xl mx-auto mb-6">
+                    Advanced badges with animations, real-time updates, interactive states, and
+                    premium visual effects
+                  </div>
+
+                  {/* Live Status Badges */}
+                  <div className="space-y-4">
+                    <div className="text-sm font-medium text-center text-muted-foreground mb-3">
+                      Live Status Indicators
+                    </div>
+                    <div className="flex flex-wrap justify-center gap-4">
+                      <Badge
+                        size="lg"
+                        className="relative overflow-hidden bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 transition-all duration-300 cursor-pointer animate-pulse"
+                      >
+                        <span className="flex items-center gap-2 relative z-10">
+                          <span className="w-2 h-2 bg-white rounded-full animate-ping absolute"></span>
+                          <span className="w-2 h-2 bg-white rounded-full"></span>
+                          🟢 ONLINE
+                        </span>
+                      </Badge>
+
+                      <Badge
+                        variant="destructive"
+                        size="lg"
+                        className="relative group hover:scale-105 transition-transform duration-200"
+                      >
+                        <span className="flex items-center gap-2">
+                          <span className="w-2 h-2 bg-white rounded-full animate-bounce"></span>
+                          🔴 CRITICAL
+                        </span>
+                      </Badge>
+
+                      <Badge
+                        size="lg"
+                        className="bg-gradient-to-r from-orange-500 to-yellow-600 hover:from-orange-600 hover:to-yellow-700 transition-all duration-300 cursor-pointer"
+                      >
+                        <span className="flex items-center gap-2">
+                          <span className="w-2 h-2 bg-white rounded-full animate-pulse"></span>
+                          ⚠️ WARNING
+                        </span>
+                      </Badge>
+                    </div>
+                  </div>
+
+                  {/* Animated Counter Badges */}
+                  <div className="space-y-4">
+                    <div className="text-sm font-medium text-center text-muted-foreground mb-3">
+                      Dynamic Counter Badges
+                    </div>
+                    <div className="flex flex-wrap justify-center gap-4">
+                      <div className="relative group">
+                        <Badge
+                          variant="secondary"
+                          size="lg"
+                          className="pr-8 hover:bg-blue-100 dark:hover:bg-blue-900 transition-colors duration-200 cursor-pointer"
+                        >
+                          📧 Messages
+                        </Badge>
+                        <Badge
+                          size="sm"
+                          className="absolute -top-2 -right-2 bg-red-500 hover:bg-red-600 min-w-[1.5rem] h-6 rounded-full flex items-center justify-center animate-bounce"
+                          onClick={() => {
+                            const counter = document.querySelector('[data-message-counter]');
+                            if (counter) {
+                              const current = parseInt(counter.textContent || '0');
+                              counter.textContent = (current + 1).toString();
+                            }
+                          }}
+                        >
+                          <span data-message-counter className="text-xs font-bold text-white">
+                            3
+                          </span>
+                        </Badge>
+                      </div>
+
+                      <div className="relative group">
+                        <Badge
+                          variant="outline"
+                          size="lg"
+                          className="pr-8 border-2 hover:border-purple-500 hover:bg-purple-50 dark:hover:bg-purple-900/20 transition-all duration-200"
+                        >
+                          🛒 Cart
+                        </Badge>
+                        <Badge
+                          size="sm"
+                          className="absolute -top-2 -right-2 bg-purple-500 hover:bg-purple-600 min-w-[1.5rem] h-6 rounded-full flex items-center justify-center"
+                        >
+                          <span className="text-xs font-bold text-white">12</span>
+                        </Badge>
+                      </div>
+
+                      <div className="relative group">
+                        <Badge
+                          size="lg"
+                          className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 transition-all duration-300 pr-8"
+                        >
+                          ⭐ Favorites
+                        </Badge>
+                        <Badge
+                          size="sm"
+                          className="absolute -top-2 -right-2 bg-yellow-500 hover:bg-yellow-600 min-w-[1.5rem] h-6 rounded-full flex items-center justify-center animate-pulse"
+                        >
+                          <span className="text-xs font-bold text-white">7</span>
+                        </Badge>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Premium Feature Badges */}
+                  <div className="space-y-4">
+                    <div className="text-sm font-medium text-center text-muted-foreground mb-3">
+                      Premium Feature Badges
+                    </div>
+                    <div className="flex flex-wrap justify-center gap-4">
+                      <Badge
+                        size="lg"
+                        className="relative overflow-hidden bg-gradient-to-r from-gold-400 via-yellow-500 to-gold-600 hover:from-gold-500 hover:via-yellow-600 hover:to-gold-700 transition-all duration-500 cursor-pointer group"
+                        style={{ background: 'linear-gradient(45deg, #FFD700, #FFA500, #FFD700)' }}
+                      >
+                        <span className="flex items-center gap-2 relative z-10">👑 PREMIUM</span>
+                        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-out" />
+                      </Badge>
+
+                      <Badge
+                        size="lg"
+                        className="bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 hover:scale-110 transition-transform duration-300 cursor-pointer animate-pulse"
+                      >
+                        <span className="flex items-center gap-2">✨ VIP</span>
+                      </Badge>
+
+                      <Badge
+                        removable
+                        size="lg"
+                        className="bg-gradient-to-r from-slate-700 to-slate-900 hover:from-slate-800 hover:to-slate-950 transition-all duration-300"
+                        onRemove={() => console.log('Premium badge removed')}
+                      >
+                        <span className="flex items-center gap-2">💎 ENTERPRISE</span>
+                      </Badge>
+                    </div>
+                  </div>
+
+                  <div className="pt-4 text-center">
+                    <div className="inline-flex items-center gap-2 text-xs text-muted-foreground p-3 bg-muted/30 rounded-lg">
+                      <span className="w-1 h-1 bg-blue-500 rounded-full animate-pulse"></span>
+                      All badges feature hover effects, animations, and interactive capabilities
+                      <span className="w-1 h-1 bg-blue-500 rounded-full animate-pulse"></span>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -685,6 +1128,36 @@ export default function ComponentLibraryShowcase() {
                     <div className="text-center space-y-2">
                       <Avatar name="LG" size="lg" />
                       <p className="text-xs text-muted-foreground">Large</p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Kitchen Sink - Ultimate Avatar */}
+                <div className="space-y-4 text-center">
+                  <h4 className="text-lg font-medium text-foreground">
+                    Kitchen Sink - Ultimate Avatar
+                  </h4>
+                  <div className="flex justify-center">
+                    <div className="text-center space-y-3">
+                      <div className="relative inline-block">
+                        <Avatar
+                          src="https://github.com/shadcn.png"
+                          alt="Pro User"
+                          size="lg"
+                          status="online"
+                        />
+                        {/* Enhanced Online Indicator */}
+                        <div className="absolute -bottom-1 -right-1 w-6 h-6 bg-green-500 border-2 border-white rounded-full flex items-center justify-center">
+                          <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
+                        </div>
+                      </div>
+                      <div className="space-y-1">
+                        <p className="text-sm font-medium text-foreground">Pro User</p>
+                        <p className="text-xs text-green-600 font-medium">● Online</p>
+                        <p className="text-xs text-muted-foreground">
+                          Large • Image • Status • Enhanced
+                        </p>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -1104,6 +1577,134 @@ export default function ComponentLibraryShowcase() {
                         </Button>
                         <Button size="sm">Continue</Button>
                       </CardFooter>
+                    </Card>
+                  </div>
+                </div>
+
+                {/* Kitchen Sink - Ultimate Card */}
+                <div className="space-y-6">
+                  <h4 className="text-lg font-semibold">
+                    Kitchen Sink - Ultimate Interactive Card
+                  </h4>
+                  <div className="text-center text-sm text-muted-foreground max-w-2xl mx-auto mb-6">
+                    The ultimate card demonstration with hover animations, click interactions,
+                    real-time data, and advanced visual effects
+                  </div>
+                  <div className="max-w-lg mx-auto">
+                    <Card
+                      variant="default"
+                      size="lg"
+                      className="relative overflow-hidden group cursor-pointer transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl border-2 hover:border-primary/50"
+                      onClick={() => {
+                        // Simulate data refresh
+                        setTimeout(() => {
+                          const elements = document.querySelectorAll('[data-animate-value]');
+                          elements.forEach(el => {
+                            el.classList.add('animate-pulse');
+                            setTimeout(() => el.classList.remove('animate-pulse'), 800);
+                          });
+                        }, 100);
+                      }}
+                    >
+                      {/* Animated Background Gradient */}
+                      <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-purple-500/5 to-pink-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+                      <CardHeader className="relative">
+                        <CardTitle className="flex items-center justify-between">
+                          <span className="flex items-center gap-3">
+                            🎯 Ultimate Dashboard
+                            <span className="inline-flex items-center gap-1">
+                              <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
+                              <span className="text-xs text-green-600 font-medium">LIVE</span>
+                            </span>
+                          </span>
+                          <Badge variant="secondary" className="animate-bounce">
+                            Premium
+                          </Badge>
+                        </CardTitle>
+                        <CardDescription className="text-base">
+                          Real-time analytics with interactive data visualization and advanced
+                          metrics tracking
+                        </CardDescription>
+                      </CardHeader>
+
+                      <CardContent className="space-y-6 relative">
+                        {/* Real-time Metrics */}
+                        <div className="grid grid-cols-2 gap-4">
+                          <div className="text-center p-3 bg-muted/50 rounded-lg">
+                            <div className="text-2xl font-bold text-green-600" data-animate-value>
+                              2,847
+                            </div>
+                            <div className="text-xs text-muted-foreground">Active Users</div>
+                          </div>
+                          <div className="text-center p-3 bg-muted/50 rounded-lg">
+                            <div className="text-2xl font-bold text-blue-600" data-animate-value>
+                              98.7%
+                            </div>
+                            <div className="text-xs text-muted-foreground">Uptime</div>
+                          </div>
+                        </div>
+
+                        {/* Interactive Progress */}
+                        <div className="space-y-3">
+                          <div className="flex justify-between text-sm">
+                            <span>Performance Score</span>
+                            <span className="font-medium text-green-600" data-animate-value>
+                              94/100
+                            </span>
+                          </div>
+                          <Progress
+                            value={94}
+                            className="h-3 bg-muted transition-all duration-300 group-hover:h-4"
+                          />
+                          <div className="flex justify-between text-xs text-muted-foreground">
+                            <span>Last updated: Just now</span>
+                            <span className="flex items-center gap-1">
+                              <span className="w-1 h-1 bg-green-500 rounded-full animate-pulse" />
+                              Auto-refresh
+                            </span>
+                          </div>
+                        </div>
+
+                        {/* Feature Icons */}
+                        <div className="flex justify-center gap-4 pt-2">
+                          <div className="flex items-center gap-2 text-xs text-muted-foreground">
+                            <span className="text-base">⚡</span>
+                            Fast
+                          </div>
+                          <div className="flex items-center gap-2 text-xs text-muted-foreground">
+                            <span className="text-base">🔒</span>
+                            Secure
+                          </div>
+                          <div className="flex items-center gap-2 text-xs text-muted-foreground">
+                            <span className="text-base">📊</span>
+                            Analytics
+                          </div>
+                          <div className="flex items-center gap-2 text-xs text-muted-foreground">
+                            <span className="text-base">🎨</span>
+                            Custom
+                          </div>
+                        </div>
+                      </CardContent>
+
+                      <CardFooter className="flex justify-between items-center pt-6 relative">
+                        <Button
+                          variant="ghost"
+                          size="sm"
+                          className="hover:bg-primary hover:text-primary-foreground transition-colors duration-200"
+                        >
+                          <span className="flex items-center gap-2">📈 View Report</span>
+                        </Button>
+                        <Button
+                          size="sm"
+                          className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 transition-all duration-300 hover:shadow-lg"
+                        >
+                          <span className="flex items-center gap-2">🚀 Upgrade Now</span>
+                        </Button>
+                      </CardFooter>
+
+                      {/* Hover Effect Border */}
+                      <div className="absolute inset-0 rounded-lg border-2 border-transparent group-hover:border-primary/20 transition-colors duration-300 pointer-events-none" />
                     </Card>
                   </div>
                 </div>
