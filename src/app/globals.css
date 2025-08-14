@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+/* 🎨 TriggerKings Design System */
+@import '../styles/design-system.css';
+
 :root {
   --background: 0 0% 100%;
   --foreground: 0 0% 3.9%;

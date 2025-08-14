@@ -1,0 +1,76 @@
+// DataTable SCSS Enhancements
+// Import design system first
+@import "../../../styles/design-system.css";
+
+.datatable {
+  // Only add what Tailwind/design system can't do:
+
+  // Complex table scrolling with design tokens
+  &__scroll-container {
+    scrollbar-width: thin;
+    scrollbar-color: hsl(var(--color-muted)) transparent;
+
+    &::-webkit-scrollbar {
+      height: 8px;
+      width: 8px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: hsl(var(--color-muted) / 0.1);
+      border-radius: var(--radius);
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: hsl(var(--color-muted));
+      border-radius: var(--radius);
+
+      &:hover {
+        background-color: hsl(var(--color-muted-foreground));
+      }
+    }
+  }
+
+  // Advanced loading animation using design tokens
+  &__loading-overlay {
+    background: linear-gradient(90deg, transparent, hsl(var(--color-muted) / 0.1), transparent);
+    animation: shimmer 2s infinite;
+  }
+
+  // Enhanced row hover effects
+  &__row {
+    transition: background-color var(--transition-default);
+
+    &:hover {
+      background-color: hsl(var(--color-accent) / 0.05);
+    }
+
+    &--selected {
+      background-color: hsl(var(--color-accent) / 0.1);
+      border-color: hsl(var(--color-ring));
+    }
+  }
+
+  // Sort indicator animations
+  &__sort-indicator {
+    transition: transform var(--transition-fast);
+
+    &--ascending {
+      transform: rotate(0deg);
+    }
+
+    &--descending {
+      transform: rotate(180deg);
+    }
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+// Never duplicate Tailwind or design system functionality
