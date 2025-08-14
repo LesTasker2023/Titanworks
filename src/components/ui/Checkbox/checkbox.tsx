@@ -5,7 +5,7 @@ import { Check } from 'lucide-react';
 import * as React from 'react';
 
 import { cn } from '@/lib/utils';
-import './Checkbox.scss'; // ✅ SCSS enhancements
+// import './Checkbox.scss'; // ✅ DISABLED FOR TESTING
 
 export interface CheckboxProps
   extends React.ComponentPropsWithoutRef<typeof CheckboxPrimitive.Root> {

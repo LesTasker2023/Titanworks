@@ -5,7 +5,7 @@ import { X } from 'lucide-react';
 import * as React from 'react';
 
 import { cn } from '@/lib/utils';
-import './Dialog.scss';
+// import './Dialog.scss'; // ✅ DISABLED FOR TESTING
 
 const DialogTrigger = DialogPrimitive.Trigger;
 

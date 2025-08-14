@@ -1,11 +1,12 @@
 // Dialog component SCSS enhancements
-// Focus on accessibility, animations, and advanced features
+// Use this file for ENHANCEMENTS that can't be achieved with Tailwind classes
+// Avoid duplicating what Tailwind already provides
 
 .dialog {
   // Enhanced overlay animations
   &-overlay {
     backdrop-filter: blur(2px);
-    transition: backdrop-filter 200ms ease-in-out;
+    transition: all 0.15s ease-in-out;
 
     // Support reduced motion
     @media (prefers-reduced-motion: reduce) {
@@ -99,5 +100,22 @@
   to {
     opacity: 0;
     transform: translate(-50%, -48%) scale(0.95);
+  }
+}
+
+// Error state styling (STANDARDIZED ADDITION)
+.dialog-content--error {
+  border-color: hsl(var(--destructive));
+  box-shadow:
+    0 10px 15px -3px rgb(0 0 0 / 0.1),
+    0 4px 6px -4px rgb(0 0 0 / 0.1),
+    0 0 0 2px hsl(var(--destructive) / 0.2);
+
+  &:focus-visible {
+    outline-color: hsl(var(--destructive));
+    box-shadow:
+      0 10px 15px -3px rgb(0 0 0 / 0.1),
+      0 4px 6px -4px rgb(0 0 0 / 0.1),
+      0 0 0 2px hsl(var(--destructive) / 0.4);
   }
 }

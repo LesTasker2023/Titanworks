@@ -10,12 +10,8 @@
     box-shadow: 0 0 0 2px hsl(var(--ring) / 0.2);
   }
 
-  // Smooth transitions for all interactive states
-  transition:
-    border-color 0.15s ease-in-out,
-    background-color 0.15s ease-in-out,
-    box-shadow 0.15s ease-in-out,
-    transform 0.15s ease-in-out;
+  // Smooth transitions for all interactive states (STANDARDIZED)
+  transition: all 0.15s ease-in-out;
 
   // Custom hover effects (enhanced interaction feedback)
   &:hover:not(:disabled):not([data-state="checked"]) {
@@ -81,6 +77,25 @@
     cursor: not-allowed;
     opacity: 0.5;
     transform: none;
+  }
+
+  // Error state styling (STANDARDIZED ADDITION)
+  &--error {
+    border-color: hsl(var(--destructive));
+
+    &:focus-visible {
+      outline-color: hsl(var(--destructive));
+      box-shadow: 0 0 0 2px hsl(var(--destructive) / 0.2);
+    }
+
+    &[data-state="checked"] {
+      background-color: hsl(var(--destructive));
+      border-color: hsl(var(--destructive));
+    }
+
+    &:hover:not(:disabled):not([data-state="checked"]) {
+      border-color: hsl(var(--destructive) / 0.8);
+    }
   }
 }
 

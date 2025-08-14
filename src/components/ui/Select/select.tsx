@@ -5,7 +5,7 @@ import { Check, ChevronDown, ChevronUp, Search, X } from 'lucide-react';
 import * as React from 'react';
 
 import { cn } from '@/lib/utils';
-import './Select.scss';
+// import './Select.scss'; // ✅ DISABLED FOR TESTING
 
 // Re-export base primitives
 const SelectGroup = SelectPrimitive.Group;

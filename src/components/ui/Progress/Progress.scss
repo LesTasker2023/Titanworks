@@ -1,0 +1,139 @@
+// Progress component SCSS enhancements
+// Use this file for ENHANCEMENTS that can't be achieved with Tailwind classes
+// Avoid duplicating what Tailwind already provides
+
+.progress {
+  // Smooth transitions for all interactive states (STANDARDIZED)
+  transition: all 0.15s ease-in-out;
+
+  // Striped pattern
+  &--striped {
+    .progress__indicator {
+      background-image: linear-gradient(
+        45deg,
+        rgba(255, 255, 255, 0.15) 25%,
+        transparent 25%,
+        transparent 50%,
+        rgba(255, 255, 255, 0.15) 50%,
+        rgba(255, 255, 255, 0.15) 75%,
+        transparent 75%,
+        transparent
+      );
+      background-size: 1rem 1rem;
+    }
+  }
+
+  // Animated stripes
+  &--animated {
+    .progress__indicator--animated {
+      animation: progress-stripes 1s linear infinite;
+    }
+  }
+
+  // Progress wrapper for outside labels
+  &-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    width: 100%;
+  }
+
+  // Label styling
+  &__label {
+    font-size: 0.75rem;
+    font-weight: 500;
+    white-space: nowrap;
+
+    &--inside {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      color: white;
+      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+      min-width: 2rem;
+    }
+
+    &--outside {
+      color: hsl(var(--foreground));
+      min-width: 2.5rem;
+      text-align: right;
+    }
+  }
+
+  // Error state styling (STANDARDIZED ADDITION)
+  &--error {
+    .progress__indicator {
+      background-color: hsl(var(--destructive));
+    }
+
+    // Error state with stripes
+    &.progress--striped .progress__indicator {
+      background-image: linear-gradient(
+        45deg,
+        rgba(255, 255, 255, 0.15) 25%,
+        transparent 25%,
+        transparent 50%,
+        rgba(255, 255, 255, 0.15) 50%,
+        rgba(255, 255, 255, 0.15) 75%,
+        transparent 75%,
+        transparent
+      );
+    }
+  }
+}
+
+// Keyframe animations
+@keyframes progress-stripes {
+  0% {
+    background-position: 1rem 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+// Pulse animation for indeterminate progress
+@keyframes progress-pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+// Enhanced focus styles for accessibility
+.progress {
+  &:focus-visible {
+    outline: 2px solid hsl(var(--ring));
+    outline-offset: 2px;
+  }
+}
+
+// High contrast support
+@media (prefers-contrast: high) {
+  .progress {
+    border: 1px solid hsl(var(--border));
+
+    &__indicator {
+      border-right: 2px solid hsl(var(--background));
+    }
+  }
+}
+
+// Reduced motion support
+@media (prefers-reduced-motion: reduce) {
+  .progress {
+    &__indicator {
+      transition: none !important;
+    }
+
+    &--animated {
+      .progress__indicator--animated {
+        animation: none !important;
+      }
+    }
+  }
+}

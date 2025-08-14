@@ -23,7 +23,22 @@
     }
   }
 
-  // Error state styling handled by Tailwind classes in component
+  // Error state styling (STANDARDIZED ADDITION)
+  &--error {
+    .radiogroup-item {
+      border-color: hsl(var(--destructive));
+
+      &:focus-visible {
+        outline-color: hsl(var(--destructive));
+        box-shadow: 0 0 0 2px hsl(var(--destructive) / 0.2);
+      }
+
+      &[data-state="checked"] {
+        border-color: hsl(var(--destructive));
+        background-color: hsl(var(--destructive));
+      }
+    }
+  }
 }
 
 @keyframes radiogroup-spin {

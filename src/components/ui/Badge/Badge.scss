@@ -1,7 +1,11 @@
 // Badge component SCSS enhancements
-// Only add what Tailwind can't do
+// Use this file for ENHANCEMENTS that can't be achieved with Tailwind classes
+// Avoid duplicating what Tailwind already provides
 
 .badge {
+  // Smooth transitions for all interactive states (STANDARDIZED)
+  transition: all 0.15s ease-in-out;
+
   // Enhanced dot animation
   &--dot {
     .badge-dot {
@@ -11,6 +15,9 @@
 
   // Enhanced remove button interactions
   &__remove-btn {
+    // Smooth transitions for button interactions (STANDARDIZED)
+    transition: all 0.15s ease-in-out;
+
     &:hover {
       transform: scale(1.1);
     }
@@ -19,10 +26,11 @@
       transform: scale(0.95);
     }
 
-    // Enhanced focus styles for accessibility
+    // Enhanced focus styles for accessibility (STANDARDIZED)
     &:focus-visible {
       outline: 2px solid hsl(var(--ring));
-      outline-offset: 1px;
+      outline-offset: 2px;
+      box-shadow: 0 0 0 2px hsl(var(--ring) / 0.2);
     }
   }
 
@@ -33,6 +41,17 @@
 
   &--warning {
     animation: subtle-pulse 2s ease-in-out infinite;
+  }
+
+  // Error state styling (STANDARDIZED ADDITION)
+  &--error {
+    border-color: hsl(var(--destructive));
+    background-color: hsl(var(--destructive) / 0.1);
+
+    &:focus-visible {
+      outline-color: hsl(var(--destructive));
+      box-shadow: 0 0 0 2px hsl(var(--destructive) / 0.2);
+    }
   }
 }
 

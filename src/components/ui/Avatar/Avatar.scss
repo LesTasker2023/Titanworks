@@ -1,0 +1,78 @@
+// Avatar component SCSS enhancements
+// Use this file for ENHANCEMENTS that can't be achieved with Tailwind classes
+// Avoid duplicating what Tailwind already provides
+
+.avatar {
+  // Standard focus pattern - all components
+  &:focus-visible {
+    outline: 2px solid hsl(var(--ring));
+    outline-offset: 2px;
+    box-shadow: 0 0 0 2px hsl(var(--ring) / 0.2);
+  }
+
+  // Standard transition - all components
+  transition: all 0.15s ease-in-out;
+
+  // Avatar-specific enhancements
+  &--loading {
+    .avatar-image {
+      opacity: 0.5;
+
+      &::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border: 2px solid transparent;
+        border-top: 2px solid hsl(var(--primary));
+        border-radius: 50%;
+        animation: avatar-spin 1s linear infinite;
+      }
+    }
+  }
+
+  &--online {
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 25%;
+      height: 25%;
+      background-color: hsl(var(--success, 142 76% 36%));
+      border: 2px solid hsl(var(--background));
+      border-radius: 50%;
+    }
+  }
+
+  &--offline {
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 25%;
+      height: 25%;
+      background-color: hsl(var(--muted-foreground));
+      border: 2px solid hsl(var(--background));
+      border-radius: 50%;
+    }
+  }
+
+  &--error {
+    border-color: hsl(var(--destructive));
+
+    &:focus-visible {
+      outline-color: hsl(var(--destructive));
+      box-shadow: 0 0 0 2px hsl(var(--destructive) / 0.2);
+    }
+  }
+}
+
+@keyframes avatar-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
