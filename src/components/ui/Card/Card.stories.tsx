@@ -1,13 +1,18 @@
-// Disabled for build - ESLint Storybook config issues
-// TODO: Fix @storybook/react import configuration
-
+import type { Meta, StoryObj } from '@storybook/nextjs';
 import { Card } from './card';
 
-export default {
+const meta: Meta<typeof Card> = {
   title: 'UI/Card',
   component: Card,
+  parameters: {
+    layout: 'centered',
+  },
+  tags: ['autodocs'],
 };
 
-export const Default = {
+export default meta;
+type Story = StoryObj<typeof meta>;
+
+export const Default: Story = {
   render: () => <Card>Simple Card</Card>,
 };

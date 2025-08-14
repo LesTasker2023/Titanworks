@@ -1,5 +1,6 @@
 import bundleAnalyzer from '@next/bundle-analyzer';
 import type { NextConfig } from 'next';
+import path from 'path';
 
 // Bundle analyzer for performance optimization
 const withBundleAnalyzer = bundleAnalyzer({
@@ -19,7 +20,42 @@ const nextConfig: NextConfig = {
 
   // Experimental features for performance
   experimental: {
-    optimizePackageImports: ['@radix-ui/react-slot', 'class-variance-authority'],
+    optimizePackageImports: [
+      '@radix-ui/react-slot',
+      'class-variance-authority',
+      'lucide-react',
+      '@radix-ui/react-dialog',
+      '@radix-ui/react-select',
+      '@radix-ui/react-tabs',
+    ],
+    // Note: turbo config moved to turbopack in Next.js 15+
+  },
+
+  // Turbopack configuration (Next.js 15+)
+  turbopack: {
+    rules: {
+      '*.svg': {
+        loaders: ['@svgr/webpack'],
+        as: '*.js',
+      },
+    },
+  },
+
+  // Webpack optimizations
+  webpack: (config, { dev, isServer }) => {
+    // Production optimizations
+    if (!dev && !isServer) {
+      config.resolve.alias = {
+        ...config.resolve.alias,
+        '@': path.resolve(__dirname, 'src'),
+      };
+
+      // Tree shaking optimization
+      config.optimization.usedExports = true;
+      config.optimization.sideEffects = false;
+    }
+
+    return config;
   },
 };
 

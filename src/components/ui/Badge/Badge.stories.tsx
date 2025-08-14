@@ -82,13 +82,31 @@ export const EnhancedFeatures: Story = {
       <div>
         <h4 className="text-sm font-medium mb-2">Removable Badges</h4>
         <div className="flex gap-2">
-          <Badge variant="default" removable onRemove={() => console.log('Default removed')}>
+          <Badge
+            variant="default"
+            removable
+            onRemove={() => () => {
+              /*  */
+            }}
+          >
             Removable
           </Badge>
-          <Badge variant="success" removable onRemove={() => console.log('Success removed')}>
+          <Badge
+            variant="success"
+            removable
+            onRemove={() => () => {
+              /*  */
+            }}
+          >
             Tag
           </Badge>
-          <Badge variant="warning" removable onRemove={() => console.log('Warning removed')}>
+          <Badge
+            variant="warning"
+            removable
+            onRemove={() => () => {
+              /*  */
+            }}
+          >
             Label
           </Badge>
         </div>
@@ -115,10 +133,24 @@ export const EnhancedFeatures: Story = {
       <div>
         <h4 className="text-sm font-medium mb-2">Combined Features</h4>
         <div className="flex gap-2">
-          <Badge dot removable variant="success" onRemove={() => console.log('Online removed')}>
+          <Badge
+            dot
+            removable
+            variant="success"
+            onRemove={() => () => {
+              /*  */
+            }}
+          >
             Online
           </Badge>
-          <Badge dot removable variant="warning" onRemove={() => console.log('Away removed')}>
+          <Badge
+            dot
+            removable
+            variant="warning"
+            onRemove={() => () => {
+              /*  */
+            }}
+          >
             Away
           </Badge>
         </div>
@@ -171,16 +203,40 @@ export const TagsAndLabels: Story = {
       <div>
         <h4 className="text-sm font-medium mb-2">Removable Tags</h4>
         <div className="flex flex-wrap gap-2">
-          <Badge removable variant="outline" onRemove={() => console.log('React removed')}>
+          <Badge
+            removable
+            variant="outline"
+            onRemove={() => () => {
+              /*  */
+            }}
+          >
             React
           </Badge>
-          <Badge removable variant="outline" onRemove={() => console.log('TypeScript removed')}>
+          <Badge
+            removable
+            variant="outline"
+            onRemove={() => () => {
+              /*  */
+            }}
+          >
             TypeScript
           </Badge>
-          <Badge removable variant="outline" onRemove={() => console.log('Next.js removed')}>
+          <Badge
+            removable
+            variant="outline"
+            onRemove={() => () => {
+              /*  */
+            }}
+          >
             Next.js
           </Badge>
-          <Badge removable variant="outline" onRemove={() => console.log('Tailwind removed')}>
+          <Badge
+            removable
+            variant="outline"
+            onRemove={() => () => {
+              /*  */
+            }}
+          >
             Tailwind CSS
           </Badge>
         </div>
@@ -283,13 +339,31 @@ export const AccessibilityStates: Story = {
       <div>
         <h4 className="text-sm font-medium mb-2">Focusable Badges (Removable)</h4>
         <div className="flex gap-2">
-          <Badge removable variant="default" onRemove={() => console.log('Focus test 1')}>
+          <Badge
+            removable
+            variant="default"
+            onRemove={() => () => {
+              /*  */
+            }}
+          >
             Focus me with Tab
           </Badge>
-          <Badge removable variant="success" onRemove={() => console.log('Focus test 2')}>
+          <Badge
+            removable
+            variant="success"
+            onRemove={() => () => {
+              /*  */
+            }}
+          >
             Then focus me
           </Badge>
-          <Badge removable variant="warning" onRemove={() => console.log('Focus test 3')}>
+          <Badge
+            removable
+            variant="warning"
+            onRemove={() => () => {
+              /*  */
+            }}
+          >
             And me too
           </Badge>
         </div>

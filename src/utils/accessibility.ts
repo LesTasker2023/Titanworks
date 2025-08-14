@@ -108,9 +108,12 @@ export function auditTriggerKingsColors(): void {
     const aa = meetsWCAGStandards(ratio, 'AA');
     const aaa = meetsWCAGStandards(ratio, 'AAA');
 
-    console.log(
-      `${name}: ${ratio.toFixed(2)}:1 ${aa ? '✅ AA' : '❌ AA'} ${aaa ? '✅ AAA' : '❌ AAA'}`
-    );
+    // Development audit logging (removed in production)
+    if (process.env.NODE_ENV === 'development') {
+      console.log(
+        `${name}: ${ratio.toFixed(2)}:1 ${aa ? '✅ AA' : '❌ AA'} ${aaa ? '✅ AAA' : '❌ AAA'}`
+      );
+    }
   });
 
   console.groupEnd();

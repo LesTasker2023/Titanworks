@@ -193,7 +193,11 @@ export const WithSelection: Story = {
     columns: columns,
     selectable: true,
     onSelectionChange: (selectedIds: (number | string)[]) => {
-      console.log('Selected rows:', selectedIds);
+      // In real app, handle selection change
+      // setSelectedRows(selectedIds);
+      if (process.env.NODE_ENV === 'development') {
+        console.log('Selected rows:', selectedIds);
+      }
     },
   },
 };
