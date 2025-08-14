@@ -1,3 +1,5 @@
+import TopNav from '@/components/layout/TopNav';
+import Footer from '@/components/layout/Footer';
 import '@/styles/globals.scss';
 import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
@@ -25,7 +27,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>{children}</body>
+      <body className={`${geistSans.variable} ${geistMono.variable} min-h-screen flex flex-col`}>
+        <TopNav />
+        <main className="flex-1">{children}</main>
+        <Footer />
+      </body>
     </html>
   );
 }
