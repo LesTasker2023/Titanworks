@@ -141,6 +141,7 @@ export default function ComponentLibraryShowcase() {
               <Badge>15 Components</Badge>
               <Badge size="sm">539 Tests</Badge>
             </div>
+            {/* Radix NavigationMenu implementation for improved menu behavior */}
             <NavigationMenu>
               <NavigationMenuList>
                 <NavigationMenuItem>
@@ -212,6 +213,44 @@ export default function ComponentLibraryShowcase() {
 
         {/* Component Sections */}
         <div className="space-y-24">
+          {/* TODO COMPONENTS SECTION */}
+          <section id="todo-components" className="space-y-12">
+            <div className="text-center space-y-3">
+              <h2 className="text-3xl font-bold text-foreground">Coming Soon: New Components</h2>
+              <p className="text-muted-foreground text-lg">
+                These components are planned for the next release. Want to help? Let us know!
+              </p>
+            </div>
+            <div className="grid gap-8 md:grid-cols-3">
+              {/* Accordion TODO */}
+              <div className="border border-dashed border-accent rounded-lg p-6 flex flex-col items-center justify-center min-h-[180px] bg-muted/30">
+                <h3 className="text-xl font-semibold mb-2">Accordion</h3>
+                <p className="text-muted-foreground text-center">
+                  Expandable/collapsible content sections.
+                  <br />{' '}
+                  <span className="font-mono text-xs">{'// TODO: Build Accordion component'}</span>
+                </p>
+              </div>
+              {/* CodeBlock TODO */}
+              <div className="border border-dashed border-accent rounded-lg p-6 flex flex-col items-center justify-center min-h-[180px] bg-muted/30">
+                <h3 className="text-xl font-semibold mb-2">CodeBlock</h3>
+                <p className="text-muted-foreground text-center">
+                  Syntax-highlighted code snippets.
+                  <br />{' '}
+                  <span className="font-mono text-xs">{'// TODO: Build CodeBlock component'}</span>
+                </p>
+              </div>
+              {/* Image TODO */}
+              <div className="border border-dashed border-accent rounded-lg p-6 flex flex-col items-center justify-center min-h-[180px] bg-muted/30">
+                <h3 className="text-xl font-semibold mb-2">Image</h3>
+                <p className="text-muted-foreground text-center">
+                  Optimized, accessible images.
+                  <br />{' '}
+                  <span className="font-mono text-xs">{'// TODO: Build Image component'}</span>
+                </p>
+              </div>
+            </div>
+          </section>
           {/* 1. INTERACTIVE COMPONENTS SECTION */}
           <section id="buttons" className="space-y-12">
             <div className="text-center space-y-3">

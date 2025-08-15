@@ -84,23 +84,15 @@
 
 @layer base {
   * {
-    @apply border-border;
+    border-color: hsl(var(--border));
   }
   body {
-    @apply bg-background text-foreground;
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
   }
 }
 
 /* Daedalus Custom Styles */
-.logo {
-  height: 300px;
-  width: 100%;
-  margin: auto;
-  background-image: url('./TKLogo.png');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-}
 
 main {
   background-position: left;

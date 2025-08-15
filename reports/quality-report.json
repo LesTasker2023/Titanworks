@@ -1,13 +1,13 @@
 ﻿{
   "metadata": {
-    "overallScore": 100,
-    "totalComponents": 17,
+    "overallScore": 96.2,
+    "totalComponents": 20,
     "passingComponents": 17,
     "reportType": "full-audit",
-    "version": "20250815-0002",
+    "version": "20250815-0944",
     "duration": null,
     "grade": "A+",
-    "timestamp": "2025-08-15T00:02:41Z"
+    "timestamp": "2025-08-15T09:44:11Z"
   },
   "history": [
     {
@@ -471,12 +471,51 @@
       },
       "overallScore": 100,
       "totalComponents": 17
+    },
+    {
+      "version": "20250815-0944",
+      "timestamp": "2025-08-15T09:44:11Z",
+      "passingComponents": 17,
+      "duration": null,
+      "systemHealth": {
+        "typescript": true,
+        "testsPass": true,
+        "build": true,
+        "linting": true
+      },
+      "overallScore": 96.2,
+      "totalComponents": 20
     }
   ],
-  "commonIssues": [],
+  "commonIssues": [
+    {
+      "count": 3,
+      "description": "Missing test file",
+      "affectedComponents": ["Footer", "ThemeToggle", "TopNav"],
+      "type": "MISSING_TESTS"
+    },
+    {
+      "count": 3,
+      "description": "Missing main component file",
+      "affectedComponents": ["Footer", "ThemeToggle", "TopNav"],
+      "type": "OTHER"
+    },
+    {
+      "count": 3,
+      "description": "Missing index.tsx",
+      "affectedComponents": ["Footer", "ThemeToggle", "TopNav"],
+      "type": "OTHER"
+    },
+    {
+      "count": 3,
+      "description": "Missing stories file",
+      "affectedComponents": ["Footer", "ThemeToggle", "TopNav"],
+      "type": "OTHER"
+    }
+  ],
   "components": {
     "Avatar": {
-      "lastUpdated": "2025-08-15T00:02:41Z",
+      "lastUpdated": "2025-08-15T09:44:11Z",
       "passing": true,
       "score": 100,
       "context": "User profile images",
@@ -484,7 +523,7 @@
       "issues": {}
     },
     "Progress": {
-      "lastUpdated": "2025-08-15T00:02:41Z",
+      "lastUpdated": "2025-08-15T09:44:11Z",
       "passing": true,
       "score": 100,
       "context": "Progress indicators",
@@ -492,7 +531,7 @@
       "issues": {}
     },
     "RadioGroup": {
-      "lastUpdated": "2025-08-15T00:02:41Z",
+      "lastUpdated": "2025-08-15T09:44:11Z",
       "passing": true,
       "score": 100,
       "context": "Radio button groups",
@@ -500,15 +539,41 @@
       "issues": {}
     },
     "DataTable": {
-      "lastUpdated": "2025-08-15T00:02:41Z",
+      "lastUpdated": "2025-08-15T09:44:11Z",
       "passing": true,
       "score": 100,
       "context": "Data tables",
       "status": "PASS",
       "issues": {}
     },
+    "ThemeToggle": {
+      "lastUpdated": "2025-08-15T09:44:11Z",
+      "passing": false,
+      "score": 50,
+      "context": "Standard component",
+      "status": "IMPROVING",
+      "issues": [
+        "Missing index.tsx",
+        "Missing stories file",
+        "Missing test file",
+        "Missing main component file"
+      ]
+    },
+    "TopNav": {
+      "lastUpdated": "2025-08-15T09:44:11Z",
+      "passing": false,
+      "score": 50,
+      "context": "Standard component",
+      "status": "IMPROVING",
+      "issues": [
+        "Missing index.tsx",
+        "Missing stories file",
+        "Missing test file",
+        "Missing main component file"
+      ]
+    },
     "Toast": {
-      "lastUpdated": "2025-08-15T00:02:41Z",
+      "lastUpdated": "2025-08-15T09:44:11Z",
       "passing": true,
       "score": 100,
       "context": "Standard component",
@@ -516,7 +581,7 @@
       "issues": {}
     },
     "Badge": {
-      "lastUpdated": "2025-08-15T00:02:41Z",
+      "lastUpdated": "2025-08-15T09:44:11Z",
       "passing": true,
       "score": 100,
       "context": "Status indicators",
@@ -524,15 +589,28 @@
       "issues": {}
     },
     "NavigationMenu": {
-      "lastUpdated": "2025-08-15T00:02:41Z",
+      "lastUpdated": "2025-08-15T09:44:11Z",
       "passing": true,
       "score": 100,
       "context": "Navigation menus",
       "status": "PASS",
       "issues": {}
     },
+    "Footer": {
+      "lastUpdated": "2025-08-15T09:44:11Z",
+      "passing": false,
+      "score": 50,
+      "context": "Standard component",
+      "status": "IMPROVING",
+      "issues": [
+        "Missing index.tsx",
+        "Missing stories file",
+        "Missing test file",
+        "Missing main component file"
+      ]
+    },
     "Checkbox": {
-      "lastUpdated": "2025-08-15T00:02:41Z",
+      "lastUpdated": "2025-08-15T09:44:11Z",
       "passing": true,
       "score": 100,
       "context": "Form checkboxes",
@@ -540,7 +618,7 @@
       "issues": {}
     },
     "Textarea": {
-      "lastUpdated": "2025-08-15T00:02:41Z",
+      "lastUpdated": "2025-08-15T09:44:11Z",
       "passing": true,
       "score": 100,
       "context": "Multi-line text input",
@@ -548,7 +626,7 @@
       "issues": {}
     },
     "Button": {
-      "lastUpdated": "2025-08-15T00:02:41Z",
+      "lastUpdated": "2025-08-15T09:44:11Z",
       "passing": true,
       "score": 100,
       "context": "Interactive actions",
@@ -556,7 +634,7 @@
       "issues": {}
     },
     "Tabs": {
-      "lastUpdated": "2025-08-15T00:02:41Z",
+      "lastUpdated": "2025-08-15T09:44:11Z",
       "passing": true,
       "score": 100,
       "context": "Tab navigation",
@@ -564,7 +642,7 @@
       "issues": {}
     },
     "Input": {
-      "lastUpdated": "2025-08-15T00:02:41Z",
+      "lastUpdated": "2025-08-15T09:44:11Z",
       "passing": true,
       "score": 100,
       "context": "Text input fields",
@@ -572,7 +650,7 @@
       "issues": {}
     },
     "Dialog": {
-      "lastUpdated": "2025-08-15T00:02:41Z",
+      "lastUpdated": "2025-08-15T09:44:11Z",
       "passing": true,
       "score": 100,
       "context": "Modal dialogs",
@@ -580,7 +658,7 @@
       "issues": {}
     },
     "Slider": {
-      "lastUpdated": "2025-08-15T00:02:41Z",
+      "lastUpdated": "2025-08-15T09:44:11Z",
       "passing": true,
       "score": 100,
       "context": "Range sliders",
@@ -588,7 +666,7 @@
       "issues": {}
     },
     "Select": {
-      "lastUpdated": "2025-08-15T00:02:41Z",
+      "lastUpdated": "2025-08-15T09:44:11Z",
       "passing": true,
       "score": 100,
       "context": "Select dropdowns",
@@ -596,7 +674,7 @@
       "issues": {}
     },
     "Card": {
-      "lastUpdated": "2025-08-15T00:02:41Z",
+      "lastUpdated": "2025-08-15T09:44:11Z",
       "passing": true,
       "score": 100,
       "context": "Standard component",
@@ -604,7 +682,7 @@
       "issues": {}
     },
     "Alert": {
-      "lastUpdated": "2025-08-15T00:02:41Z",
+      "lastUpdated": "2025-08-15T09:44:11Z",
       "passing": true,
       "score": 100,
       "context": "User notifications",
