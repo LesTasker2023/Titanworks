@@ -1,0 +1,15 @@
+{
+  "COMPONENT_DEVELOPMENT": "[Full text of COMPONENT_DEVELOPMENT.md]",
+  "STYLE_GUIDE": "[Full text of STYLE_GUIDE.md]",
+  "VALIDATION": "[Full text of VALIDATION.md]",
+  "README": "[Full text of README.md]",
+  "TUTORIAL_00_MASTER_INDEX": "[Full text of 00-master-index.md]",
+  "TUTORIAL_01_REPOSITORY_SETUP": "[Full text of 01-repository-setup.md]",
+  "TUTORIAL_02_DEVELOPMENT_WORKFLOW": "[Full text of 02-development-workflow.md]",
+  "TUTORIAL_03_CVA_PATTERNS": "[Full text of 03-cva-patterns.md]",
+  "TUTORIAL_04_TYPESCRIPT_PATTERNS": "[Full text of 04-typescript-patterns.md]",
+  "TUTORIAL_05_ACCESSIBILITY_PATTERNS": "[Full text of 05-accessibility-patterns.md]",
+  "TUTORIAL_06_TESTING_STRATEGY": "[Full text of 06-testing-strategy.md]",
+  "TUTORIAL_07_PERFORMANCE_OPTIMIZATION": "[Full text of 07-performance-optimization.md]",
+  "TUTORIAL_08_STORYBOOK_DOCUMENTATION": "[Full text of 08-storybook-documentation.md]"
+}

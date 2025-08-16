@@ -1,13 +1,13 @@
 ﻿{
   "metadata": {
-    "overallScore": 96.2,
-    "totalComponents": 20,
-    "passingComponents": 17,
+    "overallScore": 98,
+    "totalComponents": 19,
+    "passingComponents": 19,
     "reportType": "full-audit",
-    "version": "20250815-0944",
+    "version": "20250816-1845",
     "duration": null,
     "grade": "A+",
-    "timestamp": "2025-08-15T09:44:11Z"
+    "timestamp": "2025-08-16T18:45:57Z"
   },
   "history": [
     {
@@ -485,37 +485,110 @@
       },
       "overallScore": 96.2,
       "totalComponents": 20
+    },
+    {
+      "version": "20250816-0745",
+      "timestamp": "2025-08-16T07:45:53Z",
+      "passingComponents": 17,
+      "duration": null,
+      "systemHealth": {
+        "typescript": true,
+        "testsPass": true,
+        "build": true,
+        "linting": true
+      },
+      "overallScore": 98.6,
+      "totalComponents": 18
+    },
+    {
+      "version": "20250816-1735",
+      "timestamp": "2025-08-16T17:35:12Z",
+      "passingComponents": 17,
+      "duration": null,
+      "systemHealth": {
+        "typescript": true,
+        "testsPass": true,
+        "build": false,
+        "linting": true
+      },
+      "overallScore": 83.6,
+      "totalComponents": 18
+    },
+    {
+      "version": "20250816-1827",
+      "timestamp": "2025-08-16T18:27:59Z",
+      "passingComponents": 18,
+      "duration": null,
+      "systemHealth": {
+        "typescript": true,
+        "testsPass": true,
+        "build": true,
+        "linting": true
+      },
+      "overallScore": 98.7,
+      "totalComponents": 19
+    },
+    {
+      "version": "20250816-1829",
+      "timestamp": "2025-08-16T18:29:58Z",
+      "passingComponents": 18,
+      "duration": null,
+      "systemHealth": {
+        "typescript": true,
+        "testsPass": true,
+        "build": true,
+        "linting": true
+      },
+      "overallScore": 98.7,
+      "totalComponents": 19
+    },
+    {
+      "version": "20250816-1834",
+      "timestamp": "2025-08-16T18:34:16Z",
+      "passingComponents": 19,
+      "duration": null,
+      "systemHealth": {
+        "typescript": true,
+        "testsPass": false,
+        "build": false,
+        "linting": false
+      },
+      "overallScore": 74,
+      "totalComponents": 19
+    },
+    {
+      "version": "20250816-1835",
+      "timestamp": "2025-08-16T18:35:47Z",
+      "passingComponents": 19,
+      "duration": null,
+      "systemHealth": {
+        "typescript": true,
+        "testsPass": false,
+        "build": true,
+        "linting": true
+      },
+      "overallScore": 99,
+      "totalComponents": 19
+    },
+    {
+      "version": "20250816-1845",
+      "timestamp": "2025-08-16T18:45:57Z",
+      "passingComponents": 19,
+      "duration": null,
+      "systemHealth": {
+        "typescript": true,
+        "testsPass": false,
+        "build": true,
+        "linting": true
+      },
+      "overallScore": 98,
+      "totalComponents": 19
     }
   ],
-  "commonIssues": [
-    {
-      "count": 3,
-      "description": "Missing test file",
-      "affectedComponents": ["Footer", "ThemeToggle", "TopNav"],
-      "type": "MISSING_TESTS"
-    },
-    {
-      "count": 3,
-      "description": "Missing main component file",
-      "affectedComponents": ["Footer", "ThemeToggle", "TopNav"],
-      "type": "OTHER"
-    },
-    {
-      "count": 3,
-      "description": "Missing index.tsx",
-      "affectedComponents": ["Footer", "ThemeToggle", "TopNav"],
-      "type": "OTHER"
-    },
-    {
-      "count": 3,
-      "description": "Missing stories file",
-      "affectedComponents": ["Footer", "ThemeToggle", "TopNav"],
-      "type": "OTHER"
-    }
-  ],
+  "commonIssues": [],
   "components": {
     "Avatar": {
-      "lastUpdated": "2025-08-15T09:44:11Z",
+      "lastUpdated": "2025-08-16T18:45:57Z",
       "passing": true,
       "score": 100,
       "context": "User profile images",
@@ -523,7 +596,7 @@
       "issues": {}
     },
     "Progress": {
-      "lastUpdated": "2025-08-15T09:44:11Z",
+      "lastUpdated": "2025-08-16T18:45:57Z",
       "passing": true,
       "score": 100,
       "context": "Progress indicators",
@@ -531,7 +604,7 @@
       "issues": {}
     },
     "RadioGroup": {
-      "lastUpdated": "2025-08-15T09:44:11Z",
+      "lastUpdated": "2025-08-16T18:45:57Z",
       "passing": true,
       "score": 100,
       "context": "Radio button groups",
@@ -539,41 +612,31 @@
       "issues": {}
     },
     "DataTable": {
-      "lastUpdated": "2025-08-15T09:44:11Z",
+      "lastUpdated": "2025-08-16T18:45:57Z",
       "passing": true,
       "score": 100,
       "context": "Data tables",
       "status": "PASS",
       "issues": {}
     },
-    "ThemeToggle": {
-      "lastUpdated": "2025-08-15T09:44:11Z",
-      "passing": false,
-      "score": 50,
+    "Accordion": {
+      "lastUpdated": "2025-08-16T18:45:57Z",
+      "passing": true,
+      "score": 100,
       "context": "Standard component",
-      "status": "IMPROVING",
-      "issues": [
-        "Missing index.tsx",
-        "Missing stories file",
-        "Missing test file",
-        "Missing main component file"
-      ]
+      "status": "PASS",
+      "issues": {}
     },
-    "TopNav": {
-      "lastUpdated": "2025-08-15T09:44:11Z",
-      "passing": false,
-      "score": 50,
+    "ThemeToggle": {
+      "lastUpdated": "2025-08-16T18:45:57Z",
+      "passing": true,
+      "score": 100,
       "context": "Standard component",
-      "status": "IMPROVING",
-      "issues": [
-        "Missing index.tsx",
-        "Missing stories file",
-        "Missing test file",
-        "Missing main component file"
-      ]
+      "status": "PASS",
+      "issues": {}
     },
     "Toast": {
-      "lastUpdated": "2025-08-15T09:44:11Z",
+      "lastUpdated": "2025-08-16T18:45:57Z",
       "passing": true,
       "score": 100,
       "context": "Standard component",
@@ -581,7 +644,7 @@
       "issues": {}
     },
     "Badge": {
-      "lastUpdated": "2025-08-15T09:44:11Z",
+      "lastUpdated": "2025-08-16T18:45:57Z",
       "passing": true,
       "score": 100,
       "context": "Status indicators",
@@ -589,28 +652,15 @@
       "issues": {}
     },
     "NavigationMenu": {
-      "lastUpdated": "2025-08-15T09:44:11Z",
+      "lastUpdated": "2025-08-16T18:45:57Z",
       "passing": true,
       "score": 100,
       "context": "Navigation menus",
       "status": "PASS",
       "issues": {}
     },
-    "Footer": {
-      "lastUpdated": "2025-08-15T09:44:11Z",
-      "passing": false,
-      "score": 50,
-      "context": "Standard component",
-      "status": "IMPROVING",
-      "issues": [
-        "Missing index.tsx",
-        "Missing stories file",
-        "Missing test file",
-        "Missing main component file"
-      ]
-    },
     "Checkbox": {
-      "lastUpdated": "2025-08-15T09:44:11Z",
+      "lastUpdated": "2025-08-16T18:45:57Z",
       "passing": true,
       "score": 100,
       "context": "Form checkboxes",
@@ -618,7 +668,7 @@
       "issues": {}
     },
     "Textarea": {
-      "lastUpdated": "2025-08-15T09:44:11Z",
+      "lastUpdated": "2025-08-16T18:45:57Z",
       "passing": true,
       "score": 100,
       "context": "Multi-line text input",
@@ -626,7 +676,7 @@
       "issues": {}
     },
     "Button": {
-      "lastUpdated": "2025-08-15T09:44:11Z",
+      "lastUpdated": "2025-08-16T18:45:57Z",
       "passing": true,
       "score": 100,
       "context": "Interactive actions",
@@ -634,7 +684,7 @@
       "issues": {}
     },
     "Tabs": {
-      "lastUpdated": "2025-08-15T09:44:11Z",
+      "lastUpdated": "2025-08-16T18:45:57Z",
       "passing": true,
       "score": 100,
       "context": "Tab navigation",
@@ -642,7 +692,7 @@
       "issues": {}
     },
     "Input": {
-      "lastUpdated": "2025-08-15T09:44:11Z",
+      "lastUpdated": "2025-08-16T18:45:57Z",
       "passing": true,
       "score": 100,
       "context": "Text input fields",
@@ -650,7 +700,7 @@
       "issues": {}
     },
     "Dialog": {
-      "lastUpdated": "2025-08-15T09:44:11Z",
+      "lastUpdated": "2025-08-16T18:45:57Z",
       "passing": true,
       "score": 100,
       "context": "Modal dialogs",
@@ -658,7 +708,7 @@
       "issues": {}
     },
     "Slider": {
-      "lastUpdated": "2025-08-15T09:44:11Z",
+      "lastUpdated": "2025-08-16T18:45:57Z",
       "passing": true,
       "score": 100,
       "context": "Range sliders",
@@ -666,7 +716,7 @@
       "issues": {}
     },
     "Select": {
-      "lastUpdated": "2025-08-15T09:44:11Z",
+      "lastUpdated": "2025-08-16T18:45:57Z",
       "passing": true,
       "score": 100,
       "context": "Select dropdowns",
@@ -674,7 +724,7 @@
       "issues": {}
     },
     "Card": {
-      "lastUpdated": "2025-08-15T09:44:11Z",
+      "lastUpdated": "2025-08-16T18:45:57Z",
       "passing": true,
       "score": 100,
       "context": "Standard component",
@@ -682,7 +732,7 @@
       "issues": {}
     },
     "Alert": {
-      "lastUpdated": "2025-08-15T09:44:11Z",
+      "lastUpdated": "2025-08-16T18:45:57Z",
       "passing": true,
       "score": 100,
       "context": "User notifications",
@@ -704,9 +754,9 @@
       "passed": true
     },
     "tests": {
-      "total": 18,
-      "passRate": 100,
-      "failed": 0,
+      "total": 20,
+      "passRate": 90,
+      "failed": 2,
       "passed": 18
     }
   }

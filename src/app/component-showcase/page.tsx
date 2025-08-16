@@ -222,11 +222,10 @@ export default function ComponentLibraryShowcase() {
               </p>
             </div>
             <div className="grid gap-8 md:grid-cols-3">
-              {/* Accordion TODO */}
               <div className="border border-dashed border-accent rounded-lg p-6 flex flex-col items-center justify-center min-h-[180px] bg-muted/30">
                 <h3 className="text-xl font-semibold mb-2">Accordion</h3>
                 <p className="text-muted-foreground text-center">
-                  Expandable/collapsible content sections.
+                  Expandable/collapsible content panels.
                   <br />{' '}
                   <span className="font-mono text-xs">{'// TODO: Build Accordion component'}</span>
                 </p>
@@ -247,6 +246,15 @@ export default function ComponentLibraryShowcase() {
                   Optimized, accessible images.
                   <br />{' '}
                   <span className="font-mono text-xs">{'// TODO: Build Image component'}</span>
+                </p>
+              </div>
+              {/* Tooltip TODO */}
+              <div className="border border-dashed border-accent rounded-lg p-6 flex flex-col items-center justify-center min-h-[180px] bg-muted/30">
+                <h3 className="text-xl font-semibold mb-2">Tooltip</h3>
+                <p className="text-muted-foreground text-center">
+                  Contextual info on hover/focus.
+                  <br />{' '}
+                  <span className="font-mono text-xs">{'// TODO: Build Tooltip component'}</span>
                 </p>
               </div>
             </div>
