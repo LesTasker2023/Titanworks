@@ -263,8 +263,8 @@ Apply your learning with these progressive projects:
 
 ```bash
 # Set up your learning environment
-git clone https://github.com/LesTasker2023/triggerkings.git
-cd triggerkings
+git clone https://github.com/LesTasker2023/Daedalus.git
+cd Daedalus
 yarn install
 
 # Complete foundation tutorials

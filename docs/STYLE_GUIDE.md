@@ -1,4 +1,4 @@
-# 🎨 TriggerKings Style Guide
+# 🎨 Daedalus Style Guide
 
 _Single source of truth for all styling decisions_
 
@@ -179,7 +179,7 @@ ComponentName/
 
 ```
 ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-┃                    🎨 TRIGGERKINGS STYLE GUIDE CARD                      ┃
+┃                    🎨 Daedalus STYLE GUIDE CARD                      ┃
 ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
 
 COLORS              SPACING              SIZES                STATES

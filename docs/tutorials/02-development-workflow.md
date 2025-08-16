@@ -1,6 +1,6 @@
 # 🔄 Development Workflow & Best Practices
 
-_Master the TriggerKings development cycle: From idea to production-ready component_
+_Master the Daedalus development cycle: From idea to production-ready component_
 
 ---
 
@@ -14,12 +14,12 @@ _Master the TriggerKings development cycle: From idea to production-ready compon
 
 ---
 
-## 🚀 The TriggerKings Development Philosophy
+## 🚀 The Daedalus Development Philosophy
 
 We follow **"Quality Gate Driven Development"** - every component must achieve 100/100 quality score before merging.
 
 ```typescript
-// The TriggerKings Way
+// The Daedalus Way
 const DEVELOPMENT_CYCLE = [
   '📝 Plan & Design',
   '🧪 Test-Driven Development',

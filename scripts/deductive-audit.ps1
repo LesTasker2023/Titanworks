@@ -1,4 +1,4 @@
-# TriggerKings Deductive Smart Audit - Start at 100, lose points for failures
+# Daedalus Deductive Smart Audit - Start at 100, lose points for failures
 param(
     [string]$OutputFile = "reports\QUALITY_REPORT.md",
     [string]$JsonReport = "reports\quality-report.json",
@@ -127,7 +127,7 @@ $AllComponents = Get-ChildItem "src\components\ui" -Directory | Where-Object { $
 
 # Handle component listing
 if ($ListComponents) {
-    Write-Host "TRIGGERKINGS COMPONENT LIST" -ForegroundColor Cyan
+    Write-Host "Daedalus COMPONENT LIST" -ForegroundColor Cyan
     Write-Host "Available components:" -ForegroundColor Yellow
     foreach ($comp in $AllComponents | Sort-Object Name) {
         Write-Host "  - $($comp.Name)" -ForegroundColor Gray
@@ -150,11 +150,11 @@ if ($ComponentFilter.Count -gt 0) {
         }
         exit 1
     }
-    Write-Host "TRIGGERKINGS TARGETED AUDIT" -ForegroundColor Cyan
+    Write-Host "Daedalus TARGETED AUDIT" -ForegroundColor Cyan
     Write-Host "Testing specific components: $($ComponentFilter -join ', ')" -ForegroundColor Yellow
 } else {
     $Components = $AllComponents
-    Write-Host "TRIGGERKINGS DEDUCTIVE SMART AUDIT" -ForegroundColor Cyan
+    Write-Host "Daedalus DEDUCTIVE SMART AUDIT" -ForegroundColor Cyan
 }
 
 $TotalComponents = $Components.Count
@@ -629,7 +629,7 @@ foreach ($comp in $ComponentDetails) {
 
 # Create the dashboard report
 $DashboardReport = @"
-# TriggerKings Quality Dashboard
+# Daedalus Quality Dashboard
 
 **Latest Version**: $NewVersion | **Generated**: $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss') | **Quality Score**: **$OverallScore/100**
 
@@ -686,7 +686,7 @@ $DashboardReport += @"
 
 ---
 
-*TriggerKings Deductive Smart Quality Audit - Dashboard View*
+*Daedalus Deductive Smart Quality Audit - Dashboard View*
 "@
 
 Set-Content $OutputFile -Value $DashboardReport -Encoding UTF8

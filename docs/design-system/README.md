@@ -1,6 +1,6 @@
-# TriggerKings Design System
+# Daedalus Design System
 
-This design system provides a comprehensive set of styles, components, and patterns for building consistent user interfaces across TriggerKings applications.
+This design system provides a comprehensive set of styles, components, and patterns for building consistent user interfaces across Daedalus applications.
 
 ## Table of Contents
 

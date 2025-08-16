@@ -1,546 +1,546 @@
 {
-    "triggerKingsLocationData": {
+    "DaedalusLocationData": {
         "extractedOn": "2025-08-12T23:00:00Z",
-        "description": "Complete backup of all TriggerKings location pages before architectural cleanup",
+        "description": "Complete backup of all Daedalus location pages before architectural cleanup",
         "locations": {
             "aigburth": {
-                "title": "Paintball Parties Aigburth | TriggerKings",
+                "title": "Paintball Parties Aigburth | Daedalus",
                 "description": "Book the ultimate mobile paintball experience for parties, stag dos, and events in Aigburth. Real-time scoring, prizes, and unforgettable fun!",
                 "displayName": "Paintball Parties Aigburth",
                 "slug": "aigburth",
-                "content": "Looking for a unique, adrenaline-fueled event in Aigburth? TriggerKings brings the mobile paintball range to you—perfect for birthdays, stag dos, and corporate events. Book now and claim your crown!"
+                "content": "Looking for a unique, adrenaline-fueled event in Aigburth? Daedalus brings the mobile paintball range to you—perfect for birthdays, stag dos, and corporate events. Book now and claim your crown!"
             },
             "aintree": {
-                "title": "Paintball Parties Aintree | TriggerKings",
+                "title": "Paintball Parties Aintree | Daedalus",
                 "description": "Book the ultimate mobile paintball experience for parties, stag dos, and events in Aintree. Real-time scoring, prizes, and unforgettable fun!",
                 "displayName": "Paintball Parties Aintree",
                 "slug": "aintree",
-                "content": "Looking for a unique, adrenaline-fueled event in Aintree? TriggerKings brings the mobile paintball range to you—perfect for birthdays, stag dos, and corporate events. Book now and claim your crown!"
+                "content": "Looking for a unique, adrenaline-fueled event in Aintree? Daedalus brings the mobile paintball range to you—perfect for birthdays, stag dos, and corporate events. Book now and claim your crown!"
             },
             "allerton": {
-                "title": "Paintball Parties Allerton | TriggerKings",
+                "title": "Paintball Parties Allerton | Daedalus",
                 "description": "Book the ultimate mobile paintball experience for parties, stag dos, and events in Allerton. Real-time scoring, prizes, and unforgettable fun!",
                 "displayName": "Paintball Parties Allerton",
                 "slug": "allerton",
-                "content": "Looking for a unique, adrenaline-fueled event in Allerton? TriggerKings brings the mobile paintball range to you—perfect for birthdays, stag dos, and corporate events. Book now and claim your crown!"
+                "content": "Looking for a unique, adrenaline-fueled event in Allerton? Daedalus brings the mobile paintball range to you—perfect for birthdays, stag dos, and corporate events. Book now and claim your crown!"
             },
             "anfield": {
-                "title": "Paintball Parties Anfield | TriggerKings",
+                "title": "Paintball Parties Anfield | Daedalus",
                 "description": "Book the ultimate mobile paintball experience for parties, stag dos, and events in Anfield. Real-time scoring, prizes, and unforgettable fun!",
                 "displayName": "Paintball Parties Anfield",
                 "slug": "anfield",
-                "content": "Looking for a unique, adrenaline-fueled event in Anfield? TriggerKings brings the mobile paintball range to you—perfect for birthdays, stag dos, and corporate events. Book now and claim your crown!"
+                "content": "Looking for a unique, adrenaline-fueled event in Anfield? Daedalus brings the mobile paintball range to you—perfect for birthdays, stag dos, and corporate events. Book now and claim your crown!"
             },
             "bache": {
-                "title": "Paintball Parties Bache | TriggerKings",
+                "title": "Paintball Parties Bache | Daedalus",
                 "description": "Book the ultimate mobile paintball experience for parties, stag dos, and events in Bache. Real-time scoring, prizes, and unforgettable fun!",
                 "displayName": "Paintball Parties Bache",
                 "slug": "bache",
-                "content": "Looking for a unique, adrenaline-fueled event in Bache? TriggerKings brings the mobile paintball range to you—perfect for birthdays, stag dos, and corporate events. Book now and claim your crown!"
+                "content": "Looking for a unique, adrenaline-fueled event in Bache? Daedalus brings the mobile paintball range to you—perfect for birthdays, stag dos, and corporate events. Book now and claim your crown!"
             },
             "barnston": {
-                "title": "Paintball Parties Barnston | TriggerKings",
+                "title": "Paintball Parties Barnston | Daedalus",
                 "description": "Book the ultimate mobile paintball experience for parties, stag dos, and events in Barnston. Real-time scoring, prizes, and unforgettable fun!",
                 "displayName": "Paintball Parties Barnston",
                 "slug": "barnston",
-                "content": "Looking for a unique, adrenaline-fueled event in Barnston? TriggerKings brings the mobile paintball range to you—perfect for birthdays, stag dos, and corporate events. Book now and claim your crown!"
+                "content": "Looking for a unique, adrenaline-fueled event in Barnston? Daedalus brings the mobile paintball range to you—perfect for birthdays, stag dos, and corporate events. Book now and claim your crown!"
             },
             "bebington": {
-                "title": "Paintball Parties Bebington | TriggerKings",
+                "title": "Paintball Parties Bebington | Daedalus",
                 "description": "Book the ultimate mobile paintball experience for parties, stag dos, and events in Bebington. Real-time scoring, prizes, and unforgettable fun!",
                 "displayName": "Paintball Parties Bebington",
                 "slug": "bebington",
-                "content": "Looking for a unique, adrenaline-fueled event in Bebington? TriggerKings brings the mobile paintball range to you—perfect for birthdays, stag dos, and corporate events. Book now and claim your crown!"
+                "content": "Looking for a unique, adrenaline-fueled event in Bebington? Daedalus brings the mobile paintball range to you—perfect for birthdays, stag dos, and corporate events. Book now and claim your crown!"
             },
             "beechwood": {
-                "title": "Paintball Parties Beechwood | TriggerKings",
+                "title": "Paintball Parties Beechwood | Daedalus",
                 "description": "Book the ultimate mobile paintball experience for parties, stag dos, and events in Beechwood. Real-time scoring, prizes, and unforgettable fun!",
                 "displayName": "Paintball Parties Beechwood",
                 "slug": "beechwood",
-                "content": "Looking for a unique, adrenaline-fueled event in Beechwood? TriggerKings brings the mobile paintball range to you—perfect for birthdays, stag dos, and corporate events. Book now and claim your crown!"
+                "content": "Looking for a unique, adrenaline-fueled event in Beechwood? Daedalus brings the mobile paintball range to you—perfect for birthdays, stag dos, and corporate events. Book now and claim your crown!"
             },
             "belle-vale": {
-                "title": "Paintball Parties Belle Vale | TriggerKings",
+                "title": "Paintball Parties Belle Vale | Daedalus",
                 "description": "Book the ultimate mobile paintball experience for parties, stag dos, and events in Belle Vale. Real-time scoring, prizes, and unforgettable fun!",
                 "displayName": "Paintball Parties Belle Vale",
                 "slug": "belle-vale",
-                "content": "Looking for a unique, adrenaline-fueled event in Belle Vale? TriggerKings brings the mobile paintball range to you—perfect for birthdays, stag dos, and corporate events. Book now and claim your crown!"
+                "content": "Looking for a unique, adrenaline-fueled event in Belle Vale? Daedalus brings the mobile paintball range to you—perfect for birthdays, stag dos, and corporate events. Book now and claim your crown!"
             },
             "bidston": {
-                "title": "Paintball Parties Bidston | TriggerKings",
+                "title": "Paintball Parties Bidston | Daedalus",
                 "description": "Book the ultimate mobile paintball experience for parties, stag dos, and events in Bidston. Real-time scoring, prizes, and unforgettable fun!",
                 "displayName": "Paintball Parties Bidston",
                 "slug": "bidston",
-                "content": "Looking for a unique, adrenaline-fueled event in Bidston? TriggerKings brings the mobile paintball range to you—perfect for birthdays, stag dos, and corporate events. Book now and claim your crown!"
+                "content": "Looking for a unique, adrenaline-fueled event in Bidston? Daedalus brings the mobile paintball range to you—perfect for birthdays, stag dos, and corporate events. Book now and claim your crown!"
             },
             "birkenhead": {
-                "title": "Paintball Parties Birkenhead | TriggerKings",
+                "title": "Paintball Parties Birkenhead | Daedalus",
                 "description": "Book the ultimate mobile paintball experience for parties, stag dos, and events in Birkenhead. Real-time scoring, prizes, and unforgettable fun!",
                 "displayName": "Paintball Parties Birkenhead",
                 "slug": "birkenhead",
-                "content": "Looking for a unique, adrenaline-fueled event in Birkenhead? TriggerKings brings the mobile paintball range to you—perfect for birthdays, stag dos, and corporate events. Book now and claim your crown!"
+                "content": "Looking for a unique, adrenaline-fueled event in Birkenhead? Daedalus brings the mobile paintball range to you—perfect for birthdays, stag dos, and corporate events. Book now and claim your crown!"
             },
             "blacon": {
-                "title": "Paintball Parties Blacon | TriggerKings",
+                "title": "Paintball Parties Blacon | Daedalus",
                 "description": "Book the ultimate mobile paintball experience for parties, stag dos, and events in Blacon. Real-time scoring, prizes, and unforgettable fun!",
                 "displayName": "Paintball Parties Blacon",
                 "slug": "blacon",
-                "content": "Looking for a unique, adrenaline-fueled event in Blacon? TriggerKings brings the mobile paintball range to you—perfect for birthdays, stag dos, and corporate events. Book now and claim your crown!"
+                "content": "Looking for a unique, adrenaline-fueled event in Blacon? Daedalus brings the mobile paintball range to you—perfect for birthdays, stag dos, and corporate events. Book now and claim your crown!"
             },
             "boughton": {
-                "title": "Paintball Parties Boughton | TriggerKings",
+                "title": "Paintball Parties Boughton | Daedalus",
                 "description": "Book the ultimate mobile paintball experience for parties, stag dos, and events in Boughton. Real-time scoring, prizes, and unforgettable fun!",
                 "displayName": "Paintball Parties Boughton",
                 "slug": "boughton",
-                "content": "Looking for a unique, adrenaline-fueled event in Boughton? TriggerKings brings the mobile paintball range to you—perfect for birthdays, stag dos, and corporate events. Book now and claim your crown!"
+                "content": "Looking for a unique, adrenaline-fueled event in Boughton? Daedalus brings the mobile paintball range to you—perfect for birthdays, stag dos, and corporate events. Book now and claim your crown!"
             },
             "brimstage": {
-                "title": "Paintball Parties Brimstage | TriggerKings",
+                "title": "Paintball Parties Brimstage | Daedalus",
                 "description": "Book the ultimate mobile paintball experience for parties, stag dos, and events in Brimstage. Real-time scoring, prizes, and unforgettable fun!",
                 "displayName": "Paintball Parties Brimstage",
                 "slug": "brimstage",
-                "content": "Looking for a unique, adrenaline-fueled event in Brimstage? TriggerKings brings the mobile paintball range to you—perfect for birthdays, stag dos, and corporate events. Book now and claim your crown!"
+                "content": "Looking for a unique, adrenaline-fueled event in Brimstage? Daedalus brings the mobile paintball range to you—perfect for birthdays, stag dos, and corporate events. Book now and claim your crown!"
             },
             "broadgreen": {
-                "title": "Paintball Parties Broadgreen | TriggerKings",
+                "title": "Paintball Parties Broadgreen | Daedalus",
                 "description": "Book the ultimate mobile paintball experience for parties, stag dos, and events in Broadgreen. Real-time scoring, prizes, and unforgettable fun!",
                 "displayName": "Paintball Parties Broadgreen",
                 "slug": "broadgreen",
-                "content": "Looking for a unique, adrenaline-fueled event in Broadgreen? TriggerKings brings the mobile paintball range to you—perfect for birthdays, stag dos, and corporate events. Book now and claim your crown!"
+                "content": "Looking for a unique, adrenaline-fueled event in Broadgreen? Daedalus brings the mobile paintball range to you—perfect for birthdays, stag dos, and corporate events. Book now and claim your crown!"
             },
             "bromborough": {
-                "title": "Paintball Parties Bromborough | TriggerKings",
+                "title": "Paintball Parties Bromborough | Daedalus",
                 "description": "Book the ultimate mobile paintball experience for parties, stag dos, and events in Bromborough. Real-time scoring, prizes, and unforgettable fun!",
                 "displayName": "Paintball Parties Bromborough",
                 "slug": "bromborough",
-                "content": "Looking for a unique, adrenaline-fueled event in Bromborough? TriggerKings brings the mobile paintball range to you—perfect for birthdays, stag dos, and corporate events. Book now and claim your crown!"
+                "content": "Looking for a unique, adrenaline-fueled event in Bromborough? Daedalus brings the mobile paintball range to you—perfect for birthdays, stag dos, and corporate events. Book now and claim your crown!"
             },
             "caldy": {
-                "title": "Paintball Parties Caldy | TriggerKings",
+                "title": "Paintball Parties Caldy | Daedalus",
                 "description": "Book the ultimate mobile paintball experience for parties, stag dos, and events in Caldy. Real-time scoring, prizes, and unforgettable fun!",
                 "displayName": "Paintball Parties Caldy",
                 "slug": "caldy",
-                "content": "Looking for a unique, adrenaline-fueled event in Caldy? TriggerKings brings the mobile paintball range to you—perfect for birthdays, stag dos, and corporate events. Book now and claim your crown!"
+                "content": "Looking for a unique, adrenaline-fueled event in Caldy? Daedalus brings the mobile paintball range to you—perfect for birthdays, stag dos, and corporate events. Book now and claim your crown!"
             },
             "ch63": {
-                "title": "Paintball Parties CH63 | TriggerKings",
+                "title": "Paintball Parties CH63 | Daedalus",
                 "description": "Book the ultimate mobile paintball experience for parties, stag dos, and events in CH63. Real-time scoring, prizes, and unforgettable fun!",
                 "displayName": "Paintball Parties CH63",
                 "slug": "ch63",
-                "content": "Looking for a unique, adrenaline-fueled event in CH63? TriggerKings brings the mobile paintball range to you—perfect for birthdays, stag dos, and corporate events. Book now and claim your crown!"
+                "content": "Looking for a unique, adrenaline-fueled event in CH63? Daedalus brings the mobile paintball range to you—perfect for birthdays, stag dos, and corporate events. Book now and claim your crown!"
             },
             "chester": {
-                "title": "Paintball Parties Chester | TriggerKings",
+                "title": "Paintball Parties Chester | Daedalus",
                 "description": "Book the ultimate mobile paintball experience for parties, stag dos, and events in Chester. Real-time scoring, prizes, and unforgettable fun!",
                 "displayName": "Paintball Parties Chester",
                 "slug": "chester",
-                "content": "Looking for a unique, adrenaline-fueled event in Chester? TriggerKings brings the mobile paintball range to you—perfect for birthdays, stag dos, and corporate events. Book now and claim your crown!"
+                "content": "Looking for a unique, adrenaline-fueled event in Chester? Daedalus brings the mobile paintball range to you—perfect for birthdays, stag dos, and corporate events. Book now and claim your crown!"
             },
             "childwall": {
-                "title": "Paintball Parties Childwall | TriggerKings",
+                "title": "Paintball Parties Childwall | Daedalus",
                 "description": "Book the ultimate mobile paintball experience for parties, stag dos, and events in Childwall. Real-time scoring, prizes, and unforgettable fun!",
                 "displayName": "Paintball Parties Childwall",
                 "slug": "childwall",
-                "content": "Looking for a unique, adrenaline-fueled event in Childwall? TriggerKings brings the mobile paintball range to you—perfect for birthdays, stag dos, and corporate events. Book now and claim your crown!"
+                "content": "Looking for a unique, adrenaline-fueled event in Childwall? Daedalus brings the mobile paintball range to you—perfect for birthdays, stag dos, and corporate events. Book now and claim your crown!"
             },
             "clubmoor": {
-                "title": "Paintball Parties Clubmoor | TriggerKings",
+                "title": "Paintball Parties Clubmoor | Daedalus",
                 "description": "Book the ultimate mobile paintball experience for parties, stag dos, and events in Clubmoor. Real-time scoring, prizes, and unforgettable fun!",
                 "displayName": "Paintball Parties Clubmoor",
                 "slug": "clubmoor",
-                "content": "Looking for a unique, adrenaline-fueled event in Clubmoor? TriggerKings brings the mobile paintball range to you—perfect for birthdays, stag dos, and corporate events. Book now and claim your crown!"
+                "content": "Looking for a unique, adrenaline-fueled event in Clubmoor? Daedalus brings the mobile paintball range to you—perfect for birthdays, stag dos, and corporate events. Book now and claim your crown!"
             },
             "croxteth": {
-                "title": "Paintball Parties Croxteth | TriggerKings",
+                "title": "Paintball Parties Croxteth | Daedalus",
                 "description": "Book the ultimate mobile paintball experience for parties, stag dos, and events in Croxteth. Real-time scoring, prizes, and unforgettable fun!",
                 "displayName": "Paintball Parties Croxteth",
                 "slug": "croxteth",
-                "content": "Looking for a unique, adrenaline-fueled event in Croxteth? TriggerKings brings the mobile paintball range to you—perfect for birthdays, stag dos, and corporate events. Book now and claim your crown!"
+                "content": "Looking for a unique, adrenaline-fueled event in Croxteth? Daedalus brings the mobile paintball range to you—perfect for birthdays, stag dos, and corporate events. Book now and claim your crown!"
             },
             "curzon-park": {
-                "title": "Paintball Parties Curzon Park | TriggerKings",
+                "title": "Paintball Parties Curzon Park | Daedalus",
                 "description": "Book the ultimate mobile paintball experience for parties, stag dos, and events in Curzon Park. Real-time scoring, prizes, and unforgettable fun!",
                 "displayName": "Paintball Parties Curzon Park",
                 "slug": "curzon-park",
-                "content": "Looking for a unique, adrenaline-fueled event in Curzon Park? TriggerKings brings the mobile paintball range to you—perfect for birthdays, stag dos, and corporate events. Book now and claim your crown!"
+                "content": "Looking for a unique, adrenaline-fueled event in Curzon Park? Daedalus brings the mobile paintball range to you—perfect for birthdays, stag dos, and corporate events. Book now and claim your crown!"
             },
             "dingle": {
-                "title": "Paintball Parties Dingle | TriggerKings",
+                "title": "Paintball Parties Dingle | Daedalus",
                 "description": "Book the ultimate mobile paintball experience for parties, stag dos, and events in Dingle. Real-time scoring, prizes, and unforgettable fun!",
                 "displayName": "Paintball Parties Dingle",
                 "slug": "dingle",
-                "content": "Looking for a unique, adrenaline-fueled event in Dingle? TriggerKings brings the mobile paintball range to you—perfect for birthdays, stag dos, and corporate events. Book now and claim your crown!"
+                "content": "Looking for a unique, adrenaline-fueled event in Dingle? Daedalus brings the mobile paintball range to you—perfect for birthdays, stag dos, and corporate events. Book now and claim your crown!"
             },
             "dovecot": {
-                "title": "Paintball Parties Dovecot | TriggerKings",
+                "title": "Paintball Parties Dovecot | Daedalus",
                 "description": "Book the ultimate mobile paintball experience for parties, stag dos, and events in Dovecot. Real-time scoring, prizes, and unforgettable fun!",
                 "displayName": "Paintball Parties Dovecot",
                 "slug": "dovecot",
-                "content": "Looking for a unique, adrenaline-fueled event in Dovecot? TriggerKings brings the mobile paintball range to you—perfect for birthdays, stag dos, and corporate events. Book now and claim your crown!"
+                "content": "Looking for a unique, adrenaline-fueled event in Dovecot? Daedalus brings the mobile paintball range to you—perfect for birthdays, stag dos, and corporate events. Book now and claim your crown!"
             },
             "eastham": {
-                "title": "Paintball Parties Eastham | TriggerKings",
+                "title": "Paintball Parties Eastham | Daedalus",
                 "description": "Book the ultimate mobile paintball experience for parties, stag dos, and events in Eastham. Real-time scoring, prizes, and unforgettable fun!",
                 "displayName": "Paintball Parties Eastham",
                 "slug": "eastham",
-                "content": "Looking for a unique, adrenaline-fueled event in Eastham? TriggerKings brings the mobile paintball range to you—perfect for birthdays, stag dos, and corporate events. Book now and claim your crown!"
+                "content": "Looking for a unique, adrenaline-fueled event in Eastham? Daedalus brings the mobile paintball range to you—perfect for birthdays, stag dos, and corporate events. Book now and claim your crown!"
             },
             "edge-hill": {
-                "title": "Paintball Parties Edge Hill | TriggerKings",
+                "title": "Paintball Parties Edge Hill | Daedalus",
                 "description": "Book the ultimate mobile paintball experience for parties, stag dos, and events in Edge Hill. Real-time scoring, prizes, and unforgettable fun!",
                 "displayName": "Paintball Parties Edge Hill",
                 "slug": "edge-hill",
-                "content": "Looking for a unique, adrenaline-fueled event in Edge Hill? TriggerKings brings the mobile paintball range to you—perfect for birthdays, stag dos, and corporate events. Book now and claim your crown!"
+                "content": "Looking for a unique, adrenaline-fueled event in Edge Hill? Daedalus brings the mobile paintball range to you—perfect for birthdays, stag dos, and corporate events. Book now and claim your crown!"
             },
             "egremont": {
-                "title": "Paintball Parties Egremont | TriggerKings",
+                "title": "Paintball Parties Egremont | Daedalus",
                 "description": "Book the ultimate mobile paintball experience for parties, stag dos, and events in Egremont. Real-time scoring, prizes, and unforgettable fun!",
                 "displayName": "Paintball Parties Egremont",
                 "slug": "egremont",
-                "content": "Looking for a unique, adrenaline-fueled event in Egremont? TriggerKings brings the mobile paintball range to you—perfect for birthdays, stag dos, and corporate events. Book now and claim your crown!"
+                "content": "Looking for a unique, adrenaline-fueled event in Egremont? Daedalus brings the mobile paintball range to you—perfect for birthdays, stag dos, and corporate events. Book now and claim your crown!"
             },
             "everton": {
-                "title": "Paintball Parties Everton | TriggerKings",
+                "title": "Paintball Parties Everton | Daedalus",
                 "description": "Book the ultimate mobile paintball experience for parties, stag dos, and events in Everton. Real-time scoring, prizes, and unforgettable fun!",
                 "displayName": "Paintball Parties Everton",
                 "slug": "everton",
-                "content": "Looking for a unique, adrenaline-fueled event in Everton? TriggerKings brings the mobile paintball range to you—perfect for birthdays, stag dos, and corporate events. Book now and claim your crown!"
+                "content": "Looking for a unique, adrenaline-fueled event in Everton? Daedalus brings the mobile paintball range to you—perfect for birthdays, stag dos, and corporate events. Book now and claim your crown!"
             },
             "fairfield": {
-                "title": "Paintball Parties Fairfield | TriggerKings",
+                "title": "Paintball Parties Fairfield | Daedalus",
                 "description": "Book the ultimate mobile paintball experience for parties, stag dos, and events in Fairfield. Real-time scoring, prizes, and unforgettable fun!",
                 "displayName": "Paintball Parties Fairfield",
                 "slug": "fairfield",
-                "content": "Looking for a unique, adrenaline-fueled event in Fairfield? TriggerKings brings the mobile paintball range to you—perfect for birthdays, stag dos, and corporate events. Book now and claim your crown!"
+                "content": "Looking for a unique, adrenaline-fueled event in Fairfield? Daedalus brings the mobile paintball range to you—perfect for birthdays, stag dos, and corporate events. Book now and claim your crown!"
             },
             "fazakerley": {
-                "title": "Paintball Parties Fazakerley | TriggerKings",
+                "title": "Paintball Parties Fazakerley | Daedalus",
                 "description": "Book the ultimate mobile paintball experience for parties, stag dos, and events in Fazakerley. Real-time scoring, prizes, and unforgettable fun!",
                 "displayName": "Paintball Parties Fazakerley",
                 "slug": "fazakerley",
-                "content": "Looking for a unique, adrenaline-fueled event in Fazakerley? TriggerKings brings the mobile paintball range to you—perfect for birthdays, stag dos, and corporate events. Book now and claim your crown!"
+                "content": "Looking for a unique, adrenaline-fueled event in Fazakerley? Daedalus brings the mobile paintball range to you—perfect for birthdays, stag dos, and corporate events. Book now and claim your crown!"
             },
             "frankby": {
-                "title": "Paintball Parties Frankby | TriggerKings",
+                "title": "Paintball Parties Frankby | Daedalus",
                 "description": "Book the ultimate mobile paintball experience for parties, stag dos, and events in Frankby. Real-time scoring, prizes, and unforgettable fun!",
                 "displayName": "Paintball Parties Frankby",
                 "slug": "frankby",
-                "content": "Looking for a unique, adrenaline-fueled event in Frankby? TriggerKings brings the mobile paintball range to you—perfect for birthdays, stag dos, and corporate events. Book now and claim your crown!"
+                "content": "Looking for a unique, adrenaline-fueled event in Frankby? Daedalus brings the mobile paintball range to you—perfect for birthdays, stag dos, and corporate events. Book now and claim your crown!"
             },
             "garston": {
-                "title": "Paintball Parties Garston | TriggerKings",
+                "title": "Paintball Parties Garston | Daedalus",
                 "description": "Book the ultimate mobile paintball experience for parties, stag dos, and events in Garston. Real-time scoring, prizes, and unforgettable fun!",
                 "displayName": "Paintball Parties Garston",
                 "slug": "garston",
-                "content": "Looking for a unique, adrenaline-fueled event in Garston? TriggerKings brings the mobile paintball range to you—perfect for birthdays, stag dos, and corporate events. Book now and claim your crown!"
+                "content": "Looking for a unique, adrenaline-fueled event in Garston? Daedalus brings the mobile paintball range to you—perfect for birthdays, stag dos, and corporate events. Book now and claim your crown!"
             },
             "gateacre": {
-                "title": "Paintball Parties Gateacre | TriggerKings",
+                "title": "Paintball Parties Gateacre | Daedalus",
                 "description": "Book the ultimate mobile paintball experience for parties, stag dos, and events in Gateacre. Real-time scoring, prizes, and unforgettable fun!",
                 "displayName": "Paintball Parties Gateacre",
                 "slug": "gateacre",
-                "content": "Looking for a unique, adrenaline-fueled event in Gateacre? TriggerKings brings the mobile paintball range to you—perfect for birthdays, stag dos, and corporate events. Book now and claim your crown!"
+                "content": "Looking for a unique, adrenaline-fueled event in Gateacre? Daedalus brings the mobile paintball range to you—perfect for birthdays, stag dos, and corporate events. Book now and claim your crown!"
             },
             "gayton": {
-                "title": "Paintball Parties Gayton | TriggerKings",
+                "title": "Paintball Parties Gayton | Daedalus",
                 "description": "Book the ultimate mobile paintball experience for parties, stag dos, and events in Gayton. Real-time scoring, prizes, and unforgettable fun!",
                 "displayName": "Paintball Parties Gayton",
                 "slug": "gayton",
-                "content": "Looking for a unique, adrenaline-fueled event in Gayton? TriggerKings brings the mobile paintball range to you—perfect for birthdays, stag dos, and corporate events. Book now and claim your crown!"
+                "content": "Looking for a unique, adrenaline-fueled event in Gayton? Daedalus brings the mobile paintball range to you—perfect for birthdays, stag dos, and corporate events. Book now and claim your crown!"
             },
             "grassendale": {
-                "title": "Paintball Parties Grassendale | TriggerKings",
+                "title": "Paintball Parties Grassendale | Daedalus",
                 "description": "Book the ultimate mobile paintball experience for parties, stag dos, and events in Grassendale. Real-time scoring, prizes, and unforgettable fun!",
                 "displayName": "Paintball Parties Grassendale",
                 "slug": "grassendale",
-                "content": "Looking for a unique, adrenaline-fueled event in Grassendale? TriggerKings brings the mobile paintball range to you—perfect for birthdays, stag dos, and corporate events. Book now and claim your crown!"
+                "content": "Looking for a unique, adrenaline-fueled event in Grassendale? Daedalus brings the mobile paintball range to you—perfect for birthdays, stag dos, and corporate events. Book now and claim your crown!"
             },
             "greasby": {
-                "title": "Paintball Parties Greasby | TriggerKings",
+                "title": "Paintball Parties Greasby | Daedalus",
                 "description": "Book the ultimate mobile paintball experience for parties, stag dos, and events in Greasby. Real-time scoring, prizes, and unforgettable fun!",
                 "displayName": "Paintball Parties Greasby",
                 "slug": "greasby",
-                "content": "Looking for a unique, adrenaline-fueled event in Greasby? TriggerKings brings the mobile paintball range to you—perfect for birthdays, stag dos, and corporate events. Book now and claim your crown!"
+                "content": "Looking for a unique, adrenaline-fueled event in Greasby? Daedalus brings the mobile paintball range to you—perfect for birthdays, stag dos, and corporate events. Book now and claim your crown!"
             },
             "great-boughton": {
-                "title": "Paintball Parties Great Boughton | TriggerKings",
+                "title": "Paintball Parties Great Boughton | Daedalus",
                 "description": "Book the ultimate mobile paintball experience for parties, stag dos, and events in Great Boughton. Real-time scoring, prizes, and unforgettable fun!",
                 "displayName": "Paintball Parties Great Boughton",
                 "slug": "great-boughton",
-                "content": "Looking for a unique, adrenaline-fueled event in Great Boughton? TriggerKings brings the mobile paintball range to you—perfect for birthdays, stag dos, and corporate events. Book now and claim your crown!"
+                "content": "Looking for a unique, adrenaline-fueled event in Great Boughton? Daedalus brings the mobile paintball range to you—perfect for birthdays, stag dos, and corporate events. Book now and claim your crown!"
             },
             "halewood": {
-                "title": "Paintball Parties Halewood | TriggerKings",
+                "title": "Paintball Parties Halewood | Daedalus",
                 "description": "Book the ultimate mobile paintball experience for parties, stag dos, and events in Halewood. Real-time scoring, prizes, and unforgettable fun!",
                 "displayName": "Paintball Parties Halewood",
                 "slug": "halewood",
-                "content": "Looking for a unique, adrenaline-fueled event in Halewood? TriggerKings brings the mobile paintball range to you—perfect for birthdays, stag dos, and corporate events. Book now and claim your crown!"
+                "content": "Looking for a unique, adrenaline-fueled event in Halewood? Daedalus brings the mobile paintball range to you—perfect for birthdays, stag dos, and corporate events. Book now and claim your crown!"
             },
             "handbridge": {
-                "title": "Paintball Parties Handbridge | TriggerKings",
+                "title": "Paintball Parties Handbridge | Daedalus",
                 "description": "Book the ultimate mobile paintball experience for parties, stag dos, and events in Handbridge. Real-time scoring, prizes, and unforgettable fun!",
                 "displayName": "Paintball Parties Handbridge",
                 "slug": "handbridge",
-                "content": "Looking for a unique, adrenaline-fueled event in Handbridge? TriggerKings brings the mobile paintball range to you—perfect for birthdays, stag dos, and corporate events. Book now and claim your crown!"
+                "content": "Looking for a unique, adrenaline-fueled event in Handbridge? Daedalus brings the mobile paintball range to you—perfect for birthdays, stag dos, and corporate events. Book now and claim your crown!"
             },
             "heswall": {
-                "title": "Paintball Parties Heswall | TriggerKings",
+                "title": "Paintball Parties Heswall | Daedalus",
                 "description": "Book the ultimate mobile paintball experience for parties, stag dos, and events in Heswall. Real-time scoring, prizes, and unforgettable fun!",
                 "displayName": "Paintball Parties Heswall",
                 "slug": "heswall",
-                "content": "Looking for a unique, adrenaline-fueled event in Heswall? TriggerKings brings the mobile paintball range to you—perfect for birthdays, stag dos, and corporate events. Book now and claim your crown!"
+                "content": "Looking for a unique, adrenaline-fueled event in Heswall? Daedalus brings the mobile paintball range to you—perfect for birthdays, stag dos, and corporate events. Book now and claim your crown!"
             },
             "higher-bebington": {
-                "title": "Paintball Parties Higher Bebington | TriggerKings",
+                "title": "Paintball Parties Higher Bebington | Daedalus",
                 "description": "Book the ultimate mobile paintball experience for parties, stag dos, and events in Higher Bebington. Real-time scoring, prizes, and unforgettable fun!",
                 "displayName": "Paintball Parties Higher Bebington",
                 "slug": "higher-bebington",
-                "content": "Looking for a unique, adrenaline-fueled event in Higher Bebington? TriggerKings brings the mobile paintball range to you—perfect for birthdays, stag dos, and corporate events. Book now and claim your crown!"
+                "content": "Looking for a unique, adrenaline-fueled event in Higher Bebington? Daedalus brings the mobile paintball range to you—perfect for birthdays, stag dos, and corporate events. Book now and claim your crown!"
             },
             "hoole": {
-                "title": "Paintball Parties Hoole | TriggerKings",
+                "title": "Paintball Parties Hoole | Daedalus",
                 "description": "Book the ultimate mobile paintball experience for parties, stag dos, and events in Hoole. Real-time scoring, prizes, and unforgettable fun!",
                 "displayName": "Paintball Parties Hoole",
                 "slug": "hoole",
-                "content": "Looking for a unique, adrenaline-fueled event in Hoole? TriggerKings brings the mobile paintball range to you—perfect for birthdays, stag dos, and corporate events. Book now and claim your crown!"
+                "content": "Looking for a unique, adrenaline-fueled event in Hoole? Daedalus brings the mobile paintball range to you—perfect for birthdays, stag dos, and corporate events. Book now and claim your crown!"
             },
             "huntington": {
-                "title": "Paintball Parties Huntington | TriggerKings",
+                "title": "Paintball Parties Huntington | Daedalus",
                 "description": "Book the ultimate mobile paintball experience for parties, stag dos, and events in Huntington. Real-time scoring, prizes, and unforgettable fun!",
                 "displayName": "Paintball Parties Huntington",
                 "slug": "huntington",
-                "content": "Looking for a unique, adrenaline-fueled event in Huntington? TriggerKings brings the mobile paintball range to you—perfect for birthdays, stag dos, and corporate events. Book now and claim your crown!"
+                "content": "Looking for a unique, adrenaline-fueled event in Huntington? Daedalus brings the mobile paintball range to you—perfect for birthdays, stag dos, and corporate events. Book now and claim your crown!"
             },
             "hunts-cross": {
-                "title": "Paintball Parties Hunts Cross | TriggerKings",
+                "title": "Paintball Parties Hunts Cross | Daedalus",
                 "description": "Book the ultimate mobile paintball experience for parties, stag dos, and events in Hunts Cross. Real-time scoring, prizes, and unforgettable fun!",
                 "displayName": "Paintball Parties Hunts Cross",
                 "slug": "hunts-cross",
-                "content": "Looking for a unique, adrenaline-fueled event in Hunts Cross? TriggerKings brings the mobile paintball range to you—perfect for birthdays, stag dos, and corporate events. Book now and claim your crown!"
+                "content": "Looking for a unique, adrenaline-fueled event in Hunts Cross? Daedalus brings the mobile paintball range to you—perfect for birthdays, stag dos, and corporate events. Book now and claim your crown!"
             },
             "kingsway": {
-                "title": "Paintball Parties Kingsway | TriggerKings",
+                "title": "Paintball Parties Kingsway | Daedalus",
                 "description": "Book the ultimate mobile paintball experience for parties, stag dos, and events in Kingsway. Real-time scoring, prizes, and unforgettable fun!",
                 "displayName": "Paintball Parties Kingsway",
                 "slug": "kingsway",
-                "content": "Looking for a unique, adrenaline-fueled event in Kingsway? TriggerKings brings the mobile paintball range to you—perfect for birthdays, stag dos, and corporate events. Book now and claim your crown!"
+                "content": "Looking for a unique, adrenaline-fueled event in Kingsway? Daedalus brings the mobile paintball range to you—perfect for birthdays, stag dos, and corporate events. Book now and claim your crown!"
             },
             "kirkby": {
-                "title": "Paintball Parties Kirkby | TriggerKings",
+                "title": "Paintball Parties Kirkby | Daedalus",
                 "description": "Book the ultimate mobile paintball experience for parties, stag dos, and events in Kirkby. Real-time scoring, prizes, and unforgettable fun!",
                 "displayName": "Paintball Parties Kirkby",
                 "slug": "kirkby",
-                "content": "Looking for a unique, adrenaline-fueled event in Kirkby? TriggerKings brings the mobile paintball range to you—perfect for birthdays, stag dos, and corporate events. Book now and claim your crown!"
+                "content": "Looking for a unique, adrenaline-fueled event in Kirkby? Daedalus brings the mobile paintball range to you—perfect for birthdays, stag dos, and corporate events. Book now and claim your crown!"
             },
             "knotty-ash": {
-                "title": "Paintball Parties Knotty Ash | TriggerKings",
+                "title": "Paintball Parties Knotty Ash | Daedalus",
                 "description": "Book the ultimate mobile paintball experience for parties, stag dos, and events in Knotty Ash. Real-time scoring, prizes, and unforgettable fun!",
                 "displayName": "Paintball Parties Knotty Ash",
                 "slug": "knotty-ash",
-                "content": "Looking for a unique, adrenaline-fueled event in Knotty Ash? TriggerKings brings the mobile paintball range to you—perfect for birthdays, stag dos, and corporate events. Book now and claim your crown!"
+                "content": "Looking for a unique, adrenaline-fueled event in Knotty Ash? Daedalus brings the mobile paintball range to you—perfect for birthdays, stag dos, and corporate events. Book now and claim your crown!"
             },
             "knowsley": {
-                "title": "Paintball Parties Knowsley | TriggerKings",
+                "title": "Paintball Parties Knowsley | Daedalus",
                 "description": "Book the ultimate mobile paintball experience for parties, stag dos, and events in Knowsley. Real-time scoring, prizes, and unforgettable fun!",
                 "displayName": "Paintball Parties Knowsley",
                 "slug": "knowsley",
-                "content": "Looking for a unique, adrenaline-fueled event in Knowsley? TriggerKings brings the mobile paintball range to you—perfect for birthdays, stag dos, and corporate events. Book now and claim your crown!"
+                "content": "Looking for a unique, adrenaline-fueled event in Knowsley? Daedalus brings the mobile paintball range to you—perfect for birthdays, stag dos, and corporate events. Book now and claim your crown!"
             },
             "lache": {
-                "title": "Paintball Parties Lache | TriggerKings",
+                "title": "Paintball Parties Lache | Daedalus",
                 "description": "Book the ultimate mobile paintball experience for parties, stag dos, and events in Lache. Real-time scoring, prizes, and unforgettable fun!",
                 "displayName": "Paintball Parties Lache",
                 "slug": "lache",
-                "content": "Looking for a unique, adrenaline-fueled event in Lache? TriggerKings brings the mobile paintball range to you—perfect for birthdays, stag dos, and corporate events. Book now and claim your crown!"
+                "content": "Looking for a unique, adrenaline-fueled event in Lache? Daedalus brings the mobile paintball range to you—perfect for birthdays, stag dos, and corporate events. Book now and claim your crown!"
             },
             "little-stanney": {
-                "title": "Paintball Parties Little Stanney | TriggerKings",
+                "title": "Paintball Parties Little Stanney | Daedalus",
                 "description": "Book the ultimate mobile paintball experience for parties, stag dos, and events in Little Stanney. Real-time scoring, prizes, and unforgettable fun!",
                 "displayName": "Paintball Parties Little Stanney",
                 "slug": "little-stanney",
-                "content": "Looking for a unique, adrenaline-fueled event in Little Stanney? TriggerKings brings the mobile paintball range to you—perfect for birthdays, stag dos, and corporate events. Book now and claim your crown!"
+                "content": "Looking for a unique, adrenaline-fueled event in Little Stanney? Daedalus brings the mobile paintball range to you—perfect for birthdays, stag dos, and corporate events. Book now and claim your crown!"
             },
             "liverpool": {
-                "title": "Paintball Parties Liverpool | TriggerKings",
+                "title": "Paintball Parties Liverpool | Daedalus",
                 "description": "Book the ultimate mobile paintball experience for parties, stag dos, and events in Liverpool. Real-time scoring, prizes, and unforgettable fun!",
                 "displayName": "Paintball Parties Liverpool",
                 "slug": "liverpool",
-                "content": "Looking for a unique, adrenaline-fueled event in Liverpool? TriggerKings brings the mobile paintball range to you—perfect for birthdays, stag dos, and corporate events. Book now and claim your crown!"
+                "content": "Looking for a unique, adrenaline-fueled event in Liverpool? Daedalus brings the mobile paintball range to you—perfect for birthdays, stag dos, and corporate events. Book now and claim your crown!"
             },
             "liverpool-city-centre": {
-                "title": "Paintball Parties Liverpool City Centre | TriggerKings",
+                "title": "Paintball Parties Liverpool City Centre | Daedalus",
                 "description": "Book the ultimate mobile paintball experience for parties, stag dos, and events in Liverpool City Centre. Real-time scoring, prizes, and unforgettable fun!",
                 "displayName": "Paintball Parties Liverpool City Centre",
                 "slug": "liverpool-city-centre",
-                "content": "Looking for a unique, adrenaline-fueled event in Liverpool City Centre? TriggerKings brings the mobile paintball range to you—perfect for birthdays, stag dos, and corporate events. Book now and claim your crown!"
+                "content": "Looking for a unique, adrenaline-fueled event in Liverpool City Centre? Daedalus brings the mobile paintball range to you—perfect for birthdays, stag dos, and corporate events. Book now and claim your crown!"
             },
             "maghull": {
-                "title": "Paintball Parties Maghull | TriggerKings",
+                "title": "Paintball Parties Maghull | Daedalus",
                 "description": "Book the ultimate mobile paintball experience for parties, stag dos, and events in Maghull. Real-time scoring, prizes, and unforgettable fun!",
                 "displayName": "Paintball Parties Maghull",
                 "slug": "maghull",
-                "content": "Looking for a unique, adrenaline-fueled event in Maghull? TriggerKings brings the mobile paintball range to you—perfect for birthdays, stag dos, and corporate events. Book now and claim your crown!"
+                "content": "Looking for a unique, adrenaline-fueled event in Maghull? Daedalus brings the mobile paintball range to you—perfect for birthdays, stag dos, and corporate events. Book now and claim your crown!"
             },
             "moston": {
-                "title": "Paintball Parties Moston | TriggerKings",
+                "title": "Paintball Parties Moston | Daedalus",
                 "description": "Book the ultimate mobile paintball experience for parties, stag dos, and events in Moston. Real-time scoring, prizes, and unforgettable fun!",
                 "displayName": "Paintball Parties Moston",
                 "slug": "moston",
-                "content": "Looking for a unique, adrenaline-fueled event in Moston? TriggerKings brings the mobile paintball range to you—perfect for birthdays, stag dos, and corporate events. Book now and claim your crown!"
+                "content": "Looking for a unique, adrenaline-fueled event in Moston? Daedalus brings the mobile paintball range to you—perfect for birthdays, stag dos, and corporate events. Book now and claim your crown!"
             },
             "netherley": {
-                "title": "Paintball Parties Netherley | TriggerKings",
+                "title": "Paintball Parties Netherley | Daedalus",
                 "description": "Book the ultimate mobile paintball experience for parties, stag dos, and events in Netherley. Real-time scoring, prizes, and unforgettable fun!",
                 "displayName": "Paintball Parties Netherley",
                 "slug": "netherley",
-                "content": "Looking for a unique, adrenaline-fueled event in Netherley? TriggerKings brings the mobile paintball range to you—perfect for birthdays, stag dos, and corporate events. Book now and claim your crown!"
+                "content": "Looking for a unique, adrenaline-fueled event in Netherley? Daedalus brings the mobile paintball range to you—perfect for birthdays, stag dos, and corporate events. Book now and claim your crown!"
             },
             "newton": {
-                "title": "Paintball Parties Newton | TriggerKings",
+                "title": "Paintball Parties Newton | Daedalus",
                 "description": "Book the ultimate mobile paintball experience for parties, stag dos, and events in Newton. Real-time scoring, prizes, and unforgettable fun!",
                 "displayName": "Paintball Parties Newton",
                 "slug": "newton",
-                "content": "Looking for a unique, adrenaline-fueled event in Newton? TriggerKings brings the mobile paintball range to you—perfect for birthdays, stag dos, and corporate events. Book now and claim your crown!"
+                "content": "Looking for a unique, adrenaline-fueled event in Newton? Daedalus brings the mobile paintball range to you—perfect for birthdays, stag dos, and corporate events. Book now and claim your crown!"
             },
             "newtown": {
-                "title": "Paintball Parties Newtown | TriggerKings",
+                "title": "Paintball Parties Newtown | Daedalus",
                 "description": "Book the ultimate mobile paintball experience for parties, stag dos, and events in Newtown. Real-time scoring, prizes, and unforgettable fun!",
                 "displayName": "Paintball Parties Newtown",
                 "slug": "newtown",
-                "content": "Looking for a unique, adrenaline-fueled event in Newtown? TriggerKings brings the mobile paintball range to you—perfect for birthdays, stag dos, and corporate events. Book now and claim your crown!"
+                "content": "Looking for a unique, adrenaline-fueled event in Newtown? Daedalus brings the mobile paintball range to you—perfect for birthdays, stag dos, and corporate events. Book now and claim your crown!"
             },
             "norris-green": {
-                "title": "Paintball Parties Norris Green | TriggerKings",
+                "title": "Paintball Parties Norris Green | Daedalus",
                 "description": "Book the ultimate mobile paintball experience for parties, stag dos, and events in Norris Green. Real-time scoring, prizes, and unforgettable fun!",
                 "displayName": "Paintball Parties Norris Green",
                 "slug": "norris-green",
-                "content": "Looking for a unique, adrenaline-fueled event in Norris Green? TriggerKings brings the mobile paintball range to you—perfect for birthdays, stag dos, and corporate events. Book now and claim your crown!"
+                "content": "Looking for a unique, adrenaline-fueled event in Norris Green? Daedalus brings the mobile paintball range to you—perfect for birthdays, stag dos, and corporate events. Book now and claim your crown!"
             },
             "old-swan": {
-                "title": "Paintball Parties Old Swan | TriggerKings",
+                "title": "Paintball Parties Old Swan | Daedalus",
                 "description": "Book the ultimate mobile paintball experience for parties, stag dos, and events in Old Swan. Real-time scoring, prizes, and unforgettable fun!",
                 "displayName": "Paintball Parties Old Swan",
                 "slug": "old-swan",
-                "content": "Looking for a unique, adrenaline-fueled event in Old Swan? TriggerKings brings the mobile paintball range to you—perfect for birthdays, stag dos, and corporate events. Book now and claim your crown!"
+                "content": "Looking for a unique, adrenaline-fueled event in Old Swan? Daedalus brings the mobile paintball range to you—perfect for birthdays, stag dos, and corporate events. Book now and claim your crown!"
             },
             "otterspool": {
-                "title": "Paintball Parties Otterspool | TriggerKings",
+                "title": "Paintball Parties Otterspool | Daedalus",
                 "description": "Book the ultimate mobile paintball experience for parties, stag dos, and events in Otterspool. Real-time scoring, prizes, and unforgettable fun!",
                 "displayName": "Paintball Parties Otterspool",
                 "slug": "otterspool",
-                "content": "Looking for a unique, adrenaline-fueled event in Otterspool? TriggerKings brings the mobile paintball range to you—perfect for birthdays, stag dos, and corporate events. Book now and claim your crown!"
+                "content": "Looking for a unique, adrenaline-fueled event in Otterspool? Daedalus brings the mobile paintball range to you—perfect for birthdays, stag dos, and corporate events. Book now and claim your crown!"
             },
             "overleigh": {
-                "title": "Paintball Parties Overleigh | TriggerKings",
+                "title": "Paintball Parties Overleigh | Daedalus",
                 "description": "Book the ultimate mobile paintball experience for parties, stag dos, and events in Overleigh. Real-time scoring, prizes, and unforgettable fun!",
                 "displayName": "Paintball Parties Overleigh",
                 "slug": "overleigh",
-                "content": "Looking for a unique, adrenaline-fueled event in Overleigh? TriggerKings brings the mobile paintball range to you—perfect for birthdays, stag dos, and corporate events. Book now and claim your crown!"
+                "content": "Looking for a unique, adrenaline-fueled event in Overleigh? Daedalus brings the mobile paintball range to you—perfect for birthdays, stag dos, and corporate events. Book now and claim your crown!"
             },
             "queens-park": {
-                "title": "Paintball Parties Queens Park | TriggerKings",
+                "title": "Paintball Parties Queens Park | Daedalus",
                 "description": "Book the ultimate mobile paintball experience for parties, stag dos, and events in Queens Park. Real-time scoring, prizes, and unforgettable fun!",
                 "displayName": "Paintball Parties Queens Park",
                 "slug": "queens-park",
-                "content": "Looking for a unique, adrenaline-fueled event in Queens Park? TriggerKings brings the mobile paintball range to you—perfect for birthdays, stag dos, and corporate events. Book now and claim your crown!"
+                "content": "Looking for a unique, adrenaline-fueled event in Queens Park? Daedalus brings the mobile paintball range to you—perfect for birthdays, stag dos, and corporate events. Book now and claim your crown!"
             },
             "saltney": {
-                "title": "Paintball Parties Saltney | TriggerKings",
+                "title": "Paintball Parties Saltney | Daedalus",
                 "description": "Book the ultimate mobile paintball experience for parties, stag dos, and events in Saltney. Real-time scoring, prizes, and unforgettable fun!",
                 "displayName": "Paintball Parties Saltney",
                 "slug": "saltney",
-                "content": "Looking for a unique, adrenaline-fueled event in Saltney? TriggerKings brings the mobile paintball range to you—perfect for birthdays, stag dos, and corporate events. Book now and claim your crown!"
+                "content": "Looking for a unique, adrenaline-fueled event in Saltney? Daedalus brings the mobile paintball range to you—perfect for birthdays, stag dos, and corporate events. Book now and claim your crown!"
             },
             "speke": {
-                "title": "Paintball Parties Speke | TriggerKings",
+                "title": "Paintball Parties Speke | Daedalus",
                 "description": "Book the ultimate mobile paintball experience for parties, stag dos, and events in Speke. Real-time scoring, prizes, and unforgettable fun!",
                 "displayName": "Paintball Parties Speke",
                 "slug": "speke",
-                "content": "Looking for a unique, adrenaline-fueled event in Speke? TriggerKings brings the mobile paintball range to you—perfect for birthdays, stag dos, and corporate events. Book now and claim your crown!"
+                "content": "Looking for a unique, adrenaline-fueled event in Speke? Daedalus brings the mobile paintball range to you—perfect for birthdays, stag dos, and corporate events. Book now and claim your crown!"
             },
             "stoneycroft": {
-                "title": "Paintball Parties Stoneycroft | TriggerKings",
+                "title": "Paintball Parties Stoneycroft | Daedalus",
                 "description": "Book the ultimate mobile paintball experience for parties, stag dos, and events in Stoneycroft. Real-time scoring, prizes, and unforgettable fun!",
                 "displayName": "Paintball Parties Stoneycroft",
                 "slug": "stoneycroft",
-                "content": "Looking for a unique, adrenaline-fueled event in Stoneycroft? TriggerKings brings the mobile paintball range to you—perfect for birthdays, stag dos, and corporate events. Book now and claim your crown!"
+                "content": "Looking for a unique, adrenaline-fueled event in Stoneycroft? Daedalus brings the mobile paintball range to you—perfect for birthdays, stag dos, and corporate events. Book now and claim your crown!"
             },
             "toxteth": {
-                "title": "Paintball Parties Toxteth | TriggerKings",
+                "title": "Paintball Parties Toxteth | Daedalus",
                 "description": "Book the ultimate mobile paintball experience for parties, stag dos, and events in Toxteth. Real-time scoring, prizes, and unforgettable fun!",
                 "displayName": "Paintball Parties Toxteth",
                 "slug": "toxteth",
-                "content": "Looking for a unique, adrenaline-fueled event in Toxteth? TriggerKings brings the mobile paintball range to you—perfect for birthdays, stag dos, and corporate events. Book now and claim your crown!"
+                "content": "Looking for a unique, adrenaline-fueled event in Toxteth? Daedalus brings the mobile paintball range to you—perfect for birthdays, stag dos, and corporate events. Book now and claim your crown!"
             },
             "tuebrook": {
-                "title": "Paintball Parties Tuebrook | TriggerKings",
+                "title": "Paintball Parties Tuebrook | Daedalus",
                 "description": "Book the ultimate mobile paintball experience for parties, stag dos, and events in Tuebrook. Real-time scoring, prizes, and unforgettable fun!",
                 "displayName": "Paintball Parties Tuebrook",
                 "slug": "tuebrook",
-                "content": "Looking for a unique, adrenaline-fueled event in Tuebrook? TriggerKings brings the mobile paintball range to you—perfect for birthdays, stag dos, and corporate events. Book now and claim your crown!"
+                "content": "Looking for a unique, adrenaline-fueled event in Tuebrook? Daedalus brings the mobile paintball range to you—perfect for birthdays, stag dos, and corporate events. Book now and claim your crown!"
             },
             "upton": {
-                "title": "Paintball Parties Upton | TriggerKings",
+                "title": "Paintball Parties Upton | Daedalus",
                 "description": "Book the ultimate mobile paintball experience for parties, stag dos, and events in Upton. Real-time scoring, prizes, and unforgettable fun!",
                 "displayName": "Paintball Parties Upton",
                 "slug": "upton",
-                "content": "Looking for a unique, adrenaline-fueled event in Upton? TriggerKings brings the mobile paintball range to you—perfect for birthdays, stag dos, and corporate events. Book now and claim your crown!"
+                "content": "Looking for a unique, adrenaline-fueled event in Upton? Daedalus brings the mobile paintball range to you—perfect for birthdays, stag dos, and corporate events. Book now and claim your crown!"
             },
             "vauxhall": {
-                "title": "Paintball Parties Vauxhall | TriggerKings",
+                "title": "Paintball Parties Vauxhall | Daedalus",
                 "description": "Book the ultimate mobile paintball experience for parties, stag dos, and events in Vauxhall. Real-time scoring, prizes, and unforgettable fun!",
                 "displayName": "Paintball Parties Vauxhall",
                 "slug": "vauxhall",
-                "content": "Looking for a unique, adrenaline-fueled event in Vauxhall? TriggerKings brings the mobile paintball range to you—perfect for birthdays, stag dos, and corporate events. Book now and claim your crown!"
+                "content": "Looking for a unique, adrenaline-fueled event in Vauxhall? Daedalus brings the mobile paintball range to you—perfect for birthdays, stag dos, and corporate events. Book now and claim your crown!"
             },
             "vicars-cross": {
-                "title": "Paintball Parties Vicars Cross | TriggerKings",
+                "title": "Paintball Parties Vicars Cross | Daedalus",
                 "description": "Book the ultimate mobile paintball experience for parties, stag dos, and events in Vicars Cross. Real-time scoring, prizes, and unforgettable fun!",
                 "displayName": "Paintball Parties Vicars Cross",
                 "slug": "vicars-cross",
-                "content": "Looking for a unique, adrenaline-fueled event in Vicars Cross? TriggerKings brings the mobile paintball range to you—perfect for birthdays, stag dos, and corporate events. Book now and claim your crown!"
+                "content": "Looking for a unique, adrenaline-fueled event in Vicars Cross? Daedalus brings the mobile paintball range to you—perfect for birthdays, stag dos, and corporate events. Book now and claim your crown!"
             },
             "walton": {
-                "title": "Paintball Parties Walton | TriggerKings",
+                "title": "Paintball Parties Walton | Daedalus",
                 "description": "Book the ultimate mobile paintball experience for parties, stag dos, and events in Walton. Real-time scoring, prizes, and unforgettable fun!",
                 "displayName": "Paintball Parties Walton",
                 "slug": "walton",
-                "content": "Looking for a unique, adrenaline-fueled event in Walton? TriggerKings brings the mobile paintball range to you—perfect for birthdays, stag dos, and corporate events. Book now and claim your crown!"
+                "content": "Looking for a unique, adrenaline-fueled event in Walton? Daedalus brings the mobile paintball range to you—perfect for birthdays, stag dos, and corporate events. Book now and claim your crown!"
             },
             "westminster-park": {
-                "title": "Paintball Parties Westminster Park | TriggerKings",
+                "title": "Paintball Parties Westminster Park | Daedalus",
                 "description": "Book the ultimate mobile paintball experience for parties, stag dos, and events in Westminster Park. Real-time scoring, prizes, and unforgettable fun!",
                 "displayName": "Paintball Parties Westminster Park",
                 "slug": "westminster-park",
-                "content": "Looking for a unique, adrenaline-fueled event in Westminster Park? TriggerKings brings the mobile paintball range to you—perfect for birthdays, stag dos, and corporate events. Book now and claim your crown!"
+                "content": "Looking for a unique, adrenaline-fueled event in Westminster Park? Daedalus brings the mobile paintball range to you—perfect for birthdays, stag dos, and corporate events. Book now and claim your crown!"
             },
             "wirral": {
-                "title": "Paintball Parties Wirral | TriggerKings",
+                "title": "Paintball Parties Wirral | Daedalus",
                 "description": "Book the ultimate mobile paintball experience for parties, stag dos, and events in Wirral. Real-time scoring, prizes, and unforgettable fun!",
                 "displayName": "Paintball Parties Wirral",
                 "slug": "wirral",
-                "content": "Looking for a unique, adrenaline-fueled event in Wirral? TriggerKings brings the mobile paintball range to you—perfect for birthdays, stag dos, and corporate events. Book now and claim your crown!"
+                "content": "Looking for a unique, adrenaline-fueled event in Wirral? Daedalus brings the mobile paintball range to you—perfect for birthdays, stag dos, and corporate events. Book now and claim your crown!"
             },
             "woolton": {
-                "title": "Paintball Parties Woolton | TriggerKings",
+                "title": "Paintball Parties Woolton | Daedalus",
                 "description": "Book the ultimate mobile paintball experience for parties, stag dos, and events in Woolton. Real-time scoring, prizes, and unforgettable fun!",
                 "displayName": "Paintball Parties Woolton",
                 "slug": "woolton",
-                "content": "Looking for a unique, adrenaline-fueled event in Woolton? TriggerKings brings the mobile paintball range to you—perfect for birthdays, stag dos, and corporate events. Book now and claim your crown!"
+                "content": "Looking for a unique, adrenaline-fueled event in Woolton? Daedalus brings the mobile paintball range to you—perfect for birthdays, stag dos, and corporate events. Book now and claim your crown!"
             }
         },
         "metadata": {
             "totalLocations": 79,
             "template": {
-                "title": "Paintball Parties {LOCATION} | TriggerKings",
+                "title": "Paintball Parties {LOCATION} | Daedalus",
                 "description": "Book the ultimate mobile paintball experience for parties, stag dos, and events in {LOCATION}. Real-time scoring, prizes, and unforgettable fun!",
-                "content": "Looking for a unique, adrenaline-fueled event in {LOCATION}? TriggerKings brings the mobile paintball range to you—perfect for birthdays, stag dos, and corporate events. Book now and claim your crown!"
+                "content": "Looking for a unique, adrenaline-fueled event in {LOCATION}? Daedalus brings the mobile paintball range to you—perfect for birthdays, stag dos, and corporate events. Book now and claim your crown!"
             },
             "notes": [
                 "All location pages follow identical template structure",
                 "Only location name varies in title, description, and content",
                 "CTA button links to /contact page",
-                "Styling uses inline styles with TriggerKings brand colors",
+                "Styling uses inline styles with Daedalus brand colors",
                 "Each location has dedicated SEO metadata",
                 "Future implementation can use dynamic routing with this data"
             ]

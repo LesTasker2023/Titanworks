@@ -15,12 +15,12 @@ _Master WCAG 2.1 AA compliance: Build inclusive, accessible components that work
 
 ---
 
-## 🌟 Accessibility Philosophy at TriggerKings
+## 🌟 Accessibility Philosophy at Daedalus
 
 Accessibility isn't a feature—it's a **fundamental requirement**. We build for the **15% of the global population** with disabilities first, which benefits everyone:
 
 ```typescript
-// The TriggerKings A11y Commitment
+// The Daedalus A11y Commitment
 const ACCESSIBILITY_PRINCIPLES = {
   perceivable: 'Information must be presentable in ways users can perceive',
   operable: 'Interface components must be operable by all users',
@@ -111,7 +111,7 @@ const AccessibleComponent = () => (
     </aside>
 
     <footer role="contentinfo">
-      <p>&copy; 2024 TriggerKings. All rights reserved.</p>
+      <p>&copy; 2024 Daedalus. All rights reserved.</p>
     </footer>
   </div>
 );

@@ -105,7 +105,7 @@ expect(screen.getByRole('dialog')).toBeInTheDocument();
 
 ## 🧪 The 7 Essential Test Categories
 
-Every TriggerKings component follows this comprehensive testing pattern:
+Every Daedalus component follows this comprehensive testing pattern:
 
 ### **1. 🎨 Rendering Tests**
 

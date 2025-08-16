@@ -1,4 +1,4 @@
-﻿# TriggerKings Quality Dashboard
+﻿# Daedalus Quality Dashboard
 
 **Latest Version**: 48 | **Generated**: 2025-08-15 09:44:12 | **Quality Score**: **96.2/100**
 
@@ -25,4 +25,4 @@
 
 ---
 
-_TriggerKings Deductive Smart Quality Audit - Dashboard View_
+_Daedalus Deductive Smart Quality Audit - Dashboard View_

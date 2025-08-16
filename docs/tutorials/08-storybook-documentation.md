@@ -15,12 +15,12 @@ _Master component documentation: Create professional, interactive component libr
 
 ---
 
-## 🚀 Storybook Philosophy at TriggerKings
+## 🚀 Storybook Philosophy at Daedalus
 
 Storybook is our **component documentation powerhouse** - creating living, interactive documentation that serves developers, designers, and stakeholders:
 
 ```typescript
-// The TriggerKings Documentation Strategy
+// The Daedalus Documentation Strategy
 const STORYBOOK_GOALS = {
   showcase: 'Demonstrate all component variants and states',
   playground: 'Interactive testing environment for developers',
@@ -243,7 +243,7 @@ const meta: Meta<typeof Button> = {
     docs: {
       description: {
         component: `
-The Button component is the foundation of interactive elements in TriggerKings.
+The Button component is the foundation of interactive elements in Daedalus.
 It supports multiple variants, sizes, and states while maintaining full accessibility compliance.
 
 ## Features
@@ -838,7 +838,7 @@ import Button from './button';
 
 ## Overview
 
-The Button component is the cornerstone of user interactions in TriggerKings. Built with accessibility-first principles and powered by CVA for consistent variants.
+The Button component is the cornerstone of user interactions in Daedalus. Built with accessibility-first principles and powered by CVA for consistent variants.
 
 ### Key Features
 

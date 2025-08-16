@@ -7,14 +7,14 @@ _Master Class-Variance-Authority: Build consistent, scalable component variants 
 ## 🎯 What You'll Learn
 
 - CVA fundamentals and philosophy
-- TriggerKings variant system architecture
+- Daedalus variant system architecture
 - Advanced CVA patterns and techniques
 - Type-safe variant composition
 - Performance optimization with CVA
 
 ---
 
-## 🚀 CVA Philosophy at TriggerKings
+## 🚀 CVA Philosophy at Daedalus
 
 CVA (Class-Variance-Authority) is our **secret weapon** for consistent, scalable component design:
 
@@ -41,11 +41,11 @@ const buttonVariants = cva('btn', {
 
 ---
 
-## 🏗️ TriggerKings CVA Architecture
+## 🏗️ Daedalus CVA Architecture
 
 ### **The Standard Variant System**
 
-Every TriggerKings component follows this exact pattern:
+Every Daedalus component follows this exact pattern:
 
 ```typescript
 const componentVariants = cva(

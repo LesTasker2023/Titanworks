@@ -1,4 +1,4 @@
-# TriggerKings Component Automation - All-in-One Script
+# Daedalus Component Automation - All-in-One Script
 # Follows all documentation guides with 100% consistency
 
 param(
@@ -24,7 +24,7 @@ $ComponentPath = "src\components\ui\$ComponentName"
 $KebabName = $ComponentName -creplace '(?<!^)([A-Z])', '-$1' | ForEach-Object { $_.ToLower() }
 $VariantName = "${ComponentName}Variants" -creplace '(?<!^)([A-Z])', '$1' | ForEach-Object { $_.ToLower() }
 
-Write-Host "=== TRIGGERKINGS COMPONENT AUTOMATION ===" -ForegroundColor Cyan
+Write-Host "=== Daedalus COMPONENT AUTOMATION ===" -ForegroundColor Cyan
 Write-Host "Action: $Action | Component: $ComponentName" -ForegroundColor Cyan
 Write-Host "Following all documentation guides for consistency" -ForegroundColor Gray
 Write-Host ""

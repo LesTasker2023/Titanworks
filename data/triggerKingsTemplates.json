@@ -1,15 +1,15 @@
 {
-    "triggerKingsTemplateData": {
+    "DaedalusTemplateData": {
         "extractedOn": "2025-08-12T23:00:00Z",
         "description": "Backup of template and contact pages before cleanup",
         "dynamicRouteTemplate": {
             "filename": "[city]/page.tsx",
             "purpose": "Dynamic route template for generating location pages",
             "metadata": {
-                "title": "Paintball Parties in [City] | TriggerKings",
+                "title": "Paintball Parties in [City] | Daedalus",
                 "description": "Book the ultimate mobile paintball experience for parties, stag dos, and events in [City]. Real-time scoring, prizes, and unforgettable fun!"
             },
-            "content": "Looking for a unique, adrenaline-fueled event in [City]? TriggerKings brings the mobile paintball range to you—perfect for birthdays, stag dos, and corporate events. Book now and claim your crown!",
+            "content": "Looking for a unique, adrenaline-fueled event in [City]? Daedalus brings the mobile paintball range to you—perfect for birthdays, stag dos, and corporate events. Book now and claim your crown!",
             "note": "This template uses [City] placeholder that can be dynamically replaced"
         },
         "contactPage": {
@@ -21,12 +21,12 @@
                 "Success/error handling",
                 "Fields: name, email, event, location, message"
             ],
-            "styling": "Inline styles matching TriggerKings brand",
+            "styling": "Inline styles matching Daedalus brand",
             "apiIntegration": "Uses RESEND_API_KEY environment variable",
             "note": "Keep this page - it's the core conversion point"
         },
         "implementationStrategy": {
-            "futureApproach": "Use dynamic routing with triggerKingsLocations.json data",
+            "futureApproach": "Use dynamic routing with DaedalusLocations.json data",
             "benefits": [
                 "Single template instead of 79 static pages",
                 "Easier maintenance and updates",

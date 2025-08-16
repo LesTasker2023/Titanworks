@@ -14,12 +14,12 @@ _Master Next.js performance: Bundle optimization, Core Web Vitals, and enterpris
 
 ---
 
-## 🚀 Performance Philosophy at TriggerKings
+## 🚀 Performance Philosophy at Daedalus
 
 Performance isn't just about speed—it's about **user experience**, **business metrics**, and **developer productivity**:
 
 ```typescript
-// The TriggerKings Performance Strategy
+// The Daedalus Performance Strategy
 const PERFORMANCE_GOALS = {
   coreWebVitals: {
     LCP: '< 2.5 seconds', // Largest Contentful Paint

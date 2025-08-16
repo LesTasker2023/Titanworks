@@ -1,4 +1,4 @@
-# 🎯 TriggerKings Component Library - Complete Tutorial Series
+# 🎯 Daedalus Component Library - Complete Tutorial Series
 
 _Master enterprise-grade component development with Next.js, TypeScript, and advanced testing patterns_
 
@@ -6,7 +6,7 @@ _Master enterprise-grade component development with Next.js, TypeScript, and adv
 
 ## 📚 Tutorial Overview
 
-This comprehensive tutorial series covers everything you need to know about building, testing, and maintaining the TriggerKings component library. Perfect for brushing up on modern React development patterns and enterprise-grade architecture.
+This comprehensive tutorial series covers everything you need to know about building, testing, and maintaining the Daedalus component library. Perfect for brushing up on modern React development patterns and enterprise-grade architecture.
 
 ### 🎓 What You'll Master
 
@@ -74,8 +74,8 @@ This comprehensive tutorial series covers everything you need to know about buil
 
 ```bash
 # Clone the repository
-git clone https://github.com/LesTasker2023/triggerkings.git
-cd triggerkings
+git clone https://github.com/LesTasker2023/Daedalus.git
+cd Daedalus
 
 # Install dependencies
 yarn install
@@ -193,4 +193,4 @@ Ready to build component libraries that scale to millions of users? **Let's dive
 
 ---
 
-_Created with ❤️ by the TriggerKings team. Built for developers who don't settle for "good enough."_
+_Created with ❤️ by the Daedalus team. Built for developers who don't settle for "good enough."_

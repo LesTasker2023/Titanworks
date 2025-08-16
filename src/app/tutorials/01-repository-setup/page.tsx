@@ -40,7 +40,7 @@ export default function RepositorySetup() {
               <h2 className="text-lg font-semibold mb-2">Quick Start</h2>
               {/* TODO: Replace with <CodeBlock> component */}
               <pre className="bg-muted rounded p-4 text-sm overflow-x-auto">
-                <code>{`git clone https://github.com/LesTasker2023/triggerkings.git
+                <code>{`git clone https://github.com/LesTasker2023/Daedalus.git
 yarn install
 yarn dev`}</code>
               </pre>

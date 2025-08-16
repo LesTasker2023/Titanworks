@@ -15,12 +15,12 @@ _Master TypeScript in React: Type-safe components, generic patterns, and advance
 
 ---
 
-## 🚀 TypeScript Philosophy at TriggerKings
+## 🚀 TypeScript Philosophy at Daedalus
 
 TypeScript isn't just about catching bugs—it's about **expressing intent**, **enabling refactoring confidence**, and **creating self-documenting APIs**:
 
 ```typescript
-// The TriggerKings Type Strategy
+// The Daedalus Type Strategy
 type TypeScriptGoals = {
   readonly safety: 'Catch errors at compile time';
   readonly intent: 'Code that expresses developer intent clearly';
@@ -837,7 +837,7 @@ const createConfig = (): Config => {
 
   const baseConfig: BaseConfig = {
     app: {
-      name: 'TriggerKings',
+      name: 'Daedalus',
       version: '1.0.0',
       port: parseInt(process.env.PORT || '3000', 10),
     },

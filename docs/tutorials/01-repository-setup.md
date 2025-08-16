@@ -1,6 +1,6 @@
 # 📦 Repository Setup & Architecture
 
-_Master the foundation: Understanding how TriggerKings is structured for enterprise-scale development_
+_Master the foundation: Understanding how Daedalus is structured for enterprise-scale development_
 
 ---
 
@@ -16,7 +16,7 @@ _Master the foundation: Understanding how TriggerKings is structured for enterpr
 
 ## 🏗️ Architecture Overview
 
-TriggerKings follows **enterprise-grade patterns** designed for scalability, maintainability, and developer experience.
+Daedalus follows **enterprise-grade patterns** designed for scalability, maintainability, and developer experience.
 
 ### **🎨 Design Philosophy**
 
@@ -37,7 +37,7 @@ const PRINCIPLES = {
 ## 📁 Project Structure
 
 ```
-triggerkings/
+Daedalus/
 ├── 📁 src/
 │   ├── 📁 app/                    # Next.js App Router
 │   │   ├── 📁 component-showcase/ # Live component demo
@@ -91,8 +91,8 @@ code --install-extension esbenp.prettier-vscode
 
 ```bash
 # Clone the repository
-git clone https://github.com/LesTasker2023/triggerkings.git
-cd triggerkings
+git clone https://github.com/LesTasker2023/Daedalus.git
+cd Daedalus
 
 # Install dependencies (uses Yarn for consistency)
 yarn install
@@ -359,7 +359,7 @@ Create `.vscode/settings.json`:
 ### **Recommended Extensions**
 
 ```bash
-# Essential for TriggerKings development
+# Essential for Daedalus development
 code --install-extension bradlc.vscode-tailwindcss
 code --install-extension ms-vscode.vscode-typescript-next
 code --install-extension esbenp.prettier-vscode

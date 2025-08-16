@@ -1,4 +1,4 @@
-# 🎨 TriggerKings Design System Documentation
+# 🎨 Daedalus Design System Documentation
 
 ## Overview
 

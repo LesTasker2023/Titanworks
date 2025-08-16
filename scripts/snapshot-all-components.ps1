@@ -12,7 +12,7 @@ param(
 $ErrorActionPreference = "Continue"
 $ComponentsPath = "src\components\ui"
 
-Write-Host "=== TRIGGERKINGS SNAPSHOT GENERATOR ===" -ForegroundColor Cyan
+Write-Host "=== Daedalus SNAPSHOT GENERATOR ===" -ForegroundColor Cyan
 Write-Host "Capturing current visual state of all components" -ForegroundColor Gray
 Write-Host ""
 
