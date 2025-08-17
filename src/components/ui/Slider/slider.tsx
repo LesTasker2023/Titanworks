@@ -145,6 +145,12 @@ const Slider = React.forwardRef<React.ElementRef<typeof SliderPrimitive.Root>, S
 
     const displayValue = React.useMemo(() => {
       const currentValue = value || internalValue;
+      if (currentValue.length === 2) {
+        if (formatValue) {
+          return `${formatValue(currentValue[0])} – ${formatValue(currentValue[1])}`;
+        }
+        return `${currentValue[0]?.toString() || '0'} – ${currentValue[1]?.toString() || '0'}`;
+      }
       if (formatValue && currentValue[0] !== undefined) {
         return formatValue(currentValue[0]);
       }
@@ -186,7 +192,10 @@ const Slider = React.forwardRef<React.ElementRef<typeof SliderPrimitive.Root>, S
             })}
           />
         </SliderPrimitive.Track>
-        <SliderPrimitive.Thumb className={thumbVariants({ variant, size })} />
+        {/* Render one or two thumbs based on value length */}
+        {(value || internalValue).map((_, i) => (
+          <SliderPrimitive.Thumb key={i} className={thumbVariants({ variant, size })} />
+        ))}
       </SliderPrimitive.Root>
     );
 

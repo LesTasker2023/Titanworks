@@ -37,14 +37,6 @@ import Dialog, {
   DialogTrigger,
 } from '@/components/ui/Dialog/dialog';
 import Input from '@/components/ui/Input/input';
-import {
-  NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-  NavigationMenuTrigger,
-} from '@/components/ui/NavigationMenu/navigation-menu';
 import { Progress } from '@/components/ui/Progress/progress';
 import RadioGroup, { RadioGroupItem } from '@/components/ui/RadioGroup/radio-group';
 import Select, {
@@ -76,6 +68,7 @@ export default function ComponentLibraryShowcase() {
   const [progress, setProgress] = useState(65);
   const [animatedProgress, setAnimatedProgress] = useState(0);
   const [sliderValue, setSliderValue] = useState([50]);
+  const [sliderRange, setSliderRange] = useState([20, 80]);
   const [checkboxState, setCheckboxState] = useState<boolean | 'indeterminate'>(false);
   const [radioValue, setRadioValue] = useState('option1');
   const [selectValue, setSelectValue] = useState('');
@@ -132,52 +125,6 @@ export default function ComponentLibraryShowcase() {
 
   return (
     <div className="min-h-screen">
-      {/* Navigation Header */}
-      <div className="border-b border-border backdrop-blur supports-[backdrop-filter]:bg-background/60 sticky top-0 z-40">
-        <div className="max-w-7xl mx-auto px-6 py-4">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-4">
-              <h1 className="text-2xl font-bold text-foreground">Daedalus</h1>
-              <Badge>15 Components</Badge>
-              <Badge size="sm">539 Tests</Badge>
-            </div>
-            {/* Radix NavigationMenu implementation for improved menu behavior */}
-            <NavigationMenu>
-              <NavigationMenuList>
-                <NavigationMenuItem>
-                  <NavigationMenuTrigger>Components</NavigationMenuTrigger>
-                  <NavigationMenuContent>
-                    <div className="grid gap-3 p-6 w-[500px] grid-cols-2">
-                      <NavigationMenuLink href="#buttons">
-                        <div className="text-sm font-medium">Interactive</div>
-                        <div className="text-xs text-muted-foreground">Buttons, Inputs, Forms</div>
-                      </NavigationMenuLink>
-                      <NavigationMenuLink href="#data">
-                        <div className="text-sm font-medium">Data Display</div>
-                        <div className="text-xs text-muted-foreground">
-                          Tables, Progress, Badges
-                        </div>
-                      </NavigationMenuLink>
-                    </div>
-                  </NavigationMenuContent>
-                </NavigationMenuItem>
-                <NavigationMenuItem>
-                  <NavigationMenuTrigger>Examples</NavigationMenuTrigger>
-                  <NavigationMenuContent>
-                    <div className="p-6 w-[400px]">
-                      <NavigationMenuLink href="#real-world">
-                        <div className="text-sm font-medium">Real-world Usage</div>
-                        <div className="text-xs text-muted-foreground">Complete form examples</div>
-                      </NavigationMenuLink>
-                    </div>
-                  </NavigationMenuContent>
-                </NavigationMenuItem>
-              </NavigationMenuList>
-            </NavigationMenu>
-          </div>
-        </div>
-      </div>
-
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Header Section */}
         <div className="text-center space-y-8 mb-20">
@@ -192,73 +139,15 @@ export default function ComponentLibraryShowcase() {
           </div>
 
           <div className="flex flex-wrap justify-center gap-3 max-w-4xl mx-auto">
-            <Badge size="lg">âœ… 100% Style Guide Compliant</Badge>
-            <Badge size="lg">ðŸ§ª 604 Comprehensive Tests</Badge>
-            <Badge size="lg">â™¿ Full Accessibility</Badge>
-            <Badge size="lg">âš¡ Production Ready</Badge>
-          </div>
-
-          <div className="max-w-3xl mx-auto">
-            <Alert>
-              <CheckCircle className="h-4 w-4" />
-              <div>
-                <div className="font-semibold">Library Complete!</div>
-                <div>
-                  All 15 components successfully developed using our streamlined 6-step process.
-                </div>
-              </div>
-            </Alert>
+            <Badge size="lg">100% Style Guide Compliant</Badge>
+            <Badge size="lg">604 Comprehensive Tests</Badge>
+            <Badge size="lg">Full Accessibility</Badge>
+            <Badge size="lg">Production Ready</Badge>
           </div>
         </div>
 
         {/* Component Sections */}
         <div className="space-y-24">
-          {/* TODO COMPONENTS SECTION */}
-          <section id="todo-components" className="space-y-12">
-            <div className="text-center space-y-3">
-              <h2 className="text-3xl font-bold text-foreground">Coming Soon: New Components</h2>
-              <p className="text-muted-foreground text-lg">
-                These components are planned for the next release. Want to help? Let us know!
-              </p>
-            </div>
-            <div className="grid gap-8 md:grid-cols-3">
-              <div className="border border-dashed border-accent rounded-lg p-6 flex flex-col items-center justify-center min-h-[180px] bg-muted/30">
-                <h3 className="text-xl font-semibold mb-2">Accordion</h3>
-                <p className="text-muted-foreground text-center">
-                  Expandable/collapsible content panels.
-                  <br />{' '}
-                  <span className="font-mono text-xs">{'// TODO: Build Accordion component'}</span>
-                </p>
-              </div>
-              {/* CodeBlock TODO */}
-              <div className="border border-dashed border-accent rounded-lg p-6 flex flex-col items-center justify-center min-h-[180px] bg-muted/30">
-                <h3 className="text-xl font-semibold mb-2">CodeBlock</h3>
-                <p className="text-muted-foreground text-center">
-                  Syntax-highlighted code snippets.
-                  <br />{' '}
-                  <span className="font-mono text-xs">{'// TODO: Build CodeBlock component'}</span>
-                </p>
-              </div>
-              {/* Image TODO */}
-              <div className="border border-dashed border-accent rounded-lg p-6 flex flex-col items-center justify-center min-h-[180px] bg-muted/30">
-                <h3 className="text-xl font-semibold mb-2">Image</h3>
-                <p className="text-muted-foreground text-center">
-                  Optimized, accessible images.
-                  <br />{' '}
-                  <span className="font-mono text-xs">{'// TODO: Build Image component'}</span>
-                </p>
-              </div>
-              {/* Tooltip TODO */}
-              <div className="border border-dashed border-accent rounded-lg p-6 flex flex-col items-center justify-center min-h-[180px] bg-muted/30">
-                <h3 className="text-xl font-semibold mb-2">Tooltip</h3>
-                <p className="text-muted-foreground text-center">
-                  Contextual info on hover/focus.
-                  <br />{' '}
-                  <span className="font-mono text-xs">{'// TODO: Build Tooltip component'}</span>
-                </p>
-              </div>
-            </div>
-          </section>
           {/* 1. INTERACTIVE COMPONENTS SECTION */}
           <section id="buttons" className="space-y-12">
             <div className="text-center space-y-3">
@@ -750,6 +639,23 @@ export default function ComponentLibraryShowcase() {
 
                 <div className="space-y-6">
                   <h4 className="text-lg font-medium text-foreground text-center">
+                    Range Slider (Two Thumbs)
+                  </h4>
+                  <Slider
+                    value={sliderRange}
+                    onValueChange={setSliderRange}
+                    max={100}
+                    step={1}
+                    showValue
+                    valuePosition="right"
+                  />
+                  <div className="text-center text-muted-foreground text-sm">
+                    Selected range: {sliderRange[0]} – {sliderRange[1]}
+                  </div>
+                </div>
+
+                <div className="space-y-6">
+                  <h4 className="text-lg font-medium text-foreground text-center">
                     Variants & States
                   </h4>
                   <div className="space-y-6">
@@ -1206,6 +1112,27 @@ export default function ComponentLibraryShowcase() {
                       <div className="space-y-1">
                         <p className="text-sm font-medium text-foreground">Pro User</p>
                         <p className="text-xs text-green-600 font-medium">● Online</p>
+                        <p className="text-xs text-muted-foreground">
+                          Large • Image • Status • Enhanced
+                        </p>
+                      </div>
+                    </div>
+                    <div className="text-center space-y-3">
+                      <div className="relative inline-block">
+                        <Avatar
+                          src="https://github.com/shadcn.png"
+                          alt="Pro User"
+                          size="lg"
+                          status="offline"
+                        />
+                        {/* Enhanced offline Indicator */}
+                        <div className="absolute -bottom-1 -right-1 w-6 h-6 bg-red-500 border-2 border-white rounded-full flex items-center justify-center">
+                          <div className="w-2 h-2 bg-red-400 rounded-full animate-pulse" />
+                        </div>
+                      </div>
+                      <div className="space-y-1">
+                        <p className="text-sm font-medium text-foreground">Pro User</p>
+                        <p className="text-xs text-red-600 font-medium">● Offline</p>
                         <p className="text-xs text-muted-foreground">
                           Large • Image • Status • Enhanced
                         </p>
