@@ -22,6 +22,10 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
 } from '@/components/ui';
 import Alert from '@/components/ui/Alert/alert';
 import Avatar from '@/components/ui/Avatar/avatar';
@@ -38,6 +42,7 @@ import Dialog, {
   DialogTrigger,
 } from '@/components/ui/Dialog/dialog';
 import Input from '@/components/ui/Input/input';
+import { Label } from '@/components/ui/Label/Label';
 import {
   Modal,
   ModalCloseButton,
@@ -55,7 +60,10 @@ import Select, {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/Select/select';
+import { Separator } from '@/components/ui/Separator/Separator';
+import { Skeleton } from '@/components/ui/Skeleton/Skeleton';
 import Slider from '@/components/ui/Slider/slider';
+import { Switch } from '@/components/ui/Switch/Switch';
 import Tabs, { TabsContent, TabsList, TabsTrigger } from '@/components/ui/Tabs/tabs';
 import Textarea from '@/components/ui/Textarea/textarea';
 import { Toaster } from '@/components/ui/Toast/toaster';
@@ -64,7 +72,7 @@ import { useToast } from '@/components/ui/Toast/use-toast';
 /**
  * 🎯 Daedalus Component Library Showcase
  *
- * Complete demonstration of all 15 components with full style guide compliance:
+ * Complete demonstration of all 20 components with full style guide compliance:
  * - All available variants and sizes per component
  * - All required states (loading, disabled, error)
  * - Accessibility features and keyboard navigation
@@ -87,6 +95,7 @@ export default function ComponentLibraryShowcase() {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isConfirmModalOpen, setIsConfirmModalOpen] = useState(false);
+  const [switchValue, setSwitchValue] = useState(false);
 
   // Sample data for DataTable
   const sampleData = [
@@ -645,7 +654,7 @@ export default function ComponentLibraryShowcase() {
               </div>
             </Container>
 
-            {/* Slider Showcase */}
+            {/* Switch Showcase */}
             <Container
               size="7xl"
               padding="lg"
@@ -655,6 +664,171 @@ export default function ComponentLibraryShowcase() {
                 <h3 className="text-2xl font-semibold text-foreground flex items-center justify-center gap-3">
                   <span className="w-10 h-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-sm font-bold">
                     6
+                  </span>
+                  Switch Component
+                </h3>
+              </Container>
+
+              <div className="space-y-8">
+                {/* Basic Switches */}
+                <div className="space-y-6">
+                  <h4 className="text-lg font-medium text-foreground text-center">Basic Toggle</h4>
+                  <div className="flex justify-center gap-8">
+                    <div className="flex items-center space-x-3">
+                      <Switch
+                        id="switch-basic"
+                        checked={switchValue}
+                        onCheckedChange={setSwitchValue}
+                      />
+                      <Label htmlFor="switch-basic" className="text-sm">
+                        Enable notifications
+                      </Label>
+                    </div>
+                  </div>
+                </div>
+
+                {/* States */}
+                <div className="space-y-6">
+                  <h4 className="text-lg font-medium text-foreground text-center">States</h4>
+                  <div className="flex justify-center gap-8">
+                    <div className="flex items-center space-x-3">
+                      <Switch id="switch-on" defaultChecked />
+                      <Label htmlFor="switch-on" className="text-sm">
+                        Default On
+                      </Label>
+                    </div>
+                    <div className="flex items-center space-x-3">
+                      <Switch id="switch-off" />
+                      <Label htmlFor="switch-off" className="text-sm">
+                        Default Off
+                      </Label>
+                    </div>
+                    <div className="flex items-center space-x-3">
+                      <Switch id="switch-disabled" disabled />
+                      <Label htmlFor="switch-disabled" className="text-sm text-muted-foreground">
+                        Disabled
+                      </Label>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Kitchen Sink - Settings Panel */}
+                <div className="space-y-6">
+                  <h4 className="text-lg font-medium text-foreground text-center">
+                    Kitchen Sink - Settings Panel
+                  </h4>
+                  <div className="text-center text-sm text-muted-foreground max-w-2xl mx-auto mb-6">
+                    Real-world settings panel with grouped switches and proper labeling
+                  </div>
+
+                  <div className="max-w-md mx-auto border rounded-lg p-6 bg-card space-y-6">
+                    <div className="space-y-4">
+                      <h5 className="text-sm font-semibold text-foreground">Notifications</h5>
+                      <div className="space-y-3">
+                        <div className="flex items-center justify-between">
+                          <div className="space-y-1">
+                            <Label htmlFor="push-notifications" className="text-sm font-medium">
+                              Push Notifications
+                            </Label>
+                            <p className="text-xs text-muted-foreground">
+                              Receive notifications on your device
+                            </p>
+                          </div>
+                          <Switch id="push-notifications" defaultChecked />
+                        </div>
+
+                        <div className="flex items-center justify-between">
+                          <div className="space-y-1">
+                            <Label htmlFor="email-notifications" className="text-sm font-medium">
+                              Email Notifications
+                            </Label>
+                            <p className="text-xs text-muted-foreground">Get updates via email</p>
+                          </div>
+                          <Switch id="email-notifications" />
+                        </div>
+
+                        <div className="flex items-center justify-between">
+                          <div className="space-y-1">
+                            <Label htmlFor="marketing-emails" className="text-sm font-medium">
+                              Marketing Emails
+                            </Label>
+                            <p className="text-xs text-muted-foreground">
+                              Promotional content and updates
+                            </p>
+                          </div>
+                          <Switch id="marketing-emails" />
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="border-t pt-4 space-y-4">
+                      <h5 className="text-sm font-semibold text-foreground">Privacy</h5>
+                      <div className="space-y-3">
+                        <div className="flex items-center justify-between">
+                          <div className="space-y-1">
+                            <Label htmlFor="analytics" className="text-sm font-medium">
+                              Analytics
+                            </Label>
+                            <p className="text-xs text-muted-foreground">
+                              Help improve the product
+                            </p>
+                          </div>
+                          <Switch id="analytics" defaultChecked />
+                        </div>
+
+                        <div className="flex items-center justify-between">
+                          <div className="space-y-1">
+                            <Label htmlFor="data-sharing" className="text-sm font-medium">
+                              Data Sharing
+                            </Label>
+                            <p className="text-xs text-muted-foreground">
+                              Share usage data with partners
+                            </p>
+                          </div>
+                          <Switch id="data-sharing" />
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="border-t pt-4 space-y-4">
+                      <h5 className="text-sm font-semibold text-foreground">Accessibility</h5>
+                      <div className="space-y-3">
+                        <div className="flex items-center justify-between">
+                          <div className="space-y-1">
+                            <Label htmlFor="high-contrast" className="text-sm font-medium">
+                              High Contrast
+                            </Label>
+                            <p className="text-xs text-muted-foreground">Improve visibility</p>
+                          </div>
+                          <Switch id="high-contrast" />
+                        </div>
+
+                        <div className="flex items-center justify-between">
+                          <div className="space-y-1">
+                            <Label htmlFor="reduce-motion" className="text-sm font-medium">
+                              Reduce Motion
+                            </Label>
+                            <p className="text-xs text-muted-foreground">Minimize animations</p>
+                          </div>
+                          <Switch id="reduce-motion" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </Container>
+
+            {/* Slider Showcase */}
+            <Container
+              size="7xl"
+              padding="lg"
+              className="border border-border rounded-lg space-y-8"
+            >
+              <Container size="none" padding="none" className="text-center">
+                <h3 className="text-2xl font-semibold text-foreground flex items-center justify-center gap-3">
+                  <span className="w-10 h-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-sm font-bold">
+                    7
                   </span>
                   Slider Component
                 </h3>
@@ -731,7 +905,7 @@ export default function ComponentLibraryShowcase() {
               <Container size="none" padding="none" className="text-center">
                 <h3 className="text-2xl font-semibold text-foreground flex items-center justify-center gap-3">
                   <span className="w-10 h-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-sm font-bold">
-                    7
+                    8
                   </span>
                   Alert Component
                 </h3>
@@ -781,7 +955,7 @@ export default function ComponentLibraryShowcase() {
               <Container size="none" padding="none" className="text-center">
                 <h3 className="text-2xl font-semibold text-foreground flex items-center justify-center gap-3">
                   <span className="w-10 h-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-sm font-bold">
-                    8
+                    9
                   </span>
                   Progress Component
                 </h3>
@@ -1069,6 +1243,374 @@ export default function ComponentLibraryShowcase() {
               </div>
             </Container>
 
+            {/* Separator Showcase */}
+            <Container
+              size="7xl"
+              padding="lg"
+              className="bg-card border border-border rounded-lg space-y-8"
+            >
+              <Container size="none" padding="none" className="text-center">
+                <h3 className="text-2xl font-semibold text-foreground flex items-center justify-center gap-3">
+                  <span className="w-10 h-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-sm font-bold">
+                    11
+                  </span>
+                  Separator Component
+                </h3>
+              </Container>
+
+              <div className="space-y-8">
+                {/* Basic Separators */}
+                <div className="space-y-6">
+                  <h4 className="text-lg font-medium text-foreground text-center">
+                    Basic Separators
+                  </h4>
+                  <div className="space-y-4 max-w-md mx-auto">
+                    <div className="p-4 border rounded-lg bg-card">
+                      <p className="text-sm text-muted-foreground">Content above</p>
+                      <Separator />
+                      <p className="text-sm text-muted-foreground">Content below</p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Variants */}
+                <div className="space-y-6">
+                  <h4 className="text-lg font-medium text-foreground text-center">Variants</h4>
+                  <div className="space-y-4 max-w-2xl mx-auto">
+                    <div className="grid gap-4">
+                      <div className="p-4 border rounded-lg bg-card">
+                        <div className="text-sm font-medium mb-2">Default</div>
+                        <Separator variant="default" />
+                        <div className="text-xs text-muted-foreground mt-2">
+                          Standard border color
+                        </div>
+                      </div>
+
+                      <div className="p-4 border rounded-lg bg-card">
+                        <div className="text-sm font-medium mb-2">Muted</div>
+                        <Separator variant="muted" />
+                        <div className="text-xs text-muted-foreground mt-2">Subtle background</div>
+                      </div>
+
+                      <div className="p-4 border rounded-lg bg-card">
+                        <div className="text-sm font-medium mb-2">Primary</div>
+                        <Separator variant="primary" />
+                        <div className="text-xs text-muted-foreground mt-2">
+                          Primary color accent
+                        </div>
+                      </div>
+
+                      <div className="p-4 border rounded-lg bg-card">
+                        <div className="text-sm font-medium mb-2">Destructive</div>
+                        <Separator variant="destructive" />
+                        <div className="text-xs text-muted-foreground mt-2">
+                          Warning/error indicator
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Sizes */}
+                <div className="space-y-6">
+                  <h4 className="text-lg font-medium text-foreground text-center">Sizes</h4>
+                  <div className="space-y-4 max-w-md mx-auto">
+                    <div className="p-4 border rounded-lg bg-card space-y-4">
+                      <div>
+                        <div className="text-sm font-medium mb-2">Small</div>
+                        <Separator size="sm" />
+                      </div>
+
+                      <div>
+                        <div className="text-sm font-medium mb-2">Default</div>
+                        <Separator size="default" />
+                      </div>
+
+                      <div>
+                        <div className="text-sm font-medium mb-2">Large</div>
+                        <Separator size="lg" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Vertical Separators */}
+                <div className="space-y-6">
+                  <h4 className="text-lg font-medium text-foreground text-center">
+                    Vertical Orientation
+                  </h4>
+                  <div className="flex justify-center">
+                    <div className="p-4 border rounded-lg bg-card">
+                      <div className="flex items-center gap-4 h-16">
+                        <div className="text-sm text-muted-foreground">Left</div>
+                        <Separator orientation="vertical" />
+                        <div className="text-sm text-muted-foreground">Center</div>
+                        <Separator orientation="vertical" variant="primary" />
+                        <div className="text-sm text-muted-foreground">Right</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Text Separators */}
+                <div className="space-y-6">
+                  <h4 className="text-lg font-medium text-foreground text-center">
+                    Text Separators
+                  </h4>
+                  <div className="space-y-4 max-w-lg mx-auto">
+                    <div className="p-4 border rounded-lg bg-card space-y-6">
+                      <div className="text-sm text-muted-foreground">Above content section</div>
+
+                      <Separator spacing="lg">OR</Separator>
+
+                      <div className="text-sm text-muted-foreground">Below content section</div>
+
+                      <Separator variant="muted" spacing="lg">
+                        FEATURES
+                      </Separator>
+
+                      <div className="text-sm text-muted-foreground">Feature content area</div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Kitchen Sink - Ultimate Separator Usage */}
+                <div className="space-y-6">
+                  <h4 className="text-lg font-medium text-foreground text-center">
+                    Kitchen Sink - Enterprise Layout
+                  </h4>
+                  <div className="text-center text-sm text-muted-foreground max-w-2xl mx-auto mb-6">
+                    Real-world usage in a professional dashboard layout with multiple separator
+                    types
+                  </div>
+
+                  <div className="max-w-2xl mx-auto border rounded-lg p-6 bg-card space-y-6">
+                    {/* Header Section */}
+                    <div className="space-y-4">
+                      <div className="flex items-center justify-between">
+                        <h5 className="text-lg font-semibold">Dashboard Overview</h5>
+                        <Badge variant="outline" size="sm">
+                          Live
+                        </Badge>
+                      </div>
+
+                      <Separator variant="primary" size="lg" />
+
+                      {/* Stats Grid */}
+                      <div className="grid grid-cols-3 gap-4 text-center">
+                        <div className="space-y-1">
+                          <div className="text-2xl font-bold text-primary">1,234</div>
+                          <div className="text-xs text-muted-foreground">Users</div>
+                        </div>
+
+                        <Separator orientation="vertical" className="mx-auto h-12" />
+
+                        <div className="space-y-1">
+                          <div className="text-2xl font-bold text-green-500">98.5%</div>
+                          <div className="text-xs text-muted-foreground">Uptime</div>
+                        </div>
+
+                        <Separator orientation="vertical" className="mx-auto h-12" />
+
+                        <div className="space-y-1">
+                          <div className="text-2xl font-bold text-blue-500">4.8</div>
+                          <div className="text-xs text-muted-foreground">Rating</div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <Separator spacing="lg">RECENT ACTIVITY</Separator>
+
+                    {/* Activity List */}
+                    <div className="space-y-3">
+                      <div className="flex items-center gap-3 p-3 rounded-lg hover:bg-muted/50">
+                        <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                        <div className="flex-1 text-sm">New user registration</div>
+                        <div className="text-xs text-muted-foreground">2 min ago</div>
+                      </div>
+
+                      <Separator size="sm" variant="muted" spacing="none" />
+
+                      <div className="flex items-center gap-3 p-3 rounded-lg hover:bg-muted/50">
+                        <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+                        <div className="flex-1 text-sm">System update completed</div>
+                        <div className="text-xs text-muted-foreground">1 hour ago</div>
+                      </div>
+
+                      <Separator size="sm" variant="muted" spacing="none" />
+
+                      <div className="flex items-center gap-3 p-3 rounded-lg hover:bg-muted/50">
+                        <div className="w-2 h-2 bg-yellow-500 rounded-full"></div>
+                        <div className="flex-1 text-sm">Maintenance scheduled</div>
+                        <div className="text-xs text-muted-foreground">3 hours ago</div>
+                      </div>
+                    </div>
+
+                    <Separator variant="destructive" spacing="lg">
+                      ALERTS
+                    </Separator>
+
+                    {/* Alert Section */}
+                    <div className="p-3 border border-yellow-200 bg-yellow-50 dark:bg-yellow-900/20 rounded-lg">
+                      <div className="flex items-center gap-2">
+                        <AlertCircle className="h-4 w-4 text-yellow-600" />
+                        <span className="text-sm font-medium">System Notice</span>
+                      </div>
+                      <p className="text-xs text-muted-foreground mt-1">
+                        Scheduled maintenance window: Sunday 2:00 AM - 4:00 AM
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </Container>
+
+            {/* Skeleton Showcase */}
+            <Container
+              size="7xl"
+              padding="lg"
+              className="bg-card border border-border rounded-lg space-y-8"
+            >
+              <Container size="none" padding="none" className="text-center">
+                <h3 className="text-2xl font-semibold text-foreground flex items-center justify-center gap-3">
+                  <span className="w-10 h-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-sm font-bold">
+                    12
+                  </span>
+                  Skeleton Component
+                </h3>
+              </Container>
+
+              <div className="space-y-8">
+                {/* Basic Skeletons */}
+                <div className="space-y-4 text-center">
+                  <h4 className="text-lg font-medium text-foreground">Basic Shapes</h4>
+                  <div className="flex flex-wrap justify-center gap-6 items-start">
+                    <div className="text-center space-y-2">
+                      <Skeleton className="h-4 w-[250px]" />
+                      <p className="text-xs text-muted-foreground">Text Line</p>
+                    </div>
+                    <div className="text-center space-y-2">
+                      <Skeleton className="h-12 w-12 rounded-full" />
+                      <p className="text-xs text-muted-foreground">Avatar</p>
+                    </div>
+                    <div className="text-center space-y-2">
+                      <Skeleton className="h-[125px] w-[250px] rounded-xl" />
+                      <p className="text-xs text-muted-foreground">Card</p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Common Patterns */}
+                <div className="space-y-4 text-center">
+                  <h4 className="text-lg font-medium text-foreground">Common Loading Patterns</h4>
+
+                  {/* Profile Card Pattern */}
+                  <div className="max-w-sm mx-auto p-6 border rounded-lg bg-card">
+                    <div className="flex items-center space-x-4">
+                      <Skeleton className="h-12 w-12 rounded-full" />
+                      <div className="space-y-2">
+                        <Skeleton className="h-4 w-[150px]" />
+                        <Skeleton className="h-4 w-[100px]" />
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Article Card Pattern */}
+                  <div className="max-w-md mx-auto p-6 border rounded-lg bg-card">
+                    <div className="space-y-4">
+                      <Skeleton className="h-[200px] w-full rounded-md" />
+                      <div className="space-y-2">
+                        <Skeleton className="h-4 w-full" />
+                        <Skeleton className="h-4 w-3/4" />
+                        <Skeleton className="h-4 w-1/2" />
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* List Pattern */}
+                  <div className="max-w-md mx-auto p-6 border rounded-lg bg-card">
+                    <div className="space-y-4">
+                      <h5 className="text-sm font-medium text-muted-foreground">List Loading</h5>
+                      {[...Array(4)].map((_, i) => (
+                        <div key={i} className="flex items-center space-x-4">
+                          <Skeleton className="h-8 w-8 rounded-full" />
+                          <div className="space-y-2 flex-1">
+                            <Skeleton className="h-3 w-full" />
+                            <Skeleton className="h-3 w-2/3" />
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+
+                {/* Kitchen Sink - Ultimate Skeleton */}
+                <div className="space-y-4 text-center">
+                  <h4 className="text-lg font-medium text-foreground">
+                    Kitchen Sink - Ultimate Loading Experience
+                  </h4>
+                  <div className="text-center text-sm text-muted-foreground max-w-2xl mx-auto mb-6">
+                    Complete dashboard loading state with animated skeletons and realistic content
+                    placeholders
+                  </div>
+
+                  <div className="max-w-4xl mx-auto border rounded-lg p-6 bg-card space-y-6">
+                    {/* Header */}
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center space-x-4">
+                        <Skeleton className="h-10 w-10 rounded-full" />
+                        <div className="space-y-2">
+                          <Skeleton className="h-4 w-[120px]" />
+                          <Skeleton className="h-3 w-[80px]" />
+                        </div>
+                      </div>
+                      <Skeleton className="h-8 w-[100px] rounded-md" />
+                    </div>
+
+                    {/* Stats Cards */}
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                      {[...Array(3)].map((_, i) => (
+                        <div key={i} className="border rounded-lg p-4 space-y-3">
+                          <div className="flex items-center justify-between">
+                            <Skeleton className="h-6 w-6 rounded" />
+                            <Skeleton className="h-4 w-[60px]" />
+                          </div>
+                          <Skeleton className="h-8 w-[80px]" />
+                          <Skeleton className="h-3 w-full" />
+                        </div>
+                      ))}
+                    </div>
+
+                    {/* Chart Area */}
+                    <div className="border rounded-lg p-4 space-y-4">
+                      <div className="flex items-center justify-between">
+                        <Skeleton className="h-5 w-[140px]" />
+                        <Skeleton className="h-8 w-[100px] rounded-md" />
+                      </div>
+                      <Skeleton className="h-[200px] w-full rounded" />
+                    </div>
+
+                    {/* Table */}
+                    <div className="border rounded-lg p-4 space-y-4">
+                      <Skeleton className="h-5 w-[100px]" />
+                      <div className="space-y-3">
+                        {[...Array(5)].map((_, i) => (
+                          <div key={i} className="flex items-center space-x-4">
+                            <Skeleton className="h-8 w-8 rounded" />
+                            <Skeleton className="h-4 w-[120px]" />
+                            <Skeleton className="h-4 w-[100px]" />
+                            <Skeleton className="h-4 w-[80px]" />
+                            <div className="flex-1" />
+                            <Skeleton className="h-6 w-[60px] rounded-full" />
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </Container>
+
             {/* Avatar Showcase */}
             <Container
               size="7xl"
@@ -1078,7 +1620,7 @@ export default function ComponentLibraryShowcase() {
               <Container size="none" padding="none" className="text-center">
                 <h3 className="text-2xl font-semibold text-foreground flex items-center justify-center gap-3">
                   <span className="w-10 h-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-sm font-bold">
-                    10
+                    13
                   </span>
                   Avatar Component
                 </h3>
@@ -1214,7 +1756,7 @@ export default function ComponentLibraryShowcase() {
               <Container size="none" padding="none" className="text-center">
                 <h3 className="text-2xl font-semibold text-foreground flex items-center justify-center gap-3">
                   <span className="w-10 h-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-sm font-bold">
-                    11
+                    14
                   </span>
                   Tabs Component
                 </h3>
@@ -1303,6 +1845,307 @@ export default function ComponentLibraryShowcase() {
               </div>
             </Container>
 
+            {/* Tooltip Showcase */}
+            <Container
+              size="7xl"
+              padding="lg"
+              className="bg-card border border-border rounded-lg space-y-8"
+            >
+              <Container size="none" padding="none" className="text-center">
+                <h3 className="text-2xl font-semibold text-foreground flex items-center justify-center gap-3">
+                  <span className="w-10 h-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-sm font-bold">
+                    15
+                  </span>
+                  Tooltip Component
+                </h3>
+              </Container>
+
+              <div className="space-y-8">
+                {/* Basic Tooltips */}
+                <div className="space-y-6">
+                  <h4 className="text-lg font-medium text-foreground text-center">
+                    Basic Tooltips
+                  </h4>
+                  <div className="flex justify-center gap-8">
+                    <TooltipProvider>
+                      <Tooltip>
+                        <TooltipTrigger asChild>
+                          <Button variant="outline">Hover me</Button>
+                        </TooltipTrigger>
+                        <TooltipContent>
+                          <p>This is a basic tooltip</p>
+                        </TooltipContent>
+                      </Tooltip>
+                    </TooltipProvider>
+
+                    <TooltipProvider>
+                      <Tooltip>
+                        <TooltipTrigger asChild>
+                          <Button>Click info</Button>
+                        </TooltipTrigger>
+                        <TooltipContent side="bottom">
+                          <p>Tooltip positioned below</p>
+                        </TooltipContent>
+                      </Tooltip>
+                    </TooltipProvider>
+                  </div>
+                </div>
+
+                {/* Variant Showcase */}
+                <div className="space-y-6">
+                  <h4 className="text-lg font-medium text-foreground text-center">Variants</h4>
+                  <div className="flex justify-center gap-6 flex-wrap">
+                    <TooltipProvider>
+                      <Tooltip>
+                        <TooltipTrigger asChild>
+                          <Button variant="default">Default</Button>
+                        </TooltipTrigger>
+                        <TooltipContent variant="default">
+                          <p>Default tooltip variant</p>
+                        </TooltipContent>
+                      </Tooltip>
+                    </TooltipProvider>
+
+                    <TooltipProvider>
+                      <Tooltip>
+                        <TooltipTrigger asChild>
+                          <Button variant="secondary">Secondary</Button>
+                        </TooltipTrigger>
+                        <TooltipContent variant="secondary">
+                          <p>Secondary tooltip</p>
+                        </TooltipContent>
+                      </Tooltip>
+                    </TooltipProvider>
+
+                    <TooltipProvider>
+                      <Tooltip>
+                        <TooltipTrigger asChild>
+                          <Button variant="destructive">Destructive</Button>
+                        </TooltipTrigger>
+                        <TooltipContent variant="destructive">
+                          <p>Warning message</p>
+                        </TooltipContent>
+                      </Tooltip>
+                    </TooltipProvider>
+
+                    <TooltipProvider>
+                      <Tooltip>
+                        <TooltipTrigger asChild>
+                          <Button variant="outline">Outline</Button>
+                        </TooltipTrigger>
+                        <TooltipContent variant="outline">
+                          <p>Outline tooltip</p>
+                        </TooltipContent>
+                      </Tooltip>
+                    </TooltipProvider>
+                  </div>
+                </div>
+
+                {/* Size Variants */}
+                <div className="space-y-6">
+                  <h4 className="text-lg font-medium text-foreground text-center">Sizes</h4>
+                  <div className="flex justify-center gap-6">
+                    <TooltipProvider>
+                      <Tooltip>
+                        <TooltipTrigger asChild>
+                          <Button size="sm">Small</Button>
+                        </TooltipTrigger>
+                        <TooltipContent size="sm">
+                          <p>Small tooltip</p>
+                        </TooltipContent>
+                      </Tooltip>
+                    </TooltipProvider>
+
+                    <TooltipProvider>
+                      <Tooltip>
+                        <TooltipTrigger asChild>
+                          <Button>Default</Button>
+                        </TooltipTrigger>
+                        <TooltipContent size="default">
+                          <p>Default sized tooltip</p>
+                        </TooltipContent>
+                      </Tooltip>
+                    </TooltipProvider>
+
+                    <TooltipProvider>
+                      <Tooltip>
+                        <TooltipTrigger asChild>
+                          <Button size="lg">Large</Button>
+                        </TooltipTrigger>
+                        <TooltipContent size="lg">
+                          <p>Large tooltip with more space</p>
+                        </TooltipContent>
+                      </Tooltip>
+                    </TooltipProvider>
+                  </div>
+                </div>
+
+                {/* Positioning */}
+                <div className="space-y-6">
+                  <h4 className="text-lg font-medium text-foreground text-center">Positioning</h4>
+                  <div className="grid grid-cols-2 md:grid-cols-4 gap-4 justify-items-center">
+                    <TooltipProvider>
+                      <Tooltip>
+                        <TooltipTrigger asChild>
+                          <Button variant="outline">Top</Button>
+                        </TooltipTrigger>
+                        <TooltipContent side="top">
+                          <p>Positioned above</p>
+                        </TooltipContent>
+                      </Tooltip>
+                    </TooltipProvider>
+
+                    <TooltipProvider>
+                      <Tooltip>
+                        <TooltipTrigger asChild>
+                          <Button variant="outline">Right</Button>
+                        </TooltipTrigger>
+                        <TooltipContent side="right">
+                          <p>Positioned right</p>
+                        </TooltipContent>
+                      </Tooltip>
+                    </TooltipProvider>
+
+                    <TooltipProvider>
+                      <Tooltip>
+                        <TooltipTrigger asChild>
+                          <Button variant="outline">Bottom</Button>
+                        </TooltipTrigger>
+                        <TooltipContent side="bottom">
+                          <p>Positioned below</p>
+                        </TooltipContent>
+                      </Tooltip>
+                    </TooltipProvider>
+
+                    <TooltipProvider>
+                      <Tooltip>
+                        <TooltipTrigger asChild>
+                          <Button variant="outline">Left</Button>
+                        </TooltipTrigger>
+                        <TooltipContent side="left">
+                          <p>Positioned left</p>
+                        </TooltipContent>
+                      </Tooltip>
+                    </TooltipProvider>
+                  </div>
+                </div>
+
+                {/* Kitchen Sink - Ultimate Tooltip */}
+                <div className="space-y-6">
+                  <h4 className="text-lg font-medium text-foreground text-center">
+                    Kitchen Sink - Ultimate Interactive Tooltips
+                  </h4>
+                  <div className="text-center text-sm text-muted-foreground max-w-2xl mx-auto mb-6">
+                    Advanced tooltips with rich content, custom positioning, and interactive
+                    elements
+                  </div>
+
+                  <div className="flex justify-center gap-6 flex-wrap">
+                    <TooltipProvider>
+                      <Tooltip>
+                        <TooltipTrigger asChild>
+                          <div className="flex items-center gap-2 p-3 border rounded-lg hover:bg-muted/50 cursor-pointer">
+                            <User className="h-4 w-4" />
+                            <span className="text-sm">User Profile</span>
+                          </div>
+                        </TooltipTrigger>
+                        <TooltipContent variant="outline" size="lg" className="max-w-xs">
+                          <div className="space-y-2">
+                            <div className="flex items-center gap-2">
+                              <Avatar src="https://github.com/shadcn.png" alt="User" />
+                              <div>
+                                <p className="font-medium text-sm">John Doe</p>
+                                <p className="text-xs text-muted-foreground">john@example.com</p>
+                              </div>
+                            </div>
+                            <div className="text-xs">
+                              <p>Active user since 2023</p>
+                              <p>Last seen: 2 hours ago</p>
+                            </div>
+                          </div>
+                        </TooltipContent>
+                      </Tooltip>
+                    </TooltipProvider>
+
+                    <TooltipProvider>
+                      <Tooltip>
+                        <TooltipTrigger asChild>
+                          <div className="flex items-center gap-2 p-3 border rounded-lg hover:bg-muted/50 cursor-pointer">
+                            <Settings className="h-4 w-4" />
+                            <span className="text-sm">System Status</span>
+                          </div>
+                        </TooltipTrigger>
+                        <TooltipContent variant="accent" size="lg" className="max-w-xs">
+                          <div className="space-y-3">
+                            <div className="font-medium text-sm">System Health</div>
+                            <div className="space-y-2">
+                              <div className="flex items-center justify-between text-xs">
+                                <span>CPU Usage</span>
+                                <span className="text-green-500">24%</span>
+                              </div>
+                              <div className="flex items-center justify-between text-xs">
+                                <span>Memory</span>
+                                <span className="text-yellow-500">68%</span>
+                              </div>
+                              <div className="flex items-center justify-between text-xs">
+                                <span>Disk Space</span>
+                                <span className="text-green-500">45%</span>
+                              </div>
+                            </div>
+                            <div className="text-xs text-muted-foreground">
+                              Last updated: just now
+                            </div>
+                          </div>
+                        </TooltipContent>
+                      </Tooltip>
+                    </TooltipProvider>
+
+                    <TooltipProvider>
+                      <Tooltip>
+                        <TooltipTrigger asChild>
+                          <div className="flex items-center gap-2 p-3 border rounded-lg hover:bg-muted/50 cursor-pointer">
+                            <Bell className="h-4 w-4" />
+                            <span className="text-sm">Notifications</span>
+                            <Badge size="sm" className="ml-1">
+                              3
+                            </Badge>
+                          </div>
+                        </TooltipTrigger>
+                        <TooltipContent variant="muted" size="lg" className="max-w-sm">
+                          <div className="space-y-3">
+                            <div className="font-medium text-sm">Recent Notifications</div>
+                            <div className="space-y-2">
+                              <div className="flex items-start gap-2 text-xs">
+                                <div className="w-2 h-2 bg-blue-500 rounded-full mt-1 flex-shrink-0" />
+                                <div>
+                                  <p className="font-medium">New message received</p>
+                                  <p className="text-muted-foreground">2 minutes ago</p>
+                                </div>
+                              </div>
+                              <div className="flex items-start gap-2 text-xs">
+                                <div className="w-2 h-2 bg-green-500 rounded-full mt-1 flex-shrink-0" />
+                                <div>
+                                  <p className="font-medium">Task completed</p>
+                                  <p className="text-muted-foreground">1 hour ago</p>
+                                </div>
+                              </div>
+                              <div className="flex items-start gap-2 text-xs">
+                                <div className="w-2 h-2 bg-yellow-500 rounded-full mt-1 flex-shrink-0" />
+                                <div>
+                                  <p className="font-medium">System update available</p>
+                                  <p className="text-muted-foreground">3 hours ago</p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </TooltipContent>
+                      </Tooltip>
+                    </TooltipProvider>
+                  </div>
+                </div>
+              </div>
+            </Container>
+
             {/* Dialog Showcase */}
             <Container
               size="7xl"
@@ -1312,7 +2155,7 @@ export default function ComponentLibraryShowcase() {
               <Container size="none" padding="none" className="text-center">
                 <h3 className="text-2xl font-semibold text-foreground flex items-center justify-center gap-3">
                   <span className="w-10 h-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-sm font-bold">
-                    12
+                    16
                   </span>
                   Dialog Component
                 </h3>
@@ -1366,7 +2209,7 @@ export default function ComponentLibraryShowcase() {
               <Container size="none" padding="none" className="text-center">
                 <h3 className="text-2xl font-semibold text-foreground flex items-center justify-center gap-3">
                   <span className="w-10 h-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-sm font-bold">
-                    13
+                    17
                   </span>
                   Modal Component
                 </h3>
@@ -1474,7 +2317,7 @@ export default function ComponentLibraryShowcase() {
               <Container size="none" padding="none" className="text-center">
                 <h3 className="text-2xl font-semibold text-foreground flex items-center justify-center gap-3">
                   <span className="w-10 h-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-sm font-bold">
-                    13
+                    18
                   </span>
                   DataTable Component
                   <Badge size="sm">Enterprise</Badge>
@@ -1527,7 +2370,7 @@ export default function ComponentLibraryShowcase() {
               <Container size="none" padding="none" className="text-center">
                 <h3 className="text-2xl font-semibold text-foreground flex items-center justify-center gap-3">
                   <span className="w-10 h-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-sm font-bold">
-                    14
+                    19
                   </span>
                   Card Component
                   <Badge size="sm">Enterprise</Badge>
@@ -1867,7 +2710,7 @@ export default function ComponentLibraryShowcase() {
               <Container size="none" padding="none" className="text-center">
                 <h3 className="text-2xl font-semibold text-foreground flex items-center justify-center gap-3">
                   <span className="w-10 h-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-sm font-bold">
-                    15
+                    20
                   </span>
                   Complete Contact Form
                 </h3>
@@ -1943,7 +2786,7 @@ export default function ComponentLibraryShowcase() {
               <Container size="none" padding="none" className="text-center">
                 <h3 className="text-2xl font-semibold text-foreground flex items-center justify-center gap-3">
                   <span className="w-10 h-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-sm font-bold">
-                    16
+                    21
                   </span>
                   Dashboard Layout
                 </h3>
