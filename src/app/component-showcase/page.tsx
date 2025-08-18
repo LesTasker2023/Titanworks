@@ -14,6 +14,7 @@ import {
 import React, { useState } from 'react';
 
 // Import ALL components following style guide standards
+import Container from '@/components/layout/Container/Container';
 import {
   Card,
   CardContent,
@@ -37,6 +38,15 @@ import Dialog, {
   DialogTrigger,
 } from '@/components/ui/Dialog/dialog';
 import Input from '@/components/ui/Input/input';
+import {
+  Modal,
+  ModalCloseButton,
+  ModalContent,
+  ModalDescription,
+  ModalFooter,
+  ModalHeader,
+  ModalTitle,
+} from '@/components/ui/Modal';
 import { Progress } from '@/components/ui/Progress/progress';
 import RadioGroup, { RadioGroupItem } from '@/components/ui/RadioGroup/radio-group';
 import Select, {
@@ -75,6 +85,8 @@ export default function ComponentLibraryShowcase() {
   const [inputValue, setInputValue] = useState('');
   const [textareaValue, setTextareaValue] = useState('');
   const [isDialogOpen, setIsDialogOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isConfirmModalOpen, setIsConfirmModalOpen] = useState(false);
 
   // Sample data for DataTable
   const sampleData = [
@@ -124,10 +136,10 @@ export default function ComponentLibraryShowcase() {
   }, []);
 
   return (
-    <div className="min-h-screen">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <Container size="full" className="min-h-screen">
+      <Container size="7xl" padding="lg" className="py-8">
         {/* Header Section */}
-        <div className="text-center space-y-8 mb-20">
+        <Container size="none" padding="none" className="text-center space-y-8 mb-20">
           <div className="space-y-4">
             <h1 className="text-4xl sm:text-5xl font-bold text-foreground tracking-tight">
               Component Library Showcase
@@ -144,7 +156,7 @@ export default function ComponentLibraryShowcase() {
             <Badge size="lg">Full Accessibility</Badge>
             <Badge size="lg">Production Ready</Badge>
           </div>
-        </div>
+        </Container>
 
         {/* Component Sections */}
         <div className="space-y-24">
@@ -156,15 +168,19 @@ export default function ComponentLibraryShowcase() {
             </div>
 
             {/* Button Showcase */}
-            <div className="border border-border rounded-lg p-8 space-y-8">
-              <div className="text-center">
+            <Container
+              size="7xl"
+              padding="lg"
+              className="border border-border rounded-lg space-y-8"
+            >
+              <Container size="none" padding="none" className="text-center">
                 <h3 className="text-2xl font-semibold text-foreground flex items-center justify-center gap-3">
                   <span className="w-10 h-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-sm font-bold">
                     1
                   </span>
                   Button Component
                 </h3>
-              </div>
+              </Container>
 
               <div className="grid gap-10">
                 {/* Color Variants */}
@@ -247,18 +263,22 @@ export default function ComponentLibraryShowcase() {
                   </div>
                 </div>
               </div>
-            </div>
+            </Container>
 
             {/* Input Showcase */}
-            <div className="border border-border rounded-lg p-8 space-y-8">
-              <div className="text-center">
+            <Container
+              size="7xl"
+              padding="lg"
+              className="border border-border rounded-lg space-y-8"
+            >
+              <Container size="none" padding="none" className="text-center">
                 <h3 className="text-2xl font-semibold text-foreground flex items-center justify-center gap-3">
                   <span className="w-10 h-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-sm font-bold">
                     2
                   </span>
                   Input Component
                 </h3>
-              </div>
+              </Container>
 
               <div className="grid gap-8 max-w-2xl mx-auto">
                 {/* Basic Inputs */}
@@ -477,18 +497,22 @@ export default function ComponentLibraryShowcase() {
                   </div>
                 </div>
               </div>
-            </div>
+            </Container>
 
             {/* Textarea Showcase */}
-            <div className="border border-border rounded-lg p-8 space-y-8">
-              <div className="text-center">
+            <Container
+              size="7xl"
+              padding="lg"
+              className="border border-border rounded-lg space-y-8"
+            >
+              <Container size="none" padding="none" className="text-center">
                 <h3 className="text-2xl font-semibold text-foreground flex items-center justify-center gap-3">
                   <span className="w-10 h-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-sm font-bold">
                     3
                   </span>
                   Textarea Component
                 </h3>
-              </div>
+              </Container>
 
               <div className="grid gap-6 max-w-2xl mx-auto">
                 <div className="space-y-4">
@@ -503,18 +527,22 @@ export default function ComponentLibraryShowcase() {
                   <Textarea disabled placeholder="Disabled textarea..." rows={3} />
                 </div>
               </div>
-            </div>
+            </Container>
 
             {/* Select Showcase */}
-            <div className="border border-border rounded-lg p-8 space-y-8">
-              <div className="text-center">
+            <Container
+              size="7xl"
+              padding="lg"
+              className="border border-border rounded-lg space-y-8"
+            >
+              <Container size="none" padding="none" className="text-center">
                 <h3 className="text-2xl font-semibold text-foreground flex items-center justify-center gap-3">
                   <span className="w-10 h-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-sm font-bold">
                     4
                   </span>
                   Select Component
                 </h3>
-              </div>
+              </Container>
 
               <div className="grid gap-6 max-w-md mx-auto">
                 <div className="space-y-4">
@@ -539,18 +567,22 @@ export default function ComponentLibraryShowcase() {
                   </Select>
                 </div>
               </div>
-            </div>
+            </Container>
 
             {/* Checkbox & Radio Showcase */}
-            <div className="border border-border rounded-lg p-8 space-y-8">
-              <div className="text-center">
+            <Container
+              size="7xl"
+              padding="lg"
+              className="border border-border rounded-lg space-y-8"
+            >
+              <Container size="none" padding="none" className="text-center">
                 <h3 className="text-2xl font-semibold text-foreground flex items-center justify-center gap-3">
                   <span className="w-10 h-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-sm font-bold">
                     5
                   </span>
                   Checkbox & RadioGroup Components
                 </h3>
-              </div>
+              </Container>
 
               <div className="grid md:grid-cols-2 gap-10 max-w-4xl mx-auto">
                 {/* Checkboxes */}
@@ -611,18 +643,22 @@ export default function ComponentLibraryShowcase() {
                   </div>
                 </div>
               </div>
-            </div>
+            </Container>
 
             {/* Slider Showcase */}
-            <div className="border border-border rounded-lg p-8 space-y-8">
-              <div className="text-center">
+            <Container
+              size="7xl"
+              padding="lg"
+              className="border border-border rounded-lg space-y-8"
+            >
+              <Container size="none" padding="none" className="text-center">
                 <h3 className="text-2xl font-semibold text-foreground flex items-center justify-center gap-3">
                   <span className="w-10 h-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-sm font-bold">
                     6
                   </span>
                   Slider Component
                 </h3>
-              </div>
+              </Container>
 
               <div className="space-y-10 max-w-lg mx-auto">
                 <div className="space-y-6">
@@ -674,7 +710,7 @@ export default function ComponentLibraryShowcase() {
                   </div>
                 </div>
               </div>
-            </div>
+            </Container>
           </section>
 
           {/* 2. FEEDBACK & STATUS SECTION */}
@@ -687,15 +723,19 @@ export default function ComponentLibraryShowcase() {
             </div>
 
             {/* Alert Showcase */}
-            <div className="border border-border rounded-lg p-8 space-y-8">
-              <div className="text-center">
+            <Container
+              size="7xl"
+              padding="lg"
+              className="border border-border rounded-lg space-y-8"
+            >
+              <Container size="none" padding="none" className="text-center">
                 <h3 className="text-2xl font-semibold text-foreground flex items-center justify-center gap-3">
                   <span className="w-10 h-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-sm font-bold">
                     7
                   </span>
                   Alert Component
                 </h3>
-              </div>
+              </Container>
 
               <div className="space-y-6 max-w-3xl mx-auto">
                 <Alert variant="default">
@@ -730,18 +770,22 @@ export default function ComponentLibraryShowcase() {
                   </div>
                 </Alert>
               </div>
-            </div>
+            </Container>
 
             {/* Progress Showcase */}
-            <div className="bg-card border border-border rounded-lg p-8 space-y-8">
-              <div className="text-center">
+            <Container
+              size="7xl"
+              padding="lg"
+              className="bg-card border border-border rounded-lg space-y-8"
+            >
+              <Container size="none" padding="none" className="text-center">
                 <h3 className="text-2xl font-semibold text-foreground flex items-center justify-center gap-3">
                   <span className="w-10 h-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-sm font-bold">
                     8
                   </span>
                   Progress Component
                 </h3>
-              </div>
+              </Container>
 
               <div className="space-y-10 max-w-lg mx-auto">
                 <div className="space-y-6">
@@ -817,18 +861,22 @@ export default function ComponentLibraryShowcase() {
                   </div>
                 </div>
               </div>
-            </div>
+            </Container>
 
             {/* Badge Showcase */}
-            <div className="bg-card border border-border rounded-lg p-8 space-y-8">
-              <div className="text-center">
+            <Container
+              size="7xl"
+              padding="lg"
+              className="bg-card border border-border rounded-lg space-y-8"
+            >
+              <Container size="none" padding="none" className="text-center">
                 <h3 className="text-2xl font-semibold text-foreground flex items-center justify-center gap-3">
                   <span className="w-10 h-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-sm font-bold">
                     9
                   </span>
                   Badge Component
                 </h3>
-              </div>
+              </Container>
 
               <div className="space-y-8">
                 {/* Color Variants */}
@@ -1019,18 +1067,22 @@ export default function ComponentLibraryShowcase() {
                   </div>
                 </div>
               </div>
-            </div>
+            </Container>
 
             {/* Avatar Showcase */}
-            <div className="bg-card border border-border rounded-lg p-8 space-y-8">
-              <div className="text-center">
+            <Container
+              size="7xl"
+              padding="lg"
+              className="bg-card border border-border rounded-lg space-y-8"
+            >
+              <Container size="none" padding="none" className="text-center">
                 <h3 className="text-2xl font-semibold text-foreground flex items-center justify-center gap-3">
                   <span className="w-10 h-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-sm font-bold">
                     10
                   </span>
                   Avatar Component
                 </h3>
-              </div>
+              </Container>
 
               <div className="space-y-8">
                 {/* Basic Avatars */}
@@ -1141,7 +1193,7 @@ export default function ComponentLibraryShowcase() {
                   </div>
                 </div>
               </div>
-            </div>
+            </Container>
           </section>
 
           {/* 3. LAYOUT & NAVIGATION SECTION */}
@@ -1154,15 +1206,19 @@ export default function ComponentLibraryShowcase() {
             </div>
 
             {/* Tabs Showcase */}
-            <div className="bg-card border border-border rounded-lg p-8 space-y-8">
-              <div className="text-center">
+            <Container
+              size="7xl"
+              padding="lg"
+              className="bg-card border border-border rounded-lg space-y-8"
+            >
+              <Container size="none" padding="none" className="text-center">
                 <h3 className="text-2xl font-semibold text-foreground flex items-center justify-center gap-3">
                   <span className="w-10 h-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-sm font-bold">
                     11
                   </span>
                   Tabs Component
                 </h3>
-              </div>
+              </Container>
 
               <div className="max-w-2xl mx-auto">
                 <Tabs defaultValue="overview" className="w-full">
@@ -1245,18 +1301,22 @@ export default function ComponentLibraryShowcase() {
                   </TabsContent>
                 </Tabs>
               </div>
-            </div>
+            </Container>
 
             {/* Dialog Showcase */}
-            <div className="bg-card border border-border rounded-lg p-8 space-y-8">
-              <div className="text-center">
+            <Container
+              size="7xl"
+              padding="lg"
+              className="bg-card border border-border rounded-lg space-y-8"
+            >
+              <Container size="none" padding="none" className="text-center">
                 <h3 className="text-2xl font-semibold text-foreground flex items-center justify-center gap-3">
                   <span className="w-10 h-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-sm font-bold">
                     12
                   </span>
                   Dialog Component
                 </h3>
-              </div>
+              </Container>
 
               <div className="space-y-6">
                 <p className="text-muted-foreground text-center">
@@ -1295,7 +1355,107 @@ export default function ComponentLibraryShowcase() {
                   </Button>
                 </div>
               </div>
-            </div>
+            </Container>
+
+            {/* Modal Showcase */}
+            <Container
+              size="7xl"
+              padding="lg"
+              className="bg-card border border-border rounded-lg space-y-8"
+            >
+              <Container size="none" padding="none" className="text-center">
+                <h3 className="text-2xl font-semibold text-foreground flex items-center justify-center gap-3">
+                  <span className="w-10 h-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-sm font-bold">
+                    13
+                  </span>
+                  Modal Component
+                </h3>
+              </Container>
+
+              <div className="space-y-6">
+                <p className="text-muted-foreground text-center">
+                  Advanced modal component with portal rendering, animations, and comprehensive
+                  accessibility features.
+                </p>
+
+                <div className="flex flex-wrap justify-center gap-4">
+                  <Button onClick={() => setIsModalOpen(true)}>Open Modal</Button>
+
+                  <Modal
+                    isOpen={isModalOpen}
+                    onClose={() => setIsModalOpen(false)}
+                    size="lg"
+                    animation="default"
+                  >
+                    <ModalHeader>
+                      <ModalTitle>Modal Example</ModalTitle>
+                      <ModalCloseButton onClose={() => setIsModalOpen(false)} />
+                    </ModalHeader>
+                    <ModalContent>
+                      <ModalDescription>
+                        This is an enterprise-grade modal component with portal rendering, keyboard
+                        navigation, and comprehensive accessibility features.
+                      </ModalDescription>
+                      <div className="space-y-4 mt-6">
+                        <Input placeholder="Enter project name..." />
+                        <Select>
+                          <SelectTrigger>
+                            <SelectValue placeholder="Select project type" />
+                          </SelectTrigger>
+                          <SelectContent>
+                            <SelectItem value="web">Web Application</SelectItem>
+                            <SelectItem value="mobile">Mobile App</SelectItem>
+                            <SelectItem value="desktop">Desktop Application</SelectItem>
+                          </SelectContent>
+                        </Select>
+                        <Textarea placeholder="Enter project description..." rows={3} />
+                      </div>
+                    </ModalContent>
+                    <ModalFooter>
+                      <Button variant="outline" onClick={() => setIsModalOpen(false)}>
+                        Cancel
+                      </Button>
+                      <Button onClick={() => setIsModalOpen(false)}>Create Project</Button>
+                    </ModalFooter>
+                  </Modal>
+
+                  <Button variant="outline" onClick={() => setIsConfirmModalOpen(true)}>
+                    Confirmation Modal
+                  </Button>
+
+                  <Modal
+                    isOpen={isConfirmModalOpen}
+                    onClose={() => setIsConfirmModalOpen(false)}
+                    size="sm"
+                    animation="fast"
+                  >
+                    <ModalHeader>
+                      <ModalTitle>Confirm Action</ModalTitle>
+                    </ModalHeader>
+                    <ModalContent>
+                      <ModalDescription>
+                        Are you sure you want to delete this item? This action cannot be undone.
+                      </ModalDescription>
+                    </ModalContent>
+                    <ModalFooter>
+                      <Button variant="outline" onClick={() => setIsConfirmModalOpen(false)}>
+                        Cancel
+                      </Button>
+                      <Button variant="destructive" onClick={() => setIsConfirmModalOpen(false)}>
+                        Delete
+                      </Button>
+                    </ModalFooter>
+                  </Modal>
+                </div>
+
+                <div className="text-center text-sm text-muted-foreground">
+                  <p>
+                    Features: Portal rendering, keyboard navigation, overlay click handling, size
+                    variants, animations
+                  </p>
+                </div>
+              </div>
+            </Container>
           </section>
 
           {/* 4. DATA DISPLAY SECTION */}
@@ -1306,8 +1466,12 @@ export default function ComponentLibraryShowcase() {
             </div>
 
             {/* DataTable Showcase */}
-            <div className="bg-card border border-border rounded-lg p-8 space-y-8">
-              <div className="text-center">
+            <Container
+              size="7xl"
+              padding="lg"
+              className="bg-card border border-border rounded-lg space-y-8"
+            >
+              <Container size="none" padding="none" className="text-center">
                 <h3 className="text-2xl font-semibold text-foreground flex items-center justify-center gap-3">
                   <span className="w-10 h-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-sm font-bold">
                     13
@@ -1315,7 +1479,7 @@ export default function ComponentLibraryShowcase() {
                   DataTable Component
                   <Badge size="sm">Enterprise</Badge>
                 </h3>
-              </div>
+              </Container>
 
               <div className="space-y-6">
                 <p className="text-muted-foreground text-center">
@@ -1344,7 +1508,7 @@ export default function ComponentLibraryShowcase() {
                   loading states, empty states, and full keyboard navigation.
                 </div>
               </div>
-            </div>
+            </Container>
           </section>
 
           {/* 5. REAL-WORLD EXAMPLES SECTION */}
@@ -1355,8 +1519,12 @@ export default function ComponentLibraryShowcase() {
             </div>
 
             {/* Card Component Showcase */}
-            <div className="bg-card border border-border rounded-lg p-8 space-y-8">
-              <div className="text-center">
+            <Container
+              size="7xl"
+              padding="lg"
+              className="bg-card border border-border rounded-lg space-y-8"
+            >
+              <Container size="none" padding="none" className="text-center">
                 <h3 className="text-2xl font-semibold text-foreground flex items-center justify-center gap-3">
                   <span className="w-10 h-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-sm font-bold">
                     14
@@ -1364,7 +1532,7 @@ export default function ComponentLibraryShowcase() {
                   Card Component
                   <Badge size="sm">Enterprise</Badge>
                 </h3>
-              </div>
+              </Container>
 
               <div className="space-y-6">
                 <p className="text-muted-foreground text-center">
@@ -1688,18 +1856,22 @@ export default function ComponentLibraryShowcase() {
                   </div>
                 </div>
               </div>
-            </div>
+            </Container>
 
             {/* Complete Form Example */}
-            <div className="bg-card border border-border rounded-lg p-8 space-y-8">
-              <div className="text-center">
+            <Container
+              size="7xl"
+              padding="lg"
+              className="bg-card border border-border rounded-lg space-y-8"
+            >
+              <Container size="none" padding="none" className="text-center">
                 <h3 className="text-2xl font-semibold text-foreground flex items-center justify-center gap-3">
                   <span className="w-10 h-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-sm font-bold">
                     15
                   </span>
                   Complete Contact Form
                 </h3>
-              </div>
+              </Container>
 
               <div className="max-w-2xl mx-auto border rounded-lg p-8 bg-card">
                 <form className="space-y-6">
@@ -1760,18 +1932,22 @@ export default function ComponentLibraryShowcase() {
                   </div>
                 </form>
               </div>
-            </div>
+            </Container>
 
             {/* Dashboard Example */}
-            <div className="bg-card border border-border rounded-lg p-8 space-y-8">
-              <div className="text-center">
+            <Container
+              size="7xl"
+              padding="lg"
+              className="bg-card border border-border rounded-lg space-y-8"
+            >
+              <Container size="none" padding="none" className="text-center">
                 <h3 className="text-2xl font-semibold text-foreground flex items-center justify-center gap-3">
                   <span className="w-10 h-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-sm font-bold">
                     16
                   </span>
                   Dashboard Layout
                 </h3>
-              </div>
+              </Container>
 
               <div className="grid gap-6">
                 {/* Stats Cards */}
@@ -1861,7 +2037,7 @@ export default function ComponentLibraryShowcase() {
                   </div>
                 </div>
               </div>
-            </div>
+            </Container>
           </section>
 
           {/* Toast Notifications Section */}
@@ -1976,8 +2152,8 @@ export default function ComponentLibraryShowcase() {
             </Alert>
           </section>
         </div>
-      </div>
+      </Container>
       <Toaster />
-    </div>
+    </Container>
   );
 }

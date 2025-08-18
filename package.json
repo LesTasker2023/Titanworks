@@ -1,7 +1,8 @@
 {
-  "name": "Daedalus",
+  "name": "daedalus",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -28,6 +29,12 @@
     "prepare": "husky",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
+    "shorthand": "node scripts/shorthand-processor.js",
+    "clinical": "node scripts/shorthand-processor.js //clinical",
+    "emergency": "node scripts/shorthand-processor.js //emergency",
+    "shad:next": "node scripts/shorthand-processor.js \"//shad next\"",
+    "shad:analyze": "node scripts/shadcn-analyzer.js",
+    "scp": "node scripts/shorthand-processor.js //scp",
     "component": "powershell -ExecutionPolicy Bypass -File scripts/component-automation.ps1",
     "snapshots": "powershell -ExecutionPolicy Bypass -File scripts/snapshot-all-components.ps1",
     "quality-audit": "powershell -ExecutionPolicy Bypass -File scripts/deductive-audit.ps1",

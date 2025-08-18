@@ -65,9 +65,23 @@
 
 - **Location**: `src/components/ui/Textarea/`
 - **Status**: ✅ Production Ready
-- **Features**: Form integration, auto-resize
+- **Features**: Resizable, validation support
 - **Tests**: Comprehensive test suite
 - **Documentation**: Complete
+
+### Modal
+
+- **Location**: `src/components/ui/Modal/`
+- **Status**: ✅ Production Ready
+- **Features**: Portal rendering, animations, accessibility, keyboard navigation, size variants
+- **Tests**: 25 comprehensive tests
+- **Documentation**: Complete with 8 Storybook stories
+- **Sub-components**: ModalHeader, ModalTitle, ModalDescription, ModalContent, ModalFooter, ModalCloseButton
+- **CVA Variants**: 8 size options, 4 padding options, 4 animation speeds
+- **Build**: Passes production build
+- **Last Updated**: Current
+
+## Development Components 🚧
 
 ## Development Statistics
 

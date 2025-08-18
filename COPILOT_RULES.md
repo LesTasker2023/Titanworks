@@ -167,6 +167,18 @@ Non-compliance will result in code rejection and workflow automation errors.
 
 ---
 
+## 13. Shorthand Command System
+
+- Recognize and execute shorthand commands (//comp, //fix, //clean, //shad, //scp, etc.) as complete enterprise-grade workflows
+- Each shorthand triggers the full process without shortcuts or compromises
+- Reference SHORTHAND_COMMANDS.md for all available commands and their implementations
+- Maintain surgical precision and clinical-grade quality in all shorthand executions
+- Never ask for clarification on shorthand commands - execute immediately with full context
+- //shad next: Intelligently analyze and create the most effective shadcn component next
+- //scp: Rapid git workflow (stage, commit, push) with conventional commit messages
+
+---
+
 Feel free to add, clarify, or update rules as your standards evolve. Use clear, numbered points for each rule.
 
 ---
