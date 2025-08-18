@@ -52,6 +52,7 @@ import {
   ModalHeader,
   ModalTitle,
 } from '@/components/ui/Modal';
+import { Pagination } from '@/components/ui/Pagination';
 import { Progress } from '@/components/ui/Progress/progress';
 import RadioGroup, { RadioGroupItem } from '@/components/ui/RadioGroup/radio-group';
 import Select, {
@@ -72,7 +73,7 @@ import { useToast } from '@/components/ui/Toast/use-toast';
 /**
  * 🎯 Daedalus Component Library Showcase
  *
- * Complete demonstration of all 20 components with full style guide compliance:
+ * Complete demonstration of all 22 components with full style guide compliance:
  * - All available variants and sizes per component
  * - All required states (loading, disabled, error)
  * - Accessibility features and keyboard navigation
@@ -2352,6 +2353,201 @@ export default function ComponentLibraryShowcase() {
                 </div>
               </div>
             </Container>
+
+            {/* Pagination Showcase */}
+            <Container
+              size="7xl"
+              padding="lg"
+              className="bg-card border border-border rounded-lg space-y-8"
+            >
+              <Container size="none" padding="none" className="text-center">
+                <h3 className="text-2xl font-semibold text-foreground flex items-center justify-center gap-3">
+                  <span className="w-10 h-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-sm font-bold">
+                    19
+                  </span>
+                  Pagination Component
+                  <Badge size="sm">Enterprise</Badge>
+                </h3>
+              </Container>
+
+              <div className="space-y-8">
+                <p className="text-muted-foreground text-center">
+                  Enterprise-grade pagination with smart page number display, responsive design, and
+                  perfect DataTable integration.
+                </p>
+
+                {/* Basic Pagination */}
+                <div className="space-y-6">
+                  <h4 className="text-lg font-semibold text-center">Basic Pagination</h4>
+                  <div className="flex justify-center">
+                    <Pagination
+                      currentPage={3}
+                      totalPages={10}
+                      onPageChange={page => console.log('Page changed to:', page)}
+                    />
+                  </div>
+                </div>
+
+                {/* Size Variants */}
+                <div className="space-y-6">
+                  <h4 className="text-lg font-semibold text-center">Size Variants</h4>
+                  <div className="space-y-4">
+                    <div className="text-center">
+                      <p className="text-sm text-muted-foreground mb-3">Small Size</p>
+                      <Pagination
+                        currentPage={2}
+                        totalPages={5}
+                        size="sm"
+                        onPageChange={page => console.log('Small pagination:', page)}
+                      />
+                    </div>
+                    <div className="text-center">
+                      <p className="text-sm text-muted-foreground mb-3">Default Size</p>
+                      <Pagination
+                        currentPage={2}
+                        totalPages={5}
+                        size="default"
+                        onPageChange={page => console.log('Default pagination:', page)}
+                      />
+                    </div>
+                    <div className="text-center">
+                      <p className="text-sm text-muted-foreground mb-3">Large Size</p>
+                      <Pagination
+                        currentPage={2}
+                        totalPages={5}
+                        size="lg"
+                        onPageChange={page => console.log('Large pagination:', page)}
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                {/* Smart Truncation */}
+                <div className="space-y-6">
+                  <h4 className="text-lg font-semibold text-center">Smart Page Truncation</h4>
+                  <div className="space-y-4">
+                    <div className="text-center">
+                      <p className="text-sm text-muted-foreground mb-3">
+                        Large Dataset (100 pages)
+                      </p>
+                      <Pagination
+                        currentPage={50}
+                        totalPages={100}
+                        onPageChange={page => console.log('Large dataset page:', page)}
+                      />
+                    </div>
+                    <div className="text-center">
+                      <p className="text-sm text-muted-foreground mb-3">
+                        Near Beginning (Page 5 of 50)
+                      </p>
+                      <Pagination
+                        currentPage={5}
+                        totalPages={50}
+                        onPageChange={page => console.log('Near beginning:', page)}
+                      />
+                    </div>
+                    <div className="text-center">
+                      <p className="text-sm text-muted-foreground mb-3">Near End (Page 45 of 50)</p>
+                      <Pagination
+                        currentPage={45}
+                        totalPages={50}
+                        onPageChange={page => console.log('Near end:', page)}
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                {/* Configuration Options */}
+                <div className="space-y-6">
+                  <h4 className="text-lg font-semibold text-center">Configuration Options</h4>
+                  <div className="grid md:grid-cols-2 gap-6">
+                    <div className="text-center">
+                      <p className="text-sm text-muted-foreground mb-3">No Navigation Buttons</p>
+                      <Pagination
+                        currentPage={3}
+                        totalPages={7}
+                        showNavigation={false}
+                        onPageChange={page => console.log('No nav:', page)}
+                      />
+                    </div>
+                    <div className="text-center">
+                      <p className="text-sm text-muted-foreground mb-3">No First/Last Buttons</p>
+                      <Pagination
+                        currentPage={3}
+                        totalPages={7}
+                        showFirstLast={false}
+                        onPageChange={page => console.log('No first/last:', page)}
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                {/* States */}
+                <div className="space-y-6">
+                  <h4 className="text-lg font-semibold text-center">Interactive States</h4>
+                  <div className="grid md:grid-cols-2 gap-6">
+                    <div className="text-center">
+                      <p className="text-sm text-muted-foreground mb-3">Loading State</p>
+                      <Pagination
+                        currentPage={3}
+                        totalPages={7}
+                        loading={true}
+                        onPageChange={page => console.log('Loading state:', page)}
+                      />
+                    </div>
+                    <div className="text-center">
+                      <p className="text-sm text-muted-foreground mb-3">Disabled State</p>
+                      <Pagination
+                        currentPage={3}
+                        totalPages={7}
+                        disabled={true}
+                        onPageChange={page => console.log('Disabled state:', page)}
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                {/* Kitchen Sink - Ultimate Pagination */}
+                <div className="space-y-6">
+                  <h4 className="text-lg font-semibold text-center">
+                    Kitchen Sink - Ultimate Pagination Experience
+                  </h4>
+                  <div className="text-center text-sm text-muted-foreground max-w-2xl mx-auto mb-6">
+                    Complete pagination solution with page info, responsive design, and all
+                    enterprise features enabled
+                  </div>
+
+                  <div className="max-w-2xl mx-auto border rounded-lg p-6 bg-card">
+                    <div className="space-y-6">
+                      <div className="text-center">
+                        <h5 className="font-medium text-foreground mb-2">
+                          User Management Dashboard
+                        </h5>
+                        <p className="text-sm text-muted-foreground">
+                          Navigate through 2,847 user records with smart pagination
+                        </p>
+                      </div>
+
+                      <Pagination
+                        currentPage={12}
+                        totalPages={57}
+                        onPageChange={page => console.log('Ultimate pagination:', page)}
+                        showPageInfo={true}
+                        totalItems={2847}
+                        itemsPerPage={50}
+                        size="default"
+                        className="justify-center"
+                      />
+
+                      <div className="text-xs text-muted-foreground text-center">
+                        Features: Smart truncation, page info, first/last navigation, responsive
+                        design, accessibility
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </Container>
           </section>
 
           {/* 5. REAL-WORLD EXAMPLES SECTION */}
@@ -2370,7 +2566,7 @@ export default function ComponentLibraryShowcase() {
               <Container size="none" padding="none" className="text-center">
                 <h3 className="text-2xl font-semibold text-foreground flex items-center justify-center gap-3">
                   <span className="w-10 h-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-sm font-bold">
-                    19
+                    20
                   </span>
                   Card Component
                   <Badge size="sm">Enterprise</Badge>
@@ -2710,7 +2906,7 @@ export default function ComponentLibraryShowcase() {
               <Container size="none" padding="none" className="text-center">
                 <h3 className="text-2xl font-semibold text-foreground flex items-center justify-center gap-3">
                   <span className="w-10 h-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-sm font-bold">
-                    20
+                    21
                   </span>
                   Complete Contact Form
                 </h3>
@@ -2786,7 +2982,7 @@ export default function ComponentLibraryShowcase() {
               <Container size="none" padding="none" className="text-center">
                 <h3 className="text-2xl font-semibold text-foreground flex items-center justify-center gap-3">
                   <span className="w-10 h-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-sm font-bold">
-                    21
+                    22
                   </span>
                   Dashboard Layout
                 </h3>

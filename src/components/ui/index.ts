@@ -75,6 +75,7 @@ export {
 
 // Data Components
 export { default as DataTable, type DataTableProps } from './DataTable';
+export { Separator, separatorVariants, type SeparatorProps } from './Separator';
 export { Toast, Toaster, useToast, type ToastProps } from './Toast';
 export {
   Tooltip,
@@ -84,7 +85,9 @@ export {
   tooltipVariants,
   type TooltipContentProps,
 } from './Tooltip';
-export { Separator, separatorVariants, type SeparatorProps } from './Separator';
+
+// Pagination Components
+export { Pagination, type PaginationProps } from './Pagination';
 
 // Component Library Stats:
 // ✅ Modal: 35 tests, complete accessibility with portal support and animations
