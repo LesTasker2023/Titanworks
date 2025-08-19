@@ -1,7 +1,6 @@
 import Footer from '@/components/layout/Footer';
 import TopNav from '@/components/layout/TopNav';
 import { getSiteMetadata } from '@/lib/siteConfig';
-import '@/styles/globals.scss';
 import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
@@ -25,6 +24,22 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                try {
+                  var theme = localStorage.getItem('theme') || 'light';
+                  document.body.classList.add(theme);
+                } catch (e) {
+                  document.body.classList.add('light');
+                }
+              })();
+            `,
+          }}
+        />
+      </head>
       <body className={`${geistSans.variable} ${geistMono.variable} min-h-screen flex flex-col`}>
         <TopNav />
         <main className="flex-1">{children}</main>

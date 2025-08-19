@@ -1,7 +1,7 @@
 'use client';
 
 import { Palette } from 'lucide-react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Button from '../Button';
 
 interface ColorPickerProps {
@@ -34,12 +34,43 @@ export default function ColorPicker({
   const [selectedColor, setSelectedColor] = useState(defaultColor);
   const [customColor, setCustomColor] = useState(defaultColor);
 
+  // Initialize dark mode colors on mount
+  useEffect(() => {
+    // Apply default color to dark mode on initial load
+    const rgb = hexToRgb(defaultColor);
+    if (rgb) {
+      const luminance = getLuminance(rgb);
+      const foregroundColor = luminance > 0.5 ? '#000000' : '#ffffff';
+      updateDarkModeColors(defaultColor, foregroundColor);
+    }
+  }, [defaultColor]); // Include defaultColor in dependencies
+
+  // Function to update dark mode CSS variables dynamically
+  const updateDarkModeColors = (color: string, foregroundColor: string) => {
+    // Check if a dynamic dark mode style tag already exists
+    let styleTag = document.getElementById('dynamic-dark-colors');
+
+    if (!styleTag) {
+      styleTag = document.createElement('style');
+      styleTag.id = 'dynamic-dark-colors';
+      document.head.appendChild(styleTag);
+    }
+
+    // Create CSS rule for dark mode brand colors
+    styleTag.textContent = `
+      .dark {
+        --brand-primary: ${color} !important;
+        --brand-primary-foreground: ${foregroundColor} !important;
+      }
+    `;
+  };
+
   const handleColorSelect = (color: string) => {
     setSelectedColor(color);
     setCustomColor(color);
     onColorChange?.(color);
 
-    // Update brand colors with new selection
+    // Update brand colors for both light and dark modes
     document.documentElement.style.setProperty('--brand-primary', color);
 
     // Calculate proper contrast for foreground
@@ -48,6 +79,9 @@ export default function ColorPicker({
       const luminance = getLuminance(rgb);
       const foregroundColor = luminance > 0.5 ? '#000000' : '#ffffff';
       document.documentElement.style.setProperty('--brand-primary-foreground', foregroundColor);
+
+      // Also update dark mode versions by creating dynamic CSS rules
+      updateDarkModeColors(color, foregroundColor);
     }
   };
 

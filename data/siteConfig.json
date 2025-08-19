@@ -20,7 +20,7 @@
                            }
              },
     "project":  {
-                    "version":  "1.15.0",
+                    "version":  "1.18.0",
                     "grade":  "A+",
                     "lastUpdated":  "2025-08-19",
                     "status":  "Production Ready",
@@ -245,8 +245,8 @@
                 "ogImage":  "/og-image.png"
             },
     "build":  {
-                  "timestamp":  "2025-08-19T22:47:08Z",
+                  "timestamp":  "2025-08-19T23:04:29Z",
                   "environment":  "production",
-                  "deploymentId":  "auto-1.15.0-20250819224708"
+                  "deploymentId":  "auto-1.18.0-20250819230429"
               }
 }
