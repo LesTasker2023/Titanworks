@@ -1,6 +1,6 @@
 {
   "name": "daedalus",
-  "version": "1.1.0",
+  "version": "1.3.0",
   "private": true,
   "type": "module",
   "scripts": {
@@ -39,7 +39,12 @@
     "snapshots": "powershell -ExecutionPolicy Bypass -File scripts/snapshot-all-components.ps1",
     "quality-audit": "powershell -ExecutionPolicy Bypass -File scripts/deductive-audit.ps1",
     "audit-list": "powershell -ExecutionPolicy Bypass -File scripts/deductive-audit.ps1 -ListComponents",
-    "audit-quick": "powershell -ExecutionPolicy Bypass -File scripts/deductive-audit.ps1 -ComponentFilter"
+    "audit-quick": "powershell -ExecutionPolicy Bypass -File scripts/deductive-audit.ps1 -ComponentFilter",
+    "pre-commit:auto": "powershell -ExecutionPolicy Bypass -File scripts/pre-commit-automation.ps1",
+    "pre-commit:dry": "powershell -ExecutionPolicy Bypass -File scripts/pre-commit-automation.ps1 -DryRun",
+    "release:manual": "powershell -ExecutionPolicy Bypass -File scripts/manual-release.ps1",
+    "release:dry": "powershell -ExecutionPolicy Bypass -File scripts/manual-release.ps1 -DryRun",
+    "release:force": "powershell -ExecutionPolicy Bypass -File scripts/manual-release.ps1 -Force"
   },
   "dependencies": {
     "@radix-ui/react-accordion": "^1.2.12",

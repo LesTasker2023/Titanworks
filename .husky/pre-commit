@@ -1,1 +1,7 @@
 yarn lint-staged
+
+# Run enterprise automation after successful lint-staged checks
+if [ $? -eq 0 ]; then
+  echo "🚀 Running enterprise automation..."
+  powershell -ExecutionPolicy Bypass -File scripts/pre-commit-automation.ps1
+fi
