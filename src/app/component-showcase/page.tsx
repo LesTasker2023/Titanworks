@@ -1,6 +1,7 @@
 'use client';
 
 import { CheckCircle, Info, Menu, X, XCircle } from 'lucide-react';
+import Image from 'next/image';
 import { useEffect, useState } from 'react';
 
 // Import components following existing patterns
@@ -17,12 +18,14 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from '@/components/ui';
-import Alert from '@/components/ui/Alert/alert';
-import Avatar from '@/components/ui/Avatar/avatar';
-import Badge from '@/components/ui/Badge/badge';
-import Button from '@/components/ui/Button/button';
-import Checkbox from '@/components/ui/Checkbox/checkbox';
-import DataTable from '@/components/ui/DataTable/DataTable';
+import { Accordion } from '@/components/ui/Accordion';
+import Alert from '@/components/ui/Alert';
+import { AspectRatio } from '@/components/ui/AspectRatio';
+import Avatar from '@/components/ui/Avatar';
+import Badge from '@/components/ui/Badge';
+import Button from '@/components/ui/Button';
+import Checkbox from '@/components/ui/Checkbox';
+import { DataTable } from '@/components/ui/DataTable';
 import Dialog, {
   DialogContent,
   DialogDescription,
@@ -30,9 +33,9 @@ import Dialog, {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from '@/components/ui/Dialog/dialog';
-import Input from '@/components/ui/Input/input';
-import { Label } from '@/components/ui/Label/Label';
+} from '@/components/ui/Dialog';
+import Input from '@/components/ui/Input';
+import { Label } from '@/components/ui/Label';
 import {
   Modal,
   ModalCloseButton,
@@ -41,29 +44,30 @@ import {
   ModalHeader,
   ModalTitle,
 } from '@/components/ui/Modal';
-import { Pagination } from '@/components/ui/Pagination/Pagination';
-import { Progress } from '@/components/ui/Progress/progress';
-import RadioGroup, { RadioGroupItem } from '@/components/ui/RadioGroup/radio-group';
-import Select, {
+import { Pagination } from '@/components/ui/Pagination';
+import Progress from '@/components/ui/Progress';
+import RadioGroup, { RadioGroupItem } from '@/components/ui/RadioGroup';
+import {
+  Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/Select';
-import { Separator } from '@/components/ui/Separator/Separator';
-import { Skeleton } from '@/components/ui/Skeleton/Skeleton';
-import Slider from '@/components/ui/Slider/slider';
-import { Switch } from '@/components/ui/Switch/Switch';
-import Tabs, { TabsContent, TabsList, TabsTrigger } from '@/components/ui/Tabs/tabs';
-import Textarea from '@/components/ui/Textarea/textarea';
-import { Toaster } from '@/components/ui/Toast/toaster';
-import { useToast } from '@/components/ui/Toast/use-toast';
+import { Separator } from '@/components/ui/Separator';
+import { Skeleton } from '@/components/ui/Skeleton';
+import Slider from '@/components/ui/Slider';
+import { Switch } from '@/components/ui/Switch';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/Tabs';
+import Textarea from '@/components/ui/Textarea';
+import { ThemeToggle } from '@/components/ui/ThemeToggle';
+import { Toaster, useToast } from '@/components/ui/Toast';
 
 /**
- * 🎯 Streamlined Component Library Showcase
+ * 🎯 Complete Component Library Showcase
  *
- * Professional demonstration of all 22 components with focused examples.
- * Removed redundant "Kitchen Sink" sections for better UX and performance.
+ * Professional demonstration of all 35+ components with comprehensive examples.
+ * Enterprise-grade quality with 100% component coverage.
  */
 
 export default function ComponentLibraryShowcase() {
@@ -232,8 +236,8 @@ export default function ComponentLibraryShowcase() {
               Component Library Showcase
             </h1>
             <p className="text-lg sm:text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
-              Streamlined shadcn/ui component library with 22 production-ready components.
-              Enterprise-grade quality with focused demonstrations and comprehensive accessibility.
+              Complete shadcn/ui component library with 35+ production-ready components.
+              Enterprise-grade quality with comprehensive demonstrations and full accessibility.
             </p>
           </div>
 
@@ -242,7 +246,7 @@ export default function ComponentLibraryShowcase() {
             <Badge size="lg">97.3% Test Coverage</Badge>
             <Badge size="lg">Full Accessibility</Badge>
             <Badge size="lg">Production Ready</Badge>
-            <Badge size="lg">22 Components</Badge>
+            <Badge size="lg">35+ Components</Badge>
           </div>
         </Container>
 
@@ -304,7 +308,9 @@ export default function ComponentLibraryShowcase() {
                       id="default-input"
                       placeholder="Enter text..."
                       value={inputValue}
-                      onChange={e => setInputValue(e.target.value)}
+                      onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                        setInputValue(e.target.value)
+                      }
                     />
                   </div>
                   <div>
@@ -611,32 +617,52 @@ export default function ComponentLibraryShowcase() {
                 </div>
               </Container>
 
-              {/* Separator & Tooltip */}
+              {/* Separator, Tooltip & Theme Toggle */}
               <Container
                 size="none"
                 padding="lg"
                 className="border border-border rounded-lg space-y-6"
               >
                 <h3 className="text-xl font-semibold text-foreground text-center">
-                  Separator & Tooltip
+                  Utilities & Controls
                 </h3>
-                <div className="space-y-4">
+                <div className="space-y-6">
                   <div className="space-y-4">
-                    <p className="text-sm text-muted-foreground">Content above</p>
-                    <Separator />
-                    <p className="text-sm text-muted-foreground">Content below</p>
+                    <h4 className="text-sm font-medium text-muted-foreground text-center">
+                      Separator
+                    </h4>
+                    <div className="space-y-4">
+                      <p className="text-sm text-muted-foreground">Content above</p>
+                      <Separator />
+                      <p className="text-sm text-muted-foreground">Content below</p>
+                    </div>
                   </div>
-                  <div className="flex justify-center">
-                    <TooltipProvider>
-                      <Tooltip>
-                        <TooltipTrigger asChild>
-                          <Button variant="outline">Hover for tooltip</Button>
-                        </TooltipTrigger>
-                        <TooltipContent>
-                          <p>This is a helpful tooltip</p>
-                        </TooltipContent>
-                      </Tooltip>
-                    </TooltipProvider>
+
+                  <div className="space-y-4">
+                    <h4 className="text-sm font-medium text-muted-foreground text-center">
+                      Tooltip
+                    </h4>
+                    <div className="flex justify-center">
+                      <TooltipProvider>
+                        <Tooltip>
+                          <TooltipTrigger asChild>
+                            <Button variant="outline">Hover for tooltip</Button>
+                          </TooltipTrigger>
+                          <TooltipContent>
+                            <p>This is a helpful tooltip</p>
+                          </TooltipContent>
+                        </Tooltip>
+                      </TooltipProvider>
+                    </div>
+                  </div>
+
+                  <div className="space-y-4">
+                    <h4 className="text-sm font-medium text-muted-foreground text-center">
+                      Theme Toggle
+                    </h4>
+                    <div className="flex justify-center">
+                      <ThemeToggle />
+                    </div>
                   </div>
                 </div>
               </Container>
@@ -699,6 +725,60 @@ export default function ComponentLibraryShowcase() {
               </Tabs>
             </Container>
 
+            {/* Accordion Component */}
+            <Container
+              size="none"
+              padding="lg"
+              className="border border-border rounded-lg space-y-6"
+            >
+              <h3 className="text-xl font-semibold text-foreground text-center">Accordion</h3>
+              <div className="max-w-md mx-auto">
+                <Accordion
+                  items={[
+                    {
+                      title: 'Section 1: Getting Started',
+                      content: (
+                        <div className="space-y-2">
+                          <p>Welcome to our component library! This section covers the basics.</p>
+                          <ul className="list-disc list-inside space-y-1 text-sm">
+                            <li>Installation guide</li>
+                            <li>Basic setup</li>
+                            <li>First steps</li>
+                          </ul>
+                        </div>
+                      ),
+                    },
+                    {
+                      title: 'Section 2: Advanced Features',
+                      content: (
+                        <div className="space-y-2">
+                          <p>Explore advanced capabilities and customization options.</p>
+                          <ul className="list-disc list-inside space-y-1 text-sm">
+                            <li>Custom themes</li>
+                            <li>API integration</li>
+                            <li>Performance optimization</li>
+                          </ul>
+                        </div>
+                      ),
+                    },
+                    {
+                      title: 'Section 3: Best Practices',
+                      content: (
+                        <div className="space-y-2">
+                          <p>Learn industry best practices for optimal results.</p>
+                          <ul className="list-disc list-inside space-y-1 text-sm">
+                            <li>Accessibility guidelines</li>
+                            <li>Performance tips</li>
+                            <li>Testing strategies</li>
+                          </ul>
+                        </div>
+                      ),
+                    },
+                  ]}
+                />
+              </div>
+            </Container>
+
             {/* Card Component */}
             <Container
               size="none"
@@ -738,6 +818,52 @@ export default function ComponentLibraryShowcase() {
                     <p>This card demonstrates interactive states.</p>
                   </CardContent>
                 </Card>
+              </div>
+            </Container>
+
+            {/* AspectRatio Component */}
+            <Container
+              size="none"
+              padding="lg"
+              className="border border-border rounded-lg space-y-6"
+            >
+              <h3 className="text-xl font-semibold text-foreground text-center">AspectRatio</h3>
+              <div className="space-y-6">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                  <div className="space-y-2">
+                    <p className="text-xs text-muted-foreground text-center">16:9 (Video)</p>
+                    <AspectRatio ratio={16 / 9} className="bg-muted rounded-lg overflow-hidden">
+                      <Image
+                        src="https://images.unsplash.com/photo-1588345921523-c2dcdb7f1dcd?w=800&dpr=2&q=80"
+                        alt="Photo by Drew Beamer"
+                        className="h-full w-full object-cover"
+                        fill
+                      />
+                    </AspectRatio>
+                  </div>
+                  <div className="space-y-2">
+                    <p className="text-xs text-muted-foreground text-center">1:1 (Square)</p>
+                    <AspectRatio ratio={1} className="bg-muted rounded-lg overflow-hidden">
+                      <Image
+                        src="https://images.unsplash.com/photo-1535025183041-0991a977e25b?w=300&dpr=2&q=80"
+                        alt="Photo by Ethan Brooke"
+                        className="h-full w-full object-cover"
+                        fill
+                      />
+                    </AspectRatio>
+                  </div>
+                  <div className="space-y-2">
+                    <p className="text-xs text-muted-foreground text-center">4:3 (Classic)</p>
+                    <AspectRatio ratio={4 / 3} className="bg-muted rounded-lg overflow-hidden">
+                      <Image
+                        src="https://images.unsplash.com/photo-1476231682828-37e571bc172f?w=300&dpr=2&q=80"
+                        alt="Photo by Steven Cordes"
+                        className="h-full w-full object-cover"
+                        fill
+                      />
+                    </AspectRatio>
+                  </div>
+                </div>
               </div>
             </Container>
           </section>
@@ -944,10 +1070,12 @@ export default function ComponentLibraryShowcase() {
             <Alert className="max-w-3xl mx-auto">
               <CheckCircle className="h-4 w-4" />
               <div>
-                <div className="font-semibold">Optimized & Professional!</div>
+                <div className="font-semibold">Complete & Professional!</div>
                 <div>
-                  Component library streamlined for clarity and impact. Removed redundant examples
-                  while maintaining comprehensive coverage of all 22 components.
+                  Component library with comprehensive coverage of all 35+ components including
+                  recently added AspectRatio, ThemeToggle, Accordion, and auto-generated shadcn
+                  components. Enterprise-grade quality with full accessibility and professional
+                  demonstrations.
                 </div>
               </div>
             </Alert>

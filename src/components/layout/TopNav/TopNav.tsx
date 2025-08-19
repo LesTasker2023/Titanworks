@@ -1,13 +1,12 @@
 import ThemeToggle from '@/components/layout/ThemeToggle';
 import Badge from '@/components/ui/Badge';
-import {
-  NavigationMenu,
+import NavigationMenu, {
   NavigationMenuContent,
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
-} from '@/components/ui/NavigationMenu/navigation-menu';
+} from '@/components/ui/NavigationMenu';
 import Image from 'next/image';
 import Link from 'next/link';
 

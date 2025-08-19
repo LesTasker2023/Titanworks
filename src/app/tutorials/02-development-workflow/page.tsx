@@ -1,12 +1,11 @@
-import Badge from '@/components/ui/Badge/badge';
-import {
-  Card,
+import Badge from '@/components/ui/Badge';
+import Card, {
   CardContent,
   CardDescription,
   CardFooter,
   CardHeader,
   CardTitle,
-} from '@/components/ui/Card/card';
+} from '@/components/ui/Card';
 import { CheckCircle, ChevronRight } from 'lucide-react';
 import Link from 'next/link';
 

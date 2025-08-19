@@ -1,19 +1,18 @@
 'use client';
 
 import { submitContactForm } from '@/app/actions/contact';
-import { Button } from '@/components/ui/Button';
-import { Checkbox } from '@/components/ui/Checkbox';
-import { Input } from '@/components/ui/Input';
+import Button from '@/components/ui/Button';
+import Checkbox from '@/components/ui/Checkbox';
+import Input from '@/components/ui/Input';
 import { Label } from '@/components/ui/Label';
-import {
-  Select,
+import Select, {
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/Select';
-import { Textarea } from '@/components/ui/Textarea';
-import { toast } from '@/hooks/use-toast';
+import Textarea from '@/components/ui/Textarea';
+import { toast } from '@/components/ui/Toast';
 import { useActionState, useEffect } from 'react';
 
 const initialState = {

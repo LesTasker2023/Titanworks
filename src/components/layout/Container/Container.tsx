@@ -16,21 +16,47 @@ const containerVariants = cva('mx-auto w-full', {
     },
     padding: {
       none: 'p-0',
-      sm: 'py-4',
-      md: 'py-6',
-      lg: 'py-8',
-      xl: 'py-12',
-      '2xl': 'py-16',
+      sm: 'p-4',
+      md: 'p-6',
+      lg: 'p-8',
+      xl: 'p-12',
+      '2xl': 'p-16',
     },
     center: {
       true: 'mx-auto',
       false: '',
+    },
+    layout: {
+      default: '',
+      flex: 'flex flex-col',
+      'flex-row': 'flex flex-row',
+      'flex-center': 'flex flex-col items-center justify-center',
+      'flex-between': 'flex flex-col items-center justify-between',
+      'flex-around': 'flex flex-col items-center justify-around',
+      grid: 'grid place-items-center',
+    },
+    spacing: {
+      none: '',
+      sm: '[&>*+*]:mt-2',
+      md: '[&>*+*]:mt-4',
+      lg: '[&>*+*]:mt-6',
+      xl: '[&>*+*]:mt-8',
+      '2xl': '[&>*+*]:mt-12',
+    },
+    align: {
+      start: 'items-start',
+      center: 'items-center',
+      end: 'items-end',
+      stretch: 'items-stretch',
     },
   },
   defaultVariants: {
     size: '7xl',
     padding: 'lg',
     center: true,
+    layout: 'default',
+    spacing: 'none',
+    align: 'center',
   },
 });
 
@@ -41,11 +67,27 @@ export interface ContainerProps
 }
 
 const Container = React.forwardRef<HTMLDivElement, ContainerProps>(
-  ({ className, size, padding, center, as: Component = 'div', children, ...props }, ref) => {
+  (
+    {
+      className,
+      size,
+      padding,
+      center,
+      layout,
+      spacing,
+      align,
+      as: Component = 'div',
+      children,
+      ...props
+    },
+    ref
+  ) => {
     return (
       <Component
         ref={ref}
-        className={cn(containerVariants({ size, padding, center, className }))}
+        className={cn(
+          containerVariants({ size, padding, center, layout, spacing, align, className })
+        )}
         {...props}
       >
         {children}

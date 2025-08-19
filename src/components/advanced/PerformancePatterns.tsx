@@ -67,8 +67,7 @@ function DashboardStatsSkeleton() {
   );
 }
 
-// Client component for interactive features
-('use client');
+import { useState } from 'react';
 
 function InteractiveDashboard() {
   const [view, setView] = useState<'cards' | 'table'>('cards');
