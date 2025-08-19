@@ -250,8 +250,15 @@ function Main {
         
         # Validate changes don't break build
         if (-not $DryRun) {
-            # Temporarily skip build validation for testing
-            Write-EnterpriseLog "Skipping build validation (temporary)" "WARNING"
+            # Run type check to ensure no TypeScript errors
+            Write-EnterpriseLog "Validating TypeScript after updates..." "INFO"
+            $typeCheckResult = & yarn type-check 2>&1
+            if ($LASTEXITCODE -ne 0) {
+                Write-EnterpriseLog "Type check failed - rolling back changes" "ERROR"
+                & git checkout -- package.json src/app/dashboard/page.tsx src/app/component-showcase/page.tsx
+                exit 1
+            }
+            Write-EnterpriseLog "TypeScript validation successful" "SUCCESS"
             
             # Stage the automated changes
             & git add package.json src/app/dashboard/page.tsx src/app/component-showcase/page.tsx
