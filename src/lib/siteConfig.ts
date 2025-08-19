@@ -45,17 +45,28 @@ export interface SiteConfig {
       headline: string;
       tagline: string;
       description: string;
+      primaryCta: {
+        text: string;
+        href: string;
+      };
+      secondaryCta: {
+        text: string;
+        href: string;
+      };
     };
-    valuePropositions: Array<{
+    socialProof: {
+      headline: string;
+      metrics: Array<{
+        value: string;
+        label: string;
+        description: string;
+      }>;
+    };
+    valueProps: Array<{
       icon: string;
       title: string;
       description: string;
     }>;
-    testimonial: {
-      quote: string;
-      author: string;
-      role: string;
-    };
     copyright: string;
     footer: {
       companyName: string;
