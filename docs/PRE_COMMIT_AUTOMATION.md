@@ -4,22 +4,23 @@
 
 A comprehensive automation system that automatically handles version bumping, dashboard updates, and component validation when all quality checks pass during commits.
 
-## How It Works
+## 🚀 How It Works
 
-### Automatic Pre-Commit Workflow
+### Automated Workflow on Every Commit
 
-1. **Developer makes commit** → `git commit -m "your message"`
-2. **Husky triggers pre-commit hook** → Runs lint-staged
-3. **Lint-staged executes quality checks**:
-   - ESLint fixes TypeScript/JavaScript files
-   - Prettier formats all files
-4. **If all checks pass** → Enterprise automation triggers automatically
-5. **Automation performs**:
-   - ✅ Bumps minor version (e.g., 1.1.0 → 1.2.0)
-   - ✅ Updates dashboard with latest component metrics
-   - ✅ Refreshes component showcase statistics
-   - ✅ Validates build still works
-   - ✅ Stages all changes automatically
+```bash
+git commit -m "your message"  # Triggers complete automation
+```
+
+**Enterprise Automation Flow:**
+
+1. **🎯 Auto-staging** - All unstaged changes automatically staged
+2. **🔍 Quality Checks** - ESLint + Prettier run on staged files
+3. **📊 Version Bump** - Minor version increment (1.4.0 → 1.5.0)
+4. **📱 Dashboard Sync** - Real-time component metrics updated
+5. **🎨 Showcase Update** - Component showcase synchronized
+6. **✅ TypeScript Validation** - Full type checking ensures quality
+7. **🔄 Auto-staging** - All automation changes staged for commit
 
 ### Manual Release Options
 

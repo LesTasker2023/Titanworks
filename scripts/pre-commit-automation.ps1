@@ -35,6 +35,30 @@ function Write-EnterpriseLog {
     Write-Host "[$timestamp] [$Level] $Message" -ForegroundColor $color
 }
 
+function Write-FileWithRetry {
+    param(
+        [string]$Path,
+        [string]$Content,
+        [int]$MaxRetries = 3,
+        [int]$DelaySeconds = 1
+    )
+    
+    for ($i = 1; $i -le $MaxRetries; $i++) {
+        try {
+            Set-Content $Path $Content -NoNewline -ErrorAction Stop
+            return $true
+        }
+        catch {
+            if ($i -eq $MaxRetries) {
+                Write-EnterpriseLog "Failed to write $Path after $MaxRetries attempts: $($_.Exception.Message)" "ERROR"
+                return $false
+            }
+            Write-EnterpriseLog "Write attempt $i failed for $Path, retrying in $DelaySeconds seconds..." "WARNING"
+            Start-Sleep -Seconds $DelaySeconds
+        }
+    }
+}
+
 function Get-CurrentVersion {
     $packageJson = Get-Content "package.json" | ConvertFrom-Json
     return $packageJson.version
@@ -55,7 +79,10 @@ function Update-MinorVersion {
         # Update package.json
         $packageContent = Get-Content "package.json" -Raw
         $packageContent = $packageContent -replace "`"version`": `"$currentVersion`"", "`"version`": `"$newVersion`""
-        Set-Content "package.json" $packageContent -NoNewline
+        
+        if (-not (Write-FileWithRetry "package.json" $packageContent)) {
+            throw "Failed to update package.json"
+        }
         
         Write-EnterpriseLog "Version updated: $currentVersion -> $newVersion" "SUCCESS"
     } else {
@@ -151,7 +178,9 @@ function Update-Dashboard {
         # Insert new activity at the beginning of activities array
         $dashboardContent = $dashboardContent -replace "(const activities = \[\s*)", "`$1$newActivity`n      "
         
-        Set-Content $dashboardPath $dashboardContent -NoNewline
+        if (-not (Write-FileWithRetry $dashboardPath $dashboardContent)) {
+            throw "Failed to update dashboard file"
+        }
         Write-EnterpriseLog "Dashboard updated with v$newVersion metrics" "SUCCESS"
     } else {
         Write-EnterpriseLog "[DRY RUN] Would update dashboard with v$newVersion and component stats" "WARNING"
@@ -177,7 +206,9 @@ function Update-ComponentShowcase {
         $showcaseContent = $showcaseContent -replace "Stories: \d+", "Stories: $($componentStats.ComponentsWithStories)"
         $showcaseContent = $showcaseContent -replace "Tests: \d+", "Tests: $($componentStats.ComponentsWithTests)"
         
-        Set-Content $showcasePath $showcaseContent -NoNewline
+        if (-not (Write-FileWithRetry $showcasePath $showcaseContent)) {
+            throw "Failed to update component showcase file"
+        }
         Write-EnterpriseLog "Component showcase updated with latest statistics" "SUCCESS"
     } else {
         Write-EnterpriseLog "[DRY RUN] Would update component showcase with latest stats" "WARNING"

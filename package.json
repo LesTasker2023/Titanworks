@@ -1,6 +1,6 @@
 {
   "name": "daedalus",
-  "version": "1.4.0",
+  "version": "1.7.0",
   "private": true,
   "type": "module",
   "scripts": {
@@ -44,7 +44,14 @@
     "pre-commit:dry": "powershell -ExecutionPolicy Bypass -File scripts/pre-commit-automation.ps1 -DryRun",
     "release:manual": "powershell -ExecutionPolicy Bypass -File scripts/manual-release.ps1",
     "release:dry": "powershell -ExecutionPolicy Bypass -File scripts/manual-release.ps1 -DryRun",
-    "release:force": "powershell -ExecutionPolicy Bypass -File scripts/manual-release.ps1 -Force"
+    "release:force": "powershell -ExecutionPolicy Bypass -File scripts/manual-release.ps1 -Force",
+    "container:cleanup": "powershell -ExecutionPolicy Bypass -File scripts/container-cleanup.ps1",
+    "container:migrate": "powershell -ExecutionPolicy Bypass -File scripts/systematic-container-migration.ps1",
+    "format:md": "powershell -ExecutionPolicy Bypass -File scripts/format-md.ps1",
+    "fix:headers": "node scripts/batch-header-fix.js",
+    "fix:containers": "node scripts/main-container-fix.js",
+    "fix:balance": "node scripts/final-balance-fix.js",
+    "fix:tags": "node scripts/fix-closing-tags.js"
   },
   "dependencies": {
     "@radix-ui/react-accordion": "^1.2.12",

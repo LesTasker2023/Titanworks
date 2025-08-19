@@ -1,3 +1,9 @@
+#!/bin/sh
+
+# Stage all changes automatically
+echo "🎯 Auto-staging all changes..."
+git add .
+
 yarn lint-staged
 
 # Run enterprise automation after successful lint-staged checks
