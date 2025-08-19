@@ -1,8 +1,8 @@
-import { cn } from '@/lib/utils';
 import { cva, type VariantProps } from 'class-variance-authority';
+import { cn } from '@/lib/utils';
 import { forwardRef } from 'react';
 
-const formVariants = cva(
+const popoverVariants = cva(
   // Base styles
   'inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ring-offset-background',
   {
@@ -29,18 +29,18 @@ const formVariants = cva(
   }
 );
 
-export interface FormProps
+export interface PopoverProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement>,
-    VariantProps<typeof formVariants> {}
+    VariantProps<typeof popoverVariants> {}
 
-const Form = forwardRef<HTMLButtonElement, FormProps>(
+const Popover = forwardRef<HTMLButtonElement, PopoverProps>(
   ({ className, variant, size, ...props }, ref) => {
     return (
-      <button className={cn(formVariants({ variant, size, className }))} ref={ref} {...props} />
+      <button className={cn(popoverVariants({ variant, size, className }))} ref={ref} {...props} />
     );
   }
 );
 
-Form.displayName = 'Form';
+Popover.displayName = 'Popover';
 
-export { Form, formVariants };
+export { Popover, popoverVariants };

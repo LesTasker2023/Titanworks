@@ -21,6 +21,21 @@ Object.defineProperty(window, 'IntersectionObserver', {
   },
 });
 
+// Mock window.matchMedia for ThemeToggle component
+Object.defineProperty(window, 'matchMedia', {
+  writable: true,
+  value: (query: string) => ({
+    matches: false,
+    media: query,
+    onchange: null,
+    addListener: () => {},
+    removeListener: () => {},
+    addEventListener: () => {},
+    removeEventListener: () => {},
+    dispatchEvent: () => {},
+  }),
+});
+
 // Extend Vitest's expect with jest-dom matchers
 expect.extend({});
 

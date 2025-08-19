@@ -89,12 +89,12 @@ describe('Slider Component', () => {
 
     it('renders multiple thumbs for range', () => {
       render(<Slider defaultValue={[20, 80]} />);
-      // Radix UI creates single slider with range, not multiple sliders
-      const slider = screen.getByRole('slider');
-      expect(slider).toBeInTheDocument();
-      // Check for multiple values in aria-valuenow or check range behavior
-      const container = slider.closest('[aria-disabled]');
-      expect(container).toBeInTheDocument();
+      // Radix UI creates multiple slider elements for range
+      const sliders = screen.getAllByRole('slider');
+      expect(sliders).toHaveLength(2);
+      // Check that we have minimum and maximum thumbs
+      expect(screen.getByLabelText('Minimum')).toBeInTheDocument();
+      expect(screen.getByLabelText('Maximum')).toBeInTheDocument();
     });
   });
 
