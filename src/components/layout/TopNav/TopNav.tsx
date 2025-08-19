@@ -7,13 +7,15 @@ import NavigationMenu, {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from '@/components/ui/NavigationMenu';
+import { getBrandInfo, getNavigation, getProjectInfo } from '@/lib/siteConfig';
 import Image from 'next/image';
 import Link from 'next/link';
 
 export default function TopNav() {
-  const version = 'v1.0.0';
-  const grade = 'A+';
-  const lastUpdated = '2025-08-14';
+  const projectInfo = getProjectInfo();
+  const brandInfo = getBrandInfo();
+  const navigation = getNavigation();
+
   return (
     <nav
       style={{
@@ -107,49 +109,46 @@ export default function TopNav() {
             style={{ fontWeight: 700, textDecoration: 'none', color: 'inherit' }}
           >
             <Image
-              src="/daedalus.png"
-              alt="Daedalus Logo"
-              width={10}
-              height={10}
+              src={brandInfo.logo.path}
+              alt={brandInfo.logo.alt}
+              width={brandInfo.logo.width}
+              height={brandInfo.logo.height}
               className="w-10 h-10"
               priority
             />
-            Daedalus
+            {brandInfo.name}
           </Link>
           <div className="tk-nav-badges" style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-            <Badge variant="outline">Version: {version}</Badge>
-            <Badge variant={grade === 'A+' ? 'default' : 'secondary'}>Grade: {grade}</Badge>
-            <Badge variant="outline">Last Updated: {lastUpdated}</Badge>
+            <Badge variant="outline">Version: {projectInfo.version}</Badge>
+            <Badge variant={projectInfo.grade === 'A+' ? 'default' : 'secondary'}>
+              Grade: {projectInfo.grade}
+            </Badge>
+            <Badge variant="outline">Last Updated: {projectInfo.lastUpdated}</Badge>
           </div>
         </div>
         <div className="tk-nav-row" style={{ display: 'flex', alignItems: 'center', gap: 24 }}>
           <NavigationMenu>
             <NavigationMenuList>
-              <NavigationMenuItem>
-                <NavigationMenuTrigger>Components</NavigationMenuTrigger>
-                <NavigationMenuContent>
-                  <div className="grid gap-3 p-6 w-[500px] grid-cols-2">
-                    <NavigationMenuLink asChild>
-                      <Link
-                        href="/component-showcase"
-                        className="block cursor-pointer rounded px-2 py-1 hover:bg-muted focus:bg-muted focus:outline-none"
-                      >
-                        <div className="text-sm font-medium">Showcase</div>
-                        <div className="text-xs text-muted-foreground">All UI components</div>
-                      </Link>
-                    </NavigationMenuLink>
-                    <NavigationMenuLink asChild>
-                      <Link
-                        href="/dashboard"
-                        className="block cursor-pointer rounded px-2 py-1 hover:bg-muted focus:bg-muted focus:outline-none"
-                      >
-                        <div className="text-sm font-medium">Quality Dashboard</div>
-                        <div className="text-xs text-muted-foreground">Test coverage, metrics</div>
-                      </Link>
-                    </NavigationMenuLink>
-                  </div>
-                </NavigationMenuContent>
-              </NavigationMenuItem>
+              {navigation.mainMenu.map(menu => (
+                <NavigationMenuItem key={menu.label}>
+                  <NavigationMenuTrigger>{menu.label}</NavigationMenuTrigger>
+                  <NavigationMenuContent>
+                    <div className="grid gap-3 p-6 w-[500px] grid-cols-2">
+                      {menu.items.map(item => (
+                        <NavigationMenuLink key={item.href} asChild>
+                          <Link
+                            href={item.href}
+                            className="block cursor-pointer rounded px-2 py-1 hover:bg-muted focus:bg-muted focus:outline-none"
+                          >
+                            <div className="text-sm font-medium">{item.title}</div>
+                            <div className="text-xs text-muted-foreground">{item.description}</div>
+                          </Link>
+                        </NavigationMenuLink>
+                      ))}
+                    </div>
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
+              ))}
               <NavigationMenuItem>
                 <NavigationMenuTrigger>Tests</NavigationMenuTrigger>
                 <NavigationMenuContent>

@@ -187,6 +187,47 @@ function Update-Dashboard {
     }
 }
 
+function Update-SiteConfig {
+    param([string]$newVersion, [hashtable]$componentStats)
+    
+    $configPath = "data/siteConfig.json"
+    
+    if (-not (Test-Path $configPath)) {
+        Write-EnterpriseLog "Site config not found: $configPath" "WARNING"
+        return
+    }
+    
+    $currentDate = Get-Date -Format "yyyy-MM-dd"
+    $timestamp = Get-Date -Format "yyyy-MM-ddTHH:mm:ssZ"
+    
+    if (-not $DryRun) {
+        # Read current config
+        $configContent = Get-Content $configPath -Raw | ConvertFrom-Json
+        
+        # Update project info
+        $configContent.project.version = $newVersion
+        $configContent.project.lastUpdated = $currentDate
+        
+        # Update metrics
+        $configContent.metrics.totalComponents = $componentStats.TotalComponents
+        $configContent.metrics.storiesCoverage = $componentStats.StoriesCoverage
+        $configContent.metrics.testsCoverage = $componentStats.TestsCoverage
+        
+        # Update build info
+        $configContent.build.timestamp = $timestamp
+        $configContent.build.deploymentId = "auto-$newVersion-$(Get-Date -Format 'yyyyMMddHHmmss')"
+        
+        # Convert back to JSON and save
+        $updatedConfig = ConvertTo-Json $configContent -Depth 10
+        if (-not (Write-FileWithRetry $configPath $updatedConfig)) {
+            throw "Failed to update site configuration"
+        }
+        Write-EnterpriseLog "Site configuration updated with v$newVersion metrics" "SUCCESS"
+    } else {
+        Write-EnterpriseLog "[DRY RUN] Would update site config with v$newVersion and component stats" "WARNING"
+    }
+}
+
 function Update-ComponentShowcase {
     param([hashtable]$componentStats)
     
@@ -276,6 +317,9 @@ function Main {
         # Update dashboard with new metrics
         Update-Dashboard -newVersion $newVersion -componentStats $componentStats
         
+        # Update site configuration
+        Update-SiteConfig -newVersion $newVersion -componentStats $componentStats
+        
         # Update component showcase
         Update-ComponentShowcase -componentStats $componentStats
         
@@ -286,13 +330,13 @@ function Main {
             $typeCheckResult = & yarn type-check 2>&1
             if ($LASTEXITCODE -ne 0) {
                 Write-EnterpriseLog "Type check failed - rolling back changes" "ERROR"
-                & git checkout -- package.json src/app/dashboard/page.tsx src/app/component-showcase/page.tsx
+                & git checkout -- package.json data/siteConfig.json src/app/dashboard/page.tsx src/app/component-showcase/page.tsx
                 exit 1
             }
             Write-EnterpriseLog "TypeScript validation successful" "SUCCESS"
             
             # Stage the automated changes
-            & git add package.json src/app/dashboard/page.tsx src/app/component-showcase/page.tsx
+            & git add package.json data/siteConfig.json src/app/dashboard/page.tsx src/app/component-showcase/page.tsx
             Write-EnterpriseLog "Automated changes staged for commit" "SUCCESS"
         }
         

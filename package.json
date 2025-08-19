@@ -1,6 +1,6 @@
 {
   "name": "daedalus",
-  "version": "1.7.0",
+  "version": "1.8.0",
   "private": true,
   "type": "module",
   "scripts": {
@@ -51,7 +51,8 @@
     "fix:headers": "node scripts/batch-header-fix.js",
     "fix:containers": "node scripts/main-container-fix.js",
     "fix:balance": "node scripts/final-balance-fix.js",
-    "fix:tags": "node scripts/fix-closing-tags.js"
+    "fix:tags": "node scripts/fix-closing-tags.js",
+    "config:update": "powershell -ExecutionPolicy Bypass -File scripts/pre-commit-automation.ps1 -DryRun"
   },
   "dependencies": {
     "@radix-ui/react-accordion": "^1.2.12",

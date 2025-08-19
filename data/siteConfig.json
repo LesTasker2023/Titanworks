@@ -1,0 +1,144 @@
+{
+    "site":  {
+                 "name":  "TriggerKings",
+                 "title":  "TriggerKings - Enterprise Component System",
+                 "description":  "Enterprise-grade Next.js component library with automated quality assurance, comprehensive testing, and real-time metrics dashboard.",
+                 "url":  "https://triggerkings.dev",
+                 "logo":  {
+                              "path":  "/daedalus.png",
+                              "alt":  "TriggerKings Logo",
+                              "width":  40,
+                              "height":  40
+                          },
+                 "brand":  {
+                               "displayName":  "TriggerKings",
+                               "tagline":  "Enterprise Component Excellence",
+                               "theme":  {
+                                             "primaryColor":  "#18181b",
+                                             "accentColor":  "#3b82f6"
+                                         }
+                           }
+             },
+    "project":  {
+                    "version":  "1.8.0",
+                    "grade":  "A+",
+                    "lastUpdated":  "2025-08-19",
+                    "status":  "Production Ready",
+                    "repository":  {
+                                       "name":  "triggerkings",
+                                       "owner":  "LesTasker2023",
+                                       "url":  "https://github.com/LesTasker2023/triggerkings"
+                                   }
+                },
+    "metrics":  {
+                    "totalComponents":  31,
+                    "storiesCoverage":  90.3,
+                    "testsCoverage":  90.3,
+                    "exportCoverage":  100,
+                    "qualityScore":  95.8
+                },
+    "features":  {
+                     "automation":  {
+                                        "enabled":  true,
+                                        "version":  "1.4.0",
+                                        "features":  [
+                                                         "Auto-staging on commit",
+                                                         "Automated versioning",
+                                                         "Real-time dashboard sync",
+                                                         "Quality gates",
+                                                         "Rollback protection",
+                                                         "TypeScript validation"
+                                                     ]
+                                    },
+                     "documentation":  {
+                                           "comprehensive":  true,
+                                           "tutorials":  8,
+                                           "quickReference":  true,
+                                           "apiDocs":  true
+                                       },
+                     "testing":  {
+                                     "framework":  "Vitest",
+                                     "storybook":  true,
+                                     "coverage":  true,
+                                     "e2e":  false
+                                 }
+                 },
+    "navigation":  {
+                       "mainMenu":  [
+                                        {
+                                            "label":  "Components",
+                                            "items":  [
+                                                          {
+                                                              "title":  "Showcase",
+                                                              "description":  "All UI components",
+                                                              "href":  "/component-showcase"
+                                                          },
+                                                          {
+                                                              "title":  "Quality Dashboard",
+                                                              "description":  "Test coverage, metrics",
+                                                              "href":  "/dashboard"
+                                                          }
+                                                      ]
+                                        },
+                                        {
+                                            "label":  "Tutorials",
+                                            "items":  [
+                                                          {
+                                                              "title":  "Getting Started",
+                                                              "description":  "Setup and basics",
+                                                              "href":  "/tutorials"
+                                                          },
+                                                          {
+                                                              "title":  "Component Development",
+                                                              "description":  "Create new components",
+                                                              "href":  "/tutorials/03-cva-patterns"
+                                                          },
+                                                          {
+                                                              "title":  "TypeScript Patterns",
+                                                              "description":  "Advanced TypeScript",
+                                                              "href":  "/tutorials/04-typescript-patterns"
+                                                          },
+                                                          {
+                                                              "title":  "Testing Strategy",
+                                                              "description":  "Testing best practices",
+                                                              "href":  "/tutorials/06-testing-strategy"
+                                                          }
+                                                      ]
+                                        }
+                                    ],
+                       "quickLinks":  [
+                                          {
+                                              "title":  "Documentation",
+                                              "href":  "/docs"
+                                          },
+                                          {
+                                              "title":  "Storybook",
+                                              "href":  "/storybook"
+                                          },
+                                          {
+                                              "title":  "GitHub",
+                                              "href":  "https://github.com/LesTasker2023/triggerkings"
+                                          }
+                                      ]
+                   },
+    "seo":  {
+                "keywords":  [
+                                 "Next.js",
+                                 "TypeScript",
+                                 "Component Library",
+                                 "Enterprise",
+                                 "Automation",
+                                 "Quality Assurance",
+                                 "Testing",
+                                 "Storybook"
+                             ],
+                "author":  "TriggerKings Team",
+                "robots":  "index, follow",
+                "ogImage":  "/og-image.png"
+            },
+    "build":  {
+                  "timestamp":  "2025-08-19T21:41:06Z",
+                  "environment":  "production",
+                  "deploymentId":  "auto-1.8.0-20250819214106"
+              }
+}
