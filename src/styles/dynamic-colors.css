@@ -1,0 +1,66 @@
+/* Dynamic Color System - High Contrast Base with Custom Primary Override */
+:root {
+  /* Dynamic primary variables for color picker */
+  --dynamic-primary: #18181b;
+  --dynamic-primary-foreground: #fafafa;
+  --dynamic-primary-muted: #666666;
+  --dynamic-primary-hover: #000000;
+  --dynamic-primary-light: #333333;
+}
+
+/* Dark mode adjustments */
+.dark {
+  --dynamic-primary-muted: #cccccc;
+}
+
+/* Override primary colors with dynamic ones when color picker is used */
+/* High specificity to override base theme */
+.bg-primary,
+.dark .bg-primary,
+button[class*='bg-primary'],
+.dark button[class*='bg-primary'] {
+  background-color: var(--dynamic-primary) !important;
+  color: var(--dynamic-primary-foreground) !important;
+}
+
+.text-primary,
+.dark .text-primary {
+  color: var(--dynamic-primary) !important;
+}
+
+.border-primary,
+.dark .border-primary {
+  border-color: var(--dynamic-primary) !important;
+}
+
+/* Button hover states */
+button[class*='bg-primary']:hover,
+.dark button[class*='bg-primary']:hover {
+  background-color: var(--dynamic-primary-hover) !important;
+}
+
+/* Primary with opacity */
+.bg-primary\/10,
+.dark .bg-primary\/10 {
+  background-color: color-mix(in srgb, var(--dynamic-primary) 10%, transparent) !important;
+  color: var(--dynamic-primary) !important;
+}
+
+.bg-primary\/20,
+.dark .bg-primary\/20 {
+  background-color: color-mix(in srgb, var(--dynamic-primary) 20%, transparent) !important;
+  color: var(--dynamic-primary) !important;
+}
+
+/* Outline buttons */
+[data-variant='outline'],
+.dark [data-variant='outline'] {
+  border-color: var(--dynamic-primary) !important;
+  color: var(--dynamic-primary) !important;
+}
+
+[data-variant='outline']:hover,
+.dark [data-variant='outline']:hover {
+  background-color: var(--dynamic-primary) !important;
+  color: var(--dynamic-primary-foreground) !important;
+}

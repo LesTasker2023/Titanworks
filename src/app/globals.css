@@ -1,85 +1,112 @@
-/* 🎨 Daedalus Design System */
-@import '../styles/design-system.css';
-
+/* 🎨 Daedalus Clean Theme System */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root {
-    --background: 330 0% 95.1%;
-    --foreground: 30 0% 18.400000000000006%;
-    --card: 334.3 0% 88.8%;
-    --card-foreground: 30 0% 18.400000000000006%;
-    --popover: 342.9 0% 69.8%;
-    --popover-foreground: 338.2 0% 10%;
-    --primary: 13.8 62.900000000000006% 43.3%;
-    --primary-foreground: 338.2 0% 10%;
-    --secondary: 342.9 0% 69.8%;
-    --secondary-foreground: 338.2 0% 10%;
-    --muted: 330 0% 85.1%;
-    --muted-foreground: 334.3 0% 57.8%;
-    --accent: 330 0% 95.1%;
-    --accent-foreground: 30 0% 18.400000000000006%;
-    --destructive: 357.2 100% 29%;
-    --destructive-foreground: 0 0% 90%;
-    --border: 342.9 0% 69.8%;
-    --input: 342.9 0% 69.8%;
-    --ring: 13.8 62.900000000000006% 43.3%;
+    /* Light Theme - Clean & High Contrast */
+    --background: 0 0% 100%;
+    --foreground: 0 0% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 3.9%;
+    --primary: 0 0% 9%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 0 0% 96.1%;
+    --secondary-foreground: 0 0% 9%;
+    --muted: 0 0% 96.1%;
+    --muted-foreground: 0 0% 45.1%;
+    --accent: 0 0% 96.1%;
+    --accent-foreground: 0 0% 9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 89.8%;
+    --input: 0 0% 89.8%;
+    --ring: 0 0% 3.9%;
     --radius: 0.5rem;
-    --chart-1: 13.8 62.900000000000006% 80%;
-    --chart-2: 342.9 0% 60.2%;
-    --chart-3: 330 0% 44.9%;
-    --chart-4: 330 0% 54.9%;
-    --chart-5: 13.8 62.900000000000006% 80%;
-    --sidebar-background: 0 0% 92%;
-    --sidebar-foreground: 0 0% 38%;
-    --sidebar-primary: 14 63% 50%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 0 0% 75%;
-    --sidebar-accent-foreground: 30 0% 18.400000000000006%;
-    --sidebar-border: 0 0% 67%;
-    --sidebar-ring: 14 63% 40%;
   }
 
   .dark {
-    --background: 330 0% 14.9%;
-    --foreground: 30 2.1% 81.6%;
-    --card: 334.3 0% 12.2%;
-    --card-foreground: 30 2.1% 81.6%;
-    --popover: 342.9 0% 30.2%;
-    --popover-foreground: 338.2 0% 100%;
-    --primary: 13.8 72.9% 56.7%;
-    --primary-foreground: 338.2 0% 100%;
-    --secondary: 342.9 0% 30.2%;
-    --secondary-foreground: 338.2 0% 100%;
-    --muted: 330 0% 14.9%;
-    --muted-foreground: 334.3 0% 42.2%;
-    --accent: 330 0% 14.9%;
-    --accent-foreground: 30 2.1% 81.6%;
-    --destructive: 357.2 125.9% 71%;
-    --destructive-foreground: 0 0% 0%;
-    --border: 342.9 0% 30.2%;
-    --input: 342.9 0% 30.2%;
-    --ring: 13.8 72.9% 56.7%;
-    --radius: 0.5rem;
-    --chart-1: 13.8 72.9% 56.7%;
-    --chart-2: 342.9 0% 30.2%;
-    --chart-3: 330 0% 14.9%;
-    --chart-4: 330 0% 24.9%;
-    --chart-5: 13.8 72.9% 66.7%;
-    --sidebar-background: 0 0% 7%;
-    --sidebar-foreground: 30 2% 56%;
-    --sidebar-primary: 14 73% 49%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 0 0% 25%;
-    --sidebar-accent-foreground: 30 2.1% 81.6%;
-    --sidebar-border: 0 0% 22%;
-    --sidebar-ring: 14 73% 49%;
-    /* Daedalus custom dark variables not in supplied theme */
-    --issue-bg: 0 62% 18%;
-    --issue-text: 0 100% 80%;
+    /* Dark Theme - Clean & High Contrast */
+    --background: 0 0% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 9%;
+    --secondary: 0 0% 14.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+    --accent: 0 0% 14.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 0 0% 83.1%;
   }
+}
+
+/* Brand Color Override System */
+:root {
+  --brand-primary: #18181b;
+  --brand-primary-foreground: #fafafa;
+}
+
+.dark {
+  --brand-primary: #18181b;
+  --brand-primary-foreground: #fafafa;
+}
+
+/* Apply brand colors to primary elements */
+.bg-primary,
+.dark .bg-primary {
+  background-color: var(--brand-primary) !important;
+  color: var(--brand-primary-foreground) !important;
+}
+
+.text-primary,
+.dark .text-primary {
+  color: var(--brand-primary) !important;
+}
+
+.border-primary,
+.dark .border-primary {
+  border-color: var(--brand-primary) !important;
+}
+
+button[class*='bg-primary'],
+.dark button[class*='bg-primary'] {
+  background-color: var(--brand-primary) !important;
+  color: var(--brand-primary-foreground) !important;
+}
+
+button[class*='bg-primary']:hover,
+.dark button[class*='bg-primary']:hover {
+  background-color: color-mix(in srgb, var(--brand-primary) 90%, black) !important;
+}
+
+.bg-primary\/10,
+.dark .bg-primary\/10 {
+  background-color: color-mix(in srgb, var(--brand-primary) 10%, transparent) !important;
+  color: var(--brand-primary) !important;
+}
+
+[data-variant='outline'],
+.dark [data-variant='outline'] {
+  border-color: var(--brand-primary) !important;
+  color: var(--brand-primary) !important;
+}
+
+[data-variant='outline']:hover,
+.dark [data-variant='outline']:hover {
+  background-color: var(--brand-primary) !important;
+  color: var(--brand-primary-foreground) !important;
 }
 
 @layer base {

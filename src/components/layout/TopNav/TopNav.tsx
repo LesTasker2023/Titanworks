@@ -1,5 +1,6 @@
 import ThemeToggle from '@/components/layout/ThemeToggle';
 import Badge from '@/components/ui/Badge';
+import ColorPicker from '@/components/ui/ColorPicker';
 import NavigationMenu, {
   NavigationMenuContent,
   NavigationMenuItem,
@@ -148,6 +149,7 @@ export default function TopNav() {
               ))}
             </NavigationMenuList>
           </NavigationMenu>
+          <ColorPicker defaultColor="#18181b" />
           <ThemeToggle />
         </div>
       </div>

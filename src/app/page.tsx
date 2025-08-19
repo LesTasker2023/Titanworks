@@ -28,8 +28,12 @@ export default function Home() {
             {content.hero.headline}
           </h1>
 
-          <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
+          <p className="text-xl text-muted-foreground mb-6 max-w-2xl mx-auto">
             {content.hero.description}
+          </p>
+
+          <p className="text-sm text-muted-foreground mb-8 flex items-center justify-center gap-2">
+            <span>💡 Try the brand color picker in the navigation bar</span>
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
