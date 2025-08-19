@@ -8,7 +8,7 @@ when all quality checks pass. This maintains enterprise-grade automation standar
 
 .NOTES
 Version: 1.0.0
-Author: TriggerKings Enterprise Team  
+Author: Daedalus Enterprise Team  
 Last Modified: August 2025
 Execution Policy: Bypass required for automated execution
 #>

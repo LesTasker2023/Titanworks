@@ -1,6 +1,6 @@
 {
   "name": "daedalus",
-  "version": "1.8.0",
+  "version": "1.10.0",
   "private": true,
   "type": "module",
   "scripts": {
@@ -52,7 +52,9 @@
     "fix:containers": "node scripts/main-container-fix.js",
     "fix:balance": "node scripts/final-balance-fix.js",
     "fix:tags": "node scripts/fix-closing-tags.js",
-    "config:update": "powershell -ExecutionPolicy Bypass -File scripts/pre-commit-automation.ps1 -DryRun"
+    "config:update": "powershell -ExecutionPolicy Bypass -File scripts/pre-commit-automation.ps1 -DryRun",
+    "config:view": "powershell -ExecutionPolicy Bypass -File scripts/config-viewer.ps1",
+    "config:validate": "powershell -ExecutionPolicy Bypass -File scripts/config-viewer.ps1 -Validate"
   },
   "dependencies": {
     "@radix-ui/react-accordion": "^1.2.12",

@@ -8,56 +8,57 @@ import Card, {
   CardHeader,
   CardTitle,
 } from '@/components/ui/Card';
-import { BookOpen, LayoutDashboard, Rocket, Star, Users } from 'lucide-react';
+import { getContent, getFooterInfo } from '@/lib/siteConfig';
+import { BookOpen, LayoutDashboard, Rocket, Shield, Star, Users } from 'lucide-react';
 import Link from 'next/link';
 
+const iconMap = {
+  Rocket,
+  BookOpen,
+  Shield,
+  LayoutDashboard,
+  Star,
+  Users,
+};
+
 export default function Home() {
+  const content = getContent();
+  const footer = getFooterInfo();
+
   return (
     <main className="relative min-h-screen flex flex-col items-center justify-center px-4 bg-gradient-to-br from-background to-muted overflow-hidden mt-10 md:mt-16">
       <span className="inline-block mb-4 px-4 py-2 rounded-full bg-accent text-accent-foreground font-semibold text-base tracking-wide shadow-lg border border-border/40 backdrop-blur-sm animate-fade-in">
-        The Next Evolution in UI Platforms
+        {content.hero.tagline}
       </span>
       <h1 className="text-7xl md:text-8xl font-extrabold tracking-tight mb-10 text-foreground drop-shadow-xl px-2 sm:px-0">
-        Build Without Limits
+        {content.hero.headline}
       </h1>
 
       {/* VALUE PROPS */}
       <section className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 mb-20 w-full ">
-        <Card className="bg-gradient-to-br ">
-          <CardHeader className="flex flex-row items-center gap-3 pb-2">
-            <Rocket className="w-6 h-6 text-primary" />
-            <CardTitle className="text-lg">Launch Fast</CardTitle>
-          </CardHeader>
-          <CardContent className="pt-0 pb-4">
-            <CardDescription>
-              Go from idea to production in hours, not weeks. Daedalus is engineered for speed and
-              iteration.
-            </CardDescription>
-          </CardContent>
-        </Card>
-        <Card className="bg-gradient-to-br from-accent/10 to-background border-accent/30">
-          <CardHeader className="flex flex-row items-center gap-3 pb-2">
-            <BookOpen className="w-6 h-6 text-accent" />
-            <CardTitle className="text-lg">Learn & Grow</CardTitle>
-          </CardHeader>
-          <CardContent className="pt-0 pb-4">
-            <CardDescription>
-              Tutorials, docs, and a component showcase—everything you need to master modern UI.
-            </CardDescription>
-          </CardContent>
-        </Card>
-        <Card className="bg-gradient-to-br from-secondary/10 to-background border-secondary/30">
-          <CardHeader className="flex flex-row items-center gap-3 pb-2">
-            <LayoutDashboard className="w-6 h-6 text-secondary" />
-            <CardTitle className="text-lg">Enterprise-Grade</CardTitle>
-          </CardHeader>
-          <CardContent className="pt-0 pb-4">
-            <CardDescription>
-              Built for scale, accessibility, and reliability. Daedalus is trusted by teams who
-              demand the best.
-            </CardDescription>
-          </CardContent>
-        </Card>
+        {content.valuePropositions.map((prop, index) => {
+          const IconComponent = iconMap[prop.icon as keyof typeof iconMap];
+          const gradientClass =
+            index === 0
+              ? 'bg-gradient-to-br'
+              : index === 1
+                ? 'bg-gradient-to-br from-accent/10 to-background border-accent/30'
+                : 'bg-gradient-to-br from-secondary/10 to-background border-secondary/30';
+          const iconColor =
+            index === 0 ? 'text-primary' : index === 1 ? 'text-accent' : 'text-secondary';
+
+          return (
+            <Card key={prop.title} className={gradientClass}>
+              <CardHeader className="flex flex-row items-center gap-3 pb-2">
+                {IconComponent && <IconComponent className={`w-6 h-6 ${iconColor}`} />}
+                <CardTitle className="text-lg">{prop.title}</CardTitle>
+              </CardHeader>
+              <CardContent className="pt-0 pb-4">
+                <CardDescription>{prop.description}</CardDescription>
+              </CardContent>
+            </Card>
+          );
+        })}
       </section>
 
       {/* QUICK LINKS */}
@@ -117,21 +118,17 @@ export default function Home() {
             <CardTitle className="text-lg">Built for Visionaries</CardTitle>
           </CardHeader>
           <CardContent className="pt-0 pb-4">
-            <CardDescription>
-              &quot;Daedalus is the platform I wish existed 10 years ago. It lets you move at the
-              speed of thought, with zero compromise on quality or creativity. If you want to build
-              the future, start here.&quot;
-            </CardDescription>
+            <CardDescription>&quot;{content.testimonial.quote}&quot;</CardDescription>
           </CardContent>
           <CardFooter className="justify-end pt-0">
-            <span className="text-sm text-muted-foreground">— The Daedalus Team</span>
+            <span className="text-sm text-muted-foreground">— {content.testimonial.author}</span>
           </CardFooter>
         </Card>
       </section>
 
       {/* Footer */}
       <footer className="relative z-10 mt-24 text-muted-foreground text-sm opacity-80">
-        &copy; {new Date().getFullYear()} Daedalus. All rights reserved.
+        {footer.copyright}
       </footer>
     </main>
   );

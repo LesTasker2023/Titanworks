@@ -40,6 +40,69 @@ export interface SiteConfig {
     exportCoverage: number;
     qualityScore: number;
   };
+  content: {
+    hero: {
+      headline: string;
+      tagline: string;
+      description: string;
+    };
+    valuePropositions: Array<{
+      icon: string;
+      title: string;
+      description: string;
+    }>;
+    testimonial: {
+      quote: string;
+      author: string;
+      role: string;
+    };
+    copyright: string;
+    footer: {
+      companyName: string;
+      year: string;
+    };
+  };
+  contact: {
+    supportEmail: string;
+    generalEmail: string;
+    salesEmail: string;
+    phone: string;
+    address: {
+      street: string;
+      city: string;
+      state: string;
+      zip: string;
+      country: string;
+    };
+    socialMedia: {
+      twitter: string;
+      linkedin: string;
+      github: string;
+    };
+  };
+  branding: {
+    companyName: string;
+    legalName: string;
+    foundedYear: number;
+    industry: string;
+    mission: string;
+    vision: string;
+    values: string[];
+  };
+  technical: {
+    framework: string;
+    language: string;
+    testingFramework: string;
+    stylingSystem: string;
+    componentLibrary: string;
+    documentation: string;
+    deployment: string;
+    repository: {
+      platform: string;
+      visibility: string;
+      defaultBranch: string;
+    };
+  };
   features: {
     automation: {
       enabled: boolean;
@@ -120,5 +183,19 @@ export const getBrandInfo = () => ({
 export const getMetrics = () => siteConfig.metrics;
 
 export const getNavigation = () => siteConfig.navigation;
+
+export const getContent = () => siteConfig.content;
+
+export const getContact = () => siteConfig.contact;
+
+export const getBranding = () => siteConfig.branding;
+
+export const getTechnical = () => siteConfig.technical;
+
+export const getFooterInfo = () => ({
+  copyright: `© ${siteConfig.content.footer.year === 'auto' ? new Date().getFullYear() : siteConfig.content.footer.year} ${siteConfig.content.footer.companyName}. ${siteConfig.content.copyright}`,
+  companyName: siteConfig.branding.companyName,
+  socialMedia: siteConfig.contact.socialMedia,
+});
 
 export default siteConfig;

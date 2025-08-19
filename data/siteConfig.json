@@ -1,17 +1,17 @@
 {
     "site":  {
-                 "name":  "TriggerKings",
-                 "title":  "TriggerKings - Enterprise Component System",
+                 "name":  "Daedalus",
+                 "title":  "Daedalus - Enterprise Component System",
                  "description":  "Enterprise-grade Next.js component library with automated quality assurance, comprehensive testing, and real-time metrics dashboard.",
-                 "url":  "https://triggerkings.dev",
+                 "url":  "https://Daedalus.dev",
                  "logo":  {
                               "path":  "/daedalus.png",
-                              "alt":  "TriggerKings Logo",
+                              "alt":  "Daedalus Logo",
                               "width":  40,
                               "height":  40
                           },
                  "brand":  {
-                               "displayName":  "TriggerKings",
+                               "displayName":  "Daedalus",
                                "tagline":  "Enterprise Component Excellence",
                                "theme":  {
                                              "primaryColor":  "#18181b",
@@ -20,14 +20,14 @@
                            }
              },
     "project":  {
-                    "version":  "1.8.0",
+                    "version":  "1.10.0",
                     "grade":  "A+",
                     "lastUpdated":  "2025-08-19",
                     "status":  "Production Ready",
                     "repository":  {
-                                       "name":  "triggerkings",
+                                       "name":  "Daedalus",
                                        "owner":  "LesTasker2023",
-                                       "url":  "https://github.com/LesTasker2023/triggerkings"
+                                       "url":  "https://github.com/LesTasker2023/Daedalus"
                                    }
                 },
     "metrics":  {
@@ -37,6 +37,86 @@
                     "exportCoverage":  100,
                     "qualityScore":  95.8
                 },
+    "content":  {
+                    "hero":  {
+                                 "headline":  "Build Without Limits",
+                                 "tagline":  "The Next Evolution in UI Platforms",
+                                 "description":  "Go from idea to production in hours, not weeks. Built for speed and iteration."
+                             },
+                    "valuePropositions":  [
+                                              {
+                                                  "icon":  "Rocket",
+                                                  "title":  "Launch Fast",
+                                                  "description":  "Go from idea to production in hours, not weeks. Engineered for speed and iteration."
+                                              },
+                                              {
+                                                  "icon":  "BookOpen",
+                                                  "title":  "Learn \u0026 Grow",
+                                                  "description":  "Tutorials, docs, and a component showcase—everything you need to master modern UI."
+                                              },
+                                              {
+                                                  "icon":  "LayoutDashboard",
+                                                  "title":  "Enterprise-Grade",
+                                                  "description":  "Built for scale, accessibility, and reliability. Trusted by teams who demand the best."
+                                              }
+                                          ],
+                    "testimonial":  {
+                                        "quote":  "This is the platform I wish existed 10 years ago. It lets you move at the speed of thought, with zero compromise on quality or creativity. If you want to build the future, start here.",
+                                        "author":  "The Daedalus Team",
+                                        "role":  "Enterprise Engineers"
+                                    },
+                    "copyright":  "All rights reserved.",
+                    "footer":  {
+                                   "companyName":  "Daedalus",
+                                   "year":  "auto"
+                               }
+                },
+    "contact":  {
+                    "supportEmail":  "support@daedalus.dev",
+                    "generalEmail":  "hello@daedalus.dev",
+                    "salesEmail":  "sales@daedalus.dev",
+                    "phone":  "+1 (555) 123-4567",
+                    "address":  {
+                                    "street":  "123 Enterprise Way",
+                                    "city":  "San Francisco",
+                                    "state":  "CA",
+                                    "zip":  "94105",
+                                    "country":  "USA"
+                                },
+                    "socialMedia":  {
+                                        "twitter":  "https://twitter.com/daedalus",
+                                        "linkedin":  "https://linkedin.com/company/daedalus",
+                                        "github":  "https://github.com/LesTasker2023/Daedalus"
+                                    }
+                },
+    "branding":  {
+                     "companyName":  "Daedalus",
+                     "legalName":  "Daedalus Enterprise Solutions LLC",
+                     "foundedYear":  2025,
+                     "industry":  "Software Development",
+                     "mission":  "Empowering developers to build exceptional digital experiences",
+                     "vision":  "The future of component-driven development",
+                     "values":  [
+                                    "Quality First",
+                                    "Developer Experience",
+                                    "Enterprise Reliability",
+                                    "Open Innovation"
+                                ]
+                 },
+    "technical":  {
+                      "framework":  "Next.js",
+                      "language":  "TypeScript",
+                      "testingFramework":  "Vitest",
+                      "stylingSystem":  "CSS Modules + Design Tokens",
+                      "componentLibrary":  "Radix UI",
+                      "documentation":  "Storybook",
+                      "deployment":  "Vercel",
+                      "repository":  {
+                                         "platform":  "GitHub",
+                                         "visibility":  "Public",
+                                         "defaultBranch":  "main"
+                                     }
+                  },
     "features":  {
                      "automation":  {
                                         "enabled":  true,
@@ -117,7 +197,7 @@
                                           },
                                           {
                                               "title":  "GitHub",
-                                              "href":  "https://github.com/LesTasker2023/triggerkings"
+                                              "href":  "https://github.com/LesTasker2023/Daedalus"
                                           }
                                       ]
                    },
@@ -132,13 +212,13 @@
                                  "Testing",
                                  "Storybook"
                              ],
-                "author":  "TriggerKings Team",
+                "author":  "Daedalus Team",
                 "robots":  "index, follow",
                 "ogImage":  "/og-image.png"
             },
     "build":  {
-                  "timestamp":  "2025-08-19T21:41:06Z",
+                  "timestamp":  "2025-08-19T21:53:42Z",
                   "environment":  "production",
-                  "deploymentId":  "auto-1.8.0-20250819214106"
+                  "deploymentId":  "auto-1.10.0-20250819215342"
               }
 }
