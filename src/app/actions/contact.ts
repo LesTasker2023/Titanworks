@@ -29,7 +29,10 @@ function validateContactForm(data: {
   return errors;
 }
 
-export async function submitContactForm(formData: FormData) {
+export async function submitContactForm(
+  prevState: { success: boolean; errors: string[]; message: string },
+  formData: FormData
+): Promise<{ success: boolean; errors: string[]; message: string }> {
   const rawData = {
     firstName: formData.get('firstName') as string,
     lastName: formData.get('lastName') as string,
@@ -42,7 +45,7 @@ export async function submitContactForm(formData: FormData) {
   const errors = validateContactForm(rawData);
 
   if (errors.length > 0) {
-    return { success: false, errors };
+    return { success: false, errors, message: '' };
   }
 
   // Simulate processing
@@ -53,5 +56,5 @@ export async function submitContactForm(formData: FormData) {
 
   revalidatePath('/component-showcase');
 
-  return { success: true, message: 'Message sent successfully!' };
+  return { success: true, message: 'Message sent successfully!', errors: [] };
 }

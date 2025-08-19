@@ -13,16 +13,17 @@ import Select, {
 } from '@/components/ui/Select';
 import Textarea from '@/components/ui/Textarea';
 import { toast } from '@/components/ui/Toast';
-import { useActionState, useEffect } from 'react';
+import { useFormState } from 'react-dom';
+import { useEffect } from 'react';
 
 const initialState = {
   success: false,
   message: '',
-  errors: [] as string[],
+  errors: [],
 };
 
 export function EnhancedContactForm() {
-  const [state, formAction, isPending] = useActionState(submitContactForm, initialState);
+  const [state, formAction] = useFormState(submitContactForm, initialState);
 
   useEffect(() => {
     if (state.success) {
@@ -31,7 +32,7 @@ export function EnhancedContactForm() {
         description: state.message,
         variant: 'default',
       });
-    } else if (state.errors?.length > 0) {
+    } else if (state.errors.length > 0) {
       toast({
         title: 'Validation Error',
         description: state.errors.join(', '),
@@ -45,29 +46,22 @@ export function EnhancedContactForm() {
       <div className="grid grid-cols-2 gap-4">
         <div>
           <Label htmlFor="firstName">First Name</Label>
-          <Input id="firstName" name="firstName" placeholder="John" required disabled={isPending} />
+          <Input id="firstName" name="firstName" placeholder="John" required />
         </div>
         <div>
           <Label htmlFor="lastName">Last Name</Label>
-          <Input id="lastName" name="lastName" placeholder="Doe" required disabled={isPending} />
+          <Input id="lastName" name="lastName" placeholder="Doe" required />
         </div>
       </div>
 
       <div>
         <Label htmlFor="email">Email</Label>
-        <Input
-          id="email"
-          name="email"
-          type="email"
-          placeholder="john@example.com"
-          required
-          disabled={isPending}
-        />
+        <Input id="email" name="email" type="email" placeholder="john@example.com" required />
       </div>
 
       <div>
         <Label htmlFor="subject">Subject</Label>
-        <Select name="subject" required disabled={isPending}>
+        <Select name="subject" required>
           <SelectTrigger>
             <SelectValue placeholder="Select a subject" />
           </SelectTrigger>
@@ -87,20 +81,19 @@ export function EnhancedContactForm() {
           name="message"
           placeholder="Your message here..."
           required
-          disabled={isPending}
           minLength={10}
         />
       </div>
 
       <div className="flex items-center space-x-2">
-        <Checkbox id="newsletter" name="newsletter" disabled={isPending} />
+        <Checkbox id="newsletter" name="newsletter" />
         <Label htmlFor="newsletter" className="text-sm">
           Subscribe to newsletter
         </Label>
       </div>
 
-      <Button type="submit" className="w-full" loading={isPending} disabled={isPending}>
-        {isPending ? 'Sending...' : 'Send Message'}
+      <Button type="submit" className="w-full">
+        Send Message
       </Button>
     </form>
   );
