@@ -177,11 +177,21 @@ function addComponentToShowcase(componentName) {
   }
 
   // Add import (find the import section and add our component)
-  const importSection = content.match(/(import.*?from '@\/components\/ui\/.*?';?\n)+/s);
-  if (importSection) {
-    const lastImport = importSection[0];
-    const newImport = `import ${componentName} from '@/components/ui/${componentName}';\n`;
-    content = content.replace(lastImport, lastImport + newImport);
+  const importPattern = /import.*?from '@\/components\/ui\/.*?';?\n/g;
+  const imports = content.match(importPattern);
+
+  if (imports && imports.length > 0) {
+    const lastImport = imports[imports.length - 1];
+    const lastImportIndex = content.lastIndexOf(lastImport);
+
+    // Check if we need destructured import or default import
+    const newImport = `import { ${componentName} } from '@/components/ui/${componentName}';\n`;
+
+    // Insert the new import after the last UI component import
+    content =
+      content.slice(0, lastImportIndex + lastImport.length) +
+      newImport +
+      content.slice(lastImportIndex + lastImport.length);
   }
 
   // Add component section to showcase (find a good insertion point)
@@ -199,8 +209,9 @@ function addComponentToShowcase(componentName) {
 }
 
 function generateShowcaseSection(componentName) {
-  return `
-
+  // Create actual component examples instead of placeholders
+  const componentExamples = {
+    ScrollArea: `
               {/* ${componentName} Component */}
               <Container
                 size="none"
@@ -209,21 +220,122 @@ function generateShowcaseSection(componentName) {
               >
                 <h3 className="text-xl font-semibold text-foreground text-center">${componentName}</h3>
                 <div className="space-y-4">
-                  <div className="text-center">
-                    <p className="text-muted-foreground">
-                      ${componentName} component is now available! 
-                      Check the Storybook documentation for detailed examples.
-                    </p>
-                  </div>
-                  <div className="flex justify-center">
-                    <div className="p-4 border rounded-lg bg-muted/50">
-                      <p className="text-sm text-muted-foreground">
-                        Interactive ${componentName} examples coming soon
-                      </p>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    {/* Basic ScrollArea */}
+                    <div className="space-y-2">
+                      <h4 className="font-medium">Basic ScrollArea</h4>
+                      <${componentName} className="h-48 w-full border rounded-md p-4">
+                        <div className="space-y-2">
+                          {Array.from({ length: 50 }, (_, i) => (
+                            <div key={i} className="p-2 border rounded text-sm">
+                              Item {i + 1} - This is scrollable content
+                            </div>
+                          ))}
+                        </div>
+                      </${componentName}>
+                    </div>
+                    {/* Usage Example */}
+                    <div className="space-y-2">
+                      <h4 className="font-medium">Usage Example</h4>
+                      <div className="bg-muted p-4 rounded-lg text-sm font-mono">
+                        <pre>{\`<${componentName} className="h-48 w-full">
+  {/* Your content here */}
+</${componentName}>\`}</pre>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </Container>`;
+              </Container>`,
+
+    Sheet: `
+              {/* ${componentName} Component */}
+              <Container
+                size="none"
+                padding="lg"
+                className="border border-border rounded-lg space-y-6"
+              >
+                <h3 className="text-xl font-semibold text-foreground text-center">${componentName}</h3>
+                <div className="space-y-4">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    {/* Basic Sheet Example */}
+                    <div className="space-y-2">
+                      <h4 className="font-medium">Basic ${componentName}</h4>
+                      <div className="p-4 border rounded-lg">
+                        <${componentName}>
+                          <SheetTrigger asChild>
+                            <Button variant="outline">Open ${componentName}</Button>
+                          </SheetTrigger>
+                          <SheetContent>
+                            <SheetHeader>
+                              <SheetTitle>${componentName} Title</SheetTitle>
+                              <SheetDescription>
+                                This is a ${componentName.toLowerCase()} component that slides out from the side.
+                              </SheetDescription>
+                            </SheetHeader>
+                            <div className="py-4">
+                              <p className="text-muted-foreground">
+                                Add your content here.
+                              </p>
+                            </div>
+                          </SheetContent>
+                        </${componentName}>
+                      </div>
+                    </div>
+                    {/* Usage Example */}
+                    <div className="space-y-2">
+                      <h4 className="font-medium">Usage Example</h4>
+                      <div className="bg-muted p-4 rounded-lg text-sm font-mono">
+                        <pre>{\`<${componentName}>
+  <SheetTrigger asChild>
+    <Button>Open ${componentName}</Button>
+  </SheetTrigger>
+  <SheetContent>
+    <SheetHeader>
+      <SheetTitle>Title</SheetTitle>
+    </SheetHeader>
+  </SheetContent>
+</${componentName}>\`}</pre>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </Container>`,
+
+    // Generic template for other components
+    default: `
+              {/* ${componentName} Component */}
+              <Container
+                size="none"
+                padding="lg"
+                className="border border-border rounded-lg space-y-6"
+              >
+                <h3 className="text-xl font-semibold text-foreground text-center">${componentName}</h3>
+                <div className="space-y-4">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    {/* Basic Example */}
+                    <div className="space-y-2">
+                      <h4 className="font-medium">Basic ${componentName}</h4>
+                      <div className="p-4 border rounded-lg">
+                        <${componentName}>
+                          Example ${componentName} usage
+                        </${componentName}>
+                      </div>
+                    </div>
+                    {/* Usage Example */}
+                    <div className="space-y-2">
+                      <h4 className="font-medium">Usage Example</h4>
+                      <div className="bg-muted p-4 rounded-lg text-sm font-mono">
+                        <pre>{\`<${componentName}>
+  Your content here
+</${componentName}>\`}</pre>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </Container>`,
+  };
+
+  return componentExamples[componentName] || componentExamples.default;
 }
 
 function createComponent(name) {

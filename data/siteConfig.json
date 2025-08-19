@@ -20,7 +20,7 @@
                            }
              },
     "project":  {
-                    "version":  "1.19.0",
+                    "version":  "1.20.0",
                     "grade":  "A+",
                     "lastUpdated":  "2025-08-19",
                     "status":  "Production Ready",
@@ -31,9 +31,9 @@
                                    }
                 },
     "metrics":  {
-                    "totalComponents":  32,
-                    "storiesCoverage":  87.5,
-                    "testsCoverage":  87.5,
+                    "totalComponents":  33,
+                    "storiesCoverage":  90.9,
+                    "testsCoverage":  90.9,
                     "exportCoverage":  100,
                     "qualityScore":  95.8
                 },
@@ -48,7 +48,7 @@
                                                 },
                                  "secondaryCta":  {
                                                       "text":  "View Documentation",
-                                                      "href":  "/docs"
+                                                      "href":  "/tutorials"
                                                   }
                              },
                     "socialProof":  {
@@ -245,8 +245,8 @@
                 "ogImage":  "/og-image.png"
             },
     "build":  {
-                  "timestamp":  "2025-08-19T23:04:52Z",
+                  "timestamp":  "2025-08-19T23:45:01Z",
                   "environment":  "production",
-                  "deploymentId":  "auto-1.19.0-20250819230452"
+                  "deploymentId":  "auto-1.20.0-20250819234501"
               }
 }

@@ -47,6 +47,7 @@ import {
 import { Pagination } from '@/components/ui/Pagination';
 import Progress from '@/components/ui/Progress';
 import RadioGroup, { RadioGroupItem } from '@/components/ui/RadioGroup';
+import { ScrollArea } from '@/components/ui/ScrollArea';
 import {
   Select,
   SelectContent,
@@ -55,6 +56,14 @@ import {
   SelectValue,
 } from '@/components/ui/Select';
 import { Separator } from '@/components/ui/Separator';
+import {
+  Sheet,
+  SheetContent,
+  SheetDescription,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from '@/components/ui/Sheet';
 import { Skeleton } from '@/components/ui/Skeleton';
 import Slider from '@/components/ui/Slider';
 import { Switch } from '@/components/ui/Switch';
@@ -977,6 +986,119 @@ export default function ComponentLibraryShowcase() {
                       itemsPerPage={20}
                       totalItems={2000}
                     />
+                  </div>
+                </div>
+              </div>
+            </Container>
+
+            {/* ScrollArea Component */}
+            <Container
+              size="none"
+              padding="lg"
+              className="border border-border rounded-lg space-y-6"
+            >
+              <h3 className="text-xl font-semibold text-foreground text-center">ScrollArea</h3>
+              <div className="space-y-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  {/* Basic ScrollArea */}
+                  <div className="space-y-2">
+                    <h4 className="font-medium">Basic ScrollArea</h4>
+                    <ScrollArea className="h-48 w-full border rounded-md p-4">
+                      <div className="space-y-2">
+                        {Array.from({ length: 50 }, (_, i) => (
+                          <div key={i} className="p-2 border rounded text-sm">
+                            Item {i + 1} - This is scrollable content that demonstrates the
+                            ScrollArea component
+                          </div>
+                        ))}
+                      </div>
+                    </ScrollArea>
+                  </div>
+
+                  {/* Horizontal ScrollArea */}
+                  <div className="space-y-2">
+                    <h4 className="font-medium">Horizontal Scroll</h4>
+                    <ScrollArea className="w-full border rounded-md">
+                      <div className="flex gap-4 p-4" style={{ width: 'max-content' }}>
+                        {Array.from({ length: 20 }, (_, i) => (
+                          <div
+                            key={i}
+                            className="w-32 h-20 bg-muted border rounded-md flex items-center justify-center text-sm"
+                          >
+                            Card {i + 1}
+                          </div>
+                        ))}
+                      </div>
+                    </ScrollArea>
+                  </div>
+                </div>
+
+                {/* Code Example */}
+                <div className="space-y-2">
+                  <h4 className="font-medium">Usage Example</h4>
+                  <div className="bg-muted p-4 rounded-lg text-sm font-mono">
+                    <pre>{`<ScrollArea className="h-48 w-full border rounded-md p-4">
+  <div className="space-y-2">
+    {/* Your scrollable content here */}
+  </div>
+</ScrollArea>`}</pre>
+                  </div>
+                </div>
+              </div>
+            </Container>
+            {/* Sheet Component */}
+            <Container
+              size="none"
+              padding="lg"
+              className="border border-border rounded-lg space-y-6"
+            >
+              <h3 className="text-xl font-semibold text-foreground text-center">Sheet</h3>
+              <div className="space-y-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  {/* Basic Sheet Example */}
+                  <div className="space-y-2">
+                    <h4 className="font-medium">Basic Sheet</h4>
+                    <div className="p-4 border rounded-lg">
+                      <Sheet>
+                        <SheetTrigger asChild>
+                          <Button variant="outline">Open Sheet</Button>
+                        </SheetTrigger>
+                        <SheetContent>
+                          <SheetHeader>
+                            <SheetTitle>Sheet Title</SheetTitle>
+                            <SheetDescription>
+                              This is a sheet component that slides out from the side.
+                            </SheetDescription>
+                          </SheetHeader>
+                          <div className="py-4">
+                            <p className="text-muted-foreground">
+                              Add your content here. The sheet can contain forms, navigation, or any
+                              other content.
+                            </p>
+                          </div>
+                        </SheetContent>
+                      </Sheet>
+                    </div>
+                  </div>
+                  {/* Usage Example */}
+                  <div className="space-y-2">
+                    <h4 className="font-medium">Usage Example</h4>
+                    <div className="bg-muted p-4 rounded-lg text-sm font-mono">
+                      <pre>{`<Sheet>
+  <SheetTrigger asChild>
+    <Button>Open Sheet</Button>
+  </SheetTrigger>
+  <SheetContent>
+    <SheetHeader>
+      <SheetTitle>Title</SheetTitle>
+      <SheetDescription>
+        Description
+      </SheetDescription>
+    </SheetHeader>
+    {/* Your content */}
+  </SheetContent>
+</Sheet>`}</pre>
+                    </div>
                   </div>
                 </div>
               </div>

@@ -31,8 +31,10 @@ Contains:
 1. **User changes color** in color picker component
 2. **Updates `--brand-primary`** CSS variable for light mode
 3. **Dynamically creates CSS rules** for dark mode (`.dark` selector)
-4. **Entire site updates instantly** in both light and dark modes
-5. **Proper contrast calculated** automatically for text readability
+4. **Saves color to localStorage** for persistence across pages
+5. **Entire site updates instantly** in both light and dark modes
+6. **Proper contrast calculated** automatically for text readability
+7. **Persists across navigation** and browser sessions
 
 ## Theme Variables You Can Use:
 
@@ -59,6 +61,7 @@ Contains:
 
 ✅ **Single source of truth** - No more conflicts!
 ✅ **Real-time customization** - Color picker works perfectly
+✅ **Cross-page persistence** - Colors saved in localStorage
 ✅ **High contrast** - WCAG AA compliant
 ✅ **Fast builds** - 4 second builds, minimal CSS
 ✅ **Clean imports** - Only imports what's needed

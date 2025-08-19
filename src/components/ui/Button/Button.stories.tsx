@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/nextjs';
-import Button from './button';
+import Button from './index';
 
 /**
  * 📋 Button Component Stories

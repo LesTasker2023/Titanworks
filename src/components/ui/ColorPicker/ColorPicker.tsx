@@ -1,7 +1,7 @@
 'use client';
 
 import { Palette } from 'lucide-react';
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import Button from '../Button';
 
 interface ColorPickerProps {
@@ -34,17 +34,6 @@ export default function ColorPicker({
   const [selectedColor, setSelectedColor] = useState(defaultColor);
   const [customColor, setCustomColor] = useState(defaultColor);
 
-  // Initialize dark mode colors on mount
-  useEffect(() => {
-    // Apply default color to dark mode on initial load
-    const rgb = hexToRgb(defaultColor);
-    if (rgb) {
-      const luminance = getLuminance(rgb);
-      const foregroundColor = luminance > 0.5 ? '#000000' : '#ffffff';
-      updateDarkModeColors(defaultColor, foregroundColor);
-    }
-  }, [defaultColor]); // Include defaultColor in dependencies
-
   // Function to update dark mode CSS variables dynamically
   const updateDarkModeColors = (color: string, foregroundColor: string) => {
     // Check if a dynamic dark mode style tag already exists
@@ -65,12 +54,9 @@ export default function ColorPicker({
     `;
   };
 
-  const handleColorSelect = (color: string) => {
-    setSelectedColor(color);
-    setCustomColor(color);
-    onColorChange?.(color);
-
-    // Update brand colors for both light and dark modes
+  // Function to apply color to document and localStorage
+  const applyColorToDocument = useCallback((color: string) => {
+    // Update CSS variables for light mode
     document.documentElement.style.setProperty('--brand-primary', color);
 
     // Calculate proper contrast for foreground
@@ -80,9 +66,32 @@ export default function ColorPicker({
       const foregroundColor = luminance > 0.5 ? '#000000' : '#ffffff';
       document.documentElement.style.setProperty('--brand-primary-foreground', foregroundColor);
 
-      // Also update dark mode versions by creating dynamic CSS rules
+      // Update dark mode versions
       updateDarkModeColors(color, foregroundColor);
     }
+
+    // Save to localStorage for persistence
+    localStorage.setItem('brand-color', color);
+  }, []);
+
+  // Initialize colors from localStorage on mount
+  useEffect(() => {
+    // Load saved color from localStorage or use default
+    const savedColor = localStorage.getItem('brand-color') || defaultColor;
+    setSelectedColor(savedColor);
+    setCustomColor(savedColor);
+
+    // Apply the saved/default color to both light and dark modes
+    applyColorToDocument(savedColor);
+  }, [defaultColor, applyColorToDocument]); // Include dependencies
+
+  const handleColorSelect = (color: string) => {
+    setSelectedColor(color);
+    setCustomColor(color);
+    onColorChange?.(color);
+
+    // Apply color changes to document and save to localStorage
+    applyColorToDocument(color);
   };
 
   const handleCustomColorChange = (e: React.ChangeEvent<HTMLInputElement>) => {
