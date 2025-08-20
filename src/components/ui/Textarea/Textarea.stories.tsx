@@ -262,7 +262,7 @@ export const EnhancedFeatures: Story = {
           <Textarea
             label="Auto-save Active"
             loading
-            value="This content is being automatically saved..."
+            defaultValue="This content is being automatically saved..."
             helperText="Changes are saved automatically."
           />
         </div>
@@ -276,14 +276,14 @@ export const EnhancedFeatures: Story = {
             maxLength={100}
             showCount
             placeholder="Type up to 100 characters..."
-            value="This shows normal character counting."
+            defaultValue="This shows normal character counting."
           />
           <Textarea
             label="Warning State"
             maxLength={50}
             showCount
             placeholder="Almost at limit..."
-            value="This text is approaching the character limit and will show warning styling."
+            defaultValue="This text is approaching the character limit and will show warning styling."
           />
         </div>
       </div>
@@ -294,7 +294,7 @@ export const EnhancedFeatures: Story = {
           <Textarea
             label="Validation Error"
             error="This field contains invalid content"
-            value="Some invalid content here"
+            defaultValue="Some invalid content here"
             placeholder="Fix the content..."
           />
           <Textarea

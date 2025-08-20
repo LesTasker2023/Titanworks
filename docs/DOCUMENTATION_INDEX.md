@@ -1,4 +1,4 @@
-# 📚 TriggerKings Documentation Index
+# 📚 Daedalus Documentation Index
 
 ## 🚀 Quick Access
 
@@ -159,4 +159,4 @@
 
 ---
 
-**🎯 This documentation system provides complete coverage of the TriggerKings project, from basic setup to advanced enterprise patterns. Choose your path based on your role and needs!** 🚀
+**🎯 This documentation system provides complete coverage of the Daedalus project, from basic setup to advanced enterprise patterns. Choose your path based on your role and needs!** 🚀

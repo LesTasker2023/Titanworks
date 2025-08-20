@@ -48,10 +48,10 @@ interface NavigationProps {
 export default function Navigation({
   className,
   brand = {
-    name: 'TriggerKings',
+    name: 'Daedalus',
     logo: {
       src: '/daedalus.png',
-      alt: 'TriggerKings Logo',
+      alt: 'Daedalus Logo',
       width: 40,
       height: 40,
     },

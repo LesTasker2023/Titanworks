@@ -624,7 +624,7 @@ export default function InputDemo() {
 
             <div className="space-y-2">
               <Label>Disabled State</Label>
-              <Input placeholder="Disabled input" disabled value="Cannot edit" />
+              <Input placeholder="Disabled input" disabled defaultValue="Cannot edit" />
               <p className="text-xs text-muted-foreground">Field is not editable</p>
             </div>
 

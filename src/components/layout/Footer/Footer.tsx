@@ -40,7 +40,7 @@ interface FooterProps {
 
 export default function Footer({
   className,
-  brand = 'TriggerKings',
+  brand = 'Daedalus',
   description = 'A comprehensive React component library built with Next.js, TypeScript, and Tailwind CSS.',
   sections = [
     {
@@ -64,7 +64,7 @@ export default function Footer({
     {
       title: 'Community',
       links: [
-        { label: 'GitHub', href: 'https://github.com/LesTasker2023/triggerkings' },
+        { label: 'GitHub', href: 'https://github.com/LesTasker2023/Daedalus' },
         { label: 'Discord', href: '/discord' },
         { label: 'Twitter', href: '/twitter' },
         { label: 'Blog', href: '/blog' },
@@ -72,7 +72,7 @@ export default function Footer({
     },
   ],
   socialLinks = [
-    { name: 'GitHub', href: 'https://github.com/LesTasker2023/triggerkings', icon: Github },
+    { name: 'GitHub', href: 'https://github.com/LesTasker2023/Daedalus', icon: Github },
     { name: 'Twitter', href: '/twitter', icon: Twitter },
   ],
   legalLinks = [
@@ -138,7 +138,7 @@ export default function Footer({
                   ))}
                   <Button variant="ghost" size="sm" asChild className="h-8 px-3 text-xs">
                     <Link
-                      href="https://github.com/LesTasker2023/triggerkings"
+                      href="https://github.com/LesTasker2023/Daedalus"
                       target="_blank"
                       rel="noopener noreferrer"
                     >

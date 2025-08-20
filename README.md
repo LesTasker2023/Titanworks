@@ -1,4 +1,4 @@
-# TriggerKings
+# Daedalus
 
 > **Enterprise-grade Next.js application with automated versioning, comprehensive component system, and production-ready tooling.**
 
@@ -53,7 +53,7 @@ yarn release:dry             # Preview changes
 
 ## 🚀 Enterprise Automation
 
-The TriggerKings automation system handles:
+The Daedalus automation system handles:
 
 - ✅ **Version Management**: Automatic semantic versioning
 - ✅ **Dashboard Updates**: Real-time component metrics
@@ -170,8 +170,8 @@ scripts/                     # Automation and utility scripts
 
 ```bash
 # Clone repository
-git clone https://github.com/LesTasker2023/triggerkings.git
-cd triggerkings
+git clone https://github.com/LesTasker2023/Daedalus.git
+cd Daedalus
 
 # Install dependencies
 yarn install
@@ -223,4 +223,4 @@ yarn clean && yarn optimize
 
 ---
 
-**🎯 TriggerKings delivers enterprise-grade automation with startup-speed execution. Just commit your code - automation handles the rest!** 🚀
+**🎯 Daedalus delivers enterprise-grade automation with startup-speed execution. Just commit your code - automation handles the rest!** 🚀

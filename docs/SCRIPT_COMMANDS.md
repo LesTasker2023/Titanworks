@@ -1,4 +1,4 @@
-# TriggerKings Script Command Reference
+# Daedalus Script Command Reference
 
 ## 📋 Table of Contents
 
@@ -361,6 +361,6 @@ yarn clean:install          # Clean dependency reinstall
 
 ---
 
-**🎯 Bottom Line**: This command reference covers every aspect of the TriggerKings development workflow. From automated releases to component management to quality assurance - everything you need is documented and accessible via simple yarn commands.
+**🎯 Bottom Line**: This command reference covers every aspect of the Daedalus development workflow. From automated releases to component management to quality assurance - everything you need is documented and accessible via simple yarn commands.
 
 **Enterprise-grade tooling, startup-speed execution! 🚀**

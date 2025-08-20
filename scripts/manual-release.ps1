@@ -44,7 +44,7 @@ function Get-ComponentStats {
     }
 }
 
-Write-Host "TRIGGERKINGS MANUAL RELEASE TOOL" -ForegroundColor Magenta
+Write-Host "Daedalus MANUAL RELEASE TOOL" -ForegroundColor Magenta
 Write-Host "======================================" -ForegroundColor Magenta
 Write-Host ""
 

@@ -1,3 +1,6 @@
+'use client';
+
+import { useTheme } from 'next-themes';
 import * as React from 'react';
 
 export interface ThemeToggleProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
@@ -7,17 +10,26 @@ export interface ThemeToggleProps extends React.ButtonHTMLAttributes<HTMLButtonE
 
 export const ThemeToggle = React.forwardRef<HTMLButtonElement, ThemeToggleProps>(
   ({ icon, label = 'Toggle theme', ...props }, ref) => {
-    const [theme, setTheme] = React.useState<'light' | 'dark'>(
-      typeof window !== 'undefined' && window.matchMedia('(prefers-color-scheme: dark)').matches
-        ? 'dark'
-        : 'light'
-    );
+    const { theme, setTheme } = useTheme();
+    const [mounted, setMounted] = React.useState(false);
 
+    // Ensure component is mounted to prevent hydration mismatch
     React.useEffect(() => {
-      document.documentElement.setAttribute('data-theme', theme);
-    }, [theme]);
+      setMounted(true);
+    }, []);
 
-    const toggleTheme = () => setTheme(t => (t === 'light' ? 'dark' : 'light'));
+    const toggleTheme = React.useCallback(() => {
+      setTheme(theme === 'light' ? 'dark' : 'light');
+    }, [theme, setTheme]);
+
+    // Show a neutral icon until hydrated to prevent mismatch
+    if (!mounted) {
+      return (
+        <button ref={ref} aria-label={label} title={label} {...props}>
+          {icon || '🌓'}
+        </button>
+      );
+    }
 
     return (
       <button ref={ref} aria-label={label} title={label} onClick={toggleTheme} {...props}>

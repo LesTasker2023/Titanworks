@@ -1,6 +1,7 @@
 import { Footer, Navigation } from '@/components/layout';
 import { getSiteMetadata } from '@/lib/siteConfig';
 import type { Metadata } from 'next';
+import { ThemeProvider } from 'next-themes';
 import { Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
 
@@ -22,27 +23,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <head>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              (function() {
-                try {
-                  var theme = localStorage.getItem('theme') || 'light';
-                  document.body.classList.add(theme);
-                } catch (e) {
-                  document.body.classList.add('light');
-                }
-              })();
-            `,
-          }}
-        />
-      </head>
+    <html lang="en" suppressHydrationWarning>
       <body className={`${geistSans.variable} ${geistMono.variable} min-h-screen flex flex-col`}>
-        <Navigation />
-        <main className="flex-1">{children}</main>
-        <Footer />
+        <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
+          <Navigation />
+          <main className="flex-1">{children}</main>
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   );

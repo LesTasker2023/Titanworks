@@ -1,4 +1,4 @@
-# 🚀 TriggerKings Quick Command Reference
+# 🚀 Daedalus Quick Command Reference
 
 ## Most Used Commands (Daily Workflow)
 
