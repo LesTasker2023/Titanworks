@@ -102,19 +102,19 @@ describe('Badge Component', () => {
     it('renders success variant correctly', () => {
       render(<Badge variant="success">Success</Badge>);
       const badge = screen.getByText('Success');
-      expect(badge).toHaveClass('bg-green-500', 'text-white');
+      expect(badge).toHaveClass('bg-accent', 'text-accent-foreground');
     });
 
     it('renders warning variant correctly', () => {
       render(<Badge variant="warning">Warning</Badge>);
       const badge = screen.getByText('Warning');
-      expect(badge).toHaveClass('bg-yellow-500', 'text-white');
+      expect(badge).toHaveClass('bg-status-warning', 'text-white');
     });
 
     it('renders info variant correctly', () => {
       render(<Badge variant="info">Info</Badge>);
       const badge = screen.getByText('Info');
-      expect(badge).toHaveClass('bg-blue-500', 'text-white');
+      expect(badge).toHaveClass('bg-status-info', 'text-white');
     });
 
     it('renders outline variant correctly', () => {

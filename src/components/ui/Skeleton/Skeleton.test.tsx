@@ -13,33 +13,18 @@ describe('Skeleton Component', () => {
       const { container } = render(<Skeleton>Default</Skeleton>);
       expect(container.firstChild).toMatchSnapshot();
     });
-    it('matches all variants snapshot', () => {
-      const { container } = render(
-        <div data-testid="variants-container">
-          <Skeleton variant="default">Default</Skeleton>
-          <Skeleton variant="destructive">Destructive</Skeleton>
-          <Skeleton variant="outline">Outline</Skeleton>
-          <Skeleton variant="secondary">Secondary</Skeleton>
-        </div>
-      );
+    it('matches with custom className snapshot', () => {
+      const { container } = render(<Skeleton className="custom-skeleton">Custom</Skeleton>);
       expect(container.firstChild).toMatchSnapshot();
     });
-    it('matches all sizes snapshot', () => {
+    it('matches different sizes snapshot', () => {
       const { container } = render(
         <div data-testid="sizes-container">
-          <Skeleton size="sm">Small</Skeleton>
-          <Skeleton size="default">Default</Skeleton>
-          <Skeleton size="lg">Large</Skeleton>
+          <Skeleton className="h-4 w-4">Small</Skeleton>
+          <Skeleton className="h-8 w-8">Medium</Skeleton>
+          <Skeleton className="h-12 w-12">Large</Skeleton>
         </div>
       );
-      expect(container.firstChild).toMatchSnapshot();
-    });
-    it('matches disabled state snapshot', () => {
-      const { container } = render(<Skeleton disabled>Disabled</Skeleton>);
-      expect(container.firstChild).toMatchSnapshot();
-    });
-    it('matches loading state snapshot', () => {
-      const { container } = render(<Skeleton loading>Loading</Skeleton>);
       expect(container.firstChild).toMatchSnapshot();
     });
   });

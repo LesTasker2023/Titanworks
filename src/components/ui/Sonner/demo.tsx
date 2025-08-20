@@ -336,7 +336,7 @@ export default function SonnerDemo() {
                 onClick={() => showBasicToast('success', 'Operation completed successfully!')}
                 className="flex items-center gap-2"
               >
-                <CheckCircle className="h-4 w-4 text-green-500" />
+                <CheckCircle className="h-4 w-4 text-success" />
                 Success
               </Button>
               <Button
@@ -344,7 +344,7 @@ export default function SonnerDemo() {
                 onClick={() => showBasicToast('error', 'Something went wrong. Please try again.')}
                 className="flex items-center gap-2"
               >
-                <XCircle className="h-4 w-4 text-red-500" />
+                <XCircle className="h-4 w-4 text-error" />
                 Error
               </Button>
               <Button
@@ -354,7 +354,7 @@ export default function SonnerDemo() {
                 }
                 className="flex items-center gap-2"
               >
-                <AlertTriangle className="h-4 w-4 text-yellow-500" />
+                <AlertTriangle className="h-4 w-4 text-warning" />
                 Warning
               </Button>
               <Button
@@ -362,7 +362,7 @@ export default function SonnerDemo() {
                 onClick={() => showBasicToast('info', 'Here is some helpful information for you.')}
                 className="flex items-center gap-2"
               >
-                <Info className="h-4 w-4 text-blue-500" />
+                <Info className="h-4 w-4 [color:hsl(var(--status-info))]" />
                 Info
               </Button>
             </div>
@@ -544,12 +544,12 @@ export default function SonnerDemo() {
                     <div
                       className={`p-2 rounded-md ${
                         template.type === 'success'
-                          ? 'bg-green-100 text-green-600'
+                          ? '[background-color:hsl(var(--status-success)/0.1)] [color:hsl(var(--status-success))]'
                           : template.type === 'error'
-                            ? 'bg-red-100 text-red-600'
+                            ? '[background-color:hsl(var(--status-error)/0.1)] [color:hsl(var(--status-error))]'
                             : template.type === 'warning'
-                              ? 'bg-yellow-100 text-yellow-600'
-                              : 'bg-blue-100 text-blue-600'
+                              ? '[background-color:hsl(var(--status-warning)/0.1)] [color:hsl(var(--status-warning))]'
+                              : '[background-color:hsl(var(--status-info)/0.1)] [color:hsl(var(--status-info))]'
                       }`}
                     >
                       <template.icon className="h-4 w-4" />

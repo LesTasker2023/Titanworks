@@ -1,5 +1,5 @@
 ﻿import { render, screen } from '@testing-library/react';
-import { describe, expect, it } from 'vitest';
+import { describe, expect, it, vi } from 'vitest';
 import { Badge } from './badge';
 
 describe('Badge', () => {
@@ -34,12 +34,17 @@ describe('Badge', () => {
       );
       expect(container.firstChild).toMatchSnapshot();
     });
-    it('matches disabled state snapshot', () => {
-      const { container } = render(<Badge disabled>Disabled</Badge>);
+    it('matches removable state snapshot', () => {
+      const mockOnRemove = vi.fn();
+      const { container } = render(
+        <Badge removable onRemove={mockOnRemove}>
+          Removable
+        </Badge>
+      );
       expect(container.firstChild).toMatchSnapshot();
     });
-    it('matches loading state snapshot', () => {
-      const { container } = render(<Badge loading>Loading</Badge>);
+    it('matches dot indicator snapshot', () => {
+      const { container } = render(<Badge dot>With Dot</Badge>);
       expect(container.firstChild).toMatchSnapshot();
     });
   });

@@ -36,7 +36,7 @@ exports[`Toast Component > Snapshots > matches all variants snapshot 1`] = `
       </div>
     </li>
     <li
-      class="group pointer-events-auto relative flex w-full items-center justify-between space-x-4 overflow-hidden rounded-md border p-6 pr-8 shadow-lg transition-all data-[swipe=cancel]:translate-x-0 data-[swipe=end]:translate-x-[var(--radix-toast-swipe-end-x)] data-[swipe=move]:translate-x-[var(--radix-toast-swipe-move-x)] data-[swipe=move]:transition-none data-[state=open]:animate-in data-[state=closed]:animate-out data-[swipe=end]:animate-out data-[state=closed]:fade-out-80 data-[state=closed]:slide-out-to-right-full data-[state=open]:slide-in-from-top-full data-[state=open]:sm:slide-in-from-bottom-full border-green-200 bg-green-50 text-green-800 dark:border-green-800 dark:bg-green-900 dark:text-green-100"
+      class="group pointer-events-auto relative flex w-full items-center justify-between space-x-4 overflow-hidden rounded-md border p-6 pr-8 shadow-lg transition-all data-[swipe=cancel]:translate-x-0 data-[swipe=end]:translate-x-[var(--radix-toast-swipe-end-x)] data-[swipe=move]:translate-x-[var(--radix-toast-swipe-move-x)] data-[swipe=move]:transition-none data-[state=open]:animate-in data-[state=closed]:animate-out data-[swipe=end]:animate-out data-[state=closed]:fade-out-80 data-[state=closed]:slide-out-to-right-full data-[state=open]:slide-in-from-top-full data-[state=open]:sm:slide-in-from-bottom-full [border-color:hsl(var(--status-success))] [background-color:hsl(var(--status-success)/0.1)] [color:hsl(var(--status-success))] dark:[border-color:hsl(var(--status-success))] dark:[background-color:hsl(var(--status-success)/0.1)] dark:[color:hsl(var(--status-success))]"
       data-radix-collection-item=""
       data-state="open"
       data-swipe-direction="right"
@@ -56,7 +56,7 @@ exports[`Toast Component > Snapshots > matches all variants snapshot 1`] = `
       </div>
     </li>
     <li
-      class="group pointer-events-auto relative flex w-full items-center justify-between space-x-4 overflow-hidden rounded-md border p-6 pr-8 shadow-lg transition-all data-[swipe=cancel]:translate-x-0 data-[swipe=end]:translate-x-[var(--radix-toast-swipe-end-x)] data-[swipe=move]:translate-x-[var(--radix-toast-swipe-move-x)] data-[swipe=move]:transition-none data-[state=open]:animate-in data-[state=closed]:animate-out data-[swipe=end]:animate-out data-[state=closed]:fade-out-80 data-[state=closed]:slide-out-to-right-full data-[state=open]:slide-in-from-top-full data-[state=open]:sm:slide-in-from-bottom-full border-red-200 bg-red-50 text-red-800 dark:border-red-800 dark:bg-red-900 dark:text-red-100"
+      class="group pointer-events-auto relative flex w-full items-center justify-between space-x-4 overflow-hidden rounded-md border p-6 pr-8 shadow-lg transition-all data-[swipe=cancel]:translate-x-0 data-[swipe=end]:translate-x-[var(--radix-toast-swipe-end-x)] data-[swipe=move]:translate-x-[var(--radix-toast-swipe-move-x)] data-[swipe=move]:transition-none data-[state=open]:animate-in data-[state=closed]:animate-out data-[swipe=end]:animate-out data-[state=closed]:fade-out-80 data-[state=closed]:slide-out-to-right-full data-[state=open]:slide-in-from-top-full data-[state=open]:sm:slide-in-from-bottom-full [border-color:hsl(var(--status-error))] [background-color:hsl(var(--status-error)/0.1)] [color:hsl(var(--status-error))] dark:[border-color:hsl(var(--status-error))] dark:[background-color:hsl(var(--status-error)/0.1)] dark:[color:hsl(var(--status-error))]"
       data-radix-collection-item=""
       data-state="open"
       data-swipe-direction="right"
@@ -76,7 +76,7 @@ exports[`Toast Component > Snapshots > matches all variants snapshot 1`] = `
       </div>
     </li>
     <li
-      class="group pointer-events-auto relative flex w-full items-center justify-between space-x-4 overflow-hidden rounded-md border p-6 pr-8 shadow-lg transition-all data-[swipe=cancel]:translate-x-0 data-[swipe=end]:translate-x-[var(--radix-toast-swipe-end-x)] data-[swipe=move]:translate-x-[var(--radix-toast-swipe-move-x)] data-[swipe=move]:transition-none data-[state=open]:animate-in data-[state=closed]:animate-out data-[swipe=end]:animate-out data-[state=closed]:fade-out-80 data-[state=closed]:slide-out-to-right-full data-[state=open]:slide-in-from-top-full data-[state=open]:sm:slide-in-from-bottom-full border-yellow-200 bg-yellow-50 text-yellow-800 dark:border-yellow-800 dark:bg-yellow-900 dark:text-yellow-100"
+      class="group pointer-events-auto relative flex w-full items-center justify-between space-x-4 overflow-hidden rounded-md border p-6 pr-8 shadow-lg transition-all data-[swipe=cancel]:translate-x-0 data-[swipe=end]:translate-x-[var(--radix-toast-swipe-end-x)] data-[swipe=move]:translate-x-[var(--radix-toast-swipe-move-x)] data-[swipe=move]:transition-none data-[state=open]:animate-in data-[state=closed]:animate-out data-[swipe=end]:animate-out data-[state=closed]:fade-out-80 data-[state=closed]:slide-out-to-right-full data-[state=open]:slide-in-from-top-full data-[state=open]:sm:slide-in-from-bottom-full [border-color:hsl(var(--status-warning))] [background-color:hsl(var(--status-warning)/0.1)] [color:hsl(var(--status-warning))] dark:[border-color:hsl(var(--status-warning))] dark:[background-color:hsl(var(--status-warning)/0.1)] dark:[color:hsl(var(--status-warning))]"
       data-radix-collection-item=""
       data-state="open"
       data-swipe-direction="right"
@@ -158,7 +158,7 @@ exports[`Toast Component > Snapshots > matches default toast snapshot 1`] = `
         This is a default toast message
       </div>
       <button
-        class="absolute right-2 top-2 rounded-md p-1 text-foreground/50 opacity-0 transition-opacity hover:text-foreground focus:opacity-100 focus:outline-none focus:ring-2 group-hover:opacity-100 group-[.success]:text-green-600 group-[.error]:text-red-600 group-[.warning]:text-yellow-600 group-[.info]:text-blue-600"
+        class="absolute right-2 top-2 rounded-md p-1 text-foreground/50 opacity-0 transition-opacity hover:text-foreground focus:opacity-100 focus:outline-none focus:ring-2 group-hover:opacity-100 group-[.success]:[color:hsl(var(--status-success))] group-[.error]:[color:hsl(var(--status-error))] group-[.warning]:[color:hsl(var(--status-warning))] group-[.info]:[color:hsl(var(--status-info))]"
         data-radix-toast-announce-exclude=""
         toast-close=""
         type="button"
@@ -234,7 +234,7 @@ exports[`Toast Component > Snapshots > matches toast with action snapshot 1`] = 
         This toast has an action button
       </div>
       <button
-        class="inline-flex h-8 shrink-0 items-center justify-center rounded-md border bg-transparent px-3 text-xs font-medium ring-offset-background transition-colors hover:bg-secondary focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 group-[.success]:border-green-300 group-[.success]:hover:border-green-400 group-[.success]:hover:bg-green-100 group-[.error]:border-red-300 group-[.error]:hover:border-red-400 group-[.error]:hover:bg-red-100"
+        class="inline-flex h-8 shrink-0 items-center justify-center rounded-md border bg-transparent px-3 text-xs font-medium ring-offset-background transition-colors hover:bg-secondary focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 group-[.success]:[border-color:hsl(var(--status-success))] group-[.success]:hover:[border-color:hsl(var(--status-success))] group-[.success]:hover:[background-color:hsl(var(--status-success)/0.2)] group-[.error]:[border-color:hsl(var(--status-error))] group-[.error]:hover:[border-color:hsl(var(--status-error))] group-[.error]:hover:[background-color:hsl(var(--status-error)/0.1)]"
         data-radix-toast-announce-alt="Undo action"
         data-radix-toast-announce-exclude=""
         type="button"
@@ -242,7 +242,7 @@ exports[`Toast Component > Snapshots > matches toast with action snapshot 1`] = 
         Undo
       </button>
       <button
-        class="absolute right-2 top-2 rounded-md p-1 text-foreground/50 opacity-0 transition-opacity hover:text-foreground focus:opacity-100 focus:outline-none focus:ring-2 group-hover:opacity-100 group-[.success]:text-green-600 group-[.error]:text-red-600 group-[.warning]:text-yellow-600 group-[.info]:text-blue-600"
+        class="absolute right-2 top-2 rounded-md p-1 text-foreground/50 opacity-0 transition-opacity hover:text-foreground focus:opacity-100 focus:outline-none focus:ring-2 group-hover:opacity-100 group-[.success]:[color:hsl(var(--status-success))] group-[.error]:[color:hsl(var(--status-error))] group-[.warning]:[color:hsl(var(--status-warning))] group-[.info]:[color:hsl(var(--status-info))]"
         data-radix-toast-announce-exclude=""
         toast-close=""
         type="button"
@@ -293,7 +293,7 @@ exports[`Toast Component > Snapshots > matches toaster component snapshot 1`] = 
     tabindex="-1"
   >
     <li
-      class="group pointer-events-auto relative flex w-full items-center justify-between space-x-4 overflow-hidden rounded-md border p-6 pr-8 shadow-lg transition-all data-[swipe=cancel]:translate-x-0 data-[swipe=end]:translate-x-[var(--radix-toast-swipe-end-x)] data-[swipe=move]:translate-x-[var(--radix-toast-swipe-move-x)] data-[swipe=move]:transition-none data-[state=open]:animate-in data-[state=closed]:animate-out data-[swipe=end]:animate-out data-[state=closed]:fade-out-80 data-[state=closed]:slide-out-to-right-full data-[state=open]:slide-in-from-top-full data-[state=open]:sm:slide-in-from-bottom-full border-green-200 bg-green-50 text-green-800 dark:border-green-800 dark:bg-green-900 dark:text-green-100"
+      class="group pointer-events-auto relative flex w-full items-center justify-between space-x-4 overflow-hidden rounded-md border p-6 pr-8 shadow-lg transition-all data-[swipe=cancel]:translate-x-0 data-[swipe=end]:translate-x-[var(--radix-toast-swipe-end-x)] data-[swipe=move]:translate-x-[var(--radix-toast-swipe-move-x)] data-[swipe=move]:transition-none data-[state=open]:animate-in data-[state=closed]:animate-out data-[swipe=end]:animate-out data-[state=closed]:fade-out-80 data-[state=closed]:slide-out-to-right-full data-[state=open]:slide-in-from-top-full data-[state=open]:sm:slide-in-from-bottom-full [border-color:hsl(var(--status-success))] [background-color:hsl(var(--status-success)/0.1)] [color:hsl(var(--status-success))] dark:[border-color:hsl(var(--status-success))] dark:[background-color:hsl(var(--status-success)/0.1)] dark:[color:hsl(var(--status-success))]"
       data-radix-collection-item=""
       data-state="open"
       data-swipe-direction="right"
@@ -315,7 +315,7 @@ exports[`Toast Component > Snapshots > matches toaster component snapshot 1`] = 
         </div>
       </div>
       <button
-        class="absolute right-2 top-2 rounded-md p-1 text-foreground/50 opacity-0 transition-opacity hover:text-foreground focus:opacity-100 focus:outline-none focus:ring-2 group-hover:opacity-100 group-[.success]:text-green-600 group-[.error]:text-red-600 group-[.warning]:text-yellow-600 group-[.info]:text-blue-600"
+        class="absolute right-2 top-2 rounded-md p-1 text-foreground/50 opacity-0 transition-opacity hover:text-foreground focus:opacity-100 focus:outline-none focus:ring-2 group-hover:opacity-100 group-[.success]:[color:hsl(var(--status-success))] group-[.error]:[color:hsl(var(--status-error))] group-[.warning]:[color:hsl(var(--status-warning))] group-[.info]:[color:hsl(var(--status-info))]"
         data-radix-toast-announce-exclude=""
         toast-close=""
         type="button"

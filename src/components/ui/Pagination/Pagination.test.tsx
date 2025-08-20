@@ -16,36 +16,25 @@ describe('Pagination Component', () => {
 
   describe('Snapshots', () => {
     it('matches default snapshot', () => {
-      const { container } = render(<Pagination>Default</Pagination>);
+      const { container } = render(<Pagination {...defaultProps} />);
       expect(container.firstChild).toMatchSnapshot();
     });
-    it('matches all variants snapshot', () => {
-      const { container } = render(
-        <div data-testid="variants-container">
-          <Pagination variant="default">Default</Pagination>
-          <Pagination variant="destructive">Destructive</Pagination>
-          <Pagination variant="outline">Outline</Pagination>
-          <Pagination variant="secondary">Secondary</Pagination>
-        </div>
-      );
-      expect(container.firstChild).toMatchSnapshot();
-    });
-    it('matches all sizes snapshot', () => {
+    it('matches different sizes snapshot', () => {
       const { container } = render(
         <div data-testid="sizes-container">
-          <Pagination size="sm">Small</Pagination>
-          <Pagination size="default">Default</Pagination>
-          <Pagination size="lg">Large</Pagination>
+          <Pagination {...defaultProps} size="sm" />
+          <Pagination {...defaultProps} size="default" />
+          <Pagination {...defaultProps} size="lg" />
         </div>
       );
       expect(container.firstChild).toMatchSnapshot();
     });
     it('matches disabled state snapshot', () => {
-      const { container } = render(<Pagination disabled>Disabled</Pagination>);
+      const { container } = render(<Pagination {...defaultProps} disabled />);
       expect(container.firstChild).toMatchSnapshot();
     });
     it('matches loading state snapshot', () => {
-      const { container } = render(<Pagination loading>Loading</Pagination>);
+      const { container } = render(<Pagination {...defaultProps} loading />);
       expect(container.firstChild).toMatchSnapshot();
     });
   });

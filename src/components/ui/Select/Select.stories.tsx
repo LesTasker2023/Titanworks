@@ -249,7 +249,7 @@ export const ControlledSelect: Story = {
           <strong>Selected Value:</strong> {value || '(none selected)'}
           <br />
           <button
-            className="mt-2 px-3 py-1 bg-blue-500 text-white rounded text-xs hover:bg-blue-600"
+            className="mt-2 px-3 py-1 [background-color:hsl(var(--surface-interactive))] [color:hsl(var(--content-inverse))] rounded text-xs hover:[background-color:hsl(var(--surface-interactive)/0.9)]"
             onClick={() => setValue('')}
           >
             Clear Selection
@@ -356,7 +356,7 @@ export const FormExample: Story = {
 
         <button
           type="submit"
-          className="w-full px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
+          className="w-full px-4 py-2 [background-color:hsl(var(--surface-interactive))] [color:hsl(var(--content-inverse))] rounded hover:[background-color:hsl(var(--surface-interactive)/0.9)]"
         >
           Create Task
         </button>

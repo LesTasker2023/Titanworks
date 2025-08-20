@@ -468,15 +468,15 @@ export default function SkeletonDemo() {
                       </div>
                       <p className="text-sm">{post.content}</p>
                       <div className="flex items-center space-x-4 text-muted-foreground">
-                        <button className="flex items-center space-x-1 hover:text-red-500">
+                        <button className="flex items-center space-x-1 hover:text-interactive transition-colors">
                           <Heart className="h-4 w-4" />
                           <span className="text-xs">{post.likes}</span>
                         </button>
-                        <button className="flex items-center space-x-1 hover:text-blue-500">
+                        <button className="flex items-center space-x-1 hover:text-interactive transition-colors">
                           <MessageSquare className="h-4 w-4" />
                           <span className="text-xs">{post.comments}</span>
                         </button>
-                        <button className="flex items-center space-x-1 hover:text-green-500">
+                        <button className="flex items-center space-x-1 hover:text-interactive transition-colors">
                           <Share className="h-4 w-4" />
                           <span className="text-xs">{post.shares}</span>
                         </button>

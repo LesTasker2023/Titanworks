@@ -9,7 +9,7 @@ export default function NotFound() {
         <p className="text-gray-600 mb-8">Sorry, we could not find the page you are looking for.</p>
         <Link
           href="/"
-          className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 transition-colors"
+          className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-interactive-foreground bg-interactive hover:bg-interactive/90 transition-colors"
         >
           Return Home
         </Link>

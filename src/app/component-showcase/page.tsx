@@ -2,7 +2,7 @@
 
 import { Badge } from '@/components/ui/Badge';
 import { Button } from '@/components/ui/Button';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/Card';
+import { Card, CardDescription, CardHeader, CardTitle } from '@/components/ui/Card';
 import {
   DropdownMenu,
   DropdownMenuCheckboxItem,
@@ -10,61 +10,78 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/DropdownMenu';
 import { Input } from '@/components/ui/Input';
-import { Separator } from '@/components/ui/Separator';
 import { TooltipProvider } from '@/components/ui/Tooltip';
-import { Filter, Search } from 'lucide-react';
-import React, { useMemo, useState } from 'react';
+import { ChevronDown, ChevronUp, Filter, Search } from 'lucide-react';
+import React, { lazy, useMemo, useState } from 'react';
 
-// Import component demos - New centralized pattern
-import { AccordionDemo } from '@/components/ui/Accordion';
-import { AlertDemo } from '@/components/ui/Alert';
-import { AlertDialogDemo } from '@/components/ui/AlertDialog';
-import { AspectRatioDemo } from '@/components/ui/AspectRatio';
-import { AvatarDemo } from '@/components/ui/Avatar';
-import { BadgeDemo } from '@/components/ui/Badge';
-import { BreadcrumbDemo } from '@/components/ui/Breadcrumb';
-import { ButtonDemo } from '@/components/ui/Button';
-import { CalendarDemo } from '@/components/ui/Calendar';
-import { CardDemo } from '@/components/ui/Card';
-import CarouselDemo from '@/components/ui/Carousel/demo';
-import ChartDemo from '@/components/ui/Chart/demo';
-import { CheckboxDemo } from '@/components/ui/Checkbox';
-import CollapsibleDemo from '@/components/ui/Collapsible/demo';
-import ColorPickerDemo from '@/components/ui/ColorPicker/demo';
-import ComboboxDemo from '@/components/ui/Combobox/demo';
-import CommandDemo from '@/components/ui/Command/demo';
-import ContextMenuDemo from '@/components/ui/ContextMenu/demo';
-import DataTableDemo from '@/components/ui/DataTable/demo';
-import DatePickerDemo from '@/components/ui/DatePicker/demo';
-import DialogDemo from '@/components/ui/Dialog/demo';
-import DropdownMenuDemo from '@/components/ui/DropdownMenu/demo';
-import FormDemo from '@/components/ui/Form/demo';
-import HoverCardDemo from '@/components/ui/HoverCard/demo';
-import { InputDemo } from '@/components/ui/Input';
-import LabelDemo from '@/components/ui/Label/demo';
-import MenubarDemo from '@/components/ui/Menubar/demo';
-import ModalDemo from '@/components/ui/Modal/demo';
-import NavigationMenuDemo from '@/components/ui/NavigationMenu/demo';
-import PaginationDemo from '@/components/ui/Pagination/demo';
-import PopoverDemo from '@/components/ui/Popover/demo';
-import ProgressDemo from '@/components/ui/Progress/demo';
-import RadioGroupDemo from '@/components/ui/RadioGroup/demo';
-import ResizableDemo from '@/components/ui/Resizable/demo';
-import ScrollAreaDemo from '@/components/ui/ScrollArea/demo';
-import SelectDemo from '@/components/ui/Select/demo';
-import SeparatorDemo from '@/components/ui/Separator/demo';
-import SheetDemo from '@/components/ui/Sheet/demo';
-import SkeletonDemo from '@/components/ui/Skeleton/demo';
-import SliderDemo from '@/components/ui/Slider/demo';
-import SonnerDemo from '@/components/ui/Sonner/demo';
-import SwitchDemo from '@/components/ui/Switch/demo';
-import TableDemo from '@/components/ui/Table/demo';
-import TabsDemo from '@/components/ui/Tabs/demo';
-import TextareaDemo from '@/components/ui/Textarea/demo';
-import ThemeToggleDemo from '@/components/ui/ThemeToggle/demo';
-import ToastDemo from '@/components/ui/Toast/demo';
-import { ToggleDemo } from '@/components/ui/Toggle';
-import TooltipDemo from '@/components/ui/Tooltip/demo';
+// Lazy load all component demos for better performance
+const AccordionDemo = lazy(() =>
+  import('@/components/ui/Accordion').then(m => ({ default: m.AccordionDemo }))
+);
+const AlertDemo = lazy(() => import('@/components/ui/Alert').then(m => ({ default: m.AlertDemo })));
+const AlertDialogDemo = lazy(() =>
+  import('@/components/ui/AlertDialog').then(m => ({ default: m.AlertDialogDemo }))
+);
+const AspectRatioDemo = lazy(() =>
+  import('@/components/ui/AspectRatio').then(m => ({ default: m.AspectRatioDemo }))
+);
+const AvatarDemo = lazy(() =>
+  import('@/components/ui/Avatar').then(m => ({ default: m.AvatarDemo }))
+);
+const BadgeDemo = lazy(() => import('@/components/ui/Badge').then(m => ({ default: m.BadgeDemo })));
+const BreadcrumbDemo = lazy(() =>
+  import('@/components/ui/Breadcrumb').then(m => ({ default: m.BreadcrumbDemo }))
+);
+const ButtonDemo = lazy(() =>
+  import('@/components/ui/Button').then(m => ({ default: m.ButtonDemo }))
+);
+const CalendarDemo = lazy(() =>
+  import('@/components/ui/Calendar').then(m => ({ default: m.CalendarDemo }))
+);
+const CardDemo = lazy(() => import('@/components/ui/Card').then(m => ({ default: m.CardDemo })));
+const CarouselDemo = lazy(() => import('@/components/ui/Carousel/demo'));
+const ChartDemo = lazy(() => import('@/components/ui/Chart/demo'));
+const CheckboxDemo = lazy(() =>
+  import('@/components/ui/Checkbox').then(m => ({ default: m.CheckboxDemo }))
+);
+const CollapsibleDemo = lazy(() => import('@/components/ui/Collapsible/demo'));
+const ColorPickerDemo = lazy(() => import('@/components/ui/ColorPicker/demo'));
+const ComboboxDemo = lazy(() => import('@/components/ui/Combobox/demo'));
+const CommandDemo = lazy(() => import('@/components/ui/Command/demo'));
+const ContextMenuDemo = lazy(() => import('@/components/ui/ContextMenu/demo'));
+const DataTableDemo = lazy(() => import('@/components/ui/DataTable/demo'));
+const DatePickerDemo = lazy(() => import('@/components/ui/DatePicker/demo'));
+const DialogDemo = lazy(() => import('@/components/ui/Dialog/demo'));
+const DropdownMenuDemo = lazy(() => import('@/components/ui/DropdownMenu/demo'));
+const FormDemo = lazy(() => import('@/components/ui/Form/demo'));
+const HoverCardDemo = lazy(() => import('@/components/ui/HoverCard/demo'));
+const InputDemo = lazy(() => import('@/components/ui/Input').then(m => ({ default: m.InputDemo })));
+const LabelDemo = lazy(() => import('@/components/ui/Label/demo'));
+const MenubarDemo = lazy(() => import('@/components/ui/Menubar/demo'));
+const ModalDemo = lazy(() => import('@/components/ui/Modal/demo'));
+const NavigationMenuDemo = lazy(() => import('@/components/ui/NavigationMenu/demo'));
+const PaginationDemo = lazy(() => import('@/components/ui/Pagination/demo'));
+const PopoverDemo = lazy(() => import('@/components/ui/Popover/demo'));
+const ProgressDemo = lazy(() => import('@/components/ui/Progress/demo'));
+const RadioGroupDemo = lazy(() => import('@/components/ui/RadioGroup/demo'));
+const ResizableDemo = lazy(() => import('@/components/ui/Resizable/demo'));
+const ScrollAreaDemo = lazy(() => import('@/components/ui/ScrollArea/demo'));
+const SelectDemo = lazy(() => import('@/components/ui/Select/demo'));
+const SeparatorDemo = lazy(() => import('@/components/ui/Separator/demo'));
+const SheetDemo = lazy(() => import('@/components/ui/Sheet/demo'));
+const SkeletonDemo = lazy(() => import('@/components/ui/Skeleton/demo'));
+const SliderDemo = lazy(() => import('@/components/ui/Slider/demo'));
+const SonnerDemo = lazy(() => import('@/components/ui/Sonner/demo'));
+const SwitchDemo = lazy(() => import('@/components/ui/Switch/demo'));
+const TableDemo = lazy(() => import('@/components/ui/Table/demo'));
+const TabsDemo = lazy(() => import('@/components/ui/Tabs/demo'));
+const TextareaDemo = lazy(() => import('@/components/ui/Textarea/demo'));
+const ThemeToggleDemo = lazy(() => import('@/components/ui/ThemeToggle/demo'));
+const ToastDemo = lazy(() => import('@/components/ui/Toast/demo'));
+const ToggleDemo = lazy(() =>
+  import('@/components/ui/Toggle').then(m => ({ default: m.ToggleDemo }))
+);
+const TooltipDemo = lazy(() => import('@/components/ui/Tooltip/demo'));
 
 // Component registry with categories
 const componentRegistry = [
@@ -337,6 +354,7 @@ const categories = [...new Set(componentRegistry.map(comp => comp.category))];
 export default function ComponentShowcase() {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategories, setSelectedCategories] = useState<string[]>(categories);
+  const [openComponent, setOpenComponent] = useState<string | null>(null);
 
   const filteredComponents = useMemo(() => {
     return componentRegistry.filter(component => {
@@ -410,36 +428,52 @@ export default function ComponentShowcase() {
         {/* Component Grid */}
         <div className="space-y-4">
           {filteredComponents.map(component => {
-            const DemoComponent = component.demo;
+            const isOpen = openComponent === component.name;
 
             return (
               <Card key={component.name} className="overflow-hidden">
                 <CardHeader className="pb-3">
                   <div className="space-y-1">
-                    <div className="flex items-center gap-2">
-                      <CardTitle className="text-lg">{component.name}</CardTitle>
-                      <Badge variant="outline" className="text-xs">
-                        {component.category}
-                      </Badge>
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-2">
+                        <CardTitle className="text-lg">{component.name}</CardTitle>
+                        <Badge variant="outline" className="text-xs">
+                          {component.category}
+                        </Badge>
+                      </div>
+                      <Button
+                        variant="outline"
+                        size="sm"
+                        onClick={() => setOpenComponent(isOpen ? null : component.name)}
+                      >
+                        {isOpen ? (
+                          <ChevronUp className="mr-2 h-4 w-4" />
+                        ) : (
+                          <ChevronDown className="mr-2 h-4 w-4" />
+                        )}
+                        {isOpen ? 'Hide Demo' : 'View Demo'}
+                      </Button>
                     </div>
                     <CardDescription>{component.description}</CardDescription>
                   </div>
                 </CardHeader>
 
-                <Separator />
-                <CardContent className="pt-6">
-                  <div className="rounded-lg border bg-muted/50 overflow-hidden">
-                    <React.Suspense
-                      fallback={
-                        <div className="p-8 text-center text-muted-foreground">
-                          Loading {component.name} demo...
-                        </div>
-                      }
-                    >
-                      <DemoComponent />
-                    </React.Suspense>
+                {/* Expanded Demo Section */}
+                {isOpen && (
+                  <div className="px-6 pb-6">
+                    <div className="rounded-lg border bg-muted/30 p-6 min-h-[200px]">
+                      <React.Suspense
+                        fallback={
+                          <div className="p-8 text-center text-muted-foreground">
+                            Loading {component.name} demo...
+                          </div>
+                        }
+                      >
+                        <component.demo />
+                      </React.Suspense>
+                    </div>
                   </div>
-                </CardContent>
+                )}
               </Card>
             );
           })}

@@ -3,7 +3,6 @@
 import { Container } from '@/components/layout/Container';
 import { Badge } from '@/components/ui/Badge';
 import { Button } from '@/components/ui/Button';
-import { ColorPicker } from '@/components/ui/ColorPicker';
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -12,7 +11,7 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from '@/components/ui/NavigationMenu';
-import { ThemeToggle } from '@/components/ui/ThemeToggle';
+import { ThemePickerSheet, ThemeToggle } from '@/components/ui/ThemeToggle';
 import { cn } from '@/lib/utils';
 import { Menu, X } from 'lucide-react';
 import Image from 'next/image';
@@ -101,7 +100,10 @@ export default function Navigation({
       <Container size="xl" padding="md">
         <div className="flex h-16 items-center justify-between">
           {/* Brand */}
-          <Link href="/" className="flex items-center gap-3 font-bold text-xl">
+          <Link
+            href="/"
+            className="flex items-center gap-3 font-bold text-xl hover:text-interactive transition-colors"
+          >
             {brand.logo && (
               <Image
                 src={brand.logo.src}
@@ -131,7 +133,7 @@ export default function Navigation({
                       <NavigationMenuLink asChild>
                         <Link
                           href={item.href}
-                          className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50"
+                          className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:[background-color:hsl(var(--surface-interactive)/0.1)!important] focus:[background-color:hsl(var(--surface-interactive)/0.1)!important] focus:outline-none disabled:pointer-events-none disabled:opacity-50 hover:[color:hsl(var(--surface-interactive))!important]"
                         >
                           {item.label}
                         </Link>
@@ -145,7 +147,7 @@ export default function Navigation({
                               <NavigationMenuLink key={subItem.href} asChild>
                                 <Link
                                   href={subItem.href}
-                                  className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                                  className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:[background-color:hsl(var(--surface-interactive)/0.1)!important] focus:[background-color:hsl(var(--surface-interactive)/0.1)!important] hover:[color:hsl(var(--surface-interactive))!important] focus:[color:hsl(var(--surface-interactive))!important]"
                                 >
                                   <div className="text-sm font-medium leading-none">
                                     {subItem.title}
@@ -167,7 +169,7 @@ export default function Navigation({
 
             {/* Theme Controls */}
             <div className="flex items-center gap-2">
-              <ColorPicker defaultColor="#18181b" />
+              <ThemePickerSheet />
               <ThemeToggle />
             </div>
           </div>
@@ -201,7 +203,7 @@ export default function Navigation({
                 {item.href ? (
                   <Link
                     href={item.href}
-                    className="block py-2 text-sm font-medium hover:text-primary"
+                    className="block py-2 text-sm font-medium transition-colors hover:[color:hsl(var(--surface-interactive))!important]"
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     {item.label}
@@ -216,7 +218,7 @@ export default function Navigation({
                         <Link
                           key={subItem.href}
                           href={subItem.href}
-                          className="block py-1 text-sm hover:text-primary"
+                          className="block py-1 text-sm transition-colors hover:[color:hsl(var(--surface-interactive))!important]"
                           onClick={() => setMobileMenuOpen(false)}
                         >
                           {subItem.title}
@@ -230,7 +232,7 @@ export default function Navigation({
 
             {/* Mobile Theme Controls */}
             <div className="flex items-center gap-4 pt-4 border-t">
-              <ColorPicker defaultColor="#18181b" />
+              <ThemePickerSheet />
               <ThemeToggle />
             </div>
           </div>

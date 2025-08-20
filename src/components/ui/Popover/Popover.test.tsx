@@ -38,8 +38,8 @@ describe('Popover', () => {
       const { container } = render(<Popover disabled>Disabled</Popover>);
       expect(container.firstChild).toMatchSnapshot();
     });
-    it('matches loading state snapshot', () => {
-      const { container } = render(<Popover loading>Loading</Popover>);
+    it('matches with type button snapshot', () => {
+      const { container } = render(<Popover type="button">Button Type</Popover>);
       expect(container.firstChild).toMatchSnapshot();
     });
   });

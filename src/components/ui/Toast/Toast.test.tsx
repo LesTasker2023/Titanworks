@@ -122,7 +122,10 @@ describe('Toast Component', () => {
         expect(screen.getByText(`${variant} Title`)).toBeInTheDocument();
 
         if (variant !== 'default') {
-          expect(toast.className).toContain('bg-');
+          // Check for either CSS custom property styling or traditional bg- classes
+          const hasCustomProperty = toast.className.includes('[background-color:hsl(var(--status-');
+          const hasTraditionalBg = toast.className.includes('bg-');
+          expect(hasCustomProperty || hasTraditionalBg).toBe(true);
         }
       });
     });

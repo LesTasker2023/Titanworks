@@ -218,7 +218,7 @@ export default function AlertDialogDemo() {
                   </AlertDialogHeader>
                   <AlertDialogFooter>
                     <AlertDialogCancel>Keep Current Settings</AlertDialogCancel>
-                    <AlertDialogAction className="bg-orange-600 hover:bg-orange-700">
+                    <AlertDialogAction className="[background-color:hsl(var(--status-warning))] hover:[background-color:hsl(var(--status-warning)/0.9)] [color:hsl(var(--content-inverse))]">
                       I Understand, Continue
                     </AlertDialogAction>
                   </AlertDialogFooter>
@@ -276,11 +276,11 @@ export default function AlertDialogDemo() {
                     <AlertDialogCancel>Cancel</AlertDialogCancel>
                     <Button
                       variant="outline"
-                      className="border-blue-200 text-blue-700 hover:bg-blue-50"
+                      className="[border-color:hsl(var(--surface-interactive))] [color:hsl(var(--surface-interactive))] hover:[background-color:hsl(var(--surface-interactive)/0.1)]"
                     >
                       Deactivate Instead
                     </Button>
-                    <AlertDialogAction className="bg-red-600 hover:bg-red-700">
+                    <AlertDialogAction className="[background-color:hsl(var(--status-error))] hover:[background-color:hsl(var(--status-error)/0.9)] [color:hsl(var(--content-inverse))]">
                       Yes, Delete Forever
                     </AlertDialogAction>
                   </AlertDialogFooter>

@@ -16,7 +16,7 @@ const separatorVariants = cva('shrink-0 bg-border transition-colors duration-200
     variant: {
       default: 'bg-border',
       muted: 'bg-muted',
-      accent: 'bg-accent',
+      accent: '[background-color:hsl(var(--surface-interactive))]',
       primary: 'bg-primary/20',
       destructive: 'bg-destructive/20',
     },

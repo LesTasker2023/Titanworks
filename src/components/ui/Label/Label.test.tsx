@@ -13,33 +13,12 @@ describe('Label', () => {
       const { container } = render(<Label>Default</Label>);
       expect(container.firstChild).toMatchSnapshot();
     });
-    it('matches all variants snapshot', () => {
-      const { container } = render(
-        <div data-testid="variants-container">
-          <Label variant="default">Default</Label>
-          <Label variant="destructive">Destructive</Label>
-          <Label variant="outline">Outline</Label>
-          <Label variant="secondary">Secondary</Label>
-        </div>
-      );
+    it('matches with htmlFor attribute snapshot', () => {
+      const { container } = render(<Label htmlFor="test-input">Form Label</Label>);
       expect(container.firstChild).toMatchSnapshot();
     });
-    it('matches all sizes snapshot', () => {
-      const { container } = render(
-        <div data-testid="sizes-container">
-          <Label size="sm">Small</Label>
-          <Label size="default">Default</Label>
-          <Label size="lg">Large</Label>
-        </div>
-      );
-      expect(container.firstChild).toMatchSnapshot();
-    });
-    it('matches disabled state snapshot', () => {
-      const { container } = render(<Label disabled>Disabled</Label>);
-      expect(container.firstChild).toMatchSnapshot();
-    });
-    it('matches loading state snapshot', () => {
-      const { container } = render(<Label loading>Loading</Label>);
+    it('matches with custom className snapshot', () => {
+      const { container } = render(<Label className="custom-label">Custom Label</Label>);
       expect(container.firstChild).toMatchSnapshot();
     });
   });

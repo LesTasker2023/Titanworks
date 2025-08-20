@@ -48,7 +48,7 @@ import { Toaster } from '@/components/ui/Toast/toaster';
 import { useToast } from '@/components/ui/Toast/use-toast';
 
 /**
- * 🚀 Enterprise Dashboard - August 2025 - v1.40.0
+ * 🚀 Enterprise Dashboard - August 2025 - v1.43.0
  *
  * Modern dashboard showcasing:
  * - 30 production-ready components (100% coverage)
@@ -183,7 +183,7 @@ export default function EnterpriseDashboard() {
     {
       id: '1',
       type: 'update',
-      message: 'v1.40.0 Released: Complete component ecosystem enhancement',
+      message: 'v1.43.0 Released: Complete component ecosystem enhancement',
       timestamp: '1 minute ago',
       status: 'success',
       user: 'GitHub Copilot',
@@ -236,13 +236,13 @@ export default function EnterpriseDashboard() {
     switch (status) {
       case 'healthy':
       case 'success':
-        return 'text-green-500';
+        return 'text-success';
       case 'warning':
-        return 'text-yellow-500';
+        return 'text-warning';
       case 'error':
-        return 'text-red-500';
+        return 'text-error';
       default:
-        return 'text-gray-500';
+        return 'text-muted-foreground';
     }
   };
 
@@ -250,10 +250,17 @@ export default function EnterpriseDashboard() {
     switch (status) {
       case 'healthy':
       case 'success':
-        return <Badge className="bg-green-100 text-green-800">Healthy</Badge>;
+        return (
+          <Badge className="[background-color:hsl(var(--status-success)/0.1)] [color:hsl(var(--status-success))]">
+            Healthy
+          </Badge>
+        );
       case 'warning':
         return (
-          <Badge variant="outline" className="border-yellow-500 text-yellow-700">
+          <Badge
+            variant="outline"
+            className="[border-color:hsl(var(--status-warning))] [color:hsl(var(--status-warning))]"
+          >
             Warning
           </Badge>
         );
@@ -436,7 +443,7 @@ export default function EnterpriseDashboard() {
               Enterprise Dashboard
             </h1>
             <p className="text-lg text-muted-foreground">
-              v1.40.0 Enterprise System - Real-time monitoring of your{' '}
+              v1.43.0 Enterprise System - Real-time monitoring of your{' '}
               <Badge size="lg" className="mx-1">
                 {metrics.totalComponents} Components
               </Badge>{' '}
@@ -487,7 +494,7 @@ export default function EnterpriseDashboard() {
                         <div key={index} className="flex items-center gap-3 p-2 border rounded">
                           <div className="flex-shrink-0">
                             {step.status === 'completed' && (
-                              <CheckCircle className="h-4 w-4 text-green-500" />
+                              <CheckCircle className="h-4 w-4 text-success" />
                             )}
                             {step.status === 'running' && (
                               <div className="h-4 w-4 border-2 border-blue-500 border-t-transparent rounded-full animate-spin" />
@@ -495,9 +502,7 @@ export default function EnterpriseDashboard() {
                             {step.status === 'pending' && (
                               <div className="h-4 w-4 border-2 border-gray-300 rounded-full" />
                             )}
-                            {step.status === 'error' && (
-                              <XCircle className="h-4 w-4 text-red-500" />
-                            )}
+                            {step.status === 'error' && <XCircle className="h-4 w-4 text-error" />}
                           </div>
                           <div className="flex-1 min-w-0">
                             <div className="flex items-center justify-between">
@@ -549,7 +554,7 @@ export default function EnterpriseDashboard() {
         <Alert>
           <CheckCircle className="h-4 w-4" />
           <div>
-            <div className="font-semibold">v1.40.0 System Status: All Services Operational</div>
+            <div className="font-semibold">v1.43.0 System Status: All Services Operational</div>
             <div className="text-sm">
               Next.js{' '}
               <Badge variant="outline" size="sm">
@@ -585,7 +590,7 @@ export default function EnterpriseDashboard() {
             <CardContent>
               <div className="text-2xl font-bold">{realTimeData.requests.toLocaleString()}</div>
               <p className="text-xs text-muted-foreground">
-                <ArrowUp className="inline h-3 w-3 mr-1 text-green-500" />
+                <ArrowUp className="inline h-3 w-3 mr-1 text-success" />
                 Response time: {realTimeData.responseTime}
               </p>
             </CardContent>
@@ -599,7 +604,7 @@ export default function EnterpriseDashboard() {
             <CardContent>
               <div className="text-2xl font-bold">{realTimeData.uptime}</div>
               <p className="text-xs text-muted-foreground">
-                <CheckCircle className="inline h-3 w-3 mr-1 text-green-500" />
+                <CheckCircle className="inline h-3 w-3 mr-1 text-success" />
                 All systems operational
               </p>
             </CardContent>
@@ -638,7 +643,7 @@ export default function EnterpriseDashboard() {
                     Component Library Stats
                   </CardTitle>
                   <CardDescription>
-                    v1.40.0 - Complete ecosystem with 100% export coverage
+                    v1.43.0 - Complete ecosystem with 100% export coverage
                   </CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-6">
@@ -650,7 +655,7 @@ export default function EnterpriseDashboard() {
                       <div className="text-sm text-muted-foreground">Total Components</div>
                     </div>
                     <div className="text-center p-4 border rounded-lg">
-                      <div className="text-3xl font-bold text-green-600">521+</div>
+                      <div className="text-3xl font-bold text-success">521+</div>
                       <div className="text-sm text-muted-foreground">Total Tests</div>
                     </div>
                   </div>
@@ -699,42 +704,50 @@ export default function EnterpriseDashboard() {
                   <div className="space-y-4">
                     <div className="flex items-center justify-between p-3 border rounded-lg">
                       <div className="flex items-center gap-3">
-                        <CheckCircle className="h-5 w-5 text-green-500" />
+                        <CheckCircle className="h-5 w-5 text-success" />
                         <span className="font-medium">WCAG 2.1 AA Compliant</span>
                       </div>
-                      <Badge className="bg-green-100 text-green-800">Passed</Badge>
+                      <Badge className="[background-color:hsl(var(--status-success)/0.1)] [color:hsl(var(--status-success))]">
+                        Passed
+                      </Badge>
                     </div>
 
                     <div className="flex items-center justify-between p-3 border rounded-lg">
                       <div className="flex items-center gap-3">
-                        <CheckCircle className="h-5 w-5 text-green-500" />
+                        <CheckCircle className="h-5 w-5 text-success" />
                         <span className="font-medium">TypeScript Strict Mode</span>
                       </div>
-                      <Badge className="bg-green-100 text-green-800">Enabled</Badge>
+                      <Badge className="[background-color:hsl(var(--status-success)/0.1)] [color:hsl(var(--status-success))]">
+                        Enabled
+                      </Badge>
                     </div>
 
                     <div className="flex items-center justify-between p-3 border rounded-lg">
                       <div className="flex items-center gap-3">
-                        <CheckCircle className="h-5 w-5 text-green-500" />
+                        <CheckCircle className="h-5 w-5 text-success" />
                         <span className="font-medium">ESLint Rules</span>
                       </div>
-                      <Badge className="bg-green-100 text-green-800">0 Errors</Badge>
+                      <Badge className="[background-color:hsl(var(--status-success)/0.1)] [color:hsl(var(--status-success))]">
+                        0 Errors
+                      </Badge>
                     </div>
 
                     <div className="flex items-center justify-between p-3 border rounded-lg">
                       <div className="flex items-center gap-3">
-                        <CheckCircle className="h-5 w-5 text-green-500" />
+                        <CheckCircle className="h-5 w-5 text-success" />
                         <span className="font-medium">Security Audit</span>
                       </div>
-                      <Badge className="bg-green-100 text-green-800">Clean</Badge>
+                      <Badge className="[background-color:hsl(var(--status-success)/0.1)] [color:hsl(var(--status-success))]">
+                        Clean
+                      </Badge>
                     </div>
                   </div>
 
                   <Separator />
 
-                  <div className="text-center p-4 bg-green-50 rounded-lg border border-green-200">
-                    <div className="text-2xl font-bold text-green-700">A+</div>
-                    <div className="text-sm text-green-600">Security Grade</div>
+                  <div className="text-center p-4 [background-color:hsl(var(--status-success)/0.1)] rounded-lg [border-color:hsl(var(--status-success))] border">
+                    <div className="text-2xl font-bold text-success">A+</div>
+                    <div className="text-sm text-success">Security Grade</div>
                   </div>
                 </CardContent>
               </Card>
@@ -922,7 +935,7 @@ export default function EnterpriseDashboard() {
                 <div className="text-xs text-muted-foreground">Components</div>
               </div>
               <div>
-                <div className="text-2xl font-bold text-green-600">521+</div>
+                <div className="text-2xl font-bold text-success">521+</div>
                 <div className="text-xs text-muted-foreground">Tests</div>
               </div>
               <div>

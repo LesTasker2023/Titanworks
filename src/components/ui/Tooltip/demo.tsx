@@ -81,14 +81,14 @@ export default function TooltipDemo() {
     },
     {
       id: 'warning',
-      trigger: <AlertTriangle className="h-4 w-4 text-yellow-500" />,
+      trigger: <AlertTriangle className="h-4 w-4 text-warning" />,
       content: 'Warning: This action cannot be undone',
       side: 'bottom',
       category: 'Information',
     },
     {
       id: 'success',
-      trigger: <CheckCircle className="h-4 w-4 text-green-500" />,
+      trigger: <CheckCircle className="h-4 w-4 text-success" />,
       content: 'Operation completed successfully',
       side: 'left',
       category: 'Information',
@@ -104,7 +104,7 @@ export default function TooltipDemo() {
     },
     {
       id: 'delete',
-      trigger: <Trash2 className="h-4 w-4 text-red-500" />,
+      trigger: <Trash2 className="h-4 w-4 text-error" />,
       content: 'Delete permanently - this cannot be undone',
       side: 'top',
       category: 'Actions',
@@ -490,7 +490,7 @@ export default function TooltipDemo() {
                 <Tooltip>
                   <TooltipTrigger asChild>
                     <div className="flex items-center gap-2 p-2 border rounded-lg cursor-help">
-                      <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                      <div className="w-2 h-2 bg-success rounded-full"></div>
                       <span className="text-sm">Online</span>
                     </div>
                   </TooltipTrigger>
@@ -502,7 +502,7 @@ export default function TooltipDemo() {
                 <Tooltip>
                   <TooltipTrigger asChild>
                     <div className="flex items-center gap-2 p-2 border rounded-lg cursor-help">
-                      <div className="w-2 h-2 bg-yellow-500 rounded-full"></div>
+                      <div className="w-2 h-2 bg-warning rounded-full"></div>
                       <span className="text-sm">Warning</span>
                     </div>
                   </TooltipTrigger>
@@ -514,7 +514,7 @@ export default function TooltipDemo() {
                 <Tooltip>
                   <TooltipTrigger asChild>
                     <div className="flex items-center gap-2 p-2 border rounded-lg cursor-help">
-                      <div className="w-2 h-2 bg-red-500 rounded-full"></div>
+                      <div className="w-2 h-2 bg-error rounded-full"></div>
                       <span className="text-sm">Offline</span>
                     </div>
                   </TooltipTrigger>
@@ -526,7 +526,7 @@ export default function TooltipDemo() {
                 <Tooltip>
                   <TooltipTrigger asChild>
                     <div className="flex items-center gap-2 p-2 border rounded-lg cursor-help">
-                      <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></div>
+                      <div className="w-2 h-2 [background-color:hsl(var(--surface-interactive))] rounded-full animate-pulse"></div>
                       <span className="text-sm">Syncing</span>
                     </div>
                   </TooltipTrigger>

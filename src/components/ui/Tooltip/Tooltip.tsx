@@ -17,7 +17,8 @@ const tooltipVariants = cva(
         destructive: 'bg-destructive text-destructive-foreground',
         outline: 'bg-background text-foreground border border-border',
         muted: 'bg-muted text-muted-foreground',
-        accent: 'bg-accent text-accent-foreground',
+        accent:
+          '[background-color:hsl(var(--surface-interactive))] [color:hsl(var(--content-inverse))]',
       },
       size: {
         sm: 'px-2 py-1 text-xs',

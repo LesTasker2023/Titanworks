@@ -1,31 +1,58 @@
-/* 🎨 Daedalus Unified Theme System */
+/* 🎨 Daedalus Semantic Color System v2.0 */
+/* Research-backed minimal design system following cognitive psychology principles */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root {
-    /* ===== CORE THEME COLORS ===== */
-    /* Light Theme - Clean & High Contrast */
-    --background: 0 0% 100%;
-    --foreground: 0 0% 3.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 0 0% 3.9%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 3.9%;
-    --primary: 0 0% 9%;
-    --primary-foreground: 0 0% 98%;
-    --secondary: 0 0% 96.1%;
-    --secondary-foreground: 0 0% 9%;
-    --muted: 0 0% 96.1%;
-    --muted-foreground: 0 0% 45.1%;
-    --accent: 0 0% 96.1%;
-    --accent-foreground: 0 0% 9%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 89.8%;
-    --input: 0 0% 89.8%;
-    --ring: 0 0% 3.9%;
+    /* ===== SEMANTIC COLOR TOKENS ===== */
+    /* Based on purpose, not arbitrary names - inspired by Material Design & Adobe Spectrum */
+
+    /* SURFACE TOKENS - What things sit on */
+    --surface-primary: 0 0% 100%; /* Main page backgrounds, cards */
+    --surface-secondary: 220 14% 96%; /* Secondary backgrounds, hover states */
+    --surface-interactive: 221 83% 53%; /* Interactive elements (customizable) */
+    --surface-accent: 142 76% 36%; /* Success states, highlights */
+
+    /* CONTENT TOKENS - What sits on surfaces */
+    --content-primary: 224 71% 4%; /* Main text, headings */
+    --content-secondary: 220 9% 46%; /* Supporting text, labels */
+    --content-inverse: 0 0% 98%; /* Text on dark/colored surfaces */
+    --content-muted: 220 14% 96%; /* Disabled text, subtle content */
+
+    /* BORDER TOKENS - What separates things */
+    --border-default: 220 13% 91%; /* Default borders, dividers */
+    --border-interactive: 221 83% 53%; /* Interactive borders (customizable) */
+    --border-muted: 220 14% 96%; /* Subtle borders */
+
+    /* STATUS TOKENS - What tells users about state */
+    --status-success: 142 76% 36%; /* Green - success, positive */
+    --status-warning: 32 95% 44%; /* Orange - warning, caution */
+    --status-error: 0 84% 60%; /* Red - error, destructive */
+    --status-info: 221 83% 53%; /* Blue - information */
+
+    /* ===== LEGACY SHADCN COMPATIBILITY ===== */
+    /* Mapped to semantic tokens for backward compatibility */
+    --background: var(--surface-primary);
+    --foreground: var(--content-primary);
+    --card: var(--surface-primary);
+    --card-foreground: var(--content-primary);
+    --popover: var(--surface-primary);
+    --popover-foreground: var(--content-primary);
+    --primary: var(--surface-interactive);
+    --primary-foreground: var(--content-inverse);
+    --secondary: var(--surface-secondary);
+    --secondary-foreground: var(--content-primary);
+    --muted: var(--content-muted);
+    --muted-foreground: var(--content-secondary);
+    --accent: var(--surface-interactive);
+    --accent-foreground: var(--content-inverse);
+    --destructive: var(--status-error);
+    --destructive-foreground: var(--content-inverse);
+    --border: var(--border-default);
+    --input: var(--border-default);
+    --ring: var(--border-interactive);
     --radius: 0.5rem;
 
     /* ===== DESIGN TOKENS ===== */
@@ -69,33 +96,48 @@
   }
 
   .dark {
-    /* Dark Theme - Clean & High Contrast */
-    --background: 0 0% 3.9%;
-    --foreground: 0 0% 98%;
-    --card: 0 0% 3.9%;
-    --card-foreground: 0 0% 98%;
-    --popover: 0 0% 3.9%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 0 0% 98%;
-    --primary-foreground: 0 0% 9%;
-    --secondary: 0 0% 14.9%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 0 0% 14.9%;
-    --muted-foreground: 0 0% 63.9%;
-    --accent: 0 0% 14.9%;
-    --accent-foreground: 0 0% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 14.9%;
-    --input: 0 0% 14.9%;
-    --ring: 0 0% 83.1%;
+    /* DARK MODE SEMANTIC TOKENS */
+    /* Automatically calculated for optimal contrast and accessibility */
+
+    /* SURFACE TOKENS */
+    --surface-primary: 224 71% 4%; /* Dark backgrounds */
+    --surface-secondary: 215 28% 17%; /* Slightly lighter for cards */
+    --surface-interactive: 221 83% 53%; /* Same interactive color (customizable) */
+    --surface-accent: 142 76% 36%; /* Same accent color */
+
+    /* CONTENT TOKENS */
+    --content-primary: 210 40% 98%; /* Light text on dark */
+    --content-secondary: 215 20% 65%; /* Muted text */
+    --content-inverse: 224 71% 4%; /* Dark text for light surfaces */
+    --content-muted: 215 28% 17%; /* Very muted content */
+
+    /* BORDER TOKENS */
+    --border-default: 217 33% 17%; /* Dark borders */
+    --border-interactive: 221 83% 53%; /* Same interactive border */
+    --border-muted: 215 28% 17%; /* Subtle dark borders */
+
+    /* STATUS TOKENS (same across themes for consistency) */
+    --status-success: 142 76% 36%;
+    --status-warning: 32 95% 44%;
+    --status-error: 0 84% 60%;
+    --status-info: 221 83% 53%;
   }
 }
 
-/* Brand Color Override System */
+/* ===== CUSTOMIZABLE THEME SYSTEM ===== */
+/* These variables are dynamically updated by the theme picker */
 :root {
-  --brand-primary: #18181b;
-  --brand-primary-foreground: #fafafa;
+  /* INTERACTIVE COLOR SYSTEM - The core customizable colors */
+  --color-interactive: #2563eb; /* Primary interactive elements */
+  --color-interactive-foreground: #ffffff;
+  --color-surface: #f1f5f9; /* Secondary surfaces */
+  --color-surface-foreground: #000000;
+  --color-accent: #10b981; /* Highlights and success */
+  --color-accent-foreground: #ffffff;
+
+  /* LEGACY BRAND SUPPORT - Maps to interactive */
+  --brand-primary: var(--color-interactive);
+  --brand-primary-foreground: var(--color-interactive-foreground);
 }
 
 /* Note: Dark mode brand colors are set dynamically by ColorPicker component */
@@ -159,17 +201,88 @@ button[class*='bg-primary']:hover,
   }
 }
 
-/* ===== UTILITY CLASSES ===== */
-.bg-brand {
+/* ===== SEMANTIC UTILITY CLASSES ===== */
+/* Purpose-driven classes that map to semantic tokens */
+
+/* INTERACTIVE UTILITIES - For clickable elements */
+.bg-interactive,
+.dark .bg-interactive {
+  background-color: hsl(var(--surface-interactive)) !important;
+  color: hsl(var(--content-inverse)) !important;
+}
+
+.text-interactive,
+.dark .text-interactive {
+  color: hsl(var(--surface-interactive)) !important;
+}
+
+.border-interactive,
+.dark .border-interactive {
+  border-color: hsl(var(--surface-interactive)) !important;
+}
+
+/* SURFACE UTILITIES - For backgrounds and containers */
+.bg-surface-secondary,
+.dark .bg-surface-secondary {
+  background-color: hsl(var(--surface-secondary)) !important;
+  color: hsl(var(--content-primary)) !important;
+}
+
+/* ACCENT UTILITIES - For highlights and success states */
+.bg-accent,
+.dark .bg-accent {
+  background-color: hsl(var(--surface-interactive)) !important;
+  color: hsl(var(--content-inverse)) !important;
+}
+
+.text-accent,
+.dark .text-accent {
+  color: hsl(var(--surface-interactive)) !important;
+}
+
+/* STATUS UTILITIES - For feedback and states */
+.bg-success,
+.dark .bg-success {
+  background-color: hsl(var(--status-success)) !important;
+  color: hsl(var(--content-inverse)) !important;
+}
+
+.bg-warning,
+.dark .bg-warning {
+  background-color: hsl(var(--status-warning)) !important;
+  color: hsl(var(--content-inverse)) !important;
+}
+
+.bg-error,
+.dark .bg-error {
+  background-color: hsl(var(--status-error)) !important;
+  color: hsl(var(--content-inverse)) !important;
+}
+
+.text-success {
+  color: hsl(var(--status-success)) !important;
+}
+.text-warning {
+  color: hsl(var(--status-warning)) !important;
+}
+.text-error {
+  color: hsl(var(--status-error)) !important;
+}
+
+/* LEGACY BRAND UTILITIES - Backward compatibility */
+.bg-brand,
+.bg-primary {
   background-color: var(--brand-primary) !important;
   color: var(--brand-primary-foreground) !important;
 }
 
-.text-brand {
+.text-brand,
+.text-primary {
   color: var(--brand-primary) !important;
 }
 
-.border-brand {
+.border-brand,
+.border-primary {
   border-color: var(--brand-primary) !important;
 }
 
@@ -199,9 +312,50 @@ button[class*='bg-primary']:hover,
   transition: var(--transition-fast);
 }
 
-/* Daedalus Custom Styles */
-main {
-  background-position: left;
-  background-size: contain;
-  background-repeat: no-repeat;
+/* ===== COMPONENT BASE PATTERNS ===== */
+/* Consistent patterns for common UI elements following semantic design */
+
+/* Interactive Elements (buttons, links, form controls) */
+.component-interactive {
+  background-color: hsl(var(--surface-interactive));
+  color: hsl(var(--content-inverse));
+  border: 1px solid hsl(var(--border-interactive));
+  transition: var(--transition-default);
+}
+
+.component-interactive:hover {
+  background-color: color-mix(in srgb, hsl(var(--surface-interactive)) 90%, black);
+}
+
+.component-interactive:focus-visible {
+  outline: 2px solid hsl(var(--border-interactive));
+  outline-offset: 2px;
+}
+
+/* Surface Elements (cards, panels, modals) */
+.component-surface {
+  background-color: hsl(var(--surface-primary));
+  color: hsl(var(--content-primary));
+  border: 1px solid hsl(var(--border-default));
+  box-shadow: var(--shadow);
+}
+
+.component-surface-secondary {
+  background-color: hsl(var(--surface-secondary));
+  color: hsl(var(--content-primary));
+  border: 1px solid hsl(var(--border-muted));
+}
+
+/* Content Elements (text, headings, labels) */
+.content-primary {
+  color: hsl(var(--content-primary));
+}
+
+.content-secondary {
+  color: hsl(var(--content-secondary));
+}
+
+.content-muted {
+  color: hsl(var(--content-secondary));
+  opacity: 0.7;
 }
