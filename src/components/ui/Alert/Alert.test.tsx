@@ -2,7 +2,7 @@
 import { AlertTriangle, CheckCircle, Info } from 'lucide-react';
 import React from 'react';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
-import Alert, { AlertDescription, AlertTitle } from './alert';
+import { Alert, AlertDescription, AlertTitle } from './alert';
 
 // Mock timers for auto-hide functionality
 beforeEach(() => {

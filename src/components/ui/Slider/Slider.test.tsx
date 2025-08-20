@@ -1,6 +1,6 @@
 ﻿import { act, fireEvent, render, screen, waitFor } from '@testing-library/react';
 import { describe, expect, it, vi } from 'vitest';
-import Slider from './slider';
+import { Slider } from './slider';
 
 describe('Slider Component', () => {
   // 1. Rendering (5-8 tests)

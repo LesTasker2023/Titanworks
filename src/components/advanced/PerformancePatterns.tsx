@@ -9,7 +9,7 @@
  */
 
 import { Button } from '@/components/ui/Button';
-import Card, { CardContent, CardHeader, CardTitle } from '@/components/ui/Card';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card';
 import { Skeleton } from '@/components/ui/Skeleton';
 import { unstable_cache } from 'next/cache';
 import { Suspense } from 'react';

@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/nextjs';
 import React from 'react';
-import DataTable from './DataTable';
+import { DataTable } from './DataTable';
 
 // Sample data for stories
 const sampleData = [

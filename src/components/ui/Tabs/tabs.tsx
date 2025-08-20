@@ -128,5 +128,4 @@ const TabsComponent = Object.assign(Tabs, {
   Content: TabsContent,
 });
 
-export default TabsComponent;
-export { TabsContent, TabsList, TabsTrigger };
+export { TabsComponent as Tabs, TabsContent, TabsList, TabsTrigger };

@@ -105,5 +105,4 @@ const AvatarFallback = React.forwardRef<
 ));
 AvatarFallback.displayName = AvatarPrimitive.Fallback.displayName;
 
-export default Avatar;
-export { AvatarFallback, AvatarImage, avatarVariants };
+export { Avatar, AvatarFallback, AvatarImage, avatarVariants };

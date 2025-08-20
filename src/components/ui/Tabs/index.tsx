@@ -1,1 +1,1 @@
-export { default as Tabs, TabsContent, TabsList, TabsTrigger, default } from './tabs';
+export * from './tabs';

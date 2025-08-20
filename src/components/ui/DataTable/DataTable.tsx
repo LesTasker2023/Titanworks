@@ -474,5 +474,4 @@ const DataTable = React.forwardRef<HTMLDivElement, DataTableProps>(
 
 DataTable.displayName = 'DataTable';
 
-export default DataTable;
-export { dataTableVariants };
+export { DataTable, dataTableVariants };

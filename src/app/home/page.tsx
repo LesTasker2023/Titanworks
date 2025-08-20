@@ -1,5 +1,5 @@
 'use client';
-import Alert from '@/components/ui/Alert';
+import { Alert } from '@/components/ui/Alert';
 import { Button } from '@/components/ui/Button';
 import { Input } from '@/components/ui/Input';
 import { Textarea } from '@/components/ui/Textarea';

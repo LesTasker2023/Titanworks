@@ -25,10 +25,10 @@ import {
   CardTitle,
   TooltipProvider,
 } from '@/components/ui';
-import Alert from '@/components/ui/Alert/alert';
+import { Alert } from '@/components/ui/Alert/alert';
 import { Badge } from '@/components/ui/Badge/badge';
 import { Button } from '@/components/ui/Button/button';
-import DataTable from '@/components/ui/DataTable/DataTable';
+import { DataTable } from '@/components/ui/DataTable/DataTable';
 import {
   Dialog,
   DialogContent,
@@ -42,7 +42,7 @@ import { Progress } from '@/components/ui/Progress/progress';
 import { Separator } from '@/components/ui/Separator/Separator';
 import { Skeleton } from '@/components/ui/Skeleton/Skeleton';
 import { Switch } from '@/components/ui/Switch/Switch';
-import Tabs, { TabsContent, TabsList, TabsTrigger } from '@/components/ui/Tabs/tabs';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/Tabs/tabs';
 import { Toaster } from '@/components/ui/Toast/toaster';
 import { useToast } from '@/components/ui/Toast/use-toast';
 

@@ -1,5 +1,6 @@
 import { Badge } from '@/components/ui/Badge';
-import Card, {
+import {
+  Card,
   CardContent,
   CardDescription,
   CardFooter,

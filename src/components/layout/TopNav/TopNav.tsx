@@ -1,7 +1,8 @@
 import ThemeToggle from '@/components/layout/ThemeToggle';
 import { Badge } from '@/components/ui/Badge';
-import ColorPicker from '@/components/ui/ColorPicker';
-import NavigationMenu, {
+import { ColorPicker } from '@/components/ui/ColorPicker';
+import {
+  NavigationMenu,
   NavigationMenuContent,
   NavigationMenuItem,
   NavigationMenuLink,

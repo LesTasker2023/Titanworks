@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/nextjs';
 import { useState } from 'react';
-import Slider from './slider';
+import { Slider } from './slider';
 
 const meta: Meta<typeof Slider> = {
   title: 'UI/Slider',
@@ -241,7 +241,7 @@ export const EnhancedFeatures: Story = {
             max={35}
             step={0.5}
             showValue
-            formatValue={val => `${val}°C`}
+            formatValue={(val: number) => `${val}°C`}
             variant={temperature[0] > 28 ? 'danger' : temperature[0] > 24 ? 'warning' : 'success'}
           />
         </div>
@@ -253,7 +253,12 @@ export const EnhancedFeatures: Story = {
 
         <div>
           <h3 className="text-sm font-medium mb-2">Disabled State</h3>
-          <Slider defaultValue={[75]} disabled showValue formatValue={val => `${val}% locked`} />
+          <Slider
+            defaultValue={[75]}
+            disabled
+            showValue
+            formatValue={(val: number) => `${val}% locked`}
+          />
         </div>
 
         <div>
@@ -264,7 +269,7 @@ export const EnhancedFeatures: Story = {
             max={1000}
             step={50}
             showValue
-            formatValue={val => `$${val.toLocaleString()}`}
+            formatValue={(val: number) => `$${val.toLocaleString()}`}
             variant="success"
             size="lg"
           />

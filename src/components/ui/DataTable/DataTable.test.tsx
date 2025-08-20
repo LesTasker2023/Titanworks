@@ -1,6 +1,6 @@
 ﻿import { fireEvent, render, screen } from '@testing-library/react';
 import { describe, expect, it, vi } from 'vitest';
-import DataTable from './DataTable';
+import { DataTable } from './DataTable';
 
 const mockData = [
   { id: 1, name: 'John', email: 'john@example.com', role: 'Admin' },

@@ -238,5 +238,4 @@ const Slider = React.forwardRef<React.ElementRef<typeof SliderPrimitive.Root>, S
 
 Slider.displayName = SliderPrimitive.Root.displayName;
 
-export default Slider;
-export { rangeVariants, sliderVariants, thumbVariants, trackVariants };
+export { rangeVariants, Slider, sliderVariants, thumbVariants, trackVariants };

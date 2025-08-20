@@ -25,7 +25,7 @@ const PRESET_COLORS = [
   '#4f46e5', // Indigo - excellent contrast
 ];
 
-export default function ColorPicker({
+function ColorPicker({
   defaultColor = '#18181b',
   onColorChange,
   className = '',
@@ -256,3 +256,6 @@ function getLuminance(rgb: { r: number; g: number; b: number }) {
 function isValidHexColor(hex: string) {
   return /^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/.test(hex);
 }
+
+export { ColorPicker };
+export type { ColorPickerProps };

@@ -1,2 +1,2 @@
-export { default } from './ColorPicker';
-export type { default as ColorPickerProps } from './ColorPicker';
+export { ColorPicker } from './ColorPicker';
+export type { ColorPickerProps } from './ColorPicker';

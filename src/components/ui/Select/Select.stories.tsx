@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/nextjs';
 import React, { useState } from 'react';
-import Select, {
+import {
+  Select,
   SelectContent,
   SelectGroup,
   SelectItem,
@@ -290,7 +291,7 @@ export const FormExample: Story = {
       <form onSubmit={handleSubmit} className="w-96 space-y-6">
         <Select
           value={formData.priority}
-          onValueChange={value => setFormData(prev => ({ ...prev, priority: value }))}
+          onValueChange={(value: string) => setFormData(prev => ({ ...prev, priority: value }))}
           label="Priority"
           error={errors.priority}
           required
@@ -308,7 +309,7 @@ export const FormExample: Story = {
 
         <Select
           value={formData.category}
-          onValueChange={value => setFormData(prev => ({ ...prev, category: value }))}
+          onValueChange={(value: string) => setFormData(prev => ({ ...prev, category: value }))}
           label="Category"
           error={errors.category}
           helperText="Choose the most relevant category"
@@ -336,7 +337,7 @@ export const FormExample: Story = {
 
         <Select
           value={formData.assignee}
-          onValueChange={value => setFormData(prev => ({ ...prev, assignee: value }))}
+          onValueChange={(value: string) => setFormData(prev => ({ ...prev, assignee: value }))}
           label="Assignee (Optional)"
           helperText="Leave empty for automatic assignment"
         >
