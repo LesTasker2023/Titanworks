@@ -1,4 +1,3 @@
-export * from './PopoverReal';
-// Legacy export for backwards compatibility
-export { Popover as PopoverButton } from './Popover';
+export { default as PopoverDemo } from './demo';
 export type { PopoverProps } from './Popover';
+export * from './PopoverReal';

@@ -15,20 +15,20 @@ import { TooltipProvider } from '@/components/ui/Tooltip';
 import { Filter, Search } from 'lucide-react';
 import React, { useMemo, useState } from 'react';
 
-// Import component demos
-import AccordionDemo from '@/components/ui/Accordion/demo';
-import AlertDemo from '@/components/ui/Alert/demo';
-import AlertDialogDemo from '@/components/ui/AlertDialog/demo';
-import AspectRatioDemo from '@/components/ui/AspectRatio/demo';
-import AvatarDemo from '@/components/ui/Avatar/demo';
-import BadgeDemo from '@/components/ui/Badge/demo';
-import BreadcrumbDemo from '@/components/ui/Breadcrumb/demo';
-import ButtonDemo from '@/components/ui/Button/demo';
-import CalendarDemo from '@/components/ui/Calendar/demo';
-import CardDemo from '@/components/ui/Card/demo';
+// Import component demos - New centralized pattern
+import { AccordionDemo } from '@/components/ui/Accordion';
+import { AlertDemo } from '@/components/ui/Alert';
+import { AlertDialogDemo } from '@/components/ui/AlertDialog';
+import { AspectRatioDemo } from '@/components/ui/AspectRatio';
+import { AvatarDemo } from '@/components/ui/Avatar';
+import { BadgeDemo } from '@/components/ui/Badge';
+import { BreadcrumbDemo } from '@/components/ui/Breadcrumb';
+import { ButtonDemo } from '@/components/ui/Button';
+import { CalendarDemo } from '@/components/ui/Calendar';
+import { CardDemo } from '@/components/ui/Card';
 import CarouselDemo from '@/components/ui/Carousel/demo';
 import ChartDemo from '@/components/ui/Chart/demo';
-import CheckboxDemo from '@/components/ui/Checkbox/demo';
+import { CheckboxDemo } from '@/components/ui/Checkbox';
 import CollapsibleDemo from '@/components/ui/Collapsible/demo';
 import ColorPickerDemo from '@/components/ui/ColorPicker/demo';
 import ComboboxDemo from '@/components/ui/Combobox/demo';
@@ -40,7 +40,7 @@ import DialogDemo from '@/components/ui/Dialog/demo';
 import DropdownMenuDemo from '@/components/ui/DropdownMenu/demo';
 import FormDemo from '@/components/ui/Form/demo';
 import HoverCardDemo from '@/components/ui/HoverCard/demo';
-import InputDemo from '@/components/ui/Input/demo';
+import { InputDemo } from '@/components/ui/Input';
 import LabelDemo from '@/components/ui/Label/demo';
 import MenubarDemo from '@/components/ui/Menubar/demo';
 import ModalDemo from '@/components/ui/Modal/demo';
@@ -63,7 +63,7 @@ import TabsDemo from '@/components/ui/Tabs/demo';
 import TextareaDemo from '@/components/ui/Textarea/demo';
 import ThemeToggleDemo from '@/components/ui/ThemeToggle/demo';
 import ToastDemo from '@/components/ui/Toast/demo';
-import ToggleDemo from '@/components/ui/Toggle/demo';
+import { ToggleDemo } from '@/components/ui/Toggle';
 import TooltipDemo from '@/components/ui/Tooltip/demo';
 
 // Component registry with categories
