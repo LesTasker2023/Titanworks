@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react';
+﻿import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 import { Pagination } from './Pagination';
@@ -14,6 +14,41 @@ describe('Pagination Component', () => {
     vi.clearAllMocks();
   });
 
+  describe('Snapshots', () => {
+    it('matches default snapshot', () => {
+      const { container } = render(<Pagination>Default</Pagination>);
+      expect(container.firstChild).toMatchSnapshot();
+    });
+    it('matches all variants snapshot', () => {
+      const { container } = render(
+        <div data-testid="variants-container">
+          <Pagination variant="default">Default</Pagination>
+          <Pagination variant="destructive">Destructive</Pagination>
+          <Pagination variant="outline">Outline</Pagination>
+          <Pagination variant="secondary">Secondary</Pagination>
+        </div>
+      );
+      expect(container.firstChild).toMatchSnapshot();
+    });
+    it('matches all sizes snapshot', () => {
+      const { container } = render(
+        <div data-testid="sizes-container">
+          <Pagination size="sm">Small</Pagination>
+          <Pagination size="default">Default</Pagination>
+          <Pagination size="lg">Large</Pagination>
+        </div>
+      );
+      expect(container.firstChild).toMatchSnapshot();
+    });
+    it('matches disabled state snapshot', () => {
+      const { container } = render(<Pagination disabled>Disabled</Pagination>);
+      expect(container.firstChild).toMatchSnapshot();
+    });
+    it('matches loading state snapshot', () => {
+      const { container } = render(<Pagination loading>Loading</Pagination>);
+      expect(container.firstChild).toMatchSnapshot();
+    });
+  });
   describe('Basic Rendering', () => {
     it('renders pagination navigation correctly', () => {
       render(<Pagination {...defaultProps} />);

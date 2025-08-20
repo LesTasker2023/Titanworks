@@ -1,0 +1,9 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Sheet > Snapshots > matches basic snapshot 1`] = `
+<div
+  data-testid="sheet-container"
+>
+  Sheet Component Test
+</div>
+`;

@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react';
+﻿import { render, screen } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
 import { Label } from './Label';
 
@@ -6,6 +6,42 @@ describe('Label', () => {
   it('renders without crashing', () => {
     render(<Label>Test Label</Label>);
     expect(screen.getByText('Test Label')).toBeInTheDocument();
+  });
+
+  describe('Snapshots', () => {
+    it('matches default snapshot', () => {
+      const { container } = render(<Label>Default</Label>);
+      expect(container.firstChild).toMatchSnapshot();
+    });
+    it('matches all variants snapshot', () => {
+      const { container } = render(
+        <div data-testid="variants-container">
+          <Label variant="default">Default</Label>
+          <Label variant="destructive">Destructive</Label>
+          <Label variant="outline">Outline</Label>
+          <Label variant="secondary">Secondary</Label>
+        </div>
+      );
+      expect(container.firstChild).toMatchSnapshot();
+    });
+    it('matches all sizes snapshot', () => {
+      const { container } = render(
+        <div data-testid="sizes-container">
+          <Label size="sm">Small</Label>
+          <Label size="default">Default</Label>
+          <Label size="lg">Large</Label>
+        </div>
+      );
+      expect(container.firstChild).toMatchSnapshot();
+    });
+    it('matches disabled state snapshot', () => {
+      const { container } = render(<Label disabled>Disabled</Label>);
+      expect(container.firstChild).toMatchSnapshot();
+    });
+    it('matches loading state snapshot', () => {
+      const { container } = render(<Label loading>Loading</Label>);
+      expect(container.firstChild).toMatchSnapshot();
+    });
   });
 
   it('renders as a label element', () => {

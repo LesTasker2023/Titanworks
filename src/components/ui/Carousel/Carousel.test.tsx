@@ -3,29 +3,21 @@ import { render, screen } from '@testing-library/react';
 
 describe('Carousel', () => {
   it('renders without crashing', () => {
-    // Basic render test
     render(<div data-testid="carousel-test">Carousel Test</div>);
     expect(screen.getByTestId('carousel-test')).toBeInTheDocument();
   });
 
-  it('applies custom className correctly', () => {
-    render(
-      <div className="custom-class" data-testid="carousel-test">
-        Carousel
-      </div>
-    );
-    expect(screen.getByTestId('carousel-test')).toHaveClass('custom-class');
+  describe('Snapshots', () => {
+    it('matches basic snapshot', () => {
+      const { container } = render(
+        <div data-testid="carousel-container">Carousel Component Test</div>
+      );
+      expect(container.firstChild).toMatchSnapshot();
+    });
   });
 
-  // Accessibility tests
-  it('meets basic accessibility requirements', () => {
-    render(
-      <div role="region" aria-label="Carousel component" data-testid="carousel-test">
-        Carousel
-      </div>
-    );
-    expect(screen.getByRole('region')).toHaveAttribute('aria-label', 'Carousel component');
+  it('renders test content correctly', () => {
+    render(<div data-testid="content">Carousel Content</div>);
+    expect(screen.getByTestId('content')).toHaveTextContent('Carousel Content');
   });
-
-  // Add more specific tests based on component functionality
 });

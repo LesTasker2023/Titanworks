@@ -1,0 +1,9 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Chart > Snapshots > matches basic snapshot 1`] = `
+<div
+  data-testid="chart-container"
+>
+  Chart Component Test
+</div>
+`;

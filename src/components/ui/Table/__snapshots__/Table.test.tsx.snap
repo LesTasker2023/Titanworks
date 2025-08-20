@@ -1,0 +1,9 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Table > Snapshots > matches basic snapshot 1`] = `
+<div
+  data-testid="table-container"
+>
+  Table Component Test
+</div>
+`;

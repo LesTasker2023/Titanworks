@@ -1,0 +1,9 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Carousel > Snapshots > matches basic snapshot 1`] = `
+<div
+  data-testid="carousel-container"
+>
+  Carousel Component Test
+</div>
+`;

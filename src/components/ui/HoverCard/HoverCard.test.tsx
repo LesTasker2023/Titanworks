@@ -3,29 +3,21 @@ import { render, screen } from '@testing-library/react';
 
 describe('HoverCard', () => {
   it('renders without crashing', () => {
-    // Basic render test
     render(<div data-testid="hovercard-test">HoverCard Test</div>);
     expect(screen.getByTestId('hovercard-test')).toBeInTheDocument();
   });
 
-  it('applies custom className correctly', () => {
-    render(
-      <div className="custom-class" data-testid="hovercard-test">
-        HoverCard
-      </div>
-    );
-    expect(screen.getByTestId('hovercard-test')).toHaveClass('custom-class');
+  describe('Snapshots', () => {
+    it('matches basic snapshot', () => {
+      const { container } = render(
+        <div data-testid="hovercard-container">HoverCard Component Test</div>
+      );
+      expect(container.firstChild).toMatchSnapshot();
+    });
   });
 
-  // Accessibility tests
-  it('meets basic accessibility requirements', () => {
-    render(
-      <div role="region" aria-label="HoverCard component" data-testid="hovercard-test">
-        HoverCard
-      </div>
-    );
-    expect(screen.getByRole('region')).toHaveAttribute('aria-label', 'HoverCard component');
+  it('renders test content correctly', () => {
+    render(<div data-testid="content">HoverCard Content</div>);
+    expect(screen.getByTestId('content')).toHaveTextContent('HoverCard Content');
   });
-
-  // Add more specific tests based on component functionality
 });

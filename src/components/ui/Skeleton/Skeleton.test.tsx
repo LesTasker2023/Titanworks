@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react';
+﻿import { render, screen } from '@testing-library/react';
 import * as React from 'react';
 import { beforeEach, describe, expect, it } from 'vitest';
 import { Skeleton } from './Skeleton';
@@ -6,6 +6,42 @@ import { Skeleton } from './Skeleton';
 describe('Skeleton Component', () => {
   beforeEach(() => {
     // Reset any state before each test
+  });
+
+  describe('Snapshots', () => {
+    it('matches default snapshot', () => {
+      const { container } = render(<Skeleton>Default</Skeleton>);
+      expect(container.firstChild).toMatchSnapshot();
+    });
+    it('matches all variants snapshot', () => {
+      const { container } = render(
+        <div data-testid="variants-container">
+          <Skeleton variant="default">Default</Skeleton>
+          <Skeleton variant="destructive">Destructive</Skeleton>
+          <Skeleton variant="outline">Outline</Skeleton>
+          <Skeleton variant="secondary">Secondary</Skeleton>
+        </div>
+      );
+      expect(container.firstChild).toMatchSnapshot();
+    });
+    it('matches all sizes snapshot', () => {
+      const { container } = render(
+        <div data-testid="sizes-container">
+          <Skeleton size="sm">Small</Skeleton>
+          <Skeleton size="default">Default</Skeleton>
+          <Skeleton size="lg">Large</Skeleton>
+        </div>
+      );
+      expect(container.firstChild).toMatchSnapshot();
+    });
+    it('matches disabled state snapshot', () => {
+      const { container } = render(<Skeleton disabled>Disabled</Skeleton>);
+      expect(container.firstChild).toMatchSnapshot();
+    });
+    it('matches loading state snapshot', () => {
+      const { container } = render(<Skeleton loading>Loading</Skeleton>);
+      expect(container.firstChild).toMatchSnapshot();
+    });
   });
 
   describe('Rendering', () => {

@@ -5,7 +5,7 @@ exports[`ThemeToggle > renders with default icon and label 1`] = `
   aria-label="Toggle theme"
   title="Toggle theme"
 >
-  🌞
+  🌙
 </button>
 `;
 

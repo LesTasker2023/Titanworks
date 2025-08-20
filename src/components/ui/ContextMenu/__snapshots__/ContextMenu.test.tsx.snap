@@ -1,0 +1,9 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`ContextMenu > Snapshots > matches basic snapshot 1`] = `
+<div
+  data-testid="contextmenu-container"
+>
+  ContextMenu Component Test
+</div>
+`;

@@ -1,0 +1,822 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Pagination Component > Snapshots > matches all sizes snapshot 1`] = `
+<div
+  data-testid="sizes-container"
+>
+  <div
+    class="flex flex-col items-center space-y-3"
+  >
+    <nav
+      aria-label="Pagination"
+      class="flex items-center justify-center space-x-1 text-sm"
+    >
+      <button
+        aria-label="Go to first page"
+        class="inline-flex items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none gap-1 hover:bg-accent hover:text-accent-foreground h-8 px-2 text-xs"
+      >
+        <span
+          class="hidden sm:inline"
+        >
+          First
+        </span>
+        <span
+          class="sm:hidden"
+        >
+          1
+        </span>
+      </button>
+      <button
+        aria-label="Go to previous page"
+        class="inline-flex items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none gap-1 hover:bg-accent hover:text-accent-foreground h-8 px-2 text-xs"
+      >
+        <svg
+          aria-hidden="true"
+          class="lucide lucide-chevron-left h-4 w-4"
+          fill="none"
+          height="24"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+          width="24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="m15 18-6-6 6-6"
+          />
+        </svg>
+        <span
+          class="hidden sm:inline"
+        >
+          Previous
+        </span>
+      </button>
+      <button
+        aria-label="Go to next page"
+        class="inline-flex items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none gap-1 hover:bg-accent hover:text-accent-foreground h-8 px-2 text-xs"
+        disabled=""
+      >
+        <span
+          class="hidden sm:inline"
+        >
+          Next
+        </span>
+        <svg
+          aria-hidden="true"
+          class="lucide lucide-chevron-right h-4 w-4"
+          fill="none"
+          height="24"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+          width="24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="m9 18 6-6-6-6"
+          />
+        </svg>
+      </button>
+    </nav>
+  </div>
+  <div
+    class="flex flex-col items-center space-y-3"
+  >
+    <nav
+      aria-label="Pagination"
+      class="flex items-center justify-center space-x-1 text-sm"
+    >
+      <button
+        aria-label="Go to first page"
+        class="inline-flex items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none gap-1 hover:bg-accent hover:text-accent-foreground h-9 px-3 text-sm"
+      >
+        <span
+          class="hidden sm:inline"
+        >
+          First
+        </span>
+        <span
+          class="sm:hidden"
+        >
+          1
+        </span>
+      </button>
+      <button
+        aria-label="Go to previous page"
+        class="inline-flex items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none gap-1 hover:bg-accent hover:text-accent-foreground h-9 px-3 text-sm"
+      >
+        <svg
+          aria-hidden="true"
+          class="lucide lucide-chevron-left h-4 w-4"
+          fill="none"
+          height="24"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+          width="24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="m15 18-6-6 6-6"
+          />
+        </svg>
+        <span
+          class="hidden sm:inline"
+        >
+          Previous
+        </span>
+      </button>
+      <button
+        aria-label="Go to next page"
+        class="inline-flex items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none gap-1 hover:bg-accent hover:text-accent-foreground h-9 px-3 text-sm"
+        disabled=""
+      >
+        <span
+          class="hidden sm:inline"
+        >
+          Next
+        </span>
+        <svg
+          aria-hidden="true"
+          class="lucide lucide-chevron-right h-4 w-4"
+          fill="none"
+          height="24"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+          width="24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="m9 18 6-6-6-6"
+          />
+        </svg>
+      </button>
+    </nav>
+  </div>
+  <div
+    class="flex flex-col items-center space-y-3"
+  >
+    <nav
+      aria-label="Pagination"
+      class="flex items-center justify-center space-x-1 text-base"
+    >
+      <button
+        aria-label="Go to first page"
+        class="inline-flex items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none gap-1 hover:bg-accent hover:text-accent-foreground h-10 px-4 text-base"
+      >
+        <span
+          class="hidden sm:inline"
+        >
+          First
+        </span>
+        <span
+          class="sm:hidden"
+        >
+          1
+        </span>
+      </button>
+      <button
+        aria-label="Go to previous page"
+        class="inline-flex items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none gap-1 hover:bg-accent hover:text-accent-foreground h-10 px-4 text-base"
+      >
+        <svg
+          aria-hidden="true"
+          class="lucide lucide-chevron-left h-4 w-4"
+          fill="none"
+          height="24"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+          width="24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="m15 18-6-6 6-6"
+          />
+        </svg>
+        <span
+          class="hidden sm:inline"
+        >
+          Previous
+        </span>
+      </button>
+      <button
+        aria-label="Go to next page"
+        class="inline-flex items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none gap-1 hover:bg-accent hover:text-accent-foreground h-10 px-4 text-base"
+        disabled=""
+      >
+        <span
+          class="hidden sm:inline"
+        >
+          Next
+        </span>
+        <svg
+          aria-hidden="true"
+          class="lucide lucide-chevron-right h-4 w-4"
+          fill="none"
+          height="24"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+          width="24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="m9 18 6-6-6-6"
+          />
+        </svg>
+      </button>
+    </nav>
+  </div>
+</div>
+`;
+
+exports[`Pagination Component > Snapshots > matches all variants snapshot 1`] = `
+<div
+  data-testid="variants-container"
+>
+  <div
+    class="flex flex-col items-center space-y-3"
+  >
+    <nav
+      aria-label="Pagination"
+      class="flex items-center justify-center space-x-1 text-sm"
+      variant="default"
+    >
+      <button
+        aria-label="Go to first page"
+        class="inline-flex items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none gap-1 hover:bg-accent hover:text-accent-foreground h-9 px-3 text-sm"
+      >
+        <span
+          class="hidden sm:inline"
+        >
+          First
+        </span>
+        <span
+          class="sm:hidden"
+        >
+          1
+        </span>
+      </button>
+      <button
+        aria-label="Go to previous page"
+        class="inline-flex items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none gap-1 hover:bg-accent hover:text-accent-foreground h-9 px-3 text-sm"
+      >
+        <svg
+          aria-hidden="true"
+          class="lucide lucide-chevron-left h-4 w-4"
+          fill="none"
+          height="24"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+          width="24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="m15 18-6-6 6-6"
+          />
+        </svg>
+        <span
+          class="hidden sm:inline"
+        >
+          Previous
+        </span>
+      </button>
+      <button
+        aria-label="Go to next page"
+        class="inline-flex items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none gap-1 hover:bg-accent hover:text-accent-foreground h-9 px-3 text-sm"
+        disabled=""
+      >
+        <span
+          class="hidden sm:inline"
+        >
+          Next
+        </span>
+        <svg
+          aria-hidden="true"
+          class="lucide lucide-chevron-right h-4 w-4"
+          fill="none"
+          height="24"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+          width="24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="m9 18 6-6-6-6"
+          />
+        </svg>
+      </button>
+    </nav>
+  </div>
+  <div
+    class="flex flex-col items-center space-y-3"
+  >
+    <nav
+      aria-label="Pagination"
+      class="flex items-center justify-center space-x-1 text-sm"
+      variant="destructive"
+    >
+      <button
+        aria-label="Go to first page"
+        class="inline-flex items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none gap-1 hover:bg-accent hover:text-accent-foreground h-9 px-3 text-sm"
+      >
+        <span
+          class="hidden sm:inline"
+        >
+          First
+        </span>
+        <span
+          class="sm:hidden"
+        >
+          1
+        </span>
+      </button>
+      <button
+        aria-label="Go to previous page"
+        class="inline-flex items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none gap-1 hover:bg-accent hover:text-accent-foreground h-9 px-3 text-sm"
+      >
+        <svg
+          aria-hidden="true"
+          class="lucide lucide-chevron-left h-4 w-4"
+          fill="none"
+          height="24"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+          width="24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="m15 18-6-6 6-6"
+          />
+        </svg>
+        <span
+          class="hidden sm:inline"
+        >
+          Previous
+        </span>
+      </button>
+      <button
+        aria-label="Go to next page"
+        class="inline-flex items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none gap-1 hover:bg-accent hover:text-accent-foreground h-9 px-3 text-sm"
+        disabled=""
+      >
+        <span
+          class="hidden sm:inline"
+        >
+          Next
+        </span>
+        <svg
+          aria-hidden="true"
+          class="lucide lucide-chevron-right h-4 w-4"
+          fill="none"
+          height="24"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+          width="24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="m9 18 6-6-6-6"
+          />
+        </svg>
+      </button>
+    </nav>
+  </div>
+  <div
+    class="flex flex-col items-center space-y-3"
+  >
+    <nav
+      aria-label="Pagination"
+      class="flex items-center justify-center space-x-1 text-sm"
+      variant="outline"
+    >
+      <button
+        aria-label="Go to first page"
+        class="inline-flex items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none gap-1 hover:bg-accent hover:text-accent-foreground h-9 px-3 text-sm"
+      >
+        <span
+          class="hidden sm:inline"
+        >
+          First
+        </span>
+        <span
+          class="sm:hidden"
+        >
+          1
+        </span>
+      </button>
+      <button
+        aria-label="Go to previous page"
+        class="inline-flex items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none gap-1 hover:bg-accent hover:text-accent-foreground h-9 px-3 text-sm"
+      >
+        <svg
+          aria-hidden="true"
+          class="lucide lucide-chevron-left h-4 w-4"
+          fill="none"
+          height="24"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+          width="24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="m15 18-6-6 6-6"
+          />
+        </svg>
+        <span
+          class="hidden sm:inline"
+        >
+          Previous
+        </span>
+      </button>
+      <button
+        aria-label="Go to next page"
+        class="inline-flex items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none gap-1 hover:bg-accent hover:text-accent-foreground h-9 px-3 text-sm"
+        disabled=""
+      >
+        <span
+          class="hidden sm:inline"
+        >
+          Next
+        </span>
+        <svg
+          aria-hidden="true"
+          class="lucide lucide-chevron-right h-4 w-4"
+          fill="none"
+          height="24"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+          width="24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="m9 18 6-6-6-6"
+          />
+        </svg>
+      </button>
+    </nav>
+  </div>
+  <div
+    class="flex flex-col items-center space-y-3"
+  >
+    <nav
+      aria-label="Pagination"
+      class="flex items-center justify-center space-x-1 text-sm"
+      variant="secondary"
+    >
+      <button
+        aria-label="Go to first page"
+        class="inline-flex items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none gap-1 hover:bg-accent hover:text-accent-foreground h-9 px-3 text-sm"
+      >
+        <span
+          class="hidden sm:inline"
+        >
+          First
+        </span>
+        <span
+          class="sm:hidden"
+        >
+          1
+        </span>
+      </button>
+      <button
+        aria-label="Go to previous page"
+        class="inline-flex items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none gap-1 hover:bg-accent hover:text-accent-foreground h-9 px-3 text-sm"
+      >
+        <svg
+          aria-hidden="true"
+          class="lucide lucide-chevron-left h-4 w-4"
+          fill="none"
+          height="24"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+          width="24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="m15 18-6-6 6-6"
+          />
+        </svg>
+        <span
+          class="hidden sm:inline"
+        >
+          Previous
+        </span>
+      </button>
+      <button
+        aria-label="Go to next page"
+        class="inline-flex items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none gap-1 hover:bg-accent hover:text-accent-foreground h-9 px-3 text-sm"
+        disabled=""
+      >
+        <span
+          class="hidden sm:inline"
+        >
+          Next
+        </span>
+        <svg
+          aria-hidden="true"
+          class="lucide lucide-chevron-right h-4 w-4"
+          fill="none"
+          height="24"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+          width="24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="m9 18 6-6-6-6"
+          />
+        </svg>
+      </button>
+    </nav>
+  </div>
+</div>
+`;
+
+exports[`Pagination Component > Snapshots > matches default snapshot 1`] = `
+<div
+  class="flex flex-col items-center space-y-3"
+>
+  <nav
+    aria-label="Pagination"
+    class="flex items-center justify-center space-x-1 text-sm"
+  >
+    <button
+      aria-label="Go to first page"
+      class="inline-flex items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none gap-1 hover:bg-accent hover:text-accent-foreground h-9 px-3 text-sm"
+    >
+      <span
+        class="hidden sm:inline"
+      >
+        First
+      </span>
+      <span
+        class="sm:hidden"
+      >
+        1
+      </span>
+    </button>
+    <button
+      aria-label="Go to previous page"
+      class="inline-flex items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none gap-1 hover:bg-accent hover:text-accent-foreground h-9 px-3 text-sm"
+    >
+      <svg
+        aria-hidden="true"
+        class="lucide lucide-chevron-left h-4 w-4"
+        fill="none"
+        height="24"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        viewBox="0 0 24 24"
+        width="24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="m15 18-6-6 6-6"
+        />
+      </svg>
+      <span
+        class="hidden sm:inline"
+      >
+        Previous
+      </span>
+    </button>
+    <button
+      aria-label="Go to next page"
+      class="inline-flex items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none gap-1 hover:bg-accent hover:text-accent-foreground h-9 px-3 text-sm"
+      disabled=""
+    >
+      <span
+        class="hidden sm:inline"
+      >
+        Next
+      </span>
+      <svg
+        aria-hidden="true"
+        class="lucide lucide-chevron-right h-4 w-4"
+        fill="none"
+        height="24"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        viewBox="0 0 24 24"
+        width="24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="m9 18 6-6-6-6"
+        />
+      </svg>
+    </button>
+  </nav>
+</div>
+`;
+
+exports[`Pagination Component > Snapshots > matches disabled state snapshot 1`] = `
+<div
+  class="flex flex-col items-center space-y-3"
+>
+  <nav
+    aria-label="Pagination"
+    class="flex items-center justify-center space-x-1 text-sm"
+  >
+    <button
+      aria-label="Go to first page"
+      class="inline-flex items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none gap-1 hover:bg-accent hover:text-accent-foreground h-9 px-3 text-sm"
+      disabled=""
+    >
+      <span
+        class="hidden sm:inline"
+      >
+        First
+      </span>
+      <span
+        class="sm:hidden"
+      >
+        1
+      </span>
+    </button>
+    <button
+      aria-label="Go to previous page"
+      class="inline-flex items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none gap-1 hover:bg-accent hover:text-accent-foreground h-9 px-3 text-sm"
+      disabled=""
+    >
+      <svg
+        aria-hidden="true"
+        class="lucide lucide-chevron-left h-4 w-4"
+        fill="none"
+        height="24"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        viewBox="0 0 24 24"
+        width="24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="m15 18-6-6 6-6"
+        />
+      </svg>
+      <span
+        class="hidden sm:inline"
+      >
+        Previous
+      </span>
+    </button>
+    <button
+      aria-label="Go to next page"
+      class="inline-flex items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none gap-1 hover:bg-accent hover:text-accent-foreground h-9 px-3 text-sm"
+      disabled=""
+    >
+      <span
+        class="hidden sm:inline"
+      >
+        Next
+      </span>
+      <svg
+        aria-hidden="true"
+        class="lucide lucide-chevron-right h-4 w-4"
+        fill="none"
+        height="24"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        viewBox="0 0 24 24"
+        width="24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="m9 18 6-6-6-6"
+        />
+      </svg>
+    </button>
+  </nav>
+</div>
+`;
+
+exports[`Pagination Component > Snapshots > matches loading state snapshot 1`] = `
+<div
+  class="flex flex-col items-center space-y-3"
+>
+  <nav
+    aria-label="Pagination"
+    class="flex items-center justify-center space-x-1 text-sm"
+  >
+    <button
+      aria-label="Go to first page"
+      class="inline-flex items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none gap-1 hover:bg-accent hover:text-accent-foreground h-9 px-3 text-sm"
+      disabled=""
+    >
+      <span
+        class="hidden sm:inline"
+      >
+        First
+      </span>
+      <span
+        class="sm:hidden"
+      >
+        1
+      </span>
+    </button>
+    <button
+      aria-label="Go to previous page"
+      class="inline-flex items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none gap-1 hover:bg-accent hover:text-accent-foreground h-9 px-3 text-sm"
+      disabled=""
+    >
+      <svg
+        aria-hidden="true"
+        class="lucide lucide-chevron-left h-4 w-4"
+        fill="none"
+        height="24"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        viewBox="0 0 24 24"
+        width="24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="m15 18-6-6 6-6"
+        />
+      </svg>
+      <span
+        class="hidden sm:inline"
+      >
+        Previous
+      </span>
+    </button>
+    <button
+      aria-label="Go to next page"
+      class="inline-flex items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none gap-1 hover:bg-accent hover:text-accent-foreground h-9 px-3 text-sm"
+      disabled=""
+    >
+      <span
+        class="hidden sm:inline"
+      >
+        Next
+      </span>
+      <svg
+        aria-hidden="true"
+        class="lucide lucide-chevron-right h-4 w-4"
+        fill="none"
+        height="24"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        viewBox="0 0 24 24"
+        width="24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="m9 18 6-6-6-6"
+        />
+      </svg>
+    </button>
+  </nav>
+</div>
+`;

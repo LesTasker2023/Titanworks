@@ -1,0 +1,25 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`AlertDialog > Snapshots > matches complete dialog snapshot 1`] = `
+<button
+  aria-controls="radix-«r6»"
+  aria-expanded="false"
+  aria-haspopup="dialog"
+  data-state="closed"
+  type="button"
+>
+  Open Complete Dialog
+</button>
+`;
+
+exports[`AlertDialog > Snapshots > matches default snapshot 1`] = `
+<button
+  aria-controls="radix-«r3»"
+  aria-expanded="false"
+  aria-haspopup="dialog"
+  data-state="closed"
+  type="button"
+>
+  Open
+</button>
+`;

@@ -1,0 +1,9 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Sonner > Snapshots > matches basic snapshot 1`] = `
+<div
+  data-testid="sonner-container"
+>
+  Sonner Component Test
+</div>
+`;

@@ -3,29 +3,21 @@ import { render, screen } from '@testing-library/react';
 
 describe('Combobox', () => {
   it('renders without crashing', () => {
-    // Basic render test
     render(<div data-testid="combobox-test">Combobox Test</div>);
     expect(screen.getByTestId('combobox-test')).toBeInTheDocument();
   });
 
-  it('applies custom className correctly', () => {
-    render(
-      <div className="custom-class" data-testid="combobox-test">
-        Combobox
-      </div>
-    );
-    expect(screen.getByTestId('combobox-test')).toHaveClass('custom-class');
+  describe('Snapshots', () => {
+    it('matches basic snapshot', () => {
+      const { container } = render(
+        <div data-testid="combobox-container">Combobox Component Test</div>
+      );
+      expect(container.firstChild).toMatchSnapshot();
+    });
   });
 
-  // Accessibility tests
-  it('meets basic accessibility requirements', () => {
-    render(
-      <div role="region" aria-label="Combobox component" data-testid="combobox-test">
-        Combobox
-      </div>
-    );
-    expect(screen.getByRole('region')).toHaveAttribute('aria-label', 'Combobox component');
+  it('renders test content correctly', () => {
+    render(<div data-testid="content">Combobox Content</div>);
+    expect(screen.getByTestId('content')).toHaveTextContent('Combobox Content');
   });
-
-  // Add more specific tests based on component functionality
 });

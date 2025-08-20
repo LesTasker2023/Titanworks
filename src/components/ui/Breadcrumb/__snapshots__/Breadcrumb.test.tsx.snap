@@ -1,0 +1,9 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Breadcrumb > Snapshots > matches basic snapshot 1`] = `
+<div
+  data-testid="breadcrumb-container"
+>
+  Breadcrumb Component Test
+</div>
+`;
