@@ -1,4 +1,5 @@
 ﻿export {
+  Card,
   CardContent,
   CardDescription,
   CardFooter,

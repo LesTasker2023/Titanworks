@@ -1,6 +1,6 @@
 'use client';
 
-import { CheckCircle, Info, Menu, X, XCircle } from 'lucide-react';
+import { CheckCircle, ChevronDown, Info, Menu, X, XCircle } from 'lucide-react';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 
@@ -23,7 +23,7 @@ import Alert from '@/components/ui/Alert';
 import { AspectRatio } from '@/components/ui/AspectRatio';
 import Avatar from '@/components/ui/Avatar';
 import Badge from '@/components/ui/Badge';
-import Button from '@/components/ui/Button';
+import Button from '@/components/ui/Button/button';
 import Checkbox from '@/components/ui/Checkbox';
 import { DataTable } from '@/components/ui/DataTable';
 import Dialog, {
@@ -33,7 +33,7 @@ import Dialog, {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from '@/components/ui/Dialog';
+} from '@/components/ui/Dialog/dialog';
 import Input from '@/components/ui/Input';
 import { Label } from '@/components/ui/Label';
 import {
@@ -71,6 +71,67 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/Tabs';
 import Textarea from '@/components/ui/Textarea';
 import { ThemeToggle } from '@/components/ui/ThemeToggle';
 import { Toaster, useToast } from '@/components/ui/Toast';
+
+// New components from recent implementations
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from '@/components/ui/AlertDialog';
+import {
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbList,
+  BreadcrumbSeparator,
+} from '@/components/ui/Breadcrumb';
+import { Calendar } from '@/components/ui/Calendar';
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from '@/components/ui/Carousel';
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/components/ui/Collapsible';
+import { Combobox } from '@/components/ui/Combobox';
+import {
+  Command,
+  CommandEmpty,
+  CommandGroup,
+  CommandInput,
+  CommandItem,
+  CommandList,
+} from '@/components/ui/Command';
+import {
+  ContextMenu,
+  ContextMenuContent,
+  ContextMenuItem,
+  ContextMenuTrigger,
+} from '@/components/ui/ContextMenu';
+import { DatePicker } from '@/components/ui/DatePicker';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from '@/components/ui/DropdownMenu';
+import { HoverCard, HoverCardContent, HoverCardTrigger } from '@/components/ui/HoverCard';
+import {
+  Menubar,
+  MenubarContent,
+  MenubarItem,
+  MenubarMenu,
+  MenubarTrigger,
+} from '@/components/ui/Menubar';
+// import { ResizableHandle, ResizablePanel, ResizablePanelGroup } from '@/components/ui/Resizable';
+import { Toaster as SonnerToaster } from '@/components/ui/Sonner';
 
 /**
  * 🎯 Complete Component Library Showcase
@@ -456,6 +517,66 @@ export default function ComponentLibraryShowcase() {
                   />
                 </div>
               </Container>
+
+              {/* Combobox Component */}
+              <Container
+                size="none"
+                padding="lg"
+                className="border border-border rounded-lg space-y-6"
+              >
+                <h3 className="text-xl font-semibold text-foreground text-center">Combobox</h3>
+                <div className="flex justify-center">
+                  <Combobox
+                    options={[
+                      { value: 'nextjs', label: 'Next.js' },
+                      { value: 'react', label: 'React' },
+                      { value: 'vue', label: 'Vue' },
+                      { value: 'angular', label: 'Angular' },
+                    ]}
+                    placeholder="Select framework..."
+                  />
+                </div>
+              </Container>
+
+              {/* Command Component */}
+              <Container
+                size="none"
+                padding="lg"
+                className="border border-border rounded-lg space-y-6"
+              >
+                <h3 className="text-xl font-semibold text-foreground text-center">Command</h3>
+                <div className="flex justify-center">
+                  <Command className="rounded-lg border shadow-md md:min-w-[450px]">
+                    <CommandInput placeholder="Type a command or search..." />
+                    <CommandList>
+                      <CommandEmpty>No results found.</CommandEmpty>
+                      <CommandGroup heading="Suggestions">
+                        <CommandItem>
+                          <span>Calendar</span>
+                        </CommandItem>
+                        <CommandItem>
+                          <span>Search Emoji</span>
+                        </CommandItem>
+                        <CommandItem>
+                          <span>Calculator</span>
+                        </CommandItem>
+                      </CommandGroup>
+                    </CommandList>
+                  </Command>
+                </div>
+              </Container>
+
+              {/* DatePicker Component */}
+              <Container
+                size="none"
+                padding="lg"
+                className="border border-border rounded-lg space-y-6"
+              >
+                <h3 className="text-xl font-semibold text-foreground text-center">DatePicker</h3>
+                <div className="flex justify-center">
+                  <DatePicker />
+                </div>
+              </Container>
             </section>
           </div>
 
@@ -675,6 +796,92 @@ export default function ComponentLibraryShowcase() {
                   </div>
                 </div>
               </Container>
+
+              {/* AlertDialog Component */}
+              <Container
+                size="none"
+                padding="lg"
+                className="border border-border rounded-lg space-y-6"
+              >
+                <h3 className="text-xl font-semibold text-foreground text-center">AlertDialog</h3>
+                <div className="flex justify-center gap-4 flex-wrap">
+                  <AlertDialog>
+                    <AlertDialogTrigger asChild>
+                      <Button variant="outline">Open Alert</Button>
+                    </AlertDialogTrigger>
+                    <AlertDialogContent>
+                      <AlertDialogHeader>
+                        <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
+                        <AlertDialogDescription>
+                          This action cannot be undone. This will permanently delete your account
+                          and remove your data from our servers.
+                        </AlertDialogDescription>
+                      </AlertDialogHeader>
+                      <AlertDialogFooter>
+                        <AlertDialogCancel>Cancel</AlertDialogCancel>
+                        <AlertDialogAction>Continue</AlertDialogAction>
+                      </AlertDialogFooter>
+                    </AlertDialogContent>
+                  </AlertDialog>
+
+                  <AlertDialog>
+                    <AlertDialogTrigger asChild>
+                      <Button variant="destructive">Delete Item</Button>
+                    </AlertDialogTrigger>
+                    <AlertDialogContent>
+                      <AlertDialogHeader>
+                        <AlertDialogTitle>Delete confirmation</AlertDialogTitle>
+                        <AlertDialogDescription>
+                          Are you sure you want to delete this item? This action cannot be undone.
+                        </AlertDialogDescription>
+                      </AlertDialogHeader>
+                      <AlertDialogFooter>
+                        <AlertDialogCancel>Cancel</AlertDialogCancel>
+                        <AlertDialogAction className="bg-destructive text-destructive-foreground hover:bg-destructive/90">
+                          Delete
+                        </AlertDialogAction>
+                      </AlertDialogFooter>
+                    </AlertDialogContent>
+                  </AlertDialog>
+                </div>
+              </Container>
+
+              {/* Sonner Toast Component */}
+              <Container
+                size="none"
+                padding="lg"
+                className="border border-border rounded-lg space-y-6"
+              >
+                <h3 className="text-xl font-semibold text-foreground text-center">Sonner Toast</h3>
+                <div className="flex justify-center gap-4 flex-wrap">
+                  <Button
+                    onClick={() => {
+                      // Using sonner's toast function
+                      // This will need to be imported from react-hot-toast or sonner
+                      console.log('Sonner toast would appear here');
+                    }}
+                  >
+                    Show Sonner Toast
+                  </Button>
+                  <Button
+                    variant="outline"
+                    onClick={() => {
+                      console.log('Success sonner toast would appear here');
+                    }}
+                  >
+                    Success Toast
+                  </Button>
+                  <Button
+                    variant="destructive"
+                    onClick={() => {
+                      console.log('Error sonner toast would appear here');
+                    }}
+                  >
+                    Error Toast
+                  </Button>
+                </div>
+                <SonnerToaster />
+              </Container>
             </section>
           </div>
         </div>
@@ -875,6 +1082,122 @@ export default function ComponentLibraryShowcase() {
                 </div>
               </div>
             </Container>
+
+            {/* Breadcrumb Component */}
+            <Container
+              size="none"
+              padding="lg"
+              className="border border-border rounded-lg space-y-6"
+            >
+              <h3 className="text-xl font-semibold text-foreground text-center">Breadcrumb</h3>
+              <div className="space-y-4">
+                <Breadcrumb>
+                  <BreadcrumbList>
+                    <BreadcrumbItem>
+                      <BreadcrumbLink href="/">Home</BreadcrumbLink>
+                    </BreadcrumbItem>
+                    <BreadcrumbSeparator />
+                    <BreadcrumbItem>
+                      <BreadcrumbLink href="/docs">Documentation</BreadcrumbLink>
+                    </BreadcrumbItem>
+                    <BreadcrumbSeparator />
+                    <BreadcrumbItem>
+                      <BreadcrumbLink href="/docs/components">Components</BreadcrumbLink>
+                    </BreadcrumbItem>
+                    <BreadcrumbSeparator />
+                    <BreadcrumbItem>Breadcrumb</BreadcrumbItem>
+                  </BreadcrumbList>
+                </Breadcrumb>
+
+                <Breadcrumb>
+                  <BreadcrumbList>
+                    <BreadcrumbItem>
+                      <BreadcrumbLink href="/">Dashboard</BreadcrumbLink>
+                    </BreadcrumbItem>
+                    <BreadcrumbSeparator />
+                    <BreadcrumbItem>
+                      <BreadcrumbLink href="/projects">Projects</BreadcrumbLink>
+                    </BreadcrumbItem>
+                    <BreadcrumbSeparator />
+                    <BreadcrumbItem>Project Settings</BreadcrumbItem>
+                  </BreadcrumbList>
+                </Breadcrumb>
+              </div>
+            </Container>
+
+            {/* Collapsible Component */}
+            <Container
+              size="none"
+              padding="lg"
+              className="border border-border rounded-lg space-y-6"
+            >
+              <h3 className="text-xl font-semibold text-foreground text-center">Collapsible</h3>
+              <div className="space-y-4">
+                <Collapsible className="space-y-2">
+                  <div className="flex items-center justify-between space-x-4 px-4">
+                    <h4 className="text-sm font-semibold">@radix-ui/primitives</h4>
+                    <CollapsibleTrigger asChild>
+                      <Button variant="ghost" size="sm" className="w-9 p-0">
+                        <ChevronDown className="h-4 w-4" />
+                        <span className="sr-only">Toggle</span>
+                      </Button>
+                    </CollapsibleTrigger>
+                  </div>
+                  <div className="rounded-md border px-4 py-3 font-mono text-sm">
+                    @radix-ui/react-collapsible
+                  </div>
+                  <CollapsibleContent className="space-y-2">
+                    <div className="rounded-md border px-4 py-3 font-mono text-sm">
+                      @radix-ui/react-accordion
+                    </div>
+                    <div className="rounded-md border px-4 py-3 font-mono text-sm">
+                      @radix-ui/react-alert-dialog
+                    </div>
+                    <div className="rounded-md border px-4 py-3 font-mono text-sm">
+                      @radix-ui/react-aspect-ratio
+                    </div>
+                  </CollapsibleContent>
+                </Collapsible>
+              </div>
+            </Container>
+
+            {/* Resizable Component - Commented out temporarily
+            <Container
+              size="none"
+              padding="lg"
+              className="border border-border rounded-lg space-y-6"
+            >
+              <h3 className="text-xl font-semibold text-foreground text-center">Resizable</h3>
+              <div className="space-y-4">
+                <ResizablePanelGroup
+                  direction="horizontal"
+                  className="min-h-[200px] max-w-md rounded-lg border md:min-w-[450px]"
+                >
+                  <ResizablePanel defaultSize={50}>
+                    <div className="flex h-[200px] items-center justify-center p-6">
+                      <span className="font-semibold">One</span>
+                    </div>
+                  </ResizablePanel>
+                  <ResizableHandle />
+                  <ResizablePanel defaultSize={50}>
+                    <ResizablePanelGroup direction="vertical">
+                      <ResizablePanel defaultSize={25}>
+                        <div className="flex h-full items-center justify-center p-6">
+                          <span className="font-semibold">Two</span>
+                        </div>
+                      </ResizablePanel>
+                      <ResizableHandle />
+                      <ResizablePanel defaultSize={75}>
+                        <div className="flex h-full items-center justify-center p-6">
+                          <span className="font-semibold">Three</span>
+                        </div>
+                      </ResizablePanel>
+                    </ResizablePanelGroup>
+                  </ResizablePanel>
+                </ResizablePanelGroup>
+              </div>
+            </Container>
+            */}
           </section>
 
           {/* Interactive Components Section */}
@@ -930,6 +1253,115 @@ export default function ComponentLibraryShowcase() {
                     </ModalFooter>
                   </ModalContent>
                 </Modal>
+              </div>
+            </Container>
+
+            {/* DropdownMenu Component */}
+            <Container
+              size="none"
+              padding="lg"
+              className="border border-border rounded-lg space-y-6"
+            >
+              <h3 className="text-xl font-semibold text-foreground text-center">DropdownMenu</h3>
+              <div className="flex justify-center gap-4 flex-wrap">
+                <DropdownMenu>
+                  <DropdownMenuTrigger asChild>
+                    <Button variant="outline">Open Menu</Button>
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent className="w-56">
+                    <DropdownMenuItem>Profile</DropdownMenuItem>
+                    <DropdownMenuItem>Settings</DropdownMenuItem>
+                    <DropdownMenuItem>Support</DropdownMenuItem>
+                    <DropdownMenuItem>Sign out</DropdownMenuItem>
+                  </DropdownMenuContent>
+                </DropdownMenu>
+              </div>
+            </Container>
+
+            {/* ContextMenu Component */}
+            <Container
+              size="none"
+              padding="lg"
+              className="border border-border rounded-lg space-y-6"
+            >
+              <h3 className="text-xl font-semibold text-foreground text-center">ContextMenu</h3>
+              <div className="flex justify-center">
+                <ContextMenu>
+                  <ContextMenuTrigger className="flex h-[150px] w-[300px] items-center justify-center rounded-md border border-dashed text-sm">
+                    Right click here
+                  </ContextMenuTrigger>
+                  <ContextMenuContent className="w-64">
+                    <ContextMenuItem>Back</ContextMenuItem>
+                    <ContextMenuItem>Forward</ContextMenuItem>
+                    <ContextMenuItem>Reload</ContextMenuItem>
+                    <ContextMenuItem>View Source</ContextMenuItem>
+                  </ContextMenuContent>
+                </ContextMenu>
+              </div>
+            </Container>
+
+            {/* HoverCard Component */}
+            <Container
+              size="none"
+              padding="lg"
+              className="border border-border rounded-lg space-y-6"
+            >
+              <h3 className="text-xl font-semibold text-foreground text-center">HoverCard</h3>
+              <div className="flex justify-center">
+                <HoverCard>
+                  <HoverCardTrigger asChild>
+                    <Button variant="link">@nextjs</Button>
+                  </HoverCardTrigger>
+                  <HoverCardContent className="w-80">
+                    <div className="flex justify-between space-x-4">
+                      <div className="space-y-1">
+                        <h4 className="text-sm font-semibold">@nextjs</h4>
+                        <p className="text-sm">
+                          The React Framework for Production. Created by @vercel.
+                        </p>
+                        <div className="flex items-center pt-2">
+                          <span className="text-xs text-muted-foreground">
+                            Joined December 2021
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </HoverCardContent>
+                </HoverCard>
+              </div>
+            </Container>
+
+            {/* Menubar Component */}
+            <Container
+              size="none"
+              padding="lg"
+              className="border border-border rounded-lg space-y-6"
+            >
+              <h3 className="text-xl font-semibold text-foreground text-center">Menubar</h3>
+              <div className="flex justify-center">
+                <Menubar>
+                  <MenubarMenu>
+                    <MenubarTrigger>File</MenubarTrigger>
+                    <MenubarContent>
+                      <MenubarItem>New Tab</MenubarItem>
+                      <MenubarItem>New Window</MenubarItem>
+                    </MenubarContent>
+                  </MenubarMenu>
+                  <MenubarMenu>
+                    <MenubarTrigger>Edit</MenubarTrigger>
+                    <MenubarContent>
+                      <MenubarItem>Undo</MenubarItem>
+                      <MenubarItem>Redo</MenubarItem>
+                    </MenubarContent>
+                  </MenubarMenu>
+                  <MenubarMenu>
+                    <MenubarTrigger>View</MenubarTrigger>
+                    <MenubarContent>
+                      <MenubarItem>Reload</MenubarItem>
+                      <MenubarItem>Full Screen</MenubarItem>
+                    </MenubarContent>
+                  </MenubarMenu>
+                </Menubar>
               </div>
             </Container>
           </section>
@@ -1101,6 +1533,405 @@ export default function ComponentLibraryShowcase() {
                     </div>
                   </div>
                 </div>
+              </div>
+            </Container>
+            {/* AlertDialog Component */}
+            <Container
+              size="none"
+              padding="lg"
+              className="border border-border rounded-lg space-y-6"
+            >
+              <h3 className="text-xl font-semibold text-foreground text-center">AlertDialog</h3>
+              <div className="space-y-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  {/* Basic Example */}
+                  <div className="space-y-2">
+                    <h4 className="font-medium">Basic AlertDialog</h4>
+                    <div className="p-4 border rounded-lg">
+                      <AlertDialog>Example AlertDialog usage</AlertDialog>
+                    </div>
+                  </div>
+                  {/* Usage Example */}
+                  <div className="space-y-2">
+                    <h4 className="font-medium">Usage Example</h4>
+                    <div className="bg-muted p-4 rounded-lg text-sm font-mono">
+                      <pre>{`<AlertDialog>
+  Your content here
+</AlertDialog>`}</pre>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </Container>
+            {/* Breadcrumb Component */}
+            <Container
+              size="none"
+              padding="lg"
+              className="border border-border rounded-lg space-y-6"
+            >
+              <h3 className="text-xl font-semibold text-foreground text-center">Breadcrumb</h3>
+              <div className="space-y-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  {/* Basic Example */}
+                  <div className="space-y-2">
+                    <h4 className="font-medium">Basic Breadcrumb</h4>
+                    <div className="p-4 border rounded-lg">
+                      <Breadcrumb>Example Breadcrumb usage</Breadcrumb>
+                    </div>
+                  </div>
+                  {/* Usage Example */}
+                  <div className="space-y-2">
+                    <h4 className="font-medium">Usage Example</h4>
+                    <div className="bg-muted p-4 rounded-lg text-sm font-mono">
+                      <pre>{`<Breadcrumb>
+  Your content here
+</Breadcrumb>`}</pre>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </Container>
+            {/* Combobox Component */}
+            <Container
+              size="none"
+              padding="lg"
+              className="border border-border rounded-lg space-y-6"
+            >
+              <h3 className="text-xl font-semibold text-foreground text-center">Combobox</h3>
+              <div className="space-y-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  {/* Basic Example */}
+                  <div className="space-y-2">
+                    <h4 className="font-medium">Basic Combobox</h4>
+                    <div className="p-4 border rounded-lg">
+                      <Combobox
+                        options={[
+                          { value: 'option1', label: 'Option 1' },
+                          { value: 'option2', label: 'Option 2' },
+                          { value: 'option3', label: 'Option 3' },
+                        ]}
+                        placeholder="Select an option..."
+                      />
+                    </div>
+                  </div>
+                  {/* Usage Example */}
+                  <div className="space-y-2">
+                    <h4 className="font-medium">Usage Example</h4>
+                    <div className="bg-muted p-4 rounded-lg text-sm font-mono">
+                      <pre>{`<Combobox>
+  Your content here
+</Combobox>`}</pre>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </Container>
+            {/* Collapsible Component */}
+            <Container
+              size="none"
+              padding="lg"
+              className="border border-border rounded-lg space-y-6"
+            >
+              <h3 className="text-xl font-semibold text-foreground text-center">Collapsible</h3>
+              <div className="space-y-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  {/* Basic Example */}
+                  <div className="space-y-2">
+                    <h4 className="font-medium">Basic Collapsible</h4>
+                    <div className="p-4 border rounded-lg">
+                      <Collapsible>Example Collapsible usage</Collapsible>
+                    </div>
+                  </div>
+                  {/* Usage Example */}
+                  <div className="space-y-2">
+                    <h4 className="font-medium">Usage Example</h4>
+                    <div className="bg-muted p-4 rounded-lg text-sm font-mono">
+                      <pre>{`<Collapsible>
+  Your content here
+</Collapsible>`}</pre>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </Container>
+            {/* HoverCard Component */}
+            <Container
+              size="none"
+              padding="lg"
+              className="border border-border rounded-lg space-y-6"
+            >
+              <h3 className="text-xl font-semibold text-foreground text-center">HoverCard</h3>
+              <div className="space-y-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  {/* Basic Example */}
+                  <div className="space-y-2">
+                    <h4 className="font-medium">Basic HoverCard</h4>
+                    <div className="p-4 border rounded-lg">
+                      <HoverCard>Example HoverCard usage</HoverCard>
+                    </div>
+                  </div>
+                  {/* Usage Example */}
+                  <div className="space-y-2">
+                    <h4 className="font-medium">Usage Example</h4>
+                    <div className="bg-muted p-4 rounded-lg text-sm font-mono">
+                      <pre>{`<HoverCard>
+  Your content here
+</HoverCard>`}</pre>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </Container>
+            {/* Carousel Component */}
+            <Container
+              size="none"
+              padding="lg"
+              className="border border-border rounded-lg space-y-6"
+            >
+              <h3 className="text-xl font-semibold text-foreground text-center">Carousel</h3>
+              <div className="space-y-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  {/* Basic Example */}
+                  <div className="space-y-2">
+                    <h4 className="font-medium">Basic Carousel</h4>
+                    <div className="p-4 border rounded-lg">
+                      <Carousel>Example Carousel usage</Carousel>
+                    </div>
+                  </div>
+                  {/* Usage Example */}
+                  <div className="space-y-2">
+                    <h4 className="font-medium">Usage Example</h4>
+                    <div className="bg-muted p-4 rounded-lg text-sm font-mono">
+                      <pre>{`<Carousel>
+  Your content here
+</Carousel>`}</pre>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </Container>
+            {/* DatePicker Component */}
+            <Container
+              size="none"
+              padding="lg"
+              className="border border-border rounded-lg space-y-6"
+            >
+              <h3 className="text-xl font-semibold text-foreground text-center">DatePicker</h3>
+              <div className="space-y-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  {/* Basic Example */}
+                  <div className="space-y-2">
+                    <h4 className="font-medium">Basic DatePicker</h4>
+                    <div className="p-4 border rounded-lg">
+                      <DatePicker placeholder="Select a date..." />
+                    </div>
+                  </div>
+                  {/* Usage Example */}
+                  <div className="space-y-2">
+                    <h4 className="font-medium">Usage Example</h4>
+                    <div className="bg-muted p-4 rounded-lg text-sm font-mono">
+                      <pre>{`<DatePicker>
+  Your content here
+</DatePicker>`}</pre>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </Container>
+            {/* Menubar Component */}
+            <Container
+              size="none"
+              padding="lg"
+              className="border border-border rounded-lg space-y-6"
+            >
+              <h3 className="text-xl font-semibold text-foreground text-center">Menubar</h3>
+              <div className="space-y-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  {/* Basic Example */}
+                  <div className="space-y-2">
+                    <h4 className="font-medium">Basic Menubar</h4>
+                    <div className="p-4 border rounded-lg">
+                      <Menubar>Example Menubar usage</Menubar>
+                    </div>
+                  </div>
+                  {/* Usage Example */}
+                  <div className="space-y-2">
+                    <h4 className="font-medium">Usage Example</h4>
+                    <div className="bg-muted p-4 rounded-lg text-sm font-mono">
+                      <pre>{`<Menubar>
+  Your content here
+</Menubar>`}</pre>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </Container>
+            {/* ContextMenu Component */}
+            <Container
+              size="none"
+              padding="lg"
+              className="border border-border rounded-lg space-y-6"
+            >
+              <h3 className="text-xl font-semibold text-foreground text-center">ContextMenu</h3>
+              <div className="space-y-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  {/* Basic Example */}
+                  <div className="space-y-2">
+                    <h4 className="font-medium">Basic ContextMenu</h4>
+                    <div className="p-4 border rounded-lg">
+                      <ContextMenu>Example ContextMenu usage</ContextMenu>
+                    </div>
+                  </div>
+                  {/* Usage Example */}
+                  <div className="space-y-2">
+                    <h4 className="font-medium">Usage Example</h4>
+                    <div className="bg-muted p-4 rounded-lg text-sm font-mono">
+                      <pre>{`<ContextMenu>
+  Your content here
+</ContextMenu>`}</pre>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </Container>
+            {/* DropdownMenu Component */}
+            <Container
+              size="none"
+              padding="lg"
+              className="border border-border rounded-lg space-y-6"
+            >
+              <h3 className="text-xl font-semibold text-foreground text-center">DropdownMenu</h3>
+              <div className="space-y-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  {/* Basic Example */}
+                  <div className="space-y-2">
+                    <h4 className="font-medium">Basic DropdownMenu</h4>
+                    <div className="p-4 border rounded-lg">
+                      <DropdownMenu>Example DropdownMenu usage</DropdownMenu>
+                    </div>
+                  </div>
+                  {/* Usage Example */}
+                  <div className="space-y-2">
+                    <h4 className="font-medium">Usage Example</h4>
+                    <div className="bg-muted p-4 rounded-lg text-sm font-mono">
+                      <pre>{`<DropdownMenu>
+  Your content here
+</DropdownMenu>`}</pre>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </Container>
+            {/* DatePicker Component */}
+            <Container
+              size="none"
+              padding="lg"
+              className="border border-border rounded-lg space-y-6"
+            >
+              <h3 className="text-xl font-semibold text-foreground text-center">DatePicker</h3>
+              <div className="space-y-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  {/* Basic Example */}
+                  <div className="space-y-2">
+                    <h4 className="font-medium">Basic DatePicker</h4>
+                    <div className="p-4 border rounded-lg">
+                      <DatePicker placeholder="Select a date..." />
+                    </div>
+                  </div>
+                  {/* Usage Example */}
+                  <div className="space-y-2">
+                    <h4 className="font-medium">Usage Example</h4>
+                    <div className="bg-muted p-4 rounded-lg text-sm font-mono">
+                      <pre>{`<DatePicker>
+  Your content here
+</DatePicker>`}</pre>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </Container>
+            {/* DatePicker Component */}
+            <Container
+              size="none"
+              padding="lg"
+              className="border border-border rounded-lg space-y-6"
+            >
+              <h3 className="text-xl font-semibold text-foreground text-center">DatePicker</h3>
+              <div className="space-y-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  {/* Basic Example */}
+                  <div className="space-y-2">
+                    <h4 className="font-medium">Basic DatePicker</h4>
+                    <div className="p-4 border rounded-lg">
+                      <DatePicker placeholder="Select a date..." />
+                    </div>
+                  </div>
+                  {/* Usage Example */}
+                  <div className="space-y-2">
+                    <h4 className="font-medium">Usage Example</h4>
+                    <div className="bg-muted p-4 rounded-lg text-sm font-mono">
+                      <pre>{`<DatePicker>
+  Your content here
+</DatePicker>`}</pre>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </Container>
+
+            {/* Calendar Component */}
+            <Container
+              size="none"
+              padding="lg"
+              className="border border-border rounded-lg space-y-6"
+            >
+              <h3 className="text-xl font-semibold text-foreground text-center">Calendar</h3>
+              <div className="flex justify-center">
+                <Calendar mode="single" className="rounded-md border" />
+              </div>
+            </Container>
+
+            {/* Carousel Component */}
+            <Container
+              size="none"
+              padding="lg"
+              className="border border-border rounded-lg space-y-6"
+            >
+              <h3 className="text-xl font-semibold text-foreground text-center">Carousel</h3>
+              <div className="flex justify-center">
+                <Carousel className="w-full max-w-xs">
+                  <CarouselContent>
+                    <CarouselItem>
+                      <div className="p-1">
+                        <Card>
+                          <CardContent className="flex aspect-square items-center justify-center p-6">
+                            <span className="text-4xl font-semibold">1</span>
+                          </CardContent>
+                        </Card>
+                      </div>
+                    </CarouselItem>
+                    <CarouselItem>
+                      <div className="p-1">
+                        <Card>
+                          <CardContent className="flex aspect-square items-center justify-center p-6">
+                            <span className="text-4xl font-semibold">2</span>
+                          </CardContent>
+                        </Card>
+                      </div>
+                    </CarouselItem>
+                    <CarouselItem>
+                      <div className="p-1">
+                        <Card>
+                          <CardContent className="flex aspect-square items-center justify-center p-6">
+                            <span className="text-4xl font-semibold">3</span>
+                          </CardContent>
+                        </Card>
+                      </div>
+                    </CarouselItem>
+                  </CarouselContent>
+                  <CarouselPrevious />
+                  <CarouselNext />
+                </Carousel>
               </div>
             </Container>
           </section>

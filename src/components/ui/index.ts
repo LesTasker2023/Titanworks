@@ -32,7 +32,7 @@ export { default as Tabs, TabsContent, TabsList, TabsTrigger } from './Tabs';
 // Layout Components
 export { AspectRatio } from './AspectRatio';
 export {
-  default as Card,
+  Card,
   CardContent,
   CardDescription,
   CardFooter,
