@@ -148,6 +148,7 @@ export default function ComponentShowcase() {
   const [isChecked, setIsChecked] = useState(false);
   const [switchValue, setSwitchValue] = useState(false);
   const [selectValue, setSelectValue] = useState('');
+  const [searchTerm, setSearchTerm] = useState('');
   const [textareaValue, setTextareaValue] = useState('');
   const [selectedDate, setSelectedDate] = useState<Date | undefined>(new Date());
   const [comboboxValue, setComboboxValue] = useState('');
@@ -216,6 +217,18 @@ export default function ComponentShowcase() {
             </Badge>
             <Badge variant="outline">🚧 Building to 47</Badge>
           </div>
+          {/* Alphabetical Search */}
+          <div className="max-w-md mx-auto">
+            <Input
+              placeholder="Search components (e.g., 'Button', 'Accordion')..."
+              value={searchTerm}
+              onChange={e => setSearchTerm(e.target.value)}
+              className="text-center"
+            />
+            <p className="text-xs text-muted-foreground mt-2">
+              🔍 Type to filter • Use Ctrl+F for instant navigation
+            </p>
+          </div>
         </div>
 
         {/* Tabbed Architecture */}
@@ -256,29 +269,45 @@ export default function ComponentShowcase() {
 
             {/* Components Grid */}
             <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6">
-              {/* 1. Button */}
+              {/* 1. Accordion */}
               <Card className="h-fit">
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2">
-                    <span className="bg-blue-500 text-white text-xs px-2 py-1 rounded">1</span>
-                    Button
+                    <span className="bg-green-500 text-white text-xs px-2 py-1 rounded">1</span>
+                    Accordion
                   </CardTitle>
-                  <CardDescription>Interactive buttons with variants</CardDescription>
+                  <CardDescription>Collapsible content sections</CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-3">
-                  <div className="flex gap-2 flex-wrap">
-                    <Button size="sm">Small</Button>
-                    <Button>Default</Button>
-                    <Button size="lg">Large</Button>
+                  <Accordion items={accordionData} defaultOpenIndex={0} />
+                  <div className="text-xs text-muted-foreground text-center">
+                    Interactive collapsible sections
                   </div>
-                  <div className="flex gap-2 flex-wrap">
-                    <Button variant="secondary">Secondary</Button>
-                    <Button variant="outline">Outline</Button>
-                    <Button variant="ghost">Ghost</Button>
-                  </div>
-                  <Button variant="destructive" className="w-full">
-                    Destructive
-                  </Button>
+                </CardContent>
+              </Card>
+
+              {/* 2. Alert */}
+              <Card className="h-fit">
+                <CardHeader>
+                  <CardTitle className="flex items-center gap-2">
+                    <span className="bg-green-500 text-white text-xs px-2 py-1 rounded">2</span>
+                    Alert
+                  </CardTitle>
+                  <CardDescription>Notification messages</CardDescription>
+                </CardHeader>
+                <CardContent className="space-y-3">
+                  <Alert>
+                    <div>
+                      <h5 className="font-medium text-sm">Info</h5>
+                      <p className="text-xs text-muted-foreground">Information alert message</p>
+                    </div>
+                  </Alert>
+                  <Alert variant="destructive">
+                    <div>
+                      <h5 className="font-medium text-sm">Error</h5>
+                      <p className="text-xs text-muted-foreground">Error alert message</p>
+                    </div>
+                  </Alert>
                 </CardContent>
               </Card>
 

@@ -33,6 +33,7 @@ function ColorPicker({
   const [isOpen, setIsOpen] = useState(false);
   const [selectedColor, setSelectedColor] = useState(defaultColor);
   const [customColor, setCustomColor] = useState(defaultColor);
+  const [mounted, setMounted] = useState(false);
 
   // Function to update dark mode CSS variables dynamically
   const updateDarkModeColors = (color: string, foregroundColor: string) => {
@@ -76,6 +77,7 @@ function ColorPicker({
 
   // Initialize colors from localStorage on mount
   useEffect(() => {
+    setMounted(true);
     // Load saved color from localStorage or use default
     const savedColor = localStorage.getItem('brand-color') || defaultColor;
     setSelectedColor(savedColor);
@@ -103,6 +105,20 @@ function ColorPicker({
   const resetToDefault = () => {
     handleColorSelect(defaultColor);
   };
+
+  // Render neutral state until mounted to prevent hydration mismatch
+  if (!mounted) {
+    return (
+      <Button variant="outline" size="sm" className="flex items-center gap-2" disabled>
+        <div
+          className="w-4 h-4 rounded-full border border-border"
+          style={{ backgroundColor: defaultColor }}
+        />
+        <Palette className="w-4 h-4" />
+        <span className="hidden sm:inline">Brand Color</span>
+      </Button>
+    );
+  }
 
   return (
     <div className={`relative ${className}`}>
