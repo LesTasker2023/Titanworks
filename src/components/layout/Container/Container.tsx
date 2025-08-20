@@ -1,3 +1,5 @@
+'use client';
+
 import { cn } from '@/lib/utils';
 import { cva, type VariantProps } from 'class-variance-authority';
 import React from 'react';
@@ -5,58 +7,29 @@ import React from 'react';
 const containerVariants = cva('mx-auto w-full', {
   variants: {
     size: {
-      sm: 'max-w-screen-sm px-4',
-      md: 'max-w-screen-md px-6',
-      lg: 'max-w-screen-lg px-6',
-      xl: 'max-w-screen-xl px-8',
-      '2xl': 'max-w-screen-2xl px-8',
-      '7xl': 'max-w-7xl px-4 sm:px-6 lg:px-8',
-      full: 'max-w-full px-4',
-      none: 'max-w-none px-0',
+      sm: 'max-w-2xl',
+      md: 'max-w-4xl',
+      lg: 'max-w-6xl',
+      xl: 'max-w-7xl',
+      '7xl': 'max-w-8xl',
+      full: 'max-w-full',
+      content: 'max-w-prose',
     },
     padding: {
-      none: 'p-0',
-      sm: 'p-4',
-      md: 'p-6',
-      lg: 'p-8',
-      xl: 'p-12',
-      '2xl': 'p-16',
+      none: 'px-0',
+      sm: 'px-4 sm:px-6',
+      md: 'px-4 sm:px-6 lg:px-8',
+      lg: 'px-6 sm:px-8 lg:px-12',
     },
     center: {
-      true: 'mx-auto',
+      true: 'text-center',
       false: '',
-    },
-    layout: {
-      default: '',
-      flex: 'flex flex-col',
-      'flex-row': 'flex flex-row',
-      'flex-center': 'flex flex-col items-center justify-center',
-      'flex-between': 'flex flex-col items-center justify-between',
-      'flex-around': 'flex flex-col items-center justify-around',
-      grid: 'grid place-items-center',
-    },
-    spacing: {
-      none: '',
-      sm: '[&>*+*]:mt-2',
-      md: '[&>*+*]:mt-4',
-      lg: '[&>*+*]:mt-6',
-      xl: '[&>*+*]:mt-8',
-      '2xl': '[&>*+*]:mt-12',
-    },
-    align: {
-      start: 'items-start',
-      center: 'items-center',
-      end: 'items-end',
-      stretch: 'items-stretch',
     },
   },
   defaultVariants: {
-    size: '7xl',
-    padding: 'lg',
-    center: true,
-    layout: 'default',
-    spacing: 'none',
-    align: 'center',
+    size: 'xl',
+    padding: 'md',
+    center: false,
   },
 });
 
@@ -67,35 +40,17 @@ export interface ContainerProps
 }
 
 const Container = React.forwardRef<HTMLDivElement, ContainerProps>(
-  (
-    {
-      className,
-      size,
-      padding,
-      center,
-      layout,
-      spacing,
-      align,
-      as: Component = 'div',
-      children,
-      ...props
-    },
-    ref
-  ) => {
+  ({ className, size, padding, center, as: Component = 'div', ...props }, ref) => {
     return (
       <Component
         ref={ref}
-        className={cn(
-          containerVariants({ size, padding, center, layout, spacing, align, className })
-        )}
+        className={cn(containerVariants({ size, padding, center }), className)}
         {...props}
-      >
-        {children}
-      </Component>
+      />
     );
   }
 );
 
 Container.displayName = 'Container';
 
-export default Container;
+export { Container, containerVariants };

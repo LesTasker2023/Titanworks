@@ -16,7 +16,7 @@ import {
 import { useEffect, useState } from 'react';
 
 // Enhanced imports using enterprise patterns
-import Container from '@/components/layout/Container/Container';
+import { Container } from '@/components/layout/Container';
 import {
   Card,
   CardContent,
