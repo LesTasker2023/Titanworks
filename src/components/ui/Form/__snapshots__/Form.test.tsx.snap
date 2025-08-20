@@ -1,17 +1,17 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`Form > applies variant classes correctly 1`] = `
-<button
-  class="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ring-offset-background bg-destructive text-destructive-foreground hover:bg-destructive/90 h-10 py-2 px-4"
+<form
+  class="w-full bg-card border border-border rounded-lg p-6 space-y-4"
 >
-  Test
-</button>
+  Test Content
+</form>
 `;
 
 exports[`Form > renders without crashing 1`] = `
-<button
-  class="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ring-offset-background bg-primary text-primary-foreground hover:bg-primary/90 h-10 py-2 px-4"
+<form
+  class="w-full bg-background space-y-4"
 >
-  Test
-</button>
+  Test Content
+</form>
 `;

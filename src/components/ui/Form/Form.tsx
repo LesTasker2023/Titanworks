@@ -3,23 +3,20 @@ import { cva, type VariantProps } from 'class-variance-authority';
 import { forwardRef } from 'react';
 
 const formVariants = cva(
-  // Base styles
-  'inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ring-offset-background',
+  // Base styles for form container
+  'space-y-4 w-full',
   {
     variants: {
       variant: {
-        default: 'bg-primary text-primary-foreground hover:bg-primary/90',
-        destructive: 'bg-destructive text-destructive-foreground hover:bg-destructive/90',
-        outline: 'border border-input hover:bg-accent hover:text-accent-foreground',
-        secondary: 'bg-secondary text-secondary-foreground hover:bg-secondary/80',
-        ghost: 'hover:bg-accent hover:text-accent-foreground',
-        link: 'underline-offset-4 hover:underline text-primary',
+        default: 'bg-background',
+        card: 'bg-card border border-border rounded-lg p-6',
+        inline: 'flex flex-row space-y-0 space-x-4 items-end',
       },
       size: {
-        default: 'h-10 py-2 px-4',
-        sm: 'h-9 px-3 rounded-md',
-        lg: 'h-11 px-8 rounded-md',
-        icon: 'h-10 w-10',
+        default: 'space-y-4',
+        sm: 'space-y-2',
+        lg: 'space-y-6',
+        compact: 'space-y-1',
       },
     },
     defaultVariants: {
@@ -30,14 +27,12 @@ const formVariants = cva(
 );
 
 export interface FormProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
+  extends React.FormHTMLAttributes<HTMLFormElement>,
     VariantProps<typeof formVariants> {}
 
-const Form = forwardRef<HTMLButtonElement, FormProps>(
+const Form = forwardRef<HTMLFormElement, FormProps>(
   ({ className, variant, size, ...props }, ref) => {
-    return (
-      <button className={cn(formVariants({ variant, size, className }))} ref={ref} {...props} />
-    );
+    return <form className={cn(formVariants({ variant, size, className }))} ref={ref} {...props} />;
   }
 );
 
