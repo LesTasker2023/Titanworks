@@ -20,7 +20,7 @@
                            }
              },
     "project":  {
-                    "version":  "1.24.0",
+                    "version":  "1.25.0",
                     "grade":  "A+",
                     "lastUpdated":  "2025-08-20",
                     "status":  "Production Ready",
@@ -31,9 +31,9 @@
                                    }
                 },
     "metrics":  {
-                    "totalComponents":  48,
-                    "storiesCoverage":  87.5,
-                    "testsCoverage":  87.5,
+                    "totalComponents":  49,
+                    "storiesCoverage":  85.7,
+                    "testsCoverage":  87.8,
                     "exportCoverage":  100,
                     "qualityScore":  95.8
                 },
@@ -245,8 +245,8 @@
                 "ogImage":  "/og-image.png"
             },
     "build":  {
-                  "timestamp":  "2025-08-20T02:16:50Z",
+                  "timestamp":  "2025-08-20T14:14:55Z",
                   "environment":  "production",
-                  "deploymentId":  "auto-1.24.0-20250820021650"
+                  "deploymentId":  "auto-1.25.0-20250820141455"
               }
 }

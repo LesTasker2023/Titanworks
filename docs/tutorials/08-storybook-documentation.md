@@ -232,7 +232,7 @@ export default preview;
 import type { Meta, StoryObj } from '@storybook/react';
 import { fn } from '@storybook/test';
 import { expect, within, userEvent } from '@storybook/test';
-import Button from './button';
+import {Button} from './button';
 
 const meta: Meta<typeof Button> = {
   title: 'UI/Button',
@@ -255,7 +255,7 @@ It supports multiple variants, sizes, and states while maintaining full accessib
 
 ## Usage
 \`\`\`tsx
-import Button from '@/components/ui/Button';
+import {Button} from '@/components/ui/Button';
 
 <Button variant="success" size="lg" onClick={handleClick}>
   Click me!
@@ -828,7 +828,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(...);
 <!-- Button.mdx - Custom documentation page -->
 
 import { Meta, Story, Canvas, Controls, Description } from '@storybook/addon-docs';
-import Button from './button';
+import { Button } from './button';
 
 <Meta title="UI/Button" component={Button} />
 
@@ -851,7 +851,7 @@ The Button component is the cornerstone of user interactions in Daedalus. Built 
 ## Quick Start
 
 ```tsx
-import Button from '@/components/ui/Button';
+import { Button } from '@/components/ui/Button';
 
 function MyComponent() {
   return (

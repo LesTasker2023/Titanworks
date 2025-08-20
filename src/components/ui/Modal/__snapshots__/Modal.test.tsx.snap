@@ -1,0 +1,37 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Modal > applies size variants correctly 1`] = `
+<div
+  aria-describedby="modal-description"
+  aria-labelledby="modal-title"
+  aria-modal="true"
+  class="fixed inset-0 z-50 bg-black/80 flex items-center justify-center p-4 animate-in fade-in-0 duration-200"
+  role="dialog"
+>
+  <div
+    class="relative bg-background border rounded-lg shadow-lg w-full max-h-[80vh] overflow-auto max-w-sm p-6"
+  >
+    <div>
+      Modal content
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Modal > renders without crashing when open 1`] = `
+<div
+  aria-describedby="modal-description"
+  aria-labelledby="modal-title"
+  aria-modal="true"
+  class="fixed inset-0 z-50 bg-black/80 flex items-center justify-center p-4 animate-in fade-in-0 duration-200"
+  role="dialog"
+>
+  <div
+    class="relative bg-background border rounded-lg shadow-lg w-full max-h-[80vh] overflow-auto max-w-md p-6"
+  >
+    <div>
+      Modal content
+    </div>
+  </div>
+</div>
+`;

@@ -4,18 +4,20 @@ import { ThemeToggle } from './ThemeToggle';
 
 describe('ThemeToggle', () => {
   it('renders with default icon and label', () => {
-    render(<ThemeToggle />);
+    const { container } = render(<ThemeToggle />);
     const button = screen.getByRole('button', { name: /toggle theme/i });
     expect(button).toBeInTheDocument();
     expect(button.textContent).toMatch(/🌞|🌙/);
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   it('toggles theme on click', () => {
-    render(<ThemeToggle />);
+    const { container } = render(<ThemeToggle />);
     const button = screen.getByRole('button');
     const initial = button.textContent;
     fireEvent.click(button);
     expect(button.textContent).not.toBe(initial);
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   it('accepts custom icon and label', () => {

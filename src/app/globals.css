@@ -173,6 +173,16 @@ button[class*='bg-primary']:hover,
   border-color: var(--brand-primary) !important;
 }
 
+.ring-brand\/50,
+.dark .ring-brand\/50 {
+  --tw-ring-color: color-mix(in srgb, var(--brand-primary) 50%, transparent) !important;
+}
+
+.ring-brand,
+.dark .ring-brand {
+  --tw-ring-color: var(--brand-primary) !important;
+}
+
 .shadow {
   box-shadow: var(--shadow);
 }

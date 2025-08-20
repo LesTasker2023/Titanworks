@@ -26,10 +26,11 @@ import {
   TooltipProvider,
 } from '@/components/ui';
 import Alert from '@/components/ui/Alert/alert';
-import Badge from '@/components/ui/Badge/badge';
-import Button from '@/components/ui/Button/button';
+import { Badge } from '@/components/ui/Badge/badge';
+import { Button } from '@/components/ui/Button/button';
 import DataTable from '@/components/ui/DataTable/DataTable';
-import Dialog, {
+import {
+  Dialog,
   DialogContent,
   DialogDescription,
   DialogFooter,

@@ -94,4 +94,4 @@ const Checkbox = React.forwardRef<React.ElementRef<typeof CheckboxPrimitive.Root
 );
 Checkbox.displayName = CheckboxPrimitive.Root.displayName;
 
-export default Checkbox;
+export { Checkbox };

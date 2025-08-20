@@ -1,7 +1,7 @@
 ﻿import { fireEvent, render, screen } from '@testing-library/react';
 import React from 'react';
 import { describe, expect, it, vi } from 'vitest';
-import Badge from './badge';
+import { Badge } from './badge';
 
 describe('Badge Component', () => {
   // 1. Rendering Tests (6 tests)

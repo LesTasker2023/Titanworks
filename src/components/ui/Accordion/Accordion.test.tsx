@@ -86,7 +86,9 @@ describe('Accordion', () => {
   it('renders long content and titles', () => {
     const long = 'L'.repeat(1000);
     render(<Accordion items={[{ title: long, content: long }]} />);
-    expect(screen.getByText(long)).toBeInTheDocument();
+    const elements = screen.getAllByText(long);
+    expect(elements.length).toBeGreaterThan(0);
+    expect(elements[0]).toBeInTheDocument();
   });
 
   it('handles special characters in titles/content', () => {
@@ -107,7 +109,7 @@ describe('Accordion', () => {
   });
 
   it('applies ARIA attributes for accessibility', () => {
-    render(<Accordion items={items} />);
+    render(<Accordion items={items} defaultOpenIndex={0} />);
     const region = screen.getByRole('region');
     expect(region).toHaveAttribute('aria-label');
   });
@@ -134,12 +136,13 @@ describe('Accordion', () => {
       { title: 'A', content: 'A', disabled: true },
       { title: 'B', content: 'B' },
     ];
-    render(
-      <Accordion items={disabledItems as unknown as Array<{ title: string; content: string }>} />
-    );
-    const firstButton = screen.getByText('A');
+    render(<Accordion items={disabledItems} />);
+    const firstButton = screen.getByRole('button', { name: 'A' });
+    expect(firstButton).toBeDisabled();
     fireEvent.click(firstButton);
-    expect(screen.queryByText('A', { selector: 'div' })).not.toBeVisible();
+    // Content should remain hidden since the section is disabled
+    const contentDiv = document.getElementById('accordion-content-0');
+    expect(contentDiv).toHaveAttribute('hidden');
   });
 
   it('handles rapid toggling without error', () => {
@@ -148,8 +151,9 @@ describe('Accordion', () => {
     for (let i = 0; i < 10; i++) {
       fireEvent.click(firstButton);
     }
-    // Should not throw, and content should be visible or not
-    expect(screen.getByText('Content 1')).toBeDefined();
+    // After 10 clicks (even number), content should be hidden since it starts closed
+    const contentDiv = document.getElementById('accordion-content-0');
+    expect(contentDiv).toHaveAttribute('hidden');
   });
 
   it('renders correctly with a large number of items', () => {
@@ -180,7 +184,7 @@ describe('Accordion', () => {
         <Accordion items={[{ title: 'A', content: 'A' }]} />
       </div>
     );
-    fireEvent.click(screen.getByText('A'));
+    fireEvent.click(screen.getByRole('button', { name: 'A' }));
     // Accordion should stop propagation, so handleClick should not be called
     expect(handleClick).not.toHaveBeenCalled();
   });
@@ -222,7 +226,10 @@ describe('Accordion', () => {
 
   it('supports dark mode/theming', () => {
     render(<Accordion items={items} data-theme="dark" />);
-    expect(screen.getByRole('region')).toHaveAttribute('data-theme', 'dark');
+    // The data-theme attribute should be on the root div container
+    const container = screen.getByRole('button', { name: 'Section 1' }).parentElement
+      ?.parentElement;
+    expect(container).toHaveAttribute('data-theme', 'dark');
   });
 
   it('does not break on previously fixed bug: empty string title', () => {

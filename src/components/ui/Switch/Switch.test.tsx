@@ -12,23 +12,27 @@ describe('Switch Component', () => {
 
   describe('Rendering', () => {
     it('renders without crashing', () => {
-      render(<Switch />);
+      const { container } = render(<Switch />);
       expect(screen.getByRole('switch')).toBeInTheDocument();
+      expect(container.firstChild).toMatchSnapshot();
     });
 
     it('applies custom className', () => {
-      render(<Switch className="custom-class" />);
+      const { container } = render(<Switch className="custom-class" />);
       expect(screen.getByRole('switch')).toHaveClass('custom-class');
+      expect(container.firstChild).toMatchSnapshot();
     });
 
     it('renders in unchecked state by default', () => {
-      render(<Switch />);
+      const { container } = render(<Switch />);
       expect(screen.getByRole('switch')).not.toBeChecked();
+      expect(container.firstChild).toMatchSnapshot();
     });
 
     it('renders in checked state when defaultChecked is true', () => {
-      render(<Switch defaultChecked />);
+      const { container } = render(<Switch defaultChecked />);
       expect(screen.getByRole('switch')).toBeChecked();
+      expect(container.firstChild).toMatchSnapshot();
     });
   });
 

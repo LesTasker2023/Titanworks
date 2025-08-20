@@ -9,7 +9,7 @@
  */
 
 import Container from '@/components/layout/Container';
-import Button from '@/components/ui/Button';
+import { Button } from '@/components/ui/Button';
 import Card, { CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/Card';
 
 export default function ContainerTestPage() {

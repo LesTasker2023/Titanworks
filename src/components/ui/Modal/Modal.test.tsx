@@ -34,13 +34,14 @@ describe('Modal', () => {
   });
 
   it('renders without crashing when open', () => {
-    render(
+    const { container } = render(
       <Modal isOpen={true} onClose={mockOnClose}>
         <div>Modal content</div>
       </Modal>
     );
     expect(screen.getByRole('dialog')).toBeInTheDocument();
     expect(screen.getByText('Modal content')).toBeInTheDocument();
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   it('does not render when closed', () => {
@@ -111,13 +112,14 @@ describe('Modal', () => {
   });
 
   it('applies size variants correctly', () => {
-    const { rerender } = render(
+    const { rerender, container } = render(
       <Modal isOpen={true} onClose={mockOnClose} size="sm">
         <div>Modal content</div>
       </Modal>
     );
 
     expect(document.querySelector('.max-w-sm')).toBeInTheDocument();
+    expect(container.firstChild).toMatchSnapshot();
 
     rerender(
       <Modal isOpen={true} onClose={mockOnClose} size="lg">

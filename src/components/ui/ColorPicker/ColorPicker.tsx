@@ -2,7 +2,7 @@
 
 import { Palette } from 'lucide-react';
 import { useCallback, useEffect, useState } from 'react';
-import Button from '../Button';
+import { Button } from '../Button';
 
 interface ColorPickerProps {
   defaultColor?: string;

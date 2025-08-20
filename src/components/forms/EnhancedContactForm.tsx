@@ -1,9 +1,9 @@
 'use client';
 
 import { submitContactForm } from '@/app/actions/contact';
-import Button from '@/components/ui/Button';
-import Checkbox from '@/components/ui/Checkbox';
-import Input from '@/components/ui/Input';
+import { Button } from '@/components/ui/Button';
+import { Checkbox } from '@/components/ui/Checkbox';
+import { Input } from '@/components/ui/Input';
 import { Label } from '@/components/ui/Label';
 import Select, {
   SelectContent,
@@ -11,7 +11,7 @@ import Select, {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/Select';
-import Textarea from '@/components/ui/Textarea';
+import { Textarea } from '@/components/ui/Textarea';
 import { toast } from '@/components/ui/Toast';
 import { useEffect } from 'react';
 import { useFormState } from 'react-dom';

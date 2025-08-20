@@ -1,6 +1,6 @@
 ﻿import { render, screen } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
-import RadioGroup, { RadioGroupItem } from './radio-group';
+import { RadioGroup, RadioGroupItem } from './radio-group';
 
 describe('RadioGroup', () => {
   describe('Snapshots', () => {

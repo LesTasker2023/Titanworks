@@ -1,5 +1,5 @@
 export {
-  default,
+  Dialog,
   DialogClose,
   DialogContent,
   DialogDescription,

@@ -92,5 +92,4 @@ const RadioGroupItem = React.forwardRef<
 });
 RadioGroupItem.displayName = RadioGroupPrimitive.Item.displayName;
 
-export default RadioGroup;
-export { RadioGroupItem };
+export { RadioGroup, RadioGroupItem };

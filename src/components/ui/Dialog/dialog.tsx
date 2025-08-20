@@ -150,8 +150,8 @@ const Dialog = ({ disabled = false, ...props }: DialogProps) => {
 Dialog.displayName = 'Dialog';
 
 // Export Dialog as default and compound components as named exports
-export default Dialog;
 export {
+  Dialog,
   DialogClose,
   DialogContent,
   DialogDescription,

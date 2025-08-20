@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/nextjs';
-import Button from '../Button';
+import { Button } from '../Button';
 import { Toast, ToastAction, Toaster, useToast } from './index';
 
 const meta: Meta<typeof Toast> = {

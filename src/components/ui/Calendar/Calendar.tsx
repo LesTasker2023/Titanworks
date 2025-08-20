@@ -4,7 +4,7 @@ import { ChevronDownIcon, ChevronLeftIcon, ChevronRightIcon } from 'lucide-react
 import * as React from 'react';
 import { DayButton, DayPicker, getDefaultClassNames } from 'react-day-picker';
 
-import Button, { buttonVariants } from '@/components/ui/Button';
+import { Button, buttonVariants } from '@/components/ui/Button';
 import { cn } from '@/lib/utils';
 
 function Calendar({
@@ -93,7 +93,7 @@ function Calendar({
         range_middle: cn('rounded-none', defaultClassNames.range_middle),
         range_end: cn('bg-accent rounded-r-md', defaultClassNames.range_end),
         today: cn(
-          'bg-accent text-accent-foreground rounded-md data-[selected=true]:rounded-none',
+          'bg-gray-800 text-white border-0 font-normal data-[selected=true]:!bg-brand data-[selected=true]:!text-white data-[selected=true]:!border-brand data-[selected=true]:!border-2',
           defaultClassNames.today
         ),
         outside: cn(
@@ -150,27 +150,80 @@ function CalendarDayButton({
   }, [modifiers.focused]);
 
   return (
-    <Button
-      ref={ref}
-      variant="ghost"
-      size="icon"
-      data-day={day.date.toLocaleDateString()}
-      data-selected-single={
-        modifiers.selected &&
-        !modifiers.range_start &&
-        !modifiers.range_end &&
-        !modifiers.range_middle
+    <div
+      className={modifiers.selected ? 'relative' : ''}
+      style={
+        modifiers.selected
+          ? {
+              background: 'var(--brand-primary)',
+              borderRadius: '6px',
+              padding: '0px',
+            }
+          : {}
       }
-      data-range-start={modifiers.range_start}
-      data-range-end={modifiers.range_end}
-      data-range-middle={modifiers.range_middle}
-      className={cn(
-        'data-[selected-single=true]:bg-primary data-[selected-single=true]:text-primary-foreground data-[range-middle=true]:bg-accent data-[range-middle=true]:text-accent-foreground data-[range-start=true]:bg-primary data-[range-start=true]:text-primary-foreground data-[range-end=true]:bg-primary data-[range-end=true]:text-primary-foreground group-data-[focused=true]/day:border-ring group-data-[focused=true]/day:ring-ring/50 flex aspect-square h-auto w-full min-w-[--cell-size] flex-col gap-1 font-normal leading-none data-[range-end=true]:rounded-md data-[range-middle=true]:rounded-none data-[range-start=true]:rounded-md group-data-[focused=true]/day:relative group-data-[focused=true]/day:z-10 group-data-[focused=true]/day:ring-[3px] [&>span]:text-xs [&>span]:opacity-70',
-        defaultClassNames.day,
-        className
-      )}
-      {...props}
-    />
+    >
+      <Button
+        ref={ref}
+        variant="ghost"
+        size="icon"
+        data-day={day.date.toLocaleDateString()}
+        data-selected-single={
+          modifiers.selected &&
+          !modifiers.range_start &&
+          !modifiers.range_end &&
+          !modifiers.range_middle
+        }
+        data-range-start={modifiers.range_start}
+        data-range-end={modifiers.range_end}
+        data-range-middle={modifiers.range_middle}
+        className={cn(
+          // Base styling for unselected dates - black background with visible border
+          'bg-black text-white border-2 border-gray-600 hover:!bg-brand/20 hover:!text-brand hover:!border-brand/40 transition-all duration-200',
+          // Today styling - subdued background
+          modifiers.today && !modifiers.selected && 'bg-gray-800 border-0',
+          // Selected date styling - direct conditional with enhanced visibility
+          modifiers.selected &&
+            '!bg-brand !text-white !border-brand !border-2 !shadow-lg !font-semibold',
+          // Selected date styling - brand colors with enhanced visibility
+          'data-[selected-single=true]:!bg-brand data-[selected-single=true]:!text-white data-[selected-single=true]:!border-brand data-[selected-single=true]:!border-2 data-[selected-single=true]:!shadow-lg data-[selected-single=true]:!font-semibold',
+          // Range styling for brand colors
+          'data-[range-middle=true]:!bg-brand/30 data-[range-middle=true]:!text-brand data-[range-middle=true]:!border-brand/50',
+          'data-[range-start=true]:!bg-brand data-[range-start=true]:!text-white data-[range-start=true]:!border-brand',
+          'data-[range-end=true]:!bg-brand data-[range-end=true]:!text-white data-[range-end=true]:!border-brand',
+          // Focus and interaction states - using brand colors
+          'group-data-[focused=true]/day:!border-brand group-data-[focused=true]/day:outline group-data-[focused=true]/day:outline-2 group-data-[focused=true]/day:outline-offset-2',
+          'focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2',
+          'flex aspect-square h-auto w-full min-w-[--cell-size] flex-col gap-1 font-normal leading-none',
+          'data-[range-end=true]:rounded-md data-[range-middle=true]:rounded-none data-[range-start=true]:rounded-md',
+          'group-data-[focused=true]/day:relative group-data-[focused=true]/day:z-10',
+          '[&>span]:text-xs [&>span]:opacity-70',
+          // Override default button styles
+          '!rounded-md',
+          // Force selected styling with higher specificity
+          modifiers.selected &&
+            '!bg-[var(--brand-primary)] !text-white !border-[var(--brand-primary)]',
+          defaultClassNames.day,
+          className
+        )}
+        style={
+          modifiers.selected
+            ? ({
+                '--tw-ring-color': 'var(--brand-primary)',
+                outlineColor: 'var(--brand-primary)',
+                background: 'var(--brand-primary) !important',
+                color: '#ffffff !important',
+                border: '2px solid var(--brand-primary) !important',
+                fontWeight: '600',
+                boxShadow: '0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)',
+              } as React.CSSProperties & { '--tw-ring-color': string })
+            : ({
+                '--tw-ring-color': 'var(--brand-primary)',
+                outlineColor: 'var(--brand-primary)',
+              } as React.CSSProperties & { '--tw-ring-color': string })
+        }
+        {...props}
+      />
+    </div>
   );
 }
 
