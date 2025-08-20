@@ -69,188 +69,198 @@ export default function TableDemo() {
     direction: 'asc' | 'desc';
   } | null>(null);
 
-  const users: User[] = [
-    {
-      id: '1',
-      name: 'Alice Johnson',
-      email: 'alice@company.com',
-      role: 'Product Manager',
-      status: 'active',
-      joinDate: '2023-01-15',
-      avatar: '👩‍💼',
-      department: 'Product',
-    },
-    {
-      id: '2',
-      name: 'Bob Smith',
-      email: 'bob@company.com',
-      role: 'Developer',
-      status: 'active',
-      joinDate: '2023-02-20',
-      avatar: '👨‍💻',
-      department: 'Engineering',
-    },
-    {
-      id: '3',
-      name: 'Carol Davis',
-      email: 'carol@company.com',
-      role: 'Designer',
-      status: 'pending',
-      joinDate: '2023-03-10',
-      avatar: '👩‍🎨',
-      department: 'Design',
-    },
-    {
-      id: '4',
-      name: 'David Wilson',
-      email: 'david@company.com',
-      role: 'DevOps',
-      status: 'active',
-      joinDate: '2023-04-05',
-      avatar: '👨‍🔧',
-      department: 'Engineering',
-    },
-    {
-      id: '5',
-      name: 'Eve Brown',
-      email: 'eve@company.com',
-      role: 'Marketing Lead',
-      status: 'inactive',
-      joinDate: '2023-05-12',
-      avatar: '👩‍💼',
-      department: 'Marketing',
-    },
-    {
-      id: '6',
-      name: 'Frank Miller',
-      email: 'frank@company.com',
-      role: 'QA Engineer',
-      status: 'active',
-      joinDate: '2023-06-18',
-      avatar: '👨‍🔬',
-      department: 'Engineering',
-    },
-  ];
+  // Memoize static data to prevent recreation on every render
+  const users: User[] = useMemo(
+    () => [
+      {
+        id: '1',
+        name: 'Alice Johnson',
+        email: 'alice@company.com',
+        role: 'Product Manager',
+        status: 'active',
+        joinDate: '2023-01-15',
+        avatar: '👩‍💼',
+        department: 'Product',
+      },
+      {
+        id: '2',
+        name: 'Bob Smith',
+        email: 'bob@company.com',
+        role: 'Developer',
+        status: 'active',
+        joinDate: '2023-02-20',
+        avatar: '👨‍💻',
+        department: 'Engineering',
+      },
+      {
+        id: '3',
+        name: 'Carol Davis',
+        email: 'carol@company.com',
+        role: 'Designer',
+        status: 'pending',
+        joinDate: '2023-03-10',
+        avatar: '👩‍🎨',
+        department: 'Design',
+      },
+      {
+        id: '4',
+        name: 'David Wilson',
+        email: 'david@company.com',
+        role: 'DevOps',
+        status: 'active',
+        joinDate: '2023-04-05',
+        avatar: '👨‍🔧',
+        department: 'Engineering',
+      },
+      {
+        id: '5',
+        name: 'Eve Brown',
+        email: 'eve@company.com',
+        role: 'Marketing Lead',
+        status: 'inactive',
+        joinDate: '2023-05-12',
+        avatar: '👩‍💼',
+        department: 'Marketing',
+      },
+      {
+        id: '6',
+        name: 'Frank Miller',
+        email: 'frank@company.com',
+        role: 'QA Engineer',
+        status: 'active',
+        joinDate: '2023-06-18',
+        avatar: '👨‍🔬',
+        department: 'Engineering',
+      },
+    ],
+    []
+  );
 
-  const orders: Order[] = [
-    {
-      id: 'ORD-001',
-      customer: 'Tech Solutions Inc',
-      product: 'Enterprise License',
-      amount: 2999.99,
-      status: 'delivered',
-      date: '2024-01-15',
-      quantity: 1,
-    },
-    {
-      id: 'ORD-002',
-      customer: 'Digital Agency Co',
-      product: 'Premium Plan',
-      amount: 899.99,
-      status: 'shipped',
-      date: '2024-01-16',
-      quantity: 3,
-    },
-    {
-      id: 'ORD-003',
-      customer: 'Startup Hub',
-      product: 'Basic Plan',
-      amount: 299.99,
-      status: 'pending',
-      date: '2024-01-17',
-      quantity: 5,
-    },
-    {
-      id: 'ORD-004',
-      customer: 'Global Corp',
-      product: 'Enterprise License',
-      amount: 4999.99,
-      status: 'delivered',
-      date: '2024-01-18',
-      quantity: 2,
-    },
-    {
-      id: 'ORD-005',
-      customer: 'Local Business',
-      product: 'Standard Plan',
-      amount: 599.99,
-      status: 'cancelled',
-      date: '2024-01-19',
-      quantity: 1,
-    },
-    {
-      id: 'ORD-006',
-      customer: 'Innovation Labs',
-      product: 'Premium Plan',
-      amount: 1299.99,
-      status: 'shipped',
-      date: '2024-01-20',
-      quantity: 2,
-    },
-  ];
+  const orders: Order[] = useMemo(
+    () => [
+      {
+        id: 'ORD-001',
+        customer: 'Tech Solutions Inc',
+        product: 'Enterprise License',
+        amount: 2999.99,
+        status: 'delivered',
+        date: '2024-01-15',
+        quantity: 1,
+      },
+      {
+        id: 'ORD-002',
+        customer: 'Digital Agency Co',
+        product: 'Premium Plan',
+        amount: 899.99,
+        status: 'shipped',
+        date: '2024-01-16',
+        quantity: 3,
+      },
+      {
+        id: 'ORD-003',
+        customer: 'Startup Hub',
+        product: 'Basic Plan',
+        amount: 299.99,
+        status: 'pending',
+        date: '2024-01-17',
+        quantity: 5,
+      },
+      {
+        id: 'ORD-004',
+        customer: 'Global Corp',
+        product: 'Enterprise License',
+        amount: 4999.99,
+        status: 'delivered',
+        date: '2024-01-18',
+        quantity: 2,
+      },
+      {
+        id: 'ORD-005',
+        customer: 'Local Business',
+        product: 'Standard Plan',
+        amount: 599.99,
+        status: 'cancelled',
+        date: '2024-01-19',
+        quantity: 1,
+      },
+      {
+        id: 'ORD-006',
+        customer: 'Innovation Labs',
+        product: 'Premium Plan',
+        amount: 1299.99,
+        status: 'shipped',
+        date: '2024-01-20',
+        quantity: 2,
+      },
+    ],
+    []
+  );
 
-  const products: Product[] = [
-    {
-      id: 'PRD-001',
-      name: 'Enterprise License',
-      category: 'Software',
-      price: 2999.99,
-      stock: 50,
-      rating: 4.8,
-      sales: 125,
-      status: 'active',
-    },
-    {
-      id: 'PRD-002',
-      name: 'Premium Plan',
-      category: 'Subscription',
-      price: 899.99,
-      stock: 200,
-      rating: 4.6,
-      sales: 340,
-      status: 'active',
-    },
-    {
-      id: 'PRD-003',
-      name: 'Basic Plan',
-      category: 'Subscription',
-      price: 299.99,
-      stock: 500,
-      rating: 4.4,
-      sales: 756,
-      status: 'active',
-    },
-    {
-      id: 'PRD-004',
-      name: 'Standard Plan',
-      category: 'Subscription',
-      price: 599.99,
-      stock: 300,
-      rating: 4.5,
-      sales: 445,
-      status: 'active',
-    },
-    {
-      id: 'PRD-005',
-      name: 'Mobile App',
-      category: 'Software',
-      price: 199.99,
-      stock: 0,
-      rating: 4.2,
-      sales: 892,
-      status: 'out-of-stock',
-    },
-    {
-      id: 'PRD-006',
-      name: 'Legacy System',
-      category: 'Software',
-      price: 1999.99,
-      stock: 10,
-      rating: 3.8,
-      sales: 45,
-      status: 'discontinued',
-    },
-  ];
+  const products: Product[] = useMemo(
+    () => [
+      {
+        id: 'PRD-001',
+        name: 'Enterprise License',
+        category: 'Software',
+        price: 2999.99,
+        stock: 50,
+        rating: 4.8,
+        sales: 125,
+        status: 'active',
+      },
+      {
+        id: 'PRD-002',
+        name: 'Premium Plan',
+        category: 'Subscription',
+        price: 899.99,
+        stock: 200,
+        rating: 4.6,
+        sales: 340,
+        status: 'active',
+      },
+      {
+        id: 'PRD-003',
+        name: 'Basic Plan',
+        category: 'Subscription',
+        price: 299.99,
+        stock: 500,
+        rating: 4.4,
+        sales: 756,
+        status: 'active',
+      },
+      {
+        id: 'PRD-004',
+        name: 'Standard Plan',
+        category: 'Subscription',
+        price: 599.99,
+        stock: 300,
+        rating: 4.5,
+        sales: 445,
+        status: 'active',
+      },
+      {
+        id: 'PRD-005',
+        name: 'Mobile App',
+        category: 'Software',
+        price: 199.99,
+        stock: 0,
+        rating: 4.2,
+        sales: 892,
+        status: 'out-of-stock',
+      },
+      {
+        id: 'PRD-006',
+        name: 'Legacy System',
+        category: 'Software',
+        price: 1999.99,
+        stock: 10,
+        rating: 3.8,
+        sales: 45,
+        status: 'discontinued',
+      },
+    ],
+    []
+  );
 
   const filteredUsers = useMemo(() => {
     const filtered = users.filter(
@@ -290,7 +300,7 @@ export default function TableDemo() {
     }
 
     return filtered;
-  }, [orderSearch, orderSort]);
+  }, [orderSearch, orderSort, orders]);
 
   const filteredProducts = useMemo(() => {
     const filtered = products.filter(
@@ -309,7 +319,7 @@ export default function TableDemo() {
     }
 
     return filtered;
-  }, [productSearch, productSort]);
+  }, [productSearch, productSort, products]);
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const handleSort = (field: string, currentSort: any, setSortFunction: any) => {

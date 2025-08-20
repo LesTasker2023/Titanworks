@@ -10,7 +10,7 @@ export const Accordion = React.forwardRef<HTMLDivElement, AccordionProps>(
     // If className is provided and no defaultOpenIndex, open the first section by default
     const initialIndex = className && defaultOpenIndex === -1 ? 0 : defaultOpenIndex;
     const [openIndex, setOpenIndex] = React.useState(initialIndex);
-    const [_focusedIndex, setFocusedIndex] = React.useState(0);
+    const [, setFocusedIndex] = React.useState(0);
 
     // Safety check for items
     if (!items || !Array.isArray(items)) {
