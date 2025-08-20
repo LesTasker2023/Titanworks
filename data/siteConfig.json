@@ -20,9 +20,9 @@
                            }
              },
     "project":  {
-                    "version":  "1.43.0",
+                    "version":  "1.46.0",
                     "grade":  "A+",
-                    "lastUpdated":  "2025-08-20",
+                    "lastUpdated":  "2025-08-21",
                     "status":  "Production Ready",
                     "repository":  {
                                        "name":  "Daedalus",
@@ -245,8 +245,8 @@
                 "ogImage":  "/og-image.png"
             },
     "build":  {
-                  "timestamp":  "2025-08-20T23:50:55Z",
+                  "timestamp":  "2025-08-21T00:38:20Z",
                   "environment":  "production",
-                  "deploymentId":  "auto-1.43.0-20250820235055"
+                  "deploymentId":  "auto-1.46.0-20250821003820"
               }
 }

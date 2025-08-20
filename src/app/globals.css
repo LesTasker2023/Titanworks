@@ -12,6 +12,7 @@
     /* SURFACE TOKENS - What things sit on */
     --surface-primary: 0 0% 100%; /* Main page backgrounds, cards */
     --surface-secondary: 220 14% 96%; /* Secondary backgrounds, hover states */
+    --surface-secondary-button: 215 25% 92%; /* Better secondary button surface */
     --surface-interactive: 221 83% 53%; /* Interactive elements (customizable) */
     --surface-accent: 142 76% 36%; /* Success states, highlights */
 
@@ -32,7 +33,7 @@
     --status-error: 0 84% 60%; /* Red - error, destructive */
     --status-info: 221 83% 53%; /* Blue - information */
 
-    /* ===== LEGACY SHADCN COMPATIBILITY ===== */
+    /* LEGACY SHADCN COMPATIBILITY ===== */
     /* Mapped to semantic tokens for backward compatibility */
     --background: var(--surface-primary);
     --foreground: var(--content-primary);
@@ -42,8 +43,8 @@
     --popover-foreground: var(--content-primary);
     --primary: var(--surface-interactive);
     --primary-foreground: var(--content-inverse);
-    --secondary: var(--surface-secondary);
-    --secondary-foreground: var(--content-primary);
+    --secondary: var(--surface-secondary-button);
+    --secondary-foreground: 220 15% 25%; /* Darker text for better contrast on light secondary buttons */
     --muted: var(--content-muted);
     --muted-foreground: var(--content-secondary);
     --accent: var(--surface-interactive);
@@ -102,6 +103,7 @@
     /* SURFACE TOKENS */
     --surface-primary: 224 71% 4%; /* Dark backgrounds */
     --surface-secondary: 215 28% 17%; /* Slightly lighter for cards */
+    --surface-secondary-button: 215 32% 20%; /* Better secondary button in dark mode */
     --surface-interactive: 221 83% 53%; /* Same interactive color (customizable) */
     --surface-accent: 142 76% 36%; /* Same accent color */
 
@@ -121,6 +123,9 @@
     --status-warning: 32 95% 44%;
     --status-error: 0 84% 60%;
     --status-info: 221 83% 53%;
+
+    /* DARK MODE OVERRIDES FOR SHADCN COMPATIBILITY */
+    --secondary-foreground: 215 20% 85%; /* Lighter text for dark secondary buttons */
   }
 }
 
@@ -225,6 +230,12 @@ button[class*='bg-primary']:hover,
 .bg-surface-secondary,
 .dark .bg-surface-secondary {
   background-color: hsl(var(--surface-secondary)) !important;
+  color: hsl(var(--content-primary)) !important;
+}
+
+.bg-surface-secondary-button,
+.dark .bg-surface-secondary-button {
+  background-color: hsl(var(--surface-secondary-button)) !important;
   color: hsl(var(--content-primary)) !important;
 }
 

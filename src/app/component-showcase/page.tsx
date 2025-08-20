@@ -12,7 +12,7 @@ import {
 import { Input } from '@/components/ui/Input';
 import { TooltipProvider } from '@/components/ui/Tooltip';
 import { ChevronDown, ChevronUp, Filter, Search } from 'lucide-react';
-import React, { lazy, useMemo, useState } from 'react';
+import React, { lazy, useMemo, useRef, useState } from 'react';
 
 // Lazy load all component demos for better performance
 const AccordionDemo = lazy(() =>
@@ -355,6 +355,7 @@ export default function ComponentShowcase() {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategories, setSelectedCategories] = useState<string[]>(categories);
   const [openComponent, setOpenComponent] = useState<string | null>(null);
+  const componentRefs = useRef<Record<string, HTMLDivElement | null>>({});
 
   const filteredComponents = useMemo(() => {
     return componentRegistry.filter(component => {
@@ -370,6 +371,32 @@ export default function ComponentShowcase() {
     setSelectedCategories(prev =>
       checked ? [...prev, category] : prev.filter(cat => cat !== category)
     );
+  };
+
+  const handleComponentToggle = (componentName: string) => {
+    const isCurrentlyOpen = openComponent === componentName;
+
+    if (isCurrentlyOpen) {
+      // If closing, just close it
+      setOpenComponent(null);
+    } else {
+      // If opening, set it as open and scroll to position
+      setOpenComponent(componentName);
+
+      // Scroll to the component, accounting for navigation height
+      setTimeout(() => {
+        const element = componentRefs.current[componentName];
+        if (element) {
+          const navHeight = 80; // Approximate nav height
+          const elementTop = element.offsetTop - navHeight;
+
+          window.scrollTo({
+            top: elementTop,
+            behavior: 'smooth',
+          });
+        }
+      }, 100); // Small delay to ensure DOM is updated
+    }
   };
 
   return (
@@ -431,27 +458,46 @@ export default function ComponentShowcase() {
             const isOpen = openComponent === component.name;
 
             return (
-              <Card key={component.name} className="overflow-hidden">
+              <Card
+                key={component.name}
+                className={`overflow-hidden transition-colors`}
+                style={isOpen ? { borderColor: 'var(--brand-primary)' } : {}}
+                ref={el => {
+                  componentRefs.current[component.name] = el;
+                }}
+              >
                 <CardHeader className="pb-3">
                   <div className="space-y-1">
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-2">
                         <CardTitle className="text-lg">{component.name}</CardTitle>
-                        <Badge variant="outline" className="text-xs">
+                        <Badge
+                          variant="outline"
+                          className="text-xs"
+                          style={{
+                            borderColor: 'var(--brand-primary)',
+                            color: 'var(--brand-primary)',
+                          }}
+                        >
                           {component.category}
                         </Badge>
                       </div>
                       <Button
                         variant="outline"
                         size="sm"
-                        onClick={() => setOpenComponent(isOpen ? null : component.name)}
+                        onClick={() => handleComponentToggle(component.name)}
                       >
                         {isOpen ? (
-                          <ChevronUp className="mr-2 h-4 w-4" />
+                          <>
+                            <ChevronUp className="mr-2 h-4 w-4" />
+                            Hide Demo
+                          </>
                         ) : (
-                          <ChevronDown className="mr-2 h-4 w-4" />
+                          <>
+                            <ChevronDown className="mr-2 h-4 w-4" />
+                            View Demo
+                          </>
                         )}
-                        {isOpen ? 'Hide Demo' : 'View Demo'}
                       </Button>
                     </div>
                     <CardDescription>{component.description}</CardDescription>
