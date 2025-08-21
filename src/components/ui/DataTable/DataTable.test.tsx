@@ -1,14 +1,22 @@
 import { render, screen } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
+// import userEvent from '@testing-library/user-event';
 import { describe, expect, it, vi } from 'vitest';
-import { DataTable } from './datatable';
+import { DataTable } from './DataTable';
 
 describe('DataTable', () => {
+  const mockData = [
+    { id: 1, name: 'Test Item 1', value: 'A' },
+    { id: 2, name: 'Test Item 2', value: 'B' },
+  ];
+
+  const mockColumns = [
+    { key: 'name', header: 'Name' },
+    { key: 'value', header: 'Value' },
+  ];
+
   const renderBasicDataTable = (props = {}) => {
     return render(
-      <DataTable data-testid="datatable" {...props}>
-        Test content
-      </DataTable>
+      <DataTable data-testid="datatable" data={mockData} columns={mockColumns} {...props} />
     );
   };
 
@@ -103,7 +111,7 @@ describe('DataTable', () => {
   describe('Events', () => {
     it('handles onSort correctly', async () => {
       const onSort = vi.fn();
-      const user = userEvent.setup();
+      // const user = userEvent.setup();
       renderBasicDataTable({ onSort });
 
       // TODO: Add specific event triggering based on onSort
@@ -111,7 +119,7 @@ describe('DataTable', () => {
     });
     it('handles onFilter correctly', async () => {
       const onFilter = vi.fn();
-      const user = userEvent.setup();
+      // const user = userEvent.setup();
       renderBasicDataTable({ onFilter });
 
       // TODO: Add specific event triggering based on onFilter
@@ -119,7 +127,7 @@ describe('DataTable', () => {
     });
     it('handles onPageChange correctly', async () => {
       const onPageChange = vi.fn();
-      const user = userEvent.setup();
+      // const user = userEvent.setup();
       renderBasicDataTable({ onPageChange });
 
       // TODO: Add specific event triggering based on onPageChange
@@ -127,7 +135,7 @@ describe('DataTable', () => {
     });
     it('handles onRowClick correctly', async () => {
       const onRowClick = vi.fn();
-      const user = userEvent.setup();
+      // const user = userEvent.setup();
       renderBasicDataTable({ onRowClick });
 
       // TODO: Add specific event triggering based on onRowClick
@@ -135,7 +143,7 @@ describe('DataTable', () => {
     });
     it('handles onRowDoubleClick correctly', async () => {
       const onRowDoubleClick = vi.fn();
-      const user = userEvent.setup();
+      // const user = userEvent.setup();
       renderBasicDataTable({ onRowDoubleClick });
 
       // TODO: Add specific event triggering based on onRowDoubleClick
@@ -215,14 +223,21 @@ describe('DataTable', () => {
 
     it('handles rapid prop changes', () => {
       const { rerender } = renderBasicDataTable({ className: 'class1' });
-      rerender(<DataTable data-testid="datatable" className="class2" />);
+      rerender(
+        <DataTable
+          data-testid="datatable"
+          data={mockData}
+          columns={mockColumns}
+          className="class2"
+        />
+      );
       const element = screen.getByTestId('datatable');
       expect(element).toHaveClass('class2');
     });
 
     it('handles complex nested content', () => {
       render(
-        <DataTable data-testid="datatable">
+        <DataTable data-testid="datatable" data={mockData} columns={mockColumns}>
           <div>
             <span>Nested content</span>
             <p>More content</p>
@@ -234,7 +249,7 @@ describe('DataTable', () => {
 
     it('maintains functionality with many children', () => {
       render(
-        <DataTable data-testid="datatable">
+        <DataTable data-testid="datatable" data={mockData} columns={mockColumns}>
           {Array.from({ length: 100 }, (_, i) => (
             <div key={i}>Item {i}</div>
           ))}

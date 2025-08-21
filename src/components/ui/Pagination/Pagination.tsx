@@ -201,13 +201,8 @@ const Pagination = forwardRef<HTMLDivElement, PaginationProps>(
     };
 
     return (
-      <div className="flex flex-col items-center space-y-3">
-        <nav
-          className={cn(paginationContainerVariants({ size }), className)}
-          aria-label="Pagination"
-          ref={ref}
-          {...props}
-        >
+      <div className={cn('flex flex-col items-center space-y-3', className)} ref={ref} {...props}>
+        <nav className={cn(paginationContainerVariants({ size }))} aria-label="Pagination">
           {/* First page button */}
           {showFirstLast && !isFirstPage && (
             <button

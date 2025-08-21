@@ -14,7 +14,7 @@ describe('DropdownMenu', () => {
     ...props
   }: {
     children?: React.ReactNode;
-    [key: string]: any;
+    [key: string]: unknown;
   }) => (
     <DropdownMenu>
       <DropdownMenuTrigger data-testid="dropdown-trigger">Open Menu</DropdownMenuTrigger>
@@ -140,12 +140,12 @@ describe('DropdownMenu', () => {
 
   describe('Edge Cases', () => {
     it('handles undefined props gracefully', () => {
-      render(<BasicDropdownMenu children={undefined} />);
+      render(<BasicDropdownMenu>{undefined}</BasicDropdownMenu>);
       expect(screen.getByTestId('dropdown-trigger')).toBeInTheDocument();
     });
 
     it('handles null props gracefully', () => {
-      render(<BasicDropdownMenu children={null} />);
+      render(<BasicDropdownMenu>{null}</BasicDropdownMenu>);
       expect(screen.getByTestId('dropdown-trigger')).toBeInTheDocument();
     });
 

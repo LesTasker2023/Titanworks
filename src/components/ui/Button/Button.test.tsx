@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
+// import userEvent from '@testing-library/user-event';
 import { describe, expect, it, vi } from 'vitest';
 import { Button } from './button';
 
@@ -106,9 +106,9 @@ describe('Button', () => {
     });
 
     it('supports keyboard navigation', () => {
-      const user = userEvent.setup();
+      // const user = userEvent.setup();
       renderBasicButton();
-      const element = screen.getByTestId('button');
+      // const element = screen.getByTestId('button');
 
       // Focus test disabled due to environment limitations
       // user.tab();

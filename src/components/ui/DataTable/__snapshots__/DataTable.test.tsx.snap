@@ -18,24 +18,75 @@ exports[`DataTable > Snapshots > matches checked state snapshot 1`] = `
       <thead
         class="[&_tr]:border-b"
       >
-        <tr />
+        <tr>
+          <th
+            class="h-10 px-2 text-left align-middle font-medium text-muted-foreground"
+            role="columnheader"
+            tabindex="-1"
+          >
+            <div
+              class="flex items-center space-x-1"
+            >
+              <span>
+                Name
+              </span>
+            </div>
+          </th>
+          <th
+            class="h-10 px-2 text-left align-middle font-medium text-muted-foreground"
+            role="columnheader"
+            tabindex="-1"
+          >
+            <div
+              class="flex items-center space-x-1"
+            >
+              <span>
+                Value
+              </span>
+            </div>
+          </th>
+        </tr>
       </thead>
       <tbody
         class="[&_tr:last-child]:border-0"
       >
-        <tr>
+        <tr
+          class="datatable__row border-b transition-colors hover:bg-muted/50"
+          role="row"
+        >
           <td
-            class="p-8 text-center text-muted-foreground"
-            colspan="0"
-            role="status"
+            class="p-2 align-middle"
+            role="cell"
           >
-            No data available
+            Test Item 1
+          </td>
+          <td
+            class="p-2 align-middle"
+            role="cell"
+          >
+            A
+          </td>
+        </tr>
+        <tr
+          class="datatable__row border-b transition-colors hover:bg-muted/50"
+          role="row"
+        >
+          <td
+            class="p-2 align-middle"
+            role="cell"
+          >
+            Test Item 2
+          </td>
+          <td
+            class="p-2 align-middle"
+            role="cell"
+          >
+            B
           </td>
         </tr>
       </tbody>
     </table>
   </div>
-  Test content
 </div>
 `;
 
@@ -57,24 +108,75 @@ exports[`DataTable > Snapshots > matches default snapshot 1`] = `
       <thead
         class="[&_tr]:border-b"
       >
-        <tr />
+        <tr>
+          <th
+            class="h-10 px-2 text-left align-middle font-medium text-muted-foreground"
+            role="columnheader"
+            tabindex="-1"
+          >
+            <div
+              class="flex items-center space-x-1"
+            >
+              <span>
+                Name
+              </span>
+            </div>
+          </th>
+          <th
+            class="h-10 px-2 text-left align-middle font-medium text-muted-foreground"
+            role="columnheader"
+            tabindex="-1"
+          >
+            <div
+              class="flex items-center space-x-1"
+            >
+              <span>
+                Value
+              </span>
+            </div>
+          </th>
+        </tr>
       </thead>
       <tbody
         class="[&_tr:last-child]:border-0"
       >
-        <tr>
+        <tr
+          class="datatable__row border-b transition-colors hover:bg-muted/50"
+          role="row"
+        >
           <td
-            class="p-8 text-center text-muted-foreground"
-            colspan="0"
-            role="status"
+            class="p-2 align-middle"
+            role="cell"
           >
-            No data available
+            Test Item 1
+          </td>
+          <td
+            class="p-2 align-middle"
+            role="cell"
+          >
+            A
+          </td>
+        </tr>
+        <tr
+          class="datatable__row border-b transition-colors hover:bg-muted/50"
+          role="row"
+        >
+          <td
+            class="p-2 align-middle"
+            role="cell"
+          >
+            Test Item 2
+          </td>
+          <td
+            class="p-2 align-middle"
+            role="cell"
+          >
+            B
           </td>
         </tr>
       </tbody>
     </table>
   </div>
-  Test content
 </div>
 `;
 
@@ -96,24 +198,75 @@ exports[`DataTable > Snapshots > matches disabled state snapshot 1`] = `
       <thead
         class="[&_tr]:border-b"
       >
-        <tr />
+        <tr>
+          <th
+            class="h-10 px-2 text-left align-middle font-medium text-muted-foreground"
+            role="columnheader"
+            tabindex="-1"
+          >
+            <div
+              class="flex items-center space-x-1"
+            >
+              <span>
+                Name
+              </span>
+            </div>
+          </th>
+          <th
+            class="h-10 px-2 text-left align-middle font-medium text-muted-foreground"
+            role="columnheader"
+            tabindex="-1"
+          >
+            <div
+              class="flex items-center space-x-1"
+            >
+              <span>
+                Value
+              </span>
+            </div>
+          </th>
+        </tr>
       </thead>
       <tbody
         class="[&_tr:last-child]:border-0"
       >
-        <tr>
+        <tr
+          class="datatable__row border-b transition-colors hover:bg-muted/50 pointer-events-none"
+          role="row"
+        >
           <td
-            class="p-8 text-center text-muted-foreground"
-            colspan="0"
-            role="status"
+            class="p-2 align-middle"
+            role="cell"
           >
-            No data available
+            Test Item 1
+          </td>
+          <td
+            class="p-2 align-middle"
+            role="cell"
+          >
+            A
+          </td>
+        </tr>
+        <tr
+          class="datatable__row border-b transition-colors hover:bg-muted/50 pointer-events-none"
+          role="row"
+        >
+          <td
+            class="p-2 align-middle"
+            role="cell"
+          >
+            Test Item 2
+          </td>
+          <td
+            class="p-2 align-middle"
+            role="cell"
+          >
+            B
           </td>
         </tr>
       </tbody>
     </table>
   </div>
-  Test content
 </div>
 `;
 
@@ -154,24 +307,75 @@ exports[`DataTable > Snapshots > matches hover state snapshot 1`] = `
       <thead
         class="[&_tr]:border-b"
       >
-        <tr />
+        <tr>
+          <th
+            class="h-10 px-2 text-left align-middle font-medium text-muted-foreground"
+            role="columnheader"
+            tabindex="-1"
+          >
+            <div
+              class="flex items-center space-x-1"
+            >
+              <span>
+                Name
+              </span>
+            </div>
+          </th>
+          <th
+            class="h-10 px-2 text-left align-middle font-medium text-muted-foreground"
+            role="columnheader"
+            tabindex="-1"
+          >
+            <div
+              class="flex items-center space-x-1"
+            >
+              <span>
+                Value
+              </span>
+            </div>
+          </th>
+        </tr>
       </thead>
       <tbody
         class="[&_tr:last-child]:border-0"
       >
-        <tr>
+        <tr
+          class="datatable__row border-b transition-colors hover:bg-muted/50"
+          role="row"
+        >
           <td
-            class="p-8 text-center text-muted-foreground"
-            colspan="0"
-            role="status"
+            class="p-2 align-middle"
+            role="cell"
           >
-            No data available
+            Test Item 1
+          </td>
+          <td
+            class="p-2 align-middle"
+            role="cell"
+          >
+            A
+          </td>
+        </tr>
+        <tr
+          class="datatable__row border-b transition-colors hover:bg-muted/50"
+          role="row"
+        >
+          <td
+            class="p-2 align-middle"
+            role="cell"
+          >
+            Test Item 2
+          </td>
+          <td
+            class="p-2 align-middle"
+            role="cell"
+          >
+            B
           </td>
         </tr>
       </tbody>
     </table>
   </div>
-  Test content
 </div>
 `;
 
@@ -233,24 +437,75 @@ exports[`DataTable > Snapshots > matches required state snapshot 1`] = `
       <thead
         class="[&_tr]:border-b"
       >
-        <tr />
+        <tr>
+          <th
+            class="h-10 px-2 text-left align-middle font-medium text-muted-foreground"
+            role="columnheader"
+            tabindex="-1"
+          >
+            <div
+              class="flex items-center space-x-1"
+            >
+              <span>
+                Name
+              </span>
+            </div>
+          </th>
+          <th
+            class="h-10 px-2 text-left align-middle font-medium text-muted-foreground"
+            role="columnheader"
+            tabindex="-1"
+          >
+            <div
+              class="flex items-center space-x-1"
+            >
+              <span>
+                Value
+              </span>
+            </div>
+          </th>
+        </tr>
       </thead>
       <tbody
         class="[&_tr:last-child]:border-0"
       >
-        <tr>
+        <tr
+          class="datatable__row border-b transition-colors hover:bg-muted/50"
+          role="row"
+        >
           <td
-            class="p-8 text-center text-muted-foreground"
-            colspan="0"
-            role="status"
+            class="p-2 align-middle"
+            role="cell"
           >
-            No data available
+            Test Item 1
+          </td>
+          <td
+            class="p-2 align-middle"
+            role="cell"
+          >
+            A
+          </td>
+        </tr>
+        <tr
+          class="datatable__row border-b transition-colors hover:bg-muted/50"
+          role="row"
+        >
+          <td
+            class="p-2 align-middle"
+            role="cell"
+          >
+            Test Item 2
+          </td>
+          <td
+            class="p-2 align-middle"
+            role="cell"
+          >
+            B
           </td>
         </tr>
       </tbody>
     </table>
   </div>
-  Test content
 </div>
 `;
 
@@ -272,23 +527,74 @@ exports[`DataTable > Snapshots > matches selected state snapshot 1`] = `
       <thead
         class="[&_tr]:border-b"
       >
-        <tr />
+        <tr>
+          <th
+            class="h-10 px-2 text-left align-middle font-medium text-muted-foreground"
+            role="columnheader"
+            tabindex="-1"
+          >
+            <div
+              class="flex items-center space-x-1"
+            >
+              <span>
+                Name
+              </span>
+            </div>
+          </th>
+          <th
+            class="h-10 px-2 text-left align-middle font-medium text-muted-foreground"
+            role="columnheader"
+            tabindex="-1"
+          >
+            <div
+              class="flex items-center space-x-1"
+            >
+              <span>
+                Value
+              </span>
+            </div>
+          </th>
+        </tr>
       </thead>
       <tbody
         class="[&_tr:last-child]:border-0"
       >
-        <tr>
+        <tr
+          class="datatable__row border-b transition-colors hover:bg-muted/50"
+          role="row"
+        >
           <td
-            class="p-8 text-center text-muted-foreground"
-            colspan="0"
-            role="status"
+            class="p-2 align-middle"
+            role="cell"
           >
-            No data available
+            Test Item 1
+          </td>
+          <td
+            class="p-2 align-middle"
+            role="cell"
+          >
+            A
+          </td>
+        </tr>
+        <tr
+          class="datatable__row border-b transition-colors hover:bg-muted/50"
+          role="row"
+        >
+          <td
+            class="p-2 align-middle"
+            role="cell"
+          >
+            Test Item 2
+          </td>
+          <td
+            class="p-2 align-middle"
+            role="cell"
+          >
+            B
           </td>
         </tr>
       </tbody>
     </table>
   </div>
-  Test content
 </div>
 `;

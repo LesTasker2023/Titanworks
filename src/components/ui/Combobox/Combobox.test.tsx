@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
-import { describe, expect, it, vi } from 'vitest';
 import React from 'react';
+import { describe, expect, it, vi } from 'vitest';
 import { Combobox } from './Combobox';
 
 const mockOptions = [
@@ -10,8 +10,8 @@ const mockOptions = [
 ];
 
 describe('Combobox', () => {
-  const BasicCombobox = ({ children, ...props }: { children?: React.ReactNode; [key: string]: any }) => (
-    <Combobox 
+  const BasicCombobox = ({ ...props }: { [key: string]: unknown }) => (
+    <Combobox
       data-testid="combobox"
       options={mockOptions}
       placeholder="Select option..."
@@ -148,7 +148,7 @@ describe('Combobox', () => {
     });
 
     it('handles null value gracefully', () => {
-      render(<BasicCombobox value={null as any} />);
+      render(<BasicCombobox value={null as never} />);
       expect(screen.getByText('Select option...')).toBeInTheDocument();
     });
 
@@ -166,7 +166,7 @@ describe('Combobox', () => {
     it('handles large number of options', () => {
       const largeOptions = Array.from({ length: 100 }, (_, i) => ({
         value: `option${i}`,
-        label: `Option ${i}`
+        label: `Option ${i}`,
       }));
       render(<BasicCombobox options={largeOptions} />);
       expect(screen.getByRole('combobox')).toBeInTheDocument();
@@ -175,7 +175,7 @@ describe('Combobox', () => {
     it('handles options with special characters', () => {
       const specialOptions = [
         { value: 'special@#$', label: 'Special @#$ Characters' },
-        { value: 'unicode-🚀', label: 'Unicode 🚀 Option' }
+        { value: 'unicode-🚀', label: 'Unicode 🚀 Option' },
       ];
       render(<BasicCombobox options={specialOptions} />);
       expect(screen.getByRole('combobox')).toBeInTheDocument();

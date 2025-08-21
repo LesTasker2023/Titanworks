@@ -10,13 +10,9 @@ const mockItems = [
 ];
 
 describe('Accordion', () => {
-  const BasicAccordion = ({
-    children,
-    ...props
-  }: {
-    children?: React.ReactNode;
-    [key: string]: any;
-  }) => <Accordion data-testid="accordion" items={mockItems} {...props} />;
+  const BasicAccordion = ({ ...props }: { [key: string]: unknown }) => (
+    <Accordion data-testid="accordion" items={mockItems} {...props} />
+  );
 
   describe('Snapshots', () => {
     it('matches default snapshot', () => {
@@ -137,12 +133,12 @@ describe('Accordion', () => {
 
   describe('Edge Cases', () => {
     it('handles undefined items gracefully', () => {
-      render(<Accordion data-testid="accordion" items={undefined as any} />);
+      render(<Accordion data-testid="accordion" items={undefined as never} />);
       expect(screen.getByTestId('accordion')).toBeInTheDocument();
     });
 
     it('handles null items gracefully', () => {
-      render(<Accordion data-testid="accordion" items={null as any} />);
+      render(<Accordion data-testid="accordion" items={null as never} />);
       expect(screen.getByTestId('accordion')).toBeInTheDocument();
     });
 

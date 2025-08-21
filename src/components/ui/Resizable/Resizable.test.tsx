@@ -1,20 +1,36 @@
 import { render, screen } from '@testing-library/react';
-import { describe, expect, it } from 'vitest';
 import React from 'react';
+import { describe, expect, it } from 'vitest';
 
 // Mock the resizable components for testing
-const ResizablePanelGroup = ({ children, ...props }) => (
-  <div data-testid="resizable" {...props}>{children}</div>
+const ResizablePanelGroup = ({
+  children,
+  ...props
+}: {
+  children: React.ReactNode;
+  [key: string]: unknown;
+}) => (
+  <div data-testid="resizable" {...props}>
+    {children}
+  </div>
 );
-const ResizablePanel = ({ children, ...props }) => (
-  <div data-testid="resizable-panel" {...props}>{children}</div>
+const ResizablePanel = ({
+  children,
+  ...props
+}: {
+  children: React.ReactNode;
+  [key: string]: unknown;
+}) => (
+  <div data-testid="resizable-panel" {...props}>
+    {children}
+  </div>
 );
-const ResizableHandle = (props) => (
+const ResizableHandle = (props: { [key: string]: unknown }) => (
   <div data-testid="resizable-handle" {...props} />
 );
 
 describe('Resizable', () => {
-  const BasicResizable = (props) => (
+  const BasicResizable = (props: { [key: string]: unknown }) => (
     <ResizablePanelGroup data-testid="resizable" {...props}>
       <ResizablePanel>Panel 1</ResizablePanel>
       <ResizableHandle />
@@ -71,11 +87,11 @@ describe('Resizable', () => {
 
   describe('Edge Cases', () => {
     it('handles undefined props gracefully', () => {
-      render(<BasicResizable children={undefined} />);
+      render(<BasicResizable>{undefined}</BasicResizable>);
       expect(screen.getByTestId('resizable')).toBeInTheDocument();
     });
     it('handles null props gracefully', () => {
-      render(<BasicResizable children={null} />);
+      render(<BasicResizable>{null}</BasicResizable>);
       expect(screen.getByTestId('resizable')).toBeInTheDocument();
     });
     it('handles empty string props', () => {
@@ -88,11 +104,23 @@ describe('Resizable', () => {
       expect(screen.getByTestId('resizable')).toBeInTheDocument();
     });
     it('handles complex nested content', () => {
-      render(<BasicResizable><div><p>Nested content</p></div></BasicResizable>);
+      render(
+        <BasicResizable>
+          <div>
+            <p>Nested content</p>
+          </div>
+        </BasicResizable>
+      );
       expect(screen.getByTestId('resizable')).toBeInTheDocument();
     });
     it('maintains functionality with many children', () => {
-      render(<BasicResizable>{Array.from({ length: 10 }, (_, i) => <div key={i}>Item {i}</div>)}</BasicResizable>);
+      render(
+        <BasicResizable>
+          {Array.from({ length: 10 }, (_, i) => (
+            <div key={i}>Item {i}</div>
+          ))}
+        </BasicResizable>
+      );
       expect(screen.getByTestId('resizable')).toBeInTheDocument();
     });
     it('handles component unmounting cleanly', () => {

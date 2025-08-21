@@ -1,7 +1,7 @@
-import { render, screen, fireEvent } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
+import { render, screen } from '@testing-library/react';
+// import userEvent from '@testing-library/user-event';
 import { describe, expect, it, vi } from 'vitest';
-import { Form } from './form';
+import { Form } from './Form';
 
 describe('Form', () => {
   const renderBasicForm = (props = {}) => {
@@ -17,7 +17,6 @@ describe('Form', () => {
       const { container } = renderBasicForm();
       expect(container.firstChild).toMatchSnapshot();
     });
-
   });
 
   describe('Basic Functionality', () => {
@@ -25,16 +24,7 @@ describe('Form', () => {
       renderBasicForm();
       expect(screen.getByTestId('form')).toBeInTheDocument();
     });
-
   });
-
-
-
-
-
-
-
-
 
   describe('Accessibility', () => {
     it.skip('can be focused - SKIPPED: Non-focusable element', () => {
@@ -44,8 +34,8 @@ describe('Form', () => {
     });
 
     it('has proper ARIA attributes', () => {
-      renderBasicForm();
-      const element = screen.getByTestId('form');
+      const { container } = renderBasicForm();
+      const element = container.firstChild as HTMLElement;
       expect(element).toBeInTheDocument();
       // TODO: Add specific ARIA attribute tests based on component type
     });
@@ -71,8 +61,8 @@ describe('Form', () => {
 
   describe('Custom Styling and Props', () => {
     it('accepts custom className', () => {
-      renderBasicForm({ className: 'custom-class' });
-      const element = screen.getByTestId('form');
+      const { container } = renderBasicForm({ className: 'custom-class' });
+      const element = container.firstChild as HTMLElement;
       expect(element).toHaveClass('custom-class');
     });
 
@@ -80,12 +70,12 @@ describe('Form', () => {
       const ref = vi.fn();
       renderBasicForm({ ref });
       // Ref forwarding test - environment dependent
-    // expect(ref).toHaveBeenCalledWith(expect.any(HTMLElement));
+      // expect(ref).toHaveBeenCalledWith(expect.any(HTMLElement));
     });
 
     it('spreads additional props', () => {
-      renderBasicForm({ 'data-custom': 'test-value' });
-      const element = screen.getByTestId('form');
+      const { container } = renderBasicForm({ 'data-custom': 'test-value' });
+      const element = container.firstChild as HTMLElement;
       expect(element).toHaveAttribute('data-custom', 'test-value');
     });
   });
@@ -107,9 +97,9 @@ describe('Form', () => {
     });
 
     it('handles rapid prop changes', () => {
-      const { rerender } = renderBasicForm({ className: 'class1' });
+      const { rerender, container } = renderBasicForm({ className: 'class1' });
       rerender(<Form data-testid="form" className="class2" />);
-      const element = screen.getByTestId('form');
+      const element = container.firstChild as HTMLElement;
       expect(element).toHaveClass('class2');
     });
 

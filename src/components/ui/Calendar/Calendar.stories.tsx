@@ -1,4 +1,5 @@
-import type { Meta, StoryObj } from '@storybook/react';
+// Using Next.js framework package instead of direct renderer
+import type { Meta, StoryObj } from '@storybook/nextjs';
 import { Calendar } from './Calendar';
 
 const meta: Meta<typeof Calendar> = {

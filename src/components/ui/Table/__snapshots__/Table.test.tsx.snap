@@ -3,10 +3,10 @@
 exports[`Table > Snapshots > matches default snapshot 1`] = `
 <div
   class="relative w-full overflow-auto"
+  data-testid="table"
 >
   <table
     class="w-full caption-bottom text-sm"
-    data-testid="table"
   >
     Test content
   </table>
@@ -16,10 +16,10 @@ exports[`Table > Snapshots > matches default snapshot 1`] = `
 exports[`Table > Snapshots > matches hover state snapshot 1`] = `
 <div
   class="relative w-full overflow-auto"
+  data-testid="table"
 >
   <table
     class="w-full caption-bottom text-sm"
-    data-testid="table"
   >
     Test content
   </table>
@@ -29,10 +29,10 @@ exports[`Table > Snapshots > matches hover state snapshot 1`] = `
 exports[`Table > Snapshots > matches selected state snapshot 1`] = `
 <div
   class="relative w-full overflow-auto"
+  data-testid="table"
 >
   <table
     class="w-full caption-bottom text-sm"
-    data-testid="table"
   >
     Test content
   </table>

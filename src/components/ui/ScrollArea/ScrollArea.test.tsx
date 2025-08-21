@@ -1,7 +1,7 @@
-import { render, screen, fireEvent } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
+import { render, screen } from '@testing-library/react';
+// import userEvent from '@testing-library/user-event';
 import { describe, expect, it, vi } from 'vitest';
-import { ScrollArea } from './scrollarea';
+import { ScrollArea } from './ScrollArea';
 
 describe('ScrollArea', () => {
   const renderBasicScrollArea = (props = {}) => {
@@ -17,7 +17,6 @@ describe('ScrollArea', () => {
       const { container } = renderBasicScrollArea();
       expect(container.firstChild).toMatchSnapshot();
     });
-
   });
 
   describe('Basic Functionality', () => {
@@ -25,16 +24,7 @@ describe('ScrollArea', () => {
       renderBasicScrollArea();
       expect(screen.getByTestId('scrollarea')).toBeInTheDocument();
     });
-
   });
-
-
-
-
-
-
-
-
 
   describe('Accessibility', () => {
     it.skip('can be focused - SKIPPED: Non-focusable element', () => {
@@ -44,8 +34,8 @@ describe('ScrollArea', () => {
     });
 
     it('has proper ARIA attributes', () => {
-      renderBasicScrollArea();
-      const element = screen.getByTestId('scrollarea');
+      const { container } = renderBasicScrollArea();
+      const element = container.firstChild as HTMLElement;
       expect(element).toBeInTheDocument();
       // TODO: Add specific ARIA attribute tests based on component type
     });
@@ -71,8 +61,8 @@ describe('ScrollArea', () => {
 
   describe('Custom Styling and Props', () => {
     it('accepts custom className', () => {
-      renderBasicScrollArea({ className: 'custom-class' });
-      const element = screen.getByTestId('scrollarea');
+      const { container } = renderBasicScrollArea({ className: 'custom-class' });
+      const element = container.firstChild as HTMLElement;
       expect(element).toHaveClass('custom-class');
     });
 
@@ -80,12 +70,12 @@ describe('ScrollArea', () => {
       const ref = vi.fn();
       renderBasicScrollArea({ ref });
       // Ref forwarding test - environment dependent
-    // expect(ref).toHaveBeenCalledWith(expect.any(HTMLElement));
+      // expect(ref).toHaveBeenCalledWith(expect.any(HTMLElement));
     });
 
     it('spreads additional props', () => {
-      renderBasicScrollArea({ 'data-custom': 'test-value' });
-      const element = screen.getByTestId('scrollarea');
+      const { container } = renderBasicScrollArea({ 'data-custom': 'test-value' });
+      const element = container.firstChild as HTMLElement;
       expect(element).toHaveAttribute('data-custom', 'test-value');
     });
   });
@@ -107,9 +97,9 @@ describe('ScrollArea', () => {
     });
 
     it('handles rapid prop changes', () => {
-      const { rerender } = renderBasicScrollArea({ className: 'class1' });
+      const { rerender, container } = renderBasicScrollArea({ className: 'class1' });
       rerender(<ScrollArea data-testid="scrollarea" className="class2" />);
-      const element = screen.getByTestId('scrollarea');
+      const element = container.firstChild as HTMLElement;
       expect(element).toHaveClass('class2');
     });
 

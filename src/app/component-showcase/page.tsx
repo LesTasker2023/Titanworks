@@ -49,7 +49,7 @@ const CalendarDemo = lazy(() =>
   import('@/components/ui/Calendar').then(m => ({ default: m.CalendarDemo }))
 );
 const CardDemo = lazy(() => import('@/components/ui/Card').then(m => ({ default: m.CardDemo })));
-const CarouselDemo = lazy(() => import('@/components/ui/Carousel/demo'));
+// const CarouselDemo = lazy(() => import('@/components/ui/Carousel/demo'));
 const ChartDemo = lazy(() => import('@/components/ui/Chart/demo'));
 const CheckboxDemo = lazy(() =>
   import('@/components/ui/Checkbox').then(m => ({ default: m.CheckboxDemo }))

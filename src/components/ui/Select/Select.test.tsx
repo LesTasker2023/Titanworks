@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
+// import userEvent from '@testing-library/user-event';
 import { describe, expect, it, vi } from 'vitest';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from './index';
 
@@ -202,7 +202,9 @@ describe('Select', () => {
           </SelectTrigger>
           <SelectContent>
             {Array.from({ length: 100 }, (_, i) => (
-              <SelectItem key={i} value={`option${i}`}>Option {i}</SelectItem>
+              <SelectItem key={i} value={`option${i}`}>
+                Option {i}
+              </SelectItem>
             ))}
           </SelectContent>
         </Select>

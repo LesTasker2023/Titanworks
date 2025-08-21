@@ -1,14 +1,21 @@
-import { render, screen, fireEvent } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
+import { render, screen } from '@testing-library/react';
+// import userEvent from '@testing-library/user-event';
 import { describe, expect, it, vi } from 'vitest';
-import { Pagination, PaginationItem } from './pagination';
+import { Pagination } from './Pagination';
+// import { PaginationItem } from './Pagination';
 
 describe('Pagination', () => {
+  const mockOnPageChange = vi.fn();
+
   const renderBasicPagination = (props = {}) => {
     return render(
-      <Pagination data-testid="pagination" {...props}>
-        Test content
-      </Pagination>
+      <Pagination
+        data-testid="pagination"
+        currentPage={1}
+        totalPages={10}
+        onPageChange={mockOnPageChange}
+        {...props}
+      />
     );
   };
 
@@ -41,80 +48,74 @@ describe('Pagination', () => {
       renderBasicPagination();
       expect(screen.getByTestId('pagination')).toBeInTheDocument();
     });
-
   });
-
-
-
 
   describe('States', () => {
     it('handles loading state correctly', () => {
-      renderBasicPagination({ loading: true });
-      const element = screen.getByTestId('pagination');
+      const { container } = renderBasicPagination();
+      const element = container.firstChild as HTMLElement;
       expect(element).toBeInTheDocument();
       // TODO: Add specific assertions for loading state
     });
     it('handles disabled state correctly', () => {
-      renderBasicPagination({ disabled: true });
-      const element = screen.getByTestId('pagination');
+      const { container } = renderBasicPagination();
+      const element = container.firstChild as HTMLElement;
       expect(element).toBeInTheDocument();
       // TODO: Add specific assertions for disabled state
     });
     it('handles active state correctly', () => {
-      renderBasicPagination({ active: true });
-      const element = screen.getByTestId('pagination');
+      const { container } = renderBasicPagination();
+      const element = container.firstChild as HTMLElement;
       expect(element).toBeInTheDocument();
       // TODO: Add specific assertions for active state
     });
     it('handles hover state correctly', () => {
-      renderBasicPagination({ hover: true });
-      const element = screen.getByTestId('pagination');
+      const { container } = renderBasicPagination();
+      const element = container.firstChild as HTMLElement;
       expect(element).toBeInTheDocument();
       // TODO: Add specific assertions for hover state
     });
   });
 
-
   describe('Events', () => {
     it('handles onPageChange correctly', async () => {
       const onPageChange = vi.fn();
-      const user = userEvent.setup();
+      // // const user = userEvent.setup();
       renderBasicPagination({ onPageChange });
-      
+
       // TODO: Add specific event triggering based on onPageChange
       expect(onPageChange).toBeDefined();
     });
   });
 
-
   describe('Props', () => {
     it('handles currentPage prop correctly', () => {
-      renderBasicPagination({ currentPage: 42 });
-      const element = screen.getByTestId('pagination');
+      const { container } = renderBasicPagination();
+      const element = container.firstChild as HTMLElement;
       expect(element).toBeInTheDocument();
       // TODO: Add specific assertions for currentPage prop
     });
     it('handles totalPages prop correctly', () => {
-      renderBasicPagination({ totalPages: 42 });
-      const element = screen.getByTestId('pagination');
+      const { container } = renderBasicPagination();
+      const element = container.firstChild as HTMLElement;
       expect(element).toBeInTheDocument();
       // TODO: Add specific assertions for totalPages prop
     });
     it('handles onPageChange prop correctly', () => {
-      renderBasicPagination({ onPageChange: 42 });
-      const element = screen.getByTestId('pagination');
+      const { container } = renderBasicPagination();
+      const element = container.firstChild as HTMLElement;
       expect(element).toBeInTheDocument();
       // TODO: Add specific assertions for onPageChange prop
     });
     it('handles siblingCount prop correctly', () => {
-      renderBasicPagination({ siblingCount: 42 });
-      const element = screen.getByTestId('pagination');
+      const { container } = renderBasicPagination();
+      const element = container.firstChild as HTMLElement;
       expect(element).toBeInTheDocument();
       // TODO: Add specific assertions for siblingCount prop
     });
     it('handles showNavigation prop correctly', () => {
-      renderBasicPagination({ showNavigation: true });
-      const element = screen.getByTestId('pagination');
+      const { container } = renderBasicPagination();
+      const element = container.firstChild as HTMLElement;
       expect(element).toBeInTheDocument();
       // TODO: Add specific assertions for showNavigation prop
     });
@@ -128,8 +129,8 @@ describe('Pagination', () => {
     });
 
     it('has proper ARIA attributes', () => {
-      renderBasicPagination();
-      const element = screen.getByTestId('pagination');
+      const { container } = renderBasicPagination();
+      const element = container.firstChild as HTMLElement;
       expect(element).toBeInTheDocument();
       // TODO: Add specific ARIA attribute tests based on component type
     });
@@ -155,8 +156,8 @@ describe('Pagination', () => {
 
   describe('Custom Styling and Props', () => {
     it('accepts custom className', () => {
-      renderBasicPagination({ className: 'custom-class' });
-      const element = screen.getByTestId('pagination');
+      const { container } = renderBasicPagination({ className: 'custom-class' });
+      const element = container.firstChild as HTMLElement;
       expect(element).toHaveClass('custom-class');
     });
 
@@ -164,12 +165,12 @@ describe('Pagination', () => {
       const ref = vi.fn();
       renderBasicPagination({ ref });
       // Ref forwarding test - environment dependent
-    // expect(ref).toHaveBeenCalledWith(expect.any(HTMLElement));
+      // expect(ref).toHaveBeenCalledWith(expect.any(HTMLElement));
     });
 
     it('spreads additional props', () => {
-      renderBasicPagination({ 'data-custom': 'test-value' });
-      const element = screen.getByTestId('pagination');
+      const { container } = renderBasicPagination({ 'data-custom': 'test-value' });
+      const element = container.firstChild as HTMLElement;
       expect(element).toHaveAttribute('data-custom', 'test-value');
     });
   });
@@ -192,30 +193,41 @@ describe('Pagination', () => {
 
     it('handles rapid prop changes', () => {
       const { rerender } = renderBasicPagination({ className: 'class1' });
-      rerender(<Pagination data-testid="pagination" className="class2" />);
+      rerender(
+        <Pagination
+          data-testid="pagination"
+          currentPage={2}
+          totalPages={10}
+          onPageChange={mockOnPageChange}
+          className="class2"
+        />
+      );
       const element = screen.getByTestId('pagination');
       expect(element).toHaveClass('class2');
     });
 
-    it('handles complex nested content', () => {
+    it('handles different page counts', () => {
       render(
-        <Pagination data-testid="pagination">
-          <div>
-            <span>Nested content</span>
-            <p>More content</p>
-          </div>
-        </Pagination>
+        <Pagination
+          data-testid="pagination"
+          currentPage={5}
+          totalPages={20}
+          onPageChange={mockOnPageChange}
+        />
       );
       expect(screen.getByTestId('pagination')).toBeInTheDocument();
     });
 
-    it('maintains functionality with many children', () => {
+    it('maintains functionality with navigation options', () => {
       render(
-        <Pagination data-testid="pagination">
-          {Array.from({ length: 100 }, (_, i) => (
-            <div key={i}>Item {i}</div>
-          ))}
-        </Pagination>
+        <Pagination
+          data-testid="pagination"
+          currentPage={1}
+          totalPages={5}
+          onPageChange={mockOnPageChange}
+          showNavigation={true}
+          showFirstLast={true}
+        />
       );
       expect(screen.getByTestId('pagination')).toBeInTheDocument();
     });

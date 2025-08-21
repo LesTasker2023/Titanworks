@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
+// import userEvent from '@testing-library/user-event';
 import { describe, expect, it, vi } from 'vitest';
 import { DatePicker } from './DatePicker';
 
@@ -49,7 +49,7 @@ describe('DatePicker', () => {
   describe('Events', () => {
     it('handles onDateChange correctly', async () => {
       const onDateChange = vi.fn();
-      const user = userEvent.setup();
+      // const user = userEvent.setup();
       renderBasicDatePicker({ onDateChange });
 
       // TODO: Add specific event triggering based on onDateChange
@@ -168,7 +168,7 @@ describe('DatePicker', () => {
     });
 
     it('handles complex nested content', () => {
-      const { container } = render(
+      render(
         <div>
           <DatePicker data-testid="datepicker" />
           <div>
@@ -181,7 +181,7 @@ describe('DatePicker', () => {
     });
 
     it('maintains functionality with many children', () => {
-      const { container } = render(
+      render(
         <div>
           <DatePicker data-testid="datepicker" />
           {Array.from({ length: 100 }, (_, i) => (

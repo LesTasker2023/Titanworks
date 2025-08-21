@@ -79,7 +79,8 @@ describe('Chart', () => {
 
     it('forwards refs correctly', () => {
       const ref = vi.fn();
-      const { container } = renderBasicChart({ ref }); // Ref forwarding test - environment dependent
+      // const { container } = renderBasicChart({ ref }); // Ref forwarding test - environment dependent
+      renderBasicChart({ ref });
       // expect(ref).toHaveBeenCalledWith(expect.any(HTMLElement));
     });
 

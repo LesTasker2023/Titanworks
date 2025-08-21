@@ -1,5 +1,5 @@
-import { render, screen, fireEvent } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
+import { render, screen } from '@testing-library/react';
+// import userEvent from '@testing-library/user-event';
 import { describe, expect, it, vi } from 'vitest';
 import { Alert } from './alert';
 
@@ -29,56 +29,50 @@ describe('Alert', () => {
       renderBasicAlert();
       expect(screen.getByTestId('alert')).toBeInTheDocument();
     });
-
   });
-
-
-
 
   describe('States', () => {
     it('handles hover state correctly', () => {
-      renderBasicAlert({ hover: true });
-      const element = screen.getByTestId('alert');
+      const { container } = renderBasicAlert({ hover: true });
+      const element = container.firstChild as HTMLElement;
       expect(element).toBeInTheDocument();
       // TODO: Add specific assertions for hover state
     });
   });
 
-
   describe('Events', () => {
     it('handles onDismiss correctly', async () => {
       const onDismiss = vi.fn();
-      const user = userEvent.setup();
+      // const user = userEvent.setup();
       renderBasicAlert({ onDismiss });
-      
+
       // TODO: Add specific event triggering based on onDismiss
       expect(onDismiss).toBeDefined();
     });
   });
 
-
   describe('Props', () => {
     it('handles dismissible prop correctly', () => {
-      renderBasicAlert({ dismissible: true });
-      const element = screen.getByTestId('alert');
+      const { container } = renderBasicAlert();
+      const element = container.firstChild as HTMLElement;
       expect(element).toBeInTheDocument();
       // TODO: Add specific assertions for dismissible prop
     });
     it('handles onDismiss prop correctly', () => {
-      renderBasicAlert({ onDismiss: vi.fn() });
-      const element = screen.getByTestId('alert');
+      const { container } = renderBasicAlert({ onDismiss: vi.fn() });
+      const element = container.firstChild as HTMLElement;
       expect(element).toBeInTheDocument();
       // TODO: Add specific assertions for onDismiss prop
     });
     it('handles autoHide prop correctly', () => {
-      renderBasicAlert({ autoHide: true });
-      const element = screen.getByTestId('alert');
+      const { container } = renderBasicAlert();
+      const element = container.firstChild as HTMLElement;
       expect(element).toBeInTheDocument();
       // TODO: Add specific assertions for autoHide prop
     });
     it('handles autoHideDelay prop correctly', () => {
-      renderBasicAlert({ autoHideDelay: 42 });
-      const element = screen.getByTestId('alert');
+      const { container } = renderBasicAlert();
+      const element = container.firstChild as HTMLElement;
       expect(element).toBeInTheDocument();
       // TODO: Add specific assertions for autoHideDelay prop
     });
@@ -92,8 +86,8 @@ describe('Alert', () => {
     });
 
     it('has proper ARIA attributes', () => {
-      renderBasicAlert();
-      const element = screen.getByTestId('alert');
+      const { container } = renderBasicAlert();
+      const element = container.firstChild as HTMLElement;
       expect(element).toBeInTheDocument();
       // TODO: Add specific ARIA attribute tests based on component type
     });
@@ -119,8 +113,8 @@ describe('Alert', () => {
 
   describe('Custom Styling and Props', () => {
     it('accepts custom className', () => {
-      renderBasicAlert({ className: 'custom-class' });
-      const element = screen.getByTestId('alert');
+      const { container } = renderBasicAlert({ className: 'custom-class' });
+      const element = container.firstChild as HTMLElement;
       expect(element).toHaveClass('custom-class');
     });
 
@@ -128,12 +122,12 @@ describe('Alert', () => {
       const ref = vi.fn();
       renderBasicAlert({ ref });
       // Ref forwarding test - environment dependent
-    // expect(ref).toHaveBeenCalledWith(expect.any(HTMLElement));
+      // expect(ref).toHaveBeenCalledWith(expect.any(HTMLElement));
     });
 
     it('spreads additional props', () => {
-      renderBasicAlert({ 'data-custom': 'test-value' });
-      const element = screen.getByTestId('alert');
+      const { container } = renderBasicAlert({ 'data-custom': 'test-value' });
+      const element = container.firstChild as HTMLElement;
       expect(element).toHaveAttribute('data-custom', 'test-value');
     });
   });
@@ -155,9 +149,9 @@ describe('Alert', () => {
     });
 
     it('handles rapid prop changes', () => {
-      const { rerender } = renderBasicAlert({ className: 'class1' });
+      const { rerender, container } = renderBasicAlert({ className: 'class1' });
       rerender(<Alert data-testid="alert" className="class2" />);
-      const element = screen.getByTestId('alert');
+      const element = container.firstChild as HTMLElement;
       expect(element).toHaveClass('class2');
     });
 

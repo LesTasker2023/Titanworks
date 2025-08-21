@@ -1,19 +1,23 @@
 import { render, screen } from '@testing-library/react';
-import { describe, expect, it, vi } from 'vitest';
 import React from 'react';
-import { 
-  ContextMenu, 
-  ContextMenuTrigger, 
-  ContextMenuContent, 
-  ContextMenuItem 
+import { describe, expect, it, vi } from 'vitest';
+import {
+  ContextMenu,
+  ContextMenuContent,
+  ContextMenuItem,
+  ContextMenuTrigger,
 } from './ContextMenu';
 
 describe('ContextMenu', () => {
-  const BasicContextMenu = ({ children, ...props }: { children?: React.ReactNode; [key: string]: any }) => (
+  const BasicContextMenu = ({
+    children,
+    ...props
+  }: {
+    children?: React.ReactNode;
+    [key: string]: unknown;
+  }) => (
     <ContextMenu>
-      <ContextMenuTrigger data-testid="context-trigger">
-        Right click me
-      </ContextMenuTrigger>
+      <ContextMenuTrigger data-testid="context-trigger">Right click me</ContextMenuTrigger>
       <ContextMenuContent data-testid="contextmenu" {...props}>
         <ContextMenuItem>Test content</ContextMenuItem>
         {children}
@@ -90,7 +94,11 @@ describe('ContextMenu', () => {
 
   describe('Props', () => {
     it('handles children prop correctly', () => {
-      render(<BasicContextMenu><ContextMenuItem>Custom Item</ContextMenuItem></BasicContextMenu>);
+      render(
+        <BasicContextMenu>
+          <ContextMenuItem>Custom Item</ContextMenuItem>
+        </BasicContextMenu>
+      );
       expect(screen.getByTestId('context-trigger')).toBeInTheDocument();
     });
   });
@@ -132,12 +140,12 @@ describe('ContextMenu', () => {
 
   describe('Edge Cases', () => {
     it('handles undefined props gracefully', () => {
-      render(<BasicContextMenu children={undefined} />);
+      render(<BasicContextMenu>{undefined}</BasicContextMenu>);
       expect(screen.getByTestId('context-trigger')).toBeInTheDocument();
     });
 
     it('handles null props gracefully', () => {
-      render(<BasicContextMenu children={null} />);
+      render(<BasicContextMenu>{null}</BasicContextMenu>);
       expect(screen.getByTestId('context-trigger')).toBeInTheDocument();
     });
 

@@ -1,15 +1,10 @@
 import { render, screen } from '@testing-library/react';
 import { describe, expect, it, vi } from 'vitest';
-import React from 'react';
-import { ColorPicker } from './colorpicker';
+import { ColorPicker } from './ColorPicker';
 
 describe('ColorPicker', () => {
-  const BasicColorPicker = ({ children, ...props }: { children?: React.ReactNode; [key: string]: any }) => (
-    <ColorPicker 
-      defaultColor="#18181b"
-      aria-label="Test color picker"
-      {...props}
-    />
+  const BasicColorPicker = ({ ...props }: { [key: string]: unknown }) => (
+    <ColorPicker defaultColor="#18181b" aria-label="Test color picker" {...props} />
   );
 
   describe('Snapshots', () => {
@@ -201,7 +196,7 @@ describe('ColorPicker', () => {
     });
 
     it('handles null className gracefully', () => {
-      render(<BasicColorPicker className={null as any} />);
+      render(<BasicColorPicker className={null as never} />);
       const button = screen.getByRole('button', { name: /test color picker/i });
       expect(button).toBeInTheDocument();
     });

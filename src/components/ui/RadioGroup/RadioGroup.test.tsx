@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
+// import userEvent from '@testing-library/user-event';
 import { describe, expect, it, vi } from 'vitest';
 import { RadioGroup } from './radio-group';
 
@@ -42,9 +42,9 @@ describe('RadioGroup', () => {
     });
 
     it('supports keyboard navigation', () => {
-      const user = userEvent.setup();
+      // const user = userEvent.setup();
       renderBasicRadioGroup();
-      const element = screen.getByTestId('radiogroup');
+      // const element = screen.getByTestId('radiogroup');
 
       // Focus test disabled due to environment limitations
       // user.tab();

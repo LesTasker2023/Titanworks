@@ -1,5 +1,5 @@
-import { render, screen, fireEvent } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
+import { render, screen } from '@testing-library/react';
+// import userEvent from '@testing-library/user-event';
 import { describe, expect, it, vi } from 'vitest';
 import { Progress } from './progress';
 
@@ -17,7 +17,6 @@ describe('Progress', () => {
       const { container } = renderBasicProgress();
       expect(container.firstChild).toMatchSnapshot();
     });
-
   });
 
   describe('Basic Functionality', () => {
@@ -25,16 +24,7 @@ describe('Progress', () => {
       renderBasicProgress();
       expect(screen.getByTestId('progress')).toBeInTheDocument();
     });
-
   });
-
-
-
-
-
-
-
-
 
   describe('Accessibility', () => {
     it.skip('can be focused - SKIPPED: Non-focusable element', () => {
@@ -44,8 +34,8 @@ describe('Progress', () => {
     });
 
     it('has proper ARIA attributes', () => {
-      renderBasicProgress();
-      const element = screen.getByTestId('progress');
+      const { container } = renderBasicProgress();
+      const element = container.firstChild as HTMLElement;
       expect(element).toBeInTheDocument();
       // TODO: Add specific ARIA attribute tests based on component type
     });
@@ -71,8 +61,8 @@ describe('Progress', () => {
 
   describe('Custom Styling and Props', () => {
     it('accepts custom className', () => {
-      renderBasicProgress({ className: 'custom-class' });
-      const element = screen.getByTestId('progress');
+      const { container } = renderBasicProgress({ className: 'custom-class' });
+      const element = container.firstChild as HTMLElement;
       expect(element).toHaveClass('custom-class');
     });
 
@@ -80,12 +70,12 @@ describe('Progress', () => {
       const ref = vi.fn();
       renderBasicProgress({ ref });
       // Ref forwarding test - environment dependent
-    // expect(ref).toHaveBeenCalledWith(expect.any(HTMLElement));
+      // expect(ref).toHaveBeenCalledWith(expect.any(HTMLElement));
     });
 
     it('spreads additional props', () => {
-      renderBasicProgress({ 'data-custom': 'test-value' });
-      const element = screen.getByTestId('progress');
+      const { container } = renderBasicProgress({ 'data-custom': 'test-value' });
+      const element = container.firstChild as HTMLElement;
       expect(element).toHaveAttribute('data-custom', 'test-value');
     });
   });
@@ -107,9 +97,9 @@ describe('Progress', () => {
     });
 
     it('handles rapid prop changes', () => {
-      const { rerender } = renderBasicProgress({ className: 'class1' });
+      const { rerender, container } = renderBasicProgress({ className: 'class1' });
       rerender(<Progress data-testid="progress" className="class2" />);
-      const element = screen.getByTestId('progress');
+      const element = container.firstChild as HTMLElement;
       expect(element).toHaveClass('class2');
     });
 

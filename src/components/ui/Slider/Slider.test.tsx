@@ -40,13 +40,16 @@ describe('Slider', () => {
       // In loading state, check for presence
       expect(container.firstChild).toBeInTheDocument();
       expect(container.firstChild).toHaveClass('gap-2');
-      if (container.firstChild?.querySelector('.animate-pulse')) {
-        expect(container.firstChild).toHaveClass('gap-2');
+      if (container.firstChild && 'querySelector' in container.firstChild) {
+        const element = container.firstChild as HTMLElement;
+        if (element.querySelector('.animate-pulse')) {
+          expect(container.firstChild).toHaveClass('gap-2');
+        }
       }
     });
     it('handles disabled state correctly', () => {
       const { container } = renderBasicSlider({ disabled: true });
-      const element = screen.getByTestId('slider');
+      // const element = screen.getByTestId('slider');
       // Loading state renders differently in test environment
       expect(container.firstChild).toBeInTheDocument();
       // TODO: Add specific assertions for disabled state
@@ -56,14 +59,14 @@ describe('Slider', () => {
   describe('Props', () => {
     it('handles showValue prop correctly', () => {
       const { container } = renderBasicSlider({ showValue: true });
-      const element = screen.getByTestId('slider');
+      // const element = screen.getByTestId('slider');
       // Loading state renders differently in test environment
       expect(container.firstChild).toBeInTheDocument();
       // TODO: Add specific assertions for showValue prop
     });
     it('handles valuePosition prop correctly', () => {
       const { container } = renderBasicSlider({ valuePosition: 'test-value' });
-      const element = screen.getByTestId('slider');
+      // const element = screen.getByTestId('slider');
       // Loading state renders differently in test environment
       expect(container.firstChild).toBeInTheDocument();
       // TODO: Add specific assertions for valuePosition prop
@@ -77,7 +80,7 @@ describe('Slider', () => {
     });
     it('handles formatValue prop correctly', () => {
       const { container } = renderBasicSlider({ formatValue: (value: number) => `${value}%` });
-      const element = screen.getByTestId('slider');
+      // const element = screen.getByTestId('slider');
       // Loading state renders differently in test environment
       expect(container.firstChild).toBeInTheDocument();
       // TODO: Add specific assertions for formatValue prop
@@ -93,7 +96,7 @@ describe('Slider', () => {
 
     it('has proper ARIA attributes', () => {
       const { container } = renderBasicSlider();
-      const element = screen.getByTestId('slider');
+      // const element = screen.getByTestId('slider');
       // Loading state renders differently in test environment
       expect(container.firstChild).toBeInTheDocument();
       // TODO: Add specific ARIA attribute tests based on component type
@@ -120,8 +123,8 @@ describe('Slider', () => {
 
   describe('Custom Styling and Props', () => {
     it('accepts custom className', () => {
-      renderBasicSlider({ className: 'custom-class' });
-      const element = screen.getByTestId('slider');
+      const { container } = renderBasicSlider({ className: 'custom-class' });
+      const element = container.firstChild as HTMLElement;
       expect(element).toHaveClass('custom-class');
     });
 
@@ -133,8 +136,8 @@ describe('Slider', () => {
     });
 
     it('spreads additional props', () => {
-      renderBasicSlider({ 'data-custom': 'test-value' });
-      const element = screen.getByTestId('slider');
+      const { container } = renderBasicSlider({ 'data-custom': 'test-value' });
+      const element = container.firstChild as HTMLElement;
       expect(element).toHaveAttribute('data-custom', 'test-value');
     });
   });
@@ -156,9 +159,9 @@ describe('Slider', () => {
     });
 
     it('handles rapid prop changes', () => {
-      const { rerender } = renderBasicSlider({ className: 'class1' });
+      const { rerender, container } = renderBasicSlider({ className: 'class1' });
       rerender(<Slider data-testid="slider" className="class2" />);
-      const element = screen.getByTestId('slider');
+      const element = container.firstChild as HTMLElement;
       expect(element).toHaveClass('class2');
     });
 
