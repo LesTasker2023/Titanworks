@@ -100,7 +100,6 @@ export default function ToastDemo() {
     setToasts([]);
   };
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const updateSetting = (key: keyof ToastSettings, value: any) => {
     setSettings(prev => ({
       ...prev,

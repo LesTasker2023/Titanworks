@@ -187,7 +187,6 @@ export default function SwitchDemo() {
     setFeatures(prev => ({ ...prev, [key]: !prev[key] }));
   };
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const getActiveCount = (settings: any) => {
     return Object.values(settings).filter(Boolean).length;
   };

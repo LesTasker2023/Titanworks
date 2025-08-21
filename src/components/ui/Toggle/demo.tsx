@@ -417,7 +417,6 @@ export default function ToggleDemo() {
                 aria-label="Image"
                 size="sm"
               >
-                {/* eslint-disable-next-line jsx-a11y/alt-text */}
                 <Image className="h-4 w-4" />
               </Toggle>
             </div>

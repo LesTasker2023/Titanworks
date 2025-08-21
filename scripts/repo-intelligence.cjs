@@ -19,7 +19,7 @@ class RepoIntelligence {
         name: 'Daedalus Design System',
         version: '1.0.0',
         repository: 'triggerkings',
-        branch: 'main'
+        branch: 'main',
       },
       summary: {},
       components: {},
@@ -28,12 +28,12 @@ class RepoIntelligence {
       git: {},
       build: {},
       quality: {},
-      files: {}
+      files: {},
     };
   }
 
   // ===== FILE SYSTEM SCANNING =====
-  
+
   async scanComponents() {
     console.log('🔍 Scanning components...');
     const componentsDir = path.join(this.rootDir, 'src/components/ui');
@@ -44,7 +44,8 @@ class RepoIntelligence {
     let productionReady = 0;
 
     if (fs.existsSync(componentsDir)) {
-      const dirs = fs.readdirSync(componentsDir, { withFileTypes: true })
+      const dirs = fs
+        .readdirSync(componentsDir, { withFileTypes: true })
         .filter(dirent => dirent.isDirectory())
         .map(dirent => dirent.name);
 
@@ -60,7 +61,7 @@ class RepoIntelligence {
           hasIndex: false,
           status: 'unknown',
           size: 0,
-          lastModified: null
+          lastModified: null,
         };
 
         // Scan component files
@@ -68,13 +69,13 @@ class RepoIntelligence {
         for (const file of files) {
           const filePath = path.join(componentPath, file);
           const stat = fs.statSync(filePath);
-          
+
           component.files.push({
             name: file,
             size: stat.size,
-            lastModified: stat.mtime
+            lastModified: stat.mtime,
           });
-          
+
           component.size += stat.size;
           if (!component.lastModified || stat.mtime > component.lastModified) {
             component.lastModified = stat.mtime;
@@ -112,8 +113,8 @@ class RepoIntelligence {
         withStories,
         productionReady,
         testCoverage: totalComponents > 0 ? ((withTests / totalComponents) * 100).toFixed(1) : 0,
-        storyCoverage: totalComponents > 0 ? ((withStories / totalComponents) * 100).toFixed(1) : 0
-      }
+        storyCoverage: totalComponents > 0 ? ((withStories / totalComponents) * 100).toFixed(1) : 0,
+      },
     };
   }
 
@@ -126,12 +127,18 @@ class RepoIntelligence {
 
     if (fs.existsSync(scriptsDir)) {
       const files = fs.readdirSync(scriptsDir);
-      
+
       for (const file of files) {
         const filePath = path.join(scriptsDir, file);
         const stat = fs.statSync(filePath);
-        
-        if (stat.isFile() && (file.endsWith('.ps1') || file.endsWith('.js') || file.endsWith('.cjs') || file.endsWith('.mjs'))) {
+
+        if (
+          stat.isFile() &&
+          (file.endsWith('.ps1') ||
+            file.endsWith('.js') ||
+            file.endsWith('.cjs') ||
+            file.endsWith('.mjs'))
+        ) {
           const script = {
             name: file,
             path: `scripts/${file}`,
@@ -139,7 +146,7 @@ class RepoIntelligence {
             size: stat.size,
             lastModified: stat.mtime,
             category: this.categorizeScript(file),
-            description: await this.extractScriptDescription(filePath)
+            description: await this.extractScriptDescription(filePath),
           };
 
           if (!categories[script.category]) categories[script.category] = [];
@@ -159,8 +166,8 @@ class RepoIntelligence {
         byCategory: Object.keys(categories).reduce((acc, cat) => {
           acc[cat] = categories[cat].length;
           return acc;
-        }, {})
-      }
+        }, {}),
+      },
     };
   }
 
@@ -170,16 +177,16 @@ class RepoIntelligence {
     const categories = {};
     let totalDocs = 0;
 
-    const scanDir = (dir, basePath = '') => {
+    const scanDir = async (dir, basePath = '') => {
       if (!fs.existsSync(dir)) return;
-      
+
       const items = fs.readdirSync(dir);
       for (const item of items) {
         const fullPath = path.join(dir, item);
         const stat = fs.statSync(fullPath);
-        
+
         if (stat.isDirectory() && !item.startsWith('.') && item !== 'node_modules') {
-          scanDir(fullPath, path.join(basePath, item));
+          await scanDir(fullPath, path.join(basePath, item));
         } else if (item.endsWith('.md')) {
           const relativePath = path.join(basePath, item);
           const doc = {
@@ -188,7 +195,7 @@ class RepoIntelligence {
             size: stat.size,
             lastModified: stat.mtime,
             category: this.categorizeDoc(relativePath, item),
-            wordCount: await this.getWordCount(fullPath)
+            wordCount: await this.getWordCount(fullPath),
           };
 
           if (!categories[doc.category]) categories[doc.category] = [];
@@ -199,7 +206,7 @@ class RepoIntelligence {
       }
     };
 
-    scanDir(this.rootDir);
+    await scanDir(this.rootDir);
 
     this.data.documentation = {
       registry: docs,
@@ -210,8 +217,8 @@ class RepoIntelligence {
         byCategory: Object.keys(categories).reduce((acc, cat) => {
           acc[cat] = categories[cat].length;
           return acc;
-        }, {})
-      }
+        }, {}),
+      },
     };
   }
 
@@ -219,10 +226,14 @@ class RepoIntelligence {
     console.log('📊 Gathering git statistics...');
     try {
       const branch = execSync('git branch --show-current', { encoding: 'utf8' }).trim();
-      const lastCommit = execSync('git log -1 --format="%H|%an|%ad|%s"', { encoding: 'utf8' }).trim();
+      const lastCommit = execSync('git log -1 --format="%H|%an|%ad|%s"', {
+        encoding: 'utf8',
+      }).trim();
       const [hash, author, date, message] = lastCommit.split('|');
-      
-      const commitCount = parseInt(execSync('git rev-list --count HEAD', { encoding: 'utf8' }).trim());
+
+      const commitCount = parseInt(
+        execSync('git rev-list --count HEAD', { encoding: 'utf8' }).trim()
+      );
       const contributors = execSync('git shortlog -sn', { encoding: 'utf8' })
         .trim()
         .split('\n')
@@ -246,14 +257,14 @@ class RepoIntelligence {
           hash: hash.substring(0, 8),
           author,
           date: new Date(date),
-          message
+          message,
         },
         stats: {
           totalCommits: commitCount,
           contributors: contributors.length,
-          topContributor: contributors[0]
+          topContributor: contributors[0],
         },
-        recentActivity: recentCommits
+        recentActivity: recentCommits,
       };
     } catch (error) {
       console.warn('⚠️ Git stats unavailable:', error.message);
@@ -268,24 +279,27 @@ class RepoIntelligence {
       const packagePath = path.join(this.rootDir, 'package.json');
       if (fs.existsSync(packagePath)) {
         const packageData = JSON.parse(fs.readFileSync(packagePath, 'utf8'));
-        
+
         this.data.metadata.name = packageData.name || 'Unknown';
         this.data.metadata.version = packageData.version || '0.0.0';
 
         // Dependency analysis
         const deps = Object.keys(packageData.dependencies || {});
         const devDeps = Object.keys(packageData.devDependencies || {});
-        
+
         this.data.build = {
           version: packageData.version,
           dependencies: {
             production: deps.length,
             development: devDeps.length,
-            total: deps.length + devDeps.length
+            total: deps.length + devDeps.length,
           },
           scripts: Object.keys(packageData.scripts || {}),
-          packageManager: fs.existsSync(path.join(this.rootDir, 'yarn.lock')) ? 'yarn' : 
-                        fs.existsSync(path.join(this.rootDir, 'package-lock.json')) ? 'npm' : 'unknown'
+          packageManager: fs.existsSync(path.join(this.rootDir, 'yarn.lock'))
+            ? 'yarn'
+            : fs.existsSync(path.join(this.rootDir, 'package-lock.json'))
+              ? 'npm'
+              : 'unknown',
         };
       }
 
@@ -294,10 +308,9 @@ class RepoIntelligence {
       if (fs.existsSync(nextDir)) {
         this.data.build.artifacts = {
           nextBuild: true,
-          buildSize: this.getDirSize(nextDir)
+          buildSize: this.getDirSize(nextDir),
         };
       }
-
     } catch (error) {
       console.warn('⚠️ Build metrics error:', error.message);
       this.data.build = { error: error.message };
@@ -325,15 +338,20 @@ class RepoIntelligence {
       let fileCount = 0;
 
       if (fs.existsSync(srcDir)) {
-        const countFiles = (dir) => {
+        const countFiles = dir => {
           const items = fs.readdirSync(dir);
           for (const item of items) {
             const fullPath = path.join(dir, item);
             const stat = fs.statSync(fullPath);
-            
+
             if (stat.isDirectory()) {
               countFiles(fullPath);
-            } else if (item.endsWith('.ts') || item.endsWith('.tsx') || item.endsWith('.js') || item.endsWith('.jsx')) {
+            } else if (
+              item.endsWith('.ts') ||
+              item.endsWith('.tsx') ||
+              item.endsWith('.js') ||
+              item.endsWith('.jsx')
+            ) {
               fileCount++;
               const content = fs.readFileSync(fullPath, 'utf8');
               linesOfCode += content.split('\n').length;
@@ -350,14 +368,13 @@ class RepoIntelligence {
         codeMetrics: {
           linesOfCode,
           fileCount,
-          avgLinesPerFile: fileCount > 0 ? Math.round(linesOfCode / fileCount) : 0
+          avgLinesPerFile: fileCount > 0 ? Math.round(linesOfCode / fileCount) : 0,
         },
         scores: {
           setup: (hasTypeScript ? 25 : 0) + (hasESLint ? 25 : 0) + (hasTests ? 25 : 0) + 25, // Base 25 for structure
-          maintainability: this.calculateMaintainabilityScore()
-        }
+          maintainability: this.calculateMaintainabilityScore(),
+        },
       };
-
     } catch (error) {
       console.warn('⚠️ Quality metrics error:', error.message);
       this.data.quality = { error: error.message };
@@ -369,9 +386,11 @@ class RepoIntelligence {
   categorizeScript(filename) {
     const name = filename.toLowerCase();
     if (name.includes('automation') || name.includes('pre-commit')) return 'Automation';
-    if (name.includes('fix') || name.includes('cleanup') || name.includes('container')) return 'Maintenance';
+    if (name.includes('fix') || name.includes('cleanup') || name.includes('container'))
+      return 'Maintenance';
     if (name.includes('generate') || name.includes('create')) return 'Generators';
-    if (name.includes('audit') || name.includes('analyzer') || name.includes('config')) return 'Analysis';
+    if (name.includes('audit') || name.includes('analyzer') || name.includes('config'))
+      return 'Analysis';
     if (name.includes('test') || name.includes('debug')) return 'Testing';
     if (name.includes('release') || name.includes('build')) return 'Release';
     return 'Utilities';
@@ -380,13 +399,14 @@ class RepoIntelligence {
   categorizeDoc(filePath, fileName) {
     const pathLower = filePath.toLowerCase();
     const nameLower = fileName.toLowerCase();
-    
+
     if (pathLower.includes('docs/') || nameLower.includes('documentation')) return 'Documentation';
     if (nameLower.includes('component') || nameLower.includes('registry')) return 'Components';
     if (nameLower.includes('script') || nameLower.includes('command')) return 'Scripts';
     if (nameLower.includes('audit') || nameLower.includes('report')) return 'Reports';
     if (nameLower.includes('quick') || nameLower.includes('reference')) return 'Reference';
-    if (nameLower.includes('theme') || nameLower.includes('color') || nameLower.includes('design')) return 'Design System';
+    if (nameLower.includes('theme') || nameLower.includes('color') || nameLower.includes('design'))
+      return 'Design System';
     if (nameLower === 'readme.md') return 'Overview';
     return 'Miscellaneous';
   }
@@ -395,18 +415,20 @@ class RepoIntelligence {
     try {
       const content = fs.readFileSync(filePath, 'utf8');
       const lines = content.split('\n').slice(0, 10); // First 10 lines
-      
+
       // Look for description in comments
       for (const line of lines) {
         const trimmed = line.trim();
         if (trimmed.includes('Description:') || trimmed.includes('PURPOSE:')) {
-          return trimmed.replace(/^[#\/*\s]*Description:\s*/i, '').replace(/^[#\/*\s]*PURPOSE:\s*/i, '');
+          return trimmed
+            .replace(/^[#\/*\s]*Description:\s*/i, '')
+            .replace(/^[#\/*\s]*PURPOSE:\s*/i, '');
         }
         if (trimmed.startsWith('# ') && !trimmed.includes('!/usr/bin')) {
           return trimmed.substring(2);
         }
       }
-      
+
       return 'No description available';
     } catch {
       return 'Error reading file';
@@ -429,7 +451,7 @@ class RepoIntelligence {
       for (const item of items) {
         const fullPath = path.join(dirPath, item);
         const stat = fs.statSync(fullPath);
-        
+
         if (stat.isDirectory()) {
           size += this.getDirSize(fullPath);
         } else {
@@ -453,30 +475,30 @@ class RepoIntelligence {
   calculateMaintainabilityScore() {
     // Simple heuristic based on various factors
     let score = 0;
-    
+
     // Component organization
     if (this.data.components.stats.productionReady > 20) score += 20;
     else if (this.data.components.stats.productionReady > 10) score += 15;
     else if (this.data.components.stats.productionReady > 5) score += 10;
-    
+
     // Test coverage
     if (this.data.components.stats.testCoverage > 80) score += 25;
     else if (this.data.components.stats.testCoverage > 60) score += 20;
     else if (this.data.components.stats.testCoverage > 40) score += 15;
-    
+
     // Documentation
     if (this.data.documentation.stats.total > 30) score += 20;
     else if (this.data.documentation.stats.total > 20) score += 15;
     else if (this.data.documentation.stats.total > 10) score += 10;
-    
+
     // Automation
     if (this.data.scripts.stats.total > 20) score += 15;
     else if (this.data.scripts.stats.total > 10) score += 10;
-    
+
     // Git activity
     if (this.data.git.stats && this.data.git.stats.totalCommits > 100) score += 20;
     else if (this.data.git.stats && this.data.git.stats.totalCommits > 50) score += 15;
-    
+
     return Math.min(score, 100);
   }
 
@@ -490,10 +512,16 @@ class RepoIntelligence {
       quality: this.data.quality,
       health: {
         overall: this.calculateOverallHealth(),
-        components: this.data.components.stats.productionReady / this.data.components.stats.total * 100,
+        components:
+          (this.data.components.stats.productionReady / this.data.components.stats.total) * 100,
         testing: this.data.components.stats.testCoverage,
-        documentation: this.data.documentation.stats.total > 20 ? 'Good' : this.data.documentation.stats.total > 10 ? 'Fair' : 'Poor'
-      }
+        documentation:
+          this.data.documentation.stats.total > 20
+            ? 'Good'
+            : this.data.documentation.stats.total > 10
+              ? 'Fair'
+              : 'Poor',
+      },
     };
   }
 
@@ -514,7 +542,7 @@ class RepoIntelligence {
     }
 
     // Documentation
-    score += Math.min(this.data.documentation.stats.total / 40 * 20, 20);
+    score += Math.min((this.data.documentation.stats.total / 40) * 20, 20);
     factors++;
 
     // Build setup
@@ -536,7 +564,7 @@ class RepoIntelligence {
 
   async gather() {
     console.log('🚀 Starting comprehensive repository intelligence gathering...\n');
-    
+
     try {
       await this.scanComponents();
       await this.scanScripts();
@@ -544,22 +572,25 @@ class RepoIntelligence {
       await this.gatherGitStats();
       await this.gatherBuildMetrics();
       await this.gatherQualityMetrics();
-      
+
       this.generateSummary();
-      
+
       // Save to file
       const outputPath = path.join(this.rootDir, 'REPO_INTELLIGENCE.json');
       fs.writeFileSync(outputPath, JSON.stringify(this.data, null, 2));
-      
+
       console.log('\n✅ Repository intelligence gathering complete!');
-      console.log(`📊 Components: ${this.data.components.stats.total} (${this.data.components.stats.productionReady} production-ready)`);
-      console.log(`🔧 Scripts: ${this.data.scripts.stats.total} across ${Object.keys(this.data.scripts.categories).length} categories`);
+      console.log(
+        `📊 Components: ${this.data.components.stats.total} (${this.data.components.stats.productionReady} production-ready)`
+      );
+      console.log(
+        `🔧 Scripts: ${this.data.scripts.stats.total} across ${Object.keys(this.data.scripts.categories).length} categories`
+      );
       console.log(`📚 Documentation: ${this.data.documentation.stats.total} files`);
       console.log(`💚 Overall Health: ${this.data.summary.health.overall}%`);
       console.log(`📄 Data saved to: ${outputPath}`);
-      
+
       return this.data;
-      
     } catch (error) {
       console.error('❌ Error during intelligence gathering:', error.message);
       console.error(error.stack);

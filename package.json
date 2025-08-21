@@ -1,6 +1,6 @@
 {
   "name": "daedalus",
-  "version": "1.48.0",
+  "version": "1.50.0",
   "private": true,
   "type": "module",
   "scripts": {
@@ -17,7 +17,8 @@
     "clean": "rm -rf .next && rm -rf node_modules/.cache && rm -rf .turbo",
     "clean:install": "rm -rf node_modules && rm -rf .next && yarn install",
     "optimize": "yarn clean && yarn lint:fix && yarn type-check && yarn build",
-    "audit:deps": "yarn audit --level moderate",
+    "audit:repo": "powershell -ExecutionPolicy Bypass -File \"admin scripts/repo-intelligence.ps1\"",
+    "audit:security": "yarn audit --level moderate",
     "check:unused": "npx depcheck",
     "quality": "run-s type-check lint format:check test:run",
     "consolidate": "node scripts/workspace-consolidator.cjs",

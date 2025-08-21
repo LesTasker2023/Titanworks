@@ -813,7 +813,6 @@ export default function PopoverDemo() {
                             Events
                           </Badge>
                           <Badge variant="outline" className="cursor-pointer hover:bg-muted">
-                            {/* eslint-disable-next-line jsx-a11y/alt-text */}
                             <Image className="mr-1 h-3 w-3" />
                             Media
                           </Badge>

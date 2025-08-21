@@ -11,11 +11,11 @@ const path = require('path');
 // File system exploration
 function findMarkdownFiles(dir, files = []) {
   const items = fs.readdirSync(dir);
-  
+
   for (const item of items) {
     const fullPath = path.join(dir, item);
     const stat = fs.statSync(fullPath);
-    
+
     if (stat.isDirectory() && !item.startsWith('.') && item !== 'node_modules') {
       findMarkdownFiles(fullPath, files);
     } else if (item.endsWith('.md')) {
@@ -25,39 +25,45 @@ function findMarkdownFiles(dir, files = []) {
         relativePath: path.relative(process.cwd(), fullPath),
         category: determineCategory(fullPath, item),
         size: stat.size,
-        lastModified: stat.mtime
+        lastModified: stat.mtime,
       });
     }
   }
-  
+
   return files;
 }
 
 function determineCategory(filePath, fileName) {
   const pathLower = filePath.toLowerCase();
   const nameLower = fileName.toLowerCase();
-  
+
   if (pathLower.includes('docs/') || nameLower.includes('documentation')) return 'Documentation';
   if (nameLower.includes('component') || nameLower.includes('registry')) return 'Components';
   if (nameLower.includes('script') || nameLower.includes('command')) return 'Scripts';
   if (nameLower.includes('audit') || nameLower.includes('report')) return 'Reports';
   if (nameLower.includes('quick') || nameLower.includes('reference')) return 'Reference';
-  if (nameLower.includes('theme') || nameLower.includes('color') || nameLower.includes('design')) return 'Design System';
+  if (nameLower.includes('theme') || nameLower.includes('color') || nameLower.includes('design'))
+    return 'Design System';
   if (nameLower === 'readme.md') return 'Overview';
-  
+
   return 'Miscellaneous';
 }
 
 function findScriptFiles(dir, files = []) {
   const items = fs.readdirSync(dir);
-  
+
   for (const item of items) {
     const fullPath = path.join(dir, item);
     const stat = fs.statSync(fullPath);
-    
+
     if (stat.isDirectory() && !item.startsWith('.') && item !== 'node_modules') {
       findScriptFiles(fullPath, files);
-    } else if (item.endsWith('.ps1') || item.endsWith('.js') || item.endsWith('.cjs') || item.endsWith('.mjs')) {
+    } else if (
+      item.endsWith('.ps1') ||
+      item.endsWith('.js') ||
+      item.endsWith('.cjs') ||
+      item.endsWith('.mjs')
+    ) {
       files.push({
         name: item,
         path: fullPath,
@@ -65,47 +71,49 @@ function findScriptFiles(dir, files = []) {
         type: path.extname(item),
         category: determineScriptCategory(fullPath, item),
         size: stat.size,
-        lastModified: stat.mtime
+        lastModified: stat.mtime,
       });
     }
   }
-  
+
   return files;
 }
 
 function determineScriptCategory(filePath, fileName) {
   const nameLower = fileName.toLowerCase();
-  
+
   if (nameLower.includes('automation') || nameLower.includes('pre-commit')) return 'Automation';
-  if (nameLower.includes('fix') || nameLower.includes('cleanup') || nameLower.includes('container')) return 'Maintenance';
+  if (nameLower.includes('fix') || nameLower.includes('cleanup') || nameLower.includes('container'))
+    return 'Maintenance';
   if (nameLower.includes('generate') || nameLower.includes('create')) return 'Generators';
-  if (nameLower.includes('audit') || nameLower.includes('analyzer') || nameLower.includes('config')) return 'Analysis';
+  if (nameLower.includes('audit') || nameLower.includes('analyzer') || nameLower.includes('config'))
+    return 'Analysis';
   if (nameLower.includes('test') || nameLower.includes('debug')) return 'Testing';
   if (nameLower.includes('release') || nameLower.includes('build')) return 'Release';
-  
+
   return 'Utilities';
 }
 
 function generateConsolidatedIndex() {
   console.log('🔍 Scanning workspace for documentation and scripts...');
-  
+
   const rootDir = process.cwd();
   const markdownFiles = findMarkdownFiles(rootDir);
   const scriptFiles = findScriptFiles(rootDir);
-  
+
   // Group by category
   const docsByCategory = markdownFiles.reduce((acc, file) => {
     if (!acc[file.category]) acc[file.category] = [];
     acc[file.category].push(file);
     return acc;
   }, {});
-  
+
   const scriptsByCategory = scriptFiles.reduce((acc, file) => {
     if (!acc[file.category]) acc[file.category] = [];
     acc[file.category].push(file);
     return acc;
   }, {});
-  
+
   // Generate consolidated index
   const index = {
     generated: new Date().toISOString(),
@@ -113,33 +121,33 @@ function generateConsolidatedIndex() {
       totalDocuments: markdownFiles.length,
       totalScripts: scriptFiles.length,
       documentCategories: Object.keys(docsByCategory).length,
-      scriptCategories: Object.keys(scriptsByCategory).length
+      scriptCategories: Object.keys(scriptsByCategory).length,
     },
     documentation: docsByCategory,
     scripts: scriptsByCategory,
     files: {
       markdown: markdownFiles,
-      scripts: scriptFiles
-    }
+      scripts: scriptFiles,
+    },
   };
-  
+
   // Write to file
   const outputPath = path.join(rootDir, 'WORKSPACE_INDEX.json');
   fs.writeFileSync(outputPath, JSON.stringify(index, null, 2));
-  
+
   console.log('✅ Workspace index generated successfully!');
   console.log(`📊 Found ${markdownFiles.length} documentation files`);
   console.log(`🔧 Found ${scriptFiles.length} script files`);
   console.log(`📁 ${Object.keys(docsByCategory).length} documentation categories`);
   console.log(`⚙️ ${Object.keys(scriptsByCategory).length} script categories`);
   console.log(`📄 Index saved to: ${outputPath}`);
-  
+
   return index;
 }
 
 function generateMarkdownSummary(index) {
   const summaryPath = path.join(process.cwd(), 'WORKSPACE_SUMMARY.md');
-  
+
   let markdown = `# 🚀 Triggerkings Workspace Summary
 
 *Generated on ${new Date().toLocaleDateString()}*
@@ -217,12 +225,11 @@ if (require.main === module) {
   try {
     const index = generateConsolidatedIndex();
     generateMarkdownSummary(index);
-    
+
     console.log('\n🎉 Workspace consolidation complete!');
     console.log('📋 Files generated:');
     console.log('   - WORKSPACE_INDEX.json (machine-readable)');
     console.log('   - WORKSPACE_SUMMARY.md (human-readable)');
-    
   } catch (error) {
     console.error('❌ Error during consolidation:', error.message);
     process.exit(1);

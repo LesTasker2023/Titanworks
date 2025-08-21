@@ -102,7 +102,6 @@ export default function FormDemo() {
     return password.length >= 8 && /(?=.*[a-z])(?=.*[A-Z])(?=.*\d)/.test(password);
   };
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const validateForm = (form: Record<string, any>, formType: string) => {
     const errors: Record<string, string> = {};
 
@@ -120,7 +119,6 @@ export default function FormDemo() {
     return errors;
   };
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const handleSubmit = async (formData: Record<string, any>, formType: string) => {
     setSubmitStatus('loading');
 

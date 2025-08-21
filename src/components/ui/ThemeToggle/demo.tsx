@@ -92,7 +92,6 @@ export default function ThemeToggleDemo() {
     setAppliedCount(prev => prev + 1);
   };
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const handlePreferenceChange = (key: keyof ThemePreference, value: any) => {
     setPreferences(prev => ({
       ...prev,
@@ -120,7 +119,6 @@ export default function ThemeToggleDemo() {
     }
   };
 
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const getColorSchemeColor = (scheme: string) => {
     switch (scheme) {
       case 'blue':

@@ -1,5 +1,4 @@
-﻿/* eslint-disable storybook/no-renderer-packages */
-import type { Meta, StoryObj } from '@storybook/react';
+﻿import type { Meta, StoryObj } from '@storybook/react';
 import { Progress } from './progress';
 
 const meta: Meta<typeof Progress> = {

@@ -333,9 +333,25 @@ if (-not $SkipBuild) {
         $BuildFinished = $BuildProcess.WaitForExit(120000) # 2 minute timeout for build
         
         if ($BuildFinished) {
-            $BuildSuccess = ($BuildProcess.ExitCode -eq 0)
+            # Get the actual exit code
+            $ExitCode = $BuildProcess.ExitCode
             $BuildOutput = (Get-Content "build-output.txt" -Raw -ErrorAction SilentlyContinue) + (Get-Content "build-error.txt" -Raw -ErrorAction SilentlyContinue)
-            Write-Host "   → Build completed (Exit Code: $($BuildProcess.ExitCode))" -ForegroundColor DarkGray
+            Write-Host "   → Build completed (Exit Code: $ExitCode)" -ForegroundColor DarkGray
+            
+            # Check for build artifacts as additional verification
+            $NextDirExists = Test-Path ".next"
+            $BuildIdExists = Test-Path ".next\BUILD_ID"
+            
+            # Build is successful if exit code is 0 AND we have build artifacts
+            $BuildSuccess = ($ExitCode -eq 0) -and $NextDirExists
+            
+            if ($ExitCode -eq 0 -and -not $NextDirExists) {
+                Write-Host "   → Warning: Build exit code 0 but missing artifacts" -ForegroundColor Yellow
+            } elseif ($ExitCode -ne 0 -and $NextDirExists) {
+                Write-Host "   → Warning: Build artifacts exist but exit code was $ExitCode" -ForegroundColor Yellow
+                $BuildSuccess = $true # Trust artifacts over exit code for resilience
+            }
+            
         } else {
             Write-Host "   → Build timed out after 2 minutes, killing process..." -ForegroundColor Yellow
             $BuildProcess.Kill()

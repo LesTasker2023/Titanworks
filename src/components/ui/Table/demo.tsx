@@ -321,7 +321,6 @@ export default function TableDemo() {
     return filtered;
   }, [productSearch, productSort, products]);
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const handleSort = (field: string, currentSort: any, setSortFunction: any) => {
     if (currentSort?.field === field) {
       if (currentSort.direction === 'asc') {
@@ -353,7 +352,6 @@ export default function TableDemo() {
     }
   };
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const getSortIcon = (field: string, currentSort: any) => {
     if (currentSort?.field === field) {
       return currentSort.direction === 'asc' ? (
