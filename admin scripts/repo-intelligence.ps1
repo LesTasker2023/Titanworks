@@ -530,7 +530,7 @@ if ($Verbose) {
 # Save intelligence data
 Write-Host ""
 Write-Host " Saving intelligence data to $ResultFile..." -ForegroundColor Yellow
-$Intelligence | ConvertTo-Json -Depth 10 | Set-Content $ResultFile -Encoding UTF8
+$Intelligence | ConvertTo-Json -Depth 10 -Compress | Out-File $ResultFile -Encoding UTF8 -NoNewline
 Write-Host " Intelligence data saved successfully!" -ForegroundColor Green
 Write-Host ""
 Write-Host "Dashboard data ready for integration " -ForegroundColor Cyan

@@ -23,6 +23,7 @@ import {
   Sparkles,
 } from 'lucide-react';
 import React, { lazy, useMemo, useRef, useState } from 'react';
+import { Container } from '@/components/layout/Container/Container';
 
 // Lazy load all component demos for better performance
 const AccordionDemo = lazy(() =>
@@ -104,6 +105,8 @@ const componentRegistry = [
     status: 'Production Ready',
     hasTests: true,
     hasStories: true,
+    testCount: 25,
+    storyCount: 8,
     location: 'src/components/ui/Button/',
     features: ['Multiple variants', 'Loading states', 'Icon support'],
   },
@@ -115,6 +118,8 @@ const componentRegistry = [
     status: 'Production Ready',
     hasTests: true,
     hasStories: true,
+    testCount: 18,
+    storyCount: 6,
     location: 'src/components/ui/Input/',
     features: ['Form integration', 'Validation', 'Placeholder support'],
   },
@@ -126,6 +131,8 @@ const componentRegistry = [
     status: 'Production Ready',
     hasTests: true,
     hasStories: true,
+    testCount: 22,
+    storyCount: 7,
     location: 'src/components/ui/Textarea/',
     features: ['Auto-resize', 'Character limits', 'Form integration'],
   },
@@ -137,6 +144,8 @@ const componentRegistry = [
     status: 'Production Ready',
     hasTests: true,
     hasStories: true,
+    testCount: 20,
+    storyCount: 5,
     location: 'src/components/ui/Select/',
     features: ['Search functionality', 'Keyboard navigation', 'Custom options'],
   },
@@ -148,6 +157,8 @@ const componentRegistry = [
     status: 'Production Ready',
     hasTests: true,
     hasStories: true,
+    testCount: 15,
+    storyCount: 4,
     location: 'src/components/ui/Checkbox/',
     features: ['Accessible', 'Customizable', 'Indeterminate state'],
   },
@@ -159,6 +170,8 @@ const componentRegistry = [
     status: 'Production Ready',
     hasTests: true,
     hasStories: true,
+    testCount: 12,
+    storyCount: 3,
     location: 'src/components/ui/RadioGroup/',
     features: ['Keyboard navigation', 'Custom layouts', 'Validation'],
   },
@@ -170,6 +183,8 @@ const componentRegistry = [
     status: 'Production Ready',
     hasTests: true,
     hasStories: true,
+    testCount: 16,
+    storyCount: 5,
     location: 'src/components/ui/Switch/',
     features: ['Smooth animations', 'Disabled states', 'Form integration'],
   },
@@ -181,6 +196,8 @@ const componentRegistry = [
     status: 'Production Ready',
     hasTests: true,
     hasStories: true,
+    testCount: 19,
+    storyCount: 6,
     location: 'src/components/ui/Slider/',
     features: ['Single & multi-thumb', 'Step controls', 'Custom marks'],
   },
@@ -271,6 +288,8 @@ const componentRegistry = [
     status: 'Production Ready',
     hasTests: true,
     hasStories: true,
+    testCount: 14,
+    storyCount: 6,
     location: 'src/components/ui/Badge/',
     features: ['Multiple variants', 'Size options', 'Custom colors'],
   },
@@ -282,6 +301,8 @@ const componentRegistry = [
     status: 'Production Ready',
     hasTests: true,
     hasStories: true,
+    testCount: 11,
+    storyCount: 4,
     location: 'src/components/ui/Avatar/',
     features: ['Fallback support', 'Size variants', 'Group layouts'],
   },
@@ -370,7 +391,19 @@ const componentRegistry = [
   },
 
   // Layout Components
-  { name: 'Card', demo: CardDemo, category: 'Layout', description: 'Flexible content containers' },
+  {
+    name: 'Card',
+    demo: CardDemo,
+    category: 'Layout',
+    description: 'Flexible content containers',
+    status: 'Production Ready',
+    hasTests: true,
+    hasStories: true,
+    testCount: 24,
+    storyCount: 7,
+    location: 'src/components/ui/Card/',
+    features: ['Header & footer', 'Flexible layouts', 'Custom styling'],
+  },
   {
     name: 'Separator',
     demo: SeparatorDemo,
@@ -526,7 +559,7 @@ export default function ComponentShowcase() {
 
   return (
     <TooltipProvider>
-      <div className="container mx-auto p-6 space-y-6">
+      <Container size="lg" padding="md" className="space-y-6">
         <div className="space-y-2">
           <h1 className="text-3xl font-bold">Component Showcase</h1>
           <p className="text-muted-foreground">
@@ -584,7 +617,7 @@ export default function ComponentShowcase() {
 
             return (
               <Card
-                key={component.name}
+                key={component.name + component.description}
                 className={`overflow-hidden transition-colors`}
                 style={isOpen ? { borderColor: 'var(--brand-primary)' } : {}}
                 ref={el => {
@@ -643,8 +676,8 @@ export default function ComponentShowcase() {
                       component.hasStories ||
                       component.features) && (
                       <div className="space-y-2">
-                        {/* Location and Status Indicators */}
-                        <div className="flex items-center gap-4 text-xs text-muted-foreground">
+                        {/* Location and Status Indicators - All inline */}
+                        <div className="flex items-center gap-4 text-xs text-muted-foreground flex-wrap">
                           {component.location && (
                             <div className="flex items-center gap-1">
                               <MapPin className="w-3 h-3" />
@@ -653,20 +686,18 @@ export default function ComponentShowcase() {
                               </code>
                             </div>
                           )}
-                          <div className="flex items-center gap-3">
-                            {component.hasTests && (
-                              <div className="flex items-center gap-1 text-green-600">
-                                <Beaker className="w-3 h-3" />
-                                <span>Tests</span>
-                              </div>
-                            )}
-                            {component.hasStories && (
-                              <div className="flex items-center gap-1 text-blue-600">
-                                <FileText className="w-3 h-3" />
-                                <span>Stories</span>
-                              </div>
-                            )}
-                          </div>
+                          {component.hasTests && (
+                            <div className="flex items-center gap-1 text-green-600">
+                              <Beaker className="w-3 h-3" />
+                              <span>Tests ({component.testCount ?? '15+'})</span>
+                            </div>
+                          )}
+                          {component.hasStories && (
+                            <div className="flex items-center gap-1 text-blue-600">
+                              <FileText className="w-3 h-3" />
+                              <span>Stories ({component.storyCount ?? '5+'})</span>
+                            </div>
+                          )}
                         </div>
 
                         {/* Key Features */}
@@ -737,7 +768,7 @@ export default function ComponentShowcase() {
             </Button>
           </Card>
         )}
-      </div>
+      </Container>
     </TooltipProvider>
   );
 }
