@@ -1,0 +1,154 @@
+﻿import { render, screen } from '@testing-library/react';
+import * as React from 'react';
+import { describe, expect, it } from 'vitest';
+import { Progress } from './progress';
+
+describe('Progress', () => {
+  describe('Snapshots', () => {
+    it('matches default snapshot', () => {
+      const { container } = render(<Progress value={50} />);
+      expect(container.firstChild).toMatchSnapshot();
+    });
+
+    it('matches all variants snapshot', () => {
+      const { container } = render(
+        <div>
+          <Progress value={50} variant="default" />
+          <Progress value={50} variant="success" />
+          <Progress value={50} variant="warning" />
+          <Progress value={50} variant="danger" />
+        </div>
+      );
+      expect(container.firstChild).toMatchSnapshot();
+    });
+
+    it('matches all sizes snapshot', () => {
+      const { container } = render(
+        <div>
+          <Progress value={50} size="sm" />
+          <Progress value={50} size="default" />
+          <Progress value={50} size="lg" />
+          <Progress value={50} size="xl" />
+        </div>
+      );
+      expect(container.firstChild).toMatchSnapshot();
+    });
+  });
+
+  describe('Functionality', () => {
+    it('renders correctly', () => {
+      render(<Progress value={50} data-testid="progress" />);
+      expect(screen.getByTestId('progress')).toBeInTheDocument();
+    });
+
+    it('supports variant prop', () => {
+      render(<Progress value={75} variant="success" data-testid="progress" />);
+      expect(screen.getByTestId('progress')).toBeInTheDocument();
+    });
+
+    it('supports size prop', () => {
+      render(<Progress value={25} size="lg" data-testid="progress" />);
+      expect(screen.getByTestId('progress')).toBeInTheDocument();
+    });
+  });
+
+  describe('Variants', () => {
+    it('renders default variant correctly', () => {
+      const { container } = render(<Progress value={50} variant="default" />);
+      expect(container.firstChild).toHaveClass('bg-primary/20');
+    });
+
+    it('renders success variant correctly', () => {
+      const { container } = render(<Progress value={50} variant="success" />);
+      expect(container.firstChild).toHaveClass('bg-green-100');
+    });
+
+    it('renders warning variant correctly', () => {
+      const { container } = render(<Progress value={50} variant="warning" />);
+      expect(container.firstChild).toHaveClass('bg-yellow-100');
+    });
+
+    it('renders danger variant correctly', () => {
+      const { container } = render(<Progress value={50} variant="danger" />);
+      expect(container.firstChild).toHaveClass('bg-red-100');
+    });
+  });
+
+  describe('Sizes', () => {
+    it('renders small size correctly', () => {
+      const { container } = render(<Progress value={50} size="sm" />);
+      expect(container.firstChild).toHaveClass('h-1');
+    });
+
+    it('renders default size correctly', () => {
+      const { container } = render(<Progress value={50} size="default" />);
+      expect(container.firstChild).toHaveClass('h-2');
+    });
+
+    it('renders large size correctly', () => {
+      const { container } = render(<Progress value={50} size="lg" />);
+      expect(container.firstChild).toHaveClass('h-3');
+    });
+
+    it('renders extra large size correctly', () => {
+      const { container } = render(<Progress value={50} size="xl" />);
+      expect(container.firstChild).toHaveClass('h-4');
+    });
+  });
+
+  describe('Value Handling', () => {
+    it('handles zero value', () => {
+      render(<Progress value={0} data-testid="progress" />);
+      expect(screen.getByTestId('progress')).toBeInTheDocument();
+    });
+
+    it('handles maximum value', () => {
+      render(<Progress value={100} data-testid="progress" />);
+      expect(screen.getByTestId('progress')).toBeInTheDocument();
+    });
+
+    it('handles undefined value', () => {
+      render(<Progress data-testid="progress" />);
+      expect(screen.getByTestId('progress')).toBeInTheDocument();
+    });
+  });
+
+  describe('Accessibility', () => {
+    it('has proper ARIA attributes', () => {
+      render(<Progress value={50} data-testid="progress" />);
+      const progress = screen.getByTestId('progress');
+      expect(progress).toHaveAttribute('role', 'progressbar');
+    });
+
+    it('includes value in ARIA attributes', () => {
+      render(<Progress value={75} data-testid="progress" />);
+      const progress = screen.getByTestId('progress');
+
+      // Radix Progress automatically sets these attributes when value is provided
+      expect(progress).toHaveAttribute('data-value', '75');
+      expect(progress).toHaveAttribute('data-max', '100');
+      expect(progress).toHaveAttribute('aria-valuenow', '75');
+      expect(progress).toHaveAttribute('aria-valuetext', '75%');
+    });
+  });
+
+  describe('Ref Forwarding', () => {
+    it('forwards ref correctly', () => {
+      const ref = React.createRef<HTMLDivElement>();
+      render(<Progress value={50} ref={ref} />);
+      expect(ref.current).toBeInstanceOf(HTMLDivElement);
+    });
+  });
+
+  describe('Custom Styling', () => {
+    it('accepts custom className', () => {
+      const { container } = render(<Progress value={50} className="custom-progress" />);
+      expect(container.firstChild).toHaveClass('custom-progress');
+    });
+
+    it('forwards additional props', () => {
+      render(<Progress value={50} data-custom="test" data-testid="progress" />);
+      expect(screen.getByTestId('progress')).toHaveAttribute('data-custom', 'test');
+    });
+  });
+});

@@ -1,1102 +1,12 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`DataTable > Snapshots > matches all sizes snapshot 1`] = `
-<div>
-  <div
-    aria-disabled="false"
-    class="datatable w-full relative datatable--default border border-border datatable--size-sm text-xs"
-    data-error="false"
-    data-loading="false"
-    data-testid="size-small"
-  >
-    <div
-      class="datatable__scroll-container overflow-auto"
-    >
-      <table
-        class="w-full caption-bottom text-sm"
-        role="table"
-      >
-        <thead
-          class="[&_tr]:border-b"
-        >
-          <tr>
-            <th
-              class="h-10 px-2 text-left align-middle font-medium text-muted-foreground"
-              role="columnheader"
-              tabindex="-1"
-            >
-              <div
-                class="flex items-center space-x-1"
-              >
-                <span>
-                  Name
-                </span>
-              </div>
-            </th>
-            <th
-              class="h-10 px-2 text-left align-middle font-medium text-muted-foreground"
-              role="columnheader"
-              tabindex="-1"
-            >
-              <div
-                class="flex items-center space-x-1"
-              >
-                <span>
-                  Email
-                </span>
-              </div>
-            </th>
-            <th
-              class="h-10 px-2 text-left align-middle font-medium text-muted-foreground"
-              role="columnheader"
-              tabindex="-1"
-            >
-              <div
-                class="flex items-center space-x-1"
-              >
-                <span>
-                  Role
-                </span>
-              </div>
-            </th>
-          </tr>
-        </thead>
-        <tbody
-          class="[&_tr:last-child]:border-0"
-        >
-          <tr
-            class="datatable__row border-b transition-colors hover:bg-muted/50"
-            role="row"
-          >
-            <td
-              class="p-2 align-middle"
-              role="cell"
-            >
-              John
-            </td>
-            <td
-              class="p-2 align-middle"
-              role="cell"
-            >
-              john@example.com
-            </td>
-            <td
-              class="p-2 align-middle"
-              role="cell"
-            >
-              Admin
-            </td>
-          </tr>
-          <tr
-            class="datatable__row border-b transition-colors hover:bg-muted/50"
-            role="row"
-          >
-            <td
-              class="p-2 align-middle"
-              role="cell"
-            >
-              Jane
-            </td>
-            <td
-              class="p-2 align-middle"
-              role="cell"
-            >
-              jane@example.com
-            </td>
-            <td
-              class="p-2 align-middle"
-              role="cell"
-            >
-              User
-            </td>
-          </tr>
-          <tr
-            class="datatable__row border-b transition-colors hover:bg-muted/50"
-            role="row"
-          >
-            <td
-              class="p-2 align-middle"
-              role="cell"
-            >
-              Bob
-            </td>
-            <td
-              class="p-2 align-middle"
-              role="cell"
-            >
-              bob@example.com
-            </td>
-            <td
-              class="p-2 align-middle"
-              role="cell"
-            >
-              User
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-  <div
-    aria-disabled="false"
-    class="datatable w-full relative datatable--default border border-border datatable--size-default text-sm"
-    data-error="false"
-    data-loading="false"
-    data-testid="size-default"
-  >
-    <div
-      class="datatable__scroll-container overflow-auto"
-    >
-      <table
-        class="w-full caption-bottom text-sm"
-        role="table"
-      >
-        <thead
-          class="[&_tr]:border-b"
-        >
-          <tr>
-            <th
-              class="h-10 px-2 text-left align-middle font-medium text-muted-foreground"
-              role="columnheader"
-              tabindex="-1"
-            >
-              <div
-                class="flex items-center space-x-1"
-              >
-                <span>
-                  Name
-                </span>
-              </div>
-            </th>
-            <th
-              class="h-10 px-2 text-left align-middle font-medium text-muted-foreground"
-              role="columnheader"
-              tabindex="-1"
-            >
-              <div
-                class="flex items-center space-x-1"
-              >
-                <span>
-                  Email
-                </span>
-              </div>
-            </th>
-            <th
-              class="h-10 px-2 text-left align-middle font-medium text-muted-foreground"
-              role="columnheader"
-              tabindex="-1"
-            >
-              <div
-                class="flex items-center space-x-1"
-              >
-                <span>
-                  Role
-                </span>
-              </div>
-            </th>
-          </tr>
-        </thead>
-        <tbody
-          class="[&_tr:last-child]:border-0"
-        >
-          <tr
-            class="datatable__row border-b transition-colors hover:bg-muted/50"
-            role="row"
-          >
-            <td
-              class="p-2 align-middle"
-              role="cell"
-            >
-              John
-            </td>
-            <td
-              class="p-2 align-middle"
-              role="cell"
-            >
-              john@example.com
-            </td>
-            <td
-              class="p-2 align-middle"
-              role="cell"
-            >
-              Admin
-            </td>
-          </tr>
-          <tr
-            class="datatable__row border-b transition-colors hover:bg-muted/50"
-            role="row"
-          >
-            <td
-              class="p-2 align-middle"
-              role="cell"
-            >
-              Jane
-            </td>
-            <td
-              class="p-2 align-middle"
-              role="cell"
-            >
-              jane@example.com
-            </td>
-            <td
-              class="p-2 align-middle"
-              role="cell"
-            >
-              User
-            </td>
-          </tr>
-          <tr
-            class="datatable__row border-b transition-colors hover:bg-muted/50"
-            role="row"
-          >
-            <td
-              class="p-2 align-middle"
-              role="cell"
-            >
-              Bob
-            </td>
-            <td
-              class="p-2 align-middle"
-              role="cell"
-            >
-              bob@example.com
-            </td>
-            <td
-              class="p-2 align-middle"
-              role="cell"
-            >
-              User
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-  <div
-    aria-disabled="false"
-    class="datatable w-full relative datatable--default border border-border datatable--size-lg text-base"
-    data-error="false"
-    data-loading="false"
-    data-testid="size-large"
-  >
-    <div
-      class="datatable__scroll-container overflow-auto"
-    >
-      <table
-        class="w-full caption-bottom text-sm"
-        role="table"
-      >
-        <thead
-          class="[&_tr]:border-b"
-        >
-          <tr>
-            <th
-              class="h-10 px-2 text-left align-middle font-medium text-muted-foreground"
-              role="columnheader"
-              tabindex="-1"
-            >
-              <div
-                class="flex items-center space-x-1"
-              >
-                <span>
-                  Name
-                </span>
-              </div>
-            </th>
-            <th
-              class="h-10 px-2 text-left align-middle font-medium text-muted-foreground"
-              role="columnheader"
-              tabindex="-1"
-            >
-              <div
-                class="flex items-center space-x-1"
-              >
-                <span>
-                  Email
-                </span>
-              </div>
-            </th>
-            <th
-              class="h-10 px-2 text-left align-middle font-medium text-muted-foreground"
-              role="columnheader"
-              tabindex="-1"
-            >
-              <div
-                class="flex items-center space-x-1"
-              >
-                <span>
-                  Role
-                </span>
-              </div>
-            </th>
-          </tr>
-        </thead>
-        <tbody
-          class="[&_tr:last-child]:border-0"
-        >
-          <tr
-            class="datatable__row border-b transition-colors hover:bg-muted/50"
-            role="row"
-          >
-            <td
-              class="p-2 align-middle"
-              role="cell"
-            >
-              John
-            </td>
-            <td
-              class="p-2 align-middle"
-              role="cell"
-            >
-              john@example.com
-            </td>
-            <td
-              class="p-2 align-middle"
-              role="cell"
-            >
-              Admin
-            </td>
-          </tr>
-          <tr
-            class="datatable__row border-b transition-colors hover:bg-muted/50"
-            role="row"
-          >
-            <td
-              class="p-2 align-middle"
-              role="cell"
-            >
-              Jane
-            </td>
-            <td
-              class="p-2 align-middle"
-              role="cell"
-            >
-              jane@example.com
-            </td>
-            <td
-              class="p-2 align-middle"
-              role="cell"
-            >
-              User
-            </td>
-          </tr>
-          <tr
-            class="datatable__row border-b transition-colors hover:bg-muted/50"
-            role="row"
-          >
-            <td
-              class="p-2 align-middle"
-              role="cell"
-            >
-              Bob
-            </td>
-            <td
-              class="p-2 align-middle"
-              role="cell"
-            >
-              bob@example.com
-            </td>
-            <td
-              class="p-2 align-middle"
-              role="cell"
-            >
-              User
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-  <div
-    aria-disabled="false"
-    class="datatable w-full relative datatable--default border border-border datatable--size-xl text-lg"
-    data-error="false"
-    data-loading="false"
-    data-testid="size-extra-large"
-  >
-    <div
-      class="datatable__scroll-container overflow-auto"
-    >
-      <table
-        class="w-full caption-bottom text-sm"
-        role="table"
-      >
-        <thead
-          class="[&_tr]:border-b"
-        >
-          <tr>
-            <th
-              class="h-10 px-2 text-left align-middle font-medium text-muted-foreground"
-              role="columnheader"
-              tabindex="-1"
-            >
-              <div
-                class="flex items-center space-x-1"
-              >
-                <span>
-                  Name
-                </span>
-              </div>
-            </th>
-            <th
-              class="h-10 px-2 text-left align-middle font-medium text-muted-foreground"
-              role="columnheader"
-              tabindex="-1"
-            >
-              <div
-                class="flex items-center space-x-1"
-              >
-                <span>
-                  Email
-                </span>
-              </div>
-            </th>
-            <th
-              class="h-10 px-2 text-left align-middle font-medium text-muted-foreground"
-              role="columnheader"
-              tabindex="-1"
-            >
-              <div
-                class="flex items-center space-x-1"
-              >
-                <span>
-                  Role
-                </span>
-              </div>
-            </th>
-          </tr>
-        </thead>
-        <tbody
-          class="[&_tr:last-child]:border-0"
-        >
-          <tr
-            class="datatable__row border-b transition-colors hover:bg-muted/50"
-            role="row"
-          >
-            <td
-              class="p-2 align-middle"
-              role="cell"
-            >
-              John
-            </td>
-            <td
-              class="p-2 align-middle"
-              role="cell"
-            >
-              john@example.com
-            </td>
-            <td
-              class="p-2 align-middle"
-              role="cell"
-            >
-              Admin
-            </td>
-          </tr>
-          <tr
-            class="datatable__row border-b transition-colors hover:bg-muted/50"
-            role="row"
-          >
-            <td
-              class="p-2 align-middle"
-              role="cell"
-            >
-              Jane
-            </td>
-            <td
-              class="p-2 align-middle"
-              role="cell"
-            >
-              jane@example.com
-            </td>
-            <td
-              class="p-2 align-middle"
-              role="cell"
-            >
-              User
-            </td>
-          </tr>
-          <tr
-            class="datatable__row border-b transition-colors hover:bg-muted/50"
-            role="row"
-          >
-            <td
-              class="p-2 align-middle"
-              role="cell"
-            >
-              Bob
-            </td>
-            <td
-              class="p-2 align-middle"
-              role="cell"
-            >
-              bob@example.com
-            </td>
-            <td
-              class="p-2 align-middle"
-              role="cell"
-            >
-              User
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`DataTable > Snapshots > matches all variants snapshot 1`] = `
-<div>
-  <div
-    aria-disabled="false"
-    class="datatable w-full relative datatable--default border border-border datatable--size-default text-sm"
-    data-error="false"
-    data-loading="false"
-    data-testid="variant-default"
-  >
-    <div
-      class="datatable__scroll-container overflow-auto"
-    >
-      <table
-        class="w-full caption-bottom text-sm"
-        role="table"
-      >
-        <thead
-          class="[&_tr]:border-b"
-        >
-          <tr>
-            <th
-              class="h-10 px-2 text-left align-middle font-medium text-muted-foreground"
-              role="columnheader"
-              tabindex="-1"
-            >
-              <div
-                class="flex items-center space-x-1"
-              >
-                <span>
-                  Name
-                </span>
-              </div>
-            </th>
-            <th
-              class="h-10 px-2 text-left align-middle font-medium text-muted-foreground"
-              role="columnheader"
-              tabindex="-1"
-            >
-              <div
-                class="flex items-center space-x-1"
-              >
-                <span>
-                  Email
-                </span>
-              </div>
-            </th>
-            <th
-              class="h-10 px-2 text-left align-middle font-medium text-muted-foreground"
-              role="columnheader"
-              tabindex="-1"
-            >
-              <div
-                class="flex items-center space-x-1"
-              >
-                <span>
-                  Role
-                </span>
-              </div>
-            </th>
-          </tr>
-        </thead>
-        <tbody
-          class="[&_tr:last-child]:border-0"
-        >
-          <tr
-            class="datatable__row border-b transition-colors hover:bg-muted/50"
-            role="row"
-          >
-            <td
-              class="p-2 align-middle"
-              role="cell"
-            >
-              John
-            </td>
-            <td
-              class="p-2 align-middle"
-              role="cell"
-            >
-              john@example.com
-            </td>
-            <td
-              class="p-2 align-middle"
-              role="cell"
-            >
-              Admin
-            </td>
-          </tr>
-          <tr
-            class="datatable__row border-b transition-colors hover:bg-muted/50"
-            role="row"
-          >
-            <td
-              class="p-2 align-middle"
-              role="cell"
-            >
-              Jane
-            </td>
-            <td
-              class="p-2 align-middle"
-              role="cell"
-            >
-              jane@example.com
-            </td>
-            <td
-              class="p-2 align-middle"
-              role="cell"
-            >
-              User
-            </td>
-          </tr>
-          <tr
-            class="datatable__row border-b transition-colors hover:bg-muted/50"
-            role="row"
-          >
-            <td
-              class="p-2 align-middle"
-              role="cell"
-            >
-              Bob
-            </td>
-            <td
-              class="p-2 align-middle"
-              role="cell"
-            >
-              bob@example.com
-            </td>
-            <td
-              class="p-2 align-middle"
-              role="cell"
-            >
-              User
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-  <div
-    aria-disabled="false"
-    class="datatable w-full relative datatable--success border border-success/20 bg-success/5 datatable--size-default text-sm"
-    data-error="false"
-    data-loading="false"
-    data-testid="variant-success"
-  >
-    <div
-      class="datatable__scroll-container overflow-auto"
-    >
-      <table
-        class="w-full caption-bottom text-sm"
-        role="table"
-      >
-        <thead
-          class="[&_tr]:border-b"
-        >
-          <tr>
-            <th
-              class="h-10 px-2 text-left align-middle font-medium text-muted-foreground"
-              role="columnheader"
-              tabindex="-1"
-            >
-              <div
-                class="flex items-center space-x-1"
-              >
-                <span>
-                  Name
-                </span>
-              </div>
-            </th>
-            <th
-              class="h-10 px-2 text-left align-middle font-medium text-muted-foreground"
-              role="columnheader"
-              tabindex="-1"
-            >
-              <div
-                class="flex items-center space-x-1"
-              >
-                <span>
-                  Email
-                </span>
-              </div>
-            </th>
-            <th
-              class="h-10 px-2 text-left align-middle font-medium text-muted-foreground"
-              role="columnheader"
-              tabindex="-1"
-            >
-              <div
-                class="flex items-center space-x-1"
-              >
-                <span>
-                  Role
-                </span>
-              </div>
-            </th>
-          </tr>
-        </thead>
-        <tbody
-          class="[&_tr:last-child]:border-0"
-        >
-          <tr
-            class="datatable__row border-b transition-colors hover:bg-muted/50"
-            role="row"
-          >
-            <td
-              class="p-2 align-middle"
-              role="cell"
-            >
-              John
-            </td>
-            <td
-              class="p-2 align-middle"
-              role="cell"
-            >
-              john@example.com
-            </td>
-            <td
-              class="p-2 align-middle"
-              role="cell"
-            >
-              Admin
-            </td>
-          </tr>
-          <tr
-            class="datatable__row border-b transition-colors hover:bg-muted/50"
-            role="row"
-          >
-            <td
-              class="p-2 align-middle"
-              role="cell"
-            >
-              Jane
-            </td>
-            <td
-              class="p-2 align-middle"
-              role="cell"
-            >
-              jane@example.com
-            </td>
-            <td
-              class="p-2 align-middle"
-              role="cell"
-            >
-              User
-            </td>
-          </tr>
-          <tr
-            class="datatable__row border-b transition-colors hover:bg-muted/50"
-            role="row"
-          >
-            <td
-              class="p-2 align-middle"
-              role="cell"
-            >
-              Bob
-            </td>
-            <td
-              class="p-2 align-middle"
-              role="cell"
-            >
-              bob@example.com
-            </td>
-            <td
-              class="p-2 align-middle"
-              role="cell"
-            >
-              User
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-  <div
-    aria-disabled="false"
-    class="datatable w-full relative datatable--warning border border-warning/20 bg-warning/5 datatable--size-default text-sm"
-    data-error="false"
-    data-loading="false"
-    data-testid="variant-warning"
-  >
-    <div
-      class="datatable__scroll-container overflow-auto"
-    >
-      <table
-        class="w-full caption-bottom text-sm"
-        role="table"
-      >
-        <thead
-          class="[&_tr]:border-b"
-        >
-          <tr>
-            <th
-              class="h-10 px-2 text-left align-middle font-medium text-muted-foreground"
-              role="columnheader"
-              tabindex="-1"
-            >
-              <div
-                class="flex items-center space-x-1"
-              >
-                <span>
-                  Name
-                </span>
-              </div>
-            </th>
-            <th
-              class="h-10 px-2 text-left align-middle font-medium text-muted-foreground"
-              role="columnheader"
-              tabindex="-1"
-            >
-              <div
-                class="flex items-center space-x-1"
-              >
-                <span>
-                  Email
-                </span>
-              </div>
-            </th>
-            <th
-              class="h-10 px-2 text-left align-middle font-medium text-muted-foreground"
-              role="columnheader"
-              tabindex="-1"
-            >
-              <div
-                class="flex items-center space-x-1"
-              >
-                <span>
-                  Role
-                </span>
-              </div>
-            </th>
-          </tr>
-        </thead>
-        <tbody
-          class="[&_tr:last-child]:border-0"
-        >
-          <tr
-            class="datatable__row border-b transition-colors hover:bg-muted/50"
-            role="row"
-          >
-            <td
-              class="p-2 align-middle"
-              role="cell"
-            >
-              John
-            </td>
-            <td
-              class="p-2 align-middle"
-              role="cell"
-            >
-              john@example.com
-            </td>
-            <td
-              class="p-2 align-middle"
-              role="cell"
-            >
-              Admin
-            </td>
-          </tr>
-          <tr
-            class="datatable__row border-b transition-colors hover:bg-muted/50"
-            role="row"
-          >
-            <td
-              class="p-2 align-middle"
-              role="cell"
-            >
-              Jane
-            </td>
-            <td
-              class="p-2 align-middle"
-              role="cell"
-            >
-              jane@example.com
-            </td>
-            <td
-              class="p-2 align-middle"
-              role="cell"
-            >
-              User
-            </td>
-          </tr>
-          <tr
-            class="datatable__row border-b transition-colors hover:bg-muted/50"
-            role="row"
-          >
-            <td
-              class="p-2 align-middle"
-              role="cell"
-            >
-              Bob
-            </td>
-            <td
-              class="p-2 align-middle"
-              role="cell"
-            >
-              bob@example.com
-            </td>
-            <td
-              class="p-2 align-middle"
-              role="cell"
-            >
-              User
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-  <div
-    aria-disabled="false"
-    class="datatable w-full relative datatable--danger border border-destructive/20 bg-destructive/5 datatable--size-default text-sm"
-    data-error="false"
-    data-loading="false"
-    data-testid="variant-danger"
-  >
-    <div
-      class="datatable__scroll-container overflow-auto"
-    >
-      <table
-        class="w-full caption-bottom text-sm"
-        role="table"
-      >
-        <thead
-          class="[&_tr]:border-b"
-        >
-          <tr>
-            <th
-              class="h-10 px-2 text-left align-middle font-medium text-muted-foreground"
-              role="columnheader"
-              tabindex="-1"
-            >
-              <div
-                class="flex items-center space-x-1"
-              >
-                <span>
-                  Name
-                </span>
-              </div>
-            </th>
-            <th
-              class="h-10 px-2 text-left align-middle font-medium text-muted-foreground"
-              role="columnheader"
-              tabindex="-1"
-            >
-              <div
-                class="flex items-center space-x-1"
-              >
-                <span>
-                  Email
-                </span>
-              </div>
-            </th>
-            <th
-              class="h-10 px-2 text-left align-middle font-medium text-muted-foreground"
-              role="columnheader"
-              tabindex="-1"
-            >
-              <div
-                class="flex items-center space-x-1"
-              >
-                <span>
-                  Role
-                </span>
-              </div>
-            </th>
-          </tr>
-        </thead>
-        <tbody
-          class="[&_tr:last-child]:border-0"
-        >
-          <tr
-            class="datatable__row border-b transition-colors hover:bg-muted/50"
-            role="row"
-          >
-            <td
-              class="p-2 align-middle"
-              role="cell"
-            >
-              John
-            </td>
-            <td
-              class="p-2 align-middle"
-              role="cell"
-            >
-              john@example.com
-            </td>
-            <td
-              class="p-2 align-middle"
-              role="cell"
-            >
-              Admin
-            </td>
-          </tr>
-          <tr
-            class="datatable__row border-b transition-colors hover:bg-muted/50"
-            role="row"
-          >
-            <td
-              class="p-2 align-middle"
-              role="cell"
-            >
-              Jane
-            </td>
-            <td
-              class="p-2 align-middle"
-              role="cell"
-            >
-              jane@example.com
-            </td>
-            <td
-              class="p-2 align-middle"
-              role="cell"
-            >
-              User
-            </td>
-          </tr>
-          <tr
-            class="datatable__row border-b transition-colors hover:bg-muted/50"
-            role="row"
-          >
-            <td
-              class="p-2 align-middle"
-              role="cell"
-            >
-              Bob
-            </td>
-            <td
-              class="p-2 align-middle"
-              role="cell"
-            >
-              bob@example.com
-            </td>
-            <td
-              class="p-2 align-middle"
-              role="cell"
-            >
-              User
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`DataTable > Snapshots > matches default data table snapshot 1`] = `
+exports[`DataTable > Snapshots > matches checked state snapshot 1`] = `
 <div
   aria-disabled="false"
   class="datatable w-full relative datatable--default border border-border datatable--size-default text-sm"
   data-error="false"
   data-loading="false"
-  data-testid="default-table"
+  data-testid="datatable"
 >
   <div
     class="datatable__scroll-container overflow-auto"
@@ -1108,123 +18,63 @@ exports[`DataTable > Snapshots > matches default data table snapshot 1`] = `
       <thead
         class="[&_tr]:border-b"
       >
-        <tr>
-          <th
-            class="h-10 px-2 text-left align-middle font-medium text-muted-foreground"
-            role="columnheader"
-            tabindex="-1"
-          >
-            <div
-              class="flex items-center space-x-1"
-            >
-              <span>
-                Name
-              </span>
-            </div>
-          </th>
-          <th
-            class="h-10 px-2 text-left align-middle font-medium text-muted-foreground"
-            role="columnheader"
-            tabindex="-1"
-          >
-            <div
-              class="flex items-center space-x-1"
-            >
-              <span>
-                Email
-              </span>
-            </div>
-          </th>
-          <th
-            class="h-10 px-2 text-left align-middle font-medium text-muted-foreground"
-            role="columnheader"
-            tabindex="-1"
-          >
-            <div
-              class="flex items-center space-x-1"
-            >
-              <span>
-                Role
-              </span>
-            </div>
-          </th>
-        </tr>
+        <tr />
       </thead>
       <tbody
         class="[&_tr:last-child]:border-0"
       >
-        <tr
-          class="datatable__row border-b transition-colors hover:bg-muted/50"
-          role="row"
-        >
+        <tr>
           <td
-            class="p-2 align-middle"
-            role="cell"
+            class="p-8 text-center text-muted-foreground"
+            colspan="0"
+            role="status"
           >
-            John
-          </td>
-          <td
-            class="p-2 align-middle"
-            role="cell"
-          >
-            john@example.com
-          </td>
-          <td
-            class="p-2 align-middle"
-            role="cell"
-          >
-            Admin
-          </td>
-        </tr>
-        <tr
-          class="datatable__row border-b transition-colors hover:bg-muted/50"
-          role="row"
-        >
-          <td
-            class="p-2 align-middle"
-            role="cell"
-          >
-            Jane
-          </td>
-          <td
-            class="p-2 align-middle"
-            role="cell"
-          >
-            jane@example.com
-          </td>
-          <td
-            class="p-2 align-middle"
-            role="cell"
-          >
-            User
-          </td>
-        </tr>
-        <tr
-          class="datatable__row border-b transition-colors hover:bg-muted/50"
-          role="row"
-        >
-          <td
-            class="p-2 align-middle"
-            role="cell"
-          >
-            Bob
-          </td>
-          <td
-            class="p-2 align-middle"
-            role="cell"
-          >
-            bob@example.com
-          </td>
-          <td
-            class="p-2 align-middle"
-            role="cell"
-          >
-            User
+            No data available
           </td>
         </tr>
       </tbody>
     </table>
   </div>
+  Test content
+</div>
+`;
+
+exports[`DataTable > Snapshots > matches default snapshot 1`] = `
+<div
+  aria-disabled="false"
+  class="datatable w-full relative datatable--default border border-border datatable--size-default text-sm"
+  data-error="false"
+  data-loading="false"
+  data-testid="datatable"
+>
+  <div
+    class="datatable__scroll-container overflow-auto"
+  >
+    <table
+      class="w-full caption-bottom text-sm"
+      role="table"
+    >
+      <thead
+        class="[&_tr]:border-b"
+      >
+        <tr />
+      </thead>
+      <tbody
+        class="[&_tr:last-child]:border-0"
+      >
+        <tr>
+          <td
+            class="p-8 text-center text-muted-foreground"
+            colspan="0"
+            role="status"
+          >
+            No data available
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  Test content
 </div>
 `;
 
@@ -1234,7 +84,7 @@ exports[`DataTable > Snapshots > matches disabled state snapshot 1`] = `
   class="datatable w-full relative datatable--default border border-border datatable--size-default text-sm disabled:opacity-50 disabled:pointer-events-none"
   data-error="false"
   data-loading="false"
-  data-testid="datatable-component"
+  data-testid="datatable"
 >
   <div
     class="datatable__scroll-container overflow-auto"
@@ -1246,185 +96,7 @@ exports[`DataTable > Snapshots > matches disabled state snapshot 1`] = `
       <thead
         class="[&_tr]:border-b"
       >
-        <tr>
-          <th
-            class="h-10 px-2 text-left align-middle font-medium text-muted-foreground"
-            role="columnheader"
-            tabindex="-1"
-          >
-            <div
-              class="flex items-center space-x-1"
-            >
-              <span>
-                Name
-              </span>
-            </div>
-          </th>
-          <th
-            class="h-10 px-2 text-left align-middle font-medium text-muted-foreground"
-            role="columnheader"
-            tabindex="-1"
-          >
-            <div
-              class="flex items-center space-x-1"
-            >
-              <span>
-                Email
-              </span>
-            </div>
-          </th>
-          <th
-            class="h-10 px-2 text-left align-middle font-medium text-muted-foreground"
-            role="columnheader"
-            tabindex="-1"
-          >
-            <div
-              class="flex items-center space-x-1"
-            >
-              <span>
-                Role
-              </span>
-            </div>
-          </th>
-        </tr>
-      </thead>
-      <tbody
-        class="[&_tr:last-child]:border-0"
-      >
-        <tr
-          class="datatable__row border-b transition-colors hover:bg-muted/50 pointer-events-none"
-          role="row"
-        >
-          <td
-            class="p-2 align-middle"
-            role="cell"
-          >
-            John
-          </td>
-          <td
-            class="p-2 align-middle"
-            role="cell"
-          >
-            john@example.com
-          </td>
-          <td
-            class="p-2 align-middle"
-            role="cell"
-          >
-            Admin
-          </td>
-        </tr>
-        <tr
-          class="datatable__row border-b transition-colors hover:bg-muted/50 pointer-events-none"
-          role="row"
-        >
-          <td
-            class="p-2 align-middle"
-            role="cell"
-          >
-            Jane
-          </td>
-          <td
-            class="p-2 align-middle"
-            role="cell"
-          >
-            jane@example.com
-          </td>
-          <td
-            class="p-2 align-middle"
-            role="cell"
-          >
-            User
-          </td>
-        </tr>
-        <tr
-          class="datatable__row border-b transition-colors hover:bg-muted/50 pointer-events-none"
-          role="row"
-        >
-          <td
-            class="p-2 align-middle"
-            role="cell"
-          >
-            Bob
-          </td>
-          <td
-            class="p-2 align-middle"
-            role="cell"
-          >
-            bob@example.com
-          </td>
-          <td
-            class="p-2 align-middle"
-            role="cell"
-          >
-            User
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-</div>
-`;
-
-exports[`DataTable > Snapshots > matches empty state snapshot 1`] = `
-<div
-  aria-disabled="false"
-  class="datatable w-full relative datatable--default border border-border datatable--size-default text-sm"
-  data-error="false"
-  data-loading="false"
-  data-testid="datatable-component"
->
-  <div
-    class="datatable__scroll-container overflow-auto"
-  >
-    <table
-      class="w-full caption-bottom text-sm"
-      role="table"
-    >
-      <thead
-        class="[&_tr]:border-b"
-      >
-        <tr>
-          <th
-            class="h-10 px-2 text-left align-middle font-medium text-muted-foreground"
-            role="columnheader"
-            tabindex="-1"
-          >
-            <div
-              class="flex items-center space-x-1"
-            >
-              <span>
-                Name
-              </span>
-            </div>
-          </th>
-          <th
-            class="h-10 px-2 text-left align-middle font-medium text-muted-foreground"
-            role="columnheader"
-            tabindex="-1"
-          >
-            <div
-              class="flex items-center space-x-1"
-            >
-              <span>
-                Email
-              </span>
-            </div>
-          </th>
-          <th
-            class="h-10 px-2 text-left align-middle font-medium text-muted-foreground"
-            role="columnheader"
-            tabindex="-1"
-          >
-            <div
-              class="flex items-center space-x-1"
-            >
-              <span>
-                Role
-              </span>
-            </div>
-          </th>
-        </tr>
+        <tr />
       </thead>
       <tbody
         class="[&_tr:last-child]:border-0"
@@ -1432,7 +104,7 @@ exports[`DataTable > Snapshots > matches empty state snapshot 1`] = `
         <tr>
           <td
             class="p-8 text-center text-muted-foreground"
-            colspan="3"
+            colspan="0"
             role="status"
           >
             No data available
@@ -1441,6 +113,7 @@ exports[`DataTable > Snapshots > matches empty state snapshot 1`] = `
       </tbody>
     </table>
   </div>
+  Test content
 </div>
 `;
 
@@ -1458,10 +131,47 @@ exports[`DataTable > Snapshots > matches error state snapshot 1`] = `
     </div>
     <div
       class="error-message text-sm text-muted-foreground"
-    >
-      Something went wrong
-    </div>
+    />
   </div>
+</div>
+`;
+
+exports[`DataTable > Snapshots > matches hover state snapshot 1`] = `
+<div
+  aria-disabled="false"
+  class="datatable w-full relative datatable--default border border-border datatable--size-default text-sm"
+  data-error="false"
+  data-loading="false"
+  data-testid="datatable"
+>
+  <div
+    class="datatable__scroll-container overflow-auto"
+  >
+    <table
+      class="w-full caption-bottom text-sm"
+      role="table"
+    >
+      <thead
+        class="[&_tr]:border-b"
+      >
+        <tr />
+      </thead>
+      <tbody
+        class="[&_tr:last-child]:border-0"
+      >
+        <tr>
+          <td
+            class="p-8 text-center text-muted-foreground"
+            colspan="0"
+            role="status"
+          >
+            No data available
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  Test content
 </div>
 `;
 
@@ -1501,5 +211,84 @@ exports[`DataTable > Snapshots > matches loading state snapshot 1`] = `
       Loading...
     </span>
   </div>
+</div>
+`;
+
+exports[`DataTable > Snapshots > matches required state snapshot 1`] = `
+<div
+  aria-disabled="false"
+  class="datatable w-full relative datatable--default border border-border datatable--size-default text-sm"
+  data-error="false"
+  data-loading="false"
+  data-testid="datatable"
+  required=""
+>
+  <div
+    class="datatable__scroll-container overflow-auto"
+  >
+    <table
+      class="w-full caption-bottom text-sm"
+      role="table"
+    >
+      <thead
+        class="[&_tr]:border-b"
+      >
+        <tr />
+      </thead>
+      <tbody
+        class="[&_tr:last-child]:border-0"
+      >
+        <tr>
+          <td
+            class="p-8 text-center text-muted-foreground"
+            colspan="0"
+            role="status"
+          >
+            No data available
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  Test content
+</div>
+`;
+
+exports[`DataTable > Snapshots > matches selected state snapshot 1`] = `
+<div
+  aria-disabled="false"
+  class="datatable w-full relative datatable--default border border-border datatable--size-default text-sm"
+  data-error="false"
+  data-loading="false"
+  data-testid="datatable"
+>
+  <div
+    class="datatable__scroll-container overflow-auto"
+  >
+    <table
+      class="w-full caption-bottom text-sm"
+      role="table"
+    >
+      <thead
+        class="[&_tr]:border-b"
+      >
+        <tr />
+      </thead>
+      <tbody
+        class="[&_tr:last-child]:border-0"
+      >
+        <tr>
+          <td
+            class="p-8 text-center text-muted-foreground"
+            colspan="0"
+            role="status"
+          >
+            No data available
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  Test content
 </div>
 `;

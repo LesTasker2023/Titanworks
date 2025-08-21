@@ -1,9 +1,40 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`Table > Snapshots > matches basic snapshot 1`] = `
+exports[`Table > Snapshots > matches default snapshot 1`] = `
 <div
-  data-testid="table-container"
+  class="relative w-full overflow-auto"
 >
-  Table Component Test
+  <table
+    class="w-full caption-bottom text-sm"
+    data-testid="table"
+  >
+    Test content
+  </table>
+</div>
+`;
+
+exports[`Table > Snapshots > matches hover state snapshot 1`] = `
+<div
+  class="relative w-full overflow-auto"
+>
+  <table
+    class="w-full caption-bottom text-sm"
+    data-testid="table"
+  >
+    Test content
+  </table>
+</div>
+`;
+
+exports[`Table > Snapshots > matches selected state snapshot 1`] = `
+<div
+  class="relative w-full overflow-auto"
+>
+  <table
+    class="w-full caption-bottom text-sm"
+    data-testid="table"
+  >
+    Test content
+  </table>
 </div>
 `;

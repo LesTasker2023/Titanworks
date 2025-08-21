@@ -1,0 +1,352 @@
+import { render, screen } from '@testing-library/react';
+import { describe, expect, it } from 'vitest';
+import {
+  Dialog,
+  DialogClose,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from './dialog';
+
+describe('Dialog Component', () => {
+  describe('Rendering', () => {
+    it('renders without crashing', () => {
+      render(
+        <Dialog>
+          <DialogTrigger>Open Dialog</DialogTrigger>
+          <DialogContent>
+            <DialogHeader>
+              <DialogTitle>Test Dialog</DialogTitle>
+              <DialogDescription>This is a test dialog</DialogDescription>
+            </DialogHeader>
+            <DialogFooter>
+              <DialogClose>Close</DialogClose>
+            </DialogFooter>
+          </DialogContent>
+        </Dialog>
+      );
+      expect(screen.getByText('Open Dialog')).toBeInTheDocument();
+    });
+
+    describe('Snapshots', () => {
+      it('matches default snapshot', () => {
+        const { container } = render(
+          <Dialog>
+            <DialogTrigger>Open Dialog</DialogTrigger>
+            <DialogContent>
+              <DialogHeader>
+                <DialogTitle>Test Dialog</DialogTitle>
+                <DialogDescription>This is a test dialog</DialogDescription>
+              </DialogHeader>
+              <DialogFooter>
+                <DialogClose>Close</DialogClose>
+              </DialogFooter>
+            </DialogContent>
+          </Dialog>
+        );
+        expect(container.firstChild).toMatchSnapshot();
+      });
+
+      it('matches all sizes snapshot', () => {
+        const { container } = render(
+          <div>
+            <Dialog open>
+              <DialogContent size="sm">
+                <DialogTitle>Small Dialog</DialogTitle>
+              </DialogContent>
+            </Dialog>
+            <Dialog open>
+              <DialogContent size="md">
+                <DialogTitle>Medium Dialog</DialogTitle>
+              </DialogContent>
+            </Dialog>
+            <Dialog open>
+              <DialogContent size="lg">
+                <DialogTitle>Large Dialog</DialogTitle>
+              </DialogContent>
+            </Dialog>
+            <Dialog open>
+              <DialogContent size="xl">
+                <DialogTitle>Extra Large Dialog</DialogTitle>
+              </DialogContent>
+            </Dialog>
+          </div>
+        );
+        expect(container.firstChild).toMatchSnapshot();
+      });
+
+      it('matches all variants snapshot', () => {
+        const { container } = render(
+          <div>
+            <Dialog open>
+              <DialogContent variant="default">
+                <DialogTitle>Default Dialog</DialogTitle>
+              </DialogContent>
+            </Dialog>
+            <Dialog open>
+              <DialogContent variant="success">
+                <DialogTitle>Success Dialog</DialogTitle>
+              </DialogContent>
+            </Dialog>
+            <Dialog open>
+              <DialogContent variant="warning">
+                <DialogTitle>Warning Dialog</DialogTitle>
+              </DialogContent>
+            </Dialog>
+            <Dialog open>
+              <DialogContent variant="danger">
+                <DialogTitle>Danger Dialog</DialogTitle>
+              </DialogContent>
+            </Dialog>
+          </div>
+        );
+        expect(container.firstChild).toMatchSnapshot();
+      });
+    });
+  });
+
+  describe('Functionality', () => {
+    it('renders correctly', () => {
+      render(
+        <Dialog>
+          <DialogTrigger>Open Dialog</DialogTrigger>
+          <DialogContent>
+            <DialogHeader>
+              <DialogTitle>Test Dialog</DialogTitle>
+              <DialogDescription>This is a test dialog</DialogDescription>
+            </DialogHeader>
+          </DialogContent>
+        </Dialog>
+      );
+
+      expect(screen.getByText('Open Dialog')).toBeInTheDocument();
+    });
+
+    it('supports size prop', () => {
+      render(
+        <Dialog open>
+          <DialogContent size="lg" data-testid="dialog-content">
+            <DialogTitle>Large Dialog</DialogTitle>
+          </DialogContent>
+        </Dialog>
+      );
+
+      const content = screen.getByTestId('dialog-content');
+      expect(content).toHaveClass('max-w-2xl');
+    });
+
+    it('supports variant prop', () => {
+      render(
+        <Dialog open>
+          <DialogContent variant="success" data-testid="dialog-content">
+            <DialogTitle>Success Dialog</DialogTitle>
+          </DialogContent>
+        </Dialog>
+      );
+
+      const content = screen.getByTestId('dialog-content');
+      expect(content).toHaveClass('border-success/20', 'bg-success/5');
+    });
+  });
+
+  describe('Variants', () => {
+    it('renders default variant correctly', () => {
+      render(
+        <Dialog open>
+          <DialogContent variant="default" data-testid="dialog-content">
+            <DialogTitle>Default Dialog</DialogTitle>
+          </DialogContent>
+        </Dialog>
+      );
+
+      const content = screen.getByTestId('dialog-content');
+      expect(content).toHaveClass('border-border');
+    });
+
+    it('renders success variant correctly', () => {
+      render(
+        <Dialog open>
+          <DialogContent variant="success" data-testid="dialog-content">
+            <DialogTitle>Success Dialog</DialogTitle>
+          </DialogContent>
+        </Dialog>
+      );
+
+      const content = screen.getByTestId('dialog-content');
+      expect(content).toHaveClass('border-success/20', 'bg-success/5');
+    });
+
+    it('renders warning variant correctly', () => {
+      render(
+        <Dialog open>
+          <DialogContent variant="warning" data-testid="dialog-content">
+            <DialogTitle>Warning Dialog</DialogTitle>
+          </DialogContent>
+        </Dialog>
+      );
+
+      const content = screen.getByTestId('dialog-content');
+      expect(content).toHaveClass('border-warning/20', 'bg-warning/5');
+    });
+
+    it('renders danger variant correctly', () => {
+      render(
+        <Dialog open>
+          <DialogContent variant="danger" data-testid="dialog-content">
+            <DialogTitle>Danger Dialog</DialogTitle>
+          </DialogContent>
+        </Dialog>
+      );
+
+      const content = screen.getByTestId('dialog-content');
+      expect(content).toHaveClass('border-destructive/20', 'bg-destructive/5');
+    });
+  });
+
+  describe('Sizes', () => {
+    it('renders small size correctly', () => {
+      render(
+        <Dialog open>
+          <DialogContent size="sm" data-testid="dialog-content">
+            <DialogTitle>Small Dialog</DialogTitle>
+          </DialogContent>
+        </Dialog>
+      );
+
+      const content = screen.getByTestId('dialog-content');
+      expect(content).toHaveClass('max-w-sm');
+    });
+
+    it('renders medium size correctly', () => {
+      render(
+        <Dialog open>
+          <DialogContent size="md" data-testid="dialog-content">
+            <DialogTitle>Medium Dialog</DialogTitle>
+          </DialogContent>
+        </Dialog>
+      );
+
+      const content = screen.getByTestId('dialog-content');
+      expect(content).toHaveClass('max-w-lg');
+    });
+
+    it('renders large size correctly', () => {
+      render(
+        <Dialog open>
+          <DialogContent size="lg" data-testid="dialog-content">
+            <DialogTitle>Large Dialog</DialogTitle>
+          </DialogContent>
+        </Dialog>
+      );
+
+      const content = screen.getByTestId('dialog-content');
+      expect(content).toHaveClass('max-w-2xl');
+    });
+
+    it('renders extra large size correctly', () => {
+      render(
+        <Dialog open>
+          <DialogContent size="xl" data-testid="dialog-content">
+            <DialogTitle>Extra Large Dialog</DialogTitle>
+          </DialogContent>
+        </Dialog>
+      );
+
+      const content = screen.getByTestId('dialog-content');
+      expect(content).toHaveClass('max-w-4xl');
+    });
+  });
+
+  describe('Loading State', () => {
+    it('shows loading spinner when loading is true', () => {
+      render(
+        <Dialog open>
+          <DialogContent loading={true} data-testid="dialog-content">
+            <DialogTitle>Loading Dialog</DialogTitle>
+          </DialogContent>
+        </Dialog>
+      );
+
+      const content = screen.getByTestId('dialog-content');
+      const spinner = content.querySelector('.animate-spin');
+      expect(spinner).toBeInTheDocument();
+    });
+
+    it('does not show loading spinner when loading is false', () => {
+      render(
+        <Dialog open>
+          <DialogContent loading={false} data-testid="dialog-content">
+            <DialogTitle>Normal Dialog</DialogTitle>
+          </DialogContent>
+        </Dialog>
+      );
+
+      const content = screen.getByTestId('dialog-content');
+      const spinner = content.querySelector('.animate-spin');
+      expect(spinner).not.toBeInTheDocument();
+    });
+  });
+
+  describe('Custom Styling', () => {
+    it('accepts custom className', () => {
+      render(
+        <Dialog open>
+          <DialogContent className="custom-class" data-testid="dialog-content">
+            <DialogTitle>Custom Dialog</DialogTitle>
+          </DialogContent>
+        </Dialog>
+      );
+
+      const content = screen.getByTestId('dialog-content');
+      expect(content).toHaveClass('custom-class');
+    });
+
+    it('forwards additional props', () => {
+      render(
+        <Dialog open>
+          <DialogContent data-custom="test" data-testid="dialog-content">
+            <DialogTitle>Props Dialog</DialogTitle>
+          </DialogContent>
+        </Dialog>
+      );
+
+      const content = screen.getByTestId('dialog-content');
+      expect(content).toHaveAttribute('data-custom', 'test');
+    });
+  });
+
+  describe('Accessibility', () => {
+    it('has proper ARIA attributes', () => {
+      render(
+        <Dialog open>
+          <DialogContent data-testid="dialog-content">
+            <DialogHeader>
+              <DialogTitle>Dialog Title</DialogTitle>
+              <DialogDescription>Dialog Description</DialogDescription>
+            </DialogHeader>
+          </DialogContent>
+        </Dialog>
+      );
+
+      const content = screen.getByTestId('dialog-content');
+      expect(content).toHaveAttribute('role', 'dialog');
+    });
+
+    it('includes close button with proper accessibility', () => {
+      render(
+        <Dialog open>
+          <DialogContent>
+            <DialogTitle>Dialog with Close</DialogTitle>
+          </DialogContent>
+        </Dialog>
+      );
+
+      const closeButton = screen.getByText('Close').closest('button');
+      expect(closeButton).toBeInTheDocument();
+      expect(closeButton).toHaveAttribute('type', 'button');
+    });
+  });
+});

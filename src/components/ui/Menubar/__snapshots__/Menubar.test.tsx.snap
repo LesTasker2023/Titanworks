@@ -1,9 +1,54 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`Menubar > Snapshots > matches basic snapshot 1`] = `
+exports[`Menubar > Snapshots > matches active state snapshot 1`] = `
 <div
-  data-testid="menubar-container"
+  class="flex h-9 items-center space-x-1 rounded-md border bg-background p-1 shadow-sm"
+  data-orientation="horizontal"
+  data-testid="menubar"
+  role="menubar"
+  style="outline: none;"
+  tabindex="-1"
 >
-  Menubar Component Test
+  Test content
+</div>
+`;
+
+exports[`Menubar > Snapshots > matches checked state snapshot 1`] = `
+<div
+  class="flex h-9 items-center space-x-1 rounded-md border bg-background p-1 shadow-sm"
+  data-orientation="horizontal"
+  data-testid="menubar"
+  role="menubar"
+  style="outline: none;"
+  tabindex="-1"
+>
+  Test content
+</div>
+`;
+
+exports[`Menubar > Snapshots > matches default snapshot 1`] = `
+<div
+  class="flex h-9 items-center space-x-1 rounded-md border bg-background p-1 shadow-sm"
+  data-orientation="horizontal"
+  data-testid="menubar"
+  role="menubar"
+  style="outline: none;"
+  tabindex="-1"
+>
+  Test content
+</div>
+`;
+
+exports[`Menubar > Snapshots > matches disabled state snapshot 1`] = `
+<div
+  class="flex h-9 items-center space-x-1 rounded-md border bg-background p-1 shadow-sm"
+  data-orientation="horizontal"
+  data-testid="menubar"
+  disabled=""
+  role="menubar"
+  style="outline: none;"
+  tabindex="-1"
+>
+  Test content
 </div>
 `;

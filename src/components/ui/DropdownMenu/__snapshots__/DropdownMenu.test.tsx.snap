@@ -1,9 +1,53 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`DropdownMenu > Snapshots > matches basic snapshot 1`] = `
-<div
-  data-testid="dropdownmenu-container"
+exports[`DropdownMenu > Snapshots > matches active state snapshot 1`] = `
+<button
+  aria-expanded="false"
+  aria-haspopup="menu"
+  data-state="closed"
+  data-testid="dropdown-trigger"
+  id="radix-«r6»"
+  type="button"
 >
-  DropdownMenu Component Test
-</div>
+  Open Menu
+</button>
+`;
+
+exports[`DropdownMenu > Snapshots > matches checked state snapshot 1`] = `
+<button
+  aria-expanded="false"
+  aria-haspopup="menu"
+  data-state="closed"
+  data-testid="dropdown-trigger"
+  id="radix-«r4»"
+  type="button"
+>
+  Open Menu
+</button>
+`;
+
+exports[`DropdownMenu > Snapshots > matches default snapshot 1`] = `
+<button
+  aria-expanded="false"
+  aria-haspopup="menu"
+  data-state="closed"
+  data-testid="dropdown-trigger"
+  id="radix-«r0»"
+  type="button"
+>
+  Open Menu
+</button>
+`;
+
+exports[`DropdownMenu > Snapshots > matches disabled state snapshot 1`] = `
+<button
+  aria-expanded="false"
+  aria-haspopup="menu"
+  data-state="closed"
+  data-testid="dropdown-trigger"
+  id="radix-«r2»"
+  type="button"
+>
+  Open Menu
+</button>
 `;

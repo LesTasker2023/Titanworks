@@ -1,9 +1,37 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`ContextMenu > Snapshots > matches basic snapshot 1`] = `
-<div
-  data-testid="contextmenu-container"
+exports[`ContextMenu > Snapshots > matches active state snapshot 1`] = `
+<span
+  data-state="closed"
+  data-testid="context-trigger"
 >
-  ContextMenu Component Test
-</div>
+  Right click me
+</span>
+`;
+
+exports[`ContextMenu > Snapshots > matches checked state snapshot 1`] = `
+<span
+  data-state="closed"
+  data-testid="context-trigger"
+>
+  Right click me
+</span>
+`;
+
+exports[`ContextMenu > Snapshots > matches default snapshot 1`] = `
+<span
+  data-state="closed"
+  data-testid="context-trigger"
+>
+  Right click me
+</span>
+`;
+
+exports[`ContextMenu > Snapshots > matches disabled state snapshot 1`] = `
+<span
+  data-state="closed"
+  data-testid="context-trigger"
+>
+  Right click me
+</span>
 `;

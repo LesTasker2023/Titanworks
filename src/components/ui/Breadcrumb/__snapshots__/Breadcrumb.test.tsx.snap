@@ -1,9 +1,29 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`Breadcrumb > Snapshots > matches basic snapshot 1`] = `
-<div
-  data-testid="breadcrumb-container"
+exports[`Breadcrumb > Snapshots > matches default snapshot 1`] = `
+<nav
+  aria-label="breadcrumb"
+  data-testid="breadcrumb"
 >
-  Breadcrumb Component Test
-</div>
+  Test content
+</nav>
+`;
+
+exports[`Breadcrumb > Snapshots > matches disabled state snapshot 1`] = `
+<nav
+  aria-label="breadcrumb"
+  data-testid="breadcrumb"
+  disabled=""
+>
+  Test content
+</nav>
+`;
+
+exports[`Breadcrumb > Snapshots > matches hover state snapshot 1`] = `
+<nav
+  aria-label="breadcrumb"
+  data-testid="breadcrumb"
+>
+  Test content
+</nav>
 `;

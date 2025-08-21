@@ -1,0 +1,53 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Command > Snapshots > matches default snapshot 1`] = `
+<div
+  class="flex h-full w-full flex-col overflow-hidden rounded-md bg-popover text-popover-foreground"
+  cmdk-root=""
+  data-testid="command"
+  tabindex="-1"
+>
+  <label
+    cmdk-label=""
+    for="radix-«r2»"
+    id="radix-«r1»"
+    style="position: absolute; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; border-width: 0px;"
+  />
+  Test content
+</div>
+`;
+
+exports[`Command > Snapshots > matches disabled state snapshot 1`] = `
+<div
+  class="flex h-full w-full flex-col overflow-hidden rounded-md bg-popover text-popover-foreground"
+  cmdk-root=""
+  data-testid="command"
+  disabled=""
+  tabindex="-1"
+>
+  <label
+    cmdk-label=""
+    for="radix-«r5»"
+    id="radix-«r4»"
+    style="position: absolute; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; border-width: 0px;"
+  />
+  Test content
+</div>
+`;
+
+exports[`Command > Snapshots > matches selected state snapshot 1`] = `
+<div
+  class="flex h-full w-full flex-col overflow-hidden rounded-md bg-popover text-popover-foreground"
+  cmdk-root=""
+  data-testid="command"
+  tabindex="-1"
+>
+  <label
+    cmdk-label=""
+    for="radix-«r8»"
+    id="radix-«r7»"
+    style="position: absolute; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; border-width: 0px;"
+  />
+  Test content
+</div>
+`;

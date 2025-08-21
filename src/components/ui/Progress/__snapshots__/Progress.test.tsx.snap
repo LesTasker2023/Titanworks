@@ -7,13 +7,14 @@ exports[`Progress > Snapshots > matches default snapshot 1`] = `
   class="relative w-full overflow-hidden rounded-full h-2 bg-primary/20"
   data-max="100"
   data-state="indeterminate"
+  data-testid="progress"
   role="progressbar"
 >
   <div
     class="h-full w-full flex-1 transition-all duration-300 ease-in-out bg-primary rounded-full"
     data-max="100"
     data-state="indeterminate"
-    style="transform: translateX(-50%);"
+    style="transform: translateX(-100%);"
   />
 </div>
 `;

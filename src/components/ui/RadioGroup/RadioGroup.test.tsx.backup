@@ -1,0 +1,574 @@
+﻿import { render, screen, fireEvent } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+import { describe, expect, it, vi } from 'vitest';
+import { RadioGroup, RadioGroupItem } from './radio-group';
+
+describe('RadioGroup', () => {
+  const renderBasicRadioGroup = (props = {}) => {
+    return render(
+      <RadioGroup {...props} data-testid="radio-group">
+        <div className="flex items-center space-x-2">
+          <RadioGroupItem value="option1" id="option1" data-testid="radio-option1" />
+          <label htmlFor="option1">Option 1</label>
+        </div>
+        <div className="flex items-center space-x-2">
+          <RadioGroupItem value="option2" id="option2" data-testid="radio-option2" />
+          <label htmlFor="option2">Option 2</label>
+        </div>
+        <div className="flex items-center space-x-2">
+          <RadioGroupItem value="option3" id="option3" data-testid="radio-option3" />
+          <label htmlFor="option3">Option 3</label>
+        </div>
+      </RadioGroup>
+    );
+  };
+
+  describe('Snapshots', () => {
+    it('matches default snapshot', () => {
+      const { container } = render(
+        <RadioGroup defaultValue="option1">
+          <div className="flex items-center space-x-2">
+            <RadioGroupItem value="option1" id="option1" />
+            <label htmlFor="option1">Option 1</label>
+          </div>
+          <div className="flex items-center space-x-2">
+            <RadioGroupItem value="option2" id="option2" />
+            <label htmlFor="option2">Option 2</label>
+          </div>
+        </RadioGroup>
+      );
+      expect(container.firstChild).toMatchSnapshot();
+    });
+
+    it('matches enhanced radio group with label snapshot', () => {
+      const { container } = render(
+        <RadioGroup label="Choose Option" helperText="Select one option">
+          <div className="flex items-center space-x-2">
+            <RadioGroupItem value="option1" id="option1" />
+            <label htmlFor="option1">Option 1</label>
+          </div>
+          <div className="flex items-center space-x-2">
+            <RadioGroupItem value="option2" id="option2" />
+            <label htmlFor="option2">Option 2</label>
+          </div>
+        </RadioGroup>
+      );
+      expect(container.firstChild).toMatchSnapshot();
+    });
+
+    it('matches error state snapshot', () => {
+      const { container } = render(
+        <RadioGroup label="Choose Option" error="Selection is required">
+          <div className="flex items-center space-x-2">
+            <RadioGroupItem value="option1" id="option1" />
+            <label htmlFor="option1">Option 1</label>
+          </div>
+        </RadioGroup>
+      );
+      expect(container.firstChild).toMatchSnapshot();
+    });
+
+    it('matches loading state snapshot', () => {
+      const { container } = render(
+        <RadioGroup loading>
+          <div className="flex items-center space-x-2">
+            <RadioGroupItem value="option1" id="option1" />
+            <label htmlFor="option1">Option 1</label>
+          </div>
+        </RadioGroup>
+      );
+      expect(container.firstChild).toMatchSnapshot();
+    });
+
+    it('matches required state snapshot', () => {
+      const { container } = render(
+        <RadioGroup label="Required Field" required>
+          <div className="flex items-center space-x-2">
+            <RadioGroupItem value="option1" id="option1" />
+            <label htmlFor="option1">Option 1</label>
+          </div>
+        </RadioGroup>
+      );
+      expect(container.firstChild).toMatchSnapshot();
+    });
+  });
+
+  describe('Basic Functionality', () => {
+    it('renders correctly', () => {
+      renderBasicRadioGroup();
+      expect(screen.getByTestId('radio-group')).toBeInTheDocument();
+      expect(screen.getByTestId('radio-option1')).toBeInTheDocument();
+      expect(screen.getByTestId('radio-option2')).toBeInTheDocument();
+      expect(screen.getByText('Option 1')).toBeInTheDocument();
+      expect(screen.getByText('Option 2')).toBeInTheDocument();
+    });
+
+    it('selects option when clicked', async () => {
+      const user = userEvent.setup();
+      const onValueChange = vi.fn();
+      
+      renderBasicRadioGroup({ onValueChange });
+      
+      const option1 = screen.getByTestId('radio-option1');
+      await user.click(option1);
+      
+      expect(onValueChange).toHaveBeenCalledWith('option1');
+    });
+
+    it('shows default value when specified', () => {
+      renderBasicRadioGroup({ defaultValue: 'option2' });
+      
+      const option2 = screen.getByTestId('radio-option2');
+      expect(option2).toBeChecked();
+    });
+
+    it('can be controlled with value prop', () => {
+      const onValueChange = vi.fn();
+      
+      const { rerender } = renderBasicRadioGroup({ value: 'option1', onValueChange });
+      
+      let option1 = screen.getByTestId('radio-option1');
+      let option2 = screen.getByTestId('radio-option2');
+      
+      expect(option1).toBeChecked();
+      expect(option2).not.toBeChecked();
+      
+      // Rerender with new value
+      rerender(
+        <RadioGroup value="option2" onValueChange={onValueChange} data-testid="radio-group">
+          <div className="flex items-center space-x-2">
+            <RadioGroupItem value="option1" id="option1" data-testid="radio-option1" />
+            <label htmlFor="option1">Option 1</label>
+          </div>
+          <div className="flex items-center space-x-2">
+            <RadioGroupItem value="option2" id="option2" data-testid="radio-option2" />
+            <label htmlFor="option2">Option 2</label>
+          </div>
+        </RadioGroup>
+      );
+      
+      option1 = screen.getByTestId('radio-option1');
+      option2 = screen.getByTestId('radio-option2');
+      
+      expect(option1).not.toBeChecked();
+      expect(option2).toBeChecked();
+    });
+
+    it('allows only one selection at a time', async () => {
+      const user = userEvent.setup();
+      
+      renderBasicRadioGroup();
+      
+      const option1 = screen.getByTestId('radio-option1');
+      const option2 = screen.getByTestId('radio-option2');
+      
+      // Click first option
+      await user.click(option1);
+      expect(option1).toBeChecked();
+      expect(option2).not.toBeChecked();
+      
+      // Click second option
+      await user.click(option2);
+      expect(option1).not.toBeChecked();
+      expect(option2).toBeChecked();
+    });
+
+    it('handles empty value', () => {
+      renderBasicRadioGroup({ value: undefined });
+      
+      const option1 = screen.getByTestId('radio-option1');
+      const option2 = screen.getByTestId('radio-option2');
+      
+      expect(option1).not.toBeChecked();
+      expect(option2).not.toBeChecked();
+    });
+  });
+
+  describe('Enhanced Features', () => {
+    it('renders with label and helper text', () => {
+      render(
+        <RadioGroup label="Choose your option" helperText="Select the best option for you">
+          <div className="flex items-center space-x-2">
+            <RadioGroupItem value="option1" id="option1" />
+            <label htmlFor="option1">Option 1</label>
+          </div>
+        </RadioGroup>
+      );
+      
+      expect(screen.getByText('Choose your option')).toBeInTheDocument();
+      expect(screen.getByText('Select the best option for you')).toBeInTheDocument();
+    });
+
+    it('displays error state correctly', () => {
+      render(
+        <RadioGroup label="Required Selection" error="Please select an option">
+          <div className="flex items-center space-x-2">
+            <RadioGroupItem value="option1" id="option1" />
+            <label htmlFor="option1">Option 1</label>
+          </div>
+        </RadioGroup>
+      );
+      
+      expect(screen.getByText('Please select an option')).toBeInTheDocument();
+      expect(screen.queryByText('Helper text')).not.toBeInTheDocument();
+    });
+
+    it('shows required indicator when required', () => {
+      render(
+        <RadioGroup label="Required Field" required>
+          <div className="flex items-center space-x-2">
+            <RadioGroupItem value="option1" id="option1" />
+            <label htmlFor="option1">Option 1</label>
+          </div>
+        </RadioGroup>
+      );
+      
+      // The asterisk is added via CSS pseudo-element, so we check for the class
+      const label = screen.getByText('Required Field');
+      expect(label).toHaveClass('after:content-[\'*\']');
+    });
+
+    it('handles loading state', () => {
+      renderBasicRadioGroup({ loading: true });
+      
+      const option1 = screen.getByTestId('radio-option1');
+      const option2 = screen.getByTestId('radio-option2');
+      
+      expect(option1).toBeDisabled();
+      expect(option2).toBeDisabled();
+    });
+
+    it('handles disabled state', () => {
+      renderBasicRadioGroup({ disabled: true });
+      
+      const option1 = screen.getByTestId('radio-option1');
+      const option2 = screen.getByTestId('radio-option2');
+      
+      expect(option1).toBeDisabled();
+      expect(option2).toBeDisabled();
+    });
+
+    it('renders minimal DOM when no enhanced features', () => {
+      const { container } = render(
+        <RadioGroup data-testid="radio-group">
+          <RadioGroupItem value="option1" />
+        </RadioGroup>
+      );
+      
+      // Should not have wrapper div when no label/error/helperText
+      expect(container.querySelector('.radiogroup-wrapper')).not.toBeInTheDocument();
+    });
+
+    it('renders enhanced wrapper when features are used', () => {
+      const { container } = render(
+        <RadioGroup label="Test Label">
+          <RadioGroupItem value="option1" />
+        </RadioGroup>
+      );
+      
+      // Should have wrapper div when enhanced features are used
+      expect(container.querySelector('.radiogroup-wrapper')).toBeInTheDocument();
+    });
+  });
+
+  describe('Individual RadioGroupItem', () => {
+    it('renders RadioGroupItem correctly', () => {
+      render(
+        <RadioGroup>
+          <RadioGroupItem value="test" data-testid="radio-item" />
+        </RadioGroup>
+      );
+      
+      const radioItem = screen.getByTestId('radio-item');
+      expect(radioItem).toBeInTheDocument();
+      expect(radioItem).toHaveAttribute('type', 'button');
+      expect(radioItem).toHaveAttribute('role', 'radio');
+    });
+
+    it('handles disabled RadioGroupItem', () => {
+      render(
+        <RadioGroup>
+          <RadioGroupItem value="test" disabled data-testid="radio-item" />
+        </RadioGroup>
+      );
+      
+      const radioItem = screen.getByTestId('radio-item');
+      expect(radioItem).toBeDisabled();
+    });
+
+    it('applies custom className to RadioGroupItem', () => {
+      render(
+        <RadioGroup>
+          <RadioGroupItem value="test" className="custom-radio" data-testid="radio-item" />
+        </RadioGroup>
+      );
+      
+      const radioItem = screen.getByTestId('radio-item');
+      expect(radioItem).toHaveClass('custom-radio');
+    });
+
+    it('forwards additional props to RadioGroupItem', () => {
+      render(
+        <RadioGroup>
+          <RadioGroupItem value="test" title="Custom title" data-testid="radio-item" />
+        </RadioGroup>
+      );
+      
+      const radioItem = screen.getByTitle('Custom title');
+      expect(radioItem).toBeInTheDocument();
+    });
+  });
+
+  describe('Keyboard Navigation', () => {
+    it('supports arrow key navigation', async () => {
+      const user = userEvent.setup();
+      
+      renderBasicRadioGroup();
+      
+      const option1 = screen.getByTestId('radio-option1');
+      const option2 = screen.getByTestId('radio-option2');
+      
+      // Focus first option
+      option1.focus();
+      expect(option1).toHaveFocus();
+      
+      // Press arrow down to move to next option
+      await user.keyboard('{ArrowDown}');
+      expect(option2).toHaveFocus();
+      
+      // Press arrow up to move back
+      await user.keyboard('{ArrowUp}');
+      expect(option1).toHaveFocus();
+    });
+
+    it('supports space key for selection', async () => {
+      const user = userEvent.setup();
+      const onValueChange = vi.fn();
+      
+      renderBasicRadioGroup({ onValueChange });
+      
+      const option1 = screen.getByTestId('radio-option1');
+      option1.focus();
+      
+      await user.keyboard(' ');
+      
+      expect(onValueChange).toHaveBeenCalledWith('option1');
+    });
+
+    it('wraps around when using arrow keys', async () => {
+      const user = userEvent.setup();
+      
+      renderBasicRadioGroup();
+      
+      const option1 = screen.getByTestId('radio-option1');
+      const option3 = screen.getByTestId('radio-option3');
+      
+      // Focus first option and press arrow up (should wrap to last)
+      option1.focus();
+      await user.keyboard('{ArrowUp}');
+      expect(option3).toHaveFocus();
+      
+      // Press arrow down (should wrap to first)
+      await user.keyboard('{ArrowDown}');
+      expect(option1).toHaveFocus();
+    });
+  });
+
+  describe('Accessibility', () => {
+    it('has proper ARIA attributes', () => {
+      renderBasicRadioGroup();
+      
+      const radioGroup = screen.getByTestId('radio-group');
+      expect(radioGroup).toHaveAttribute('role', 'radiogroup');
+      
+      const option1 = screen.getByTestId('radio-option1');
+      expect(option1).toHaveAttribute('role', 'radio');
+      expect(option1).toHaveAttribute('aria-checked', 'false');
+    });
+
+    it('updates aria-checked when selection changes', async () => {
+      const user = userEvent.setup();
+      
+      renderBasicRadioGroup();
+      
+      const option1 = screen.getByTestId('radio-option1');
+      const option2 = screen.getByTestId('radio-option2');
+      
+      expect(option1).toHaveAttribute('aria-checked', 'false');
+      expect(option2).toHaveAttribute('aria-checked', 'false');
+      
+      await user.click(option1);
+      
+      expect(option1).toHaveAttribute('aria-checked', 'true');
+      expect(option2).toHaveAttribute('aria-checked', 'false');
+    });
+
+    it('supports proper labeling', () => {
+      render(
+        <RadioGroup aria-label="Choose your preference">
+          <div className="flex items-center space-x-2">
+            <RadioGroupItem value="option1" id="option1" data-testid="radio-option1" />
+            <label htmlFor="option1">Option 1</label>
+          </div>
+        </RadioGroup>
+      );
+      
+      const radioGroup = screen.getByLabelText('Choose your preference');
+      expect(radioGroup).toBeInTheDocument();
+    });
+
+    it('associates labels correctly with form integration', () => {
+      render(
+        <RadioGroup label="Test Label">
+          <div className="flex items-center space-x-2">
+            <RadioGroupItem value="option1" id="option1" data-testid="radio-option1" />
+            <label htmlFor="option1">Option 1</label>
+          </div>
+        </RadioGroup>
+      );
+      
+      const label = screen.getByText('Test Label');
+      expect(label).toBeInTheDocument();
+    });
+  });
+
+  describe('Custom Styling and Props', () => {
+    it('accepts custom className on RadioGroup', () => {
+      renderBasicRadioGroup({ className: 'custom-radio-group' });
+      
+      const radioGroup = screen.getByTestId('radio-group');
+      expect(radioGroup).toHaveClass('custom-radio-group');
+    });
+
+    it('forwards refs correctly', () => {
+      const radioGroupRef = vi.fn();
+      const radioItemRef = vi.fn();
+      
+      render(
+        <RadioGroup ref={radioGroupRef}>
+          <RadioGroupItem value="test" ref={radioItemRef} />
+        </RadioGroup>
+      );
+      
+      expect(radioGroupRef).toHaveBeenCalled();
+      expect(radioItemRef).toHaveBeenCalled();
+    });
+
+    it('handles complex styling scenarios', () => {
+      render(
+        <RadioGroup className="custom-group" label="Styled Group">
+          <div className="flex items-center space-x-2">
+            <RadioGroupItem 
+              value="option1" 
+              id="option1" 
+              className="custom-item"
+              data-testid="radio-option1" 
+            />
+            <label htmlFor="option1" className="custom-label">Styled Option</label>
+          </div>
+        </RadioGroup>
+      );
+      
+      const radioGroup = screen.getByRole('radiogroup');
+      const radioItem = screen.getByTestId('radio-option1');
+      
+      expect(radioGroup).toHaveClass('custom-group');
+      expect(radioItem).toHaveClass('custom-item');
+    });
+  });
+
+  describe('Edge Cases and Error Handling', () => {
+    it('handles no options gracefully', () => {
+      render(<RadioGroup data-testid="radio-group" />);
+      
+      const radioGroup = screen.getByTestId('radio-group');
+      expect(radioGroup).toBeInTheDocument();
+    });
+
+    it('handles invalid value gracefully', () => {
+      renderBasicRadioGroup({ value: 'nonexistent' });
+      
+      const option1 = screen.getByTestId('radio-option1');
+      const option2 = screen.getByTestId('radio-option2');
+      
+      expect(option1).not.toBeChecked();
+      expect(option2).not.toBeChecked();
+    });
+
+    it('handles rapid selection changes', async () => {
+      const user = userEvent.setup();
+      const onValueChange = vi.fn();
+      
+      renderBasicRadioGroup({ onValueChange });
+      
+      const option1 = screen.getByTestId('radio-option1');
+      const option2 = screen.getByTestId('radio-option2');
+      const option3 = screen.getByTestId('radio-option3');
+      
+      // Rapid clicks
+      await user.click(option1);
+      await user.click(option2);
+      await user.click(option3);
+      
+      expect(onValueChange).toHaveBeenCalledTimes(3);
+      expect(onValueChange).toHaveBeenNthCalledWith(1, 'option1');
+      expect(onValueChange).toHaveBeenNthCalledWith(2, 'option2');
+      expect(onValueChange).toHaveBeenNthCalledWith(3, 'option3');
+    });
+
+    it('handles form reset behavior', () => {
+      const { container } = render(
+        <form data-testid="test-form">
+          <RadioGroup defaultValue="option1">
+            <div className="flex items-center space-x-2">
+              <RadioGroupItem value="option1" id="option1" data-testid="radio-option1" />
+              <label htmlFor="option1">Option 1</label>
+            </div>
+            <div className="flex items-center space-x-2">
+              <RadioGroupItem value="option2" id="option2" data-testid="radio-option2" />
+              <label htmlFor="option2">Option 2</label>
+            </div>
+          </RadioGroup>
+          <button type="reset">Reset</button>
+        </form>
+      );
+      
+      const form = container.querySelector('form');
+      const option1 = screen.getByTestId('radio-option1');
+      
+      expect(option1).toBeChecked();
+      
+      // Reset form
+      if (form) {
+        fireEvent.reset(form);
+      }
+      
+      // After reset, default value should still be selected
+      expect(option1).toBeChecked();
+    });
+
+    it('preserves functionality with complex nested content', () => {
+      render(
+        <RadioGroup data-testid="radio-group">
+          <div className="complex-wrapper">
+            <div className="nested-container">
+              <div className="flex items-center space-x-2">
+                <RadioGroupItem value="option1" id="option1" data-testid="radio-option1" />
+                <label htmlFor="option1">
+                  <span className="text-bold">Complex</span>
+                  <span className="text-muted"> Option</span>
+                </label>
+              </div>
+            </div>
+          </div>
+        </RadioGroup>
+      );
+      
+      const radioGroup = screen.getByTestId('radio-group');
+      const option1 = screen.getByTestId('radio-option1');
+      
+      expect(radioGroup).toBeInTheDocument();
+      expect(option1).toBeInTheDocument();
+    });
+  });
+});

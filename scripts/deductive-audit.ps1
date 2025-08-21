@@ -72,11 +72,11 @@ $ComponentSpecs = @{
         TestsFor = @("variant", "data", "columns")
     }
     "Dialog" = @{ 
-        Variants = @(); # Dialog doesn't use variants
+        Variants = @("default", "success", "warning", "danger"); 
         Sizes = @("sm", "md", "lg", "xl"); 
         Props = @(); 
         Context = "Modal dialogs" 
-        TestsFor = @("size")
+        TestsFor = @("variant", "size")
     }
     "NavigationMenu" = @{ 
         Variants = @(); # Navigation doesn't use variants
@@ -107,7 +107,7 @@ $ComponentSpecs = @{
         TestsFor = @("variant", "size", "defaultValue")
     }
     "Tabs" = @{ 
-        Variants = @(); # Tabs doesn't use variants
+        Variants = @(); # Tabs doesn't use variants  
         Sizes = @("sm", "default", "lg", "xl"); 
         Props = @("defaultValue"); 
         Context = "Tab navigation" 
@@ -172,7 +172,15 @@ foreach ($component in $Components) {
     Write-Host "  $Name..." -ForegroundColor Gray
     
     # File structure validation - lose points for missing files
-    if (-not (Test-Path "$($component.FullName)\index.tsx")) { 
+    # Check for index file (either .ts or .tsx)
+    $IndexFile = $null
+    if (Test-Path "$($component.FullName)\index.tsx") {
+        $IndexFile = "index.tsx"
+    } elseif (Test-Path "$($component.FullName)\index.ts") {
+        $IndexFile = "index.ts"
+    }
+    
+    if (-not $IndexFile) { 
         $Score -= 10; $Issues += "Missing index.tsx" 
     }
     if (-not (Test-Path "$($component.FullName)\$Name.stories.tsx")) { 
@@ -182,12 +190,19 @@ foreach ($component in $Components) {
         $Score -= 15; $Issues += "Missing test file" 
     }
     
+    # Prioritize exact component name match first
     $MainFiles = Get-ChildItem "$($component.FullName)\*.tsx" | Where-Object { 
-        $_.Name -match "^[a-z-]+\.tsx$" -and $_.Name -ne "index.tsx" 
+        $_.Name -eq "$($Name.ToLower()).tsx"
     }
     if (-not $MainFiles) { 
-        # Fallback to any .tsx file that's not index.tsx
-        $MainFiles = Get-ChildItem "$($component.FullName)\*.tsx" | Where-Object { $_.Name -ne "index.tsx" }
+        # Fallback to pattern match but exclude demo files
+        $MainFiles = Get-ChildItem "$($component.FullName)\*.tsx" | Where-Object { 
+            $_.Name -match "^[a-z-]+\.tsx$" -and $_.Name -ne "index.tsx" -and $_.Name -ne "index.ts" -and $_.Name -ne "demo.tsx"
+        }
+    }
+    if (-not $MainFiles) { 
+        # Final fallback to any .tsx file that's not index or demo
+        $MainFiles = Get-ChildItem "$($component.FullName)\*.tsx" | Where-Object { $_.Name -ne "index.tsx" -and $_.Name -ne "index.ts" -and $_.Name -ne "demo.tsx" }
     }
     if (-not $MainFiles) { 
         $Score -= 20; $Issues += "Missing main component file" 
@@ -208,7 +223,8 @@ foreach ($component in $Components) {
             if ($Spec.Variants.Count -gt 0) {
                 $MissingVariants = @()
                 foreach ($variant in $Spec.Variants) {
-                    if ($Content -notmatch "$variant\s*:\s*['""]") {
+                    # Simple pattern - just look for variant followed by colon and single quote
+                    if ($Content -notmatch "$variant\s*:\s*'") {
                         $MissingVariants += $variant
                     }
                 }
@@ -222,7 +238,8 @@ foreach ($component in $Components) {
             if ($Spec.Sizes.Count -gt 0) {
                 $MissingSizes = @()
                 foreach ($size in $Spec.Sizes) {
-                    if ($Content -notmatch "$size\s*:\s*['""]") {
+                    # Simple pattern - just look for size followed by colon and single quote
+                    if ($Content -notmatch "$size\s*:\s*'") {
                         $MissingSizes += $size
                     }
                 }

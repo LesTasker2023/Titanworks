@@ -1,0 +1,21 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Tooltip > Snapshots > matches active state snapshot 1`] = `
+<button
+  aria-describedby="radix-«r1»"
+  data-state="instant-open"
+  data-testid="tooltip-trigger"
+>
+  Hover me
+</button>
+`;
+
+exports[`Tooltip > Snapshots > matches default snapshot 1`] = `
+<button
+  aria-describedby="radix-«r0»"
+  data-state="instant-open"
+  data-testid="tooltip-trigger"
+>
+  Hover me
+</button>
+`;

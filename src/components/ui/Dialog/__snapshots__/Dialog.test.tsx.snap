@@ -1,0 +1,53 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Dialog > Snapshots > matches default snapshot 1`] = `
+<button
+  aria-controls="radix-«r0»"
+  aria-expanded="true"
+  aria-haspopup="dialog"
+  data-state="open"
+  data-testid="dialog-trigger"
+  type="button"
+>
+  Open Dialog
+</button>
+`;
+
+exports[`Dialog > Snapshots > matches disabled state snapshot 1`] = `
+<button
+  aria-controls="radix-«r6»"
+  aria-expanded="true"
+  aria-haspopup="dialog"
+  data-state="open"
+  data-testid="dialog-trigger"
+  type="button"
+>
+  Open Dialog
+</button>
+`;
+
+exports[`Dialog > Snapshots > matches hover state snapshot 1`] = `
+<button
+  aria-controls="radix-«r9»"
+  aria-expanded="true"
+  aria-haspopup="dialog"
+  data-state="open"
+  data-testid="dialog-trigger"
+  type="button"
+>
+  Open Dialog
+</button>
+`;
+
+exports[`Dialog > Snapshots > matches loading state snapshot 1`] = `
+<button
+  aria-controls="radix-«r3»"
+  aria-expanded="true"
+  aria-haspopup="dialog"
+  data-state="open"
+  data-testid="dialog-trigger"
+  type="button"
+>
+  Open Dialog
+</button>
+`;

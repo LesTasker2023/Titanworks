@@ -1,9 +1,24 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`Carousel > Snapshots > matches basic snapshot 1`] = `
+exports[`Carousel > Snapshots > matches default snapshot 1`] = `
 <div
-  data-testid="carousel-container"
+  aria-roledescription="carousel"
+  class="relative"
+  data-testid="carousel"
+  role="region"
 >
-  Carousel Component Test
+  Test content
+</div>
+`;
+
+exports[`Carousel > Snapshots > matches disabled state snapshot 1`] = `
+<div
+  aria-roledescription="carousel"
+  class="relative"
+  data-testid="carousel"
+  disabled=""
+  role="region"
+>
+  Test content
 </div>
 `;

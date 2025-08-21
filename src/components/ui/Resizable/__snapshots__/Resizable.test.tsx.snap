@@ -1,9 +1,21 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`Resizable > Snapshots > matches basic snapshot 1`] = `
+exports[`Resizable > Snapshots > matches default snapshot 1`] = `
 <div
-  data-testid="resizable-container"
+  data-testid="resizable"
 >
-  Resizable Component Test
+  <div
+    data-testid="resizable-panel"
+  >
+    Panel 1
+  </div>
+  <div
+    data-testid="resizable-handle"
+  />
+  <div
+    data-testid="resizable-panel"
+  >
+    Panel 2
+  </div>
 </div>
 `;

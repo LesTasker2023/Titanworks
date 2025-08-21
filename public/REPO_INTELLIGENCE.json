@@ -1,0 +1,3166 @@
+{
+  "meta": {
+    "generatedAt": "2025-08-21T00:06:06.295Z",
+    "version": "1.0.0",
+    "repository": "triggerkings"
+  },
+  "overview": {
+    "totalComponents": 252,
+    "totalScripts": 35,
+    "totalDocs": 41,
+    "totalCommits": 110,
+    "maintainabilityScore": 90
+  },
+  "components": {
+    "summary": {
+      "total": 252,
+      "withTests": 74,
+      "withStories": 40,
+      "stable": 150
+    },
+    "inventory": {
+      "Tooltip": {
+        "name": "Tooltip",
+        "path": "src\\components\\ui\\Tooltip\\Tooltip.tsx",
+        "size": 2220,
+        "lines": 63,
+        "hasTests": false,
+        "hasStories": false,
+        "status": "stable",
+        "lastModified": "2025-08-20T22:47:28.666Z",
+        "exports": "named"
+      },
+      "demo": {
+        "name": "demo",
+        "path": "src\\components\\layout\\Container\\demo.tsx",
+        "size": 6982,
+        "lines": 180,
+        "hasTests": false,
+        "hasStories": false,
+        "status": "stable",
+        "lastModified": "2025-08-20T20:33:22.573Z",
+        "exports": "default"
+      },
+      "Toggle": {
+        "name": "Toggle",
+        "path": "src\\components\\ui\\Toggle\\Toggle.tsx",
+        "size": 1696,
+        "lines": 46,
+        "hasTests": true,
+        "hasStories": false,
+        "status": "stable",
+        "lastModified": "2025-08-20T22:31:29.290Z",
+        "exports": "named"
+      },
+      "toaster": {
+        "name": "toaster",
+        "path": "src\\components\\ui\\Toast\\toaster.tsx",
+        "size": 811,
+        "lines": 34,
+        "hasTests": false,
+        "hasStories": false,
+        "status": "stable",
+        "lastModified": "2025-08-18T18:38:34.551Z",
+        "exports": "named"
+      },
+      "toast": {
+        "name": "toast",
+        "path": "src\\components\\ui\\Toast\\toast.tsx",
+        "size": 6228,
+        "lines": 139,
+        "hasTests": false,
+        "hasStories": true,
+        "status": "stable",
+        "lastModified": "2025-08-20T22:47:28.643Z",
+        "exports": "named"
+      },
+      "Toast.test": {
+        "name": "Toast.test",
+        "path": "src\\components\\ui\\Toast\\Toast.test.tsx",
+        "size": 12423,
+        "lines": 394,
+        "hasTests": true,
+        "hasStories": false,
+        "status": "stable",
+        "lastModified": "2025-08-20T22:55:12.982Z",
+        "exports": "named"
+      },
+      "Toast.stories": {
+        "name": "Toast.stories",
+        "path": "src\\components\\ui\\Toast\\Toast.stories.tsx",
+        "size": 11003,
+        "lines": 455,
+        "hasTests": false,
+        "hasStories": false,
+        "status": "stable",
+        "lastModified": "2025-08-20T13:14:53.759Z",
+        "exports": "default"
+      },
+      "ThemeToggle": {
+        "name": "ThemeToggle",
+        "path": "src\\components\\ui\\ThemeToggle\\ThemeToggle.tsx",
+        "size": 1192,
+        "lines": 42,
+        "hasTests": true,
+        "hasStories": true,
+        "status": "stable",
+        "lastModified": "2025-08-20T20:35:12.916Z",
+        "exports": "named"
+      },
+      "ThemeToggle.test": {
+        "name": "ThemeToggle.test",
+        "path": "src\\components\\ui\\ThemeToggle\\ThemeToggle.test.tsx",
+        "size": 1485,
+        "lines": 42,
+        "hasTests": true,
+        "hasStories": false,
+        "status": "stable",
+        "lastModified": "2025-08-20T20:51:24.795Z",
+        "exports": "named"
+      },
+      "ThemeToggle.stories": {
+        "name": "ThemeToggle.stories",
+        "path": "src\\components\\ui\\ThemeToggle\\ThemeToggle.stories.tsx",
+        "size": 497,
+        "lines": 20,
+        "hasTests": false,
+        "hasStories": false,
+        "status": "stable",
+        "lastModified": "2025-08-18T19:29:48.593Z",
+        "exports": "default"
+      },
+      "ThemePickerSheet": {
+        "name": "ThemePickerSheet",
+        "path": "src\\components\\ui\\ThemeToggle\\ThemePickerSheet.tsx",
+        "size": 17403,
+        "lines": 466,
+        "hasTests": false,
+        "hasStories": false,
+        "status": "stable",
+        "lastModified": "2025-08-20T22:55:12.981Z",
+        "exports": "named"
+      },
+      "MinimalThemePicker": {
+        "name": "MinimalThemePicker",
+        "path": "src\\components\\ui\\ThemeToggle\\MinimalThemePicker.tsx",
+        "size": 16073,
+        "lines": 437,
+        "hasTests": false,
+        "hasStories": false,
+        "status": "stable",
+        "lastModified": "2025-08-20T22:47:28.573Z",
+        "exports": "named"
+      },
+      "index": {
+        "name": "index",
+        "path": "src\\components\\layout\\Container\\index.ts",
+        "size": 132,
+        "lines": 3,
+        "hasTests": false,
+        "hasStories": false,
+        "status": "stable",
+        "lastModified": "2025-08-20T20:33:22.046Z",
+        "exports": "named"
+      },
+      "CompactThemePicker": {
+        "name": "CompactThemePicker",
+        "path": "src\\components\\ui\\ThemeToggle\\CompactThemePicker.tsx",
+        "size": 10391,
+        "lines": 308,
+        "hasTests": false,
+        "hasStories": false,
+        "status": "stable",
+        "lastModified": "2025-08-20T22:47:28.549Z",
+        "exports": "named"
+      },
+      "AdvancedThemePicker": {
+        "name": "AdvancedThemePicker",
+        "path": "src\\components\\ui\\ThemeToggle\\AdvancedThemePicker.tsx",
+        "size": 18554,
+        "lines": 533,
+        "hasTests": false,
+        "hasStories": false,
+        "status": "stable",
+        "lastModified": "2025-08-20T22:47:28.525Z",
+        "exports": "named"
+      },
+      "textarea": {
+        "name": "textarea",
+        "path": "src\\components\\ui\\Textarea\\textarea.tsx",
+        "size": 3145,
+        "lines": 111,
+        "hasTests": false,
+        "hasStories": true,
+        "status": "stable",
+        "lastModified": "2025-08-20T13:14:53.725Z",
+        "exports": "named"
+      },
+      "Textarea.test": {
+        "name": "Textarea.test",
+        "path": "src\\components\\ui\\Textarea\\Textarea.test.tsx",
+        "size": 1087,
+        "lines": 32,
+        "hasTests": true,
+        "hasStories": false,
+        "status": "stable",
+        "lastModified": "2025-08-20T13:14:53.704Z",
+        "exports": "named"
+      },
+      "Textarea.stories": {
+        "name": "Textarea.stories",
+        "path": "src\\components\\ui\\Textarea\\Textarea.stories.tsx",
+        "size": 10679,
+        "lines": 385,
+        "hasTests": false,
+        "hasStories": false,
+        "status": "stable",
+        "lastModified": "2025-08-20T22:31:28.653Z",
+        "exports": "default"
+      },
+      "tabs": {
+        "name": "tabs",
+        "path": "src\\components\\ui\\Tabs\\tabs.tsx",
+        "size": 3771,
+        "lines": 132,
+        "hasTests": false,
+        "hasStories": true,
+        "status": "stable",
+        "lastModified": "2025-08-20T13:51:52.852Z",
+        "exports": "named"
+      },
+      "Tabs.test": {
+        "name": "Tabs.test",
+        "path": "src\\components\\ui\\Tabs\\Tabs.test.tsx",
+        "size": 1501,
+        "lines": 48,
+        "hasTests": true,
+        "hasStories": false,
+        "status": "stable",
+        "lastModified": "2025-08-20T13:51:52.837Z",
+        "exports": "named"
+      },
+      "Tabs.stories": {
+        "name": "Tabs.stories",
+        "path": "src\\components\\ui\\Tabs\\Tabs.stories.tsx",
+        "size": 23974,
+        "lines": 588,
+        "hasTests": false,
+        "hasStories": false,
+        "status": "stable",
+        "lastModified": "2025-08-20T13:56:53.226Z",
+        "exports": "default"
+      },
+      "Table": {
+        "name": "Table",
+        "path": "src\\components\\ui\\Table\\Table.tsx",
+        "size": 2909,
+        "lines": 95,
+        "hasTests": true,
+        "hasStories": true,
+        "status": "stable",
+        "lastModified": "2025-08-20T00:20:25.079Z",
+        "exports": "named"
+      },
+      "Table.test": {
+        "name": "Table.test",
+        "path": "src\\components\\ui\\Table\\Table.test.tsx",
+        "size": 741,
+        "lines": 22,
+        "hasTests": true,
+        "hasStories": false,
+        "status": "stable",
+        "lastModified": "2025-08-20T20:52:17.102Z",
+        "exports": "named"
+      },
+      "Table.stories": {
+        "name": "Table.stories",
+        "path": "src\\components\\ui\\Table\\Table.stories.tsx",
+        "size": 886,
+        "lines": 36,
+        "hasTests": false,
+        "hasStories": false,
+        "status": "stable",
+        "lastModified": "2025-08-19T18:30:27.564Z",
+        "exports": "default"
+      },
+      "Switch": {
+        "name": "Switch",
+        "path": "src\\components\\ui\\Switch\\Switch.tsx",
+        "size": 1290,
+        "lines": 32,
+        "hasTests": true,
+        "hasStories": true,
+        "status": "stable",
+        "lastModified": "2025-08-20T00:20:18.821Z",
+        "exports": "named"
+      },
+      "Switch.test": {
+        "name": "Switch.test",
+        "path": "src\\components\\ui\\Switch\\Switch.test.tsx",
+        "size": 7793,
+        "lines": 243,
+        "hasTests": true,
+        "hasStories": false,
+        "status": "stable",
+        "lastModified": "2025-08-20T13:14:53.668Z",
+        "exports": "named"
+      },
+      "Switch.stories": {
+        "name": "Switch.stories",
+        "path": "src\\components\\ui\\Switch\\Switch.stories.tsx",
+        "size": 923,
+        "lines": 55,
+        "hasTests": false,
+        "hasStories": false,
+        "status": "stable",
+        "lastModified": "2025-08-18T19:29:58.845Z",
+        "exports": "default"
+      },
+      "Sonner": {
+        "name": "Sonner",
+        "path": "src\\components\\ui\\Sonner\\Sonner.tsx",
+        "size": 878,
+        "lines": 30,
+        "hasTests": true,
+        "hasStories": true,
+        "status": "stable",
+        "lastModified": "2025-08-20T01:14:44.045Z",
+        "exports": "named"
+      },
+      "Sonner.test": {
+        "name": "Sonner.test",
+        "path": "src\\components\\ui\\Sonner\\Sonner.test.tsx",
+        "size": 749,
+        "lines": 22,
+        "hasTests": true,
+        "hasStories": false,
+        "status": "stable",
+        "lastModified": "2025-08-20T20:52:17.093Z",
+        "exports": "named"
+      },
+      "Sonner.stories": {
+        "name": "Sonner.stories",
+        "path": "src\\components\\ui\\Sonner\\Sonner.stories.tsx",
+        "size": 890,
+        "lines": 36,
+        "hasTests": false,
+        "hasStories": false,
+        "status": "stable",
+        "lastModified": "2025-08-20T01:14:44.027Z",
+        "exports": "default"
+      },
+      "slider": {
+        "name": "slider",
+        "path": "src\\components\\ui\\Slider\\slider.tsx",
+        "size": 6494,
+        "lines": 242,
+        "hasTests": false,
+        "hasStories": true,
+        "status": "stable",
+        "lastModified": "2025-08-20T13:51:52.809Z",
+        "exports": "named"
+      },
+      "Slider.test": {
+        "name": "Slider.test",
+        "path": "src\\components\\ui\\Slider\\Slider.test.tsx",
+        "size": 18085,
+        "lines": 479,
+        "hasTests": true,
+        "hasStories": false,
+        "status": "stable",
+        "lastModified": "2025-08-20T13:38:06.653Z",
+        "exports": "named"
+      },
+      "Slider.stories": {
+        "name": "Slider.stories",
+        "path": "src\\components\\ui\\Slider\\Slider.stories.tsx",
+        "size": 8488,
+        "lines": 319,
+        "hasTests": false,
+        "hasStories": false,
+        "status": "stable",
+        "lastModified": "2025-08-20T13:56:53.173Z",
+        "exports": "default"
+      },
+      "Skeleton": {
+        "name": "Skeleton",
+        "path": "src\\components\\ui\\Skeleton\\Skeleton.tsx",
+        "size": 451,
+        "lines": 15,
+        "hasTests": true,
+        "hasStories": true,
+        "status": "stable",
+        "lastModified": "2025-08-20T00:20:18.797Z",
+        "exports": "named"
+      },
+      "Skeleton.test": {
+        "name": "Skeleton.test",
+        "path": "src\\components\\ui\\Skeleton\\Skeleton.test.tsx",
+        "size": 3288,
+        "lines": 88,
+        "hasTests": true,
+        "hasStories": false,
+        "status": "stable",
+        "lastModified": "2025-08-20T22:55:12.981Z",
+        "exports": "named"
+      },
+      "Skeleton.stories": {
+        "name": "Skeleton.stories",
+        "path": "src\\components\\ui\\Skeleton\\Skeleton.stories.tsx",
+        "size": 1415,
+        "lines": 61,
+        "hasTests": false,
+        "hasStories": false,
+        "status": "stable",
+        "lastModified": "2025-08-18T19:29:58.847Z",
+        "exports": "default"
+      },
+      "Sheet": {
+        "name": "Sheet",
+        "path": "src\\components\\ui\\Sheet\\Sheet.tsx",
+        "size": 4235,
+        "lines": 122,
+        "hasTests": true,
+        "hasStories": true,
+        "status": "stable",
+        "lastModified": "2025-08-20T14:42:40.981Z",
+        "exports": "named"
+      },
+      "Sheet.test": {
+        "name": "Sheet.test",
+        "path": "src\\components\\ui\\Sheet\\Sheet.test.tsx",
+        "size": 741,
+        "lines": 22,
+        "hasTests": true,
+        "hasStories": false,
+        "status": "stable",
+        "lastModified": "2025-08-20T20:52:17.075Z",
+        "exports": "named"
+      },
+      "Sheet.stories": {
+        "name": "Sheet.stories",
+        "path": "src\\components\\ui\\Sheet\\Sheet.stories.tsx",
+        "size": 886,
+        "lines": 36,
+        "hasTests": false,
+        "hasStories": false,
+        "status": "stable",
+        "lastModified": "2025-08-19T22:45:00.736Z",
+        "exports": "default"
+      },
+      "Separator": {
+        "name": "Separator",
+        "path": "src\\components\\ui\\Separator\\Separator.tsx",
+        "size": 3807,
+        "lines": 128,
+        "hasTests": false,
+        "hasStories": false,
+        "status": "stable",
+        "lastModified": "2025-08-20T22:47:28.404Z",
+        "exports": "named"
+      },
+      "select": {
+        "name": "select",
+        "path": "src\\components\\ui\\Select\\select.tsx",
+        "size": 9604,
+        "lines": 276,
+        "hasTests": false,
+        "hasStories": true,
+        "status": "stable",
+        "lastModified": "2025-08-20T22:31:27.795Z",
+        "exports": "named"
+      },
+      "Select.test": {
+        "name": "Select.test",
+        "path": "src\\components\\ui\\Select\\Select.test.tsx",
+        "size": 1233,
+        "lines": 39,
+        "hasTests": true,
+        "hasStories": false,
+        "status": "stable",
+        "lastModified": "2025-08-18T18:38:34.526Z",
+        "exports": "named"
+      },
+      "Select.stories": {
+        "name": "Select.stories",
+        "path": "src\\components\\ui\\Select\\Select.stories.tsx",
+        "size": 22208,
+        "lines": 618,
+        "hasTests": false,
+        "hasStories": false,
+        "status": "stable",
+        "lastModified": "2025-08-20T22:31:28.023Z",
+        "exports": "default"
+      },
+      "ScrollArea": {
+        "name": "ScrollArea",
+        "path": "src\\components\\ui\\ScrollArea\\ScrollArea.tsx",
+        "size": 1695,
+        "lines": 47,
+        "hasTests": true,
+        "hasStories": true,
+        "status": "stable",
+        "lastModified": "2025-08-20T00:20:25.076Z",
+        "exports": "named"
+      },
+      "ScrollArea.test": {
+        "name": "ScrollArea.test",
+        "path": "src\\components\\ui\\ScrollArea\\ScrollArea.test.tsx",
+        "size": 797,
+        "lines": 24,
+        "hasTests": true,
+        "hasStories": false,
+        "status": "stable",
+        "lastModified": "2025-08-20T20:52:17.066Z",
+        "exports": "named"
+      },
+      "ScrollArea.stories": {
+        "name": "ScrollArea.stories",
+        "path": "src\\components\\ui\\ScrollArea\\ScrollArea.stories.tsx",
+        "size": 906,
+        "lines": 36,
+        "hasTests": false,
+        "hasStories": false,
+        "status": "stable",
+        "lastModified": "2025-08-19T22:45:00.702Z",
+        "exports": "default"
+      },
+      "Resizable": {
+        "name": "Resizable",
+        "path": "src\\components\\ui\\Resizable\\Resizable.tsx",
+        "size": 1714,
+        "lines": 43,
+        "hasTests": true,
+        "hasStories": true,
+        "status": "stable",
+        "lastModified": "2025-08-20T01:14:43.983Z",
+        "exports": "named"
+      },
+      "Resizable.test": {
+        "name": "Resizable.test",
+        "path": "src\\components\\ui\\Resizable\\Resizable.test.tsx",
+        "size": 789,
+        "lines": 24,
+        "hasTests": true,
+        "hasStories": false,
+        "status": "stable",
+        "lastModified": "2025-08-20T20:52:17.056Z",
+        "exports": "named"
+      },
+      "Resizable.stories": {
+        "name": "Resizable.stories",
+        "path": "src\\components\\ui\\Resizable\\Resizable.stories.tsx",
+        "size": 902,
+        "lines": 36,
+        "hasTests": false,
+        "hasStories": false,
+        "status": "stable",
+        "lastModified": "2025-08-20T01:14:43.964Z",
+        "exports": "default"
+      },
+      "RadioGroup.test": {
+        "name": "RadioGroup.test",
+        "path": "src\\components\\ui\\RadioGroup\\RadioGroup.test.tsx",
+        "size": 1121,
+        "lines": 35,
+        "hasTests": true,
+        "hasStories": false,
+        "status": "stable",
+        "lastModified": "2025-08-20T13:14:53.623Z",
+        "exports": "named"
+      },
+      "RadioGroup.stories": {
+        "name": "RadioGroup.stories",
+        "path": "src\\components\\ui\\RadioGroup\\RadioGroup.stories.tsx",
+        "size": 10300,
+        "lines": 320,
+        "hasTests": false,
+        "hasStories": false,
+        "status": "stable",
+        "lastModified": "2025-08-20T13:14:53.613Z",
+        "exports": "default"
+      },
+      "radio-group": {
+        "name": "radio-group",
+        "path": "src\\components\\ui\\RadioGroup\\radio-group.tsx",
+        "size": 2936,
+        "lines": 96,
+        "hasTests": false,
+        "hasStories": false,
+        "status": "stable",
+        "lastModified": "2025-08-20T13:14:53.642Z",
+        "exports": "named"
+      },
+      "progress": {
+        "name": "progress",
+        "path": "src\\components\\ui\\Progress\\progress.tsx",
+        "size": 1759,
+        "lines": 65,
+        "hasTests": false,
+        "hasStories": true,
+        "status": "stable",
+        "lastModified": "2025-08-20T13:14:53.588Z",
+        "exports": "named"
+      },
+      "Progress.test": {
+        "name": "Progress.test",
+        "path": "src\\components\\ui\\Progress\\Progress.test.tsx",
+        "size": 1007,
+        "lines": 30,
+        "hasTests": true,
+        "hasStories": false,
+        "status": "stable",
+        "lastModified": "2025-08-18T18:38:34.518Z",
+        "exports": "named"
+      },
+      "Progress.stories": {
+        "name": "Progress.stories",
+        "path": "src\\components\\ui\\Progress\\Progress.stories.tsx",
+        "size": 1633,
+        "lines": 42,
+        "hasTests": false,
+        "hasStories": false,
+        "status": "stable",
+        "lastModified": "2025-08-18T18:38:34.517Z",
+        "exports": "default"
+      },
+      "PopoverReal": {
+        "name": "PopoverReal",
+        "path": "src\\components\\ui\\Popover\\PopoverReal.tsx",
+        "size": 1366,
+        "lines": 34,
+        "hasTests": false,
+        "hasStories": false,
+        "status": "stable",
+        "lastModified": "2025-08-20T01:14:43.945Z",
+        "exports": "named"
+      },
+      "Popover": {
+        "name": "Popover",
+        "path": "src\\components\\ui\\Popover\\Popover.tsx",
+        "size": 1699,
+        "lines": 47,
+        "hasTests": true,
+        "hasStories": true,
+        "status": "stable",
+        "lastModified": "2025-08-20T00:20:25.075Z",
+        "exports": "named"
+      },
+      "Popover.test": {
+        "name": "Popover.test",
+        "path": "src\\components\\ui\\Popover\\Popover.test.tsx",
+        "size": 2923,
+        "lines": 80,
+        "hasTests": true,
+        "hasStories": false,
+        "status": "stable",
+        "lastModified": "2025-08-20T22:55:12.981Z",
+        "exports": "named"
+      },
+      "Popover.stories": {
+        "name": "Popover.stories",
+        "path": "src\\components\\ui\\Popover\\Popover.stories.tsx",
+        "size": 1340,
+        "lines": 55,
+        "hasTests": false,
+        "hasStories": false,
+        "status": "stable",
+        "lastModified": "2025-08-19T09:17:10.614Z",
+        "exports": "default"
+      },
+      "Pagination": {
+        "name": "Pagination",
+        "path": "src\\components\\ui\\Pagination\\Pagination.tsx",
+        "size": 10492,
+        "lines": 315,
+        "hasTests": true,
+        "hasStories": true,
+        "status": "stable",
+        "lastModified": "2025-08-20T00:20:25.074Z",
+        "exports": "named"
+      },
+      "Pagination.test": {
+        "name": "Pagination.test",
+        "path": "src\\components\\ui\\Pagination\\Pagination.test.tsx",
+        "size": 11820,
+        "lines": 304,
+        "hasTests": true,
+        "hasStories": false,
+        "status": "stable",
+        "lastModified": "2025-08-20T22:55:12.980Z",
+        "exports": "named"
+      },
+      "Pagination.stories": {
+        "name": "Pagination.stories",
+        "path": "src\\components\\ui\\Pagination\\Pagination.stories.tsx",
+        "size": 1427,
+        "lines": 61,
+        "hasTests": false,
+        "hasStories": false,
+        "status": "stable",
+        "lastModified": "2025-08-19T06:06:25.624Z",
+        "exports": "default"
+      },
+      "NavigationMenu.test": {
+        "name": "NavigationMenu.test",
+        "path": "src\\components\\ui\\NavigationMenu\\NavigationMenu.test.tsx",
+        "size": 1194,
+        "lines": 41,
+        "hasTests": true,
+        "hasStories": false,
+        "status": "stable",
+        "lastModified": "2025-08-18T18:38:34.514Z",
+        "exports": "named"
+      },
+      "NavigationMenu.stories": {
+        "name": "NavigationMenu.stories",
+        "path": "src\\components\\ui\\NavigationMenu\\NavigationMenu.stories.tsx",
+        "size": 11121,
+        "lines": 287,
+        "hasTests": false,
+        "hasStories": false,
+        "status": "stable",
+        "lastModified": "2025-08-18T18:38:34.513Z",
+        "exports": "default"
+      },
+      "navigation-menu": {
+        "name": "navigation-menu",
+        "path": "src\\components\\ui\\NavigationMenu\\navigation-menu.tsx",
+        "size": 5393,
+        "lines": 123,
+        "hasTests": false,
+        "hasStories": false,
+        "status": "stable",
+        "lastModified": "2025-08-20T22:31:28.064Z",
+        "exports": "named"
+      },
+      "Modal": {
+        "name": "Modal",
+        "path": "src\\components\\ui\\Modal\\Modal.tsx",
+        "size": 7058,
+        "lines": 252,
+        "hasTests": true,
+        "hasStories": true,
+        "status": "stable",
+        "lastModified": "2025-08-20T00:20:18.694Z",
+        "exports": "named"
+      },
+      "Modal.test": {
+        "name": "Modal.test",
+        "path": "src\\components\\ui\\Modal\\Modal.test.tsx",
+        "size": 9664,
+        "lines": 323,
+        "hasTests": true,
+        "hasStories": false,
+        "status": "stable",
+        "lastModified": "2025-08-20T13:14:53.560Z",
+        "exports": "named"
+      },
+      "Modal.stories": {
+        "name": "Modal.stories",
+        "path": "src\\components\\ui\\Modal\\Modal.stories.tsx",
+        "size": 14655,
+        "lines": 423,
+        "hasTests": false,
+        "hasStories": false,
+        "status": "stable",
+        "lastModified": "2025-08-18T18:38:34.509Z",
+        "exports": "default"
+      },
+      "Menubar": {
+        "name": "Menubar",
+        "path": "src\\components\\ui\\Menubar\\Menubar.tsx",
+        "size": 8987,
+        "lines": 232,
+        "hasTests": true,
+        "hasStories": true,
+        "status": "stable",
+        "lastModified": "2025-08-20T22:31:29.612Z",
+        "exports": "named"
+      },
+      "Menubar.test": {
+        "name": "Menubar.test",
+        "path": "src\\components\\ui\\Menubar\\Menubar.test.tsx",
+        "size": 773,
+        "lines": 24,
+        "hasTests": true,
+        "hasStories": false,
+        "status": "stable",
+        "lastModified": "2025-08-20T20:52:16.963Z",
+        "exports": "named"
+      },
+      "Menubar.stories": {
+        "name": "Menubar.stories",
+        "path": "src\\components\\ui\\Menubar\\Menubar.stories.tsx",
+        "size": 894,
+        "lines": 36,
+        "hasTests": false,
+        "hasStories": false,
+        "status": "stable",
+        "lastModified": "2025-08-20T01:14:44.258Z",
+        "exports": "default"
+      },
+      "Label": {
+        "name": "Label",
+        "path": "src\\components\\ui\\Label\\Label.tsx",
+        "size": 802,
+        "lines": 25,
+        "hasTests": true,
+        "hasStories": true,
+        "status": "stable",
+        "lastModified": "2025-08-20T00:20:18.679Z",
+        "exports": "named"
+      },
+      "Label.test": {
+        "name": "Label.test",
+        "path": "src\\components\\ui\\Label\\Label.test.tsx",
+        "size": 2421,
+        "lines": 70,
+        "hasTests": true,
+        "hasStories": false,
+        "status": "stable",
+        "lastModified": "2025-08-20T22:55:04.204Z",
+        "exports": "named"
+      },
+      "Label.stories": {
+        "name": "Label.stories",
+        "path": "src\\components\\ui\\Label\\Label.stories.tsx",
+        "size": 1354,
+        "lines": 62,
+        "hasTests": false,
+        "hasStories": false,
+        "status": "stable",
+        "lastModified": "2025-08-18T19:29:58.849Z",
+        "exports": "default"
+      },
+      "input": {
+        "name": "input",
+        "path": "src\\components\\ui\\Input\\input.tsx",
+        "size": 1973,
+        "lines": 60,
+        "hasTests": false,
+        "hasStories": true,
+        "status": "stable",
+        "lastModified": "2025-08-20T13:14:53.526Z",
+        "exports": "named"
+      },
+      "Input.test": {
+        "name": "Input.test",
+        "path": "src\\components\\ui\\Input\\Input.test.tsx",
+        "size": 1248,
+        "lines": 38,
+        "hasTests": true,
+        "hasStories": false,
+        "status": "stable",
+        "lastModified": "2025-08-20T13:14:53.509Z",
+        "exports": "named"
+      },
+      "Input.stories": {
+        "name": "Input.stories",
+        "path": "src\\components\\ui\\Input\\Input.stories.tsx",
+        "size": 6139,
+        "lines": 223,
+        "hasTests": false,
+        "hasStories": false,
+        "status": "stable",
+        "lastModified": "2025-08-20T13:14:53.501Z",
+        "exports": "default"
+      },
+      "HoverCard": {
+        "name": "HoverCard",
+        "path": "src\\components\\ui\\HoverCard\\HoverCard.tsx",
+        "size": 1260,
+        "lines": 30,
+        "hasTests": true,
+        "hasStories": true,
+        "status": "stable",
+        "lastModified": "2025-08-20T01:14:44.247Z",
+        "exports": "named"
+      },
+      "HoverCard.test": {
+        "name": "HoverCard.test",
+        "path": "src\\components\\ui\\HoverCard\\HoverCard.test.tsx",
+        "size": 789,
+        "lines": 24,
+        "hasTests": true,
+        "hasStories": false,
+        "status": "stable",
+        "lastModified": "2025-08-20T20:52:16.925Z",
+        "exports": "named"
+      },
+      "HoverCard.stories": {
+        "name": "HoverCard.stories",
+        "path": "src\\components\\ui\\HoverCard\\HoverCard.stories.tsx",
+        "size": 902,
+        "lines": 36,
+        "hasTests": false,
+        "hasStories": false,
+        "status": "stable",
+        "lastModified": "2025-08-20T01:14:44.231Z",
+        "exports": "default"
+      },
+      "Form": {
+        "name": "Form",
+        "path": "src\\components\\ui\\Form\\Form.tsx",
+        "size": 1049,
+        "lines": 42,
+        "hasTests": true,
+        "hasStories": true,
+        "status": "stable",
+        "lastModified": "2025-08-20T14:06:49.199Z",
+        "exports": "named"
+      },
+      "Form.test": {
+        "name": "Form.test",
+        "path": "src\\components\\ui\\Form\\Form.test.tsx",
+        "size": 1925,
+        "lines": 52,
+        "hasTests": true,
+        "hasStories": false,
+        "status": "stable",
+        "lastModified": "2025-08-20T14:03:50.339Z",
+        "exports": "named"
+      },
+      "Form.stories": {
+        "name": "Form.stories",
+        "path": "src\\components\\ui\\Form\\Form.stories.tsx",
+        "size": 3170,
+        "lines": 123,
+        "hasTests": false,
+        "hasStories": false,
+        "status": "stable",
+        "lastModified": "2025-08-20T14:03:50.346Z",
+        "exports": "default"
+      },
+      "DropdownMenu": {
+        "name": "DropdownMenu",
+        "path": "src\\components\\ui\\DropdownMenu\\DropdownMenu.tsx",
+        "size": 7866,
+        "lines": 189,
+        "hasTests": true,
+        "hasStories": true,
+        "status": "stable",
+        "lastModified": "2025-08-20T22:31:29.801Z",
+        "exports": "named"
+      },
+      "DropdownMenu.test": {
+        "name": "DropdownMenu.test",
+        "path": "src\\components\\ui\\DropdownMenu\\DropdownMenu.test.tsx",
+        "size": 813,
+        "lines": 24,
+        "hasTests": true,
+        "hasStories": false,
+        "status": "stable",
+        "lastModified": "2025-08-20T20:52:16.915Z",
+        "exports": "named"
+      },
+      "DropdownMenu.stories": {
+        "name": "DropdownMenu.stories",
+        "path": "src\\components\\ui\\DropdownMenu\\DropdownMenu.stories.tsx",
+        "size": 914,
+        "lines": 36,
+        "hasTests": false,
+        "hasStories": false,
+        "status": "stable",
+        "lastModified": "2025-08-20T01:14:44.183Z",
+        "exports": "default"
+      },
+      "dialog": {
+        "name": "dialog",
+        "path": "src\\components\\ui\\Dialog\\dialog.tsx",
+        "size": 5540,
+        "lines": 165,
+        "hasTests": false,
+        "hasStories": false,
+        "status": "stable",
+        "lastModified": "2025-08-20T13:14:53.471Z",
+        "exports": "named"
+      },
+      "DatePicker": {
+        "name": "DatePicker",
+        "path": "src\\components\\ui\\DatePicker\\DatePicker.tsx",
+        "size": 1983,
+        "lines": 76,
+        "hasTests": true,
+        "hasStories": true,
+        "status": "stable",
+        "lastModified": "2025-08-20T13:14:53.455Z",
+        "exports": "named"
+      },
+      "DatePicker.test": {
+        "name": "DatePicker.test",
+        "path": "src\\components\\ui\\DatePicker\\DatePicker.test.tsx",
+        "size": 797,
+        "lines": 24,
+        "hasTests": true,
+        "hasStories": false,
+        "status": "stable",
+        "lastModified": "2025-08-20T20:52:17.035Z",
+        "exports": "named"
+      },
+      "DatePicker.stories": {
+        "name": "DatePicker.stories",
+        "path": "src\\components\\ui\\DatePicker\\DatePicker.stories.tsx",
+        "size": 1518,
+        "lines": 69,
+        "hasTests": false,
+        "hasStories": false,
+        "status": "stable",
+        "lastModified": "2025-08-20T01:01:07.716Z",
+        "exports": "default"
+      },
+      "DataTable": {
+        "name": "DataTable",
+        "path": "src\\components\\ui\\DataTable\\DataTable.tsx",
+        "size": 17164,
+        "lines": 478,
+        "hasTests": true,
+        "hasStories": true,
+        "status": "stable",
+        "lastModified": "2025-08-20T13:51:52.955Z",
+        "exports": "named"
+      },
+      "DataTable.test": {
+        "name": "DataTable.test",
+        "path": "src\\components\\ui\\DataTable\\DataTable.test.tsx",
+        "size": 11600,
+        "lines": 363,
+        "hasTests": true,
+        "hasStories": false,
+        "status": "stable",
+        "lastModified": "2025-08-20T13:51:52.924Z",
+        "exports": "named"
+      },
+      "DataTable.stories": {
+        "name": "DataTable.stories",
+        "path": "src\\components\\ui\\DataTable\\DataTable.stories.tsx",
+        "size": 6211,
+        "lines": 213,
+        "hasTests": false,
+        "hasStories": false,
+        "status": "stable",
+        "lastModified": "2025-08-20T13:56:52.960Z",
+        "exports": "default"
+      },
+      "ContextMenu": {
+        "name": "ContextMenu",
+        "path": "src\\components\\ui\\ContextMenu\\ContextMenu.tsx",
+        "size": 7400,
+        "lines": 190,
+        "hasTests": true,
+        "hasStories": true,
+        "status": "stable",
+        "lastModified": "2025-08-20T01:14:44.106Z",
+        "exports": "named"
+      },
+      "ContextMenu.test": {
+        "name": "ContextMenu.test",
+        "path": "src\\components\\ui\\ContextMenu\\ContextMenu.test.tsx",
+        "size": 805,
+        "lines": 24,
+        "hasTests": true,
+        "hasStories": false,
+        "status": "stable",
+        "lastModified": "2025-08-20T20:52:17.023Z",
+        "exports": "named"
+      },
+      "ContextMenu.stories": {
+        "name": "ContextMenu.stories",
+        "path": "src\\components\\ui\\ContextMenu\\ContextMenu.stories.tsx",
+        "size": 910,
+        "lines": 36,
+        "hasTests": false,
+        "hasStories": false,
+        "status": "stable",
+        "lastModified": "2025-08-20T01:14:44.073Z",
+        "exports": "default"
+      },
+      "Command": {
+        "name": "Command",
+        "path": "src\\components\\ui\\Command\\Command.tsx",
+        "size": 4879,
+        "lines": 144,
+        "hasTests": false,
+        "hasStories": false,
+        "status": "stable",
+        "lastModified": "2025-08-20T13:14:53.444Z",
+        "exports": "named"
+      },
+      "Combobox": {
+        "name": "Combobox",
+        "path": "src\\components\\ui\\Combobox\\Combobox.tsx",
+        "size": 2912,
+        "lines": 104,
+        "hasTests": true,
+        "hasStories": true,
+        "status": "stable",
+        "lastModified": "2025-08-20T13:14:53.423Z",
+        "exports": "named"
+      },
+      "Combobox.test": {
+        "name": "Combobox.test",
+        "path": "src\\components\\ui\\Combobox\\Combobox.test.tsx",
+        "size": 781,
+        "lines": 24,
+        "hasTests": true,
+        "hasStories": false,
+        "status": "stable",
+        "lastModified": "2025-08-20T20:52:17.013Z",
+        "exports": "named"
+      },
+      "Combobox.stories": {
+        "name": "Combobox.stories",
+        "path": "src\\components\\ui\\Combobox\\Combobox.stories.tsx",
+        "size": 1692,
+        "lines": 77,
+        "hasTests": false,
+        "hasStories": false,
+        "status": "stable",
+        "lastModified": "2025-08-20T01:01:07.372Z",
+        "exports": "default"
+      },
+      "ColorPicker": {
+        "name": "ColorPicker",
+        "path": "src\\components\\ui\\ColorPicker\\ColorPicker.tsx",
+        "size": 9493,
+        "lines": 278,
+        "hasTests": false,
+        "hasStories": false,
+        "status": "stable",
+        "lastModified": "2025-08-20T14:42:40.948Z",
+        "exports": "named"
+      },
+      "Collapsible": {
+        "name": "Collapsible",
+        "path": "src\\components\\ui\\Collapsible\\Collapsible.tsx",
+        "size": 335,
+        "lines": 12,
+        "hasTests": true,
+        "hasStories": true,
+        "status": "stable",
+        "lastModified": "2025-08-20T01:14:43.969Z",
+        "exports": "named"
+      },
+      "Collapsible.test": {
+        "name": "Collapsible.test",
+        "path": "src\\components\\ui\\Collapsible\\Collapsible.test.tsx",
+        "size": 805,
+        "lines": 24,
+        "hasTests": true,
+        "hasStories": false,
+        "status": "stable",
+        "lastModified": "2025-08-20T20:52:17.001Z",
+        "exports": "named"
+      },
+      "Collapsible.stories": {
+        "name": "Collapsible.stories",
+        "path": "src\\components\\ui\\Collapsible\\Collapsible.stories.tsx",
+        "size": 910,
+        "lines": 36,
+        "hasTests": false,
+        "hasStories": false,
+        "status": "stable",
+        "lastModified": "2025-08-20T01:14:44.465Z",
+        "exports": "default"
+      },
+      "checkbox": {
+        "name": "checkbox",
+        "path": "src\\components\\ui\\Checkbox\\checkbox.tsx",
+        "size": 3120,
+        "lines": 98,
+        "hasTests": false,
+        "hasStories": true,
+        "status": "stable",
+        "lastModified": "2025-08-20T13:14:53.378Z",
+        "exports": "named"
+      },
+      "Checkbox.test": {
+        "name": "Checkbox.test",
+        "path": "src\\components\\ui\\Checkbox\\Checkbox.test.tsx",
+        "size": 982,
+        "lines": 32,
+        "hasTests": true,
+        "hasStories": false,
+        "status": "stable",
+        "lastModified": "2025-08-20T13:14:53.353Z",
+        "exports": "named"
+      },
+      "Checkbox.stories": {
+        "name": "Checkbox.stories",
+        "path": "src\\components\\ui\\Checkbox\\Checkbox.stories.tsx",
+        "size": 9809,
+        "lines": 342,
+        "hasTests": false,
+        "hasStories": false,
+        "status": "stable",
+        "lastModified": "2025-08-20T13:14:53.342Z",
+        "exports": "default"
+      },
+      "Chart": {
+        "name": "Chart",
+        "path": "src\\components\\ui\\Chart\\Chart.tsx",
+        "size": 10281,
+        "lines": 330,
+        "hasTests": true,
+        "hasStories": true,
+        "status": "stable",
+        "lastModified": "2025-08-20T01:14:44.452Z",
+        "exports": "named"
+      },
+      "Chart.test": {
+        "name": "Chart.test",
+        "path": "src\\components\\ui\\Chart\\Chart.test.tsx",
+        "size": 741,
+        "lines": 22,
+        "hasTests": true,
+        "hasStories": false,
+        "status": "stable",
+        "lastModified": "2025-08-20T20:52:16.989Z",
+        "exports": "named"
+      },
+      "Chart.stories": {
+        "name": "Chart.stories",
+        "path": "src\\components\\ui\\Chart\\Chart.stories.tsx",
+        "size": 886,
+        "lines": 36,
+        "hasTests": false,
+        "hasStories": false,
+        "status": "stable",
+        "lastModified": "2025-08-20T01:14:44.423Z",
+        "exports": "default"
+      },
+      "Carousel": {
+        "name": "Carousel",
+        "path": "src\\components\\ui\\Carousel\\Carousel.tsx",
+        "size": 6205,
+        "lines": 243,
+        "hasTests": true,
+        "hasStories": true,
+        "status": "stable",
+        "lastModified": "2025-08-20T13:14:53.308Z",
+        "exports": "named"
+      },
+      "Carousel.test": {
+        "name": "Carousel.test",
+        "path": "src\\components\\ui\\Carousel\\Carousel.test.tsx",
+        "size": 781,
+        "lines": 24,
+        "hasTests": true,
+        "hasStories": false,
+        "status": "stable",
+        "lastModified": "2025-08-20T20:52:16.978Z",
+        "exports": "named"
+      },
+      "Carousel.stories": {
+        "name": "Carousel.stories",
+        "path": "src\\components\\ui\\Carousel\\Carousel.stories.tsx",
+        "size": 898,
+        "lines": 36,
+        "hasTests": false,
+        "hasStories": false,
+        "status": "stable",
+        "lastModified": "2025-08-20T01:14:44.389Z",
+        "exports": "default"
+      },
+      "card": {
+        "name": "card",
+        "path": "src\\components\\ui\\Card\\card.tsx",
+        "size": 3361,
+        "lines": 103,
+        "hasTests": false,
+        "hasStories": true,
+        "status": "stable",
+        "lastModified": "2025-08-20T00:20:18.567Z",
+        "exports": "named"
+      },
+      "Card.test": {
+        "name": "Card.test",
+        "path": "src\\components\\ui\\Card\\Card.test.tsx",
+        "size": 9815,
+        "lines": 289,
+        "hasTests": true,
+        "hasStories": false,
+        "status": "stable",
+        "lastModified": "2025-08-18T18:38:34.489Z",
+        "exports": "named"
+      },
+      "Card.stories": {
+        "name": "Card.stories",
+        "path": "src\\components\\ui\\Card\\Card.stories.tsx",
+        "size": 386,
+        "lines": 19,
+        "hasTests": false,
+        "hasStories": false,
+        "status": "stable",
+        "lastModified": "2025-08-18T18:38:34.488Z",
+        "exports": "default"
+      },
+      "Calendar": {
+        "name": "Calendar",
+        "path": "src\\components\\ui\\Calendar\\Calendar.tsx",
+        "size": 9840,
+        "lines": 231,
+        "hasTests": true,
+        "hasStories": false,
+        "status": "stable",
+        "lastModified": "2025-08-20T13:14:53.272Z",
+        "exports": "named"
+      },
+      "Calendar.test": {
+        "name": "Calendar.test",
+        "path": "src\\components\\ui\\Calendar\\Calendar.test.tsx",
+        "size": 13956,
+        "lines": 440,
+        "hasTests": true,
+        "hasStories": false,
+        "status": "stable",
+        "lastModified": "2025-08-20T13:14:54.264Z",
+        "exports": "named"
+      },
+      "button": {
+        "name": "button",
+        "path": "src\\components\\ui\\Button\\button.tsx",
+        "size": 2498,
+        "lines": 69,
+        "hasTests": false,
+        "hasStories": true,
+        "status": "stable",
+        "lastModified": "2025-08-20T23:06:28.938Z",
+        "exports": "named"
+      },
+      "Button.test": {
+        "name": "Button.test",
+        "path": "src\\components\\ui\\Button\\Button.test.tsx",
+        "size": 3254,
+        "lines": 108,
+        "hasTests": true,
+        "hasStories": false,
+        "status": "stable",
+        "lastModified": "2025-08-20T20:48:47.058Z",
+        "exports": "named"
+      },
+      "Button.stories": {
+        "name": "Button.stories",
+        "path": "src\\components\\ui\\Button\\Button.stories.tsx",
+        "size": 6152,
+        "lines": 245,
+        "hasTests": false,
+        "hasStories": false,
+        "status": "stable",
+        "lastModified": "2025-08-20T13:14:54.207Z",
+        "exports": "default"
+      },
+      "Breadcrumb": {
+        "name": "Breadcrumb",
+        "path": "src\\components\\ui\\Breadcrumb\\Breadcrumb.tsx",
+        "size": 2745,
+        "lines": 102,
+        "hasTests": true,
+        "hasStories": true,
+        "status": "stable",
+        "lastModified": "2025-08-20T01:14:44.352Z",
+        "exports": "named"
+      },
+      "Breadcrumb.test": {
+        "name": "Breadcrumb.test",
+        "path": "src\\components\\ui\\Breadcrumb\\Breadcrumb.test.tsx",
+        "size": 797,
+        "lines": 24,
+        "hasTests": true,
+        "hasStories": false,
+        "status": "stable",
+        "lastModified": "2025-08-20T20:52:16.946Z",
+        "exports": "named"
+      },
+      "Breadcrumb.stories": {
+        "name": "Breadcrumb.stories",
+        "path": "src\\components\\ui\\Breadcrumb\\Breadcrumb.stories.tsx",
+        "size": 906,
+        "lines": 36,
+        "hasTests": false,
+        "hasStories": false,
+        "status": "stable",
+        "lastModified": "2025-08-20T01:14:44.331Z",
+        "exports": "default"
+      },
+      "badge": {
+        "name": "badge",
+        "path": "src\\components\\ui\\Badge\\badge.tsx",
+        "size": 2808,
+        "lines": 87,
+        "hasTests": true,
+        "hasStories": true,
+        "status": "stable",
+        "lastModified": "2025-08-20T22:31:29.032Z",
+        "exports": "named"
+      },
+      "Badge.test": {
+        "name": "Badge.test",
+        "path": "src\\components\\ui\\Badge\\Badge.test.tsx",
+        "size": 13965,
+        "lines": 393,
+        "hasTests": true,
+        "hasStories": false,
+        "status": "stable",
+        "lastModified": "2025-08-20T22:55:12.980Z",
+        "exports": "named"
+      },
+      "Badge.stories": {
+        "name": "Badge.stories",
+        "path": "src\\components\\ui\\Badge\\Badge.stories.tsx",
+        "size": 9712,
+        "lines": 402,
+        "hasTests": false,
+        "hasStories": false,
+        "status": "stable",
+        "lastModified": "2025-08-20T13:14:54.139Z",
+        "exports": "default"
+      },
+      "badge.simple.test": {
+        "name": "badge.simple.test",
+        "path": "src\\components\\ui\\Badge\\badge.simple.test.tsx",
+        "size": 2262,
+        "lines": 64,
+        "hasTests": true,
+        "hasStories": false,
+        "status": "stable",
+        "lastModified": "2025-08-20T22:55:12.979Z",
+        "exports": "named"
+      },
+      "avatar": {
+        "name": "avatar",
+        "path": "src\\components\\ui\\Avatar\\avatar.tsx",
+        "size": 3134,
+        "lines": 109,
+        "hasTests": false,
+        "hasStories": true,
+        "status": "stable",
+        "lastModified": "2025-08-20T13:51:52.810Z",
+        "exports": "named"
+      },
+      "Avatar.test": {
+        "name": "Avatar.test",
+        "path": "src\\components\\ui\\Avatar\\Avatar.test.tsx",
+        "size": 1984,
+        "lines": 64,
+        "hasTests": true,
+        "hasStories": false,
+        "status": "stable",
+        "lastModified": "2025-08-20T13:51:52.793Z",
+        "exports": "named"
+      },
+      "Avatar.stories": {
+        "name": "Avatar.stories",
+        "path": "src\\components\\ui\\Avatar\\Avatar.stories.tsx",
+        "size": 4595,
+        "lines": 177,
+        "hasTests": false,
+        "hasStories": false,
+        "status": "stable",
+        "lastModified": "2025-08-20T13:56:52.960Z",
+        "exports": "default"
+      },
+      "AspectRatio": {
+        "name": "AspectRatio",
+        "path": "src\\components\\ui\\AspectRatio\\AspectRatio.tsx",
+        "size": 165,
+        "lines": 8,
+        "hasTests": true,
+        "hasStories": true,
+        "status": "stable",
+        "lastModified": "2025-08-20T00:20:25.068Z",
+        "exports": "named"
+      },
+      "AspectRatio.test": {
+        "name": "AspectRatio.test",
+        "path": "src\\components\\ui\\AspectRatio\\AspectRatio.test.tsx",
+        "size": 1901,
+        "lines": 61,
+        "hasTests": true,
+        "hasStories": false,
+        "status": "stable",
+        "lastModified": "2025-08-20T20:52:16.919Z",
+        "exports": "named"
+      },
+      "AspectRatio.stories": {
+        "name": "AspectRatio.stories",
+        "path": "src\\components\\ui\\AspectRatio\\AspectRatio.stories.tsx",
+        "size": 910,
+        "lines": 36,
+        "hasTests": false,
+        "hasStories": false,
+        "status": "stable",
+        "lastModified": "2025-08-19T18:30:27.531Z",
+        "exports": "default"
+      },
+      "AlertDialog": {
+        "name": "AlertDialog",
+        "path": "src\\components\\ui\\AlertDialog\\AlertDialog.tsx",
+        "size": 4364,
+        "lines": 118,
+        "hasTests": true,
+        "hasStories": true,
+        "status": "stable",
+        "lastModified": "2025-08-20T01:01:07.833Z",
+        "exports": "named"
+      },
+      "AlertDialog.test": {
+        "name": "AlertDialog.test",
+        "path": "src\\components\\ui\\AlertDialog\\AlertDialog.test.tsx",
+        "size": 3382,
+        "lines": 106,
+        "hasTests": true,
+        "hasStories": false,
+        "status": "stable",
+        "lastModified": "2025-08-20T20:52:16.904Z",
+        "exports": "named"
+      },
+      "AlertDialog.stories": {
+        "name": "AlertDialog.stories",
+        "path": "src\\components\\ui\\AlertDialog\\AlertDialog.stories.tsx",
+        "size": 910,
+        "lines": 36,
+        "hasTests": false,
+        "hasStories": false,
+        "status": "stable",
+        "lastModified": "2025-08-20T01:14:44.295Z",
+        "exports": "default"
+      },
+      "alert": {
+        "name": "alert",
+        "path": "src\\components\\ui\\Alert\\alert.tsx",
+        "size": 4145,
+        "lines": 141,
+        "hasTests": false,
+        "hasStories": true,
+        "status": "stable",
+        "lastModified": "2025-08-20T13:51:52.762Z",
+        "exports": "named"
+      },
+      "Alert.test": {
+        "name": "Alert.test",
+        "path": "src\\components\\ui\\Alert\\Alert.test.tsx",
+        "size": 17167,
+        "lines": 562,
+        "hasTests": true,
+        "hasStories": false,
+        "status": "stable",
+        "lastModified": "2025-08-20T13:51:52.734Z",
+        "exports": "named"
+      },
+      "Alert.stories": {
+        "name": "Alert.stories",
+        "path": "src\\components\\ui\\Alert\\Alert.stories.tsx",
+        "size": 7048,
+        "lines": 264,
+        "hasTests": false,
+        "hasStories": false,
+        "status": "stable",
+        "lastModified": "2025-08-20T13:56:52.960Z",
+        "exports": "default"
+      },
+      "accordion": {
+        "name": "accordion",
+        "path": "src\\components\\ui\\Accordion\\accordion.tsx",
+        "size": 3354,
+        "lines": 89,
+        "hasTests": false,
+        "hasStories": true,
+        "status": "stable",
+        "lastModified": "2025-08-20T20:13:11.360Z",
+        "exports": "named"
+      },
+      "Accordion.test": {
+        "name": "Accordion.test",
+        "path": "src\\components\\ui\\Accordion\\Accordion.test.tsx",
+        "size": 8710,
+        "lines": 246,
+        "hasTests": true,
+        "hasStories": false,
+        "status": "stable",
+        "lastModified": "2025-08-20T13:14:54.112Z",
+        "exports": "named"
+      },
+      "Accordion.stories": {
+        "name": "Accordion.stories",
+        "path": "src\\components\\ui\\Accordion\\Accordion.stories.tsx",
+        "size": 1067,
+        "lines": 48,
+        "hasTests": false,
+        "hasStories": false,
+        "status": "stable",
+        "lastModified": "2025-08-18T19:30:13.042Z",
+        "exports": "default"
+      },
+      "Navigation": {
+        "name": "Navigation",
+        "path": "src\\components\\layout\\Navigation\\Navigation.tsx",
+        "size": 8787,
+        "lines": 252,
+        "hasTests": true,
+        "hasStories": false,
+        "status": "stable",
+        "lastModified": "2025-08-20T23:54:58.075Z",
+        "exports": "default"
+      },
+      "Footer": {
+        "name": "Footer",
+        "path": "src\\components\\layout\\Footer\\Footer.tsx",
+        "size": 6886,
+        "lines": 209,
+        "hasTests": false,
+        "hasStories": false,
+        "status": "stable",
+        "lastModified": "2025-08-20T20:33:22.237Z",
+        "exports": "default"
+      },
+      "Container": {
+        "name": "Container",
+        "path": "src\\components\\layout\\Container\\Container.tsx",
+        "size": 1249,
+        "lines": 57,
+        "hasTests": false,
+        "hasStories": false,
+        "status": "stable",
+        "lastModified": "2025-08-20T20:33:21.943Z",
+        "exports": "named"
+      },
+      "EnhancedContactForm": {
+        "name": "EnhancedContactForm",
+        "path": "src\\components\\forms\\EnhancedContactForm.tsx",
+        "size": 2872,
+        "lines": 102,
+        "hasTests": false,
+        "hasStories": false,
+        "status": "stable",
+        "lastModified": "2025-08-20T13:56:52.901Z",
+        "exports": "named"
+      },
+      "PerformancePatterns": {
+        "name": "PerformancePatterns",
+        "path": "src\\components\\advanced\\PerformancePatterns.tsx",
+        "size": 2870,
+        "lines": 104,
+        "hasTests": false,
+        "hasStories": false,
+        "status": "stable",
+        "lastModified": "2025-08-20T13:56:52.901Z",
+        "exports": "named"
+      },
+      "AdvancedPatterns": {
+        "name": "AdvancedPatterns",
+        "path": "src\\components\\advanced\\AdvancedPatterns.tsx",
+        "size": 3236,
+        "lines": 130,
+        "hasTests": false,
+        "hasStories": false,
+        "status": "stable",
+        "lastModified": "2025-08-20T13:56:52.901Z",
+        "exports": "named"
+      },
+      "use-toast": {
+        "name": "use-toast",
+        "path": "src\\components\\ui\\Toast\\use-toast.ts",
+        "size": 3859,
+        "lines": 178,
+        "hasTests": false,
+        "hasStories": false,
+        "status": "stable",
+        "lastModified": "2025-08-18T18:38:34.552Z",
+        "exports": "named"
+      }
+    }
+  },
+  "scripts": {
+    "summary": {
+      "total": 35,
+      "categories": 5,
+      "executable": 26
+    },
+    "categories": {
+      "Utility": [
+        {
+          "name": "workspace-consolidator.js",
+          "path": "scripts\\workspace-consolidator.js",
+          "category": "Utility",
+          "size": 8026,
+          "lines": 240,
+          "lastModified": "2025-08-20T23:54:58.071Z",
+          "executable": true
+        },
+        {
+          "name": "shorthand-processor.js",
+          "path": "scripts\\shorthand-processor.js",
+          "category": "Utility",
+          "size": 29043,
+          "lines": 845,
+          "lastModified": "2025-08-19T22:24:03.831Z",
+          "executable": false
+        },
+        {
+          "name": "reorganize-showcase.js",
+          "path": "scripts\\reorganize-showcase.js",
+          "category": "Utility",
+          "size": 4156,
+          "lines": 169,
+          "lastModified": "2025-08-20T14:56:56.219Z",
+          "executable": true
+        },
+        {
+          "name": "container-cleanup.js",
+          "path": "scripts\\container-cleanup.js",
+          "category": "Utility",
+          "size": 2652,
+          "lines": 72,
+          "lastModified": "2025-08-18T16:45:48.638Z",
+          "executable": true
+        },
+        {
+          "name": "alphabetical-components.js",
+          "path": "scripts\\alphabetical-components.js",
+          "category": "Utility",
+          "size": 10999,
+          "lines": 249,
+          "lastModified": "2025-08-20T14:49:28.950Z",
+          "executable": false
+        },
+        {
+          "name": "workspace-consolidator.cjs",
+          "path": "scripts\\workspace-consolidator.cjs",
+          "category": "Utility",
+          "size": 8021,
+          "lines": 233,
+          "lastModified": "2025-08-20T23:50:02.367Z",
+          "executable": true
+        },
+        {
+          "name": "repo-intelligence.cjs",
+          "path": "scripts\\repo-intelligence.cjs",
+          "category": "Utility",
+          "size": 19781,
+          "lines": 578,
+          "lastModified": "2025-08-21T00:03:46.716Z",
+          "executable": true
+        },
+        {
+          "name": "repo-intelligence-clean.cjs",
+          "path": "scripts\\repo-intelligence-clean.cjs",
+          "category": "Utility",
+          "size": 13891,
+          "lines": 435,
+          "lastModified": "2025-08-21T00:05:55.431Z",
+          "executable": true
+        },
+        {
+          "name": "systematic-container-migration.ps1",
+          "path": "scripts\\systematic-container-migration.ps1",
+          "category": "Utility",
+          "size": 2568,
+          "lines": 59,
+          "lastModified": "2025-08-18T15:47:29.580Z",
+          "executable": true
+        },
+        {
+          "name": "snapshot-all-components.ps1",
+          "path": "scripts\\snapshot-all-components.ps1",
+          "category": "Utility",
+          "size": 7733,
+          "lines": 195,
+          "lastModified": "2025-08-16T06:43:55.733Z",
+          "executable": true
+        },
+        {
+          "name": "pre-commit-automation.ps1",
+          "path": "scripts\\pre-commit-automation.ps1",
+          "category": "Utility",
+          "size": 13806,
+          "lines": 356,
+          "lastModified": "2025-08-19T20:55:06.266Z",
+          "executable": true
+        },
+        {
+          "name": "manual-release.ps1",
+          "path": "scripts\\manual-release.ps1",
+          "category": "Utility",
+          "size": 4458,
+          "lines": 119,
+          "lastModified": "2025-08-20T20:25:59.919Z",
+          "executable": true
+        },
+        {
+          "name": "convert-to-named-exports.ps1",
+          "path": "scripts\\convert-to-named-exports.ps1",
+          "category": "Utility",
+          "size": 2355,
+          "lines": 73,
+          "lastModified": "2025-08-20T13:13:44.975Z",
+          "executable": true
+        },
+        {
+          "name": "container-cleanup.ps1",
+          "path": "scripts\\container-cleanup.ps1",
+          "category": "Utility",
+          "size": 1519,
+          "lines": 25,
+          "lastModified": "2025-08-18T15:47:29.577Z",
+          "executable": true
+        },
+        {
+          "name": "config-viewer.ps1",
+          "path": "scripts\\config-viewer.ps1",
+          "category": "Utility",
+          "size": 3987,
+          "lines": 122,
+          "lastModified": "2025-08-19T20:55:06.271Z",
+          "executable": true
+        },
+        {
+          "name": "component-automation.ps1",
+          "path": "scripts\\component-automation.ps1",
+          "category": "Utility",
+          "size": 28286,
+          "lines": 711,
+          "lastModified": "2025-08-16T06:43:55.733Z",
+          "executable": true
+        },
+        {
+          "name": "clinical-container-cleanup.ps1",
+          "path": "scripts\\clinical-container-cleanup.ps1",
+          "category": "Utility",
+          "size": 3155,
+          "lines": 63,
+          "lastModified": "2025-08-18T15:47:29.576Z",
+          "executable": true
+        },
+        {
+          "name": "tailwind.config.js",
+          "path": "tailwind.config.js",
+          "category": "Utility",
+          "size": 2473,
+          "lines": 92,
+          "lastModified": "2025-08-20T20:33:22.711Z",
+          "executable": false
+        },
+        {
+          "name": "postcss.config.js",
+          "path": "postcss.config.js",
+          "category": "Utility",
+          "size": 163,
+          "lines": 11,
+          "lastModified": "2025-08-18T18:53:44.533Z",
+          "executable": false
+        },
+        {
+          "name": "eslint.config.mjs",
+          "path": "eslint.config.mjs",
+          "category": "Utility",
+          "size": 641,
+          "lines": 22,
+          "lastModified": "2025-08-12T22:43:33.161Z",
+          "executable": false
+        }
+      ],
+      "Analysis": [
+        {
+          "name": "shadcn-analyzer.js",
+          "path": "scripts\\shadcn-analyzer.js",
+          "category": "Analysis",
+          "size": 10891,
+          "lines": 397,
+          "lastModified": "2025-08-18T16:45:48.728Z",
+          "executable": false
+        },
+        {
+          "name": "deductive-audit.ps1",
+          "path": "scripts\\deductive-audit.ps1",
+          "category": "Analysis",
+          "size": 27708,
+          "lines": 705,
+          "lastModified": "2025-08-16T06:43:55.733Z",
+          "executable": true
+        }
+      ],
+      "Maintenance": [
+        {
+          "name": "main-container-fix.js",
+          "path": "scripts\\main-container-fix.js",
+          "category": "Maintenance",
+          "size": 2135,
+          "lines": 53,
+          "lastModified": "2025-08-18T16:45:48.669Z",
+          "executable": true
+        },
+        {
+          "name": "fix-closing-tags.js",
+          "path": "scripts\\fix-closing-tags.js",
+          "category": "Maintenance",
+          "size": 3138,
+          "lines": 76,
+          "lastModified": "2025-08-18T16:45:48.719Z",
+          "executable": true
+        },
+        {
+          "name": "final-balance-fix.js",
+          "path": "scripts\\final-balance-fix.js",
+          "category": "Maintenance",
+          "size": 2612,
+          "lines": 74,
+          "lastModified": "2025-08-18T16:45:48.684Z",
+          "executable": true
+        },
+        {
+          "name": "batch-header-fix.js",
+          "path": "scripts\\batch-header-fix.js",
+          "category": "Maintenance",
+          "size": 1923,
+          "lines": 48,
+          "lastModified": "2025-08-18T16:45:48.694Z",
+          "executable": true
+        },
+        {
+          "name": "mass-fix-imports.cjs",
+          "path": "scripts\\mass-fix-imports.cjs",
+          "category": "Maintenance",
+          "size": 2074,
+          "lines": 72,
+          "lastModified": "2025-08-20T20:49:37.068Z",
+          "executable": false
+        },
+        {
+          "name": "fix-imports.cjs",
+          "path": "scripts\\fix-imports.cjs",
+          "category": "Maintenance",
+          "size": 3826,
+          "lines": 104,
+          "lastModified": "2025-08-20T13:13:44.975Z",
+          "executable": false
+        },
+        {
+          "name": "fix-demos.cjs",
+          "path": "scripts\\fix-demos.cjs",
+          "category": "Maintenance",
+          "size": 12961,
+          "lines": 391,
+          "lastModified": "2025-08-20T14:57:27.990Z",
+          "executable": true
+        },
+        {
+          "name": "mass-fix-imports.ps1",
+          "path": "scripts\\mass-fix-imports.ps1",
+          "category": "Maintenance",
+          "size": 2396,
+          "lines": 65,
+          "lastModified": "2025-08-20T20:48:46.891Z",
+          "executable": true
+        },
+        {
+          "name": "fix-test-imports.ps1",
+          "path": "scripts\\fix-test-imports.ps1",
+          "category": "Maintenance",
+          "size": 2623,
+          "lines": 66,
+          "lastModified": "2025-08-20T20:48:46.891Z",
+          "executable": true
+        },
+        {
+          "name": "fix-component-tests.ps1",
+          "path": "scripts\\fix-component-tests.ps1",
+          "category": "Maintenance",
+          "size": 7826,
+          "lines": 202,
+          "lastModified": "2025-08-20T20:48:46.891Z",
+          "executable": true
+        },
+        {
+          "name": "batch-fix-tests.ps1",
+          "path": "scripts\\batch-fix-tests.ps1",
+          "category": "Maintenance",
+          "size": 4180,
+          "lines": 117,
+          "lastModified": "2025-08-20T20:48:46.891Z",
+          "executable": true
+        }
+      ],
+      "Generation": [
+        {
+          "name": "generate-all-demos.cjs",
+          "path": "scripts\\generate-all-demos.cjs",
+          "category": "Generation",
+          "size": 13803,
+          "lines": 358,
+          "lastModified": "2025-08-20T15:11:31.441Z",
+          "executable": false
+        }
+      ],
+      "Build": [
+        {
+          "name": "debug-build.ps1",
+          "path": "scripts\\debug-build.ps1",
+          "category": "Build",
+          "size": 990,
+          "lines": 24,
+          "lastModified": "2025-08-19T20:09:29.398Z",
+          "executable": true
+        }
+      ]
+    },
+    "inventory": {
+      "workspace-consolidator.js": {
+        "name": "workspace-consolidator.js",
+        "path": "scripts\\workspace-consolidator.js",
+        "category": "Utility",
+        "size": 8026,
+        "lines": 240,
+        "lastModified": "2025-08-20T23:54:58.071Z",
+        "executable": true
+      },
+      "shorthand-processor.js": {
+        "name": "shorthand-processor.js",
+        "path": "scripts\\shorthand-processor.js",
+        "category": "Utility",
+        "size": 29043,
+        "lines": 845,
+        "lastModified": "2025-08-19T22:24:03.831Z",
+        "executable": false
+      },
+      "shadcn-analyzer.js": {
+        "name": "shadcn-analyzer.js",
+        "path": "scripts\\shadcn-analyzer.js",
+        "category": "Analysis",
+        "size": 10891,
+        "lines": 397,
+        "lastModified": "2025-08-18T16:45:48.728Z",
+        "executable": false
+      },
+      "reorganize-showcase.js": {
+        "name": "reorganize-showcase.js",
+        "path": "scripts\\reorganize-showcase.js",
+        "category": "Utility",
+        "size": 4156,
+        "lines": 169,
+        "lastModified": "2025-08-20T14:56:56.219Z",
+        "executable": true
+      },
+      "main-container-fix.js": {
+        "name": "main-container-fix.js",
+        "path": "scripts\\main-container-fix.js",
+        "category": "Maintenance",
+        "size": 2135,
+        "lines": 53,
+        "lastModified": "2025-08-18T16:45:48.669Z",
+        "executable": true
+      },
+      "fix-closing-tags.js": {
+        "name": "fix-closing-tags.js",
+        "path": "scripts\\fix-closing-tags.js",
+        "category": "Maintenance",
+        "size": 3138,
+        "lines": 76,
+        "lastModified": "2025-08-18T16:45:48.719Z",
+        "executable": true
+      },
+      "final-balance-fix.js": {
+        "name": "final-balance-fix.js",
+        "path": "scripts\\final-balance-fix.js",
+        "category": "Maintenance",
+        "size": 2612,
+        "lines": 74,
+        "lastModified": "2025-08-18T16:45:48.684Z",
+        "executable": true
+      },
+      "container-cleanup.js": {
+        "name": "container-cleanup.js",
+        "path": "scripts\\container-cleanup.js",
+        "category": "Utility",
+        "size": 2652,
+        "lines": 72,
+        "lastModified": "2025-08-18T16:45:48.638Z",
+        "executable": true
+      },
+      "batch-header-fix.js": {
+        "name": "batch-header-fix.js",
+        "path": "scripts\\batch-header-fix.js",
+        "category": "Maintenance",
+        "size": 1923,
+        "lines": 48,
+        "lastModified": "2025-08-18T16:45:48.694Z",
+        "executable": true
+      },
+      "alphabetical-components.js": {
+        "name": "alphabetical-components.js",
+        "path": "scripts\\alphabetical-components.js",
+        "category": "Utility",
+        "size": 10999,
+        "lines": 249,
+        "lastModified": "2025-08-20T14:49:28.950Z",
+        "executable": false
+      },
+      "workspace-consolidator.cjs": {
+        "name": "workspace-consolidator.cjs",
+        "path": "scripts\\workspace-consolidator.cjs",
+        "category": "Utility",
+        "size": 8021,
+        "lines": 233,
+        "lastModified": "2025-08-20T23:50:02.367Z",
+        "executable": true
+      },
+      "repo-intelligence.cjs": {
+        "name": "repo-intelligence.cjs",
+        "path": "scripts\\repo-intelligence.cjs",
+        "category": "Utility",
+        "size": 19781,
+        "lines": 578,
+        "lastModified": "2025-08-21T00:03:46.716Z",
+        "executable": true
+      },
+      "repo-intelligence-clean.cjs": {
+        "name": "repo-intelligence-clean.cjs",
+        "path": "scripts\\repo-intelligence-clean.cjs",
+        "category": "Utility",
+        "size": 13891,
+        "lines": 435,
+        "lastModified": "2025-08-21T00:05:55.431Z",
+        "executable": true
+      },
+      "mass-fix-imports.cjs": {
+        "name": "mass-fix-imports.cjs",
+        "path": "scripts\\mass-fix-imports.cjs",
+        "category": "Maintenance",
+        "size": 2074,
+        "lines": 72,
+        "lastModified": "2025-08-20T20:49:37.068Z",
+        "executable": false
+      },
+      "generate-all-demos.cjs": {
+        "name": "generate-all-demos.cjs",
+        "path": "scripts\\generate-all-demos.cjs",
+        "category": "Generation",
+        "size": 13803,
+        "lines": 358,
+        "lastModified": "2025-08-20T15:11:31.441Z",
+        "executable": false
+      },
+      "fix-imports.cjs": {
+        "name": "fix-imports.cjs",
+        "path": "scripts\\fix-imports.cjs",
+        "category": "Maintenance",
+        "size": 3826,
+        "lines": 104,
+        "lastModified": "2025-08-20T13:13:44.975Z",
+        "executable": false
+      },
+      "fix-demos.cjs": {
+        "name": "fix-demos.cjs",
+        "path": "scripts\\fix-demos.cjs",
+        "category": "Maintenance",
+        "size": 12961,
+        "lines": 391,
+        "lastModified": "2025-08-20T14:57:27.990Z",
+        "executable": true
+      },
+      "systematic-container-migration.ps1": {
+        "name": "systematic-container-migration.ps1",
+        "path": "scripts\\systematic-container-migration.ps1",
+        "category": "Utility",
+        "size": 2568,
+        "lines": 59,
+        "lastModified": "2025-08-18T15:47:29.580Z",
+        "executable": true
+      },
+      "snapshot-all-components.ps1": {
+        "name": "snapshot-all-components.ps1",
+        "path": "scripts\\snapshot-all-components.ps1",
+        "category": "Utility",
+        "size": 7733,
+        "lines": 195,
+        "lastModified": "2025-08-16T06:43:55.733Z",
+        "executable": true
+      },
+      "pre-commit-automation.ps1": {
+        "name": "pre-commit-automation.ps1",
+        "path": "scripts\\pre-commit-automation.ps1",
+        "category": "Utility",
+        "size": 13806,
+        "lines": 356,
+        "lastModified": "2025-08-19T20:55:06.266Z",
+        "executable": true
+      },
+      "mass-fix-imports.ps1": {
+        "name": "mass-fix-imports.ps1",
+        "path": "scripts\\mass-fix-imports.ps1",
+        "category": "Maintenance",
+        "size": 2396,
+        "lines": 65,
+        "lastModified": "2025-08-20T20:48:46.891Z",
+        "executable": true
+      },
+      "manual-release.ps1": {
+        "name": "manual-release.ps1",
+        "path": "scripts\\manual-release.ps1",
+        "category": "Utility",
+        "size": 4458,
+        "lines": 119,
+        "lastModified": "2025-08-20T20:25:59.919Z",
+        "executable": true
+      },
+      "fix-test-imports.ps1": {
+        "name": "fix-test-imports.ps1",
+        "path": "scripts\\fix-test-imports.ps1",
+        "category": "Maintenance",
+        "size": 2623,
+        "lines": 66,
+        "lastModified": "2025-08-20T20:48:46.891Z",
+        "executable": true
+      },
+      "fix-component-tests.ps1": {
+        "name": "fix-component-tests.ps1",
+        "path": "scripts\\fix-component-tests.ps1",
+        "category": "Maintenance",
+        "size": 7826,
+        "lines": 202,
+        "lastModified": "2025-08-20T20:48:46.891Z",
+        "executable": true
+      },
+      "deductive-audit.ps1": {
+        "name": "deductive-audit.ps1",
+        "path": "scripts\\deductive-audit.ps1",
+        "category": "Analysis",
+        "size": 27708,
+        "lines": 705,
+        "lastModified": "2025-08-16T06:43:55.733Z",
+        "executable": true
+      },
+      "debug-build.ps1": {
+        "name": "debug-build.ps1",
+        "path": "scripts\\debug-build.ps1",
+        "category": "Build",
+        "size": 990,
+        "lines": 24,
+        "lastModified": "2025-08-19T20:09:29.398Z",
+        "executable": true
+      },
+      "convert-to-named-exports.ps1": {
+        "name": "convert-to-named-exports.ps1",
+        "path": "scripts\\convert-to-named-exports.ps1",
+        "category": "Utility",
+        "size": 2355,
+        "lines": 73,
+        "lastModified": "2025-08-20T13:13:44.975Z",
+        "executable": true
+      },
+      "container-cleanup.ps1": {
+        "name": "container-cleanup.ps1",
+        "path": "scripts\\container-cleanup.ps1",
+        "category": "Utility",
+        "size": 1519,
+        "lines": 25,
+        "lastModified": "2025-08-18T15:47:29.577Z",
+        "executable": true
+      },
+      "config-viewer.ps1": {
+        "name": "config-viewer.ps1",
+        "path": "scripts\\config-viewer.ps1",
+        "category": "Utility",
+        "size": 3987,
+        "lines": 122,
+        "lastModified": "2025-08-19T20:55:06.271Z",
+        "executable": true
+      },
+      "component-automation.ps1": {
+        "name": "component-automation.ps1",
+        "path": "scripts\\component-automation.ps1",
+        "category": "Utility",
+        "size": 28286,
+        "lines": 711,
+        "lastModified": "2025-08-16T06:43:55.733Z",
+        "executable": true
+      },
+      "clinical-container-cleanup.ps1": {
+        "name": "clinical-container-cleanup.ps1",
+        "path": "scripts\\clinical-container-cleanup.ps1",
+        "category": "Utility",
+        "size": 3155,
+        "lines": 63,
+        "lastModified": "2025-08-18T15:47:29.576Z",
+        "executable": true
+      },
+      "batch-fix-tests.ps1": {
+        "name": "batch-fix-tests.ps1",
+        "path": "scripts\\batch-fix-tests.ps1",
+        "category": "Maintenance",
+        "size": 4180,
+        "lines": 117,
+        "lastModified": "2025-08-20T20:48:46.891Z",
+        "executable": true
+      },
+      "tailwind.config.js": {
+        "name": "tailwind.config.js",
+        "path": "tailwind.config.js",
+        "category": "Utility",
+        "size": 2473,
+        "lines": 92,
+        "lastModified": "2025-08-20T20:33:22.711Z",
+        "executable": false
+      },
+      "postcss.config.js": {
+        "name": "postcss.config.js",
+        "path": "postcss.config.js",
+        "category": "Utility",
+        "size": 163,
+        "lines": 11,
+        "lastModified": "2025-08-18T18:53:44.533Z",
+        "executable": false
+      },
+      "eslint.config.mjs": {
+        "name": "eslint.config.mjs",
+        "path": "eslint.config.mjs",
+        "category": "Utility",
+        "size": 641,
+        "lines": 22,
+        "lastModified": "2025-08-12T22:43:33.161Z",
+        "executable": false
+      }
+    }
+  },
+  "documentation": {
+    "summary": {
+      "total": 41,
+      "categories": 5,
+      "totalWords": 47082
+    },
+    "categories": {
+      "General": [
+        {
+          "name": "Z_INDEX_HIERARCHY.md",
+          "path": "docs\\Z_INDEX_HIERARCHY.md",
+          "category": "General",
+          "size": 2754,
+          "wordCount": 372,
+          "lastModified": "2025-08-20T14:42:38.625Z",
+          "lines": 90
+        },
+        {
+          "name": "VALIDATION.md",
+          "path": "docs\\VALIDATION.md",
+          "category": "General",
+          "size": 7511,
+          "wordCount": 1049,
+          "lastModified": "2025-08-18T18:38:34.410Z",
+          "lines": 313
+        },
+        {
+          "name": "THEME_SYSTEM.md",
+          "path": "docs\\THEME_SYSTEM.md",
+          "category": "General",
+          "size": 3785,
+          "wordCount": 541,
+          "lastModified": "2025-08-19T21:47:04.263Z",
+          "lines": 172
+        },
+        {
+          "name": "SHOWCASE_ALPHABETICAL_PLAN.md",
+          "path": "docs\\SHOWCASE_ALPHABETICAL_PLAN.md",
+          "category": "General",
+          "size": 3288,
+          "wordCount": 469,
+          "lastModified": "2025-08-20T14:42:38.607Z",
+          "lines": 115
+        },
+        {
+          "name": "SHADCN_NEXTJS_ENTERPRISE.md",
+          "path": "docs\\SHADCN_NEXTJS_ENTERPRISE.md",
+          "category": "General",
+          "size": 9074,
+          "wordCount": 860,
+          "lastModified": "2025-08-20T13:14:51.003Z",
+          "lines": 370
+        },
+        {
+          "name": "SEMANTIC_COLOR_SYSTEM.md",
+          "path": "docs\\SEMANTIC_COLOR_SYSTEM.md",
+          "category": "General",
+          "size": 5639,
+          "wordCount": 767,
+          "lastModified": "2025-08-20T22:47:24.417Z",
+          "lines": 214
+        },
+        {
+          "name": "SEMANTIC_COLOR_QUICK_REFERENCE.md",
+          "path": "docs\\SEMANTIC_COLOR_QUICK_REFERENCE.md",
+          "category": "General",
+          "size": 3395,
+          "wordCount": 413,
+          "lastModified": "2025-08-20T22:47:24.384Z",
+          "lines": 147
+        },
+        {
+          "name": "PRE_COMMIT_AUTOMATION.md",
+          "path": "docs\\PRE_COMMIT_AUTOMATION.md",
+          "category": "General",
+          "size": 4925,
+          "wordCount": 661,
+          "lastModified": "2025-08-19T20:24:27.907Z",
+          "lines": 170
+        },
+        {
+          "name": "LEARNINGS.md",
+          "path": "docs\\LEARNINGS.md",
+          "category": "General",
+          "size": 4692,
+          "wordCount": 683,
+          "lastModified": "2025-08-18T18:38:34.407Z",
+          "lines": 113
+        },
+        {
+          "name": "INTELLIGENT_SHADCN.md",
+          "path": "docs\\INTELLIGENT_SHADCN.md",
+          "category": "General",
+          "size": 5829,
+          "wordCount": 749,
+          "lastModified": "2025-08-18T18:38:34.405Z",
+          "lines": 189
+        },
+        {
+          "name": "HYDRATION_FIX.md",
+          "path": "docs\\HYDRATION_FIX.md",
+          "category": "General",
+          "size": 1961,
+          "wordCount": 256,
+          "lastModified": "2025-08-19T22:03:11.178Z",
+          "lines": 81
+        },
+        {
+          "name": "DOCUMENTATION_INDEX.md",
+          "path": "docs\\DOCUMENTATION_INDEX.md",
+          "category": "General",
+          "size": 8515,
+          "wordCount": 700,
+          "lastModified": "2025-08-20T20:26:00.277Z",
+          "lines": 163
+        },
+        {
+          "name": "DARK_MODE_FIX.md",
+          "path": "docs\\DARK_MODE_FIX.md",
+          "category": "General",
+          "size": 2675,
+          "wordCount": 353,
+          "lastModified": "2025-08-19T22:04:42.694Z",
+          "lines": 93
+        },
+        {
+          "name": "COLOR_PERSISTENCE.md",
+          "path": "docs\\COLOR_PERSISTENCE.md",
+          "category": "General",
+          "size": 3480,
+          "wordCount": 444,
+          "lastModified": "2025-08-19T22:44:57.800Z",
+          "lines": 107
+        },
+        {
+          "name": "08-storybook-documentation.md",
+          "path": "docs\\tutorials\\08-storybook-documentation.md",
+          "category": "General",
+          "size": 33685,
+          "wordCount": 3607,
+          "lastModified": "2025-08-20T13:14:51.156Z",
+          "lines": 1355
+        },
+        {
+          "name": "07-performance-optimization.md",
+          "path": "docs\\tutorials\\07-performance-optimization.md",
+          "category": "General",
+          "size": 37153,
+          "wordCount": 3667,
+          "lastModified": "2025-08-18T18:38:34.422Z",
+          "lines": 1244
+        },
+        {
+          "name": "06-testing-strategy.md",
+          "path": "docs\\tutorials\\06-testing-strategy.md",
+          "category": "General",
+          "size": 19832,
+          "wordCount": 2063,
+          "lastModified": "2025-08-18T18:38:34.421Z",
+          "lines": 696
+        },
+        {
+          "name": "05-accessibility-patterns.md",
+          "path": "docs\\tutorials\\05-accessibility-patterns.md",
+          "category": "General",
+          "size": 56240,
+          "wordCount": 4679,
+          "lastModified": "2025-08-18T18:38:34.419Z",
+          "lines": 1757
+        },
+        {
+          "name": "03-cva-patterns.md",
+          "path": "docs\\tutorials\\03-cva-patterns.md",
+          "category": "General",
+          "size": 20280,
+          "wordCount": 2157,
+          "lastModified": "2025-08-18T18:38:34.417Z",
+          "lines": 750
+        },
+        {
+          "name": "02-development-workflow.md",
+          "path": "docs\\tutorials\\02-development-workflow.md",
+          "category": "General",
+          "size": 17367,
+          "wordCount": 1953,
+          "lastModified": "2025-08-18T18:38:34.416Z",
+          "lines": 650
+        },
+        {
+          "name": "01-repository-setup.md",
+          "path": "docs\\tutorials\\01-repository-setup.md",
+          "category": "General",
+          "size": 11113,
+          "wordCount": 1291,
+          "lastModified": "2025-08-18T18:38:34.414Z",
+          "lines": 435
+        },
+        {
+          "name": "00-master-index.md",
+          "path": "docs\\tutorials\\00-master-index.md",
+          "category": "General",
+          "size": 12492,
+          "wordCount": 1578,
+          "lastModified": "2025-08-18T18:38:34.413Z",
+          "lines": 384
+        },
+        {
+          "name": "WORKSPACE_UNIFIED.md",
+          "path": "WORKSPACE_UNIFIED.md",
+          "category": "General",
+          "size": 3862,
+          "wordCount": 437,
+          "lastModified": "2025-08-20T23:54:57.977Z",
+          "lines": 114
+        },
+        {
+          "name": "WORKSPACE_SUMMARY.md",
+          "path": "WORKSPACE_SUMMARY.md",
+          "category": "General",
+          "size": 19170,
+          "wordCount": 1607,
+          "lastModified": "2025-08-20T23:50:32.112Z",
+          "lines": 520
+        },
+        {
+          "name": "WHERE_ARE_THE_THEMES.md",
+          "path": "WHERE_ARE_THE_THEMES.md",
+          "category": "General",
+          "size": 2189,
+          "wordCount": 295,
+          "lastModified": "2025-08-19T22:12:06.490Z",
+          "lines": 72
+        },
+        {
+          "name": "SHORTHAND_COMMANDS.md",
+          "path": "SHORTHAND_COMMANDS.md",
+          "category": "General",
+          "size": 6018,
+          "wordCount": 777,
+          "lastModified": "2025-08-18T18:38:34.403Z",
+          "lines": 284
+        },
+        {
+          "name": "QUICK_REFERENCE.md",
+          "path": "QUICK_REFERENCE.md",
+          "category": "General",
+          "size": 2874,
+          "wordCount": 366,
+          "lastModified": "2025-08-20T20:26:00.208Z",
+          "lines": 107
+        },
+        {
+          "name": "COPILOT_RULES.md",
+          "path": "COPILOT_RULES.md",
+          "category": "General",
+          "size": 6576,
+          "wordCount": 995,
+          "lastModified": "2025-08-18T18:38:34.401Z",
+          "lines": 185
+        },
+        {
+          "name": "AUDIT_REPORT.md",
+          "path": "AUDIT_REPORT.md",
+          "category": "General",
+          "size": 7864,
+          "wordCount": 1153,
+          "lastModified": "2025-08-20T20:26:00.208Z",
+          "lines": 214
+        }
+      ],
+      "Guides": [
+        {
+          "name": "STYLE_GUIDE.md",
+          "path": "docs\\STYLE_GUIDE.md",
+          "category": "Guides",
+          "size": 5628,
+          "wordCount": 629,
+          "lastModified": "2025-08-18T18:38:34.409Z",
+          "lines": 196
+        }
+      ],
+      "Scripts": [
+        {
+          "name": "SCRIPT_COMMANDS.md",
+          "path": "docs\\SCRIPT_COMMANDS.md",
+          "category": "Scripts",
+          "size": 9079,
+          "wordCount": 1147,
+          "lastModified": "2025-08-20T20:26:00.349Z",
+          "lines": 367
+        },
+        {
+          "name": "04-typescript-patterns.md",
+          "path": "docs\\tutorials\\04-typescript-patterns.md",
+          "category": "Scripts",
+          "size": 34034,
+          "wordCount": 3633,
+          "lastModified": "2025-08-18T18:38:34.418Z",
+          "lines": 1292
+        }
+      ],
+      "Overview": [
+        {
+          "name": "README.md",
+          "path": "docs\\README.md",
+          "category": "Overview",
+          "size": 12325,
+          "wordCount": 1498,
+          "lastModified": "2025-08-18T18:38:34.408Z",
+          "lines": 461
+        },
+        {
+          "name": "README.md",
+          "path": "docs\\tutorials\\README.md",
+          "category": "Overview",
+          "size": 6018,
+          "wordCount": 665,
+          "lastModified": "2025-08-18T18:38:34.425Z",
+          "lines": 197
+        },
+        {
+          "name": "README.md",
+          "path": "docs\\design-system\\README.md",
+          "category": "Overview",
+          "size": 4681,
+          "wordCount": 535,
+          "lastModified": "2025-08-18T18:38:34.412Z",
+          "lines": 209
+        },
+        {
+          "name": "README.md",
+          "path": "README.md",
+          "category": "Overview",
+          "size": 6650,
+          "wordCount": 819,
+          "lastModified": "2025-08-20T20:26:00.252Z",
+          "lines": 227
+        }
+      ],
+      "Components": [
+        {
+          "name": "COMPONENT_DEVELOPMENT.md",
+          "path": "docs\\COMPONENT_DEVELOPMENT.md",
+          "category": "Components",
+          "size": 13628,
+          "wordCount": 1247,
+          "lastModified": "2025-08-18T18:38:34.404Z",
+          "lines": 458
+        },
+        {
+          "name": "COMPONENT_SHOWCASE_ALPHABETICAL.md",
+          "path": "COMPONENT_SHOWCASE_ALPHABETICAL.md",
+          "category": "Components",
+          "size": 4974,
+          "wordCount": 703,
+          "lastModified": "2025-08-20T14:42:38.580Z",
+          "lines": 115
+        },
+        {
+          "name": "COMPONENT_REGISTRY.md",
+          "path": "COMPONENT_REGISTRY.md",
+          "category": "Components",
+          "size": 8467,
+          "wordCount": 1155,
+          "lastModified": "2025-08-19T18:30:24.216Z",
+          "lines": 360
+        },
+        {
+          "name": "README.md",
+          "path": "src\\components\\ui\\Skeleton\\README.md",
+          "category": "Components",
+          "size": 387,
+          "wordCount": 48,
+          "lastModified": "2025-08-18T19:29:58.847Z",
+          "lines": 22
+        },
+        {
+          "name": "README.md",
+          "path": "src\\components\\ui\\Accordion\\README.md",
+          "category": "Components",
+          "size": 468,
+          "wordCount": 61,
+          "lastModified": "2025-08-18T19:30:13.058Z",
+          "lines": 24
+        }
+      ]
+    },
+    "inventory": {
+      "docs\\Z_INDEX_HIERARCHY.md": {
+        "name": "Z_INDEX_HIERARCHY.md",
+        "path": "docs\\Z_INDEX_HIERARCHY.md",
+        "category": "General",
+        "size": 2754,
+        "wordCount": 372,
+        "lastModified": "2025-08-20T14:42:38.625Z",
+        "lines": 90
+      },
+      "docs\\VALIDATION.md": {
+        "name": "VALIDATION.md",
+        "path": "docs\\VALIDATION.md",
+        "category": "General",
+        "size": 7511,
+        "wordCount": 1049,
+        "lastModified": "2025-08-18T18:38:34.410Z",
+        "lines": 313
+      },
+      "docs\\THEME_SYSTEM.md": {
+        "name": "THEME_SYSTEM.md",
+        "path": "docs\\THEME_SYSTEM.md",
+        "category": "General",
+        "size": 3785,
+        "wordCount": 541,
+        "lastModified": "2025-08-19T21:47:04.263Z",
+        "lines": 172
+      },
+      "docs\\STYLE_GUIDE.md": {
+        "name": "STYLE_GUIDE.md",
+        "path": "docs\\STYLE_GUIDE.md",
+        "category": "Guides",
+        "size": 5628,
+        "wordCount": 629,
+        "lastModified": "2025-08-18T18:38:34.409Z",
+        "lines": 196
+      },
+      "docs\\SHOWCASE_ALPHABETICAL_PLAN.md": {
+        "name": "SHOWCASE_ALPHABETICAL_PLAN.md",
+        "path": "docs\\SHOWCASE_ALPHABETICAL_PLAN.md",
+        "category": "General",
+        "size": 3288,
+        "wordCount": 469,
+        "lastModified": "2025-08-20T14:42:38.607Z",
+        "lines": 115
+      },
+      "docs\\SHADCN_NEXTJS_ENTERPRISE.md": {
+        "name": "SHADCN_NEXTJS_ENTERPRISE.md",
+        "path": "docs\\SHADCN_NEXTJS_ENTERPRISE.md",
+        "category": "General",
+        "size": 9074,
+        "wordCount": 860,
+        "lastModified": "2025-08-20T13:14:51.003Z",
+        "lines": 370
+      },
+      "docs\\SEMANTIC_COLOR_SYSTEM.md": {
+        "name": "SEMANTIC_COLOR_SYSTEM.md",
+        "path": "docs\\SEMANTIC_COLOR_SYSTEM.md",
+        "category": "General",
+        "size": 5639,
+        "wordCount": 767,
+        "lastModified": "2025-08-20T22:47:24.417Z",
+        "lines": 214
+      },
+      "docs\\SEMANTIC_COLOR_QUICK_REFERENCE.md": {
+        "name": "SEMANTIC_COLOR_QUICK_REFERENCE.md",
+        "path": "docs\\SEMANTIC_COLOR_QUICK_REFERENCE.md",
+        "category": "General",
+        "size": 3395,
+        "wordCount": 413,
+        "lastModified": "2025-08-20T22:47:24.384Z",
+        "lines": 147
+      },
+      "docs\\SCRIPT_COMMANDS.md": {
+        "name": "SCRIPT_COMMANDS.md",
+        "path": "docs\\SCRIPT_COMMANDS.md",
+        "category": "Scripts",
+        "size": 9079,
+        "wordCount": 1147,
+        "lastModified": "2025-08-20T20:26:00.349Z",
+        "lines": 367
+      },
+      "docs\\README.md": {
+        "name": "README.md",
+        "path": "docs\\README.md",
+        "category": "Overview",
+        "size": 12325,
+        "wordCount": 1498,
+        "lastModified": "2025-08-18T18:38:34.408Z",
+        "lines": 461
+      },
+      "docs\\PRE_COMMIT_AUTOMATION.md": {
+        "name": "PRE_COMMIT_AUTOMATION.md",
+        "path": "docs\\PRE_COMMIT_AUTOMATION.md",
+        "category": "General",
+        "size": 4925,
+        "wordCount": 661,
+        "lastModified": "2025-08-19T20:24:27.907Z",
+        "lines": 170
+      },
+      "docs\\LEARNINGS.md": {
+        "name": "LEARNINGS.md",
+        "path": "docs\\LEARNINGS.md",
+        "category": "General",
+        "size": 4692,
+        "wordCount": 683,
+        "lastModified": "2025-08-18T18:38:34.407Z",
+        "lines": 113
+      },
+      "docs\\INTELLIGENT_SHADCN.md": {
+        "name": "INTELLIGENT_SHADCN.md",
+        "path": "docs\\INTELLIGENT_SHADCN.md",
+        "category": "General",
+        "size": 5829,
+        "wordCount": 749,
+        "lastModified": "2025-08-18T18:38:34.405Z",
+        "lines": 189
+      },
+      "docs\\HYDRATION_FIX.md": {
+        "name": "HYDRATION_FIX.md",
+        "path": "docs\\HYDRATION_FIX.md",
+        "category": "General",
+        "size": 1961,
+        "wordCount": 256,
+        "lastModified": "2025-08-19T22:03:11.178Z",
+        "lines": 81
+      },
+      "docs\\DOCUMENTATION_INDEX.md": {
+        "name": "DOCUMENTATION_INDEX.md",
+        "path": "docs\\DOCUMENTATION_INDEX.md",
+        "category": "General",
+        "size": 8515,
+        "wordCount": 700,
+        "lastModified": "2025-08-20T20:26:00.277Z",
+        "lines": 163
+      },
+      "docs\\DARK_MODE_FIX.md": {
+        "name": "DARK_MODE_FIX.md",
+        "path": "docs\\DARK_MODE_FIX.md",
+        "category": "General",
+        "size": 2675,
+        "wordCount": 353,
+        "lastModified": "2025-08-19T22:04:42.694Z",
+        "lines": 93
+      },
+      "docs\\COMPONENT_DEVELOPMENT.md": {
+        "name": "COMPONENT_DEVELOPMENT.md",
+        "path": "docs\\COMPONENT_DEVELOPMENT.md",
+        "category": "Components",
+        "size": 13628,
+        "wordCount": 1247,
+        "lastModified": "2025-08-18T18:38:34.404Z",
+        "lines": 458
+      },
+      "docs\\COLOR_PERSISTENCE.md": {
+        "name": "COLOR_PERSISTENCE.md",
+        "path": "docs\\COLOR_PERSISTENCE.md",
+        "category": "General",
+        "size": 3480,
+        "wordCount": 444,
+        "lastModified": "2025-08-19T22:44:57.800Z",
+        "lines": 107
+      },
+      "docs\\tutorials\\README.md": {
+        "name": "README.md",
+        "path": "docs\\tutorials\\README.md",
+        "category": "Overview",
+        "size": 6018,
+        "wordCount": 665,
+        "lastModified": "2025-08-18T18:38:34.425Z",
+        "lines": 197
+      },
+      "docs\\tutorials\\08-storybook-documentation.md": {
+        "name": "08-storybook-documentation.md",
+        "path": "docs\\tutorials\\08-storybook-documentation.md",
+        "category": "General",
+        "size": 33685,
+        "wordCount": 3607,
+        "lastModified": "2025-08-20T13:14:51.156Z",
+        "lines": 1355
+      },
+      "docs\\tutorials\\07-performance-optimization.md": {
+        "name": "07-performance-optimization.md",
+        "path": "docs\\tutorials\\07-performance-optimization.md",
+        "category": "General",
+        "size": 37153,
+        "wordCount": 3667,
+        "lastModified": "2025-08-18T18:38:34.422Z",
+        "lines": 1244
+      },
+      "docs\\tutorials\\06-testing-strategy.md": {
+        "name": "06-testing-strategy.md",
+        "path": "docs\\tutorials\\06-testing-strategy.md",
+        "category": "General",
+        "size": 19832,
+        "wordCount": 2063,
+        "lastModified": "2025-08-18T18:38:34.421Z",
+        "lines": 696
+      },
+      "docs\\tutorials\\05-accessibility-patterns.md": {
+        "name": "05-accessibility-patterns.md",
+        "path": "docs\\tutorials\\05-accessibility-patterns.md",
+        "category": "General",
+        "size": 56240,
+        "wordCount": 4679,
+        "lastModified": "2025-08-18T18:38:34.419Z",
+        "lines": 1757
+      },
+      "docs\\tutorials\\04-typescript-patterns.md": {
+        "name": "04-typescript-patterns.md",
+        "path": "docs\\tutorials\\04-typescript-patterns.md",
+        "category": "Scripts",
+        "size": 34034,
+        "wordCount": 3633,
+        "lastModified": "2025-08-18T18:38:34.418Z",
+        "lines": 1292
+      },
+      "docs\\tutorials\\03-cva-patterns.md": {
+        "name": "03-cva-patterns.md",
+        "path": "docs\\tutorials\\03-cva-patterns.md",
+        "category": "General",
+        "size": 20280,
+        "wordCount": 2157,
+        "lastModified": "2025-08-18T18:38:34.417Z",
+        "lines": 750
+      },
+      "docs\\tutorials\\02-development-workflow.md": {
+        "name": "02-development-workflow.md",
+        "path": "docs\\tutorials\\02-development-workflow.md",
+        "category": "General",
+        "size": 17367,
+        "wordCount": 1953,
+        "lastModified": "2025-08-18T18:38:34.416Z",
+        "lines": 650
+      },
+      "docs\\tutorials\\01-repository-setup.md": {
+        "name": "01-repository-setup.md",
+        "path": "docs\\tutorials\\01-repository-setup.md",
+        "category": "General",
+        "size": 11113,
+        "wordCount": 1291,
+        "lastModified": "2025-08-18T18:38:34.414Z",
+        "lines": 435
+      },
+      "docs\\tutorials\\00-master-index.md": {
+        "name": "00-master-index.md",
+        "path": "docs\\tutorials\\00-master-index.md",
+        "category": "General",
+        "size": 12492,
+        "wordCount": 1578,
+        "lastModified": "2025-08-18T18:38:34.413Z",
+        "lines": 384
+      },
+      "docs\\design-system\\README.md": {
+        "name": "README.md",
+        "path": "docs\\design-system\\README.md",
+        "category": "Overview",
+        "size": 4681,
+        "wordCount": 535,
+        "lastModified": "2025-08-18T18:38:34.412Z",
+        "lines": 209
+      },
+      "WORKSPACE_UNIFIED.md": {
+        "name": "WORKSPACE_UNIFIED.md",
+        "path": "WORKSPACE_UNIFIED.md",
+        "category": "General",
+        "size": 3862,
+        "wordCount": 437,
+        "lastModified": "2025-08-20T23:54:57.977Z",
+        "lines": 114
+      },
+      "WORKSPACE_SUMMARY.md": {
+        "name": "WORKSPACE_SUMMARY.md",
+        "path": "WORKSPACE_SUMMARY.md",
+        "category": "General",
+        "size": 19170,
+        "wordCount": 1607,
+        "lastModified": "2025-08-20T23:50:32.112Z",
+        "lines": 520
+      },
+      "WHERE_ARE_THE_THEMES.md": {
+        "name": "WHERE_ARE_THE_THEMES.md",
+        "path": "WHERE_ARE_THE_THEMES.md",
+        "category": "General",
+        "size": 2189,
+        "wordCount": 295,
+        "lastModified": "2025-08-19T22:12:06.490Z",
+        "lines": 72
+      },
+      "SHORTHAND_COMMANDS.md": {
+        "name": "SHORTHAND_COMMANDS.md",
+        "path": "SHORTHAND_COMMANDS.md",
+        "category": "General",
+        "size": 6018,
+        "wordCount": 777,
+        "lastModified": "2025-08-18T18:38:34.403Z",
+        "lines": 284
+      },
+      "README.md": {
+        "name": "README.md",
+        "path": "README.md",
+        "category": "Overview",
+        "size": 6650,
+        "wordCount": 819,
+        "lastModified": "2025-08-20T20:26:00.252Z",
+        "lines": 227
+      },
+      "QUICK_REFERENCE.md": {
+        "name": "QUICK_REFERENCE.md",
+        "path": "QUICK_REFERENCE.md",
+        "category": "General",
+        "size": 2874,
+        "wordCount": 366,
+        "lastModified": "2025-08-20T20:26:00.208Z",
+        "lines": 107
+      },
+      "COPILOT_RULES.md": {
+        "name": "COPILOT_RULES.md",
+        "path": "COPILOT_RULES.md",
+        "category": "General",
+        "size": 6576,
+        "wordCount": 995,
+        "lastModified": "2025-08-18T18:38:34.401Z",
+        "lines": 185
+      },
+      "COMPONENT_SHOWCASE_ALPHABETICAL.md": {
+        "name": "COMPONENT_SHOWCASE_ALPHABETICAL.md",
+        "path": "COMPONENT_SHOWCASE_ALPHABETICAL.md",
+        "category": "Components",
+        "size": 4974,
+        "wordCount": 703,
+        "lastModified": "2025-08-20T14:42:38.580Z",
+        "lines": 115
+      },
+      "COMPONENT_REGISTRY.md": {
+        "name": "COMPONENT_REGISTRY.md",
+        "path": "COMPONENT_REGISTRY.md",
+        "category": "Components",
+        "size": 8467,
+        "wordCount": 1155,
+        "lastModified": "2025-08-19T18:30:24.216Z",
+        "lines": 360
+      },
+      "AUDIT_REPORT.md": {
+        "name": "AUDIT_REPORT.md",
+        "path": "AUDIT_REPORT.md",
+        "category": "General",
+        "size": 7864,
+        "wordCount": 1153,
+        "lastModified": "2025-08-20T20:26:00.208Z",
+        "lines": 214
+      },
+      "src\\components\\ui\\Skeleton\\README.md": {
+        "name": "README.md",
+        "path": "src\\components\\ui\\Skeleton\\README.md",
+        "category": "Components",
+        "size": 387,
+        "wordCount": 48,
+        "lastModified": "2025-08-18T19:29:58.847Z",
+        "lines": 22
+      },
+      "src\\components\\ui\\Accordion\\README.md": {
+        "name": "README.md",
+        "path": "src\\components\\ui\\Accordion\\README.md",
+        "category": "Components",
+        "size": 468,
+        "wordCount": 61,
+        "lastModified": "2025-08-18T19:30:13.058Z",
+        "lines": 24
+      }
+    }
+  },
+  "git": {
+    "totalCommits": 110,
+    "contributors": [],
+    "lastCommit": {
+      "hash": "ba9444e",
+      "author": "LesTasker2023",
+      "date": "2025-08-20T23:38:16.000Z",
+      "message": "feat: enhance component showcase with scroll-to-position and theme-aware styling"
+    },
+    "branch": "main"
+  },
+  "build": {
+    "dependencies": 47,
+    "devDependencies": 41,
+    "totalDependencies": 88,
+    "scripts": [
+      "dev",
+      "build",
+      "start",
+      "lint",
+      "lint:fix",
+      "type-check",
+      "format",
+      "format:check",
+      "analyze",
+      "dev:all",
+      "clean",
+      "clean:install",
+      "optimize",
+      "audit:deps",
+      "check:unused",
+      "quality",
+      "consolidate",
+      "workspace:index",
+      "test",
+      "test:ui",
+      "test:run",
+      "test:watch",
+      "test:snapshots",
+      "test:components",
+      "prepare",
+      "storybook",
+      "build-storybook",
+      "shorthand",
+      "clinical",
+      "emergency",
+      "shad:next",
+      "shad:analyze",
+      "scp",
+      "component",
+      "snapshots",
+      "quality-audit",
+      "audit-list",
+      "audit-quick",
+      "pre-commit:auto",
+      "pre-commit:dry",
+      "release:manual",
+      "release:dry",
+      "release:force",
+      "container:cleanup",
+      "container:migrate",
+      "format:md",
+      "fix:headers",
+      "fix:containers",
+      "fix:balance",
+      "fix:tags",
+      "config:update",
+      "config:view",
+      "config:validate"
+    ],
+    "buildArtifacts": 657,
+    "nodeVersion": "not specified",
+    "framework": "Next.js"
+  },
+  "quality": {
+    "hasTypeScript": true,
+    "hasESLint": true,
+    "testFiles": 81,
+    "sourceFiles": 268,
+    "testCoverage": "30%",
+    "maintainabilityScore": 90
+  }
+}

@@ -11,7 +11,17 @@ import {
 } from '@/components/ui/DropdownMenu';
 import { Input } from '@/components/ui/Input';
 import { TooltipProvider } from '@/components/ui/Tooltip';
-import { ChevronDown, ChevronUp, Filter, Search } from 'lucide-react';
+import {
+  Beaker,
+  CheckCircle,
+  ChevronDown,
+  ChevronUp,
+  FileText,
+  Filter,
+  MapPin,
+  Search,
+  Sparkles,
+} from 'lucide-react';
 import React, { lazy, useMemo, useRef, useState } from 'react';
 
 // Lazy load all component demos for better performance
@@ -91,75 +101,165 @@ const componentRegistry = [
     demo: ButtonDemo,
     category: 'Data Input',
     description: 'Interactive button controls',
+    status: 'Production Ready',
+    hasTests: true,
+    hasStories: true,
+    location: 'src/components/ui/Button/',
+    features: ['Multiple variants', 'Loading states', 'Icon support'],
   },
-  { name: 'Input', demo: InputDemo, category: 'Data Input', description: 'Text input fields' },
+  {
+    name: 'Input',
+    demo: InputDemo,
+    category: 'Data Input',
+    description: 'Text input fields',
+    status: 'Production Ready',
+    hasTests: true,
+    hasStories: true,
+    location: 'src/components/ui/Input/',
+    features: ['Form integration', 'Validation', 'Placeholder support'],
+  },
   {
     name: 'Textarea',
     demo: TextareaDemo,
     category: 'Data Input',
     description: 'Multi-line text inputs',
+    status: 'Production Ready',
+    hasTests: true,
+    hasStories: true,
+    location: 'src/components/ui/Textarea/',
+    features: ['Auto-resize', 'Character limits', 'Form integration'],
   },
   {
     name: 'Select',
     demo: SelectDemo,
     category: 'Data Input',
     description: 'Dropdown selection inputs',
+    status: 'Production Ready',
+    hasTests: true,
+    hasStories: true,
+    location: 'src/components/ui/Select/',
+    features: ['Search functionality', 'Keyboard navigation', 'Custom options'],
   },
   {
     name: 'Checkbox',
     demo: CheckboxDemo,
     category: 'Data Input',
     description: 'Boolean input controls',
+    status: 'Production Ready',
+    hasTests: true,
+    hasStories: true,
+    location: 'src/components/ui/Checkbox/',
+    features: ['Accessible', 'Customizable', 'Indeterminate state'],
   },
   {
     name: 'RadioGroup',
     demo: RadioGroupDemo,
     category: 'Data Input',
     description: 'Single-choice input groups',
+    status: 'Production Ready',
+    hasTests: true,
+    hasStories: true,
+    location: 'src/components/ui/RadioGroup/',
+    features: ['Keyboard navigation', 'Custom layouts', 'Validation'],
   },
   {
     name: 'Switch',
     demo: SwitchDemo,
     category: 'Data Input',
     description: 'Toggle switch controls',
+    status: 'Production Ready',
+    hasTests: true,
+    hasStories: true,
+    location: 'src/components/ui/Switch/',
+    features: ['Smooth animations', 'Disabled states', 'Form integration'],
   },
-  { name: 'Slider', demo: SliderDemo, category: 'Data Input', description: 'Range input controls' },
+  {
+    name: 'Slider',
+    demo: SliderDemo,
+    category: 'Data Input',
+    description: 'Range input controls',
+    status: 'Production Ready',
+    hasTests: true,
+    hasStories: true,
+    location: 'src/components/ui/Slider/',
+    features: ['Single & multi-thumb', 'Step controls', 'Custom marks'],
+  },
   {
     name: 'DatePicker',
     demo: DatePickerDemo,
     category: 'Data Input',
     description: 'Date selection component',
+    status: 'Production Ready',
+    hasTests: true,
+    hasStories: true,
+    location: 'src/components/ui/DatePicker/',
+    features: ['Calendar popup', 'Date validation', 'Keyboard input'],
   },
   {
     name: 'Calendar',
     demo: CalendarDemo,
     category: 'Data Input',
     description: 'Date selection interface',
+    status: 'Production Ready',
+    hasTests: true,
+    hasStories: true,
+    location: 'src/components/ui/Calendar/',
+    features: ['Month navigation', 'Disabled dates', 'Multi-select'],
   },
   {
     name: 'ColorPicker',
     demo: ColorPickerDemo,
     category: 'Data Input',
     description: 'Color selection interface',
+    status: 'Production Ready',
+    hasTests: true,
+    hasStories: true,
+    location: 'src/components/ui/ColorPicker/',
+    features: ['HSL & RGB modes', 'Preset colors', 'Alpha channel'],
   },
   {
     name: 'Combobox',
     demo: ComboboxDemo,
     category: 'Data Input',
     description: 'Searchable select input',
+    status: 'Production Ready',
+    hasTests: true,
+    hasStories: true,
+    location: 'src/components/ui/Combobox/',
+    features: ['Search filtering', 'Custom options', 'Async loading'],
   },
   {
     name: 'Form',
     demo: FormDemo,
     category: 'Data Input',
     description: 'Form validation and handling',
+    status: 'Production Ready',
+    hasTests: true,
+    hasStories: true,
+    location: 'src/components/ui/Form/',
+    features: ['Validation', 'Error handling', 'Schema support'],
   },
-  { name: 'Label', demo: LabelDemo, category: 'Data Input', description: 'Form field labels' },
+  {
+    name: 'Label',
+    demo: LabelDemo,
+    category: 'Data Input',
+    description: 'Form field labels',
+    status: 'Production Ready',
+    hasTests: true,
+    hasStories: true,
+    location: 'src/components/ui/Label/',
+    features: ['Accessibility', 'Form association', 'Required indicators'],
+  },
   {
     name: 'Toggle',
     demo: ToggleDemo,
     category: 'Data Input',
     description: 'Toggle button controls',
+    status: 'Production Ready',
+    hasTests: true,
+    hasStories: true,
+    location: 'src/components/ui/Toggle/',
+    features: ['Pressed states', 'Variant support', 'Icon toggles'],
   },
 
   // Data Display Components
@@ -168,30 +268,55 @@ const componentRegistry = [
     demo: BadgeDemo,
     category: 'Data Display',
     description: 'Small status indicators',
+    status: 'Production Ready',
+    hasTests: true,
+    hasStories: true,
+    location: 'src/components/ui/Badge/',
+    features: ['Multiple variants', 'Size options', 'Custom colors'],
   },
   {
     name: 'Avatar',
     demo: AvatarDemo,
     category: 'Data Display',
     description: 'User profile pictures',
+    status: 'Production Ready',
+    hasTests: true,
+    hasStories: true,
+    location: 'src/components/ui/Avatar/',
+    features: ['Fallback support', 'Size variants', 'Group layouts'],
   },
   {
     name: 'Table',
     demo: TableDemo,
     category: 'Data Display',
     description: 'Structured data tables',
+    status: 'Production Ready',
+    hasTests: true,
+    hasStories: true,
+    location: 'src/components/ui/Table/',
+    features: ['Sorting', 'Pagination', 'Responsive design'],
+  },
+  {
+    name: 'Card',
+    demo: CardDemo,
+    category: 'Data Display',
+    description: 'Content containers',
+    status: 'Production Ready',
+    hasTests: true,
+    hasStories: true,
+    location: 'src/components/ui/Card/',
+    features: ['Header & footer', 'Hover effects', 'Flexible layouts'],
   },
   {
     name: 'DataTable',
     demo: DataTableDemo,
     category: 'Data Display',
-    description: 'Sortable data tables',
-  },
-  {
-    name: 'Carousel',
-    demo: CarouselDemo,
-    category: 'Data Display',
-    description: 'Scrollable content gallery',
+    description: 'Advanced data tables',
+    status: 'Production Ready',
+    hasTests: true,
+    hasStories: true,
+    location: 'src/components/ui/DataTable/',
+    features: ['Server-side data', 'Column controls', 'Export options'],
   },
   {
     name: 'Chart',
@@ -467,7 +592,7 @@ export default function ComponentShowcase() {
                 }}
               >
                 <CardHeader className="pb-3">
-                  <div className="space-y-1">
+                  <div className="space-y-3">
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-2">
                         <CardTitle className="text-lg">{component.name}</CardTitle>
@@ -481,6 +606,15 @@ export default function ComponentShowcase() {
                         >
                           {component.category}
                         </Badge>
+                        {component.status && (
+                          <Badge
+                            variant="secondary"
+                            className="text-xs bg-green-50 text-green-700 border-green-200"
+                          >
+                            <CheckCircle className="w-3 h-3 mr-1" />
+                            {component.status}
+                          </Badge>
+                        )}
                       </div>
                       <Button
                         variant="outline"
@@ -500,7 +634,68 @@ export default function ComponentShowcase() {
                         )}
                       </Button>
                     </div>
+
                     <CardDescription>{component.description}</CardDescription>
+
+                    {/* Additional Component Info */}
+                    {(component.location ||
+                      component.hasTests ||
+                      component.hasStories ||
+                      component.features) && (
+                      <div className="space-y-2">
+                        {/* Location and Status Indicators */}
+                        <div className="flex items-center gap-4 text-xs text-muted-foreground">
+                          {component.location && (
+                            <div className="flex items-center gap-1">
+                              <MapPin className="w-3 h-3" />
+                              <code className="px-1 py-0.5 bg-muted rounded text-xs">
+                                {component.location}
+                              </code>
+                            </div>
+                          )}
+                          <div className="flex items-center gap-3">
+                            {component.hasTests && (
+                              <div className="flex items-center gap-1 text-green-600">
+                                <Beaker className="w-3 h-3" />
+                                <span>Tests</span>
+                              </div>
+                            )}
+                            {component.hasStories && (
+                              <div className="flex items-center gap-1 text-blue-600">
+                                <FileText className="w-3 h-3" />
+                                <span>Stories</span>
+                              </div>
+                            )}
+                          </div>
+                        </div>
+
+                        {/* Key Features */}
+                        {component.features && component.features.length > 0 && (
+                          <div className="flex items-start gap-2">
+                            <Sparkles className="w-3 h-3 mt-0.5 text-amber-500 flex-shrink-0" />
+                            <div className="flex flex-wrap gap-1">
+                              {component.features.slice(0, 3).map((feature, index) => (
+                                <Badge
+                                  key={index}
+                                  variant="outline"
+                                  className="text-xs px-2 py-0 h-5"
+                                >
+                                  {feature}
+                                </Badge>
+                              ))}
+                              {component.features.length > 3 && (
+                                <Badge
+                                  variant="outline"
+                                  className="text-xs px-2 py-0 h-5 text-muted-foreground"
+                                >
+                                  +{component.features.length - 3} more
+                                </Badge>
+                              )}
+                            </div>
+                          </div>
+                        )}
+                      </div>
+                    )}
                   </div>
                 </CardHeader>
 

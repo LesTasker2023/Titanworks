@@ -20,6 +20,8 @@
     "audit:deps": "yarn audit --level moderate",
     "check:unused": "npx depcheck",
     "quality": "run-s type-check lint format:check test:run",
+    "consolidate": "node scripts/workspace-consolidator.cjs",
+    "workspace:index": "node scripts/workspace-consolidator.cjs",
     "test": "vitest",
     "test:ui": "vitest --ui",
     "test:run": "vitest run --reporter verbose",

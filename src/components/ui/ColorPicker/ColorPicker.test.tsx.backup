@@ -1,0 +1,36 @@
+import { render, screen } from '@testing-library/react';
+import { describe, expect, it } from 'vitest';
+import { ColorPicker } from './ColorPicker';
+
+describe('ColorPicker Component', () => {
+  describe('Rendering', () => {
+    it('renders without crashing', () => {
+      render(<ColorPicker />);
+      expect(document.body).toBeTruthy();
+    });
+
+    it('applies custom className', () => {
+      const { container } = render(<ColorPicker className="custom-class" />);
+      expect(container.firstChild).toHaveClass('custom-class');
+    });
+
+    describe('Snapshots', () => {
+      it('matches default snapshot', () => {
+        const { container } = render(<ColorPicker />);
+        expect(container.firstChild).toMatchSnapshot();
+      });
+
+      it('matches disabled state snapshot', () => {
+        const { container } = render(<ColorPicker disabled />);
+        expect(container.firstChild).toMatchSnapshot();
+      });
+    });
+  });
+
+  describe('Accessibility', () => {
+    it('has proper ARIA attributes', () => {
+      render(<ColorPicker aria-label="Color picker" />);
+      expect(screen.getByLabelText('Color picker')).toBeInTheDocument();
+    });
+  });
+});

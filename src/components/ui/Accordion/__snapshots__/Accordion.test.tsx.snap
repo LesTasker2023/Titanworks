@@ -1,141 +1,286 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`Accordion > matches snapshot when all closed 1`] = `
-<DocumentFragment>
+exports[`Accordion > Snapshots > matches default snapshot 1`] = `
+<div
+  data-testid="accordion"
+>
   <div>
-    <div>
-      <button
-        aria-controls="accordion-content-0"
-        aria-expanded="false"
-        class="w-full text-left font-medium py-2 px-4 border-b border-border focus:outline-none focus-visible:ring-2 focus-visible:ring-ring transition-colors bg-background hover:bg-muted disabled:opacity-50 disabled:cursor-not-allowed"
-        id="accordion-header-0"
-        type="button"
-      >
-        Section 1
-      </button>
-      <div
-        aria-label="Content for Section 1"
-        aria-labelledby="accordion-header-0"
-        class="px-4 py-2 text-muted-foreground bg-muted/50"
-        hidden=""
-        id="accordion-content-0"
-        role="region"
-      >
-        Content 1
-      </div>
-    </div>
-    <div>
-      <button
-        aria-controls="accordion-content-1"
-        aria-expanded="false"
-        class="w-full text-left font-medium py-2 px-4 border-b border-border focus:outline-none focus-visible:ring-2 focus-visible:ring-ring transition-colors bg-background hover:bg-muted disabled:opacity-50 disabled:cursor-not-allowed"
-        id="accordion-header-1"
-        type="button"
-      >
-        Section 2
-      </button>
-      <div
-        aria-label="Content for Section 2"
-        aria-labelledby="accordion-header-1"
-        class="px-4 py-2 text-muted-foreground bg-muted/50"
-        hidden=""
-        id="accordion-content-1"
-        role="region"
-      >
-        Content 2
-      </div>
-    </div>
-    <div>
-      <button
-        aria-controls="accordion-content-2"
-        aria-expanded="false"
-        class="w-full text-left font-medium py-2 px-4 border-b border-border focus:outline-none focus-visible:ring-2 focus-visible:ring-ring transition-colors bg-background hover:bg-muted disabled:opacity-50 disabled:cursor-not-allowed"
-        id="accordion-header-2"
-        type="button"
-      >
-        Section 3
-      </button>
-      <div
-        aria-label="Content for Section 3"
-        aria-labelledby="accordion-header-2"
-        class="px-4 py-2 text-muted-foreground bg-muted/50"
-        hidden=""
-        id="accordion-content-2"
-        role="region"
-      >
-        Content 3
-      </div>
+    <button
+      aria-controls="accordion-content-0"
+      aria-expanded="false"
+      class="w-full text-left font-medium py-2 px-4 border-b border-border focus:outline-none focus-visible:ring-2 focus-visible:ring-ring transition-colors bg-background hover:bg-muted disabled:opacity-50 disabled:cursor-not-allowed"
+      id="accordion-header-0"
+      type="button"
+    >
+      Item 1
+    </button>
+    <div
+      aria-label="Content for Item 1"
+      aria-labelledby="accordion-header-0"
+      class="px-4 py-2 text-muted-foreground bg-muted/50"
+      hidden=""
+      id="accordion-content-0"
+      role="region"
+    >
+      Content 1
     </div>
   </div>
-</DocumentFragment>
+  <div>
+    <button
+      aria-controls="accordion-content-1"
+      aria-expanded="false"
+      class="w-full text-left font-medium py-2 px-4 border-b border-border focus:outline-none focus-visible:ring-2 focus-visible:ring-ring transition-colors bg-background hover:bg-muted disabled:opacity-50 disabled:cursor-not-allowed"
+      id="accordion-header-1"
+      type="button"
+    >
+      Item 2
+    </button>
+    <div
+      aria-label="Content for Item 2"
+      aria-labelledby="accordion-header-1"
+      class="px-4 py-2 text-muted-foreground bg-muted/50"
+      hidden=""
+      id="accordion-content-1"
+      role="region"
+    >
+      Content 2
+    </div>
+  </div>
+  <div>
+    <button
+      aria-controls="accordion-content-2"
+      aria-expanded="false"
+      class="w-full text-left font-medium py-2 px-4 border-b border-border focus:outline-none focus-visible:ring-2 focus-visible:ring-ring transition-colors bg-background hover:bg-muted disabled:opacity-50 disabled:cursor-not-allowed"
+      disabled=""
+      id="accordion-header-2"
+      type="button"
+    >
+      Item 3
+    </button>
+    <div
+      aria-label="Content for Item 3"
+      aria-labelledby="accordion-header-2"
+      class="px-4 py-2 text-muted-foreground bg-muted/50"
+      hidden=""
+      id="accordion-content-2"
+      role="region"
+    >
+      Content 3
+    </div>
+  </div>
+</div>
 `;
 
-exports[`Accordion > matches snapshot when one open 1`] = `
-<DocumentFragment>
+exports[`Accordion > Snapshots > matches disabled state snapshot 1`] = `
+<div
+  data-testid="accordion"
+  disabled=""
+>
   <div>
-    <div>
-      <button
-        aria-controls="accordion-content-0"
-        aria-expanded="false"
-        class="w-full text-left font-medium py-2 px-4 border-b border-border focus:outline-none focus-visible:ring-2 focus-visible:ring-ring transition-colors bg-background hover:bg-muted disabled:opacity-50 disabled:cursor-not-allowed"
-        id="accordion-header-0"
-        type="button"
-      >
-        Section 1
-      </button>
-      <div
-        aria-label="Content for Section 1"
-        aria-labelledby="accordion-header-0"
-        class="px-4 py-2 text-muted-foreground bg-muted/50"
-        hidden=""
-        id="accordion-content-0"
-        role="region"
-      >
-        Content 1
-      </div>
-    </div>
-    <div>
-      <button
-        aria-controls="accordion-content-1"
-        aria-expanded="true"
-        class="w-full text-left font-medium py-2 px-4 border-b border-border focus:outline-none focus-visible:ring-2 focus-visible:ring-ring transition-colors bg-background hover:bg-muted disabled:opacity-50 disabled:cursor-not-allowed"
-        id="accordion-header-1"
-        type="button"
-      >
-        Section 2
-      </button>
-      <div
-        aria-label="Content for Section 2"
-        aria-labelledby="accordion-header-1"
-        class="px-4 py-2 text-muted-foreground bg-muted/50"
-        data-testid="open-region"
-        id="accordion-content-1"
-        role="region"
-      >
-        Content 2
-      </div>
-    </div>
-    <div>
-      <button
-        aria-controls="accordion-content-2"
-        aria-expanded="false"
-        class="w-full text-left font-medium py-2 px-4 border-b border-border focus:outline-none focus-visible:ring-2 focus-visible:ring-ring transition-colors bg-background hover:bg-muted disabled:opacity-50 disabled:cursor-not-allowed"
-        id="accordion-header-2"
-        type="button"
-      >
-        Section 3
-      </button>
-      <div
-        aria-label="Content for Section 3"
-        aria-labelledby="accordion-header-2"
-        class="px-4 py-2 text-muted-foreground bg-muted/50"
-        hidden=""
-        id="accordion-content-2"
-        role="region"
-      >
-        Content 3
-      </div>
+    <button
+      aria-controls="accordion-content-0"
+      aria-expanded="false"
+      class="w-full text-left font-medium py-2 px-4 border-b border-border focus:outline-none focus-visible:ring-2 focus-visible:ring-ring transition-colors bg-background hover:bg-muted disabled:opacity-50 disabled:cursor-not-allowed"
+      id="accordion-header-0"
+      type="button"
+    >
+      Item 1
+    </button>
+    <div
+      aria-label="Content for Item 1"
+      aria-labelledby="accordion-header-0"
+      class="px-4 py-2 text-muted-foreground bg-muted/50"
+      hidden=""
+      id="accordion-content-0"
+      role="region"
+    >
+      Content 1
     </div>
   </div>
-</DocumentFragment>
+  <div>
+    <button
+      aria-controls="accordion-content-1"
+      aria-expanded="false"
+      class="w-full text-left font-medium py-2 px-4 border-b border-border focus:outline-none focus-visible:ring-2 focus-visible:ring-ring transition-colors bg-background hover:bg-muted disabled:opacity-50 disabled:cursor-not-allowed"
+      id="accordion-header-1"
+      type="button"
+    >
+      Item 2
+    </button>
+    <div
+      aria-label="Content for Item 2"
+      aria-labelledby="accordion-header-1"
+      class="px-4 py-2 text-muted-foreground bg-muted/50"
+      hidden=""
+      id="accordion-content-1"
+      role="region"
+    >
+      Content 2
+    </div>
+  </div>
+  <div>
+    <button
+      aria-controls="accordion-content-2"
+      aria-expanded="false"
+      class="w-full text-left font-medium py-2 px-4 border-b border-border focus:outline-none focus-visible:ring-2 focus-visible:ring-ring transition-colors bg-background hover:bg-muted disabled:opacity-50 disabled:cursor-not-allowed"
+      disabled=""
+      id="accordion-header-2"
+      type="button"
+    >
+      Item 3
+    </button>
+    <div
+      aria-label="Content for Item 3"
+      aria-labelledby="accordion-header-2"
+      class="px-4 py-2 text-muted-foreground bg-muted/50"
+      hidden=""
+      id="accordion-content-2"
+      role="region"
+    >
+      Content 3
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Accordion > Snapshots > matches hover state snapshot 1`] = `
+<div
+  data-testid="accordion"
+>
+  <div>
+    <button
+      aria-controls="accordion-content-0"
+      aria-expanded="false"
+      class="w-full text-left font-medium py-2 px-4 border-b border-border focus:outline-none focus-visible:ring-2 focus-visible:ring-ring transition-colors bg-background hover:bg-muted disabled:opacity-50 disabled:cursor-not-allowed"
+      id="accordion-header-0"
+      type="button"
+    >
+      Item 1
+    </button>
+    <div
+      aria-label="Content for Item 1"
+      aria-labelledby="accordion-header-0"
+      class="px-4 py-2 text-muted-foreground bg-muted/50"
+      hidden=""
+      id="accordion-content-0"
+      role="region"
+    >
+      Content 1
+    </div>
+  </div>
+  <div>
+    <button
+      aria-controls="accordion-content-1"
+      aria-expanded="false"
+      class="w-full text-left font-medium py-2 px-4 border-b border-border focus:outline-none focus-visible:ring-2 focus-visible:ring-ring transition-colors bg-background hover:bg-muted disabled:opacity-50 disabled:cursor-not-allowed"
+      id="accordion-header-1"
+      type="button"
+    >
+      Item 2
+    </button>
+    <div
+      aria-label="Content for Item 2"
+      aria-labelledby="accordion-header-1"
+      class="px-4 py-2 text-muted-foreground bg-muted/50"
+      hidden=""
+      id="accordion-content-1"
+      role="region"
+    >
+      Content 2
+    </div>
+  </div>
+  <div>
+    <button
+      aria-controls="accordion-content-2"
+      aria-expanded="false"
+      class="w-full text-left font-medium py-2 px-4 border-b border-border focus:outline-none focus-visible:ring-2 focus-visible:ring-ring transition-colors bg-background hover:bg-muted disabled:opacity-50 disabled:cursor-not-allowed"
+      disabled=""
+      id="accordion-header-2"
+      type="button"
+    >
+      Item 3
+    </button>
+    <div
+      aria-label="Content for Item 3"
+      aria-labelledby="accordion-header-2"
+      class="px-4 py-2 text-muted-foreground bg-muted/50"
+      hidden=""
+      id="accordion-content-2"
+      role="region"
+    >
+      Content 3
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Accordion > Snapshots > matches open state snapshot 1`] = `
+<div
+  data-testid="accordion"
+>
+  <div>
+    <button
+      aria-controls="accordion-content-0"
+      aria-expanded="true"
+      class="w-full text-left font-medium py-2 px-4 border-b border-border focus:outline-none focus-visible:ring-2 focus-visible:ring-ring transition-colors bg-background hover:bg-muted disabled:opacity-50 disabled:cursor-not-allowed"
+      id="accordion-header-0"
+      type="button"
+    >
+      Item 1
+    </button>
+    <div
+      aria-label="Content for Item 1"
+      aria-labelledby="accordion-header-0"
+      class="px-4 py-2 text-muted-foreground bg-muted/50"
+      data-testid="open-region"
+      id="accordion-content-0"
+      role="region"
+    >
+      Content 1
+    </div>
+  </div>
+  <div>
+    <button
+      aria-controls="accordion-content-1"
+      aria-expanded="false"
+      class="w-full text-left font-medium py-2 px-4 border-b border-border focus:outline-none focus-visible:ring-2 focus-visible:ring-ring transition-colors bg-background hover:bg-muted disabled:opacity-50 disabled:cursor-not-allowed"
+      id="accordion-header-1"
+      type="button"
+    >
+      Item 2
+    </button>
+    <div
+      aria-label="Content for Item 2"
+      aria-labelledby="accordion-header-1"
+      class="px-4 py-2 text-muted-foreground bg-muted/50"
+      hidden=""
+      id="accordion-content-1"
+      role="region"
+    >
+      Content 2
+    </div>
+  </div>
+  <div>
+    <button
+      aria-controls="accordion-content-2"
+      aria-expanded="false"
+      class="w-full text-left font-medium py-2 px-4 border-b border-border focus:outline-none focus-visible:ring-2 focus-visible:ring-ring transition-colors bg-background hover:bg-muted disabled:opacity-50 disabled:cursor-not-allowed"
+      disabled=""
+      id="accordion-header-2"
+      type="button"
+    >
+      Item 3
+    </button>
+    <div
+      aria-label="Content for Item 3"
+      aria-labelledby="accordion-header-2"
+      class="px-4 py-2 text-muted-foreground bg-muted/50"
+      hidden=""
+      id="accordion-content-2"
+      role="region"
+    >
+      Content 3
+    </div>
+  </div>
+</div>
 `;

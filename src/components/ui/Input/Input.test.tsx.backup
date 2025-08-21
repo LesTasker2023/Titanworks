@@ -1,0 +1,400 @@
+﻿import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+import { describe, expect, it, vi } from 'vitest';
+import { Input } from './input';
+
+describe('Input', () => {
+  // Helper function for consistent rendering
+  const renderInput = (props = {}) => {
+    return render(<Input data-testid="input" {...props} />);
+  };
+
+  describe('Snapshots', () => {
+    it('matches default snapshot', () => {
+      const { container } = render(<Input placeholder="Default input" />);
+      expect(container.firstChild).toMatchSnapshot();
+    });
+
+    it('matches disabled state snapshot', () => {
+      const { container } = render(<Input disabled placeholder="Disabled input" />);
+      expect(container.firstChild).toMatchSnapshot();
+    });
+
+    it('matches different input type snapshot', () => {
+      const { container } = render(<Input type="email" placeholder="Email input" />);
+      expect(container.firstChild).toMatchSnapshot();
+    });
+
+    it('matches with custom className snapshot', () => {
+      const { container } = render(<Input className="custom-class" placeholder="Custom input" />);
+      expect(container.firstChild).toMatchSnapshot();
+    });
+
+    it('matches with value snapshot', () => {
+      const { container } = render(<Input value="Test value" readOnly />);
+      expect(container.firstChild).toMatchSnapshot();
+    });
+
+    it('matches required input snapshot', () => {
+      const { container } = render(<Input required placeholder="Required input" />);
+      expect(container.firstChild).toMatchSnapshot();
+    });
+  });
+
+  describe('Basic Functionality', () => {
+    it('renders correctly', () => {
+      renderInput({ placeholder: "Test input" });
+      expect(screen.getByTestId('input')).toBeInTheDocument();
+    });
+
+    it('handles disabled state', () => {
+      renderInput({ disabled: true });
+      const input = screen.getByTestId('input');
+      expect(input).toBeDisabled();
+    });
+
+    it('accepts placeholder', () => {
+      renderInput({ placeholder: "Enter text" });
+      const input = screen.getByTestId('input');
+      expect(input).toHaveAttribute('placeholder', 'Enter text');
+    });
+
+    it('accepts different input types', () => {
+      renderInput({ type: "email" });
+      const input = screen.getByTestId('input');
+      expect(input).toHaveAttribute('type', 'email');
+    });
+
+    it('handles value prop correctly', () => {
+      renderInput({ value: "Test value", readOnly: true });
+      const input = screen.getByTestId('input') as HTMLInputElement;
+      expect(input.value).toBe('Test value');
+    });
+
+    it('handles defaultValue prop correctly', () => {
+      renderInput({ defaultValue: "Default text" });
+      const input = screen.getByTestId('input') as HTMLInputElement;
+      expect(input.value).toBe('Default text');
+    });
+
+    it('accepts user input when not controlled', async () => {
+      const user = userEvent.setup();
+      renderInput({ placeholder: "Type here" });
+      const input = screen.getByTestId('input');
+      
+      await user.type(input, 'Hello World');
+      expect(input).toHaveValue('Hello World');
+    });
+
+    it('calls onChange handler when value changes', async () => {
+      const user = userEvent.setup();
+      const handleChange = vi.fn();
+      renderInput({ onChange: handleChange });
+      const input = screen.getByTestId('input');
+      
+      await user.type(input, 'a');
+      expect(handleChange).toHaveBeenCalled();
+    });
+  });
+
+  describe('Input Types', () => {
+    it('handles text input type', () => {
+      renderInput({ type: "text" });
+      expect(screen.getByTestId('input')).toHaveAttribute('type', 'text');
+    });
+
+    it('handles email input type', () => {
+      renderInput({ type: "email" });
+      expect(screen.getByTestId('input')).toHaveAttribute('type', 'email');
+    });
+
+    it('handles password input type', () => {
+      renderInput({ type: "password" });
+      expect(screen.getByTestId('input')).toHaveAttribute('type', 'password');
+    });
+
+    it('handles number input type', () => {
+      renderInput({ type: "number" });
+      expect(screen.getByTestId('input')).toHaveAttribute('type', 'number');
+    });
+
+    it('handles tel input type', () => {
+      renderInput({ type: "tel" });
+      expect(screen.getByTestId('input')).toHaveAttribute('type', 'tel');
+    });
+
+    it('handles url input type', () => {
+      renderInput({ type: "url" });
+      expect(screen.getByTestId('input')).toHaveAttribute('type', 'url');
+    });
+
+    it('handles search input type', () => {
+      renderInput({ type: "search" });
+      expect(screen.getByTestId('input')).toHaveAttribute('type', 'search');
+    });
+
+    it('handles date input type', () => {
+      renderInput({ type: "date" });
+      expect(screen.getByTestId('input')).toHaveAttribute('type', 'date');
+    });
+
+    it('handles time input type', () => {
+      renderInput({ type: "time" });
+      expect(screen.getByTestId('input')).toHaveAttribute('type', 'time');
+    });
+  });
+
+  describe('Validation and States', () => {
+    it('handles required attribute', () => {
+      renderInput({ required: true });
+      expect(screen.getByTestId('input')).toBeRequired();
+    });
+
+    it('handles readOnly state', () => {
+      renderInput({ readOnly: true });
+      expect(screen.getByTestId('input')).toHaveAttribute('readonly');
+    });
+
+    it('handles min and max for number inputs', () => {
+      renderInput({ type: "number", min: 0, max: 100 });
+      const input = screen.getByTestId('input');
+      expect(input).toHaveAttribute('min', '0');
+      expect(input).toHaveAttribute('max', '100');
+    });
+
+    it('handles maxLength attribute', () => {
+      renderInput({ maxLength: 50 });
+      expect(screen.getByTestId('input')).toHaveAttribute('maxlength', '50');
+    });
+
+    it('handles pattern attribute', () => {
+      renderInput({ pattern: "[0-9]*" });
+      expect(screen.getByTestId('input')).toHaveAttribute('pattern', '[0-9]*');
+    });
+  });
+
+  describe('Styling and Layout', () => {
+    it('applies base input classes', () => {
+      renderInput();
+      const input = screen.getByTestId('input');
+      expect(input).toHaveClass('flex', 'h-9', 'w-full', 'rounded-md', 'border');
+    });
+
+    it('accepts custom className', () => {
+      renderInput({ className: 'custom-input-class' });
+      const input = screen.getByTestId('input');
+      expect(input).toHaveClass('custom-input-class');
+    });
+
+    it('applies disabled styling', () => {
+      renderInput({ disabled: true });
+      const input = screen.getByTestId('input');
+      expect(input).toHaveClass('disabled:cursor-not-allowed', 'disabled:opacity-50');
+    });
+
+    it('applies focus styling', async () => {
+      const user = userEvent.setup();
+      renderInput();
+      const input = screen.getByTestId('input');
+      
+      await user.click(input);
+      expect(input).toHaveClass('focus-visible:outline-none', 'focus-visible:ring-1');
+    });
+
+    it('supports custom styling via style prop', () => {
+      renderInput({ style: { backgroundColor: 'lightblue' } });
+      const input = screen.getByTestId('input');
+      expect(input).toHaveAttribute('style');
+      expect(input.style.backgroundColor).toBe('lightblue');
+    });
+  });
+
+  describe('Accessibility', () => {
+    it('supports aria-label', () => {
+      renderInput({ 'aria-label': 'Custom input label' });
+      expect(screen.getByTestId('input')).toHaveAttribute('aria-label', 'Custom input label');
+    });
+
+    it('supports aria-describedby', () => {
+      renderInput({ 'aria-describedby': 'input-description' });
+      expect(screen.getByTestId('input')).toHaveAttribute('aria-describedby', 'input-description');
+    });
+
+    it('supports aria-invalid for validation errors', () => {
+      renderInput({ 'aria-invalid': true });
+      expect(screen.getByTestId('input')).toHaveAttribute('aria-invalid', 'true');
+    });
+
+    it('supports aria-required', () => {
+      renderInput({ 'aria-required': true });
+      expect(screen.getByTestId('input')).toHaveAttribute('aria-required', 'true');
+    });
+
+    it('handles keyboard navigation correctly', async () => {
+      const user = userEvent.setup();
+      renderInput();
+      const input = screen.getByTestId('input');
+      
+      await user.tab();
+      expect(input).toHaveFocus();
+    });
+
+    it('supports autocomplete attribute', () => {
+      renderInput({ autoComplete: 'email' });
+      expect(screen.getByTestId('input')).toHaveAttribute('autocomplete', 'email');
+    });
+  });
+
+  describe('Event Handling', () => {
+    it('calls onFocus handler', async () => {
+      const user = userEvent.setup();
+      const handleFocus = vi.fn();
+      renderInput({ onFocus: handleFocus });
+      const input = screen.getByTestId('input');
+      
+      await user.click(input);
+      expect(handleFocus).toHaveBeenCalled();
+    });
+
+    it('calls onBlur handler', async () => {
+      const user = userEvent.setup();
+      const handleBlur = vi.fn();
+      renderInput({ onBlur: handleBlur });
+      const input = screen.getByTestId('input');
+      
+      await user.click(input);
+      await user.tab();
+      expect(handleBlur).toHaveBeenCalled();
+    });
+
+    it('calls onKeyDown handler', async () => {
+      const user = userEvent.setup();
+      const handleKeyDown = vi.fn();
+      renderInput({ onKeyDown: handleKeyDown });
+      const input = screen.getByTestId('input');
+      
+      await user.type(input, 'a');
+      expect(handleKeyDown).toHaveBeenCalled();
+    });
+
+    it('calls onKeyUp handler', async () => {
+      const user = userEvent.setup();
+      const handleKeyUp = vi.fn();
+      renderInput({ onKeyUp: handleKeyUp });
+      const input = screen.getByTestId('input');
+      
+      await user.type(input, 'a');
+      expect(handleKeyUp).toHaveBeenCalled();
+    });
+  });
+
+  describe('Ref Forwarding and Props', () => {
+    it('forwards refs correctly', () => {
+      const ref = vi.fn();
+      renderInput({ ref });
+      expect(ref).toHaveBeenCalledWith(expect.any(HTMLInputElement));
+    });
+
+    it('spreads additional props', () => {
+      renderInput({ 'data-custom': 'value', id: 'custom-id' });
+      const input = screen.getByTestId('input');
+      expect(input).toHaveAttribute('data-custom', 'value');
+      expect(input).toHaveAttribute('id', 'custom-id');
+    });
+
+    it('handles name attribute', () => {
+      renderInput({ name: 'username' });
+      expect(screen.getByTestId('input')).toHaveAttribute('name', 'username');
+    });
+
+    it('handles form attribute', () => {
+      renderInput({ form: 'my-form' });
+      expect(screen.getByTestId('input')).toHaveAttribute('form', 'my-form');
+    });
+  });
+
+  describe('Edge Cases', () => {
+    it('handles empty value correctly', () => {
+      renderInput({ value: '', readOnly: true });
+      const input = screen.getByTestId('input') as HTMLInputElement;
+      expect(input.value).toBe('');
+    });
+
+    it('handles undefined and null props gracefully', () => {
+      renderInput({ value: undefined, placeholder: null });
+      expect(screen.getByTestId('input')).toBeInTheDocument();
+    });
+
+    it('handles very long values', () => {
+      const longValue = 'a'.repeat(1000);
+      renderInput({ value: longValue, readOnly: true });
+      const input = screen.getByTestId('input') as HTMLInputElement;
+      expect(input.value).toBe(longValue);
+    });
+
+    it('handles special characters in value', () => {
+      const specialValue = '!@#$%^&*()_+-=[]{}|;:,.<>?';
+      renderInput({ value: specialValue, readOnly: true });
+      const input = screen.getByTestId('input') as HTMLInputElement;
+      expect(input.value).toBe(specialValue);
+    });
+
+    it('handles component unmounting cleanly', () => {
+      const { unmount } = renderInput();
+      expect(() => unmount()).not.toThrow();
+    });
+
+    it('preserves functionality after remounting', () => {
+      const { unmount } = renderInput({ placeholder: 'First mount' });
+      unmount();
+      
+      renderInput({ placeholder: 'Second mount' });
+      expect(screen.getByTestId('input')).toHaveAttribute('placeholder', 'Second mount');
+    });
+
+    it('handles rapid value changes', async () => {
+      const user = userEvent.setup();
+      const handleChange = vi.fn();
+      renderInput({ onChange: handleChange });
+      const input = screen.getByTestId('input');
+      
+      await user.type(input, 'abc');
+      expect(handleChange).toHaveBeenCalledTimes(3);
+    });
+
+    it('handles complex prop combinations', () => {
+      renderInput({
+        type: 'email',
+        required: true,
+        disabled: false,
+        placeholder: 'Enter email',
+        maxLength: 100,
+        autoComplete: 'email',
+        'aria-label': 'Email input',
+        className: 'custom-email-input'
+      });
+      
+      const input = screen.getByTestId('input');
+      expect(input).toHaveAttribute('type', 'email');
+      expect(input).toBeRequired();
+      expect(input).not.toBeDisabled();
+      expect(input).toHaveAttribute('placeholder', 'Enter email');
+      expect(input).toHaveAttribute('maxlength', '100');
+      expect(input).toHaveAttribute('autocomplete', 'email');
+      expect(input).toHaveAttribute('aria-label', 'Email input');
+      expect(input).toHaveClass('custom-email-input');
+    });
+
+    it('maintains performance with many re-renders', () => {
+      const { rerender } = renderInput({ value: 'initial', readOnly: true });
+      
+      // Simulate multiple re-renders
+      for (let i = 0; i < 100; i++) {
+        rerender(<Input data-testid="input" value={`value-${i}`} readOnly />);
+      }
+      
+      const input = screen.getByTestId('input') as HTMLInputElement;
+      expect(input.value).toBe('value-99');
+    });
+  });
+});

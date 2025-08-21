@@ -1,47 +1,21 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`Enhanced Alert Component > ðŸ”§ Basic Functionality (6 tests) > Snapshots > matches all variants snapshot 1`] = `
+exports[`Alert > Snapshots > matches default snapshot 1`] = `
 <div
-  data-testid="variants-container"
+  class="relative w-full rounded-lg border px-4 py-3 text-sm [&>svg+div]:translate-y-[-3px] [&>svg]:absolute [&>svg]:left-4 [&>svg]:top-4 [&>svg]:text-foreground [&>svg~*]:pl-7 bg-background text-foreground alert"
+  data-testid="alert"
+  role="alert"
 >
-  <div
-    class="relative w-full rounded-lg border px-4 py-3 text-sm [&>svg+div]:translate-y-[-3px] [&>svg]:absolute [&>svg]:left-4 [&>svg]:top-4 [&>svg]:text-foreground [&>svg~*]:pl-7 bg-background text-foreground alert"
-    role="alert"
-  >
-    Default
-  </div>
-  <div
-    class="relative w-full rounded-lg border px-4 py-3 text-sm [&>svg+div]:translate-y-[-3px] [&>svg]:absolute [&>svg]:left-4 [&>svg]:top-4 [&>svg~*]:pl-7 border-destructive/50 text-destructive dark:border-destructive [&>svg]:text-destructive alert"
-    role="alert"
-  >
-    Destructive
-  </div>
-  <div
-    class="relative w-full rounded-lg border px-4 py-3 text-sm [&>svg+div]:translate-y-[-3px] [&>svg]:absolute [&>svg]:left-4 [&>svg]:top-4 [&>svg~*]:pl-7 border-yellow-500/50 text-yellow-900 dark:border-yellow-500 dark:text-yellow-50 [&>svg]:text-yellow-900 dark:[&>svg]:text-yellow-50 alert"
-    role="alert"
-  >
-    Warning
-  </div>
-  <div
-    class="relative w-full rounded-lg border px-4 py-3 text-sm [&>svg+div]:translate-y-[-3px] [&>svg]:absolute [&>svg]:left-4 [&>svg]:top-4 [&>svg~*]:pl-7 border-green-500/50 text-green-900 dark:border-green-500 dark:text-green-50 [&>svg]:text-green-900 dark:[&>svg]:text-green-50 alert"
-    role="alert"
-  >
-    Success
-  </div>
-  <div
-    class="relative w-full rounded-lg border px-4 py-3 text-sm [&>svg+div]:translate-y-[-3px] [&>svg]:absolute [&>svg]:left-4 [&>svg]:top-4 [&>svg~*]:pl-7 border-blue-500/50 text-blue-900 dark:border-blue-500 dark:text-blue-50 [&>svg]:text-blue-900 dark:[&>svg]:text-blue-50 alert"
-    role="alert"
-  >
-    Info
-  </div>
+  Test content
 </div>
 `;
 
-exports[`Enhanced Alert Component > ðŸ”§ Basic Functionality (6 tests) > Snapshots > matches default snapshot 1`] = `
+exports[`Alert > Snapshots > matches hover state snapshot 1`] = `
 <div
   class="relative w-full rounded-lg border px-4 py-3 text-sm [&>svg+div]:translate-y-[-3px] [&>svg]:absolute [&>svg]:left-4 [&>svg]:top-4 [&>svg]:text-foreground [&>svg~*]:pl-7 bg-background text-foreground alert"
+  data-testid="alert"
   role="alert"
 >
-  Default
+  Test content
 </div>
 `;

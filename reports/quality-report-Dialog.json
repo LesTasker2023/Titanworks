@@ -1,0 +1,47 @@
+﻿{
+    "systemHealth":  {
+                         "typescript":  {
+                                            "status":  "PASS",
+                                            "passed":  true
+                                        },
+                         "build":  {
+                                       "status":  "FAIL",
+                                       "passed":  false
+                                   },
+                         "linting":  {
+                                         "status":  "FAIL",
+                                         "passed":  false
+                                     },
+                         "tests":  {
+                                       "total":  50,
+                                       "failed":  0,
+                                       "passed":  50
+                                   }
+                     },
+    "components":  {
+                       "Dialog":  {
+                                      "passing":  true,
+                                      "timestamp":  "2025-08-21T09:08:37Z",
+                                      "score":  100,
+                                      "context":  "Modal dialogs",
+                                      "status":  "PASS",
+                                      "issues":  {
+
+                                                 }
+                                  }
+                   },
+    "issues":  {
+
+               },
+    "metadata":  {
+                     "version":  "20250821-0908",
+                     "reportType":  "component-audit",
+                     "timestamp":  "2025-08-21T09:08:37Z",
+                     "overallScore":  75,
+                     "duration":  null,
+                     "targetComponents":  [
+                                              "Dialog"
+                                          ],
+                     "totalComponents":  1
+                 }
+}

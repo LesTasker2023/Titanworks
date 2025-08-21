@@ -1,17 +1,9 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`ThemeToggle > renders with default icon and label 1`] = `
+exports[`ThemeToggle > Snapshots > matches default snapshot 1`] = `
 <button
   aria-label="Toggle theme"
-  title="Toggle theme"
->
-  🌙
-</button>
-`;
-
-exports[`ThemeToggle > toggles theme on click 1`] = `
-<button
-  aria-label="Toggle theme"
+  data-testid="themetoggle"
   title="Toggle theme"
 >
   🌙

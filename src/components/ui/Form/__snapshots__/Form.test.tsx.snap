@@ -1,17 +1,10 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`Form > applies variant classes correctly 1`] = `
-<form
-  class="w-full bg-card border border-border rounded-lg p-6 space-y-4"
->
-  Test Content
-</form>
-`;
-
-exports[`Form > renders without crashing 1`] = `
+exports[`Form > Snapshots > matches default snapshot 1`] = `
 <form
   class="w-full bg-background space-y-4"
+  data-testid="form"
 >
-  Test Content
+  Test content
 </form>
 `;

@@ -1,9 +1,11 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`Sonner > Snapshots > matches basic snapshot 1`] = `
-<div
-  data-testid="sonner-container"
->
-  Sonner Component Test
-</div>
+exports[`Sonner > Snapshots > matches default snapshot 1`] = `
+<section
+  aria-atomic="false"
+  aria-label="Notifications alt+T"
+  aria-live="polite"
+  aria-relevant="additions text"
+  tabindex="-1"
+/>
 `;

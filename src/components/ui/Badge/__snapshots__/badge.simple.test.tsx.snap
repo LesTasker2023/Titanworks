@@ -57,19 +57,41 @@ exports[`Badge > Snapshots > matches default snapshot 1`] = `
 </div>
 `;
 
-exports[`Badge > Snapshots > matches disabled state snapshot 1`] = `
+exports[`Badge > Snapshots > matches dot indicator snapshot 1`] = `
 <div
-  class="inline-flex items-center rounded-md border font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-primary text-primary-foreground shadow hover:bg-primary/80 px-2.5 py-0.5 text-xs"
-  disabled=""
+  class="inline-flex items-center rounded-md border font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-primary text-primary-foreground shadow hover:bg-primary/80 px-2.5 py-0.5 text-xs pl-1.5"
 >
-  Disabled
+  <span
+    aria-hidden="true"
+    class="mr-1.5 h-1.5 w-1.5 rounded-full bg-current opacity-75"
+  />
+  With Dot
 </div>
 `;
 
-exports[`Badge > Snapshots > matches loading state snapshot 1`] = `
+exports[`Badge > Snapshots > matches removable state snapshot 1`] = `
 <div
   class="inline-flex items-center rounded-md border font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-primary text-primary-foreground shadow hover:bg-primary/80 px-2.5 py-0.5 text-xs"
 >
-  Loading
+  Removable
+  <button
+    aria-label="Remove badge"
+    class="ml-1.5 -mr-1 h-3.5 w-3.5 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
+    type="button"
+  >
+    <svg
+      class="h-3 w-3"
+      fill="none"
+      stroke="currentColor"
+      viewBox="0 0 24 24"
+    >
+      <path
+        d="M6 18L18 6M6 6l12 12"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+      />
+    </svg>
+  </button>
 </div>
 `;

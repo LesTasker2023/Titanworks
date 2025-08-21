@@ -3,6 +3,20 @@
 exports[`Avatar > Snapshots > matches default snapshot 1`] = `
 <span
   class="relative flex shrink-0 overflow-hidden rounded-full h-10 w-10 avatar"
+  data-testid="avatar"
+>
+  <span
+    class="flex h-full w-full items-center justify-center rounded-full bg-muted text-muted-foreground font-medium"
+  >
+    U
+  </span>
+</span>
+`;
+
+exports[`Avatar > Snapshots > matches loading state snapshot 1`] = `
+<span
+  class="relative flex shrink-0 overflow-hidden rounded-full h-10 w-10 avatar avatar--loading"
+  data-testid="avatar"
 >
   <span
     class="flex h-full w-full items-center justify-center rounded-full bg-muted text-muted-foreground font-medium"

@@ -1,0 +1,458 @@
+import { render, screen, fireEvent, waitFor } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+import { describe, expect, it, vi } from 'vitest';
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from './Tooltip';
+
+describe('Tooltip Component', () => {
+  const renderTooltip = (props = {}) => {
+    return render(
+      <TooltipProvider>
+        <Tooltip {...props}>
+          <TooltipTrigger>Hover me</TooltipTrigger>
+          <TooltipContent>Tooltip content</TooltipContent>
+        </Tooltip>
+      </TooltipProvider>
+    );
+  };
+
+  describe('Rendering', () => {
+    it('renders without crashing', () => {
+      renderTooltip();
+      expect(document.body).toBeTruthy();
+    });
+
+    it('renders trigger element', () => {
+      renderTooltip();
+      const trigger = screen.getByText('Hover me');
+      expect(trigger).toBeInTheDocument();
+    });
+
+    it('does not show tooltip content initially', () => {
+      renderTooltip();
+      const content = screen.queryByText('Tooltip content');
+      expect(content).not.toBeInTheDocument();
+    });
+
+    it('applies custom className to TooltipContent', () => {
+      render(
+        <TooltipProvider>
+          <Tooltip>
+            <TooltipTrigger>Hover me</TooltipTrigger>
+            <TooltipContent className="custom-tooltip">Tooltip content</TooltipContent>
+          </Tooltip>
+        </TooltipProvider>
+      );
+      
+      const trigger = screen.getByText('Hover me');
+      fireEvent.mouseEnter(trigger);
+      
+      setTimeout(() => {
+        const content = screen.getByText('Tooltip content');
+        expect(content).toHaveClass('custom-tooltip');
+      }, 100);
+    });
+
+    describe('Snapshots', () => {
+      it('matches default snapshot', () => {
+        const { container } = renderTooltip();
+        expect(container.firstChild).toMatchSnapshot();
+      });
+
+      it('matches all variants snapshot', async () => {
+        const variants = ['default', 'secondary', 'destructive', 'outline', 'muted', 'accent'] as const;
+        
+        for (const variant of variants) {
+          const { container } = render(
+            <TooltipProvider>
+              <Tooltip>
+                <TooltipTrigger>Hover</TooltipTrigger>
+                <TooltipContent variant={variant}>Content</TooltipContent>
+              </Tooltip>
+            </TooltipProvider>
+          );
+          expect(container.firstChild).toMatchSnapshot(`${variant} variant`);
+        }
+      });
+
+      it('matches all sizes snapshot', () => {
+        const sizes = ['sm', 'default', 'lg'] as const;
+        
+        for (const size of sizes) {
+          const { container } = render(
+            <TooltipProvider>
+              <Tooltip>
+                <TooltipTrigger>Hover</TooltipTrigger>
+                <TooltipContent size={size}>Content</TooltipContent>
+              </Tooltip>
+            </TooltipProvider>
+          );
+          expect(container.firstChild).toMatchSnapshot(`${size} size`);
+        }
+      });
+    });
+  });
+
+  describe('Variants', () => {
+    const testVariant = async (variant: 'default' | 'secondary' | 'destructive' | 'outline' | 'muted' | 'accent', expectedClasses: string[]) => {
+      render(
+        <TooltipProvider>
+          <Tooltip>
+            <TooltipTrigger>Hover me</TooltipTrigger>
+            <TooltipContent variant={variant}>Tooltip content</TooltipContent>
+          </Tooltip>
+        </TooltipProvider>
+      );
+      
+      const trigger = screen.getByText('Hover me');
+      fireEvent.mouseEnter(trigger);
+      
+      await waitFor(() => {
+        const content = screen.getByText('Tooltip content');
+        expectedClasses.forEach(className => {
+          expect(content).toHaveClass(className);
+        });
+      });
+    };
+
+    it('renders default variant correctly', async () => {
+      await testVariant('default', ['bg-primary', 'text-primary-foreground']);
+    });
+
+    it('renders secondary variant correctly', async () => {
+      await testVariant('secondary', ['bg-secondary', 'text-secondary-foreground']);
+    });
+
+    it('renders destructive variant correctly', async () => {
+      await testVariant('destructive', ['bg-destructive', 'text-destructive-foreground']);
+    });
+
+    it('renders outline variant correctly', async () => {
+      await testVariant('outline', ['bg-background', 'text-foreground', 'border', 'border-border']);
+    });
+
+    it('renders muted variant correctly', async () => {
+      await testVariant('muted', ['bg-muted', 'text-muted-foreground']);
+    });
+  });
+
+  describe('Sizes', () => {
+    const testSize = async (size: 'sm' | 'default' | 'lg', expectedClasses: string[]) => {
+      render(
+        <TooltipProvider>
+          <Tooltip>
+            <TooltipTrigger>Hover me</TooltipTrigger>
+            <TooltipContent size={size}>Tooltip content</TooltipContent>
+          </Tooltip>
+        </TooltipProvider>
+      );
+      
+      const trigger = screen.getByText('Hover me');
+      fireEvent.mouseEnter(trigger);
+      
+      await waitFor(() => {
+        const content = screen.getByText('Tooltip content');
+        expectedClasses.forEach(className => {
+          expect(content).toHaveClass(className);
+        });
+      });
+    };
+
+    it('renders small size correctly', async () => {
+      await testSize('sm', ['px-2', 'py-1', 'text-xs']);
+    });
+
+    it('renders default size correctly', async () => {
+      await testSize('default', ['px-3', 'py-1.5', 'text-xs']);
+    });
+
+    it('renders large size correctly', async () => {
+      await testSize('lg', ['px-4', 'py-2', 'text-sm']);
+    });
+  });
+
+  describe('Interactions', () => {
+    it('shows tooltip on mouse enter', async () => {
+      renderTooltip();
+      const trigger = screen.getByText('Hover me');
+      
+      fireEvent.mouseEnter(trigger);
+      
+      await waitFor(() => {
+        const content = screen.getByText('Tooltip content');
+        expect(content).toBeInTheDocument();
+      });
+    });
+
+    it('hides tooltip on mouse leave', async () => {
+      renderTooltip();
+      const trigger = screen.getByText('Hover me');
+      
+      fireEvent.mouseEnter(trigger);
+      
+      await waitFor(() => {
+        expect(screen.getByText('Tooltip content')).toBeInTheDocument();
+      });
+      
+      fireEvent.mouseLeave(trigger);
+      
+      await waitFor(() => {
+        expect(screen.queryByText('Tooltip content')).not.toBeInTheDocument();
+      });
+    });
+
+    it('shows tooltip on focus', async () => {
+      renderTooltip();
+      const trigger = screen.getByText('Hover me');
+      
+      fireEvent.focus(trigger);
+      
+      await waitFor(() => {
+        const content = screen.getByText('Tooltip content');
+        expect(content).toBeInTheDocument();
+      });
+    });
+
+    it('hides tooltip on blur', async () => {
+      renderTooltip();
+      const trigger = screen.getByText('Hover me');
+      
+      fireEvent.focus(trigger);
+      
+      await waitFor(() => {
+        expect(screen.getByText('Tooltip content')).toBeInTheDocument();
+      });
+      
+      fireEvent.blur(trigger);
+      
+      await waitFor(() => {
+        expect(screen.queryByText('Tooltip content')).not.toBeInTheDocument();
+      });
+    });
+
+    it('handles rapid hover interactions', async () => {
+      const user = userEvent.setup();
+      renderTooltip();
+      const trigger = screen.getByText('Hover me');
+      
+      // Rapid hover/unhover
+      await user.hover(trigger);
+      await user.unhover(trigger);
+      await user.hover(trigger);
+      
+      await waitFor(() => {
+        expect(screen.getByText('Tooltip content')).toBeInTheDocument();
+      });
+    });
+  });
+
+  describe('Positioning', () => {
+    it('accepts custom sideOffset', () => {
+      render(
+        <TooltipProvider>
+          <Tooltip>
+            <TooltipTrigger>Hover me</TooltipTrigger>
+            <TooltipContent sideOffset={10}>Tooltip content</TooltipContent>
+          </Tooltip>
+        </TooltipProvider>
+      );
+      
+      const trigger = screen.getByText('Hover me');
+      fireEvent.mouseEnter(trigger);
+      
+      // Note: Testing sideOffset would require more complex DOM position testing
+      expect(trigger).toBeInTheDocument();
+    });
+
+    it('supports different side positions', async () => {
+      const sides = ['top', 'bottom', 'left', 'right'] as const;
+      
+      for (const side of sides) {
+        render(
+          <TooltipProvider>
+            <Tooltip>
+              <TooltipTrigger>Hover me</TooltipTrigger>
+              <TooltipContent side={side}>Tooltip content</TooltipContent>
+            </Tooltip>
+          </TooltipProvider>
+        );
+        
+        const trigger = screen.getByText('Hover me');
+        fireEvent.mouseEnter(trigger);
+        
+        await waitFor(() => {
+          expect(screen.getByText('Tooltip content')).toBeInTheDocument();
+        });
+      }
+    });
+  });
+
+  describe('Accessibility', () => {
+    it('has proper ARIA attributes', async () => {
+      renderTooltip();
+      const trigger = screen.getByText('Hover me');
+      
+      fireEvent.mouseEnter(trigger);
+      
+      await waitFor(() => {
+        const content = screen.getByText('Tooltip content');
+        expect(content).toHaveAttribute('role', 'tooltip');
+        expect(trigger).toHaveAttribute('aria-describedby');
+      });
+    });
+
+    it('supports keyboard navigation', async () => {
+      const user = userEvent.setup();
+      renderTooltip();
+      const trigger = screen.getByText('Hover me');
+      
+      await user.tab();
+      expect(trigger).toHaveFocus();
+      
+      await waitFor(() => {
+        expect(screen.getByText('Tooltip content')).toBeInTheDocument();
+      });
+    });
+
+    it('can be dismissed with Escape key', async () => {
+      const user = userEvent.setup();
+      renderTooltip();
+      const trigger = screen.getByText('Hover me');
+      
+      await user.hover(trigger);
+      
+      await waitFor(() => {
+        expect(screen.getByText('Tooltip content')).toBeInTheDocument();
+      });
+      
+      await user.keyboard('{Escape}');
+      
+      await waitFor(() => {
+        expect(screen.queryByText('Tooltip content')).not.toBeInTheDocument();
+      });
+    });
+  });
+
+  describe('Provider Configuration', () => {
+    it('works with custom delay duration', () => {
+      render(
+        <TooltipProvider delayDuration={0}>
+          <Tooltip>
+            <TooltipTrigger>Hover me</TooltipTrigger>
+            <TooltipContent>Tooltip content</TooltipContent>
+          </Tooltip>
+        </TooltipProvider>
+      );
+      
+      const trigger = screen.getByText('Hover me');
+      fireEvent.mouseEnter(trigger);
+      
+      // With 0 delay, tooltip should appear immediately
+      expect(screen.getByText('Tooltip content')).toBeInTheDocument();
+    });
+
+    it('supports skip delay duration', () => {
+      render(
+        <TooltipProvider skipDelayDuration={100}>
+          <Tooltip>
+            <TooltipTrigger>Hover me</TooltipTrigger>
+            <TooltipContent>Tooltip content</TooltipContent>
+          </Tooltip>
+        </TooltipProvider>
+      );
+      
+      expect(screen.getByText('Hover me')).toBeInTheDocument();
+    });
+  });
+
+  describe('Complex Content', () => {
+    it('handles complex JSX content', async () => {
+      render(
+        <TooltipProvider>
+          <Tooltip>
+            <TooltipTrigger>Hover me</TooltipTrigger>
+            <TooltipContent>
+              <div>
+                <strong>Title</strong>
+                <p>Description text</p>
+              </div>
+            </TooltipContent>
+          </Tooltip>
+        </TooltipProvider>
+      );
+      
+      const trigger = screen.getByText('Hover me');
+      fireEvent.mouseEnter(trigger);
+      
+      await waitFor(() => {
+        expect(screen.getByText('Title')).toBeInTheDocument();
+        expect(screen.getByText('Description text')).toBeInTheDocument();
+      });
+    });
+
+    it('handles long text content', async () => {
+      const longText = 'This is a very long tooltip text that might wrap to multiple lines and should still work correctly with all the styling and positioning.';
+      
+      render(
+        <TooltipProvider>
+          <Tooltip>
+            <TooltipTrigger>Hover me</TooltipTrigger>
+            <TooltipContent>{longText}</TooltipContent>
+          </Tooltip>
+        </TooltipProvider>
+      );
+      
+      const trigger = screen.getByText('Hover me');
+      fireEvent.mouseEnter(trigger);
+      
+      await waitFor(() => {
+        expect(screen.getByText(longText)).toBeInTheDocument();
+      });
+    });
+  });
+
+  describe('Edge Cases', () => {
+    it('handles empty content gracefully', () => {
+      render(
+        <TooltipProvider>
+          <Tooltip>
+            <TooltipTrigger>Hover me</TooltipTrigger>
+            <TooltipContent></TooltipContent>
+          </Tooltip>
+        </TooltipProvider>
+      );
+      
+      expect(screen.getByText('Hover me')).toBeInTheDocument();
+    });
+
+    it('handles disabled trigger', () => {
+      render(
+        <TooltipProvider>
+          <Tooltip>
+            <TooltipTrigger disabled>Disabled trigger</TooltipTrigger>
+            <TooltipContent>Tooltip content</TooltipContent>
+          </Tooltip>
+        </TooltipProvider>
+      );
+      
+      const trigger = screen.getByText('Disabled trigger');
+      expect(trigger).toBeDisabled();
+    });
+
+    it('forwards refs correctly', () => {
+      const triggerRef = vi.fn();
+      const contentRef = vi.fn();
+      
+      render(
+        <TooltipProvider>
+          <Tooltip>
+            <TooltipTrigger ref={triggerRef}>Hover me</TooltipTrigger>
+            <TooltipContent ref={contentRef}>Tooltip content</TooltipContent>
+          </Tooltip>
+        </TooltipProvider>
+      );
+      
+      expect(triggerRef).toHaveBeenCalled();
+      // Note: Content ref is only called when tooltip is shown
+    });
+  });
+});

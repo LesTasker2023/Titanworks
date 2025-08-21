@@ -8,6 +8,8 @@ interface ColorPickerProps {
   defaultColor?: string;
   onColorChange?: (color: string) => void;
   className?: string;
+  disabled?: boolean;
+  'aria-label'?: string;
 }
 
 const PRESET_COLORS = [
@@ -29,6 +31,8 @@ function ColorPicker({
   defaultColor = '#18181b',
   onColorChange,
   className = '',
+  disabled = false,
+  'aria-label': ariaLabel = 'Color picker',
 }: ColorPickerProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedColor, setSelectedColor] = useState(defaultColor);
@@ -127,6 +131,8 @@ function ColorPicker({
         size="sm"
         onClick={() => setIsOpen(!isOpen)}
         className="flex items-center gap-2"
+        aria-label={ariaLabel}
+        disabled={disabled}
       >
         <div
           className="w-4 h-4 rounded-full border border-border"

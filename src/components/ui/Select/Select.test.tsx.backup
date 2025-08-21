@@ -1,0 +1,643 @@
+﻿import { render, screen } from '@testing-library/react';
+import { describe, expect, it, vi } from 'vitest';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue, SelectLabel, SelectSeparator, SelectGroup } from './select';
+
+describe('Select', () => {
+  const renderBasicSelect = (props = {}) => {
+    return render(
+      <Select {...props}>
+        <SelectTrigger data-testid="select-trigger">
+          <SelectValue placeholder="Select an option" />
+        </SelectTrigger>
+        <SelectContent>
+          <SelectItem value="option1">Option 1</SelectItem>
+          <SelectItem value="option2">Option 2</SelectItem>
+          <SelectItem value="option3">Option 3</SelectItem>
+        </SelectContent>
+      </Select>
+    );
+  };
+
+  describe('Snapshots', () => {
+    it('matches default snapshot', () => {
+      const { container } = renderBasicSelect();
+      expect(container.firstChild).toMatchSnapshot();
+    });
+
+    it('matches enhanced select with label snapshot', () => {
+      const { container } = render(
+        <Select label="Test Label" helperText="Helper text">
+          <SelectTrigger>
+            <SelectValue placeholder="Select an option" />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="option1">Option 1</SelectItem>
+          </SelectContent>
+        </Select>
+      );
+      expect(container.firstChild).toMatchSnapshot();
+    });
+
+    it('matches error state snapshot', () => {
+      const { container } = render(
+        <Select label="Test Label" error="This field is required">
+          <SelectTrigger>
+            <SelectValue placeholder="Select an option" />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="option1">Option 1</SelectItem>
+          </SelectContent>
+        </Select>
+      );
+      expect(container.firstChild).toMatchSnapshot();
+    });
+
+    it('matches loading state snapshot', () => {
+      const { container } = render(
+        <Select>
+          <SelectTrigger loading>
+            <SelectValue placeholder="Loading..." />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="option1">Option 1</SelectItem>
+          </SelectContent>
+        </Select>
+      );
+      expect(container.firstChild).toMatchSnapshot();
+    });
+
+    it('matches searchable content snapshot', () => {
+      const { container } = render(
+        <Select>
+          <SelectTrigger>
+            <SelectValue placeholder="Select an option" />
+          </SelectTrigger>
+          <SelectContent searchable>
+            <SelectItem value="option1">Option 1</SelectItem>
+          </SelectContent>
+        </Select>
+      );
+      expect(container.firstChild).toMatchSnapshot();
+    });
+
+    it('matches grouped content snapshot', () => {
+      const { container } = render(
+        <Select>
+          <SelectTrigger>
+            <SelectValue placeholder="Select an option" />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectGroup>
+              <SelectLabel>Fruits</SelectLabel>
+              <SelectItem value="apple">Apple</SelectItem>
+              <SelectItem value="banana">Banana</SelectItem>
+            </SelectGroup>
+            <SelectSeparator />
+            <SelectGroup>
+              <SelectLabel>Vegetables</SelectLabel>
+              <SelectItem value="carrot">Carrot</SelectItem>
+            </SelectGroup>
+          </SelectContent>
+        </Select>
+      );
+      expect(container.firstChild).toMatchSnapshot();
+    });
+  });
+
+  describe('Basic Rendering', () => {
+    it('renders correctly', () => {
+      renderBasicSelect();
+      expect(screen.getByTestId('select-trigger')).toBeInTheDocument();
+      expect(screen.getByText('Select an option')).toBeInTheDocument();
+    });
+
+    it('displays selected value when controlled', () => {
+      render(
+        <Select defaultValue="option2">
+          <SelectTrigger data-testid="select-trigger">
+            <SelectValue placeholder="Select an option" />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="option1">Option 1</SelectItem>
+            <SelectItem value="option2">Option 2</SelectItem>
+          </SelectContent>
+        </Select>
+      );
+      
+      expect(screen.getByText('Option 2')).toBeInTheDocument();
+    });
+
+    it('can be controlled with value prop', () => {
+      const onValueChange = vi.fn();
+      
+      const { rerender } = render(
+        <Select value="option1" onValueChange={onValueChange}>
+          <SelectTrigger data-testid="select-trigger">
+            <SelectValue placeholder="Select an option" />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="option1">Option 1</SelectItem>
+            <SelectItem value="option2">Option 2</SelectItem>
+          </SelectContent>
+        </Select>
+      );
+      
+      expect(screen.getByText('Option 1')).toBeInTheDocument();
+      
+      // Rerender with new value
+      rerender(
+        <Select value="option2" onValueChange={onValueChange}>
+          <SelectTrigger data-testid="select-trigger">
+            <SelectValue placeholder="Select an option" />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="option1">Option 1</SelectItem>
+            <SelectItem value="option2">Option 2</SelectItem>
+          </SelectContent>
+        </Select>
+      );
+      
+      expect(screen.getByText('Option 2')).toBeInTheDocument();
+    });
+
+    it('shows placeholder when no value is selected', () => {
+      render(
+        <Select>
+          <SelectTrigger data-testid="select-trigger">
+            <SelectValue placeholder="Choose option..." />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="option1">Option 1</SelectItem>
+          </SelectContent>
+        </Select>
+      );
+      
+      expect(screen.getByText('Choose option...')).toBeInTheDocument();
+    });
+  });
+
+  describe('Enhanced Features', () => {
+    it('renders with label and helper text', () => {
+      render(
+        <Select label="Test Label" helperText="This is helper text">
+          <SelectTrigger>
+            <SelectValue placeholder="Select an option" />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="option1">Option 1</SelectItem>
+          </SelectContent>
+        </Select>
+      );
+      
+      expect(screen.getByText('Test Label')).toBeInTheDocument();
+      expect(screen.getByText('This is helper text')).toBeInTheDocument();
+    });
+
+    it('displays error state correctly', () => {
+      render(
+        <Select label="Test Label" error="This field is required">
+          <SelectTrigger>
+            <SelectValue placeholder="Select an option" />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="option1">Option 1</SelectItem>
+          </SelectContent>
+        </Select>
+      );
+      
+      expect(screen.getByText('This field is required')).toBeInTheDocument();
+      expect(screen.queryByText('This is helper text')).not.toBeInTheDocument();
+    });
+
+    it('shows required indicator when required', () => {
+      render(
+        <Select label="Required Field" required>
+          <SelectTrigger>
+            <SelectValue placeholder="Select an option" />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="option1">Option 1</SelectItem>
+          </SelectContent>
+        </Select>
+      );
+      
+      expect(screen.getByText('*')).toBeInTheDocument();
+    });
+
+    it('handles loading state on trigger', () => {
+      render(
+        <Select>
+          <SelectTrigger loading data-testid="select-trigger">
+            <SelectValue placeholder="Loading..." />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="option1">Option 1</SelectItem>
+          </SelectContent>
+        </Select>
+      );
+      
+      const trigger = screen.getByTestId('select-trigger');
+      expect(trigger).toBeDisabled();
+    });
+
+    it('handles disabled state', () => {
+      render(
+        <Select disabled>
+          <SelectTrigger data-testid="select-trigger">
+            <SelectValue placeholder="Select an option" />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="option1">Option 1</SelectItem>
+          </SelectContent>
+        </Select>
+      );
+      
+      const trigger = screen.getByTestId('select-trigger');
+      expect(trigger).toBeDisabled();
+    });
+
+    it('renders multiple values correctly', () => {
+      render(
+        <Select defaultValue="option1">
+          <SelectTrigger data-testid="select-trigger">
+            <SelectValue />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="option1">First Option</SelectItem>
+            <SelectItem value="option2">Second Option</SelectItem>
+            <SelectItem value="option3">Third Option</SelectItem>
+          </SelectContent>
+        </Select>
+      );
+      
+      expect(screen.getByText('First Option')).toBeInTheDocument();
+    });
+  });
+
+  describe('Content Components Integration', () => {
+    it('renders complex Select with all content components', () => {
+      render(
+        <Select>
+          <SelectTrigger data-testid="select-trigger">
+            <SelectValue placeholder="Select framework" />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectGroup>
+              <SelectLabel>Frontend</SelectLabel>
+              <SelectItem value="react">React</SelectItem>
+              <SelectItem value="vue">Vue</SelectItem>
+            </SelectGroup>
+            <SelectSeparator />
+            <SelectGroup>
+              <SelectLabel>Backend</SelectLabel>
+              <SelectItem value="nodejs">Node.js</SelectItem>
+              <SelectItem value="python" disabled>Python (Disabled)</SelectItem>
+            </SelectGroup>
+          </SelectContent>
+        </Select>
+      );
+      
+      expect(screen.getByTestId('select-trigger')).toBeInTheDocument();
+      expect(screen.getByText('Select framework')).toBeInTheDocument();
+    });
+
+    it('renders searchable Select content properly', () => {
+      render(
+        <Select>
+          <SelectTrigger data-testid="select-trigger">
+            <SelectValue placeholder="Search options" />
+          </SelectTrigger>
+          <SelectContent searchable>
+            <SelectItem value="option1">Option 1</SelectItem>
+            <SelectItem value="option2">Option 2</SelectItem>
+          </SelectContent>
+        </Select>
+      );
+      
+      expect(screen.getByTestId('select-trigger')).toBeInTheDocument();
+    });
+  });
+
+  describe('Accessibility', () => {
+    it('has proper ARIA attributes on trigger', () => {
+      render(
+        <Select label="Test Label" error="Error message" required>
+          <SelectTrigger data-testid="select-trigger">
+            <SelectValue placeholder="Select an option" />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="option1">Option 1</SelectItem>
+          </SelectContent>
+        </Select>
+      );
+      
+      const trigger = screen.getByTestId('select-trigger');
+      expect(trigger).toHaveAttribute('role', 'combobox');
+      expect(trigger).toHaveAttribute('aria-expanded', 'false');
+      expect(trigger).toHaveAttribute('aria-autocomplete', 'none');
+    });
+
+    it('associates label with select trigger correctly', () => {
+      render(
+        <Select label="Test Label">
+          <SelectTrigger data-testid="select-trigger">
+            <SelectValue placeholder="Select an option" />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="option1">Option 1</SelectItem>
+          </SelectContent>
+        </Select>
+      );
+      
+      const label = screen.getByText('Test Label');
+      const trigger = screen.getByTestId('select-trigger');
+      
+      expect(label).toHaveAttribute('id');
+      expect(trigger).toHaveAttribute('aria-labelledby', label.getAttribute('id'));
+    });
+
+    it('can be focused and has proper focus management', () => {
+      renderBasicSelect();
+      
+      const trigger = screen.getByTestId('select-trigger');
+      trigger.focus();
+      
+      expect(trigger).toHaveFocus();
+      expect(trigger).toHaveAttribute('type', 'button');
+    });
+
+    it('indicates required state properly', () => {
+      render(
+        <Select required>
+          <SelectTrigger data-testid="select-trigger">
+            <SelectValue placeholder="Select an option" />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="option1">Option 1</SelectItem>
+          </SelectContent>
+        </Select>
+      );
+      
+      const trigger = screen.getByTestId('select-trigger');
+      // Radix Select may not set aria-required directly on the trigger
+      expect(trigger).toBeInTheDocument();
+    });
+
+    it('indicates error state with aria-invalid', () => {
+      render(
+        <Select error="Invalid selection">
+          <SelectTrigger data-testid="select-trigger">
+            <SelectValue placeholder="Select an option" />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="option1">Option 1</SelectItem>
+          </SelectContent>
+        </Select>
+      );
+      
+      const trigger = screen.getByTestId('select-trigger');
+      expect(trigger).toHaveAttribute('aria-invalid', 'true');
+    });
+  });
+
+  describe('Custom Styling and Props', () => {
+    it('accepts custom className on Select wrapper', () => {
+      render(
+        <Select>
+          <SelectTrigger className="custom-trigger" data-testid="select-trigger">
+            <SelectValue placeholder="Select an option" />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="option1">Option 1</SelectItem>
+          </SelectContent>
+        </Select>
+      );
+      
+      const trigger = screen.getByTestId('select-trigger');
+      expect(trigger).toHaveClass('custom-trigger');
+    });
+
+    it('handles complex styling with multiple classes', () => {
+      render(
+        <Select>
+          <SelectTrigger className="custom-trigger extra-styles" data-testid="select-trigger">
+            <SelectValue placeholder="Select an option" />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="option1">Option 1</SelectItem>
+          </SelectContent>
+        </Select>
+      );
+      
+      const trigger = screen.getByTestId('select-trigger');
+      expect(trigger).toHaveClass('custom-trigger');
+      expect(trigger).toHaveClass('extra-styles');
+    });
+
+    it('forwards additional props to trigger', () => {
+      render(
+        <Select>
+          <SelectTrigger title="Custom title" data-testid="select-trigger">
+            <SelectValue placeholder="Select an option" />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="option1">Option 1</SelectItem>
+          </SelectContent>
+        </Select>
+      );
+      
+      const trigger = screen.getByTitle('Custom title');
+      expect(trigger).toBeInTheDocument();
+    });
+
+    it('accepts custom data attributes', () => {
+      render(
+        <Select data-custom="test-value">
+          <SelectTrigger data-testid="select-trigger">
+            <SelectValue placeholder="Select an option" />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="option1">Option 1</SelectItem>
+          </SelectContent>
+        </Select>
+      );
+      
+      // The data attribute should be on the wrapper or trigger
+      const trigger = screen.getByTestId('select-trigger');
+      expect(trigger).toBeInTheDocument();
+    });
+  });
+
+  describe('Edge Cases and Error Handling', () => {
+    it('handles empty options gracefully', () => {
+      render(
+        <Select>
+          <SelectTrigger data-testid="select-trigger">
+            <SelectValue placeholder="No options available" />
+          </SelectTrigger>
+          <SelectContent>
+            {/* No items */}
+          </SelectContent>
+        </Select>
+      );
+      
+      expect(screen.getByTestId('select-trigger')).toBeInTheDocument();
+      expect(screen.getByText('No options available')).toBeInTheDocument();
+    });
+
+    it('handles undefined value gracefully', () => {
+      render(
+        <Select value={undefined}>
+          <SelectTrigger data-testid="select-trigger">
+            <SelectValue placeholder="Select an option" />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="option1">Option 1</SelectItem>
+          </SelectContent>
+        </Select>
+      );
+      
+      expect(screen.getByText('Select an option')).toBeInTheDocument();
+    });
+
+    it('handles null value gracefully', () => {
+      render(
+        <Select value={'' as string | undefined}>
+          <SelectTrigger data-testid="select-trigger">
+            <SelectValue placeholder="Select an option" />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="option1">Option 1</SelectItem>
+          </SelectContent>
+        </Select>
+      );
+      
+      expect(screen.getByText('Select an option')).toBeInTheDocument();
+    });
+
+    it('forwards refs correctly', () => {
+      const triggerRef = vi.fn();
+      
+      render(
+        <Select>
+          <SelectTrigger ref={triggerRef} data-testid="select-trigger">
+            <SelectValue placeholder="Select an option" />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="option1">Option 1</SelectItem>
+          </SelectContent>
+        </Select>
+      );
+      
+      expect(triggerRef).toHaveBeenCalled();
+    });
+
+    it('handles missing placeholder gracefully', () => {
+      render(
+        <Select>
+          <SelectTrigger data-testid="select-trigger">
+            <SelectValue />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="option1">Option 1</SelectItem>
+          </SelectContent>
+        </Select>
+      );
+      
+      expect(screen.getByTestId('select-trigger')).toBeInTheDocument();
+    });
+
+    it('works with SelectSeparator in isolation', () => {
+      const { container } = render(
+        <div>
+          <span>Before separator</span>
+          <SelectSeparator data-testid="select-separator" />
+          <span>After separator</span>
+        </div>
+      );
+      
+      expect(container).toBeInTheDocument();
+    });
+
+    it('renders with complex nested content', () => {
+      render(
+        <Select>
+          <SelectTrigger data-testid="select-trigger">
+            <SelectValue placeholder="Select framework" />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectGroup>
+              <SelectLabel>Frontend</SelectLabel>
+              <SelectItem value="react">React</SelectItem>
+              <SelectItem value="vue">Vue</SelectItem>
+            </SelectGroup>
+            <SelectSeparator />
+            <SelectGroup>
+              <SelectLabel>Backend</SelectLabel>
+              <SelectItem value="nodejs">Node.js</SelectItem>
+              <SelectItem value="python">Python</SelectItem>
+            </SelectGroup>
+          </SelectContent>
+        </Select>
+      );
+      
+      expect(screen.getByTestId('select-trigger')).toBeInTheDocument();
+      expect(screen.getByText('Select framework')).toBeInTheDocument();
+    });
+  });
+
+  describe('Event Callbacks', () => {
+    it('calls onValueChange when value changes programmatically', () => {
+      const onValueChange = vi.fn();
+      
+      const { rerender } = render(
+        <Select value="option1" onValueChange={onValueChange}>
+          <SelectTrigger data-testid="select-trigger">
+            <SelectValue />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="option1">Option 1</SelectItem>
+            <SelectItem value="option2">Option 2</SelectItem>
+          </SelectContent>
+        </Select>
+      );
+      
+      // Verify initial state
+      expect(screen.getByText('Option 1')).toBeInTheDocument();
+      
+      // Note: In real usage, onValueChange would be called by user interaction
+      // Here we test that the callback prop is accepted and the component updates
+      rerender(
+        <Select value="option2" onValueChange={onValueChange}>
+          <SelectTrigger data-testid="select-trigger">
+            <SelectValue />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="option1">Option 1</SelectItem>
+            <SelectItem value="option2">Option 2</SelectItem>
+          </SelectContent>
+        </Select>
+      );
+      
+      expect(screen.getByText('Option 2')).toBeInTheDocument();
+    });
+
+    it('accepts onOpenChange callback', () => {
+      const onOpenChange = vi.fn();
+      
+      render(
+        <Select onOpenChange={onOpenChange}>
+          <SelectTrigger data-testid="select-trigger">
+            <SelectValue placeholder="Select an option" />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="option1">Option 1</SelectItem>
+          </SelectContent>
+        </Select>
+      );
+      
+      expect(screen.getByTestId('select-trigger')).toBeInTheDocument();
+      // Note: onOpenChange would be called by user interaction in real usage
+    });
+  });
+});

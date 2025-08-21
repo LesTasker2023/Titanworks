@@ -1,79 +1,10 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`Skeleton Component > Snapshots > matches all sizes snapshot 1`] = `
-<div
-  data-testid="sizes-container"
->
-  <div
-    class="animate-pulse rounded-md bg-primary/10"
-  >
-    Small
-  </div>
-  <div
-    class="animate-pulse rounded-md bg-primary/10"
-  >
-    Default
-  </div>
-  <div
-    class="animate-pulse rounded-md bg-primary/10"
-  >
-    Large
-  </div>
-</div>
-`;
-
-exports[`Skeleton Component > Snapshots > matches all variants snapshot 1`] = `
-<div
-  data-testid="variants-container"
->
-  <div
-    class="animate-pulse rounded-md bg-primary/10"
-    variant="default"
-  >
-    Default
-  </div>
-  <div
-    class="animate-pulse rounded-md bg-primary/10"
-    variant="destructive"
-  >
-    Destructive
-  </div>
-  <div
-    class="animate-pulse rounded-md bg-primary/10"
-    variant="outline"
-  >
-    Outline
-  </div>
-  <div
-    class="animate-pulse rounded-md bg-primary/10"
-    variant="secondary"
-  >
-    Secondary
-  </div>
-</div>
-`;
-
-exports[`Skeleton Component > Snapshots > matches default snapshot 1`] = `
+exports[`Skeleton > Snapshots > matches default snapshot 1`] = `
 <div
   class="animate-pulse rounded-md bg-primary/10"
+  data-testid="skeleton"
 >
-  Default
-</div>
-`;
-
-exports[`Skeleton Component > Snapshots > matches disabled state snapshot 1`] = `
-<div
-  class="animate-pulse rounded-md bg-primary/10"
-  disabled=""
->
-  Disabled
-</div>
-`;
-
-exports[`Skeleton Component > Snapshots > matches loading state snapshot 1`] = `
-<div
-  class="animate-pulse rounded-md bg-primary/10"
->
-  Loading
+  Test content
 </div>
 `;

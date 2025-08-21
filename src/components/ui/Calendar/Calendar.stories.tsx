@@ -1,0 +1,28 @@
+import type { Meta, StoryObj } from '@storybook/react';
+import { Calendar } from './Calendar';
+
+const meta: Meta<typeof Calendar> = {
+  title: 'Components/Calendar',
+  component: Calendar,
+  parameters: {
+    layout: 'centered',
+  },
+  tags: ['autodocs'],
+  argTypes: {
+    mode: {
+      control: 'select',
+      options: ['single', 'multiple', 'range'],
+    },
+  },
+};
+
+export default meta;
+type Story = StoryObj<typeof Calendar>;
+
+export const Default: Story = {};
+
+export const WithSelection: Story = {
+  args: {
+    mode: 'single',
+  },
+};

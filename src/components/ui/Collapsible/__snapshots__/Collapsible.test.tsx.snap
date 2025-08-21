@@ -1,9 +1,10 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`Collapsible > Snapshots > matches basic snapshot 1`] = `
+exports[`Collapsible > Snapshots > matches default snapshot 1`] = `
 <div
-  data-testid="collapsible-container"
+  data-state="closed"
+  data-testid="collapsible"
 >
-  Collapsible Component Test
+  Test content
 </div>
 `;

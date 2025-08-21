@@ -61,11 +61,19 @@ export default function Navigation({
       href: '/component-showcase',
     },
     {
+      label: 'Command Center',
+      href: '/command-center',
+    },
+    {
       label: 'Dashboard',
       href: '/dashboard',
     },
     {
       label: 'Documentation',
+      href: '/documentation',
+    },
+    {
+      label: 'More',
       items: [
         {
           title: 'Getting Started',

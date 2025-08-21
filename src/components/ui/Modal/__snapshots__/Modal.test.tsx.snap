@@ -1,36 +1,166 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`Modal > applies size variants correctly 1`] = `
+exports[`Modal > Snapshots > matches default snapshot 1`] = `
 <div
   aria-describedby="modal-description"
   aria-labelledby="modal-title"
   aria-modal="true"
   class="fixed inset-0 z-50 bg-black/80 flex items-center justify-center p-4 animate-in fade-in-0 duration-200"
-  role="dialog"
->
-  <div
-    class="relative bg-background border rounded-lg shadow-lg w-full max-h-[80vh] overflow-auto max-w-sm p-6"
-  >
-    <div>
-      Modal content
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Modal > renders without crashing when open 1`] = `
-<div
-  aria-describedby="modal-description"
-  aria-labelledby="modal-title"
-  aria-modal="true"
-  class="fixed inset-0 z-50 bg-black/80 flex items-center justify-center p-4 animate-in fade-in-0 duration-200"
+  data-testid="modal"
   role="dialog"
 >
   <div
     class="relative bg-background border rounded-lg shadow-lg w-full max-h-[80vh] overflow-auto max-w-md p-6"
   >
-    <div>
-      Modal content
+    <div
+      class="p-6 pt-0"
+    >
+      <div
+        class="flex items-center justify-between p-6 pb-0"
+      >
+        Modal Title
+      </div>
+      <div>
+        Custom content
+      </div>
+      <div
+        class="flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2 p-6 pt-0"
+      >
+        Modal Footer
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Modal > Snapshots > matches different animation snapshot 1`] = `
+<div
+  aria-describedby="modal-description"
+  aria-labelledby="modal-title"
+  aria-modal="true"
+  class="fixed inset-0 z-50 bg-black/80 flex items-center justify-center p-4 animate-in fade-in-0 duration-100"
+  data-testid="modal"
+  role="dialog"
+>
+  <div
+    class="relative bg-background border rounded-lg shadow-lg w-full max-h-[80vh] overflow-auto max-w-md p-6"
+  >
+    <div
+      class="p-6 pt-0"
+    >
+      <div
+        class="flex items-center justify-between p-6 pb-0"
+      >
+        Modal Title
+      </div>
+      <div>
+        Custom content
+      </div>
+      <div
+        class="flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2 p-6 pt-0"
+      >
+        Modal Footer
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Modal > Snapshots > matches different padding snapshot 1`] = `
+<div
+  aria-describedby="modal-description"
+  aria-labelledby="modal-title"
+  aria-modal="true"
+  class="fixed inset-0 z-50 bg-black/80 flex items-center justify-center p-4 animate-in fade-in-0 duration-200"
+  data-testid="modal"
+  role="dialog"
+>
+  <div
+    class="relative bg-background border rounded-lg shadow-lg w-full max-h-[80vh] overflow-auto max-w-md p-8"
+  >
+    <div
+      class="p-6 pt-0"
+    >
+      <div
+        class="flex items-center justify-between p-6 pb-0"
+      >
+        Modal Title
+      </div>
+      <div>
+        Custom content
+      </div>
+      <div
+        class="flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2 p-6 pt-0"
+      >
+        Modal Footer
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Modal > Snapshots > matches different size snapshot 1`] = `
+<div
+  aria-describedby="modal-description"
+  aria-labelledby="modal-title"
+  aria-modal="true"
+  class="fixed inset-0 z-50 bg-black/80 flex items-center justify-center p-4 animate-in fade-in-0 duration-200"
+  data-testid="modal"
+  role="dialog"
+>
+  <div
+    class="relative bg-background border rounded-lg shadow-lg w-full max-h-[80vh] overflow-auto max-w-lg p-6"
+  >
+    <div
+      class="p-6 pt-0"
+    >
+      <div
+        class="flex items-center justify-between p-6 pb-0"
+      >
+        Modal Title
+      </div>
+      <div>
+        Custom content
+      </div>
+      <div
+        class="flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2 p-6 pt-0"
+      >
+        Modal Footer
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Modal > Snapshots > matches disabled state snapshot 1`] = `
+<div
+  aria-describedby="modal-description"
+  aria-labelledby="modal-title"
+  aria-modal="true"
+  class="fixed inset-0 z-50 bg-black/80 flex items-center justify-center p-4 animate-in fade-in-0 duration-200"
+  data-testid="modal"
+  disabled=""
+  role="dialog"
+>
+  <div
+    class="relative bg-background border rounded-lg shadow-lg w-full max-h-[80vh] overflow-auto max-w-md p-6"
+  >
+    <div
+      class="p-6 pt-0"
+    >
+      <div
+        class="flex items-center justify-between p-6 pb-0"
+      >
+        Modal Title
+      </div>
+      <div>
+        Custom content
+      </div>
+      <div
+        class="flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2 p-6 pt-0"
+      >
+        Modal Footer
+      </div>
     </div>
   </div>
 </div>

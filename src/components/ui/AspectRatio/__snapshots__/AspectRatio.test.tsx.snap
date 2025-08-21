@@ -3,45 +3,13 @@
 exports[`AspectRatio > Snapshots > matches default snapshot 1`] = `
 <div
   data-radix-aspect-ratio-wrapper=""
-  style="position: relative; width: 100%; padding-bottom: 56.25%;"
->
-  <div
-    style="position: absolute; top: 0px; right: 0px; bottom: 0px; left: 0px;"
-  >
-    <div>
-      Default aspect ratio content
-    </div>
-  </div>
-</div>
-`;
-
-exports[`AspectRatio > Snapshots > matches different ratio snapshot 1`] = `
-<div
-  data-radix-aspect-ratio-wrapper=""
   style="position: relative; width: 100%; padding-bottom: 100%;"
 >
   <div
+    data-testid="aspectratio"
     style="position: absolute; top: 0px; right: 0px; bottom: 0px; left: 0px;"
   >
-    <div>
-      Square aspect ratio
-    </div>
-  </div>
-</div>
-`;
-
-exports[`AspectRatio > Snapshots > matches with custom className snapshot 1`] = `
-<div
-  data-radix-aspect-ratio-wrapper=""
-  style="position: relative; width: 100%; padding-bottom: 75%;"
->
-  <div
-    class="custom-class"
-    style="position: absolute; top: 0px; right: 0px; bottom: 0px; left: 0px;"
-  >
-    <div>
-      Custom class aspect ratio
-    </div>
+    Test content
   </div>
 </div>
 `;
