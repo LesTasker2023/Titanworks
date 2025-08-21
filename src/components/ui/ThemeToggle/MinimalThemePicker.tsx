@@ -30,30 +30,84 @@ const PRESET_SCHEMES: MinimalColorScheme[] = [
     },
   },
   {
-    name: 'Warm',
-    description: 'Friendly and approachable',
+    name: 'GitHub Dark',
+    description: 'Sophisticated developer aesthetic',
     colors: {
-      interactive: '#dc2626', // Red-600
-      surface: '#fef3c7', // Amber-100
-      accent: '#f59e0b', // Amber-500
+      interactive: '#58a6ff', // GitHub blue
+      surface: '#21262d', // GitHub dark surface
+      accent: '#7ee787', // GitHub green
     },
   },
   {
-    name: 'Modern',
-    description: 'Sleek tech aesthetic',
+    name: 'Stripe',
+    description: 'Elegant fintech colors',
     colors: {
-      interactive: '#7c3aed', // Violet-600
-      surface: '#f3f4f6', // Gray-100
+      interactive: '#635bff', // Stripe purple
+      surface: '#f7f9fc', // Stripe light gray
+      accent: '#00d924', // Stripe green
+    },
+  },
+  {
+    name: 'Vercel',
+    description: 'Monochromatic elegance',
+    colors: {
+      interactive: '#000000', // Pure black
+      surface: '#fafafa', // Near white
+      accent: '#ff0080', // Vercel pink
+    },
+  },
+  {
+    name: 'Tailwind',
+    description: 'Utility-first design colors',
+    colors: {
+      interactive: '#0f172a', // Slate-900
+      surface: '#f8fafc', // Slate-50
       accent: '#06b6d4', // Cyan-500
     },
   },
   {
-    name: 'Nature',
-    description: 'Earth-inspired palette',
+    name: 'Shopify',
+    description: 'E-commerce focused palette',
     colors: {
-      interactive: '#059669', // Emerald-600
-      surface: '#f0fdf4', // Green-50
-      accent: '#84cc16', // Lime-500
+      interactive: '#00a652', // Shopify green
+      surface: '#f8f8f8', // Light gray
+      accent: '#5c6ac4', // Shopify purple
+    },
+  },
+  {
+    name: 'Discord',
+    description: 'Gaming and community focused',
+    colors: {
+      interactive: '#5865f2', // Discord blurple
+      surface: '#36393f', // Discord dark
+      accent: '#ed4245', // Discord red
+    },
+  },
+  {
+    name: 'Linear',
+    description: 'Minimal productivity aesthetic',
+    colors: {
+      interactive: '#5e6ad2', // Linear purple
+      surface: '#fcfcfc', // Almost white
+      accent: '#f26522', // Linear orange
+    },
+  },
+  {
+    name: 'Notion',
+    description: 'Warm and approachable',
+    colors: {
+      interactive: '#2383e2', // Notion blue
+      surface: '#f7f6f3', // Notion cream
+      accent: '#ff5757', // Notion red
+    },
+  },
+  {
+    name: 'Retro Wave',
+    description: 'Synthwave inspired electric colors',
+    colors: {
+      interactive: '#ff0080', // Hot pink
+      surface: '#0f0f23', // Dark purple
+      accent: '#00ffff', // Cyan
     },
   },
 ];

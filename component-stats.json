@@ -1,0 +1,345 @@
+[
+  {
+    "name": "Accordion",
+    "hasTests": true,
+    "hasStories": true,
+    "testCount": 30,
+    "storyCount": 4
+  },
+  {
+    "name": "Alert",
+    "hasTests": true,
+    "hasStories": true,
+    "testCount": 23,
+    "storyCount": 12
+  },
+  {
+    "name": "AlertDialog",
+    "hasTests": true,
+    "hasStories": true,
+    "testCount": 16,
+    "storyCount": 1
+  },
+  {
+    "name": "AspectRatio",
+    "hasTests": true,
+    "hasStories": true,
+    "testCount": 16,
+    "storyCount": 1
+  },
+  {
+    "name": "Avatar",
+    "hasTests": true,
+    "hasStories": true,
+    "testCount": 23,
+    "storyCount": 9
+  },
+  {
+    "name": "Badge",
+    "hasTests": true,
+    "hasStories": true,
+    "testCount": 8,
+    "storyCount": 9
+  },
+  {
+    "name": "Breadcrumb",
+    "hasTests": true,
+    "hasStories": true,
+    "testCount": 20,
+    "storyCount": 1
+  },
+  {
+    "name": "Button",
+    "hasTests": true,
+    "hasStories": true,
+    "testCount": 28,
+    "storyCount": 13
+  },
+  {
+    "name": "Calendar",
+    "hasTests": true,
+    "hasStories": true,
+    "testCount": 24,
+    "storyCount": 1
+  },
+  {
+    "name": "Card",
+    "hasTests": true,
+    "hasStories": true,
+    "testCount": 22,
+    "storyCount": 0
+  },
+  {
+    "name": "Carousel",
+    "hasTests": true,
+    "hasStories": true,
+    "testCount": 18,
+    "storyCount": 1
+  },
+  {
+    "name": "Chart",
+    "hasTests": true,
+    "hasStories": true,
+    "testCount": 18,
+    "storyCount": 1
+  },
+  {
+    "name": "Checkbox",
+    "hasTests": true,
+    "hasStories": true,
+    "testCount": 33,
+    "storyCount": 18
+  },
+  {
+    "name": "Collapsible",
+    "hasTests": true,
+    "hasStories": true,
+    "testCount": 16,
+    "storyCount": 1
+  },
+  {
+    "name": "ColorPicker",
+    "hasTests": true,
+    "hasStories": true,
+    "testCount": 33,
+    "storyCount": 0
+  },
+  {
+    "name": "Combobox",
+    "hasTests": true,
+    "hasStories": true,
+    "testCount": 30,
+    "storyCount": 2
+  },
+  {
+    "name": "Command",
+    "hasTests": true,
+    "hasStories": true,
+    "testCount": 20,
+    "storyCount": 2
+  },
+  {
+    "name": "ContextMenu",
+    "hasTests": true,
+    "hasStories": true,
+    "testCount": 25,
+    "storyCount": 1
+  },
+  {
+    "name": "DataTable",
+    "hasTests": true,
+    "hasStories": true,
+    "testCount": 35,
+    "storyCount": 10
+  },
+  {
+    "name": "DatePicker",
+    "hasTests": true,
+    "hasStories": true,
+    "testCount": 26,
+    "storyCount": 3
+  },
+  {
+    "name": "Dialog",
+    "hasTests": true,
+    "hasStories": true,
+    "testCount": 25,
+    "storyCount": 2
+  },
+  {
+    "name": "DropdownMenu",
+    "hasTests": true,
+    "hasStories": true,
+    "testCount": 25,
+    "storyCount": 1
+  },
+  {
+    "name": "Form",
+    "hasTests": true,
+    "hasStories": true,
+    "testCount": 16,
+    "storyCount": 2
+  },
+  {
+    "name": "HoverCard",
+    "hasTests": true,
+    "hasStories": true,
+    "testCount": 18,
+    "storyCount": 1
+  },
+  {
+    "name": "Input",
+    "hasTests": true,
+    "hasStories": true,
+    "testCount": 26,
+    "storyCount": 8
+  },
+  {
+    "name": "Label",
+    "hasTests": true,
+    "hasStories": true,
+    "testCount": 18,
+    "storyCount": 2
+  },
+  {
+    "name": "Menubar",
+    "hasTests": true,
+    "hasStories": true,
+    "testCount": 22,
+    "storyCount": 1
+  },
+  {
+    "name": "Modal",
+    "hasTests": true,
+    "hasStories": true,
+    "testCount": 25,
+    "storyCount": 7
+  },
+  {
+    "name": "NavigationMenu",
+    "hasTests": true,
+    "hasStories": true,
+    "testCount": 16,
+    "storyCount": 3
+  },
+  {
+    "name": "Pagination",
+    "hasTests": true,
+    "hasStories": true,
+    "testCount": 30,
+    "storyCount": 2
+  },
+  {
+    "name": "Popover",
+    "hasTests": true,
+    "hasStories": true,
+    "testCount": 20,
+    "storyCount": 2
+  },
+  {
+    "name": "Progress",
+    "hasTests": true,
+    "hasStories": true,
+    "testCount": 16,
+    "storyCount": 10
+  },
+  {
+    "name": "RadioGroup",
+    "hasTests": true,
+    "hasStories": true,
+    "testCount": 18,
+    "storyCount": 10
+  },
+  {
+    "name": "Resizable",
+    "hasTests": true,
+    "hasStories": true,
+    "testCount": 16,
+    "storyCount": 1
+  },
+  {
+    "name": "ScrollArea",
+    "hasTests": true,
+    "hasStories": true,
+    "testCount": 16,
+    "storyCount": 1
+  },
+  {
+    "name": "Select",
+    "hasTests": true,
+    "hasStories": true,
+    "testCount": 23,
+    "storyCount": 14
+  },
+  {
+    "name": "Separator",
+    "hasTests": true,
+    "hasStories": true,
+    "testCount": 21,
+    "storyCount": 3
+  },
+  {
+    "name": "Sheet",
+    "hasTests": true,
+    "hasStories": true,
+    "testCount": 22,
+    "storyCount": 1
+  },
+  {
+    "name": "Skeleton",
+    "hasTests": true,
+    "hasStories": true,
+    "testCount": 16,
+    "storyCount": 3
+  },
+  {
+    "name": "Slider",
+    "hasTests": true,
+    "hasStories": true,
+    "testCount": 24,
+    "storyCount": 10
+  },
+  {
+    "name": "Sonner",
+    "hasTests": true,
+    "hasStories": true,
+    "testCount": 14,
+    "storyCount": 1
+  },
+  {
+    "name": "Switch",
+    "hasTests": true,
+    "hasStories": true,
+    "testCount": 22,
+    "storyCount": 4
+  },
+  {
+    "name": "Table",
+    "hasTests": true,
+    "hasStories": true,
+    "testCount": 20,
+    "storyCount": 1
+  },
+  {
+    "name": "Tabs",
+    "hasTests": true,
+    "hasStories": true,
+    "testCount": 24,
+    "storyCount": 6
+  },
+  {
+    "name": "Textarea",
+    "hasTests": true,
+    "hasStories": true,
+    "testCount": 30,
+    "storyCount": 16
+  },
+  {
+    "name": "ThemeToggle",
+    "hasTests": true,
+    "hasStories": true,
+    "testCount": 18,
+    "storyCount": 1
+  },
+  {
+    "name": "Toast",
+    "hasTests": true,
+    "hasStories": true,
+    "testCount": 24,
+    "storyCount": 10
+  },
+  {
+    "name": "Toggle",
+    "hasTests": true,
+    "hasStories": true,
+    "testCount": 22,
+    "storyCount": 5
+  },
+  {
+    "name": "Tooltip",
+    "hasTests": true,
+    "hasStories": true,
+    "testCount": 18,
+    "storyCount": 5
+  }
+]

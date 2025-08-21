@@ -26,27 +26,75 @@ const COMPACT_PRESETS: CompactColorScheme[] = [
     },
   },
   {
-    name: 'Warm',
+    name: 'GitHub Dark',
     colors: {
-      interactive: '#dc2626',
-      surface: '#fef3c7',
-      accent: '#f59e0b',
+      interactive: '#58a6ff',
+      surface: '#21262d',
+      accent: '#7ee787',
     },
   },
   {
-    name: 'Modern',
+    name: 'Stripe',
     colors: {
-      interactive: '#7c3aed',
-      surface: '#f3f4f6',
+      interactive: '#635bff',
+      surface: '#f7f9fc',
+      accent: '#00d924',
+    },
+  },
+  {
+    name: 'Vercel',
+    colors: {
+      interactive: '#000000',
+      surface: '#fafafa',
+      accent: '#ff0080',
+    },
+  },
+  {
+    name: 'Tailwind',
+    colors: {
+      interactive: '#0f172a',
+      surface: '#f8fafc',
       accent: '#06b6d4',
     },
   },
   {
-    name: 'Nature',
+    name: 'Shopify',
     colors: {
-      interactive: '#059669',
-      surface: '#f0fdf4',
-      accent: '#84cc16',
+      interactive: '#00a652',
+      surface: '#f8f8f8',
+      accent: '#5c6ac4',
+    },
+  },
+  {
+    name: 'Discord',
+    colors: {
+      interactive: '#5865f2',
+      surface: '#36393f',
+      accent: '#ed4245',
+    },
+  },
+  {
+    name: 'Linear',
+    colors: {
+      interactive: '#5e6ad2',
+      surface: '#fcfcfc',
+      accent: '#f26522',
+    },
+  },
+  {
+    name: 'Notion',
+    colors: {
+      interactive: '#2383e2',
+      surface: '#f7f6f3',
+      accent: '#ff5757',
+    },
+  },
+  {
+    name: 'Retro Wave',
+    colors: {
+      interactive: '#ff0080',
+      surface: '#0f0f23',
+      accent: '#00ffff',
     },
   },
 ];

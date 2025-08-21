@@ -1,11 +1,11 @@
 'use client';
 
+import { Container } from '@/components/layout/Container';
 import { Badge } from '@/components/ui/Badge';
 import { Button } from '@/components/ui/Button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/Card';
 import { Progress } from '@/components/ui/Progress';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/Tabs';
-import { Container } from '@/components/layout/Container';
 import { Activity, Gauge, Package, RefreshCw, TestTube } from 'lucide-react';
 import { useEffect, useState } from 'react';
 

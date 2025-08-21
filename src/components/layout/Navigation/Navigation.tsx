@@ -61,36 +61,8 @@ export default function Navigation({
       href: '/component-showcase',
     },
     {
-      label: 'Command Center',
-      href: '/command-center',
-    },
-    {
       label: 'Dashboard',
       href: '/dashboard',
-    },
-    {
-      label: 'Documentation',
-      href: '/documentation',
-    },
-    {
-      label: 'More',
-      items: [
-        {
-          title: 'Getting Started',
-          href: '/docs/getting-started',
-          description: 'Learn how to get started with our components',
-        },
-        {
-          title: 'API Reference',
-          href: '/docs/api',
-          description: 'Complete API documentation for all components',
-        },
-        {
-          title: 'Examples',
-          href: '/docs/examples',
-          description: 'Real-world examples and use cases',
-        },
-      ],
     },
   ],
   version = '1.36.0',
