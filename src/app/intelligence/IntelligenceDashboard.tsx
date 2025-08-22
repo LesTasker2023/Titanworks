@@ -7,6 +7,7 @@ import { Progress } from '@/components/ui/Progress';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/Tabs';
 import VercelIntegration from '@/components/vercel/VercelIntegration';
 import { useIntelligenceMetrics, useIntelligenceReport } from '@/hooks/useIntelligence';
+import { useVercelDeploymentStatus, useVercelIntegration } from '@/hooks/useVercel';
 import { ComponentInventoryItem, IntelligenceReport } from '@/types/intelligence';
 import {
   formatScanMetadata,
@@ -29,6 +30,36 @@ export default function IntelligenceDashboard() {
   const { data: report, loading, error, refetch } = useIntelligenceReport();
   const metrics = useIntelligenceMetrics(report);
   const [refreshing, setRefreshing] = useState(false);
+
+  // Vercel integration for real-time deployment data
+  const { data: vercelData } = useVercelIntegration({
+    enabled: true,
+    refreshInterval: 30000,
+  });
+
+  const deploymentStats = useVercelDeploymentStatus({
+    deployments: vercelData?.deployments || [],
+  });
+
+  // Enhanced metrics with Vercel data
+  const enhancedMetrics = {
+    ...metrics,
+    // Override overall score with Vercel health score if available
+    overallScore: vercelData?.healthScore || metrics.overallScore,
+    // Override build status with actual deployment status
+    buildStatus:
+      vercelData?.latestDeployment?.state === 'READY'
+        ? 'pass'
+        : vercelData?.latestDeployment?.state === 'ERROR'
+          ? 'fail'
+          : vercelData?.latestDeployment?.state === 'BUILDING'
+            ? 'building'
+            : metrics.buildStatus,
+    // Add deployment-related critical issues
+    criticalIssues:
+      metrics.criticalIssues +
+      (deploymentStats.activeDeployments > 0 && deploymentStats.successRate < 50 ? 1 : 0),
+  };
 
   const handleRefresh = async () => {
     setRefreshing(true);
@@ -109,12 +140,17 @@ export default function IntelligenceDashboard() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           <MetricCard
             title="Overall Score"
-            value={`${metrics.overallScore}%`}
-            progress={metrics.overallScore}
+            value={`${enhancedMetrics.overallScore}%`}
+            progress={enhancedMetrics.overallScore}
             icon={<TrendingUp className="h-5 w-5" />}
             color={
-              metrics.overallScore >= 80 ? 'green' : metrics.overallScore >= 60 ? 'yellow' : 'red'
+              enhancedMetrics.overallScore >= 80
+                ? 'green'
+                : enhancedMetrics.overallScore >= 60
+                  ? 'yellow'
+                  : 'red'
             }
+            subtitle={vercelData ? 'Including deployment health' : 'Code quality score'}
           />
           <MetricCard
             title="Components"
@@ -124,27 +160,37 @@ export default function IntelligenceDashboard() {
           />
           <MetricCard
             title="Build Status"
-            value={metrics.buildStatus.toUpperCase()}
+            value={enhancedMetrics.buildStatus.toUpperCase()}
             badge={
-              <Badge variant={metrics.buildStatus === 'pass' ? 'default' : 'destructive'}>
-                {metrics.buildStatus === 'pass' ? (
+              <Badge
+                variant={
+                  enhancedMetrics.buildStatus === 'pass'
+                    ? 'default'
+                    : enhancedMetrics.buildStatus === 'building'
+                      ? 'secondary'
+                      : 'destructive'
+                }
+              >
+                {enhancedMetrics.buildStatus === 'pass' ? (
                   <CheckCircle className="h-3 w-3 mr-1" />
+                ) : enhancedMetrics.buildStatus === 'building' ? (
+                  <RefreshCw className="h-3 w-3 mr-1 animate-spin" />
                 ) : (
                   <AlertTriangle className="h-3 w-3 mr-1" />
                 )}
-                {metrics.buildStatus.toUpperCase()}
+                {enhancedMetrics.buildStatus.toUpperCase()}
               </Badge>
             }
-            subtitle="Pipeline status"
+            subtitle={vercelData ? 'Live deployment status' : 'Pipeline status'}
           />
           <MetricCard
             title="Critical Issues"
-            value={metrics.criticalIssues.toString()}
+            value={enhancedMetrics.criticalIssues.toString()}
             subtitle="Need attention"
             color={
-              metrics.criticalIssues === 0
+              enhancedMetrics.criticalIssues === 0
                 ? 'green'
-                : metrics.criticalIssues <= 2
+                : enhancedMetrics.criticalIssues <= 2
                   ? 'yellow'
                   : 'red'
             }
@@ -199,7 +245,12 @@ export default function IntelligenceDashboard() {
           </TabsList>
 
           <TabsContent value="overview" className="space-y-6">
-            <OverviewTab report={report} componentStats={componentStats} />
+            <OverviewTab
+              report={report}
+              componentStats={componentStats}
+              vercelData={vercelData}
+              deploymentStats={deploymentStats}
+            />
           </TabsContent>
 
           <TabsContent value="components" className="space-y-6">
@@ -270,9 +321,13 @@ function MetricCard({ title, value, subtitle, progress, icon, badge, color }: Me
 function OverviewTab({
   report,
   componentStats,
+  vercelData,
+  deploymentStats,
 }: {
   report: IntelligenceReport;
   componentStats: any;
+  vercelData?: any;
+  deploymentStats?: any;
 }) {
   return (
     <div className="space-y-6">
@@ -322,36 +377,127 @@ function OverviewTab({
 
         <Card>
           <CardHeader>
-            <CardTitle>Pipeline Status</CardTitle>
-            <CardDescription>Build pipeline health and performance</CardDescription>
+            <CardTitle>{vercelData ? 'Live Deployment Status' : 'Pipeline Status'}</CardTitle>
+            <CardDescription>
+              {vercelData
+                ? 'Real-time deployment health and performance'
+                : 'Build pipeline health and performance'}
+            </CardDescription>
           </CardHeader>
           <CardContent>
-            <div className="space-y-3">
-              {Object.entries(report.codebase.pipeline).map(([stage, info]) => {
-                if (stage === 'overall' || typeof info !== 'object' || !('status' in info))
-                  return null;
+            {vercelData ? (
+              <div className="space-y-3">
+                {/* Live Deployment Status */}
+                <div className="flex items-center justify-between p-3 bg-muted/50 rounded-lg">
+                  <div className="flex items-center gap-2">
+                    <div
+                      className={`w-2 h-2 rounded-full ${
+                        vercelData.latestDeployment?.state === 'READY'
+                          ? 'bg-green-500'
+                          : vercelData.latestDeployment?.state === 'ERROR'
+                            ? 'bg-red-500'
+                            : vercelData.latestDeployment?.state === 'BUILDING'
+                              ? 'bg-yellow-500 animate-pulse'
+                              : 'bg-gray-500'
+                      }`}
+                    />
+                    <span className="font-medium text-foreground">Latest Deployment</span>
+                  </div>
+                  <div className="text-right">
+                    <Badge
+                      variant={
+                        vercelData.latestDeployment?.state === 'READY'
+                          ? 'default'
+                          : vercelData.latestDeployment?.state === 'ERROR'
+                            ? 'destructive'
+                            : 'secondary'
+                      }
+                    >
+                      {vercelData.latestDeployment?.state || 'UNKNOWN'}
+                    </Badge>
+                    {vercelData.latestDeployment?.url && (
+                      <div className="text-xs text-muted-foreground mt-1">
+                        {vercelData.latestDeployment.url}
+                      </div>
+                    )}
+                  </div>
+                </div>
 
-                return (
-                  <div
-                    key={stage}
-                    className="flex items-center justify-between p-3 bg-muted/50 rounded-lg"
-                  >
-                    <div className="flex items-center gap-2">
-                      <div
-                        className={`w-2 h-2 rounded-full ${info.status === 'pass' ? 'bg-green-500' : 'bg-red-500'}`}
-                      />
-                      <span className="font-medium capitalize text-foreground">{stage}</span>
-                    </div>
-                    <div className="text-right">
-                      <Badge variant={info.status === 'pass' ? 'default' : 'destructive'}>
-                        {info.status}
-                      </Badge>
-                      <div className="text-xs text-muted-foreground mt-1">{info.duration}ms</div>
+                {/* Success Rate */}
+                <div className="flex items-center justify-between p-3 bg-muted/50 rounded-lg">
+                  <div className="flex items-center gap-2">
+                    <div
+                      className={`w-2 h-2 rounded-full ${
+                        deploymentStats?.successRate >= 90
+                          ? 'bg-green-500'
+                          : deploymentStats?.successRate >= 70
+                            ? 'bg-yellow-500'
+                            : 'bg-red-500'
+                      }`}
+                    />
+                    <span className="font-medium text-foreground">Success Rate</span>
+                  </div>
+                  <div className="text-right">
+                    <Badge
+                      variant={
+                        deploymentStats?.successRate >= 90
+                          ? 'default'
+                          : deploymentStats?.successRate >= 70
+                            ? 'secondary'
+                            : 'destructive'
+                      }
+                    >
+                      {deploymentStats?.successRate || 0}%
+                    </Badge>
+                    <div className="text-xs text-muted-foreground mt-1">
+                      {deploymentStats?.deploymentsToday || 0} today
                     </div>
                   </div>
-                );
-              })}
-            </div>
+                </div>
+
+                {/* Active Builds */}
+                {deploymentStats?.activeDeployments > 0 && (
+                  <div className="flex items-center justify-between p-3 bg-yellow-50 dark:bg-yellow-950/30 rounded-lg border border-yellow-200 dark:border-yellow-800">
+                    <div className="flex items-center gap-2">
+                      <div className="w-2 h-2 rounded-full bg-yellow-500 animate-pulse" />
+                      <span className="font-medium text-foreground">Active Builds</span>
+                    </div>
+                    <div className="text-right">
+                      <Badge variant="secondary">
+                        {deploymentStats.activeDeployments} building
+                      </Badge>
+                    </div>
+                  </div>
+                )}
+              </div>
+            ) : (
+              <div className="space-y-3">
+                {Object.entries(report.codebase.pipeline).map(([stage, info]) => {
+                  if (stage === 'overall' || typeof info !== 'object' || !('status' in info))
+                    return null;
+
+                  return (
+                    <div
+                      key={stage}
+                      className="flex items-center justify-between p-3 bg-muted/50 rounded-lg"
+                    >
+                      <div className="flex items-center gap-2">
+                        <div
+                          className={`w-2 h-2 rounded-full ${info.status === 'pass' ? 'bg-green-500' : 'bg-red-500'}`}
+                        />
+                        <span className="font-medium capitalize text-foreground">{stage}</span>
+                      </div>
+                      <div className="text-right">
+                        <Badge variant={info.status === 'pass' ? 'default' : 'destructive'}>
+                          {info.status}
+                        </Badge>
+                        <div className="text-xs text-muted-foreground mt-1">{info.duration}ms</div>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            )}
           </CardContent>
         </Card>
       </div>

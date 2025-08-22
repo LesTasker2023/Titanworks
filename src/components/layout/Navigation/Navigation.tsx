@@ -60,6 +60,10 @@ export function Navigation({
       label: 'Components',
       href: '/component-showcase',
     },
+    {
+      label: 'Intel',
+      href: '/intel',
+    },
   ],
   version = '1.36.0',
   lastUpdated = 'August 2025',

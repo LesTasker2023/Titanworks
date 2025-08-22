@@ -1,8 +1,16 @@
 /**
- * Vexport async function GET(request: NextRequest) {
+ * Vercel Integration API Route
+ * Fetches real-time deployment data from Vercel API
+ */
+
+import { createVercelAPIService } from '@/services/vercelAPI';
+import { VercelIntegrationData } from '@/types/vercel';
+import { NextRequest, NextResponse } from 'next/server';
+
+export async function GET(request: NextRequest) {
   try {
     const { searchParams } = new URL(request.url);
-    
+
     // Use environment variables by default, fallback to query parameters
     const projectId = searchParams.get('projectId') || process.env.VERCEL_PROJECT_ID;
     const apiToken = searchParams.get('apiToken') || process.env.VERCEL_API_TOKEN;
@@ -15,28 +23,6 @@
 
     if (!apiToken) {
       return NextResponse.json({ error: 'API token is required' }, { status: 400 });
-    }on API Route
- * Fetches real-time deployment data from Vercel API
- */
-
-import { createVercelAPIService } from '@/services/vercelAPI';
-import { VercelIntegrationData } from '@/types/vercel';
-import { NextRequest, NextResponse } from 'next/server';
-
-export async function GET(request: NextRequest) {
-  try {
-    const { searchParams } = new URL(request.url);
-    const projectId = searchParams.get('projectId');
-    const apiToken = searchParams.get('apiToken');
-    const teamId = searchParams.get('teamId') || undefined;
-
-    // Validate required parameters
-    if (!projectId) {
-      return NextResponse.json({ error: 'Project ID is required' }, { status: 400 });
-    }
-
-    if (!apiToken) {
-      return NextResponse.json({ error: 'Vercel API token is required' }, { status: 400 });
     }
 
     // Create Vercel API service

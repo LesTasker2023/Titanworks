@@ -4,7 +4,7 @@
  */
 
 import { VercelDeployment, VercelIntegrationData } from '@/types/vercel';
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 
 interface UseVercelIntegrationOptions {
   projectId?: string;
@@ -122,7 +122,7 @@ interface UseVercelDeploymentStatusResult {
 export function useVercelDeploymentStatus({
   deployments,
 }: UseVercelDeploymentStatusOptions): UseVercelDeploymentStatusResult {
-  const stats = useState(() => {
+  const stats = useMemo(() => {
     if (!deployments.length) {
       return {
         activeDeployments: 0,
@@ -134,16 +134,22 @@ export function useVercelDeploymentStatus({
       };
     }
 
-    // Active deployments (building, queued, initializing)
-    const activeDeployments = deployments.filter(d =>
-      ['BUILDING', 'QUEUED', 'INITIALIZING'].includes(d.state)
+    // Active deployments - check multiple states including current builds
+    const activeStates = ['BUILDING', 'QUEUED', 'INITIALIZING', 'DEPLOYING'];
+    const activeDeployments = deployments.filter(
+      d => activeStates.includes(d.state) || (d.buildingAt && !d.ready)
     ).length;
 
-    // Success rate (last 20 deployments)
-    const recentDeployments = deployments.slice(0, 20);
-    const successfulDeployments = recentDeployments.filter(d => d.state === 'READY').length;
+    // Success rate (last 50 deployments for better accuracy)
+    const recentDeployments = deployments.slice(0, 50);
+    const completedDeployments = recentDeployments.filter(d =>
+      ['READY', 'ERROR', 'CANCELED'].includes(d.state)
+    );
+    const successfulDeployments = completedDeployments.filter(d => d.state === 'READY').length;
     const successRate =
-      recentDeployments.length > 0 ? (successfulDeployments / recentDeployments.length) * 100 : 0;
+      completedDeployments.length > 0
+        ? (successfulDeployments / completedDeployments.length) * 100
+        : 0;
 
     // Average build time
     const buildTimes = deployments
@@ -188,7 +194,7 @@ export function useVercelDeploymentStatus({
       deploymentsToday,
       deploymentTrend,
     };
-  })[0];
+  }, [deployments]);
 
   return stats;
 }

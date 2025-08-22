@@ -190,7 +190,7 @@ export class VercelAPIService {
   private calculateBuildTimes(deployments: VercelDeployment[]) {
     const buildTimes = deployments
       .filter(d => d.buildingAt && d.ready)
-      .map(d => d.ready! - d.buildingAt!)
+      .map(d => (d.ready! - d.buildingAt!) / 1000) // Convert from milliseconds to seconds
       .filter(time => time > 0);
 
     if (buildTimes.length === 0) {
@@ -204,14 +204,14 @@ export class VercelAPIService {
 
     const latest =
       deployments[0]?.buildingAt && deployments[0]?.ready
-        ? deployments[0].ready - deployments[0].buildingAt
+        ? Math.round((deployments[0].ready - deployments[0].buildingAt) / 1000) // Convert to seconds
         : null;
 
     return {
       latest,
       average: Math.round(buildTimes.reduce((a, b) => a + b, 0) / buildTimes.length),
-      fastest: Math.min(...buildTimes),
-      slowest: Math.max(...buildTimes),
+      fastest: Math.round(Math.min(...buildTimes)),
+      slowest: Math.round(Math.max(...buildTimes)),
     };
   }
 

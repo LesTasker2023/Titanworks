@@ -3,7 +3,7 @@
  */
 
 import { IntelligenceReport, isIntelligenceReport } from '@/types/intelligence';
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 
 export interface UseIntelligenceReportReturn {
   data: IntelligenceReport | null;
@@ -106,7 +106,7 @@ export function useFilteredComponents(
  * Hook to get real-time intelligence metrics
  */
 export function useIntelligenceMetrics(report: IntelligenceReport | null) {
-  return useState(() => {
+  return useMemo(() => {
     if (!report) {
       return {
         overallScore: 0,
@@ -137,5 +137,5 @@ export function useIntelligenceMetrics(report: IntelligenceReport | null) {
       buildStatus: report.codebase.pipeline.overall.status,
       criticalIssues,
     };
-  })[0];
+  }, [report]);
 }
