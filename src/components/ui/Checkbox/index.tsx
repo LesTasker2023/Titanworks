@@ -1,3 +1,3 @@
-export { Checkbox } from './checkbox';
-export type { CheckboxProps } from './checkbox';
+export { Checkbox } from './Checkbox';
+export type { CheckboxProps } from './Checkbox';
 export { default as CheckboxDemo } from './demo';

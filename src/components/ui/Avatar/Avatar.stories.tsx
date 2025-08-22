@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/nextjs';
-import { Avatar } from './avatar';
+import { Avatar } from './Avatar';
 
 const meta = {
   title: 'UI/Avatar',

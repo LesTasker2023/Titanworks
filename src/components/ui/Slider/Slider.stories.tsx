@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/nextjs';
 import { useState } from 'react';
-import { Slider } from './slider';
+import { Slider } from './Slider';
 
 const meta: Meta<typeof Slider> = {
   title: 'UI/Slider',

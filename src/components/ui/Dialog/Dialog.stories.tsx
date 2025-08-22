@@ -10,7 +10,7 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from './dialog';
+} from './Dialog';
 
 const meta: Meta<typeof Dialog> = {
   title: 'UI/Dialog',

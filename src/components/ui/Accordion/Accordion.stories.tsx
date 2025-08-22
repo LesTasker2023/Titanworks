@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/nextjs';
-import { Accordion } from './accordion';
+import { Accordion } from './Accordion';
 
 const meta: Meta<typeof Accordion> = {
   title: 'Components/Accordion',

@@ -10,5 +10,5 @@ export {
   SelectSeparator,
   SelectTrigger,
   SelectValue,
-} from './select';
-export type { SelectProps } from './select';
+} from './Select';
+export type { SelectProps } from './Select';

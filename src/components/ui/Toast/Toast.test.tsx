@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import { describe, expect, it, vi } from 'vitest';
-import { Toast, ToastProvider, ToastViewport } from './toast';
+import { Toast, ToastProvider, ToastViewport } from './Toast';
 
 describe('Toast', () => {
   const renderBasicToast = (props = {}) => {
