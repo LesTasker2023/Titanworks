@@ -64,6 +64,10 @@ export function Navigation({
       label: 'Dashboard',
       href: '/dashboard',
     },
+    {
+      label: 'Command Center',
+      href: '/command-center',
+    },
   ],
   version = '1.36.0',
   lastUpdated = 'August 2025',

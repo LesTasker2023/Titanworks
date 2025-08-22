@@ -36,7 +36,7 @@ const BreadcrumbDemo = lazy(() => import('@/components/ui/Breadcrumb/demo'));
 const ButtonDemo = lazy(() => import('@/components/ui/Button/demo'));
 const CalendarDemo = lazy(() => import('@/components/ui/Calendar/demo'));
 const CardDemo = lazy(() => import('@/components/ui/Card/demo'));
-// const CarouselDemo = lazy(() => import('@/components/ui/Carousel/demo'));
+const CarouselDemo = lazy(() => import('@/components/ui/Carousel/demo'));
 const ChartDemo = lazy(() => import('@/components/ui/Chart/demo'));
 const CheckboxDemo = lazy(() => import('@/components/ui/Checkbox/demo'));
 const CollapsibleDemo = lazy(() => import('@/components/ui/Collapsible/demo'));
@@ -437,32 +437,6 @@ const componentRegistry = [
     features: ['Page controls', 'Size options', 'Jump to page'],
   },
   {
-    name: 'Menubar',
-    demo: MenubarDemo,
-    category: 'Navigation',
-    description: 'Application menu bar',
-    status: 'Production Ready',
-    hasTests: true,
-    hasStories: true,
-    testCount: 22,
-    storyCount: 1,
-    location: 'src/components/ui/Menubar/',
-    features: ['Menu navigation', 'Keyboard shortcuts', 'Nested menus'],
-  },
-  {
-    name: 'Pagination',
-    demo: PaginationDemo,
-    category: 'Navigation',
-    description: 'Page navigation controls',
-    status: 'Production Ready',
-    hasTests: true,
-    hasStories: true,
-    testCount: 30,
-    storyCount: 2,
-    location: 'src/components/ui/Pagination/',
-    features: ['Page navigation', 'Customizable sizing', 'First/last controls'],
-  },
-  {
     name: 'Command',
     demo: CommandDemo,
     category: 'Navigation',
@@ -477,19 +451,6 @@ const componentRegistry = [
   },
 
   // Layout Components
-  {
-    name: 'Card',
-    demo: CardDemo,
-    category: 'Layout',
-    description: 'Flexible content containers',
-    status: 'Production Ready',
-    hasTests: true,
-    hasStories: true,
-    testCount: 24,
-    storyCount: 7,
-    location: 'src/components/ui/Card/',
-    features: ['Header & footer', 'Flexible layouts', 'Custom styling'],
-  },
   {
     name: 'Separator',
     demo: SeparatorDemo,
@@ -863,12 +824,12 @@ export default function ComponentShowcase() {
 
         {/* Component Grid */}
         <div className="space-y-4">
-          {filteredComponents.map(component => {
+          {filteredComponents.map((component, i) => {
             const isOpen = openComponent === component.name;
 
             return (
               <Card
-                key={component.name + component.description}
+                key={component.name + component.description + i}
                 className={`overflow-hidden transition-colors`}
                 style={isOpen ? { borderColor: 'var(--brand-primary)' } : {}}
                 ref={el => {
