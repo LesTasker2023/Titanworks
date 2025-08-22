@@ -5,6 +5,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Badge } from '@/components/ui/Badge';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/Tabs';
 import { Progress } from '@/components/ui/Progress';
+import BundleAnalytics from '@/components/advanced/BundleAnalytics';
 import {
   ChartContainer,
   ChartTooltip,
@@ -318,7 +319,7 @@ export default function CommandCenterClient() {
 
       <div className="container mx-auto px-6 py-8">
         <Tabs defaultValue="overview" className="space-y-8">
-          <TabsList className="grid w-full grid-cols-5 bg-surface-secondary/40 border border-border-default">
+          <TabsList className="grid w-full grid-cols-6 bg-surface-secondary/40 border border-border-default">
             <TabsTrigger value="overview" className="data-[state=active]:bg-brand-primary">
               Overview
             </TabsTrigger>
@@ -327,6 +328,9 @@ export default function CommandCenterClient() {
             </TabsTrigger>
             <TabsTrigger value="codebase" className="data-[state=active]:bg-brand-primary">
               Codebase
+            </TabsTrigger>
+            <TabsTrigger value="bundle" className="data-[state=active]:bg-brand-primary">
+              Bundle
             </TabsTrigger>
             <TabsTrigger value="quality" className="data-[state=active]:bg-brand-primary">
               Quality
@@ -784,6 +788,11 @@ export default function CommandCenterClient() {
                 </CardContent>
               </Card>
             </div>
+          </TabsContent>
+
+          {/* Bundle Tab */}
+          <TabsContent value="bundle" className="space-y-6">
+            <BundleAnalytics />
           </TabsContent>
 
           {/* Quality Tab */}
