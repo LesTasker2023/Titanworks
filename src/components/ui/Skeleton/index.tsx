@@ -1,3 +1,2 @@
-export { default as SkeletonDemo } from './demo';
-export * from './Skeleton';
+export { Skeleton } from './Skeleton';
 export type { SkeletonProps } from './Skeleton';

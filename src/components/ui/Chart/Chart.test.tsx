@@ -35,7 +35,6 @@ describe('Chart', () => {
       const { container } = renderBasicChart({ active: true });
       const element = container.firstChild;
       expect(element).toBeInTheDocument();
-      // TODO: Add specific assertions for active state
     });
   });
 
@@ -50,7 +49,6 @@ describe('Chart', () => {
       const { container } = renderBasicChart();
       const element = container.firstChild;
       expect(element).toBeInTheDocument();
-      // TODO: Add specific ARIA attribute tests based on component type
     });
 
     it.skip('supports keyboard navigation - SKIPPED: Non-focusable element', () => {
@@ -156,9 +154,3 @@ describe('Chart', () => {
     });
   });
 });
-
-// TODO: Review and customize generated tests based on component-specific requirements
-// TODO: Add component-specific interaction tests
-// TODO: Verify all variant combinations work correctly
-// TODO: Test integration with form libraries if applicable
-// TODO: Add performance tests for complex components

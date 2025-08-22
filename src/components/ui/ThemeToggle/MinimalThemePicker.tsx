@@ -1,14 +1,12 @@
 'use client';
-
-import { Badge } from '@/components/ui/Badge/badge';
-import { Button } from '@/components/ui/Button/button';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card/card';
-import { Input } from '@/components/ui/Input/input';
-import { Label } from '@/components/ui/Label/Label';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/Tabs/tabs';
+import { Badge } from '@/components/ui/Badge';
+import { Button } from '@/components/ui/Button';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card';
+import { Input } from '@/components/ui/Input';
+import { Label } from '@/components/ui/Label';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/Tabs';
 import { Check, Palette, RotateCcw } from 'lucide-react';
 import { useEffect, useState } from 'react';
-
 interface MinimalColorScheme {
   name: string;
   description: string;
@@ -18,7 +16,6 @@ interface MinimalColorScheme {
     accent: string; // Highlights, badges, success states
   };
 }
-
 const PRESET_SCHEMES: MinimalColorScheme[] = [
   {
     name: 'Professional',
@@ -111,7 +108,6 @@ const PRESET_SCHEMES: MinimalColorScheme[] = [
     },
   },
 ];
-
 export function MinimalThemePicker() {
   const [mounted, setMounted] = useState(false);
   const [currentScheme, setCurrentScheme] = useState<MinimalColorScheme>(PRESET_SCHEMES[0]);
@@ -120,30 +116,24 @@ export function MinimalThemePicker() {
     surface: '#f1f5f9',
     accent: '#10b981',
   });
-
   useEffect(() => {
     const loadColors = (colors: typeof customColors) => {
       const root = document.documentElement;
-
       // Apply semantic color variables
       root.style.setProperty('--color-interactive', colors.interactive);
       root.style.setProperty('--color-surface', colors.surface);
       root.style.setProperty('--color-accent', colors.accent);
-
       // Update primary colors to interactive color
       root.style.setProperty('--brand-primary', colors.interactive);
-
       // Calculate contrasting foreground colors
       const interactiveFg = getContrastColor(colors.interactive);
       const surfaceFg = getContrastColor(colors.surface);
       const accentFg = getContrastColor(colors.accent);
-
       root.style.setProperty('--color-interactive-foreground', interactiveFg);
       root.style.setProperty('--color-surface-foreground', surfaceFg);
       root.style.setProperty('--color-accent-foreground', accentFg);
       root.style.setProperty('--brand-primary-foreground', interactiveFg);
     };
-
     setMounted(true);
     // Load saved colors from localStorage
     const saved = localStorage.getItem('minimal-theme-colors');
@@ -153,79 +143,63 @@ export function MinimalThemePicker() {
         setCustomColors(colors);
         loadColors(colors);
       } catch {
-        console.warn('Failed to load saved theme colors');
+        // Removed console statement:
       }
     }
   }, []);
-
   const applyColors = (colors: typeof customColors) => {
     const root = document.documentElement;
-
     // Apply semantic color variables
     root.style.setProperty('--color-interactive', colors.interactive);
     root.style.setProperty('--color-surface', colors.surface);
     root.style.setProperty('--color-accent', colors.accent);
-
     // Update primary colors to interactive color
     root.style.setProperty('--brand-primary', colors.interactive);
-
     // Calculate contrasting foreground colors
     const interactiveFg = getContrastColor(colors.interactive);
     const surfaceFg = getContrastColor(colors.surface);
     const accentFg = getContrastColor(colors.accent);
-
     root.style.setProperty('--color-interactive-foreground', interactiveFg);
     root.style.setProperty('--color-surface-foreground', surfaceFg);
     root.style.setProperty('--color-accent-foreground', accentFg);
     root.style.setProperty('--brand-primary-foreground', interactiveFg);
   };
-
   const getContrastColor = (bgColor: string): string => {
     // Convert hex to RGB
     const hex = bgColor.replace('#', '');
     const r = parseInt(hex.substr(0, 2), 16);
     const g = parseInt(hex.substr(2, 2), 16);
     const b = parseInt(hex.substr(4, 2), 16);
-
     // Calculate luminance
     const luminance = (0.299 * r + 0.587 * g + 0.114 * b) / 255;
-
     // Return black or white based on luminance
     return luminance > 0.5 ? '#000000' : '#ffffff';
   };
-
   const applyPreset = (scheme: MinimalColorScheme) => {
     setCurrentScheme(scheme);
     setCustomColors(scheme.colors);
     applyColors(scheme.colors);
-
     // Save to localStorage
     localStorage.setItem('minimal-theme-colors', JSON.stringify(scheme.colors));
   };
-
   const updateCustomColor = (colorType: keyof typeof customColors, value: string) => {
     const newColors = { ...customColors, [colorType]: value };
     setCustomColors(newColors);
     applyColors(newColors);
-
     // Save to localStorage
     localStorage.setItem('minimal-theme-colors', JSON.stringify(newColors));
   };
-
   const resetToDefault = () => {
     const defaultColors = PRESET_SCHEMES[0].colors;
     setCurrentScheme(PRESET_SCHEMES[0]);
     setCustomColors(defaultColors);
     applyColors(defaultColors);
-
     // Clear localStorage
     localStorage.removeItem('minimal-theme-colors');
   };
-
   if (!mounted) {
     return null;
   }
-
   return (
     <Card className="w-full max-w-2xl mx-auto">
       <CardHeader className="text-center">
@@ -237,7 +211,6 @@ export function MinimalThemePicker() {
           Research-backed 3-color system for optimal usability
         </p>
       </CardHeader>
-
       <CardContent>
         <Tabs defaultValue="presets" className="w-full">
           <TabsList className="grid w-full grid-cols-3">
@@ -245,7 +218,6 @@ export function MinimalThemePicker() {
             <TabsTrigger value="custom">Custom</TabsTrigger>
             <TabsTrigger value="info">Why Less?</TabsTrigger>
           </TabsList>
-
           <TabsContent value="presets" className="space-y-4">
             <div className="grid grid-cols-2 gap-3">
               {PRESET_SCHEMES.map(scheme => (
@@ -263,9 +235,7 @@ export function MinimalThemePicker() {
                         <Check className="h-4 w-4 text-primary" />
                       )}
                     </div>
-
                     <p className="text-xs text-muted-foreground mb-3">{scheme.description}</p>
-
                     <div className="flex gap-2">
                       <div
                         className="h-6 w-6 rounded border-2 border-white shadow-sm"
@@ -287,7 +257,6 @@ export function MinimalThemePicker() {
                 </Card>
               ))}
             </div>
-
             <div className="pt-4 border-t">
               <div className="flex gap-2 mb-4">
                 <Badge
@@ -315,14 +284,12 @@ export function MinimalThemePicker() {
                   Accent (Highlights, Success)
                 </Badge>
               </div>
-
               <Button variant="outline" size="sm" onClick={resetToDefault} className="w-full">
                 <RotateCcw className="h-4 w-4 mr-2" />
                 Reset to Professional
               </Button>
             </div>
           </TabsContent>
-
           <TabsContent value="custom" className="space-y-4">
             <div className="space-y-4">
               <div>
@@ -346,7 +313,6 @@ export function MinimalThemePicker() {
                   />
                 </div>
               </div>
-
               <div>
                 <Label htmlFor="surface" className="text-sm font-medium">
                   Surface Color (Cards, Secondary Backgrounds)
@@ -368,7 +334,6 @@ export function MinimalThemePicker() {
                   />
                 </div>
               </div>
-
               <div>
                 <Label htmlFor="accent" className="text-sm font-medium">
                   Accent Color (Highlights, Success States)
@@ -391,7 +356,6 @@ export function MinimalThemePicker() {
                 </div>
               </div>
             </div>
-
             <div className="pt-4 border-t">
               <h4 className="font-medium mb-2">Live Preview</h4>
               <div className="space-y-2">
@@ -424,7 +388,6 @@ export function MinimalThemePicker() {
               </div>
             </div>
           </TabsContent>
-
           <TabsContent value="info" className="space-y-4">
             <div className="space-y-4 text-sm">
               <div>
@@ -434,7 +397,6 @@ export function MinimalThemePicker() {
                   shows that <strong>3-5 colors is optimal</strong> for user interfaces.
                 </p>
               </div>
-
               <div>
                 <h4 className="font-medium mb-2">🎯 Semantic Over Arbitrary</h4>
                 <ul className="text-muted-foreground space-y-1">
@@ -449,7 +411,6 @@ export function MinimalThemePicker() {
                   </li>
                 </ul>
               </div>
-
               <div>
                 <h4 className="font-medium mb-2">♿ Accessibility Benefits</h4>
                 <ul className="text-muted-foreground space-y-1">
@@ -459,7 +420,6 @@ export function MinimalThemePicker() {
                   <li>• Consistent experience across devices</li>
                 </ul>
               </div>
-
               <div>
                 <h4 className="font-medium mb-2">🏢 Industry Standards</h4>
                 <ul className="text-muted-foreground space-y-1">
@@ -474,7 +434,6 @@ export function MinimalThemePicker() {
                   </li>
                 </ul>
               </div>
-
               <div className="pt-4 border-t">
                 <p className="text-xs text-muted-foreground italic">
                   &ldquo;Perfection is achieved not when there is nothing more to add, but when

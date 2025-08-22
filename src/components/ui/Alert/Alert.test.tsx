@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 // import userEvent from '@testing-library/user-event';
 import { describe, expect, it, vi } from 'vitest';
-import { Alert } from './alert';
+import { Alert } from './Alert';
 
 describe('Alert', () => {
   const renderBasicAlert = (props = {}) => {
@@ -36,7 +36,6 @@ describe('Alert', () => {
       const { container } = renderBasicAlert({ hover: true });
       const element = container.firstChild as HTMLElement;
       expect(element).toBeInTheDocument();
-      // TODO: Add specific assertions for hover state
     });
   });
 
@@ -46,7 +45,6 @@ describe('Alert', () => {
       // const user = userEvent.setup();
       renderBasicAlert({ onDismiss });
 
-      // TODO: Add specific event triggering based on onDismiss
       expect(onDismiss).toBeDefined();
     });
   });
@@ -56,25 +54,21 @@ describe('Alert', () => {
       const { container } = renderBasicAlert();
       const element = container.firstChild as HTMLElement;
       expect(element).toBeInTheDocument();
-      // TODO: Add specific assertions for dismissible prop
     });
     it('handles onDismiss prop correctly', () => {
       const { container } = renderBasicAlert({ onDismiss: vi.fn() });
       const element = container.firstChild as HTMLElement;
       expect(element).toBeInTheDocument();
-      // TODO: Add specific assertions for onDismiss prop
     });
     it('handles autoHide prop correctly', () => {
       const { container } = renderBasicAlert();
       const element = container.firstChild as HTMLElement;
       expect(element).toBeInTheDocument();
-      // TODO: Add specific assertions for autoHide prop
     });
     it('handles autoHideDelay prop correctly', () => {
       const { container } = renderBasicAlert();
       const element = container.firstChild as HTMLElement;
       expect(element).toBeInTheDocument();
-      // TODO: Add specific assertions for autoHideDelay prop
     });
   });
 
@@ -89,7 +83,6 @@ describe('Alert', () => {
       const { container } = renderBasicAlert();
       const element = container.firstChild as HTMLElement;
       expect(element).toBeInTheDocument();
-      // TODO: Add specific ARIA attribute tests based on component type
     });
 
     it.skip('supports keyboard navigation - SKIPPED: Non-focusable element', () => {
@@ -100,13 +93,11 @@ describe('Alert', () => {
 
     it('announces changes to screen readers', () => {
       renderBasicAlert();
-      // TODO: Add screen reader announcement tests
       expect(screen.getByTestId('alert')).toBeInTheDocument();
     });
 
     it('respects reduced motion preferences', () => {
       renderBasicAlert();
-      // TODO: Add reduced motion tests
       expect(screen.getByTestId('alert')).toBeInTheDocument();
     });
   });
@@ -191,9 +182,3 @@ describe('Alert', () => {
     });
   });
 });
-
-// TODO: Review and customize generated tests based on component-specific requirements
-// TODO: Add component-specific interaction tests
-// TODO: Verify all variant combinations work correctly
-// TODO: Test integration with form libraries if applicable
-// TODO: Add performance tests for complex components

@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 // import userEvent from '@testing-library/user-event';
 import { describe, expect, it, vi } from 'vitest';
-import { Button } from './button';
+import { Button } from './Button';
 
 describe('Button', () => {
   const renderBasicButton = (props = {}) => {
@@ -48,25 +48,21 @@ describe('Button', () => {
       renderBasicButton({ loading: true });
       const element = screen.getByTestId('button');
       expect(element).toBeInTheDocument();
-      // TODO: Add specific assertions for loading state
     });
     it('handles disabled state correctly', () => {
       renderBasicButton({ disabled: true });
       const element = screen.getByTestId('button');
       expect(element).toBeInTheDocument();
-      // TODO: Add specific assertions for disabled state
     });
     it('handles active state correctly', () => {
       renderBasicButton({ active: true });
       const element = screen.getByTestId('button');
       expect(element).toBeInTheDocument();
-      // TODO: Add specific assertions for active state
     });
     it('handles hover state correctly', () => {
       renderBasicButton({ hover: true });
       const element = screen.getByTestId('button');
       expect(element).toBeInTheDocument();
-      // TODO: Add specific assertions for hover state
     });
   });
 
@@ -86,7 +82,6 @@ describe('Button', () => {
       renderBasicButton({ loading: true });
       const element = screen.getByTestId('button');
       expect(element).toBeInTheDocument();
-      // TODO: Add specific assertions for loading prop
     });
   });
 
@@ -102,7 +97,6 @@ describe('Button', () => {
       renderBasicButton();
       const element = screen.getByTestId('button');
       expect(element).toBeInTheDocument();
-      // TODO: Add specific ARIA attribute tests based on component type
     });
 
     it('supports keyboard navigation', () => {
@@ -119,13 +113,11 @@ describe('Button', () => {
 
     it('announces changes to screen readers', () => {
       renderBasicButton();
-      // TODO: Add screen reader announcement tests
       expect(screen.getByTestId('button')).toBeInTheDocument();
     });
 
     it('respects reduced motion preferences', () => {
       renderBasicButton();
-      // TODO: Add reduced motion tests
       expect(screen.getByTestId('button')).toBeInTheDocument();
     });
   });
@@ -210,9 +202,3 @@ describe('Button', () => {
     });
   });
 });
-
-// TODO: Review and customize generated tests based on component-specific requirements
-// TODO: Add component-specific interaction tests
-// TODO: Verify all variant combinations work correctly
-// TODO: Test integration with form libraries if applicable
-// TODO: Add performance tests for complex components

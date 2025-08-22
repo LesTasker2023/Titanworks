@@ -58,7 +58,7 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
-} from './navigation-menu';
+} from './NavigationMenu';
 
 export default function NavigationMenuDemo() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);

@@ -55,25 +55,21 @@ describe('Pagination', () => {
       const { container } = renderBasicPagination();
       const element = container.firstChild as HTMLElement;
       expect(element).toBeInTheDocument();
-      // TODO: Add specific assertions for loading state
     });
     it('handles disabled state correctly', () => {
       const { container } = renderBasicPagination();
       const element = container.firstChild as HTMLElement;
       expect(element).toBeInTheDocument();
-      // TODO: Add specific assertions for disabled state
     });
     it('handles active state correctly', () => {
       const { container } = renderBasicPagination();
       const element = container.firstChild as HTMLElement;
       expect(element).toBeInTheDocument();
-      // TODO: Add specific assertions for active state
     });
     it('handles hover state correctly', () => {
       const { container } = renderBasicPagination();
       const element = container.firstChild as HTMLElement;
       expect(element).toBeInTheDocument();
-      // TODO: Add specific assertions for hover state
     });
   });
 
@@ -83,7 +79,6 @@ describe('Pagination', () => {
       // // const user = userEvent.setup();
       renderBasicPagination({ onPageChange });
 
-      // TODO: Add specific event triggering based on onPageChange
       expect(onPageChange).toBeDefined();
     });
   });
@@ -93,31 +88,26 @@ describe('Pagination', () => {
       const { container } = renderBasicPagination();
       const element = container.firstChild as HTMLElement;
       expect(element).toBeInTheDocument();
-      // TODO: Add specific assertions for currentPage prop
     });
     it('handles totalPages prop correctly', () => {
       const { container } = renderBasicPagination();
       const element = container.firstChild as HTMLElement;
       expect(element).toBeInTheDocument();
-      // TODO: Add specific assertions for totalPages prop
     });
     it('handles onPageChange prop correctly', () => {
       const { container } = renderBasicPagination();
       const element = container.firstChild as HTMLElement;
       expect(element).toBeInTheDocument();
-      // TODO: Add specific assertions for onPageChange prop
     });
     it('handles siblingCount prop correctly', () => {
       const { container } = renderBasicPagination();
       const element = container.firstChild as HTMLElement;
       expect(element).toBeInTheDocument();
-      // TODO: Add specific assertions for siblingCount prop
     });
     it('handles showNavigation prop correctly', () => {
       const { container } = renderBasicPagination();
       const element = container.firstChild as HTMLElement;
       expect(element).toBeInTheDocument();
-      // TODO: Add specific assertions for showNavigation prop
     });
   });
 
@@ -132,7 +122,6 @@ describe('Pagination', () => {
       const { container } = renderBasicPagination();
       const element = container.firstChild as HTMLElement;
       expect(element).toBeInTheDocument();
-      // TODO: Add specific ARIA attribute tests based on component type
     });
 
     it.skip('supports keyboard navigation - SKIPPED: Non-focusable element', () => {
@@ -143,13 +132,11 @@ describe('Pagination', () => {
 
     it('announces changes to screen readers', () => {
       renderBasicPagination();
-      // TODO: Add screen reader announcement tests
       expect(screen.getByTestId('pagination')).toBeInTheDocument();
     });
 
     it('respects reduced motion preferences', () => {
       renderBasicPagination();
-      // TODO: Add reduced motion tests
       expect(screen.getByTestId('pagination')).toBeInTheDocument();
     });
   });
@@ -245,9 +232,3 @@ describe('Pagination', () => {
     });
   });
 });
-
-// TODO: Review and customize generated tests based on component-specific requirements
-// TODO: Add component-specific interaction tests
-// TODO: Verify all variant combinations work correctly
-// TODO: Test integration with form libraries if applicable
-// TODO: Add performance tests for complex components

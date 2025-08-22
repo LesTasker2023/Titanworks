@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/nextjs';
-import { Input } from './input';
+import { Input } from './Input';
 
 /**
  * 📋 Input Component Stories

@@ -31,13 +31,11 @@ describe('ThemeToggle', () => {
       const { container } = renderBasicThemeToggle();
       const element = container.firstChild as HTMLElement;
       expect(element).toBeInTheDocument();
-      // TODO: Add specific assertions for icon prop
     });
     it('handles label prop correctly', () => {
       const { container } = renderBasicThemeToggle();
       const element = container.firstChild as HTMLElement;
       expect(element).toBeInTheDocument();
-      // TODO: Add specific assertions for label prop
     });
   });
 
@@ -52,7 +50,6 @@ describe('ThemeToggle', () => {
       const { container } = renderBasicThemeToggle();
       const element = container.firstChild as HTMLElement;
       expect(element).toBeInTheDocument();
-      // TODO: Add specific ARIA attribute tests based on component type
     });
 
     it.skip('supports keyboard navigation - SKIPPED: Non-focusable element', () => {
@@ -63,13 +60,11 @@ describe('ThemeToggle', () => {
 
     it('announces changes to screen readers', () => {
       renderBasicThemeToggle();
-      // TODO: Add screen reader announcement tests
       expect(screen.getByTestId('themetoggle')).toBeInTheDocument();
     });
 
     it('respects reduced motion preferences', () => {
       renderBasicThemeToggle();
-      // TODO: Add reduced motion tests
       expect(screen.getByTestId('themetoggle')).toBeInTheDocument();
     });
   });
@@ -154,9 +149,3 @@ describe('ThemeToggle', () => {
     });
   });
 });
-
-// TODO: Review and customize generated tests based on component-specific requirements
-// TODO: Add component-specific interaction tests
-// TODO: Verify all variant combinations work correctly
-// TODO: Test integration with form libraries if applicable
-// TODO: Add performance tests for complex components

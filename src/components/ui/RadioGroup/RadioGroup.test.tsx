@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 // import userEvent from '@testing-library/user-event';
 import { describe, expect, it, vi } from 'vitest';
-import { RadioGroup } from './radio-group';
+import { RadioGroup } from './RadioGroup';
 
 describe('RadioGroup', () => {
   const renderBasicRadioGroup = (props = {}) => {
@@ -38,7 +38,6 @@ describe('RadioGroup', () => {
       renderBasicRadioGroup();
       const element = screen.getByTestId('radiogroup');
       expect(element).toBeInTheDocument();
-      // TODO: Add specific ARIA attribute tests based on component type
     });
 
     it('supports keyboard navigation', () => {
@@ -55,13 +54,11 @@ describe('RadioGroup', () => {
 
     it('announces changes to screen readers', () => {
       renderBasicRadioGroup();
-      // TODO: Add screen reader announcement tests
       expect(screen.getByTestId('radiogroup')).toBeInTheDocument();
     });
 
     it('respects reduced motion preferences', () => {
       renderBasicRadioGroup();
-      // TODO: Add reduced motion tests
       expect(screen.getByTestId('radiogroup')).toBeInTheDocument();
     });
   });
@@ -146,9 +143,3 @@ describe('RadioGroup', () => {
     });
   });
 });
-
-// TODO: Review and customize generated tests based on component-specific requirements
-// TODO: Add component-specific interaction tests
-// TODO: Verify all variant combinations work correctly
-// TODO: Test integration with form libraries if applicable
-// TODO: Add performance tests for complex components

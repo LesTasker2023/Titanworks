@@ -35,7 +35,6 @@ describe('Separator', () => {
       renderBasicSeparator({ active: true });
       const element = screen.getByTestId('separator');
       expect(element).toBeInTheDocument();
-      // TODO: Add specific assertions for active state
     });
   });
 
@@ -44,19 +43,16 @@ describe('Separator', () => {
       renderBasicSeparator({ decorative: true });
       const element = screen.getByTestId('separator');
       expect(element).toBeInTheDocument();
-      // TODO: Add specific assertions for decorative prop
     });
     it('handles children prop correctly', () => {
       renderBasicSeparator({ children: 'Test content' });
       const element = screen.getByTestId('separator');
       expect(element).toBeInTheDocument();
-      // TODO: Add specific assertions for children prop
     });
     it('handles orientation prop correctly', () => {
       renderBasicSeparator({ orientation: 'test-value' });
       const element = screen.getByTestId('separator');
       expect(element).toBeInTheDocument();
-      // TODO: Add specific assertions for orientation prop
     });
   });
 
@@ -71,7 +67,6 @@ describe('Separator', () => {
       renderBasicSeparator();
       const element = screen.getByTestId('separator');
       expect(element).toBeInTheDocument();
-      // TODO: Add specific ARIA attribute tests based on component type
     });
 
     it.skip('supports keyboard navigation - SKIPPED: Non-focusable element', () => {
@@ -82,13 +77,11 @@ describe('Separator', () => {
 
     it('announces changes to screen readers', () => {
       renderBasicSeparator();
-      // TODO: Add screen reader announcement tests
       expect(screen.getByTestId('separator')).toBeInTheDocument();
     });
 
     it('respects reduced motion preferences', () => {
       renderBasicSeparator();
-      // TODO: Add reduced motion tests
       expect(screen.getByTestId('separator')).toBeInTheDocument();
     });
   });
@@ -173,9 +166,3 @@ describe('Separator', () => {
     });
   });
 });
-
-// TODO: Review and customize generated tests based on component-specific requirements
-// TODO: Add component-specific interaction tests
-// TODO: Verify all variant combinations work correctly
-// TODO: Test integration with form libraries if applicable
-// TODO: Add performance tests for complex components

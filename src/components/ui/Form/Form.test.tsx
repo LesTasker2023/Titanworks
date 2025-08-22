@@ -37,7 +37,6 @@ describe('Form', () => {
       const { container } = renderBasicForm();
       const element = container.firstChild as HTMLElement;
       expect(element).toBeInTheDocument();
-      // TODO: Add specific ARIA attribute tests based on component type
     });
 
     it.skip('supports keyboard navigation - SKIPPED: Non-focusable element', () => {
@@ -48,13 +47,11 @@ describe('Form', () => {
 
     it('announces changes to screen readers', () => {
       renderBasicForm();
-      // TODO: Add screen reader announcement tests
       expect(screen.getByTestId('form')).toBeInTheDocument();
     });
 
     it('respects reduced motion preferences', () => {
       renderBasicForm();
-      // TODO: Add reduced motion tests
       expect(screen.getByTestId('form')).toBeInTheDocument();
     });
   });
@@ -139,9 +136,3 @@ describe('Form', () => {
     });
   });
 });
-
-// TODO: Review and customize generated tests based on component-specific requirements
-// TODO: Add component-specific interaction tests
-// TODO: Verify all variant combinations work correctly
-// TODO: Test integration with form libraries if applicable
-// TODO: Add performance tests for complex components

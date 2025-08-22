@@ -7,12 +7,10 @@
  * - Server component optimization
  * - Progressive enhancement
  */
-
 import { Badge } from '@/components/ui/Badge';
 import { Button } from '@/components/ui/Button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card';
 import { ComponentProps, useState } from 'react';
-
 // Type-safe component variants using your existing components
 type DashboardCardProps = ComponentProps<typeof Card> & {
   title: string;
@@ -26,7 +24,6 @@ type DashboardCardProps = ComponentProps<typeof Card> & {
     variant?: ComponentProps<typeof Badge>['variant'];
   };
 };
-
 export function DashboardCard({
   title,
   value,
@@ -65,7 +62,6 @@ export function DashboardCard({
     </Card>
   );
 }
-
 // Compound component pattern for advanced form layouts
 export function FormSection({
   children,
@@ -86,14 +82,12 @@ export function FormSection({
     </div>
   );
 }
-
 // Advanced button composition with loading states
 type AsyncButtonProps = ComponentProps<typeof Button> & {
   action: () => Promise<void>;
   successMessage?: string;
   errorMessage?: string;
 };
-
 export function AsyncButton({
   action,
   successMessage = 'Success!',
@@ -102,20 +96,18 @@ export function AsyncButton({
   ...props
 }: AsyncButtonProps) {
   const [isPending, setIsPending] = useState(false);
-
   const handleClick = async () => {
     setIsPending(true);
     try {
       await action();
       // You'd use your toast hook here
-      console.log(successMessage);
+      // Removed console statement:
     } catch (error) {
-      console.error(errorMessage, error);
+      // Removed console statement:
     } finally {
       setIsPending(false);
     }
   };
-
   return (
     <Button
       {...props}

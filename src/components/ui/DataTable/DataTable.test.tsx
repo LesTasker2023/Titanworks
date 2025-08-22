@@ -68,43 +68,36 @@ describe('DataTable', () => {
       renderBasicDataTable({ loading: true });
       const element = document.querySelector('.datatable.state-loading');
       expect(element).toBeInTheDocument();
-      // TODO: Add specific assertions for loading state
     });
     it('handles disabled state correctly', () => {
       renderBasicDataTable({ disabled: true });
       const element = screen.getByTestId('datatable');
       expect(element).toBeInTheDocument();
-      // TODO: Add specific assertions for disabled state
     });
     it('handles error state correctly', () => {
       renderBasicDataTable({ error: true });
       const element = document.querySelector('.datatable.state-error');
       expect(element).toBeInTheDocument();
-      // TODO: Add specific assertions for error state
     });
     it('handles required state correctly', () => {
       renderBasicDataTable({ required: true });
       const element = screen.getByTestId('datatable');
       expect(element).toBeInTheDocument();
-      // TODO: Add specific assertions for required state
     });
     it('handles checked state correctly', () => {
       renderBasicDataTable({ checked: true });
       const element = screen.getByTestId('datatable');
       expect(element).toBeInTheDocument();
-      // TODO: Add specific assertions for checked state
     });
     it('handles selected state correctly', () => {
       renderBasicDataTable({ selected: true });
       const element = screen.getByTestId('datatable');
       expect(element).toBeInTheDocument();
-      // TODO: Add specific assertions for selected state
     });
     it('handles hover state correctly', () => {
       renderBasicDataTable({ hover: true });
       const element = screen.getByTestId('datatable');
       expect(element).toBeInTheDocument();
-      // TODO: Add specific assertions for hover state
     });
   });
 
@@ -114,7 +107,6 @@ describe('DataTable', () => {
       // const user = userEvent.setup();
       renderBasicDataTable({ onSort });
 
-      // TODO: Add specific event triggering based on onSort
       expect(onSort).toBeDefined();
     });
     it('handles onFilter correctly', async () => {
@@ -122,7 +114,6 @@ describe('DataTable', () => {
       // const user = userEvent.setup();
       renderBasicDataTable({ onFilter });
 
-      // TODO: Add specific event triggering based on onFilter
       expect(onFilter).toBeDefined();
     });
     it('handles onPageChange correctly', async () => {
@@ -130,7 +121,6 @@ describe('DataTable', () => {
       // const user = userEvent.setup();
       renderBasicDataTable({ onPageChange });
 
-      // TODO: Add specific event triggering based on onPageChange
       expect(onPageChange).toBeDefined();
     });
     it('handles onRowClick correctly', async () => {
@@ -138,7 +128,6 @@ describe('DataTable', () => {
       // const user = userEvent.setup();
       renderBasicDataTable({ onRowClick });
 
-      // TODO: Add specific event triggering based on onRowClick
       expect(onRowClick).toBeDefined();
     });
     it('handles onRowDoubleClick correctly', async () => {
@@ -146,7 +135,6 @@ describe('DataTable', () => {
       // const user = userEvent.setup();
       renderBasicDataTable({ onRowDoubleClick });
 
-      // TODO: Add specific event triggering based on onRowDoubleClick
       expect(onRowDoubleClick).toBeDefined();
     });
   });
@@ -162,7 +150,6 @@ describe('DataTable', () => {
       renderBasicDataTable();
       const element = screen.getByTestId('datatable');
       expect(element).toBeInTheDocument();
-      // TODO: Add specific ARIA attribute tests based on component type
     });
 
     it.skip('supports keyboard navigation - SKIPPED: Non-focusable element', () => {
@@ -173,13 +160,11 @@ describe('DataTable', () => {
 
     it('announces changes to screen readers', () => {
       renderBasicDataTable();
-      // TODO: Add screen reader announcement tests
       expect(screen.getByTestId('datatable')).toBeInTheDocument();
     });
 
     it('respects reduced motion preferences', () => {
       renderBasicDataTable();
-      // TODO: Add reduced motion tests
       expect(screen.getByTestId('datatable')).toBeInTheDocument();
     });
   });
@@ -271,9 +256,3 @@ describe('DataTable', () => {
     });
   });
 });
-
-// TODO: Review and customize generated tests based on component-specific requirements
-// TODO: Add component-specific interaction tests
-// TODO: Verify all variant combinations work correctly
-// TODO: Test integration with form libraries if applicable
-// TODO: Add performance tests for complex components

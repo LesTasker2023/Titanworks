@@ -1,12 +1,10 @@
 'use client';
-
-import { Button } from '@/components/ui/Button/button';
-import { Card, CardContent } from '@/components/ui/Card/card';
-import { Input } from '@/components/ui/Input/input';
-import { Label } from '@/components/ui/Label/Label';
+import { Button } from '@/components/ui/Button';
+import { Card, CardContent } from '@/components/ui/Card';
+import { Input } from '@/components/ui/Input';
+import { Label } from '@/components/ui/Label';
 import { Check, Palette, RotateCcw } from 'lucide-react';
 import { useEffect, useState } from 'react';
-
 interface CompactColorScheme {
   name: string;
   colors: {
@@ -15,7 +13,6 @@ interface CompactColorScheme {
     accent: string;
   };
 }
-
 const COMPACT_PRESETS: CompactColorScheme[] = [
   {
     name: 'Professional',
@@ -98,7 +95,6 @@ const COMPACT_PRESETS: CompactColorScheme[] = [
     },
   },
 ];
-
 export function CompactThemePicker() {
   const [isOpen, setIsOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
@@ -108,30 +104,24 @@ export function CompactThemePicker() {
     surface: '#f1f5f9',
     accent: '#10b981',
   });
-
   useEffect(() => {
     const loadColors = (colors: typeof customColors) => {
       const root = document.documentElement;
-
       // Apply semantic color variables
       root.style.setProperty('--color-interactive', colors.interactive);
       root.style.setProperty('--color-surface', colors.surface);
       root.style.setProperty('--color-accent', colors.accent);
-
       // Update primary colors to interactive color
       root.style.setProperty('--brand-primary', colors.interactive);
-
       // Calculate contrasting foreground colors
       const interactiveFg = getContrastColor(colors.interactive);
       const surfaceFg = getContrastColor(colors.surface);
       const accentFg = getContrastColor(colors.accent);
-
       root.style.setProperty('--color-interactive-foreground', interactiveFg);
       root.style.setProperty('--color-surface-foreground', surfaceFg);
       root.style.setProperty('--color-accent-foreground', accentFg);
       root.style.setProperty('--brand-primary-foreground', interactiveFg);
     };
-
     setMounted(true);
     // Load saved colors from localStorage
     const saved = localStorage.getItem('minimal-theme-colors');
@@ -141,75 +131,60 @@ export function CompactThemePicker() {
         setCustomColors(colors);
         loadColors(colors);
       } catch {
-        console.warn('Failed to load saved theme colors');
+        // Removed console statement:
       }
     }
   }, []);
-
   const applyColors = (colors: typeof customColors) => {
     const root = document.documentElement;
-
     // Apply semantic color variables
     root.style.setProperty('--color-interactive', colors.interactive);
     root.style.setProperty('--color-surface', colors.surface);
     root.style.setProperty('--color-accent', colors.accent);
-
     // Update primary colors to interactive color
     root.style.setProperty('--brand-primary', colors.interactive);
-
     // Calculate contrasting foreground colors
     const interactiveFg = getContrastColor(colors.interactive);
     const surfaceFg = getContrastColor(colors.surface);
     const accentFg = getContrastColor(colors.accent);
-
     root.style.setProperty('--color-interactive-foreground', interactiveFg);
     root.style.setProperty('--color-surface-foreground', surfaceFg);
     root.style.setProperty('--color-accent-foreground', accentFg);
     root.style.setProperty('--brand-primary-foreground', interactiveFg);
   };
-
   const getContrastColor = (bgColor: string): string => {
     // Convert hex to RGB
     const hex = bgColor.replace('#', '');
     const r = parseInt(hex.substr(0, 2), 16);
     const g = parseInt(hex.substr(2, 2), 16);
     const b = parseInt(hex.substr(4, 2), 16);
-
     // Calculate luminance
     const luminance = (0.299 * r + 0.587 * g + 0.114 * b) / 255;
-
     // Return black or white based on luminance
     return luminance > 0.5 ? '#000000' : '#ffffff';
   };
-
   const applyPreset = (scheme: CompactColorScheme) => {
     setCurrentScheme(scheme);
     setCustomColors(scheme.colors);
     applyColors(scheme.colors);
-
     // Save to localStorage
     localStorage.setItem('minimal-theme-colors', JSON.stringify(scheme.colors));
   };
-
   const updateCustomColor = (colorType: keyof typeof customColors, value: string) => {
     const newColors = { ...customColors, [colorType]: value };
     setCustomColors(newColors);
     applyColors(newColors);
-
     // Save to localStorage
     localStorage.setItem('minimal-theme-colors', JSON.stringify(newColors));
   };
-
   const resetToDefault = () => {
     const defaultColors = COMPACT_PRESETS[0].colors;
     setCurrentScheme(COMPACT_PRESETS[0]);
     setCustomColors(defaultColors);
     applyColors(defaultColors);
-
     // Clear localStorage
     localStorage.removeItem('minimal-theme-colors');
   };
-
   if (!mounted) {
     return (
       <Button variant="ghost" size="sm" disabled>
@@ -217,7 +192,6 @@ export function CompactThemePicker() {
       </Button>
     );
   }
-
   return (
     <div className="relative">
       <Button
@@ -239,12 +213,10 @@ export function CompactThemePicker() {
           />
         </div>
       </Button>
-
       {isOpen && (
         <>
           {/* Backdrop */}
           <div className="fixed inset-0 z-40" onClick={() => setIsOpen(false)} />
-
           {/* Dropdown */}
           <Card className="absolute top-full right-0 mt-2 w-80 z-50 shadow-lg">
             <CardContent className="p-4 space-y-4">
@@ -252,7 +224,6 @@ export function CompactThemePicker() {
                 <h3 className="font-medium mb-1">Theme Colors</h3>
                 <p className="text-xs text-muted-foreground">Research-backed 3-color system</p>
               </div>
-
               {/* Quick Presets */}
               <div>
                 <Label className="text-xs font-medium mb-2 block">Quick Themes</Label>
@@ -281,11 +252,9 @@ export function CompactThemePicker() {
                   ))}
                 </div>
               </div>
-
               {/* Custom Colors */}
               <div className="space-y-3">
                 <Label className="text-xs font-medium">Custom Colors</Label>
-
                 <div className="space-y-2">
                   <div className="flex items-center gap-2">
                     <Label className="text-xs w-16">Interactive</Label>
@@ -303,7 +272,6 @@ export function CompactThemePicker() {
                       placeholder="#2563eb"
                     />
                   </div>
-
                   <div className="flex items-center gap-2">
                     <Label className="text-xs w-16">Accent</Label>
                     <Input
@@ -322,7 +290,6 @@ export function CompactThemePicker() {
                   </div>
                 </div>
               </div>
-
               {/* Actions */}
               <div className="flex gap-2 pt-2 border-t">
                 <Button

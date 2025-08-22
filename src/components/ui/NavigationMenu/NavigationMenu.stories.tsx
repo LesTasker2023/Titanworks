@@ -6,7 +6,7 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
-} from './navigation-menu';
+} from './NavigationMenu';
 
 /**
  * 📋 NavigationMenu Component Stories

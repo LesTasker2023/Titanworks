@@ -1,2 +1,2 @@
-﻿export * from './card';
-export { default as CardDemo } from './demo';
+export * from './Card';
+export type { CardProps } from './Card';

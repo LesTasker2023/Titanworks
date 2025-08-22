@@ -187,8 +187,8 @@ export default function SwitchDemo() {
     setFeatures(prev => ({ ...prev, [key]: !prev[key] }));
   };
 
-  const getActiveCount = (settings: any) => {
-    return Object.values(settings).filter(Boolean).length;
+  const getActiveCount = (settings: object) => {
+    return Object.values(settings as Record<string, boolean>).filter(Boolean).length;
   };
 
   const resetAllSettings = () => {

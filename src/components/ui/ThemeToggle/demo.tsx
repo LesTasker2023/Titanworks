@@ -92,7 +92,10 @@ export default function ThemeToggleDemo() {
     setAppliedCount(prev => prev + 1);
   };
 
-  const handlePreferenceChange = (key: keyof ThemePreference, value: any) => {
+  const handlePreferenceChange = (
+    key: keyof ThemePreference,
+    value: ThemePreference[keyof ThemePreference]
+  ) => {
     setPreferences(prev => ({
       ...prev,
       [key]: value,
@@ -264,7 +267,7 @@ export default function ThemeToggleDemo() {
                       : 'border-border hover:border-blue-300'
                   }`}
                   onClick={() => {
-                    handlePreferenceChange('mode', mode);
+                    handlePreferenceChange('mode', mode as ThemePreference['mode']);
                     handleThemeChange(mode as 'light' | 'dark' | 'system');
                   }}
                 >
@@ -295,7 +298,9 @@ export default function ThemeToggleDemo() {
                   key={scheme}
                   variant={preferences.colorScheme === scheme ? 'default' : 'outline'}
                   size="sm"
-                  onClick={() => handlePreferenceChange('colorScheme', scheme)}
+                  onClick={() =>
+                    handlePreferenceChange('colorScheme', scheme as ThemePreference['colorScheme'])
+                  }
                   className="flex items-center gap-2"
                 >
                   <div className={`w-3 h-3 rounded-full ${color}`} />

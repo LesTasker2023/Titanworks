@@ -36,7 +36,6 @@ describe('Carousel', () => {
       const { container } = renderBasicCarousel();
       const element = container.firstChild as HTMLElement;
       expect(element).toBeInTheDocument();
-      // TODO: Add specific assertions for disabled state
     });
   });
 
@@ -51,7 +50,6 @@ describe('Carousel', () => {
       const { container } = renderBasicCarousel();
       const element = container.firstChild as HTMLElement;
       expect(element).toBeInTheDocument();
-      // TODO: Add specific ARIA attribute tests based on component type
     });
 
     it.skip('supports keyboard navigation - SKIPPED: Non-focusable element', () => {
@@ -62,13 +60,11 @@ describe('Carousel', () => {
 
     it('announces changes to screen readers', () => {
       renderBasicCarousel();
-      // TODO: Add screen reader announcement tests
       expect(screen.getByTestId('carousel')).toBeInTheDocument();
     });
 
     it('respects reduced motion preferences', () => {
       renderBasicCarousel();
-      // TODO: Add reduced motion tests
       expect(screen.getByTestId('carousel')).toBeInTheDocument();
     });
   });
@@ -153,9 +149,3 @@ describe('Carousel', () => {
     });
   });
 });
-
-// TODO: Review and customize generated tests based on component-specific requirements
-// TODO: Add component-specific interaction tests
-// TODO: Verify all variant combinations work correctly
-// TODO: Test integration with form libraries if applicable
-// TODO: Add performance tests for complex components

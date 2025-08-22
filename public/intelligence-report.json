@@ -1,0 +1,1036 @@
+{
+  "metadata": {
+    "scanTime": "2025-08-22T09:45:07.180Z",
+    "version": "20250822-1045",
+    "scanner": "unified-intelligence-engine-v1",
+    "duration": 0
+  },
+  "repository": {
+    "structure": {
+      "directories": 7,
+      "layout": [
+        "storybook-static",
+        "src",
+        "scripts",
+        "public",
+        "docs",
+        "data",
+        "admin scripts"
+      ],
+      "essentials": {
+        "package.json": true,
+        "tsconfig.json": true,
+        "next.config.ts": true,
+        "tailwind.config.js": true
+      }
+    },
+    "metrics": {
+      "totalFiles": 535,
+      "fileTypes": {
+        ".lock": 1,
+        ".ts": 16,
+        ".tsbuildinfo": 1,
+        ".json": 13,
+        ".js": 118,
+        ".cjs": 2,
+        ".md": 13,
+        ".mjs": 5,
+        ".ps1": 4,
+        ".svg": 6,
+        ".png": 3,
+        ".woff2": 8,
+        ".html": 2,
+        ".scss": 15,
+        ".css": 4,
+        ".tsx": 270,
+        ".ico": 1,
+        ".mp4": 1,
+        ".txt": 1,
+        ".new": 2,
+        ".snap": 49
+      }
+    },
+    "health": {},
+    "cleanup": {
+      "emptyFiles": {
+        "found": 1,
+        "deleted": 1,
+        "skipped": 0
+      },
+      "issues": []
+    }
+  },
+  "components": {
+    "inventory": {
+      "Tooltip": {
+        "name": "Tooltip",
+        "path": "src\\components\\ui\\Tooltip",
+        "hasComponent": true,
+        "hasTest": true,
+        "hasStory": true,
+        "hasIndex": true,
+        "hasDemo": true,
+        "size": 2,
+        "complexity": "low",
+        "lastModified": "2025-08-20T22:47:28.666Z",
+        "indexExtensionIssue": false,
+        "testCount": 21,
+        "testQuality": "excellent"
+      },
+      "Toggle": {
+        "name": "Toggle",
+        "path": "src\\components\\ui\\Toggle",
+        "hasComponent": true,
+        "hasTest": true,
+        "hasStory": true,
+        "hasIndex": true,
+        "hasDemo": true,
+        "size": 2,
+        "complexity": "low",
+        "lastModified": "2025-08-20T22:31:29.290Z",
+        "indexExtensionIssue": false,
+        "testCount": 24,
+        "testQuality": "excellent"
+      },
+      "Toast": {
+        "name": "Toast",
+        "path": "src\\components\\ui\\Toast",
+        "hasComponent": true,
+        "hasTest": true,
+        "hasStory": true,
+        "hasIndex": true,
+        "hasDemo": true,
+        "size": 6,
+        "complexity": "medium",
+        "lastModified": "2025-08-20T22:47:28.643Z",
+        "indexExtensionIssue": false,
+        "testCount": 26,
+        "testQuality": "excellent"
+      },
+      "ThemeToggle": {
+        "name": "ThemeToggle",
+        "path": "src\\components\\ui\\ThemeToggle",
+        "hasComponent": true,
+        "hasTest": true,
+        "hasStory": true,
+        "hasIndex": true,
+        "hasDemo": true,
+        "size": 1,
+        "complexity": "medium",
+        "lastModified": "2025-08-20T20:35:12.916Z",
+        "indexExtensionIssue": false,
+        "testCount": 20,
+        "testQuality": "excellent"
+      },
+      "Textarea": {
+        "name": "Textarea",
+        "path": "src\\components\\ui\\Textarea",
+        "hasComponent": true,
+        "hasTest": true,
+        "hasStory": true,
+        "hasIndex": true,
+        "hasDemo": true,
+        "size": 3,
+        "complexity": "medium",
+        "lastModified": "2025-08-20T13:14:53.725Z",
+        "indexExtensionIssue": false,
+        "testCount": 31,
+        "testQuality": "excellent"
+      },
+      "Tabs": {
+        "name": "Tabs",
+        "path": "src\\components\\ui\\Tabs",
+        "hasComponent": true,
+        "hasTest": true,
+        "hasStory": true,
+        "hasIndex": true,
+        "hasDemo": true,
+        "size": 4,
+        "complexity": "medium",
+        "lastModified": "2025-08-20T13:51:52.852Z",
+        "indexExtensionIssue": false,
+        "testCount": 26,
+        "testQuality": "excellent"
+      },
+      "Table": {
+        "name": "Table",
+        "path": "src\\components\\ui\\Table",
+        "hasComponent": true,
+        "hasTest": true,
+        "hasStory": true,
+        "hasIndex": true,
+        "hasDemo": true,
+        "size": 3,
+        "complexity": "low",
+        "lastModified": "2025-08-21T12:28:56.104Z",
+        "indexExtensionIssue": false,
+        "testCount": 22,
+        "testQuality": "excellent"
+      },
+      "Switch": {
+        "name": "Switch",
+        "path": "src\\components\\ui\\Switch",
+        "hasComponent": true,
+        "hasTest": true,
+        "hasStory": true,
+        "hasIndex": true,
+        "hasDemo": true,
+        "size": 1,
+        "complexity": "low",
+        "lastModified": "2025-08-21T13:38:19.991Z",
+        "indexExtensionIssue": false,
+        "testCount": 22,
+        "testQuality": "excellent"
+      },
+      "Sonner": {
+        "name": "Sonner",
+        "path": "src\\components\\ui\\Sonner",
+        "hasComponent": true,
+        "hasTest": true,
+        "hasStory": true,
+        "hasIndex": true,
+        "hasDemo": true,
+        "size": 1,
+        "complexity": "low",
+        "lastModified": "2025-08-21T13:38:19.946Z",
+        "indexExtensionIssue": false,
+        "testCount": 16,
+        "testQuality": "excellent"
+      },
+      "Slider": {
+        "name": "Slider",
+        "path": "src\\components\\ui\\Slider",
+        "hasComponent": true,
+        "hasTest": true,
+        "hasStory": true,
+        "hasIndex": true,
+        "hasDemo": true,
+        "size": 6,
+        "complexity": "high",
+        "lastModified": "2025-08-20T13:51:52.809Z",
+        "indexExtensionIssue": false,
+        "testCount": 26,
+        "testQuality": "excellent"
+      },
+      "Skeleton": {
+        "name": "Skeleton",
+        "path": "src\\components\\ui\\Skeleton",
+        "hasComponent": true,
+        "hasTest": true,
+        "hasStory": true,
+        "hasIndex": true,
+        "hasDemo": true,
+        "size": 0,
+        "complexity": "low",
+        "lastModified": "2025-08-21T13:38:19.853Z",
+        "indexExtensionIssue": false,
+        "testCount": 18,
+        "testQuality": "excellent"
+      },
+      "Sheet": {
+        "name": "Sheet",
+        "path": "src\\components\\ui\\Sheet",
+        "hasComponent": true,
+        "hasTest": true,
+        "hasStory": true,
+        "hasIndex": true,
+        "hasDemo": true,
+        "size": 4,
+        "complexity": "medium",
+        "lastModified": "2025-08-20T14:42:40.981Z",
+        "indexExtensionIssue": false,
+        "testCount": 22,
+        "testQuality": "excellent"
+      },
+      "Separator": {
+        "name": "Separator",
+        "path": "src\\components\\ui\\Separator",
+        "hasComponent": true,
+        "hasTest": true,
+        "hasStory": true,
+        "hasIndex": true,
+        "hasDemo": true,
+        "size": 4,
+        "complexity": "medium",
+        "lastModified": "2025-08-20T22:47:28.404Z",
+        "indexExtensionIssue": false,
+        "testCount": 23,
+        "testQuality": "excellent"
+      },
+      "Select": {
+        "name": "Select",
+        "path": "src\\components\\ui\\Select",
+        "hasComponent": true,
+        "hasTest": true,
+        "hasStory": true,
+        "hasIndex": true,
+        "hasDemo": true,
+        "size": 9,
+        "complexity": "high",
+        "lastModified": "2025-08-20T22:31:27.795Z",
+        "indexExtensionIssue": false,
+        "testCount": 23,
+        "testQuality": "excellent"
+      },
+      "ScrollArea": {
+        "name": "ScrollArea",
+        "path": "src\\components\\ui\\ScrollArea",
+        "hasComponent": true,
+        "hasTest": true,
+        "hasStory": true,
+        "hasIndex": true,
+        "hasDemo": true,
+        "size": 2,
+        "complexity": "low",
+        "lastModified": "2025-08-21T13:38:19.585Z",
+        "indexExtensionIssue": false,
+        "testCount": 18,
+        "testQuality": "excellent"
+      },
+      "Resizable": {
+        "name": "Resizable",
+        "path": "src\\components\\ui\\Resizable",
+        "hasComponent": true,
+        "hasTest": true,
+        "hasStory": true,
+        "hasIndex": true,
+        "hasDemo": true,
+        "size": 2,
+        "complexity": "low",
+        "lastModified": "2025-08-20T01:14:43.983Z",
+        "indexExtensionIssue": false,
+        "testCount": 16,
+        "testQuality": "excellent"
+      },
+      "RadioGroup": {
+        "name": "RadioGroup",
+        "path": "src\\components\\ui\\RadioGroup",
+        "hasComponent": true,
+        "hasTest": true,
+        "hasStory": true,
+        "hasIndex": true,
+        "hasDemo": true,
+        "size": 3,
+        "complexity": "low",
+        "lastModified": "2025-08-22T09:10:51.310Z",
+        "indexExtensionIssue": false,
+        "testCount": 18,
+        "testQuality": "excellent"
+      },
+      "Progress": {
+        "name": "Progress",
+        "path": "src\\components\\ui\\Progress",
+        "hasComponent": true,
+        "hasTest": true,
+        "hasStory": true,
+        "hasIndex": true,
+        "hasDemo": true,
+        "size": 2,
+        "complexity": "low",
+        "lastModified": "2025-08-21T13:38:19.439Z",
+        "indexExtensionIssue": false,
+        "testCount": 18,
+        "testQuality": "excellent"
+      },
+      "Popover": {
+        "name": "Popover",
+        "path": "src\\components\\ui\\Popover",
+        "hasComponent": true,
+        "hasTest": true,
+        "hasStory": true,
+        "hasIndex": true,
+        "hasDemo": true,
+        "size": 2,
+        "complexity": "low",
+        "lastModified": "2025-08-21T13:38:19.381Z",
+        "indexExtensionIssue": false,
+        "testCount": 22,
+        "testQuality": "excellent"
+      },
+      "Pagination": {
+        "name": "Pagination",
+        "path": "src\\components\\ui\\Pagination",
+        "hasComponent": true,
+        "hasTest": true,
+        "hasStory": true,
+        "hasIndex": true,
+        "hasDemo": true,
+        "size": 10,
+        "complexity": "high",
+        "lastModified": "2025-08-21T12:28:55.915Z",
+        "indexExtensionIssue": false,
+        "testCount": 32,
+        "testQuality": "excellent"
+      },
+      "NavigationMenu": {
+        "name": "NavigationMenu",
+        "path": "src\\components\\ui\\NavigationMenu",
+        "hasComponent": true,
+        "hasTest": true,
+        "hasStory": true,
+        "hasIndex": true,
+        "hasDemo": true,
+        "size": 5,
+        "complexity": "medium",
+        "lastModified": "2025-08-20T22:31:28.064Z",
+        "indexExtensionIssue": false,
+        "testCount": 18,
+        "testQuality": "excellent"
+      },
+      "Modal": {
+        "name": "Modal",
+        "path": "src\\components\\ui\\Modal",
+        "hasComponent": true,
+        "hasTest": true,
+        "hasStory": true,
+        "hasIndex": true,
+        "hasDemo": true,
+        "size": 7,
+        "complexity": "high",
+        "lastModified": "2025-08-21T13:38:19.209Z",
+        "indexExtensionIssue": false,
+        "testCount": 25,
+        "testQuality": "excellent"
+      },
+      "Menubar": {
+        "name": "Menubar",
+        "path": "src\\components\\ui\\Menubar",
+        "hasComponent": true,
+        "hasTest": true,
+        "hasStory": true,
+        "hasIndex": true,
+        "hasDemo": true,
+        "size": 9,
+        "complexity": "high",
+        "lastModified": "2025-08-20T22:31:29.612Z",
+        "indexExtensionIssue": false,
+        "testCount": 24,
+        "testQuality": "excellent"
+      },
+      "Label": {
+        "name": "Label",
+        "path": "src\\components\\ui\\Label",
+        "hasComponent": true,
+        "hasTest": true,
+        "hasStory": true,
+        "hasIndex": true,
+        "hasDemo": true,
+        "size": 1,
+        "complexity": "low",
+        "lastModified": "2025-08-21T13:38:19.079Z",
+        "indexExtensionIssue": false,
+        "testCount": 20,
+        "testQuality": "excellent"
+      },
+      "Input": {
+        "name": "Input",
+        "path": "src\\components\\ui\\Input",
+        "hasComponent": true,
+        "hasTest": true,
+        "hasStory": true,
+        "hasIndex": true,
+        "hasDemo": true,
+        "size": 2,
+        "complexity": "low",
+        "lastModified": "2025-08-20T13:14:53.526Z",
+        "indexExtensionIssue": false,
+        "testCount": 26,
+        "testQuality": "excellent"
+      },
+      "index.tsx": {
+        "name": "index.tsx",
+        "path": "src\\components\\ui\\index.tsx",
+        "hasComponent": false,
+        "hasTest": false,
+        "hasStory": false,
+        "hasIndex": false,
+        "hasDemo": false,
+        "size": 0,
+        "complexity": "unknown",
+        "lastModified": null,
+        "indexExtensionIssue": false,
+        "testCount": 0,
+        "testQuality": "none"
+      },
+      "HoverCard": {
+        "name": "HoverCard",
+        "path": "src\\components\\ui\\HoverCard",
+        "hasComponent": true,
+        "hasTest": true,
+        "hasStory": true,
+        "hasIndex": true,
+        "hasDemo": true,
+        "size": 1,
+        "complexity": "low",
+        "lastModified": "2025-08-20T01:14:44.247Z",
+        "indexExtensionIssue": false,
+        "testCount": 20,
+        "testQuality": "excellent"
+      },
+      "Form": {
+        "name": "Form",
+        "path": "src\\components\\ui\\Form",
+        "hasComponent": true,
+        "hasTest": true,
+        "hasStory": true,
+        "hasIndex": true,
+        "hasDemo": true,
+        "size": 1,
+        "complexity": "low",
+        "lastModified": "2025-08-20T14:06:49.199Z",
+        "indexExtensionIssue": false,
+        "testCount": 18,
+        "testQuality": "excellent"
+      },
+      "DropdownMenu": {
+        "name": "DropdownMenu",
+        "path": "src\\components\\ui\\DropdownMenu",
+        "hasComponent": true,
+        "hasTest": true,
+        "hasStory": true,
+        "hasIndex": true,
+        "hasDemo": true,
+        "size": 8,
+        "complexity": "medium",
+        "lastModified": "2025-08-20T22:31:29.801Z",
+        "indexExtensionIssue": false,
+        "testCount": 25,
+        "testQuality": "excellent"
+      },
+      "Dialog": {
+        "name": "Dialog",
+        "path": "src\\components\\ui\\Dialog",
+        "hasComponent": true,
+        "hasTest": true,
+        "hasStory": true,
+        "hasIndex": true,
+        "hasDemo": true,
+        "size": 5,
+        "complexity": "medium",
+        "lastModified": "2025-08-20T13:14:53.471Z",
+        "indexExtensionIssue": false,
+        "testCount": 27,
+        "testQuality": "excellent"
+      },
+      "DatePicker": {
+        "name": "DatePicker",
+        "path": "src\\components\\ui\\DatePicker",
+        "hasComponent": true,
+        "hasTest": true,
+        "hasStory": true,
+        "hasIndex": true,
+        "hasDemo": true,
+        "size": 2,
+        "complexity": "low",
+        "lastModified": "2025-08-22T08:05:33.095Z",
+        "indexExtensionIssue": false,
+        "testCount": 28,
+        "testQuality": "excellent"
+      },
+      "DataTable": {
+        "name": "DataTable",
+        "path": "src\\components\\ui\\DataTable",
+        "hasComponent": true,
+        "hasTest": true,
+        "hasStory": true,
+        "hasIndex": true,
+        "hasDemo": true,
+        "size": 17,
+        "complexity": "high",
+        "lastModified": "2025-08-20T13:51:52.955Z",
+        "indexExtensionIssue": false,
+        "testCount": 37,
+        "testQuality": "excellent"
+      },
+      "ContextMenu": {
+        "name": "ContextMenu",
+        "path": "src\\components\\ui\\ContextMenu",
+        "hasComponent": true,
+        "hasTest": true,
+        "hasStory": true,
+        "hasIndex": true,
+        "hasDemo": true,
+        "size": 7,
+        "complexity": "medium",
+        "lastModified": "2025-08-20T01:14:44.106Z",
+        "indexExtensionIssue": false,
+        "testCount": 25,
+        "testQuality": "excellent"
+      },
+      "Command": {
+        "name": "Command",
+        "path": "src\\components\\ui\\Command",
+        "hasComponent": true,
+        "hasTest": true,
+        "hasStory": true,
+        "hasIndex": true,
+        "hasDemo": true,
+        "size": 5,
+        "complexity": "medium",
+        "lastModified": "2025-08-22T08:05:33.096Z",
+        "indexExtensionIssue": false,
+        "testCount": 22,
+        "testQuality": "excellent"
+      },
+      "Combobox": {
+        "name": "Combobox",
+        "path": "src\\components\\ui\\Combobox",
+        "hasComponent": true,
+        "hasTest": true,
+        "hasStory": true,
+        "hasIndex": true,
+        "hasDemo": true,
+        "size": 3,
+        "complexity": "medium",
+        "lastModified": "2025-08-22T08:05:33.096Z",
+        "indexExtensionIssue": false,
+        "testCount": 30,
+        "testQuality": "excellent"
+      },
+      "ColorPicker": {
+        "name": "ColorPicker",
+        "path": "src\\components\\ui\\ColorPicker",
+        "hasComponent": true,
+        "hasTest": true,
+        "hasStory": true,
+        "hasIndex": true,
+        "hasDemo": true,
+        "size": 9,
+        "complexity": "high",
+        "lastModified": "2025-08-21T13:38:18.367Z",
+        "indexExtensionIssue": false,
+        "testCount": 33,
+        "testQuality": "excellent"
+      },
+      "Collapsible": {
+        "name": "Collapsible",
+        "path": "src\\components\\ui\\Collapsible",
+        "hasComponent": true,
+        "hasTest": true,
+        "hasStory": true,
+        "hasIndex": true,
+        "hasDemo": true,
+        "size": 0,
+        "complexity": "low",
+        "lastModified": "2025-08-20T01:14:43.969Z",
+        "indexExtensionIssue": false,
+        "testCount": 18,
+        "testQuality": "excellent"
+      },
+      "Checkbox": {
+        "name": "Checkbox",
+        "path": "src\\components\\ui\\Checkbox",
+        "hasComponent": true,
+        "hasTest": true,
+        "hasStory": true,
+        "hasIndex": true,
+        "hasDemo": true,
+        "size": 3,
+        "complexity": "low",
+        "lastModified": "2025-08-20T13:14:53.378Z",
+        "indexExtensionIssue": false,
+        "testCount": 33,
+        "testQuality": "excellent"
+      },
+      "Chart": {
+        "name": "Chart",
+        "path": "src\\components\\ui\\Chart",
+        "hasComponent": true,
+        "hasTest": true,
+        "hasStory": true,
+        "hasIndex": true,
+        "hasDemo": true,
+        "size": 10,
+        "complexity": "high",
+        "lastModified": "2025-08-20T01:14:44.452Z",
+        "indexExtensionIssue": false,
+        "testCount": 20,
+        "testQuality": "excellent"
+      },
+      "Carousel": {
+        "name": "Carousel",
+        "path": "src\\components\\ui\\Carousel",
+        "hasComponent": true,
+        "hasTest": true,
+        "hasStory": true,
+        "hasIndex": true,
+        "hasDemo": true,
+        "size": 6,
+        "complexity": "high",
+        "lastModified": "2025-08-20T13:14:53.308Z",
+        "indexExtensionIssue": false,
+        "testCount": 20,
+        "testQuality": "excellent"
+      },
+      "Card": {
+        "name": "Card",
+        "path": "src\\components\\ui\\Card",
+        "hasComponent": true,
+        "hasTest": true,
+        "hasStory": true,
+        "hasIndex": true,
+        "hasDemo": true,
+        "size": 3,
+        "complexity": "medium",
+        "lastModified": "2025-08-21T13:38:18.088Z",
+        "indexExtensionIssue": false,
+        "testCount": 24,
+        "testQuality": "excellent"
+      },
+      "Calendar": {
+        "name": "Calendar",
+        "path": "src\\components\\ui\\Calendar",
+        "hasComponent": true,
+        "hasTest": true,
+        "hasStory": true,
+        "hasIndex": true,
+        "hasDemo": true,
+        "size": 10,
+        "complexity": "high",
+        "lastModified": "2025-08-20T13:14:53.272Z",
+        "indexExtensionIssue": false,
+        "testCount": 26,
+        "testQuality": "excellent"
+      },
+      "Button": {
+        "name": "Button",
+        "path": "src\\components\\ui\\Button",
+        "hasComponent": true,
+        "hasTest": true,
+        "hasStory": true,
+        "hasIndex": true,
+        "hasDemo": true,
+        "size": 2,
+        "complexity": "low",
+        "lastModified": "2025-08-20T23:06:28.938Z",
+        "indexExtensionIssue": false,
+        "testCount": 28,
+        "testQuality": "excellent"
+      },
+      "Breadcrumb": {
+        "name": "Breadcrumb",
+        "path": "src\\components\\ui\\Breadcrumb",
+        "hasComponent": true,
+        "hasTest": true,
+        "hasStory": true,
+        "hasIndex": true,
+        "hasDemo": true,
+        "size": 3,
+        "complexity": "medium",
+        "lastModified": "2025-08-20T01:14:44.352Z",
+        "indexExtensionIssue": false,
+        "testCount": 22,
+        "testQuality": "excellent"
+      },
+      "Badge": {
+        "name": "Badge",
+        "path": "src\\components\\ui\\Badge",
+        "hasComponent": true,
+        "hasTest": true,
+        "hasStory": true,
+        "hasIndex": true,
+        "hasDemo": true,
+        "size": 3,
+        "complexity": "low",
+        "lastModified": "2025-08-20T22:31:29.032Z",
+        "indexExtensionIssue": false,
+        "testCount": 24,
+        "testQuality": "excellent"
+      },
+      "Avatar": {
+        "name": "Avatar",
+        "path": "src\\components\\ui\\Avatar",
+        "hasComponent": true,
+        "hasTest": true,
+        "hasStory": true,
+        "hasIndex": true,
+        "hasDemo": true,
+        "size": 3,
+        "complexity": "medium",
+        "lastModified": "2025-08-20T13:51:52.810Z",
+        "indexExtensionIssue": false,
+        "testCount": 25,
+        "testQuality": "excellent"
+      },
+      "AspectRatio": {
+        "name": "AspectRatio",
+        "path": "src\\components\\ui\\AspectRatio",
+        "hasComponent": true,
+        "hasTest": true,
+        "hasStory": true,
+        "hasIndex": true,
+        "hasDemo": true,
+        "size": 0,
+        "complexity": "low",
+        "lastModified": "2025-08-21T13:38:17.722Z",
+        "indexExtensionIssue": false,
+        "testCount": 18,
+        "testQuality": "excellent"
+      },
+      "AlertDialog": {
+        "name": "AlertDialog",
+        "path": "src\\components\\ui\\AlertDialog",
+        "hasComponent": true,
+        "hasTest": true,
+        "hasStory": true,
+        "hasIndex": true,
+        "hasDemo": true,
+        "size": 4,
+        "complexity": "medium",
+        "lastModified": "2025-08-20T01:01:07.833Z",
+        "indexExtensionIssue": false,
+        "testCount": 18,
+        "testQuality": "excellent"
+      },
+      "Alert": {
+        "name": "Alert",
+        "path": "src\\components\\ui\\Alert",
+        "hasComponent": true,
+        "hasTest": true,
+        "hasStory": true,
+        "hasIndex": true,
+        "hasDemo": true,
+        "size": 4,
+        "complexity": "medium",
+        "lastModified": "2025-08-20T13:51:52.762Z",
+        "indexExtensionIssue": false,
+        "testCount": 25,
+        "testQuality": "excellent"
+      },
+      "Accordion": {
+        "name": "Accordion",
+        "path": "src\\components\\ui\\Accordion",
+        "hasComponent": true,
+        "hasTest": true,
+        "hasStory": true,
+        "hasIndex": true,
+        "hasDemo": true,
+        "size": 3,
+        "complexity": "low",
+        "lastModified": "2025-08-20T20:13:11.360Z",
+        "indexExtensionIssue": false,
+        "testCount": 30,
+        "testQuality": "excellent"
+      }
+    },
+    "metrics": {
+      "total": 50,
+      "withTests": 49,
+      "withStories": 49,
+      "withIndex": 49,
+      "withDemo": 49,
+      "indexExtensionIssues": 0,
+      "testQualityDistribution": {
+        "none": 1,
+        "fail": 0,
+        "pass": 0,
+        "excellent": 49
+      },
+      "testCoverage": 98,
+      "storyCoverage": 98,
+      "indexCoverage": 98,
+      "qualityTestCoverage": 98
+    },
+    "quality": {
+      "score": 92,
+      "issues": ["Best practices score below threshold: 67%"],
+      "strengths": [
+        "Strong test coverage: 98%",
+        "Good quality test coverage: 98% components with substantial tests",
+        "Excellent component organization: 98% have index files"
+      ],
+      "metrics": {
+        "componentCompleteness": {
+          "tests": 98,
+          "stories": 98,
+          "indexes": 98
+        }
+      }
+    },
+    "architecture": {}
+  },
+  "codebase": {
+    "files": {
+      "typescript": 182,
+      "tests": 51,
+      "stories": 49,
+      "testRatio": 28
+    },
+    "dependencies": {
+      "production": 47,
+      "development": 41,
+      "scripts": 70
+    },
+    "tests": {},
+    "coverage": {},
+    "pipeline": {
+      "typescript": {
+        "status": "pass",
+        "duration": 6565,
+        "errors": []
+      },
+      "linting": {
+        "status": "pass",
+        "duration": 9223,
+        "errors": []
+      },
+      "testing": {
+        "status": "fail",
+        "duration": 29406,
+        "errors": [
+          "\u001b[31m❯\u001b[39m src/components/ui/Calendar/Calendar.test.tsx \u001b[2m(\u001b[22m\u001b[2m26 tests\u001b[22m\u001b[2m | \u001b[22m\u001b[31m5 failed\u001b[39m\u001b[2m | \u001b[22m\u001b[33m2 skipped\u001b[39m\u001b[2m)\u001b[22m\u001b[33m 1388\u001b[2mms\u001b[22m\u001b[39m",
+          "\u001b[31m     → Snapshot `Calendar > Snapshots > matches default snapshot 1` mismatched\u001b[39m",
+          "\u001b[31m     → Snapshot `Calendar > Snapshots > matches disabled state snapshot 1` mismatched\u001b[39m",
+          "\u001b[31m     → Snapshot `Calendar > Snapshots > matches selected state snapshot 1` mismatched\u001b[39m",
+          "\u001b[31m     → Snapshot `Calendar > Snapshots > matches focused state snapshot 1` mismatched\u001b[39m",
+          "\u001b[31m     → Snapshot `Calendar > Snapshots > matches hover state snapshot 1` mismatched\u001b[39m",
+          "\u001b[2m  Snapshots \u001b[22m \u001b[1m\u001b[31m5 failed\u001b[39m\u001b[22m",
+          "\u001b[2m Test Files \u001b[22m \u001b[1m\u001b[31m1 failed\u001b[39m\u001b[22m\u001b[2m | \u001b[22m\u001b[1m\u001b[32m50 passed\u001b[39m\u001b[22m\u001b[90m (51)\u001b[39m",
+          "\u001b[2m      Tests \u001b[22m \u001b[1m\u001b[31m5 failed\u001b[39m\u001b[22m\u001b[2m | \u001b[22m\u001b[1m\u001b[32m1097 passed\u001b[39m\u001b[22m\u001b[2m | \u001b[22m\u001b[33m70 skipped\u001b[39m\u001b[90m (1172)\u001b[39m"
+        ]
+      },
+      "building": {
+        "status": "skipped",
+        "duration": 0,
+        "errors": []
+      },
+      "overall": {
+        "status": "fail",
+        "score": 67
+      }
+    }
+  },
+  "bestPractices": {
+    "score": 67,
+    "issues": [
+      {
+        "severity": "low",
+        "type": "naming",
+        "message": "13 naming convention issues detected",
+        "fix": "Use PascalCase for components and consistent exports"
+      },
+      {
+        "severity": "medium",
+        "type": "error-handling",
+        "message": "No error boundary implementation found",
+        "fix": "Add error.tsx or ErrorBoundary component for proper error handling"
+      },
+      {
+        "severity": "medium",
+        "type": "formatting",
+        "message": "No Prettier configuration found",
+        "fix": "Add Prettier configuration for consistent code formatting"
+      },
+      {
+        "severity": "medium",
+        "type": "accessibility",
+        "message": "No accessibility linting configured",
+        "fix": "Add eslint-plugin-jsx-a11y for accessibility checks"
+      },
+      {
+        "severity": "low",
+        "type": "testing",
+        "message": "Test coverage thresholds not configured",
+        "fix": "Configure coverage thresholds in test configuration"
+      }
+    ],
+    "warnings": [],
+    "passed": [],
+    "categories": {
+      "codeQuality": {
+        "score": 1,
+        "issues": [
+          {
+            "severity": "low",
+            "type": "naming",
+            "message": "13 naming convention issues detected",
+            "fix": "Use PascalCase for components and consistent exports"
+          },
+          {
+            "severity": "medium",
+            "type": "error-handling",
+            "message": "No error boundary implementation found",
+            "fix": "Add error.tsx or ErrorBoundary component for proper error handling"
+          }
+        ],
+        "checks": 3
+      },
+      "security": {
+        "score": 2,
+        "issues": [],
+        "checks": 2
+      },
+      "performance": {
+        "score": 2,
+        "issues": [],
+        "checks": 2
+      },
+      "maintainability": {
+        "score": 2,
+        "issues": [
+          {
+            "severity": "medium",
+            "type": "formatting",
+            "message": "No Prettier configuration found",
+            "fix": "Add Prettier configuration for consistent code formatting"
+          }
+        ],
+        "checks": 3
+      },
+      "accessibility": {
+        "score": 1,
+        "issues": [
+          {
+            "severity": "medium",
+            "type": "accessibility",
+            "message": "No accessibility linting configured",
+            "fix": "Add eslint-plugin-jsx-a11y for accessibility checks"
+          }
+        ],
+        "checks": 2
+      },
+      "testing": {
+        "score": 2,
+        "issues": [
+          {
+            "severity": "low",
+            "type": "testing",
+            "message": "Test coverage thresholds not configured",
+            "fix": "Configure coverage thresholds in test configuration"
+          }
+        ],
+        "checks": 3
+      }
+    }
+  },
+  "recommendations": [
+    {
+      "priority": "medium",
+      "category": "testing",
+      "issue": "Test-to-code ratio: 28%",
+      "action": "Add comprehensive tests for existing components",
+      "impact": "Reduces technical debt and improves confidence"
+    },
+    {
+      "priority": "medium",
+      "category": "best-practices",
+      "issue": "No error boundary implementation found",
+      "action": "Add error.tsx or ErrorBoundary component for proper error handling",
+      "impact": "Improves code quality and team productivity"
+    },
+    {
+      "priority": "medium",
+      "category": "best-practices",
+      "issue": "No Prettier configuration found",
+      "action": "Add Prettier configuration for consistent code formatting",
+      "impact": "Improves code quality and team productivity"
+    },
+    {
+      "priority": "medium",
+      "category": "best-practices",
+      "issue": "No accessibility linting configured",
+      "action": "Add eslint-plugin-jsx-a11y for accessibility checks",
+      "impact": "Improves code quality and team productivity"
+    }
+  ]
+}

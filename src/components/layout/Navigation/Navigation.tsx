@@ -44,7 +44,7 @@ interface NavigationProps {
   lastUpdated?: string;
 }
 
-export default function Navigation({
+export function Navigation({
   className,
   brand = {
     name: 'Daedalus',

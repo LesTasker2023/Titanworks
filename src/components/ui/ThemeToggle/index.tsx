@@ -1,6 +1,4 @@
-export * from './AdvancedThemePicker';
-export * from './CompactThemePicker';
 export { default as ThemeToggleDemo } from './demo';
-export * from './MinimalThemePicker';
-export * from './ThemePickerSheet';
-export * from './ThemeToggle';
+export { ThemePickerSheet } from './ThemePickerSheet';
+export { ThemeToggle } from './ThemeToggle';
+export type { ThemeToggleProps } from './ThemeToggle';

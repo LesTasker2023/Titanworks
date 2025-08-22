@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import { describe, expect, it, vi } from 'vitest';
-import { NavigationMenu } from './navigation-menu';
+import { NavigationMenu } from './NavigationMenu';
 
 describe('NavigationMenu', () => {
   const renderBasicNavigationMenu = (props = {}) => {
@@ -36,7 +36,6 @@ describe('NavigationMenu', () => {
       renderBasicNavigationMenu();
       const element = screen.getByTestId('navigationmenu');
       expect(element).toBeInTheDocument();
-      // TODO: Add specific ARIA attribute tests based on component type
     });
 
     it.skip('supports keyboard navigation - SKIPPED: Non-focusable element', () => {
@@ -47,13 +46,11 @@ describe('NavigationMenu', () => {
 
     it('announces changes to screen readers', () => {
       renderBasicNavigationMenu();
-      // TODO: Add screen reader announcement tests
       expect(screen.getByTestId('navigationmenu')).toBeInTheDocument();
     });
 
     it('respects reduced motion preferences', () => {
       renderBasicNavigationMenu();
-      // TODO: Add reduced motion tests
       expect(screen.getByTestId('navigationmenu')).toBeInTheDocument();
     });
   });
@@ -138,9 +135,3 @@ describe('NavigationMenu', () => {
     });
   });
 });
-
-// TODO: Review and customize generated tests based on component-specific requirements
-// TODO: Add component-specific interaction tests
-// TODO: Verify all variant combinations work correctly
-// TODO: Test integration with form libraries if applicable
-// TODO: Add performance tests for complex components

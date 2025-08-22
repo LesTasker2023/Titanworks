@@ -38,7 +38,7 @@ interface SystemHealth {
     success: boolean;
     duration: number;
     rawOutput: string;
-    artifacts?: any;
+    artifacts?: Record<string, unknown>;
   };
 }
 

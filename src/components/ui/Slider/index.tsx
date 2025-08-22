@@ -1,2 +1,3 @@
 export { default as SliderDemo } from './demo';
-export * from './slider';
+export { Slider } from './slider';
+export type { SliderProps } from './slider';

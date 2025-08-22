@@ -32,6 +32,8 @@ interface User {
   department: string;
 }
 
+type SortConfig<T> = { field: keyof T; direction: 'asc' | 'desc' } | null;
+
 interface Order {
   id: string;
   customer: string;
@@ -321,15 +323,18 @@ export default function TableDemo() {
     return filtered;
   }, [productSearch, productSort, products]);
 
-  const handleSort = (field: string, currentSort: any, setSortFunction: any) => {
-    if (currentSort?.field === field) {
-      if (currentSort.direction === 'asc') {
-        setSortFunction({ field, direction: 'desc' });
+  const handleSort = (field: string, currentSort: unknown, setSortFunction: unknown) => {
+    const sort = currentSort as { field: string; direction: 'asc' | 'desc' } | null;
+    const setSort = setSortFunction as (value: unknown) => void;
+
+    if (sort?.field === field) {
+      if (sort.direction === 'asc') {
+        setSort({ field, direction: 'desc' });
       } else {
-        setSortFunction(null);
+        setSort(null);
       }
     } else {
-      setSortFunction({ field, direction: 'asc' });
+      setSort({ field, direction: 'asc' });
     }
   };
 
@@ -352,9 +357,10 @@ export default function TableDemo() {
     }
   };
 
-  const getSortIcon = (field: string, currentSort: any) => {
-    if (currentSort?.field === field) {
-      return currentSort.direction === 'asc' ? (
+  const getSortIcon = (field: string, currentSort: unknown) => {
+    const sort = currentSort as { field: string; direction: 'asc' | 'desc' } | null;
+    if (sort?.field === field) {
+      return sort.direction === 'asc' ? (
         <SortAsc className="h-4 w-4" />
       ) : (
         <SortDesc className="h-4 w-4" />

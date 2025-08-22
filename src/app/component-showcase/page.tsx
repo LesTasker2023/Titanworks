@@ -26,35 +26,19 @@ import {
 import React, { lazy, useMemo, useRef, useState } from 'react';
 
 // Lazy load all component demos for better performance
-const AccordionDemo = lazy(() =>
-  import('@/components/ui/Accordion').then(m => ({ default: m.AccordionDemo }))
-);
-const AlertDemo = lazy(() => import('@/components/ui/Alert').then(m => ({ default: m.AlertDemo })));
-const AlertDialogDemo = lazy(() =>
-  import('@/components/ui/AlertDialog').then(m => ({ default: m.AlertDialogDemo }))
-);
-const AspectRatioDemo = lazy(() =>
-  import('@/components/ui/AspectRatio').then(m => ({ default: m.AspectRatioDemo }))
-);
-const AvatarDemo = lazy(() =>
-  import('@/components/ui/Avatar').then(m => ({ default: m.AvatarDemo }))
-);
+const AccordionDemo = lazy(() => import('@/components/ui/Accordion/demo'));
+const AlertDemo = lazy(() => import('@/components/ui/Alert/demo'));
+const AlertDialogDemo = lazy(() => import('@/components/ui/AlertDialog/demo'));
+const AspectRatioDemo = lazy(() => import('@/components/ui/AspectRatio/demo'));
+const AvatarDemo = lazy(() => import('@/components/ui/Avatar/demo'));
 const BadgeDemo = lazy(() => import('@/components/ui/Badge').then(m => ({ default: m.BadgeDemo })));
-const BreadcrumbDemo = lazy(() =>
-  import('@/components/ui/Breadcrumb').then(m => ({ default: m.BreadcrumbDemo }))
-);
-const ButtonDemo = lazy(() =>
-  import('@/components/ui/Button').then(m => ({ default: m.ButtonDemo }))
-);
-const CalendarDemo = lazy(() =>
-  import('@/components/ui/Calendar').then(m => ({ default: m.CalendarDemo }))
-);
-const CardDemo = lazy(() => import('@/components/ui/Card').then(m => ({ default: m.CardDemo })));
+const BreadcrumbDemo = lazy(() => import('@/components/ui/Breadcrumb/demo'));
+const ButtonDemo = lazy(() => import('@/components/ui/Button/demo'));
+const CalendarDemo = lazy(() => import('@/components/ui/Calendar/demo'));
+const CardDemo = lazy(() => import('@/components/ui/Card/demo'));
 // const CarouselDemo = lazy(() => import('@/components/ui/Carousel/demo'));
 const ChartDemo = lazy(() => import('@/components/ui/Chart/demo'));
-const CheckboxDemo = lazy(() =>
-  import('@/components/ui/Checkbox').then(m => ({ default: m.CheckboxDemo }))
-);
+const CheckboxDemo = lazy(() => import('@/components/ui/Checkbox/demo'));
 const CollapsibleDemo = lazy(() => import('@/components/ui/Collapsible/demo'));
 const ColorPickerDemo = lazy(() => import('@/components/ui/ColorPicker/demo'));
 const ComboboxDemo = lazy(() => import('@/components/ui/Combobox/demo'));
@@ -66,7 +50,7 @@ const DialogDemo = lazy(() => import('@/components/ui/Dialog/demo'));
 const DropdownMenuDemo = lazy(() => import('@/components/ui/DropdownMenu/demo'));
 const FormDemo = lazy(() => import('@/components/ui/Form/demo'));
 const HoverCardDemo = lazy(() => import('@/components/ui/HoverCard/demo'));
-const InputDemo = lazy(() => import('@/components/ui/Input').then(m => ({ default: m.InputDemo })));
+const InputDemo = lazy(() => import('@/components/ui/Input/demo'));
 const LabelDemo = lazy(() => import('@/components/ui/Label/demo'));
 const MenubarDemo = lazy(() => import('@/components/ui/Menubar/demo'));
 const ModalDemo = lazy(() => import('@/components/ui/Modal/demo'));

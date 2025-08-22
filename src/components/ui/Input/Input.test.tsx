@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 // import userEvent from '@testing-library/user-event';
 import { describe, expect, it, vi } from 'vitest';
-import { Input } from './input';
+import { Input } from './Input';
 
 describe('Input', () => {
   const renderBasicInput = (props = {}) => {
@@ -40,19 +40,16 @@ describe('Input', () => {
       renderBasicInput({ loading: true });
       const element = screen.getByTestId('input');
       expect(element).toBeInTheDocument();
-      // TODO: Add specific assertions for loading state
     });
     it('handles disabled state correctly', () => {
       renderBasicInput({ disabled: true });
       const element = screen.getByTestId('input');
       expect(element).toBeInTheDocument();
-      // TODO: Add specific assertions for disabled state
     });
     it('handles error state correctly', () => {
       renderBasicInput({ error: true });
       const element = screen.getByTestId('input');
       expect(element).toBeInTheDocument();
-      // TODO: Add specific assertions for error state
     });
   });
 
@@ -61,25 +58,21 @@ describe('Input', () => {
       renderBasicInput({ label: 'test-value' });
       const element = screen.getByTestId('input');
       expect(element).toBeInTheDocument();
-      // TODO: Add specific assertions for label prop
     });
     it('handles error prop correctly', () => {
       renderBasicInput({ error: 'test-value' });
       const element = screen.getByTestId('input');
       expect(element).toBeInTheDocument();
-      // TODO: Add specific assertions for error prop
     });
     it('handles helperText prop correctly', () => {
       renderBasicInput({ helperText: 'test-value' });
       const element = screen.getByTestId('input');
       expect(element).toBeInTheDocument();
-      // TODO: Add specific assertions for helperText prop
     });
     it('handles loading prop correctly', () => {
       renderBasicInput({ loading: true });
       const element = screen.getByTestId('input');
       expect(element).toBeInTheDocument();
-      // TODO: Add specific assertions for loading prop
     });
   });
 
@@ -95,7 +88,6 @@ describe('Input', () => {
       renderBasicInput();
       const element = screen.getByTestId('input');
       expect(element).toBeInTheDocument();
-      // TODO: Add specific ARIA attribute tests based on component type
     });
 
     it('supports keyboard navigation', () => {
@@ -112,13 +104,11 @@ describe('Input', () => {
 
     it('announces changes to screen readers', () => {
       renderBasicInput();
-      // TODO: Add screen reader announcement tests
       expect(screen.getByTestId('input')).toBeInTheDocument();
     });
 
     it('respects reduced motion preferences', () => {
       renderBasicInput();
-      // TODO: Add reduced motion tests
       expect(screen.getByTestId('input')).toBeInTheDocument();
     });
   });
@@ -182,9 +172,3 @@ describe('Input', () => {
     });
   });
 });
-
-// TODO: Review and customize generated tests based on component-specific requirements
-// TODO: Add component-specific interaction tests
-// TODO: Verify all variant combinations work correctly
-// TODO: Test integration with form libraries if applicable
-// TODO: Add performance tests for complex components

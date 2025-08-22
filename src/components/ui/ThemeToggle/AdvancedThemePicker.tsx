@@ -1,14 +1,14 @@
 'use client';
 
-import { Alert, AlertDescription } from '@/components/ui/Alert/alert';
-import { Badge } from '@/components/ui/Badge/badge';
-import { Button } from '@/components/ui/Button/button';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card/card';
-import { Input } from '@/components/ui/Input/input';
-import { Label } from '@/components/ui/Label/Label';
-import { Separator } from '@/components/ui/Separator/Separator';
-import { Switch } from '@/components/ui/Switch/Switch';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/Tabs/tabs';
+import { Alert, AlertDescription } from '@/components/ui/Alert';
+import { Badge } from '@/components/ui/Badge';
+import { Button } from '@/components/ui/Button';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card';
+import { Input } from '@/components/ui/Input';
+import { Label } from '@/components/ui/Label';
+import { Separator } from '@/components/ui/Separator';
+import { Switch } from '@/components/ui/Switch';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/Tabs';
 import {
   Download,
   Eye,

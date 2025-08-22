@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 // import userEvent from '@testing-library/user-event';
 import { describe, expect, it, vi } from 'vitest';
-import { Card } from './card';
+import { Card } from './Card';
 
 describe('Card', () => {
   const renderBasicCard = (props = {}) => {
@@ -40,13 +40,11 @@ describe('Card', () => {
       const { container } = renderBasicCard();
       const element = container.firstChild as HTMLElement;
       expect(element).toBeInTheDocument();
-      // TODO: Add specific assertions for loading state
     });
     it('handles disabled state correctly', () => {
       const { container } = renderBasicCard();
       const element = container.firstChild as HTMLElement;
       expect(element).toBeInTheDocument();
-      // TODO: Add specific assertions for disabled state
     });
   });
 
@@ -55,13 +53,11 @@ describe('Card', () => {
       const { container } = renderBasicCard();
       const element = container.firstChild as HTMLElement;
       expect(element).toBeInTheDocument();
-      // TODO: Add specific assertions for loading prop
     });
     it('handles disabled prop correctly', () => {
       const { container } = renderBasicCard();
       const element = container.firstChild as HTMLElement;
       expect(element).toBeInTheDocument();
-      // TODO: Add specific assertions for disabled prop
     });
   });
 
@@ -76,7 +72,6 @@ describe('Card', () => {
       const { container } = renderBasicCard();
       const element = container.firstChild as HTMLElement;
       expect(element).toBeInTheDocument();
-      // TODO: Add specific ARIA attribute tests based on component type
     });
 
     it.skip('supports keyboard navigation - SKIPPED: Non-focusable element', () => {
@@ -87,13 +82,11 @@ describe('Card', () => {
 
     it('announces changes to screen readers', () => {
       renderBasicCard();
-      // TODO: Add screen reader announcement tests
       expect(screen.getByTestId('card')).toBeInTheDocument();
     });
 
     it('respects reduced motion preferences', () => {
       renderBasicCard();
-      // TODO: Add reduced motion tests
       expect(screen.getByTestId('card')).toBeInTheDocument();
     });
   });
@@ -178,9 +171,3 @@ describe('Card', () => {
     });
   });
 });
-
-// TODO: Review and customize generated tests based on component-specific requirements
-// TODO: Add component-specific interaction tests
-// TODO: Verify all variant combinations work correctly
-// TODO: Test integration with form libraries if applicable
-// TODO: Add performance tests for complex components

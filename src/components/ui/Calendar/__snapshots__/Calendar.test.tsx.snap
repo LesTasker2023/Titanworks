@@ -366,18 +366,18 @@ exports[`Calendar > Snapshots > matches default snapshot 1`] = `
               20
             </td>
             <td
-              aria-label="Today, Thursday, August 21st, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day bg-gray-800 text-white border-0 font-normal data-[selected=true]:!bg-brand data-[selected=true]:!text-white data-[selected=true]:!border-brand data-[selected=true]:!border-2 rdp-today"
+              aria-label="Thursday, August 21st, 2025"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
               data-day="2025-08-21"
-              data-today="true"
               role="gridcell"
             >
               21
             </td>
             <td
-              aria-label="Friday, August 22nd, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              aria-label="Today, Friday, August 22nd, 2025"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day bg-gray-800 text-white border-0 font-normal data-[selected=true]:!bg-brand data-[selected=true]:!text-white data-[selected=true]:!border-brand data-[selected=true]:!border-2 rdp-today"
               data-day="2025-08-22"
+              data-today="true"
               role="gridcell"
             >
               22
@@ -921,20 +921,20 @@ exports[`Calendar > Snapshots > matches disabled state snapshot 1`] = `
               20
             </td>
             <td
-              aria-label="Today, Thursday, August 21st, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground opacity-50 rdp-disabled bg-gray-800 text-white border-0 font-normal data-[selected=true]:!bg-brand data-[selected=true]:!text-white data-[selected=true]:!border-brand data-[selected=true]:!border-2 rdp-today"
+              aria-label="Thursday, August 21st, 2025"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground opacity-50 rdp-disabled"
               data-day="2025-08-21"
               data-disabled="true"
-              data-today="true"
               role="gridcell"
             >
               21
             </td>
             <td
-              aria-label="Friday, August 22nd, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground opacity-50 rdp-disabled"
+              aria-label="Today, Friday, August 22nd, 2025"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground opacity-50 rdp-disabled bg-gray-800 text-white border-0 font-normal data-[selected=true]:!bg-brand data-[selected=true]:!text-white data-[selected=true]:!border-brand data-[selected=true]:!border-2 rdp-today"
               data-day="2025-08-22"
               data-disabled="true"
+              data-today="true"
               role="gridcell"
             >
               22
@@ -1468,18 +1468,18 @@ exports[`Calendar > Snapshots > matches focused state snapshot 1`] = `
               20
             </td>
             <td
-              aria-label="Today, Thursday, August 21st, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day bg-gray-800 text-white border-0 font-normal data-[selected=true]:!bg-brand data-[selected=true]:!text-white data-[selected=true]:!border-brand data-[selected=true]:!border-2 rdp-today"
+              aria-label="Thursday, August 21st, 2025"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
               data-day="2025-08-21"
-              data-today="true"
               role="gridcell"
             >
               21
             </td>
             <td
-              aria-label="Friday, August 22nd, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              aria-label="Today, Friday, August 22nd, 2025"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day bg-gray-800 text-white border-0 font-normal data-[selected=true]:!bg-brand data-[selected=true]:!text-white data-[selected=true]:!border-brand data-[selected=true]:!border-2 rdp-today"
               data-day="2025-08-22"
+              data-today="true"
               role="gridcell"
             >
               22
@@ -1998,18 +1998,18 @@ exports[`Calendar > Snapshots > matches hover state snapshot 1`] = `
               20
             </td>
             <td
-              aria-label="Today, Thursday, August 21st, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day bg-gray-800 text-white border-0 font-normal data-[selected=true]:!bg-brand data-[selected=true]:!text-white data-[selected=true]:!border-brand data-[selected=true]:!border-2 rdp-today"
+              aria-label="Thursday, August 21st, 2025"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
               data-day="2025-08-21"
-              data-today="true"
               role="gridcell"
             >
               21
             </td>
             <td
-              aria-label="Friday, August 22nd, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              aria-label="Today, Friday, August 22nd, 2025"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day bg-gray-800 text-white border-0 font-normal data-[selected=true]:!bg-brand data-[selected=true]:!text-white data-[selected=true]:!border-brand data-[selected=true]:!border-2 rdp-today"
               data-day="2025-08-22"
+              data-today="true"
               role="gridcell"
             >
               22
@@ -2528,18 +2528,18 @@ exports[`Calendar > Snapshots > matches selected state snapshot 1`] = `
               20
             </td>
             <td
-              aria-label="Today, Thursday, August 21st, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day bg-gray-800 text-white border-0 font-normal data-[selected=true]:!bg-brand data-[selected=true]:!text-white data-[selected=true]:!border-brand data-[selected=true]:!border-2 rdp-today"
+              aria-label="Thursday, August 21st, 2025"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
               data-day="2025-08-21"
-              data-today="true"
               role="gridcell"
             >
               21
             </td>
             <td
-              aria-label="Friday, August 22nd, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              aria-label="Today, Friday, August 22nd, 2025"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day bg-gray-800 text-white border-0 font-normal data-[selected=true]:!bg-brand data-[selected=true]:!text-white data-[selected=true]:!border-brand data-[selected=true]:!border-2 rdp-today"
               data-day="2025-08-22"
+              data-today="true"
               role="gridcell"
             >
               22

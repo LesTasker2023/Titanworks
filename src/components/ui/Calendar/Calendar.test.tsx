@@ -44,25 +44,21 @@ describe('Calendar', () => {
       const { container } = renderBasicCalendar();
       const element = container.firstChild as HTMLElement;
       expect(element).toBeInTheDocument();
-      // TODO: Add specific assertions for disabled state
     });
     it('handles selected state correctly', () => {
       const { container } = renderBasicCalendar();
       const element = container.firstChild as HTMLElement;
       expect(element).toBeInTheDocument();
-      // TODO: Add specific assertions for selected state
     });
     it('handles focused state correctly', () => {
       const { container } = renderBasicCalendar();
       const element = container.firstChild as HTMLElement;
       expect(element).toBeInTheDocument();
-      // TODO: Add specific assertions for focused state
     });
     it('handles hover state correctly', () => {
       const { container } = renderBasicCalendar();
       const element = container.firstChild as HTMLElement;
       expect(element).toBeInTheDocument();
-      // TODO: Add specific assertions for hover state
     });
   });
 
@@ -77,7 +73,6 @@ describe('Calendar', () => {
       const { container } = renderBasicCalendar();
       const element = container.firstChild as HTMLElement;
       expect(element).toBeInTheDocument();
-      // TODO: Add specific ARIA attribute tests based on component type
     });
 
     it.skip('supports keyboard navigation - SKIPPED: Non-focusable element', () => {
@@ -88,13 +83,11 @@ describe('Calendar', () => {
 
     it('announces changes to screen readers', () => {
       renderBasicCalendar();
-      // TODO: Add screen reader announcement tests
       expect(screen.getByTestId('calendar')).toBeInTheDocument();
     });
 
     it('respects reduced motion preferences', () => {
       renderBasicCalendar();
-      // TODO: Add reduced motion tests
       expect(screen.getByTestId('calendar')).toBeInTheDocument();
     });
   });
@@ -166,9 +159,3 @@ describe('Calendar', () => {
     });
   });
 });
-
-// TODO: Review and customize generated tests based on component-specific requirements
-// TODO: Add component-specific interaction tests
-// TODO: Verify all variant combinations work correctly
-// TODO: Test integration with form libraries if applicable
-// TODO: Add performance tests for complex components

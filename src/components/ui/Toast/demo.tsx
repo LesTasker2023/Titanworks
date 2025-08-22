@@ -100,7 +100,7 @@ export default function ToastDemo() {
     setToasts([]);
   };
 
-  const updateSetting = (key: keyof ToastSettings, value: any) => {
+  const updateSetting = (key: keyof ToastSettings, value: ToastSettings[keyof ToastSettings]) => {
     setSettings(prev => ({
       ...prev,
       [key]: value,
@@ -429,7 +429,7 @@ export default function ToastDemo() {
                   key={position}
                   variant={settings.position === position ? 'default' : 'outline'}
                   size="sm"
-                  onClick={() => updateSetting('position', position)}
+                  onClick={() => updateSetting('position', position as ToastSettings['position'])}
                   className="capitalize"
                 >
                   {position.replace('-', ' ')}

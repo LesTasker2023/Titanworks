@@ -1,3 +1,3 @@
 export { default as RadioGroupDemo } from './demo';
-export * from './radio-group';
-export type { RadioGroupProps } from './radio-group';
+export { RadioGroup, RadioGroupItem } from './RadioGroup';
+export type { RadioGroupProps } from './RadioGroup';

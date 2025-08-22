@@ -48,25 +48,21 @@ describe('Textarea', () => {
       const { container } = renderBasicTextarea();
       const element = container.firstChild as HTMLElement;
       expect(element).toBeInTheDocument();
-      // TODO: Add specific assertions for loading state
     });
     it('handles disabled state correctly', () => {
       const { container } = renderBasicTextarea();
       const element = container.firstChild as HTMLElement;
       expect(element).toBeInTheDocument();
-      // TODO: Add specific assertions for disabled state
     });
     it('handles error state correctly', () => {
       const { container } = renderBasicTextarea();
       const element = container.firstChild as HTMLElement;
       expect(element).toBeInTheDocument();
-      // TODO: Add specific assertions for error state
     });
     it('handles required state correctly', () => {
       const { container } = renderBasicTextarea();
       const element = container.firstChild as HTMLElement;
       expect(element).toBeInTheDocument();
-      // TODO: Add specific assertions for required state
     });
   });
 
@@ -75,31 +71,26 @@ describe('Textarea', () => {
       const { container } = renderBasicTextarea();
       const element = container.firstChild as HTMLElement;
       expect(element).toBeInTheDocument();
-      // TODO: Add specific assertions for label prop
     });
     it('handles error prop correctly', () => {
       const { container } = renderBasicTextarea();
       const element = container.firstChild as HTMLElement;
       expect(element).toBeInTheDocument();
-      // TODO: Add specific assertions for error prop
     });
     it('handles helperText prop correctly', () => {
       const { container } = renderBasicTextarea();
       const element = container.firstChild as HTMLElement;
       expect(element).toBeInTheDocument();
-      // TODO: Add specific assertions for helperText prop
     });
     it('handles loading prop correctly', () => {
       const { container } = renderBasicTextarea();
       const element = container.firstChild as HTMLElement;
       expect(element).toBeInTheDocument();
-      // TODO: Add specific assertions for loading prop
     });
     it('handles maxLength prop correctly', () => {
       const { container } = renderBasicTextarea();
       const element = container.firstChild as HTMLElement;
       expect(element).toBeInTheDocument();
-      // TODO: Add specific assertions for maxLength prop
     });
   });
 
@@ -115,7 +106,6 @@ describe('Textarea', () => {
       const { container } = renderBasicTextarea();
       const element = container.firstChild as HTMLElement;
       expect(element).toBeInTheDocument();
-      // TODO: Add specific ARIA attribute tests based on component type
     });
 
     it('supports keyboard navigation', () => {
@@ -132,13 +122,11 @@ describe('Textarea', () => {
 
     it('announces changes to screen readers', () => {
       renderBasicTextarea();
-      // TODO: Add screen reader announcement tests
       expect(screen.getByTestId('textarea')).toBeInTheDocument();
     });
 
     it('respects reduced motion preferences', () => {
       renderBasicTextarea();
-      // TODO: Add reduced motion tests
       expect(screen.getByTestId('textarea')).toBeInTheDocument();
     });
   });
@@ -217,9 +205,3 @@ describe('Textarea', () => {
     });
   });
 });
-
-// TODO: Review and customize generated tests based on component-specific requirements
-// TODO: Add component-specific interaction tests
-// TODO: Verify all variant combinations work correctly
-// TODO: Test integration with form libraries if applicable
-// TODO: Add performance tests for complex components

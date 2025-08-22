@@ -2,14 +2,19 @@
 
 exports[`RadioGroup > Snapshots > matches default snapshot 1`] = `
 <div
-  aria-required="false"
-  class="grid gap-2"
-  data-testid="radiogroup"
-  dir="ltr"
-  role="radiogroup"
-  style="outline: none;"
-  tabindex="-1"
+  class="space-y-2"
 >
-  Test content
+  <div
+    aria-required="false"
+    class="grid gap-2"
+    data-testid="radiogroup"
+    dir="ltr"
+    id="«r0»"
+    role="radiogroup"
+    style="outline: none;"
+    tabindex="-1"
+  >
+    Test content
+  </div>
 </div>
 `;

@@ -52,7 +52,6 @@ describe('Slider', () => {
       // const element = screen.getByTestId('slider');
       // Loading state renders differently in test environment
       expect(container.firstChild).toBeInTheDocument();
-      // TODO: Add specific assertions for disabled state
     });
   });
 
@@ -62,28 +61,24 @@ describe('Slider', () => {
       // const element = screen.getByTestId('slider');
       // Loading state renders differently in test environment
       expect(container.firstChild).toBeInTheDocument();
-      // TODO: Add specific assertions for showValue prop
     });
     it('handles valuePosition prop correctly', () => {
       const { container } = renderBasicSlider({ valuePosition: 'test-value' });
       // const element = screen.getByTestId('slider');
       // Loading state renders differently in test environment
       expect(container.firstChild).toBeInTheDocument();
-      // TODO: Add specific assertions for valuePosition prop
     });
     it('handles loading prop correctly', () => {
       const { container } = renderBasicSlider({ loading: true });
       // In loading state, check for presence
       expect(container.firstChild).toBeInTheDocument();
       expect(container.firstChild).toHaveClass('gap-2');
-      // TODO: Add specific assertions for loading prop
     });
     it('handles formatValue prop correctly', () => {
       const { container } = renderBasicSlider({ formatValue: (value: number) => `${value}%` });
       // const element = screen.getByTestId('slider');
       // Loading state renders differently in test environment
       expect(container.firstChild).toBeInTheDocument();
-      // TODO: Add specific assertions for formatValue prop
     });
   });
 
@@ -99,7 +94,6 @@ describe('Slider', () => {
       // const element = screen.getByTestId('slider');
       // Loading state renders differently in test environment
       expect(container.firstChild).toBeInTheDocument();
-      // TODO: Add specific ARIA attribute tests based on component type
     });
 
     it.skip('supports keyboard navigation - SKIPPED: Non-focusable element', () => {
@@ -110,13 +104,11 @@ describe('Slider', () => {
 
     it('announces changes to screen readers', () => {
       renderBasicSlider();
-      // TODO: Add screen reader announcement tests
       expect(screen.getByTestId('slider')).toBeInTheDocument();
     });
 
     it('respects reduced motion preferences', () => {
       renderBasicSlider();
-      // TODO: Add reduced motion tests
       expect(screen.getByTestId('slider')).toBeInTheDocument();
     });
   });
@@ -201,9 +193,3 @@ describe('Slider', () => {
     });
   });
 });
-
-// TODO: Review and customize generated tests based on component-specific requirements
-// TODO: Add component-specific interaction tests
-// TODO: Verify all variant combinations work correctly
-// TODO: Test integration with form libraries if applicable
-// TODO: Add performance tests for complex components

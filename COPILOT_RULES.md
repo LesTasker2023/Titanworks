@@ -1,5 +1,18 @@
 # Rule: Always start with the first high-leverage topic from LEARNINGS.md and, if possible, build something for the project using it before moving to the next topic. This ensures practical, project-driven mastery of each concept.
 
+## 13. PowerShell Command Syntax Standard
+
+- **Always use PowerShell syntax** for all terminal commands and scripts in this Windows environment
+- Use semicolon (`;`) as command separator instead of `&&`
+- Use PowerShell cmdlets and syntax patterns consistently
+- Examples:
+  - ✅ `cd "path"; yarn command`
+  - ❌ `cd "path" && yarn command`
+  - ✅ `powershell -ExecutionPolicy Bypass "script.ps1"`
+  - ✅ `Get-ChildItem`, `Copy-Item`, `Remove-Item`
+- All automation scripts should be PowerShell (.ps1) format
+- Terminal tool calls must use proper PowerShell command chaining
+
 ## 12. Vitest Test Imports
 
 - All test files must explicitly import `describe`, `it`, and `expect` from 'vitest' for consistency, type safety, and to avoid global/environment issues.

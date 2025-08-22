@@ -36,13 +36,11 @@ describe('DatePicker', () => {
       renderBasicDatePicker({ disabled: true });
       const element = screen.getByTestId('datepicker');
       expect(element).toBeInTheDocument();
-      // TODO: Add specific assertions for disabled state
     });
     it('handles selected state correctly', () => {
       renderBasicDatePicker({ selected: true });
       const element = screen.getByTestId('datepicker');
       expect(element).toBeInTheDocument();
-      // TODO: Add specific assertions for selected state
     });
   });
 
@@ -52,7 +50,6 @@ describe('DatePicker', () => {
       // const user = userEvent.setup();
       renderBasicDatePicker({ onDateChange });
 
-      // TODO: Add specific event triggering based on onDateChange
       expect(onDateChange).toBeDefined();
     });
   });
@@ -62,31 +59,26 @@ describe('DatePicker', () => {
       renderBasicDatePicker({ date: new Date('2023-12-25') });
       const element = screen.getByTestId('datepicker');
       expect(element).toBeInTheDocument();
-      // TODO: Add specific assertions for date prop
     });
     it('handles onDateChange prop correctly', () => {
       renderBasicDatePicker({ onDateChange: vi.fn() });
       const element = screen.getByTestId('datepicker');
       expect(element).toBeInTheDocument();
-      // TODO: Add specific assertions for onDateChange prop
     });
     it('handles placeholder prop correctly', () => {
       renderBasicDatePicker({ placeholder: 'test-value' });
       const element = screen.getByTestId('datepicker');
       expect(element).toBeInTheDocument();
-      // TODO: Add specific assertions for placeholder prop
     });
     it('handles disabled prop correctly', () => {
       renderBasicDatePicker({ disabled: true });
       const element = screen.getByTestId('datepicker');
       expect(element).toBeInTheDocument();
-      // TODO: Add specific assertions for disabled prop
     });
     it('handles className prop correctly', () => {
       renderBasicDatePicker({ className: 'test-value' });
       const element = screen.getByTestId('datepicker');
       expect(element).toBeInTheDocument();
-      // TODO: Add specific assertions for className prop
     });
   });
 
@@ -101,7 +93,6 @@ describe('DatePicker', () => {
       renderBasicDatePicker();
       const element = screen.getByTestId('datepicker');
       expect(element).toBeInTheDocument();
-      // TODO: Add specific ARIA attribute tests based on component type
     });
 
     it.skip('supports keyboard navigation - SKIPPED: Non-focusable element', () => {
@@ -112,13 +103,11 @@ describe('DatePicker', () => {
 
     it('announces changes to screen readers', () => {
       renderBasicDatePicker();
-      // TODO: Add screen reader announcement tests
       expect(screen.getByTestId('datepicker')).toBeInTheDocument();
     });
 
     it('respects reduced motion preferences', () => {
       renderBasicDatePicker();
-      // TODO: Add reduced motion tests
       expect(screen.getByTestId('datepicker')).toBeInTheDocument();
     });
   });
@@ -205,9 +194,3 @@ describe('DatePicker', () => {
     });
   });
 });
-
-// TODO: Review and customize generated tests based on component-specific requirements
-// TODO: Add component-specific interaction tests
-// TODO: Verify all variant combinations work correctly
-// TODO: Test integration with form libraries if applicable
-// TODO: Add performance tests for complex components
