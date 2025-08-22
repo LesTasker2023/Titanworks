@@ -12,6 +12,9 @@ const nextConfig: NextConfig = {
   compress: true,
   poweredByHeader: false,
 
+  // EMERGENCY: Output configuration for Vercel size limits
+  output: 'standalone',
+
   // Image optimization
   images: {
     formats: ['image/avif', 'image/webp'],
@@ -66,6 +69,29 @@ const nextConfig: NextConfig = {
 
   // Webpack optimizations
   webpack: (config, { dev, isServer }) => {
+    // EMERGENCY: Exclude heavy dependencies from serverless functions
+    if (!dev && isServer) {
+      config.externals = config.externals || [];
+      config.externals.push({
+        '@storybook/addon-docs': 'commonjs @storybook/addon-docs',
+        '@storybook/addon-a11y': 'commonjs @storybook/addon-a11y',
+        '@chromatic-com/storybook': 'commonjs @chromatic-com/storybook',
+        '@storybook/nextjs': 'commonjs @storybook/nextjs',
+        '@storybook/nextjs-vite': 'commonjs @storybook/nextjs-vite',
+        '@vitest/browser': 'commonjs @vitest/browser',
+        '@vitest/coverage-v8': 'commonjs @vitest/coverage-v8',
+        '@testing-library/react': 'commonjs @testing-library/react',
+        '@testing-library/jest-dom': 'commonjs @testing-library/jest-dom',
+        '@testing-library/user-event': 'commonjs @testing-library/user-event',
+        vitest: 'commonjs vitest',
+        concurrently: 'commonjs concurrently',
+        husky: 'commonjs husky',
+        chalk: 'commonjs chalk',
+        'cross-env': 'commonjs cross-env',
+        'npm-run-all': 'commonjs npm-run-all',
+      });
+    }
+
     // Production optimizations
     if (!dev && !isServer) {
       config.resolve.alias = {
@@ -84,24 +110,48 @@ const nextConfig: NextConfig = {
       // Remove unused CSS and dead code
       config.optimization.concatenateModules = true;
 
-      // Split chunks for better caching and tree shaking
+      // EMERGENCY: Aggressive chunk splitting for size reduction
       config.optimization.splitChunks = {
-        ...config.optimization.splitChunks,
+        chunks: 'all',
         cacheGroups: {
-          ...config.optimization.splitChunks?.cacheGroups,
-          // Separate chunk for Radix UI components
+          // Vendor libraries
+          vendor: {
+            test: /[\\/]node_modules[\\/]/,
+            name: 'vendors',
+            chunks: 'all',
+            priority: 10,
+            maxSize: 244000, // 240KB chunks
+          },
+          // Radix UI components (heavy)
           radix: {
             test: /[\\/]node_modules[\\/]@radix-ui[\\/]/,
             name: 'radix',
             chunks: 'all',
-            priority: 10,
+            priority: 20,
+            maxSize: 200000, // 200KB max
           },
-          // Separate chunk for Lucide icons (only used ones)
+          // Lucide icons (only used ones)
           lucide: {
             test: /[\\/]node_modules[\\/]lucide-react[\\/]/,
             name: 'lucide',
             chunks: 'all',
-            priority: 9,
+            priority: 15,
+            maxSize: 100000, // 100KB max
+          },
+          // Charts library
+          recharts: {
+            test: /[\\/]node_modules[\\/]recharts[\\/]/,
+            name: 'recharts',
+            chunks: 'all',
+            priority: 12,
+            maxSize: 150000, // 150KB max
+          },
+          // Default group
+          default: {
+            minChunks: 2,
+            priority: -10,
+            reuseExistingChunk: true,
+            maxSize: 200000, // 200KB max
           },
         },
       };

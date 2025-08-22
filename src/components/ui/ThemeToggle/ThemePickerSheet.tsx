@@ -251,9 +251,27 @@ export function ThemePickerSheet() {
   return (
     <Sheet open={isOpen} onOpenChange={setIsOpen}>
       <SheetTrigger asChild>
-        <Button variant="outline" size="sm" className="gap-2">
-          <Palette className="h-4 w-4" />
-          <span className="hidden sm:inline">Themes</span>
+        <Button variant="outline" size="sm" className="gap-2 relative">
+          <div className="flex items-center gap-1.5">
+            <div className="flex gap-0.5">
+              <div
+                className="w-2.5 h-2.5 rounded-full border border-white/30 shadow-sm"
+                style={{ backgroundColor: customColors.interactive }}
+                title="Interactive Color"
+              />
+              <div
+                className="w-2.5 h-2.5 rounded-full border border-white/30 shadow-sm"
+                style={{ backgroundColor: customColors.surface }}
+                title="Surface Color"
+              />
+              <div
+                className="w-2.5 h-2.5 rounded-full border border-white/30 shadow-sm"
+                style={{ backgroundColor: customColors.accent }}
+                title="Accent Color"
+              />
+            </div>
+            <span className="hidden sm:inline text-sm">Themes</span>
+          </div>
         </Button>
       </SheetTrigger>
       <SheetContent className="w-full sm:max-w-md overflow-y-auto">

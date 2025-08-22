@@ -271,9 +271,11 @@ export default function DashboardPage() {
             <Gauge className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">{intelligence.dashboard.overallScore}%</div>
-            <div className="mt-2">{getStatusBadge(intelligence.dashboard.status)}</div>
-            <Progress value={intelligence.dashboard.overallScore} className="mt-2" />
+            <div className="text-2xl font-bold">{intelligence?.dashboard?.overallScore ?? 0}%</div>
+            <div className="mt-2">
+              {getStatusBadge(intelligence?.dashboard?.status ?? 'unknown')}
+            </div>
+            <Progress value={intelligence?.dashboard?.overallScore ?? 0} className="mt-2" />
           </CardContent>
         </Card>
 
@@ -283,10 +285,12 @@ export default function DashboardPage() {
             <Package className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">{intelligence.components.metrics.total}</div>
+            <div className="text-2xl font-bold">
+              {intelligence?.components?.metrics?.total ?? 0}
+            </div>
             <p className="text-xs text-muted-foreground">
-              {intelligence.components.metrics.passing} complete,{' '}
-              {intelligence.components.metrics.withTests} tested
+              {intelligence?.components?.metrics?.passing ?? 0} complete,{' '}
+              {intelligence?.components?.metrics?.withTests ?? 0} tested
             </p>
           </CardContent>
         </Card>
@@ -299,7 +303,7 @@ export default function DashboardPage() {
           <CardContent>
             {(() => {
               // Parse test results from raw output for individual test cases
-              const rawOutput = intelligence.systemHealth.tests.rawOutput || '';
+              const rawOutput = intelligence?.systemHealth?.tests?.rawOutput || '';
 
               // Remove ANSI escape codes for better pattern matching
               const cleanOutput = rawOutput.replace(/\u001b\[[0-9;]*m/g, '');
@@ -331,12 +335,12 @@ export default function DashboardPage() {
           </CardHeader>
           <CardContent>
             <div
-              className={`text-2xl font-bold ${intelligence.systemHealth.build.success ? 'text-green-600' : 'text-red-600'}`}
+              className={`text-2xl font-bold ${intelligence?.systemHealth?.build?.success ? 'text-green-600' : 'text-red-600'}`}
             >
-              {intelligence.systemHealth.build.success ? 'Success' : 'Failed'}
+              {intelligence?.systemHealth?.build?.success ? 'Success' : 'Failed'}
             </div>
             <p className="text-xs text-muted-foreground">
-              Duration: {intelligence.systemHealth.build.duration}s
+              Duration: {intelligence?.systemHealth?.build?.duration ?? 0}s
             </p>
           </CardContent>
         </Card>
@@ -362,22 +366,24 @@ export default function DashboardPage() {
               <CardContent className="space-y-4">
                 <div className="flex justify-between items-center">
                   <span>Overall Score</span>
-                  <span className="font-bold">{intelligence.dashboard.overallScore}%</span>
+                  <span className="font-bold">{intelligence?.dashboard?.overallScore ?? 0}%</span>
                 </div>
                 <div className="flex justify-between items-center">
                   <span>Status</span>
-                  {getStatusBadge(intelligence.dashboard.status)}
+                  {getStatusBadge(intelligence?.dashboard?.status ?? 'unknown')}
                 </div>
                 <div className="flex justify-between items-center">
                   <span>Last Scan</span>
                   <span className="text-sm text-muted-foreground">
-                    {new Date(intelligence.metadata.scanTime).toLocaleString()}
+                    {intelligence?.metadata?.scanTime
+                      ? new Date(intelligence.metadata.scanTime).toLocaleString()
+                      : 'Unknown'}
                   </span>
                 </div>
                 <div className="flex justify-between items-center">
                   <span>Scan Duration</span>
                   <span className="text-sm text-muted-foreground">
-                    {intelligence.metadata.duration}s
+                    {intelligence?.metadata?.duration ?? 0}s
                   </span>
                 </div>
               </CardContent>
@@ -391,24 +397,24 @@ export default function DashboardPage() {
               <CardContent className="space-y-4">
                 <div className="flex justify-between items-center">
                   <span>Total Components</span>
-                  <span className="font-bold">{intelligence.components.metrics.total}</span>
+                  <span className="font-bold">{intelligence?.components?.metrics?.total ?? 0}</span>
                 </div>
                 <div className="flex justify-between items-center">
                   <span>Complete</span>
                   <span className="text-green-600 font-medium">
-                    {intelligence.components.metrics.passing}
+                    {intelligence?.components?.metrics?.passing ?? 0}
                   </span>
                 </div>
                 <div className="flex justify-between items-center">
                   <span>With Tests</span>
                   <span className="text-blue-600 font-medium">
-                    {intelligence.components.metrics.withTests}
+                    {intelligence?.components?.metrics?.withTests ?? 0}
                   </span>
                 </div>
                 <div className="flex justify-between items-center">
                   <span>With Stories</span>
                   <span className="text-purple-600 font-medium">
-                    {intelligence.components.metrics.withStories}
+                    {intelligence?.components?.metrics?.withStories ?? 0}
                   </span>
                 </div>
               </CardContent>
@@ -421,44 +427,45 @@ export default function DashboardPage() {
             <CardHeader>
               <CardTitle>Component Inventory</CardTitle>
               <CardDescription>
-                All {intelligence.components.metrics.total} UI components with their status
+                All {intelligence?.components?.metrics?.total ?? 0} UI components with their status
               </CardDescription>
             </CardHeader>
             <CardContent>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                {Object.entries(intelligence.components.inventory).map(([name, info]) => (
-                  <div key={name} className="p-4 border rounded-lg space-y-2">
-                    <div className="flex justify-between items-center">
-                      <h3 className="font-medium">{name}</h3>
-                      <Badge variant={info.status === 'complete' ? 'default' : 'secondary'}>
-                        {info.status}
-                      </Badge>
+                {intelligence?.components?.inventory &&
+                  Object.entries(intelligence.components.inventory).map(([name, info]) => (
+                    <div key={name} className="p-4 border rounded-lg space-y-2">
+                      <div className="flex justify-between items-center">
+                        <h3 className="font-medium">{name}</h3>
+                        <Badge variant={info.status === 'complete' ? 'default' : 'secondary'}>
+                          {info.status}
+                        </Badge>
+                      </div>
+                      <div className="text-xs text-muted-foreground">{info.path}</div>
+                      <div className="flex gap-1 flex-wrap">
+                        {info.hasIndex && (
+                          <Badge variant="outline" className="text-xs">
+                            Index
+                          </Badge>
+                        )}
+                        {info.hasTest && (
+                          <Badge variant="outline" className="text-xs">
+                            Test
+                          </Badge>
+                        )}
+                        {info.hasStory && (
+                          <Badge variant="outline" className="text-xs">
+                            Story
+                          </Badge>
+                        )}
+                        {info.hasDemo && (
+                          <Badge variant="outline" className="text-xs">
+                            Demo
+                          </Badge>
+                        )}
+                      </div>
                     </div>
-                    <div className="text-xs text-muted-foreground">{info.path}</div>
-                    <div className="flex gap-1 flex-wrap">
-                      {info.hasIndex && (
-                        <Badge variant="outline" className="text-xs">
-                          Index
-                        </Badge>
-                      )}
-                      {info.hasTest && (
-                        <Badge variant="outline" className="text-xs">
-                          Test
-                        </Badge>
-                      )}
-                      {info.hasStory && (
-                        <Badge variant="outline" className="text-xs">
-                          Story
-                        </Badge>
-                      )}
-                      {info.hasDemo && (
-                        <Badge variant="outline" className="text-xs">
-                          Demo
-                        </Badge>
-                      )}
-                    </div>
-                  </div>
-                ))}
+                  ))}
               </div>
             </CardContent>
           </Card>
@@ -474,7 +481,7 @@ export default function DashboardPage() {
               <CardContent className="space-y-4">
                 {(() => {
                   // Parse test file results from raw output
-                  const rawOutput = intelligence.systemHealth.tests.rawOutput || '';
+                  const rawOutput = intelligence?.systemHealth?.tests?.rawOutput || '';
 
                   // Remove ANSI escape codes for better pattern matching
                   const cleanOutput = rawOutput.replace(/\u001b\[[0-9;]*m/g, '');
@@ -516,7 +523,7 @@ export default function DashboardPage() {
               <CardContent className="space-y-4">
                 {(() => {
                   // Parse individual test case results from raw output
-                  const rawOutput = intelligence.systemHealth.tests.rawOutput || '';
+                  const rawOutput = intelligence?.systemHealth?.tests?.rawOutput || '';
 
                   // Remove ANSI escape codes for better pattern matching
                   const cleanOutput = rawOutput.replace(/\u001b\[[0-9;]*m/g, '');
@@ -564,26 +571,28 @@ export default function DashboardPage() {
                   <span>TypeScript</span>
                   <Badge
                     variant={
-                      !intelligence.systemHealth.typescript.success ? 'destructive' : 'default'
+                      !intelligence?.systemHealth?.typescript?.success ? 'destructive' : 'default'
                     }
                   >
-                    {!intelligence.systemHealth.typescript.success ? 'Errors' : 'Clean'}
+                    {!intelligence?.systemHealth?.typescript?.success ? 'Errors' : 'Clean'}
                   </Badge>
                 </div>
                 <div className="flex justify-between items-center">
                   <span>Linting</span>
                   <Badge
-                    variant={!intelligence.systemHealth.linting.success ? 'destructive' : 'default'}
+                    variant={
+                      !intelligence?.systemHealth?.linting?.success ? 'destructive' : 'default'
+                    }
                   >
-                    {!intelligence.systemHealth.linting.success ? 'Errors' : 'Clean'}
+                    {!intelligence?.systemHealth?.linting?.success ? 'Errors' : 'Clean'}
                   </Badge>
                 </div>
                 <div className="flex justify-between items-center">
                   <span>Build</span>
                   <Badge
-                    variant={intelligence.systemHealth.build.success ? 'default' : 'destructive'}
+                    variant={intelligence?.systemHealth?.build?.success ? 'default' : 'destructive'}
                   >
-                    {intelligence.systemHealth.build.success ? 'Success' : 'Failed'}
+                    {intelligence?.systemHealth?.build?.success ? 'Success' : 'Failed'}
                   </Badge>
                 </div>
               </CardContent>
@@ -601,18 +610,18 @@ export default function DashboardPage() {
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 <div className="text-center p-4 border rounded-lg">
                   <div className="text-2xl font-bold">
-                    {intelligence.systemHealth.tests.duration}
+                    {intelligence?.systemHealth?.tests?.duration ?? 'N/A'}
                   </div>
                   <div className="text-sm text-muted-foreground">Test Duration</div>
                 </div>
                 <div className="text-center p-4 border rounded-lg">
                   <div className="text-2xl font-bold">
-                    {intelligence.systemHealth.build.duration}
+                    {intelligence?.systemHealth?.build?.duration ?? 0}
                   </div>
                   <div className="text-sm text-muted-foreground">Build Duration</div>
                 </div>
                 <div className="text-center p-4 border rounded-lg">
-                  <div className="text-2xl font-bold">{intelligence.metadata.duration}s</div>
+                  <div className="text-2xl font-bold">{intelligence?.metadata?.duration ?? 0}s</div>
                   <div className="text-sm text-muted-foreground">Scan Duration</div>
                 </div>
               </div>
@@ -628,9 +637,12 @@ export default function DashboardPage() {
                     <span>Component Completeness</span>
                     <Progress
                       value={
-                        (intelligence.components.metrics.passing /
-                          intelligence.components.metrics.total) *
-                        100
+                        intelligence?.components?.metrics?.total &&
+                        intelligence?.components?.metrics?.passing
+                          ? (intelligence.components.metrics.passing /
+                              intelligence.components.metrics.total) *
+                            100
+                          : 0
                       }
                       className="w-24"
                     />
@@ -638,7 +650,7 @@ export default function DashboardPage() {
                   <div className="flex justify-between items-center">
                     <span>Code Quality</span>
                     <Progress
-                      value={!intelligence.systemHealth.typescript.success ? 50 : 100}
+                      value={!intelligence?.systemHealth?.typescript?.success ? 50 : 100}
                       className="w-24"
                     />
                   </div>
@@ -680,7 +692,7 @@ export default function DashboardPage() {
                       {intelligence?.systemHealth?.tests?.rawOutput?.substring(0, 2000) ||
                         'No test output available'}
                       {intelligence?.systemHealth?.tests?.rawOutput &&
-                        intelligence.systemHealth.tests.rawOutput.length > 2000 &&
+                        intelligence?.systemHealth?.tests?.rawOutput.length > 2000 &&
                         '\n\n... (truncated for display)'}
                     </pre>
                   </div>
@@ -698,7 +710,7 @@ export default function DashboardPage() {
                       {intelligence?.systemHealth?.build?.rawOutput?.substring(0, 2000) ||
                         'No build output available'}
                       {intelligence?.systemHealth?.build?.rawOutput &&
-                        intelligence.systemHealth.build.rawOutput.length > 2000 &&
+                        intelligence?.systemHealth?.build?.rawOutput.length > 2000 &&
                         '\n\n... (truncated for display)'}
                     </pre>
                   </div>
@@ -719,7 +731,7 @@ export default function DashboardPage() {
                       {intelligence?.systemHealth?.typescript?.rawOutput?.substring(0, 2000) ||
                         'No TypeScript output available'}
                       {intelligence?.systemHealth?.typescript?.rawOutput &&
-                        intelligence.systemHealth.typescript.rawOutput.length > 2000 &&
+                        intelligence?.systemHealth?.typescript?.rawOutput.length > 2000 &&
                         '\n\n... (truncated for display)'}
                     </pre>
                   </div>
@@ -737,7 +749,7 @@ export default function DashboardPage() {
                       {intelligence?.systemHealth?.linting?.rawOutput?.substring(0, 2000) ||
                         'No linting output available'}
                       {intelligence?.systemHealth?.linting?.rawOutput &&
-                        intelligence.systemHealth.linting.rawOutput.length > 2000 &&
+                        intelligence?.systemHealth?.linting?.rawOutput.length > 2000 &&
                         '\n\n... (truncated for display)'}
                     </pre>
                   </div>
