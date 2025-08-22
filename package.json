@@ -3,6 +3,7 @@
   "version": "1.53.0",
   "private": true,
   "type": "module",
+  "sideEffects": false,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -13,6 +14,8 @@
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "analyze": "cross-env ANALYZE=true next build",
+    "analyze:tree": "node scripts/tree-shake-analyzer.mjs",
+    "bundle:size": "yarn build && npx bundlesize",
     "dev:all": "concurrently \"yarn dev\" \"yarn storybook\"",
     "clean": "rm -rf .next && rm -rf node_modules/.cache && rm -rf .turbo",
     "clean:install": "rm -rf node_modules && rm -rf .next && yarn install",
