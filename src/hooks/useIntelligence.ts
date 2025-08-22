@@ -47,10 +47,6 @@ export function useIntelligenceReport(): UseIntelligenceReportReturn {
     } catch (err) {
       const errorMessage = err instanceof Error ? err.message : 'Unknown error occurred';
       setError(errorMessage);
-      // Development-only error logging
-      if (process.env.NODE_ENV === 'development') {
-        console.error('Failed to fetch intelligence report:', err);
-      }
     } finally {
       setLoading(false);
     }
@@ -77,11 +73,11 @@ export function useFilteredComponents(
     hasTest?: boolean;
     hasStory?: boolean;
     hasDemo?: boolean;
-    complexity?: 'low' | 'medium' | 'high';
-    testQuality?: 'none' | 'fail' | 'pass' | 'excellent';
+    complexity?: 'simple' | 'moderate' | 'complex';
+    testQuality?: 'poor' | 'fair' | 'good' | 'excellent';
   } = {}
 ) {
-  return useState(() => {
+  return useMemo(() => {
     if (!report) return [];
 
     return Object.values(report.components.inventory).filter(component => {
@@ -102,7 +98,14 @@ export function useFilteredComponents(
       }
       return true;
     });
-  })[0];
+  }, [
+    report,
+    filters.hasTest,
+    filters.hasStory,
+    filters.hasDemo,
+    filters.complexity,
+    filters.testQuality,
+  ]);
 }
 
 /**

@@ -6,6 +6,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Progress } from '@/components/ui/Progress';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/Tabs';
 import { useVercelDeploymentStatus, useVercelIntegration } from '@/hooks/useVercel';
+import { VercelDeployment, VercelIntegrationData } from '@/types/vercel';
 import {
   Activity,
   AlertTriangle,
@@ -41,6 +42,32 @@ interface IntelData {
     nextVersion: string;
     buildDuration: number;
   };
+}
+
+interface DeploymentTabProps {
+  vercelData: VercelIntegrationData | null;
+  deploymentStats: {
+    activeDeployments: number;
+    successRate: number;
+    averageBuildTime: number;
+    lastDeploymentStatus: VercelDeployment['state'] | null;
+    deploymentsToday: number;
+    deploymentTrend: 'up' | 'down' | 'stable';
+  };
+  vercelLoading: boolean;
+  vercelError: string | null;
+}
+
+interface PerformanceTabProps {
+  vercelData: VercelIntegrationData | null;
+}
+
+interface CodebaseTabProps {
+  intelData: IntelData | null;
+}
+
+interface TestsTabProps {
+  intelData: IntelData | null;
 }
 
 /**
@@ -258,7 +285,12 @@ function MetricCard({ title, value, progress, icon, color = 'gray', subtitle }: 
 }
 
 // Tab Components
-function DeploymentTab({ vercelData, deploymentStats, vercelLoading, vercelError }: any) {
+function DeploymentTab({
+  vercelData,
+  deploymentStats,
+  vercelLoading,
+  vercelError,
+}: DeploymentTabProps) {
   if (vercelLoading) {
     return (
       <Card>
@@ -370,7 +402,7 @@ function DeploymentTab({ vercelData, deploymentStats, vercelLoading, vercelError
   );
 }
 
-function PerformanceTab({ vercelData }: any) {
+function PerformanceTab({ vercelData }: PerformanceTabProps) {
   return (
     <Card>
       <CardHeader>
@@ -407,7 +439,7 @@ function PerformanceTab({ vercelData }: any) {
   );
 }
 
-function CodebaseTab({ intelData }: any) {
+function CodebaseTab({ intelData }: CodebaseTabProps) {
   return (
     <Card>
       <CardHeader>
@@ -440,7 +472,7 @@ function CodebaseTab({ intelData }: any) {
   );
 }
 
-function TestsTab({ intelData }: any) {
+function TestsTab({ intelData }: TestsTabProps) {
   return (
     <Card>
       <CardHeader>

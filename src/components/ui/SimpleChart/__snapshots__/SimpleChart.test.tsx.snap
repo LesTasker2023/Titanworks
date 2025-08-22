@@ -1,0 +1,377 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`SimpleChart > Snapshots > matches bar type snapshot 1`] = `
+<div
+  class="space-y-2 "
+>
+  <div
+    class="space-y-1"
+  >
+    <div
+      class="flex justify-between text-xs"
+    >
+      <span>
+        Jan
+      </span>
+      <span
+        class="font-mono"
+      >
+        400
+      </span>
+    </div>
+    <div
+      class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2"
+    >
+      <div
+        class="h-2 rounded-full"
+        style="width: 80%; background-color: hsl(var(--surface-interactive));"
+      />
+    </div>
+  </div>
+  <div
+    class="space-y-1"
+  >
+    <div
+      class="flex justify-between text-xs"
+    >
+      <span>
+        Feb
+      </span>
+      <span
+        class="font-mono"
+      >
+        300
+      </span>
+    </div>
+    <div
+      class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2"
+    >
+      <div
+        class="h-2 rounded-full"
+        style="width: 60%; background-color: hsl(var(--surface-interactive));"
+      />
+    </div>
+  </div>
+  <div
+    class="space-y-1"
+  >
+    <div
+      class="flex justify-between text-xs"
+    >
+      <span>
+        Mar
+      </span>
+      <span
+        class="font-mono"
+      >
+        500
+      </span>
+    </div>
+    <div
+      class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2"
+    >
+      <div
+        class="h-2 rounded-full"
+        style="width: 100%; background-color: hsl(var(--surface-interactive));"
+      />
+    </div>
+  </div>
+  <div
+    class="space-y-1"
+  >
+    <div
+      class="flex justify-between text-xs"
+    >
+      <span>
+        Apr
+      </span>
+      <span
+        class="font-mono"
+      >
+        280
+      </span>
+    </div>
+    <div
+      class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2"
+    >
+      <div
+        class="h-2 rounded-full"
+        style="width: 56.00000000000001%; background-color: hsl(var(--surface-interactive));"
+      />
+    </div>
+  </div>
+  <div
+    class="space-y-1"
+  >
+    <div
+      class="flex justify-between text-xs"
+    >
+      <span>
+        May
+      </span>
+      <span
+        class="font-mono"
+      >
+        390
+      </span>
+    </div>
+    <div
+      class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2"
+    >
+      <div
+        class="h-2 rounded-full"
+        style="width: 78%; background-color: hsl(var(--surface-interactive));"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`SimpleChart > Snapshots > matches default snapshot 1`] = `
+<div
+  class="space-y-2 "
+>
+  <div
+    class="space-y-1"
+  >
+    <div
+      class="flex justify-between text-xs"
+    >
+      <span>
+        Jan
+      </span>
+      <span
+        class="font-mono"
+      >
+        400
+      </span>
+    </div>
+    <div
+      class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2"
+    >
+      <div
+        class="h-2 rounded-full"
+        style="width: 80%; background-color: hsl(var(--surface-interactive));"
+      />
+    </div>
+  </div>
+  <div
+    class="space-y-1"
+  >
+    <div
+      class="flex justify-between text-xs"
+    >
+      <span>
+        Feb
+      </span>
+      <span
+        class="font-mono"
+      >
+        300
+      </span>
+    </div>
+    <div
+      class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2"
+    >
+      <div
+        class="h-2 rounded-full"
+        style="width: 60%; background-color: hsl(var(--surface-interactive));"
+      />
+    </div>
+  </div>
+  <div
+    class="space-y-1"
+  >
+    <div
+      class="flex justify-between text-xs"
+    >
+      <span>
+        Mar
+      </span>
+      <span
+        class="font-mono"
+      >
+        500
+      </span>
+    </div>
+    <div
+      class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2"
+    >
+      <div
+        class="h-2 rounded-full"
+        style="width: 100%; background-color: hsl(var(--surface-interactive));"
+      />
+    </div>
+  </div>
+  <div
+    class="space-y-1"
+  >
+    <div
+      class="flex justify-between text-xs"
+    >
+      <span>
+        Apr
+      </span>
+      <span
+        class="font-mono"
+      >
+        280
+      </span>
+    </div>
+    <div
+      class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2"
+    >
+      <div
+        class="h-2 rounded-full"
+        style="width: 56.00000000000001%; background-color: hsl(var(--surface-interactive));"
+      />
+    </div>
+  </div>
+  <div
+    class="space-y-1"
+  >
+    <div
+      class="flex justify-between text-xs"
+    >
+      <span>
+        May
+      </span>
+      <span
+        class="font-mono"
+      >
+        390
+      </span>
+    </div>
+    <div
+      class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2"
+    >
+      <div
+        class="h-2 rounded-full"
+        style="width: 78%; background-color: hsl(var(--surface-interactive));"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`SimpleChart > Snapshots > matches pie type snapshot 1`] = `
+<div
+  class="space-y-2 "
+>
+  <div
+    class="flex items-center justify-between text-sm"
+  >
+    <div
+      class="flex items-center gap-2"
+    >
+      <div
+        class="w-3 h-3 rounded-full"
+        style="background-color: rgb(217, 38, 38);"
+      />
+      <span>
+        Jan
+      </span>
+    </div>
+    <span
+      class="font-mono"
+    >
+      400
+       (
+      21
+      %)
+    </span>
+  </div>
+  <div
+    class="flex items-center justify-between text-sm"
+  >
+    <div
+      class="flex items-center gap-2"
+    >
+      <div
+        class="w-3 h-3 rounded-full"
+        style="background-color: rgb(217, 217, 38);"
+      />
+      <span>
+        Feb
+      </span>
+    </div>
+    <span
+      class="font-mono"
+    >
+      300
+       (
+      16
+      %)
+    </span>
+  </div>
+  <div
+    class="flex items-center justify-between text-sm"
+  >
+    <div
+      class="flex items-center gap-2"
+    >
+      <div
+        class="w-3 h-3 rounded-full"
+        style="background-color: rgb(38, 217, 38);"
+      />
+      <span>
+        Mar
+      </span>
+    </div>
+    <span
+      class="font-mono"
+    >
+      500
+       (
+      27
+      %)
+    </span>
+  </div>
+  <div
+    class="flex items-center justify-between text-sm"
+  >
+    <div
+      class="flex items-center gap-2"
+    >
+      <div
+        class="w-3 h-3 rounded-full"
+        style="background-color: rgb(38, 217, 217);"
+      />
+      <span>
+        Apr
+      </span>
+    </div>
+    <span
+      class="font-mono"
+    >
+      280
+       (
+      15
+      %)
+    </span>
+  </div>
+  <div
+    class="flex items-center justify-between text-sm"
+  >
+    <div
+      class="flex items-center gap-2"
+    >
+      <div
+        class="w-3 h-3 rounded-full"
+        style="background-color: rgb(38, 38, 217);"
+      />
+      <span>
+        May
+      </span>
+    </div>
+    <span
+      class="font-mono"
+    >
+      390
+       (
+      21
+      %)
+    </span>
+  </div>
+</div>
+`;

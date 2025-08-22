@@ -19,6 +19,7 @@ import {
   useVercelDeploymentStatus,
   useVercelIntegration,
 } from '@/hooks/useVercel';
+import { VercelDeployment, VercelIntegrationData } from '@/types/vercel';
 import {
   Activity,
   AlertTriangle,
@@ -35,6 +36,31 @@ import React, { useState } from 'react';
 
 interface VercelIntegrationProps {
   className?: string;
+}
+
+interface OverviewTabProps {
+  vercelData: VercelIntegrationData;
+  deploymentStats: {
+    activeDeployments: number;
+    successRate: number;
+    averageBuildTime: number;
+    lastDeploymentStatus: VercelDeployment['state'] | null;
+    deploymentsToday: number;
+    deploymentTrend: 'up' | 'down' | 'stable';
+  };
+}
+
+interface DeploymentsTabProps {
+  deployments: VercelDeployment[];
+}
+
+interface AnalyticsTabProps {
+  vercelData: VercelIntegrationData;
+}
+
+interface DeploymentItemProps {
+  deployment: VercelDeployment;
+  showDetails?: boolean;
 }
 
 export default function VercelIntegration({ className }: VercelIntegrationProps) {
@@ -69,7 +95,7 @@ export default function VercelIntegration({ className }: VercelIntegrationProps)
       await saveConfiguration(configForm);
       setShowConfig(false);
     } catch (error) {
-      console.error('Failed to save Vercel configuration:', error);
+      // Configuration save failed - error handled by UI state
     }
   };
 
@@ -260,7 +286,7 @@ export default function VercelIntegration({ className }: VercelIntegrationProps)
   );
 }
 
-function OverviewTab({ vercelData, deploymentStats }: any) {
+function OverviewTab({ vercelData, deploymentStats }: OverviewTabProps) {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
       <MetricCard
@@ -317,17 +343,17 @@ function OverviewTab({ vercelData, deploymentStats }: any) {
   );
 }
 
-function DeploymentsTab({ deployments }: any) {
+function DeploymentsTab({ deployments }: DeploymentsTabProps) {
   return (
     <div className="space-y-4">
-      {deployments.slice(0, 10).map((deployment: any) => (
+      {deployments.slice(0, 10).map((deployment: VercelDeployment) => (
         <DeploymentItem key={deployment.uid} deployment={deployment} />
       ))}
     </div>
   );
 }
 
-function AnalyticsTab({ vercelData }: any) {
+function AnalyticsTab({ vercelData }: AnalyticsTabProps) {
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
       <Card>
@@ -390,12 +416,14 @@ function AnalyticsTab({ vercelData }: any) {
           <div>
             <h4 className="font-medium mb-2">Top Pages</h4>
             <div className="space-y-2">
-              {vercelData.stats.analytics.topPages.map((page: any, index: number) => (
-                <div key={page.page} className="flex justify-between text-sm">
-                  <span className="font-mono text-xs">{page.page}</span>
-                  <span>{page.visits.toLocaleString()}</span>
-                </div>
-              ))}
+              {vercelData.stats.analytics.topPages.map(
+                (page: { page: string; visits: number }, index: number) => (
+                  <div key={page.page} className="flex justify-between text-sm">
+                    <span className="font-mono text-xs">{page.page}</span>
+                    <span>{page.visits.toLocaleString()}</span>
+                  </div>
+                )
+              )}
             </div>
           </div>
         </CardContent>
@@ -404,7 +432,7 @@ function AnalyticsTab({ vercelData }: any) {
   );
 }
 
-function DeploymentItem({ deployment, showDetails = false }: any) {
+function DeploymentItem({ deployment, showDetails = false }: DeploymentItemProps) {
   const statusColor = getDeploymentStatusColor(deployment.state);
   const duration =
     deployment.buildingAt && deployment.ready

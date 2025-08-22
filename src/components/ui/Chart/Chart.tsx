@@ -6,7 +6,17 @@ import { Legend, ResponsiveContainer, Tooltip } from 'recharts';
 
 import { cn } from '@/lib/utils';
 
+interface ChartPayloadItem {
+  name?: string;
+  dataKey?: string;
+  value?: unknown;
+  payload?: Record<string, unknown>;
+  color?: string;
+  fill?: string;
+}
+
 // Format: { THEME_NAME: CSS_SELECTOR }
+
 const THEMES = { light: '', dark: '.dark' } as const;
 
 export type ChartConfig = {
@@ -168,70 +178,80 @@ const ChartTooltipContent = React.forwardRef<
       >
         {!nestLabel ? tooltipLabel : null}
         <div className="grid gap-1.5">
-          {payload.map((item: any, index: number) => {
-            const key = `${nameKey || item.name || item.dataKey || 'value'}`;
-            const itemConfig = getPayloadConfigFromPayload(config, item, key);
-            const indicatorColor = color || item.payload.fill || item.color;
+          {(payload as Array<Record<string, unknown>>).map(
+            (item: Record<string, unknown>, index: number) => {
+              const key = `${nameKey || item.name || item.dataKey || 'value'}`;
+              const itemConfig = getPayloadConfigFromPayload(config, item, key);
+              const indicatorColor =
+                color || (item.payload as Record<string, unknown>)?.fill || item.color;
 
-            return (
-              <div
-                key={item.dataKey}
-                className={cn(
-                  'flex w-full flex-wrap items-stretch gap-2 [&>svg]:h-2.5 [&>svg]:w-2.5 [&>svg]:text-muted-foreground',
-                  indicator === 'dot' && 'items-center'
-                )}
-              >
-                {formatter && item?.value !== undefined && item.name ? (
-                  formatter(item.value, item.name, item, index, item.payload)
-                ) : (
-                  <>
-                    {itemConfig?.icon ? (
-                      <itemConfig.icon />
-                    ) : (
-                      !hideIndicator && (
-                        <div
-                          className={cn(
-                            'shrink-0 rounded-[2px] border-[--color-border] bg-[--color-bg]',
-                            {
-                              'h-2.5 w-2.5': indicator === 'dot',
-                              'w-1': indicator === 'line',
-                              'w-0 border-[1.5px] border-dashed bg-transparent':
-                                indicator === 'dashed',
-                              'my-0.5': nestLabel && indicator === 'dashed',
-                            }
-                          )}
-                          style={
-                            {
-                              '--color-bg': indicatorColor,
-                              '--color-border': indicatorColor,
-                            } as React.CSSProperties
-                          }
-                        />
-                      )
-                    )}
-                    <div
-                      className={cn(
-                        'flex flex-1 justify-between leading-none',
-                        nestLabel ? 'items-end' : 'items-center'
-                      )}
-                    >
-                      <div className="grid gap-1.5">
-                        {nestLabel ? tooltipLabel : null}
-                        <span className="text-muted-foreground">
-                          {itemConfig?.label || item.name}
-                        </span>
-                      </div>
-                      {item.value && (
-                        <span className="font-mono font-medium tabular-nums text-foreground">
-                          {item.value.toLocaleString()}
-                        </span>
-                      )}
+              return (
+                <div
+                  key={String(item.dataKey || index)}
+                  className={cn(
+                    'flex w-full flex-wrap items-stretch gap-2 [&>svg]:h-2.5 [&>svg]:w-2.5 [&>svg]:text-muted-foreground',
+                    indicator === 'dot' && 'items-center'
+                  )}
+                >
+                  {item?.value !== undefined && item.name ? (
+                    <div className="grid gap-1.5 flex-1 min-w-0">
+                      <span className="text-muted-foreground">
+                        {itemConfig?.label || String(item.name)}
+                      </span>
+                      <span className="font-mono font-medium tabular-nums text-foreground">
+                        {String(item.value)}
+                      </span>
                     </div>
-                  </>
-                )}
-              </div>
-            );
-          })}
+                  ) : (
+                    <>
+                      {itemConfig?.icon ? (
+                        <itemConfig.icon />
+                      ) : (
+                        !hideIndicator && (
+                          <div
+                            className={cn(
+                              'shrink-0 rounded-[2px] border-[--color-border] bg-[--color-bg]',
+                              {
+                                'h-2.5 w-2.5': indicator === 'dot',
+                                'w-1': indicator === 'line',
+                                'w-0 border-[1.5px] border-dashed bg-transparent':
+                                  indicator === 'dashed',
+                                'my-0.5': nestLabel && indicator === 'dashed',
+                              }
+                            )}
+                            style={
+                              {
+                                '--color-bg': indicatorColor,
+                                '--color-border': indicatorColor,
+                              } as React.CSSProperties
+                            }
+                          />
+                        )
+                      )}
+                      <div
+                        className={cn(
+                          'flex flex-1 justify-between leading-none',
+                          nestLabel ? 'items-end' : 'items-center'
+                        )}
+                      >
+                        <div className="grid gap-1.5">
+                          {nestLabel ? tooltipLabel : null}
+                          <span className="text-muted-foreground">
+                            {itemConfig?.label || String(item.name || '')}
+                          </span>
+                        </div>
+                        {item.value !== undefined && item.value !== null && (
+                          <span className="font-mono font-medium tabular-nums text-foreground">
+                            {String(item.value)}
+                          </span>
+                        )}
+                      </div>
+                    </>
+                  )}
+                </div>
+              );
+            }
+          )}
         </div>
       </div>
     );
@@ -246,7 +266,7 @@ const ChartLegendContent = React.forwardRef<
   React.ComponentProps<'div'> & {
     hideIcon?: boolean;
     nameKey?: string;
-    payload?: any[];
+    payload?: Array<Record<string, unknown>>;
     verticalAlign?: 'top' | 'bottom';
   }
 >(({ className, hideIcon = false, payload = [], verticalAlign = 'bottom', nameKey }, ref) => {
@@ -265,13 +285,13 @@ const ChartLegendContent = React.forwardRef<
         className
       )}
     >
-      {payload.map((item: any) => {
+      {payload.map((item: Record<string, unknown>) => {
         const key = `${nameKey || item.dataKey || 'value'}`;
         const itemConfig = getPayloadConfigFromPayload(config, item, key);
 
         return (
           <div
-            key={item.value}
+            key={String(item.value || Math.random())}
             className={cn(
               'flex items-center gap-1.5 [&>svg]:h-3 [&>svg]:w-3 [&>svg]:text-muted-foreground'
             )}
@@ -282,7 +302,7 @@ const ChartLegendContent = React.forwardRef<
               <div
                 className="h-2 w-2 shrink-0 rounded-[2px]"
                 style={{
-                  backgroundColor: item.color,
+                  backgroundColor: String(item.color || '#000'),
                 }}
               />
             )}

@@ -52,6 +52,8 @@ export interface ComponentInventoryItem {
   hasComponent: boolean;
   hasTest: boolean;
   hasStory: boolean;
+  hasDemo: boolean;
+  hasIndex: boolean;
   complexity: 'simple' | 'moderate' | 'complex';
   testQuality: 'poor' | 'fair' | 'good' | 'excellent';
   linesOfCode: number;

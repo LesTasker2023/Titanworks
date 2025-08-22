@@ -9,6 +9,7 @@ import VercelIntegration from '@/components/vercel/VercelIntegration';
 import { useIntelligenceMetrics, useIntelligenceReport } from '@/hooks/useIntelligence';
 import { useVercelDeploymentStatus, useVercelIntegration } from '@/hooks/useVercel';
 import { ComponentInventoryItem, IntelligenceReport } from '@/types/intelligence';
+import { VercelIntegrationData } from '@/types/vercel';
 import {
   formatScanMetadata,
   getComponentsByComplexity,
@@ -325,9 +326,22 @@ function OverviewTab({
   deploymentStats,
 }: {
   report: IntelligenceReport;
-  componentStats: any;
-  vercelData?: any;
-  deploymentStats?: any;
+  componentStats: {
+    total: number;
+    testCoverage: string;
+    storyCoverage: string;
+    excellentQuality: number;
+    excellentQualityPercentage: string;
+  };
+  vercelData?: VercelIntegrationData | null;
+  deploymentStats?: {
+    activeDeployments: number;
+    successRate: number;
+    averageBuildTime: number;
+    lastDeploymentStatus: string | null;
+    deploymentsToday: number;
+    deploymentTrend: 'up' | 'down' | 'stable';
+  };
 }) {
   return (
     <div className="space-y-6">
@@ -428,9 +442,9 @@ function OverviewTab({
                   <div className="flex items-center gap-2">
                     <div
                       className={`w-2 h-2 rounded-full ${
-                        deploymentStats?.successRate >= 90
+                        (deploymentStats?.successRate ?? 0) >= 90
                           ? 'bg-green-500'
-                          : deploymentStats?.successRate >= 70
+                          : (deploymentStats?.successRate ?? 0) >= 70
                             ? 'bg-yellow-500'
                             : 'bg-red-500'
                       }`}
@@ -440,9 +454,9 @@ function OverviewTab({
                   <div className="text-right">
                     <Badge
                       variant={
-                        deploymentStats?.successRate >= 90
+                        (deploymentStats?.successRate ?? 0) >= 90
                           ? 'default'
-                          : deploymentStats?.successRate >= 70
+                          : (deploymentStats?.successRate ?? 0) >= 70
                             ? 'secondary'
                             : 'destructive'
                       }
@@ -456,7 +470,7 @@ function OverviewTab({
                 </div>
 
                 {/* Active Builds */}
-                {deploymentStats?.activeDeployments > 0 && (
+                {(deploymentStats?.activeDeployments ?? 0) > 0 && (
                   <div className="flex items-center justify-between p-3 bg-yellow-50 dark:bg-yellow-950/30 rounded-lg border border-yellow-200 dark:border-yellow-800">
                     <div className="flex items-center gap-2">
                       <div className="w-2 h-2 rounded-full bg-yellow-500 animate-pulse" />
@@ -464,7 +478,7 @@ function OverviewTab({
                     </div>
                     <div className="text-right">
                       <Badge variant="secondary">
-                        {deploymentStats.activeDeployments} building
+                        {deploymentStats?.activeDeployments || 0} building
                       </Badge>
                     </div>
                   </div>
@@ -510,7 +524,7 @@ function OverviewTab({
 
 function ComponentsTab({ report }: { report: IntelligenceReport }) {
   const missingFeatures = getComponentsMissingFeatures(report);
-  const highComplexity = getComponentsByComplexity(report, 'high');
+  const highComplexity = getComponentsByComplexity(report, 'complex');
   const excellentQuality = getComponentsByTestQuality(report, 'excellent');
 
   return (

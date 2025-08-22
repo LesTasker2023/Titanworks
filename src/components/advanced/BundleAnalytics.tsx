@@ -76,26 +76,14 @@ export default function BundleAnalytics() {
       const result = await response.json();
 
       if (result.status === 'success') {
-        // Bundle Analytics successful - development only logging
-        if (process.env.NODE_ENV === 'development') {
-          console.info('Bundle Analytics:', result.note);
-        }
+        // Bundle Analytics successful
       } else if (result.status === 'warning') {
-        // Bundle Analytics warning - development only logging
-        if (process.env.NODE_ENV === 'development') {
-          console.warn('Bundle Analytics:', result.error);
-        }
+        // Bundle Analytics warning
       } else {
-        // Bundle analysis failed - development only logging
-        if (process.env.NODE_ENV === 'development') {
-          console.error('Bundle analysis failed:', result.error);
-        }
+        // Bundle analysis failed
       }
     } catch (error) {
-      // Failed to fetch bundle metrics - development only logging
-      if (process.env.NODE_ENV === 'development') {
-        console.error('Failed to fetch bundle metrics:', error);
-      }
+      // Failed to fetch bundle metrics
     }
   };
 

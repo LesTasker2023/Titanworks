@@ -20,15 +20,7 @@
     });
   });
   
-  // Development-only output
-  if (process.env.NODE_ENV === 'development') {
-    console.group('🎨 Daedalus Color Accessibility Audit');
-    results.forEach(result => {
-      const status = result.aaaPass ? '✅ AAA' : result.aaPass ? '🟡 AA' : '❌ FAIL';
-      console.log(`${status} ${result.foreground} on ${result.background}: ${result.ratio}:1`);
-    });
-    console.groupEnd();
-  }alculate relative luminance of a color
+  return results;alculate relative luminance of a color
  * @param r Red component (0-255)
  * @param g Green component (0-255)
  * @param b Blue component (0-255)
@@ -118,17 +110,12 @@ export function auditDaedalusColors(): void {
     { name: 'Light text on Dark', fg: TK_COLORS.neutral50.rgb, bg: TK_COLORS.neutral900.rgb },
     { name: 'Muted on Dark', fg: TK_COLORS.neutral400.rgb, bg: TK_COLORS.neutral800.rgb },
   ];
-  console.group('🎨 Daedalus Color Accessibility Audit');
+
   combinations.forEach(({ name, fg, bg }) => {
     const ratio = getContrastRatio(fg, bg);
     const aa = meetsWCAGStandards(ratio, 'AA');
     const aaa = meetsWCAGStandards(ratio, 'AAA');
-    // Development audit logging (removed in production)
-    if (process.env.NODE_ENV === 'development') {
-      // Removed console statement: }:1 ${aa ? '✅ AA' : '❌ AA'} ${aaa ? '✅ AAA' : '❌ AAA'}`
-    }
   });
-  console.groupEnd();
 }
 // Run audit in development
 if (typeof window !== 'undefined' && process.env.NODE_ENV === 'development') {
