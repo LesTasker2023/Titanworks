@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/Button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/Card';
 import { Progress } from '@/components/ui/Progress';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/Tabs';
+import VercelIntegration from '@/components/vercel/VercelIntegration';
 import { useIntelligenceMetrics, useIntelligenceReport } from '@/hooks/useIntelligence';
 import { ComponentInventoryItem, IntelligenceReport } from '@/types/intelligence';
 import {
@@ -188,12 +189,13 @@ export default function IntelligenceDashboard() {
 
         {/* Main Content Tabs */}
         <Tabs defaultValue="overview" className="space-y-6">
-          <TabsList className="grid w-full grid-cols-5">
+          <TabsList className="grid w-full grid-cols-6">
             <TabsTrigger value="overview">Overview</TabsTrigger>
             <TabsTrigger value="components">Components</TabsTrigger>
             <TabsTrigger value="quality">Quality</TabsTrigger>
             <TabsTrigger value="recommendations">Recommendations</TabsTrigger>
             <TabsTrigger value="files">File Analysis</TabsTrigger>
+            <TabsTrigger value="vercel">Deployments</TabsTrigger>
           </TabsList>
 
           <TabsContent value="overview" className="space-y-6">
@@ -214,6 +216,10 @@ export default function IntelligenceDashboard() {
 
           <TabsContent value="files" className="space-y-6">
             <FilesTab report={report} />
+          </TabsContent>
+
+          <TabsContent value="vercel" className="space-y-6">
+            <VercelIntegration />
           </TabsContent>
         </Tabs>
       </div>
@@ -269,84 +275,89 @@ function OverviewTab({
   componentStats: any;
 }) {
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-      <Card>
-        <CardHeader>
-          <CardTitle>Component Quality Overview</CardTitle>
-          <CardDescription>
-            Quality distribution across {componentStats.total} components
-          </CardDescription>
-        </CardHeader>
-        <CardContent>
-          <div className="grid grid-cols-2 gap-4">
-            <div className="text-center p-4 bg-green-50 dark:bg-green-950/30 rounded-lg border border-green-200 dark:border-green-800">
-              <div className="text-2xl font-bold text-green-600 dark:text-green-400">
-                {componentStats.excellentQuality}
-              </div>
-              <div className="text-sm text-green-700 dark:text-green-300">Excellent Quality</div>
-              <div className="text-xs text-green-600 dark:text-green-400">
-                {componentStats.excellentQualityPercentage}
-              </div>
-            </div>
-
-            <div className="text-center p-4 bg-blue-50 dark:bg-blue-950/30 rounded-lg border border-blue-200 dark:border-blue-800">
-              <div className="text-2xl font-bold text-blue-600 dark:text-blue-400">
-                {componentStats.testCoverage}
-              </div>
-              <div className="text-sm text-blue-700 dark:text-blue-300">Test Coverage</div>
-            </div>
-
-            <div className="text-center p-4 bg-purple-50 dark:bg-purple-950/30 rounded-lg border border-purple-200 dark:border-purple-800">
-              <div className="text-2xl font-bold text-purple-600 dark:text-purple-400">
-                {componentStats.storyCoverage}
-              </div>
-              <div className="text-sm text-purple-700 dark:text-purple-300">Story Coverage</div>
-            </div>
-
-            <div className="text-center p-4 bg-orange-50 dark:bg-orange-950/30 rounded-lg border border-orange-200 dark:border-orange-800">
-              <div className="text-2xl font-bold text-orange-600 dark:text-orange-400">
-                {report.bestPractices.score}%
-              </div>
-              <div className="text-sm text-orange-700 dark:text-orange-300">Best Practices</div>
-            </div>
-          </div>
-        </CardContent>
-      </Card>
-
-      <Card>
-        <CardHeader>
-          <CardTitle>Pipeline Status</CardTitle>
-          <CardDescription>Build pipeline health and performance</CardDescription>
-        </CardHeader>
-        <CardContent>
-          <div className="space-y-3">
-            {Object.entries(report.codebase.pipeline).map(([stage, info]) => {
-              if (stage === 'overall' || typeof info !== 'object' || !('status' in info))
-                return null;
-
-              return (
-                <div
-                  key={stage}
-                  className="flex items-center justify-between p-3 bg-muted/50 rounded-lg"
-                >
-                  <div className="flex items-center gap-2">
-                    <div
-                      className={`w-2 h-2 rounded-full ${info.status === 'pass' ? 'bg-green-500' : 'bg-red-500'}`}
-                    />
-                    <span className="font-medium capitalize text-foreground">{stage}</span>
-                  </div>
-                  <div className="text-right">
-                    <Badge variant={info.status === 'pass' ? 'default' : 'destructive'}>
-                      {info.status}
-                    </Badge>
-                    <div className="text-xs text-muted-foreground mt-1">{info.duration}ms</div>
-                  </div>
+    <div className="space-y-6">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <Card>
+          <CardHeader>
+            <CardTitle>Component Quality Overview</CardTitle>
+            <CardDescription>
+              Quality distribution across {componentStats.total} components
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+            <div className="grid grid-cols-2 gap-4">
+              <div className="text-center p-4 bg-green-50 dark:bg-green-950/30 rounded-lg border border-green-200 dark:border-green-800">
+                <div className="text-2xl font-bold text-green-600 dark:text-green-400">
+                  {componentStats.excellentQuality}
                 </div>
-              );
-            })}
-          </div>
-        </CardContent>
-      </Card>
+                <div className="text-sm text-green-700 dark:text-green-300">Excellent Quality</div>
+                <div className="text-xs text-green-600 dark:text-green-400">
+                  {componentStats.excellentQualityPercentage}
+                </div>
+              </div>
+
+              <div className="text-center p-4 bg-blue-50 dark:bg-blue-950/30 rounded-lg border border-blue-200 dark:border-blue-800">
+                <div className="text-2xl font-bold text-blue-600 dark:text-blue-400">
+                  {componentStats.testCoverage}
+                </div>
+                <div className="text-sm text-blue-700 dark:text-blue-300">Test Coverage</div>
+              </div>
+
+              <div className="text-center p-4 bg-purple-50 dark:bg-purple-950/30 rounded-lg border border-purple-200 dark:border-purple-800">
+                <div className="text-2xl font-bold text-purple-600 dark:text-purple-400">
+                  {componentStats.storyCoverage}
+                </div>
+                <div className="text-sm text-purple-700 dark:text-purple-300">Story Coverage</div>
+              </div>
+
+              <div className="text-center p-4 bg-orange-50 dark:bg-orange-950/30 rounded-lg border border-orange-200 dark:border-orange-800">
+                <div className="text-2xl font-bold text-orange-600 dark:text-orange-400">
+                  {report.bestPractices.score}%
+                </div>
+                <div className="text-sm text-orange-700 dark:text-orange-300">Best Practices</div>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card>
+          <CardHeader>
+            <CardTitle>Pipeline Status</CardTitle>
+            <CardDescription>Build pipeline health and performance</CardDescription>
+          </CardHeader>
+          <CardContent>
+            <div className="space-y-3">
+              {Object.entries(report.codebase.pipeline).map(([stage, info]) => {
+                if (stage === 'overall' || typeof info !== 'object' || !('status' in info))
+                  return null;
+
+                return (
+                  <div
+                    key={stage}
+                    className="flex items-center justify-between p-3 bg-muted/50 rounded-lg"
+                  >
+                    <div className="flex items-center gap-2">
+                      <div
+                        className={`w-2 h-2 rounded-full ${info.status === 'pass' ? 'bg-green-500' : 'bg-red-500'}`}
+                      />
+                      <span className="font-medium capitalize text-foreground">{stage}</span>
+                    </div>
+                    <div className="text-right">
+                      <Badge variant={info.status === 'pass' ? 'default' : 'destructive'}>
+                        {info.status}
+                      </Badge>
+                      <div className="text-xs text-muted-foreground mt-1">{info.duration}ms</div>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </CardContent>
+        </Card>
+      </div>
+
+      {/* Vercel Integration Overview */}
+      <VercelIntegration />
     </div>
   );
 }
