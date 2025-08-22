@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "scanTime": "2025-08-22T09:45:07.180Z",
-    "version": "20250822-1045",
+    "scanTime": "2025-08-22T11:04:25.555Z",
+    "version": "20250822-1204",
     "scanner": "unified-intelligence-engine-v1",
     "duration": 0
   },
@@ -25,26 +25,26 @@
       }
     },
     "metrics": {
-      "totalFiles": 535,
+      "totalFiles": 540,
       "fileTypes": {
         ".lock": 1,
-        ".ts": 16,
+        ".ts": 17,
         ".tsbuildinfo": 1,
         ".json": 13,
-        ".js": 118,
+        ".js": 116,
         ".cjs": 2,
-        ".md": 13,
+        ".md": 15,
+        ".ps1": 6,
         ".mjs": 5,
-        ".ps1": 4,
-        ".svg": 6,
-        ".png": 3,
         ".woff2": 8,
         ".html": 2,
-        ".scss": 15,
-        ".css": 4,
-        ".tsx": 270,
-        ".ico": 1,
+        ".svg": 6,
+        ".png": 3,
         ".mp4": 1,
+        ".css": 4,
+        ".scss": 15,
+        ".tsx": 272,
+        ".ico": 1,
         ".txt": 1,
         ".new": 2,
         ".snap": 49
@@ -53,8 +53,8 @@
     "health": {},
     "cleanup": {
       "emptyFiles": {
-        "found": 1,
-        "deleted": 1,
+        "found": 0,
+        "deleted": 0,
         "skipped": 0
       },
       "issues": []
@@ -312,7 +312,7 @@
         "hasDemo": true,
         "size": 3,
         "complexity": "low",
-        "lastModified": "2025-08-22T09:10:51.310Z",
+        "lastModified": "2025-08-22T09:52:02.220Z",
         "indexExtensionIssue": false,
         "testCount": 18,
         "testQuality": "excellent"
@@ -372,7 +372,7 @@
         "hasDemo": true,
         "size": 5,
         "complexity": "medium",
-        "lastModified": "2025-08-20T22:31:28.064Z",
+        "lastModified": "2025-08-22T09:52:03.523Z",
         "indexExtensionIssue": false,
         "testCount": 18,
         "testQuality": "excellent"
@@ -436,21 +436,6 @@
         "indexExtensionIssue": false,
         "testCount": 26,
         "testQuality": "excellent"
-      },
-      "index.tsx": {
-        "name": "index.tsx",
-        "path": "src\\components\\ui\\index.tsx",
-        "hasComponent": false,
-        "hasTest": false,
-        "hasStory": false,
-        "hasIndex": false,
-        "hasDemo": false,
-        "size": 0,
-        "complexity": "unknown",
-        "lastModified": null,
-        "indexExtensionIssue": false,
-        "testCount": 0,
-        "testQuality": "none"
       },
       "HoverCard": {
         "name": "HoverCard",
@@ -522,7 +507,7 @@
         "hasDemo": true,
         "size": 2,
         "complexity": "low",
-        "lastModified": "2025-08-22T08:05:33.095Z",
+        "lastModified": "2025-08-22T09:52:02.574Z",
         "indexExtensionIssue": false,
         "testCount": 28,
         "testQuality": "excellent"
@@ -567,7 +552,7 @@
         "hasDemo": true,
         "size": 5,
         "complexity": "medium",
-        "lastModified": "2025-08-22T08:05:33.096Z",
+        "lastModified": "2025-08-22T09:52:02.329Z",
         "indexExtensionIssue": false,
         "testCount": 22,
         "testQuality": "excellent"
@@ -582,7 +567,7 @@
         "hasDemo": true,
         "size": 3,
         "complexity": "medium",
-        "lastModified": "2025-08-22T08:05:33.096Z",
+        "lastModified": "2025-08-22T09:52:02.058Z",
         "indexExtensionIssue": false,
         "testCount": 30,
         "testQuality": "excellent"
@@ -814,36 +799,36 @@
       }
     },
     "metrics": {
-      "total": 50,
+      "total": 49,
       "withTests": 49,
       "withStories": 49,
       "withIndex": 49,
       "withDemo": 49,
       "indexExtensionIssues": 0,
       "testQualityDistribution": {
-        "none": 1,
+        "none": 0,
         "fail": 0,
         "pass": 0,
         "excellent": 49
       },
-      "testCoverage": 98,
-      "storyCoverage": 98,
-      "indexCoverage": 98,
-      "qualityTestCoverage": 98
+      "testCoverage": 100,
+      "storyCoverage": 100,
+      "indexCoverage": 100,
+      "qualityTestCoverage": 100
     },
     "quality": {
-      "score": 92,
+      "score": 93,
       "issues": ["Best practices score below threshold: 67%"],
       "strengths": [
-        "Strong test coverage: 98%",
-        "Good quality test coverage: 98% components with substantial tests",
-        "Excellent component organization: 98% have index files"
+        "Strong test coverage: 100%",
+        "Good quality test coverage: 100% components with substantial tests",
+        "Excellent component organization: 100% have index files"
       ],
       "metrics": {
         "componentCompleteness": {
-          "tests": 98,
-          "stories": 98,
-          "indexes": 98
+          "tests": 100,
+          "stories": 100,
+          "indexes": 100
         }
       }
     },
@@ -851,10 +836,10 @@
   },
   "codebase": {
     "files": {
-      "typescript": 182,
+      "typescript": 131,
       "tests": 51,
       "stories": 49,
-      "testRatio": 28
+      "testRatio": 39
     },
     "dependencies": {
       "production": 47,
@@ -866,37 +851,27 @@
     "pipeline": {
       "typescript": {
         "status": "pass",
-        "duration": 6565,
+        "duration": 7394,
         "errors": []
       },
       "linting": {
         "status": "pass",
-        "duration": 9223,
+        "duration": 9298,
         "errors": []
       },
       "testing": {
-        "status": "fail",
-        "duration": 29406,
-        "errors": [
-          "\u001b[31m❯\u001b[39m src/components/ui/Calendar/Calendar.test.tsx \u001b[2m(\u001b[22m\u001b[2m26 tests\u001b[22m\u001b[2m | \u001b[22m\u001b[31m5 failed\u001b[39m\u001b[2m | \u001b[22m\u001b[33m2 skipped\u001b[39m\u001b[2m)\u001b[22m\u001b[33m 1388\u001b[2mms\u001b[22m\u001b[39m",
-          "\u001b[31m     → Snapshot `Calendar > Snapshots > matches default snapshot 1` mismatched\u001b[39m",
-          "\u001b[31m     → Snapshot `Calendar > Snapshots > matches disabled state snapshot 1` mismatched\u001b[39m",
-          "\u001b[31m     → Snapshot `Calendar > Snapshots > matches selected state snapshot 1` mismatched\u001b[39m",
-          "\u001b[31m     → Snapshot `Calendar > Snapshots > matches focused state snapshot 1` mismatched\u001b[39m",
-          "\u001b[31m     → Snapshot `Calendar > Snapshots > matches hover state snapshot 1` mismatched\u001b[39m",
-          "\u001b[2m  Snapshots \u001b[22m \u001b[1m\u001b[31m5 failed\u001b[39m\u001b[22m",
-          "\u001b[2m Test Files \u001b[22m \u001b[1m\u001b[31m1 failed\u001b[39m\u001b[22m\u001b[2m | \u001b[22m\u001b[1m\u001b[32m50 passed\u001b[39m\u001b[22m\u001b[90m (51)\u001b[39m",
-          "\u001b[2m      Tests \u001b[22m \u001b[1m\u001b[31m5 failed\u001b[39m\u001b[22m\u001b[2m | \u001b[22m\u001b[1m\u001b[32m1097 passed\u001b[39m\u001b[22m\u001b[2m | \u001b[22m\u001b[33m70 skipped\u001b[39m\u001b[90m (1172)\u001b[39m"
-        ]
+        "status": "pass",
+        "duration": 31984,
+        "errors": []
       },
       "building": {
-        "status": "skipped",
-        "duration": 0,
+        "status": "pass",
+        "duration": 58666,
         "errors": []
       },
       "overall": {
-        "status": "fail",
-        "score": 67
+        "status": "pass",
+        "score": 100
       }
     }
   },
@@ -1007,7 +982,7 @@
     {
       "priority": "medium",
       "category": "testing",
-      "issue": "Test-to-code ratio: 28%",
+      "issue": "Test-to-code ratio: 39%",
       "action": "Add comprehensive tests for existing components",
       "impact": "Reduces technical debt and improves confidence"
     },

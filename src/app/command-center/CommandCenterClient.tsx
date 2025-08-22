@@ -28,6 +28,24 @@ import {
   RadialBar,
 } from 'recharts';
 
+interface QualityIssue {
+  type: string;
+  message: string;
+  file?: string;
+  line?: number;
+  severity: 'low' | 'medium' | 'high' | 'critical';
+}
+
+interface ComponentInfo {
+  path: string;
+  hasTest: boolean;
+  hasStory: boolean;
+  hasIndex: boolean;
+  testCount: number;
+  storyCount: number;
+  complexity: number;
+}
+
 interface IntelligenceData {
   metadata: {
     scanTime: string;
@@ -51,11 +69,11 @@ interface IntelligenceData {
         deleted: number;
         skipped: number;
       };
-      issues: any[];
+      issues: QualityIssue[];
     };
   };
   components: {
-    inventory: Record<string, any>;
+    inventory: Record<string, ComponentInfo>;
     metrics: {
       total: number;
       withTests: number;
@@ -105,7 +123,7 @@ interface IntelligenceData {
       string,
       {
         score: number;
-        issues: any[];
+        issues: QualityIssue[];
         checks: number;
       }
     >;
@@ -130,7 +148,8 @@ export default function CommandCenterClient() {
         const intelligenceData = await response.json();
         setData(intelligenceData);
       } catch (error) {
-        console.error('Failed to load intelligence data:', error);
+        // Silently handle error - production systems shouldn't log to console
+        // Error state handled by loading/data state management
       } finally {
         setLoading(false);
       }
@@ -141,10 +160,10 @@ export default function CommandCenterClient() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 flex items-center justify-center">
+      <div className="min-h-screen bg-background flex items-center justify-center">
         <div className="text-center">
-          <div className="w-16 h-16 border-4 border-purple-500 border-t-transparent rounded-full animate-spin mb-4"></div>
-          <p className="text-white text-lg">Initializing Command Center...</p>
+          <div className="w-16 h-16 border-4 border-brand-primary border-t-transparent rounded-full animate-spin mb-4"></div>
+          <p className="text-content-primary text-lg">Initializing Command Center...</p>
         </div>
       </div>
     );
@@ -152,9 +171,9 @@ export default function CommandCenterClient() {
 
   if (!data) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 flex items-center justify-center">
+      <div className="min-h-screen bg-background flex items-center justify-center">
         <div className="text-center">
-          <p className="text-red-400 text-lg">Failed to load intelligence data</p>
+          <p className="text-status-error text-lg">Failed to load intelligence data</p>
         </div>
       </div>
     );
@@ -269,14 +288,14 @@ export default function CommandCenterClient() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
+    <div className="min-h-screen bg-background">
       {/* Header */}
-      <div className="border-b border-purple-500/20 bg-black/20 backdrop-blur-sm">
+      <div className="border-b border-border-default bg-surface-accent/10 backdrop-blur-sm">
         <div className="container mx-auto px-6 py-8">
           <div className="flex items-center justify-between">
             <div>
-              <h1 className="text-4xl font-bold text-white mb-2">⚡ Command Center</h1>
-              <p className="text-purple-200 text-lg">
+              <h1 className="text-4xl font-bold text-content-primary mb-2">⚡ Command Center</h1>
+              <p className="text-content-secondary text-lg">
                 Intelligence Dashboard • Scanned {new Date(data.metadata.scanTime).toLocaleString()}
               </p>
             </div>
@@ -299,20 +318,20 @@ export default function CommandCenterClient() {
 
       <div className="container mx-auto px-6 py-8">
         <Tabs defaultValue="overview" className="space-y-8">
-          <TabsList className="grid w-full grid-cols-5 bg-black/40 border border-purple-500/30">
-            <TabsTrigger value="overview" className="data-[state=active]:bg-purple-600">
+          <TabsList className="grid w-full grid-cols-5 bg-surface-secondary/40 border border-border-default">
+            <TabsTrigger value="overview" className="data-[state=active]:bg-brand-primary">
               Overview
             </TabsTrigger>
-            <TabsTrigger value="components" className="data-[state=active]:bg-purple-600">
+            <TabsTrigger value="components" className="data-[state=active]:bg-brand-primary">
               Components
             </TabsTrigger>
-            <TabsTrigger value="codebase" className="data-[state=active]:bg-purple-600">
+            <TabsTrigger value="codebase" className="data-[state=active]:bg-brand-primary">
               Codebase
             </TabsTrigger>
-            <TabsTrigger value="quality" className="data-[state=active]:bg-purple-600">
+            <TabsTrigger value="quality" className="data-[state=active]:bg-brand-primary">
               Quality
             </TabsTrigger>
-            <TabsTrigger value="insights" className="data-[state=active]:bg-purple-600">
+            <TabsTrigger value="insights" className="data-[state=active]:bg-brand-primary">
               Insights
             </TabsTrigger>
           </TabsList>
@@ -320,69 +339,77 @@ export default function CommandCenterClient() {
           {/* Overview Tab */}
           <TabsContent value="overview" className="space-y-6">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
-              <Card className="bg-black/40 border-purple-500/30">
+              <Card className="bg-surface-secondary/40 border-border-default">
                 <CardHeader className="pb-2">
-                  <CardTitle className="text-sm font-medium text-purple-200">Total Files</CardTitle>
+                  <CardTitle className="text-sm font-medium text-content-secondary">
+                    Total Files
+                  </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <div className="text-2xl font-bold text-white">
+                  <div className="text-2xl font-bold text-content-primary">
                     {data.repository.metrics.totalFiles}
                   </div>
-                  <p className="text-xs text-purple-300">
+                  <p className="text-xs text-content-tertiary">
                     Across {data.repository.structure.directories} directories
                   </p>
                 </CardContent>
               </Card>
 
-              <Card className="bg-black/40 border-purple-500/30">
+              <Card className="bg-surface-secondary/40 border-border-default">
                 <CardHeader className="pb-2">
-                  <CardTitle className="text-sm font-medium text-purple-200">Components</CardTitle>
+                  <CardTitle className="text-sm font-medium text-content-secondary">
+                    Components
+                  </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <div className="text-2xl font-bold text-white">
+                  <div className="text-2xl font-bold text-content-primary">
                     {data.components.metrics.total}
                   </div>
-                  <p className="text-xs text-purple-300">
+                  <p className="text-xs text-content-tertiary">
                     {data.components.metrics.testCoverage}% test coverage
                   </p>
                 </CardContent>
               </Card>
 
-              <Card className="bg-black/40 border-purple-500/30">
+              <Card className="bg-surface-secondary/40 border-border-default">
                 <CardHeader className="pb-2">
-                  <CardTitle className="text-sm font-medium text-purple-200">Total Tests</CardTitle>
+                  <CardTitle className="text-sm font-medium text-content-secondary">
+                    Total Tests
+                  </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <div className="text-2xl font-bold text-white">{testResults.total}</div>
-                  <p className="text-xs text-purple-300">
+                  <div className="text-2xl font-bold text-content-primary">{testResults.total}</div>
+                  <p className="text-xs text-content-tertiary">
                     {testResults.passed} passed, {testResults.failed} failed
                   </p>
                 </CardContent>
               </Card>
 
-              <Card className="bg-black/40 border-purple-500/30">
+              <Card className="bg-surface-secondary/40 border-border-default">
                 <CardHeader className="pb-2">
-                  <CardTitle className="text-sm font-medium text-purple-200">
+                  <CardTitle className="text-sm font-medium text-content-secondary">
                     Quality Score
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <div className="text-2xl font-bold text-white">
+                  <div className="text-2xl font-bold text-content-primary">
                     {data.components.quality.score}%
                   </div>
                   <Progress value={data.components.quality.score} className="mt-2" />
                 </CardContent>
               </Card>
 
-              <Card className="bg-black/40 border-purple-500/30">
+              <Card className="bg-surface-secondary/40 border-border-default">
                 <CardHeader className="pb-2">
-                  <CardTitle className="text-sm font-medium text-purple-200">
+                  <CardTitle className="text-sm font-medium text-content-secondary">
                     Best Practices
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <div className="text-2xl font-bold text-white">{data.bestPractices.score}%</div>
-                  <p className="text-xs text-purple-300">
+                  <div className="text-2xl font-bold text-content-primary">
+                    {data.bestPractices.score}%
+                  </div>
+                  <p className="text-xs text-content-tertiary">
                     {data.bestPractices.issues.length} issues to resolve
                   </p>
                 </CardContent>
@@ -390,10 +417,10 @@ export default function CommandCenterClient() {
             </div>
 
             {/* Repository Structure */}
-            <Card className="bg-black/40 border-purple-500/30">
+            <Card className="bg-surface-secondary/40 border-border-default">
               <CardHeader>
-                <CardTitle className="text-white">Repository Health</CardTitle>
-                <CardDescription className="text-purple-200">
+                <CardTitle className="text-content-primary">Repository Health</CardTitle>
+                <CardDescription className="text-content-secondary">
                   File distribution and structure analysis
                 </CardDescription>
               </CardHeader>
@@ -413,7 +440,7 @@ export default function CommandCenterClient() {
                         />
                         <YAxis stroke="hsl(var(--content-secondary))" fontSize={12} />
                         <ChartTooltip content={<ChartTooltipContent />} />
-                        <Bar dataKey="value" fill="hsl(var(--surface-interactive))" />
+                        <Bar dataKey="value" fill="hsl(var(--surface-accent))" />
                       </BarChart>
                     </ResponsiveContainer>
                   </ChartContainer>
@@ -425,10 +452,10 @@ export default function CommandCenterClient() {
           {/* Components Tab */}
           <TabsContent value="components" className="space-y-6">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-              <Card className="bg-black/40 border-purple-500/30">
+              <Card className="bg-surface-secondary/40 border-border-default">
                 <CardHeader>
-                  <CardTitle className="text-white">Component Coverage</CardTitle>
-                  <CardDescription className="text-purple-200">
+                  <CardTitle className="text-content-primary">Component Coverage</CardTitle>
+                  <CardDescription className="text-content-secondary">
                     Test, story, and index file coverage
                   </CardDescription>
                 </CardHeader>
@@ -451,7 +478,7 @@ export default function CommandCenterClient() {
                           />
                           <YAxis stroke="hsl(var(--content-secondary))" fontSize={12} />
                           <ChartTooltip content={<ChartTooltipContent />} />
-                          <Bar dataKey="value" fill="hsl(var(--status-success))" />
+                          <Bar dataKey="value" fill="hsl(var(--surface-accent))" />
                         </BarChart>
                       </ResponsiveContainer>
                     </ChartContainer>
@@ -459,10 +486,10 @@ export default function CommandCenterClient() {
                 </CardContent>
               </Card>
 
-              <Card className="bg-black/40 border-purple-500/30">
+              <Card className="bg-surface-secondary/40 border-border-default">
                 <CardHeader>
-                  <CardTitle className="text-white">Test Quality Distribution</CardTitle>
-                  <CardDescription className="text-purple-200">
+                  <CardTitle className="text-content-primary">Test Quality Distribution</CardTitle>
+                  <CardDescription className="text-content-secondary">
                     Quality assessment of test suites
                   </CardDescription>
                 </CardHeader>
@@ -496,42 +523,42 @@ export default function CommandCenterClient() {
 
             {/* Component Quality Metrics */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <Card className="bg-black/40 border-purple-500/30">
+              <Card className="bg-surface-secondary/40 border-border-default">
                 <CardHeader className="pb-2">
-                  <CardTitle className="text-sm font-medium text-purple-200">
+                  <CardTitle className="text-sm font-medium text-content-secondary">
                     Test Coverage
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <div className="text-2xl font-bold text-white">
+                  <div className="text-2xl font-bold text-content-primary">
                     {data.components.metrics.testCoverage}%
                   </div>
                   <Progress value={data.components.metrics.testCoverage} className="mt-2" />
                 </CardContent>
               </Card>
 
-              <Card className="bg-black/40 border-purple-500/30">
+              <Card className="bg-surface-secondary/40 border-border-default">
                 <CardHeader className="pb-2">
-                  <CardTitle className="text-sm font-medium text-purple-200">
+                  <CardTitle className="text-sm font-medium text-content-secondary">
                     Story Coverage
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <div className="text-2xl font-bold text-white">
+                  <div className="text-2xl font-bold text-content-primary">
                     {data.components.metrics.storyCoverage}%
                   </div>
                   <Progress value={data.components.metrics.storyCoverage} className="mt-2" />
                 </CardContent>
               </Card>
 
-              <Card className="bg-black/40 border-purple-500/30">
+              <Card className="bg-surface-secondary/40 border-border-default">
                 <CardHeader className="pb-2">
-                  <CardTitle className="text-sm font-medium text-purple-200">
+                  <CardTitle className="text-sm font-medium text-content-secondary">
                     Index Coverage
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <div className="text-2xl font-bold text-white">
+                  <div className="text-2xl font-bold text-content-primary">
                     {data.components.metrics.indexCoverage}%
                   </div>
                   <Progress value={data.components.metrics.indexCoverage} className="mt-2" />
@@ -541,10 +568,10 @@ export default function CommandCenterClient() {
 
             {/* Test Results Breakdown */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-              <Card className="bg-black/40 border-purple-500/30">
+              <Card className="bg-surface-secondary/40 border-border-default">
                 <CardHeader>
-                  <CardTitle className="text-white">Test Results Distribution</CardTitle>
-                  <CardDescription className="text-purple-200">
+                  <CardTitle className="text-content-primary">Test Results Distribution</CardTitle>
+                  <CardDescription className="text-content-secondary">
                     {testResults.total} total tests • {testResults.passed} passed •{' '}
                     {testResults.failed} failed • {testResults.skipped} skipped
                   </CardDescription>
@@ -576,10 +603,10 @@ export default function CommandCenterClient() {
                 </CardContent>
               </Card>
 
-              <Card className="bg-black/40 border-purple-500/30">
+              <Card className="bg-surface-secondary/40 border-border-default">
                 <CardHeader>
-                  <CardTitle className="text-white">Test Statistics</CardTitle>
-                  <CardDescription className="text-purple-200">
+                  <CardTitle className="text-content-primary">Test Statistics</CardTitle>
+                  <CardDescription className="text-content-secondary">
                     Comprehensive test execution metrics
                   </CardDescription>
                 </CardHeader>
@@ -603,9 +630,9 @@ export default function CommandCenterClient() {
                       <span className="text-blue-100 font-semibold">Total Tests</span>
                       <span className="text-blue-100 text-lg font-bold">{testResults.total}</span>
                     </div>
-                    <div className="flex items-center justify-between p-3 bg-purple-900/20 border border-purple-500/30 rounded-lg">
-                      <span className="text-purple-100 font-semibold">Success Rate</span>
-                      <span className="text-purple-100 text-lg font-bold">
+                    <div className="flex items-center justify-between p-3 bg-surface-accent/20 border border-border-default rounded-lg">
+                      <span className="text-content-primary font-semibold">Success Rate</span>
+                      <span className="text-content-primary text-lg font-bold">
                         {((testResults.passed / testResults.total) * 100).toFixed(1)}%
                       </span>
                     </div>
@@ -618,10 +645,10 @@ export default function CommandCenterClient() {
           {/* Codebase Tab */}
           <TabsContent value="codebase" className="space-y-6">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-              <Card className="bg-black/40 border-purple-500/30">
+              <Card className="bg-surface-secondary/40 border-border-default">
                 <CardHeader>
-                  <CardTitle className="text-white">Pipeline Performance</CardTitle>
-                  <CardDescription className="text-purple-200">
+                  <CardTitle className="text-content-primary">Pipeline Performance</CardTitle>
+                  <CardDescription className="text-content-secondary">
                     Build and validation timings
                   </CardDescription>
                 </CardHeader>
@@ -644,7 +671,7 @@ export default function CommandCenterClient() {
                           />
                           <YAxis stroke="hsl(var(--content-secondary))" fontSize={12} />
                           <ChartTooltip content={<ChartTooltipContent />} />
-                          <Bar dataKey="duration" fill="hsl(var(--surface-interactive))" />
+                          <Bar dataKey="duration" fill="hsl(var(--surface-accent))" />
                         </BarChart>
                       </ResponsiveContainer>
                     </ChartContainer>
@@ -652,10 +679,10 @@ export default function CommandCenterClient() {
                 </CardContent>
               </Card>
 
-              <Card className="bg-black/40 border-purple-500/30">
+              <Card className="bg-surface-secondary/40 border-border-default">
                 <CardHeader>
-                  <CardTitle className="text-white">Dependencies</CardTitle>
-                  <CardDescription className="text-purple-200">
+                  <CardTitle className="text-content-primary">Dependencies</CardTitle>
+                  <CardDescription className="text-content-secondary">
                     Package distribution breakdown
                   </CardDescription>
                 </CardHeader>
@@ -689,55 +716,65 @@ export default function CommandCenterClient() {
 
             {/* Codebase Stats */}
             <div className="grid grid-cols-1 md:grid-cols-5 gap-6">
-              <Card className="bg-black/40 border-purple-500/30">
+              <Card className="bg-surface-secondary/40 border-border-default">
                 <CardHeader className="pb-2">
-                  <CardTitle className="text-sm font-medium text-purple-200">
+                  <CardTitle className="text-sm font-medium text-content-secondary">
                     TypeScript Files
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <div className="text-2xl font-bold text-white">
+                  <div className="text-2xl font-bold text-content-primary">
                     {data.codebase.files.typescript}
                   </div>
                 </CardContent>
               </Card>
 
-              <Card className="bg-black/40 border-purple-500/30">
+              <Card className="bg-surface-secondary/40 border-border-default">
                 <CardHeader className="pb-2">
-                  <CardTitle className="text-sm font-medium text-purple-200">Test Files</CardTitle>
+                  <CardTitle className="text-sm font-medium text-content-secondary">
+                    Test Files
+                  </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <div className="text-2xl font-bold text-white">{data.codebase.files.tests}</div>
+                  <div className="text-2xl font-bold text-content-primary">
+                    {data.codebase.files.tests}
+                  </div>
                 </CardContent>
               </Card>
 
-              <Card className="bg-black/40 border-purple-500/30">
+              <Card className="bg-surface-secondary/40 border-border-default">
                 <CardHeader className="pb-2">
-                  <CardTitle className="text-sm font-medium text-purple-200">Story Files</CardTitle>
+                  <CardTitle className="text-sm font-medium text-content-secondary">
+                    Story Files
+                  </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <div className="text-2xl font-bold text-white">{data.codebase.files.stories}</div>
+                  <div className="text-2xl font-bold text-content-primary">
+                    {data.codebase.files.stories}
+                  </div>
                 </CardContent>
               </Card>
 
-              <Card className="bg-black/40 border-purple-500/30">
+              <Card className="bg-surface-secondary/40 border-border-default">
                 <CardHeader className="pb-2">
-                  <CardTitle className="text-sm font-medium text-purple-200">Total Tests</CardTitle>
+                  <CardTitle className="text-sm font-medium text-content-secondary">
+                    Total Tests
+                  </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <div className="text-2xl font-bold text-white">{testResults.total}</div>
-                  <p className="text-xs text-purple-300">{testResults.passed} passed</p>
+                  <div className="text-2xl font-bold text-content-primary">{testResults.total}</div>
+                  <p className="text-xs text-content-tertiary">{testResults.passed} passed</p>
                 </CardContent>
               </Card>
 
-              <Card className="bg-black/40 border-purple-500/30">
+              <Card className="bg-surface-secondary/40 border-border-default">
                 <CardHeader className="pb-2">
-                  <CardTitle className="text-sm font-medium text-purple-200">
+                  <CardTitle className="text-sm font-medium text-content-secondary">
                     Test Success Rate
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <div className="text-2xl font-bold text-white">
+                  <div className="text-2xl font-bold text-content-primary">
                     {((testResults.passed / testResults.total) * 100).toFixed(1)}%
                   </div>
                   <Progress
@@ -751,10 +788,10 @@ export default function CommandCenterClient() {
 
           {/* Quality Tab */}
           <TabsContent value="quality" className="space-y-6">
-            <Card className="bg-black/40 border-purple-500/30">
+            <Card className="bg-surface-secondary/40 border-border-default">
               <CardHeader>
-                <CardTitle className="text-white">Best Practices Assessment</CardTitle>
-                <CardDescription className="text-purple-200">
+                <CardTitle className="text-content-primary">Best Practices Assessment</CardTitle>
+                <CardDescription className="text-content-secondary">
                   Category-wise quality evaluation
                 </CardDescription>
               </CardHeader>
@@ -774,7 +811,7 @@ export default function CommandCenterClient() {
                         />
                         <YAxis stroke="hsl(var(--content-secondary))" fontSize={12} />
                         <ChartTooltip content={<ChartTooltipContent />} />
-                        <Bar dataKey="score" fill="hsl(var(--status-warning))" />
+                        <Bar dataKey="score" fill="hsl(var(--surface-accent))" />
                       </BarChart>
                     </ResponsiveContainer>
                   </ChartContainer>
@@ -784,10 +821,10 @@ export default function CommandCenterClient() {
 
             {/* Quality Issues */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-              <Card className="bg-black/40 border-purple-500/30">
+              <Card className="bg-surface-secondary/40 border-border-default">
                 <CardHeader>
-                  <CardTitle className="text-white">Quality Issues</CardTitle>
-                  <CardDescription className="text-purple-200">
+                  <CardTitle className="text-content-primary">Quality Issues</CardTitle>
+                  <CardDescription className="text-content-secondary">
                     Areas needing attention
                   </CardDescription>
                 </CardHeader>
@@ -796,7 +833,7 @@ export default function CommandCenterClient() {
                     {data.bestPractices.issues.map((issue, index) => (
                       <div
                         key={index}
-                        className="border border-purple-500/20 rounded-lg p-4 bg-black/20"
+                        className="border border-border-default rounded-lg p-4 bg-surface-secondary/20"
                       >
                         <div className="flex items-center gap-2 mb-2">
                           <Badge
@@ -810,20 +847,20 @@ export default function CommandCenterClient() {
                           >
                             {issue.severity}
                           </Badge>
-                          <span className="text-purple-200 text-sm">{issue.type}</span>
+                          <span className="text-content-secondary text-sm">{issue.type}</span>
                         </div>
-                        <p className="text-white text-sm mb-2">{issue.message}</p>
-                        <p className="text-purple-300 text-xs">{issue.fix}</p>
+                        <p className="text-content-primary text-sm mb-2">{issue.message}</p>
+                        <p className="text-content-tertiary text-xs">{issue.fix}</p>
                       </div>
                     ))}
                   </div>
                 </CardContent>
               </Card>
 
-              <Card className="bg-black/40 border-purple-500/30">
+              <Card className="bg-surface-secondary/40 border-border-default">
                 <CardHeader>
-                  <CardTitle className="text-white">Quality Strengths</CardTitle>
-                  <CardDescription className="text-purple-200">
+                  <CardTitle className="text-content-primary">Quality Strengths</CardTitle>
+                  <CardDescription className="text-content-secondary">
                     What&apos;s working well
                   </CardDescription>
                 </CardHeader>
@@ -846,10 +883,10 @@ export default function CommandCenterClient() {
 
           {/* Insights Tab */}
           <TabsContent value="insights" className="space-y-6">
-            <Card className="bg-black/40 border-purple-500/30">
+            <Card className="bg-surface-secondary/40 border-border-default">
               <CardHeader>
-                <CardTitle className="text-white">Actionable Recommendations</CardTitle>
-                <CardDescription className="text-purple-200">
+                <CardTitle className="text-content-primary">Actionable Recommendations</CardTitle>
+                <CardDescription className="text-content-secondary">
                   Strategic improvements based on intelligence analysis
                 </CardDescription>
               </CardHeader>
@@ -858,7 +895,7 @@ export default function CommandCenterClient() {
                   {data.recommendations.map((rec, index) => (
                     <div
                       key={index}
-                      className="border border-purple-500/20 rounded-lg p-6 bg-black/20"
+                      className="border border-border-default rounded-lg p-6 bg-surface-secondary/20"
                     >
                       <div className="flex items-center justify-between mb-3">
                         <Badge
@@ -872,13 +909,13 @@ export default function CommandCenterClient() {
                         >
                           {rec.priority} priority
                         </Badge>
-                        <Badge variant="outline" className="text-purple-200">
+                        <Badge variant="outline" className="text-content-secondary">
                           {rec.category}
                         </Badge>
                       </div>
-                      <h4 className="text-white font-semibold mb-2">{rec.issue}</h4>
-                      <p className="text-purple-200 text-sm mb-3">{rec.action}</p>
-                      <p className="text-purple-300 text-xs italic">Impact: {rec.impact}</p>
+                      <h4 className="text-content-primary font-semibold mb-2">{rec.issue}</h4>
+                      <p className="text-content-secondary text-sm mb-3">{rec.action}</p>
+                      <p className="text-content-tertiary text-xs italic">Impact: {rec.impact}</p>
                     </div>
                   ))}
                 </div>
@@ -886,26 +923,26 @@ export default function CommandCenterClient() {
             </Card>
 
             {/* Scan Metadata */}
-            <Card className="bg-black/40 border-purple-500/30">
+            <Card className="bg-surface-secondary/40 border-border-default">
               <CardHeader>
-                <CardTitle className="text-white">Scan Information</CardTitle>
-                <CardDescription className="text-purple-200">
+                <CardTitle className="text-content-primary">Scan Information</CardTitle>
+                <CardDescription className="text-content-secondary">
                   Intelligence engine metadata
                 </CardDescription>
               </CardHeader>
               <CardContent>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                  <div className="text-center p-4 bg-purple-900/30 rounded-lg border border-purple-500/30">
-                    <div className="text-white font-semibold">Scanner Version</div>
-                    <div className="text-purple-200 text-sm">{data.metadata.version}</div>
+                  <div className="text-center p-4 bg-surface-secondary rounded-lg border border-border-default">
+                    <div className="text-content-primary font-semibold">Scanner Version</div>
+                    <div className="text-content-secondary text-sm">{data.metadata.version}</div>
                   </div>
-                  <div className="text-center p-4 bg-purple-900/30 rounded-lg border border-purple-500/30">
-                    <div className="text-white font-semibold">Scan Duration</div>
-                    <div className="text-purple-200 text-sm">{data.metadata.duration}ms</div>
+                  <div className="text-center p-4 bg-surface-secondary rounded-lg border border-border-default">
+                    <div className="text-content-primary font-semibold">Scan Duration</div>
+                    <div className="text-content-secondary text-sm">{data.metadata.duration}ms</div>
                   </div>
-                  <div className="text-center p-4 bg-purple-900/30 rounded-lg border border-purple-500/30">
-                    <div className="text-white font-semibold">Last Scan</div>
-                    <div className="text-purple-200 text-sm">
+                  <div className="text-center p-4 bg-surface-secondary rounded-lg border border-border-default">
+                    <div className="text-content-primary font-semibold">Last Scan</div>
+                    <div className="text-content-secondary text-sm">
                       {new Date(data.metadata.scanTime).toLocaleString()}
                     </div>
                   </div>

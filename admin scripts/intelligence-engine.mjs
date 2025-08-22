@@ -270,6 +270,8 @@ class IntelligenceEngine {
     };
 
     console.log('   🔍 Analyzing individual components...');
+    const validComponents = []; // Track only valid components
+
     for (let i = 0; i < componentDirs.length; i++) {
       const dir = componentDirs[i];
       const componentName = path.basename(dir);
@@ -277,74 +279,88 @@ class IntelligenceEngine {
       process.stdout.write(`      [${i + 1}/${componentDirs.length}] ${componentName}... `);
 
       const analysis = await this.analyzeComponent(dir, componentName);
-      components[componentName] = analysis;
 
-      // Count completeness
-      if (analysis.hasTest) withTests++;
-      if (analysis.hasStory) withStories++;
-      if (analysis.hasIndex) withIndex++;
-      if (analysis.hasDemo) withDemo++;
-      if (analysis.indexExtensionIssue) indexExtensionIssues++;
+      // Only count directories that have actual components (not just empty index directories)
+      if (analysis.hasComponent || analysis.hasTest || analysis.hasStory || analysis.hasDemo) {
+        components[componentName] = analysis;
+        validComponents.push(analysis);
 
-      // Track test quality distribution
-      testQualityDistribution[analysis.testQuality]++;
+        // Count completeness for valid components only
+        if (analysis.hasTest) withTests++;
+        if (analysis.hasStory) withStories++;
+        if (analysis.hasIndex) withIndex++;
+        if (analysis.hasDemo) withDemo++;
+        if (analysis.indexExtensionIssue) indexExtensionIssues++;
 
-      // Show status indicators
-      const status = [];
-      if (analysis.hasComponent) status.push('TSX');
-      if (analysis.hasTest) {
-        // Enhanced test status with quality indicator
-        if (analysis.testQuality === 'excellent') status.push('TEST🌟');
-        else if (analysis.testQuality === 'pass') status.push('TEST✅');
-        else if (analysis.testQuality === 'fail') status.push('TEST⚠️');
-        else status.push('TEST');
-      }
-      if (analysis.hasStory) status.push('STORY');
-      if (analysis.hasIndex) {
-        if (analysis.indexExtensionIssue) {
-          status.push('INDEX⚠️'); // Warning for extension issue
-        } else {
-          status.push('INDEX');
+        // Track test quality distribution
+        testQualityDistribution[analysis.testQuality]++;
+
+        // Show status indicators
+        const status = [];
+        if (analysis.hasComponent) status.push('TSX');
+        if (analysis.hasTest) {
+          // Enhanced test status with quality indicator
+          if (analysis.testQuality === 'excellent') status.push('TEST🌟');
+          else if (analysis.testQuality === 'pass') status.push('TEST✅');
+          else if (analysis.testQuality === 'fail') status.push('TEST⚠️');
+          else status.push('TEST');
         }
-      }
-      if (analysis.hasDemo) status.push('DEMO');
+        if (analysis.hasStory) status.push('STORY');
+        if (analysis.hasIndex) {
+          if (analysis.indexExtensionIssue) {
+            status.push('INDEX⚠️'); // Warning for extension issue
+          } else {
+            status.push('INDEX');
+          }
+        }
+        if (analysis.hasDemo) status.push('DEMO');
 
-      console.log(`${status.join('|') || 'EMPTY'}`);
+        console.log(`${status.join('|') || 'MINIMAL'}`);
+      } else {
+        // Skip empty directories entirely
+        console.log(`EMPTY (skipped)`);
+      }
     }
 
     console.log('   📊 Calculating coverage metrics...');
     this.report.components.inventory = components;
     this.report.components.metrics = {
-      total: componentDirs.length,
+      total: validComponents.length, // Use valid components count
       withTests,
       withStories,
       withIndex,
       withDemo,
       indexExtensionIssues, // New metric
       testQualityDistribution, // New: test quality breakdown
-      testCoverage: Math.round((withTests / componentDirs.length) * 100),
-      storyCoverage: Math.round((withStories / componentDirs.length) * 100),
-      indexCoverage: Math.round((withIndex / componentDirs.length) * 100),
+      testCoverage:
+        validComponents.length > 0 ? Math.round((withTests / validComponents.length) * 100) : 0,
+      storyCoverage:
+        validComponents.length > 0 ? Math.round((withStories / validComponents.length) * 100) : 0,
+      indexCoverage:
+        validComponents.length > 0 ? Math.round((withIndex / validComponents.length) * 100) : 0,
       // New: Quality-weighted test coverage
-      qualityTestCoverage: Math.round(
-        ((testQualityDistribution.pass + testQualityDistribution.excellent) /
-          componentDirs.length) *
-          100
-      ),
+      qualityTestCoverage:
+        validComponents.length > 0
+          ? Math.round(
+              ((testQualityDistribution.pass + testQualityDistribution.excellent) /
+                validComponents.length) *
+                100
+            )
+          : 0,
     };
 
     const { metrics } = this.report.components;
     console.log(
-      `      Test Coverage: ${metrics.testCoverage}% (${withTests}/${componentDirs.length})`
+      `      Test Coverage: ${metrics.testCoverage}% (${withTests}/${validComponents.length})`
     );
     console.log(
       `      Quality Test Coverage: ${metrics.qualityTestCoverage}% (5+ tests per component)`
     );
     console.log(
-      `      Story Coverage: ${metrics.storyCoverage}% (${withStories}/${componentDirs.length})`
+      `      Story Coverage: ${metrics.storyCoverage}% (${withStories}/${validComponents.length})`
     );
     console.log(
-      `      Index Coverage: ${metrics.indexCoverage}% (${withIndex}/${componentDirs.length})`
+      `      Index Coverage: ${metrics.indexCoverage}% (${withIndex}/${validComponents.length})`
     );
 
     // Show test quality distribution
@@ -562,11 +578,11 @@ class IntelligenceEngine {
     console.log('🔬 Analyzing codebase patterns...');
 
     console.log('   📁 Scanning TypeScript files...');
-    // Get TypeScript files
+    // Get TypeScript files (excluding index files which are just re-exports)
     const tsFiles = await glob('src/**/*.{ts,tsx}', {
-      ignore: ['**/*.test.*', '**/*.spec.*', '**/*.stories.*'],
+      ignore: ['**/*.test.*', '**/*.spec.*', '**/*.stories.*', '**/index.{ts,tsx}'],
     });
-    console.log(`      Found ${tsFiles.length} TypeScript source files`);
+    console.log(`      Found ${tsFiles.length} TypeScript source files (excluding index files)`);
 
     const testFiles = await glob('src/**/*.{test,spec}.{ts,tsx}');
     console.log(`      Found ${testFiles.length} test files`);
