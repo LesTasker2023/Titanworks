@@ -75,7 +75,7 @@ export default function IntelPage() {
         setIntelData(data);
       }
     } catch (error) {
-      console.warn('Intel data not available - run build to generate');
+      // Intel data not available - run build to generate
     } finally {
       setLoading(false);
     }
@@ -239,7 +239,7 @@ function MetricCard({ title, value, progress, icon, color = 'gray', subtitle }: 
   };
 
   return (
-    <Card className={`${colorClasses[color]}`}>
+    <Card className={`${colorClasses[color]} bg-neutral/50`}>
       <CardContent className="p-6">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
@@ -451,19 +451,19 @@ function TestsTab({ intelData }: any) {
         {intelData?.tests ? (
           <div className="space-y-6">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
-              <div className="p-4 bg-green-50 dark:bg-green-950/30 rounded-lg">
+              <div className="p-4 bg-neutral rounded-lg border border-green-200 dark:border-green-800">
                 <div className="text-2xl font-bold text-green-600 dark:text-green-400">
                   {intelData.tests.passed}
                 </div>
                 <div className="text-sm text-green-700 dark:text-green-300">Passed</div>
               </div>
-              <div className="p-4 bg-red-50 dark:bg-red-950/30 rounded-lg">
+              <div className="p-4 bg-neutral rounded-lg border border-red-200 dark:border-red-800">
                 <div className="text-2xl font-bold text-red-600 dark:text-red-400">
                   {intelData.tests.failed}
                 </div>
                 <div className="text-sm text-red-700 dark:text-red-300">Failed</div>
               </div>
-              <div className="p-4 bg-blue-50 dark:bg-blue-950/30 rounded-lg">
+              <div className="p-4 bg-neutral rounded-lg border border-blue-200 dark:border-blue-800">
                 <div className="text-2xl font-bold text-blue-600 dark:text-blue-400">
                   {intelData.tests.coverage}%
                 </div>

@@ -98,7 +98,7 @@ export class VercelAPIService {
     const validDeployments = response.deployments.filter(isVercelDeployment);
 
     if (validDeployments.length !== response.deployments.length) {
-      console.warn('Some deployment data was invalid and filtered out');
+      // Some deployment data was invalid and filtered out
     }
 
     return validDeployments;

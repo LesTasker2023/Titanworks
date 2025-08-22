@@ -22,7 +22,7 @@ const tabsVariants = cva('', {
 });
 
 const tabsListVariants = cva(
-  'inline-flex items-center justify-center rounded-lg bg-muted p-1 text-muted-foreground',
+  'inline-flex items-center justify-center rounded-lg bg-neutral p-1 text-muted-foreground border border-border',
   {
     variants: {
       size: {

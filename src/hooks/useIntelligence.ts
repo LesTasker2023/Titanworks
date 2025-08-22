@@ -47,7 +47,10 @@ export function useIntelligenceReport(): UseIntelligenceReportReturn {
     } catch (err) {
       const errorMessage = err instanceof Error ? err.message : 'Unknown error occurred';
       setError(errorMessage);
-      console.error('Failed to fetch intelligence report:', err);
+      // Development-only error logging
+      if (process.env.NODE_ENV === 'development') {
+        console.error('Failed to fetch intelligence report:', err);
+      }
     } finally {
       setLoading(false);
     }

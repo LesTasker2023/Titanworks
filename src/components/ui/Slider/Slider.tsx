@@ -27,13 +27,13 @@ const sliderVariants = cva('relative flex w-full touch-none select-none items-ce
   },
 });
 
-const trackVariants = cva('relative grow overflow-hidden rounded-full bg-primary/20', {
+const trackVariants = cva('relative grow overflow-hidden rounded-full bg-neutral', {
   variants: {
     variant: {
-      default: 'bg-primary/20',
-      success: 'bg-green-200',
-      warning: 'bg-yellow-200',
-      danger: 'bg-red-200',
+      default: 'bg-neutral',
+      success: 'bg-neutral',
+      warning: 'bg-neutral',
+      danger: 'bg-neutral',
     },
     size: {
       sm: 'h-1',

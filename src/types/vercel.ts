@@ -126,34 +126,29 @@ export interface VercelAPIError {
 }
 
 // Type guards
-export function isVercelDeployment(obj: any): obj is VercelDeployment {
+export function isVercelDeployment(obj: unknown): obj is VercelDeployment {
   return (
     typeof obj === 'object' &&
     obj !== null &&
-    typeof obj.uid === 'string' &&
-    typeof obj.name === 'string' &&
-    typeof obj.state === 'string' &&
-    typeof obj.created === 'number'
+    typeof (obj as Record<string, unknown>).uid === 'string' &&
+    typeof (obj as Record<string, unknown>).name === 'string'
   );
 }
 
-export function isVercelProject(obj: any): obj is VercelProject {
+export function isVercelProject(obj: unknown): obj is VercelProject {
   return (
     typeof obj === 'object' &&
     obj !== null &&
-    typeof obj.id === 'string' &&
-    typeof obj.name === 'string' &&
-    typeof obj.accountId === 'string'
+    typeof (obj as Record<string, unknown>).id === 'string' &&
+    typeof (obj as Record<string, unknown>).name === 'string'
   );
 }
 
-export function isVercelAPIError(obj: any): obj is VercelAPIError {
+export function isVercelAPIError(obj: unknown): obj is VercelAPIError {
   return (
     typeof obj === 'object' &&
     obj !== null &&
-    typeof obj.error === 'object' &&
-    typeof obj.error.code === 'string' &&
-    typeof obj.error.message === 'string'
+    typeof (obj as Record<string, unknown>).error === 'object'
   );
 }
 

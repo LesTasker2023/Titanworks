@@ -1,9 +1,34 @@
 /**
  * Daedalus Accessibility Utilities
  * Contrast ratio calculations and validation helpers
- */
-/**
- * Calculate relative luminance of a color
+   // Color Accessibility Audit
+  const results = [];
+  
+  foregroundColors.forEach(fgColor => {
+    backgroundColors.forEach(bgColor => {
+      const ratio = getContrastRatio(fgColor, bgColor);
+      const aaPass = ratio >= 4.5;
+      const aaaPass = ratio >= 7;
+      
+      results.push({
+        foreground: fgColor,
+        background: bgColor,
+        ratio: ratio.toFixed(2),
+        aaPass,
+        aaaPass,
+      });
+    });
+  });
+  
+  // Development-only output
+  if (process.env.NODE_ENV === 'development') {
+    console.group('🎨 Daedalus Color Accessibility Audit');
+    results.forEach(result => {
+      const status = result.aaaPass ? '✅ AAA' : result.aaPass ? '🟡 AA' : '❌ FAIL';
+      console.log(`${status} ${result.foreground} on ${result.background}: ${result.ratio}:1`);
+    });
+    console.groupEnd();
+  }alculate relative luminance of a color
  * @param r Red component (0-255)
  * @param g Green component (0-255)
  * @param b Blue component (0-255)

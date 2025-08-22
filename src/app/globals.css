@@ -13,6 +13,7 @@
     --surface-primary: 0 0% 100%; /* Main page backgrounds, cards */
     --surface-secondary: 220 14% 96%; /* Secondary backgrounds, hover states */
     --surface-secondary-button: 215 25% 92%; /* Better secondary button surface */
+    --surface-neutral: 220 14% 96%; /* Universal neutral background - inputs, tabs, borders, sliders */
     --surface-interactive: 221 83% 53%; /* Interactive elements (customizable) */
     --surface-accent: 142 76% 36%; /* Success states, highlights */
 
@@ -52,9 +53,12 @@
     --destructive: var(--status-error);
     --destructive-foreground: var(--content-inverse);
     --border: var(--border-default);
-    --input: var(--border-default);
+    --input: var(--surface-neutral); /* Use neutral surface for inputs */
     --ring: var(--border-interactive);
     --radius: 0.5rem;
+
+    /* NEUTRAL SURFACE - Universal background for consistency */
+    --neutral: var(--surface-neutral);
 
     /* ===== DESIGN TOKENS ===== */
     /* Typography */
@@ -104,6 +108,7 @@
     --surface-primary: 224 71% 4%; /* Dark backgrounds */
     --surface-secondary: 215 28% 17%; /* Slightly lighter for cards */
     --surface-secondary-button: 215 32% 20%; /* Better secondary button in dark mode */
+    --surface-neutral: 215 28% 17%; /* Universal neutral background - consistent across all inputs/tabs/borders in dark mode */
     --surface-interactive: 221 83% 53%; /* Same interactive color (customizable) */
     --surface-accent: 142 76% 36%; /* Same accent color */
 
@@ -369,4 +374,29 @@ button[class*='bg-primary']:hover,
 .content-muted {
   color: hsl(var(--content-secondary));
   opacity: 0.7;
+}
+
+/* ===== NEUTRAL SURFACE UTILITIES ===== */
+/* Universal neutral background for consistent UI elements */
+.bg-neutral {
+  background-color: hsl(var(--surface-neutral));
+}
+
+.border-neutral {
+  border-color: hsl(var(--surface-neutral));
+}
+
+.bg-neutral\/50 {
+  background-color: hsl(var(--surface-neutral) / 0.5);
+}
+
+/* Common patterns for inputs, tabs, and interactive elements */
+.neutral-surface {
+  background-color: hsl(var(--surface-neutral));
+  border: 1px solid hsl(var(--border-default));
+}
+
+.neutral-surface-soft {
+  background-color: hsl(var(--surface-neutral) / 0.5);
+  border: 1px solid hsl(var(--border-muted));
 }

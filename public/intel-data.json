@@ -1,29 +1,32 @@
 {
-  "buildTime": "2025-08-22T17:06:57.821Z",
+  "buildTime": "2025-08-22T18:08:30.785Z",
   "tests": {
-    "total": 0,
-    "passed": 0,
-    "failed": 0,
-    "coverage": 0
+    "total": 1172,
+    "passed": 1097,
+    "failed": 5,
+    "skipped": 70,
+    "coverage": 75,
+    "testFiles": 52,
+    "successRate": 94
   },
   "components": {
     "total": 172,
-    "withTests": 50,
-    "withStories": 49
+    "withTests": 51,
+    "withStories": 50
   },
   "codebase": {
-    "files": 314,
-    "lines": 64531,
+    "files": 316,
+    "lines": 64897,
     "languages": {
       ".ts": 20,
       ".scss": 15,
       ".css": 2,
-      ".tsx": 277
+      ".tsx": 279
     }
   },
   "buildInfo": {
     "nodeVersion": "v22.18.0",
     "nextVersion": "15.4.6",
-    "buildDuration": 22580
+    "buildDuration": 99
   }
 }

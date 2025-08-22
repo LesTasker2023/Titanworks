@@ -44,7 +44,7 @@ export async function GET(request: NextRequest) {
     const integrationData = await vercelAPI.getProjectIntegrationData(projectId);
 
     // Add metadata
-    const response: VercelIntegrationData & { metadata: any } = {
+    const response: VercelIntegrationData & { metadata: Record<string, unknown> } = {
       ...integrationData,
       metadata: {
         fetchedAt: new Date().toISOString(),

@@ -73,7 +73,10 @@ export function useVercelIntegration({
     } catch (err) {
       const errorMessage = err instanceof Error ? err.message : 'Unknown error occurred';
       setError(errorMessage);
-      console.error('Vercel integration error:', err);
+      // Vercel integration error - logged in development only
+      if (process.env.NODE_ENV === 'development') {
+        console.error('Vercel integration error:', err);
+      }
     } finally {
       setLoading(false);
     }

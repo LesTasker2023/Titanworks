@@ -75,28 +75,27 @@ export default function BundleAnalytics() {
 
       const result = await response.json();
 
-      if (result.success) {
-        setMetrics(result.data);
-
-        // Show helpful messages for development mode
-        if (result.note) {
+      if (result.status === 'success') {
+        // Bundle Analytics successful - development only logging
+        if (process.env.NODE_ENV === 'development') {
           console.info('Bundle Analytics:', result.note);
         }
-        if (result.error) {
+      } else if (result.status === 'warning') {
+        // Bundle Analytics warning - development only logging
+        if (process.env.NODE_ENV === 'development') {
           console.warn('Bundle Analytics:', result.error);
         }
       } else {
-        console.error('Bundle analysis failed:', result.error);
-        // Set fallback data so the component still renders
-        setMetrics(createFallbackMetrics());
+        // Bundle analysis failed - development only logging
+        if (process.env.NODE_ENV === 'development') {
+          console.error('Bundle analysis failed:', result.error);
+        }
       }
     } catch (error) {
-      console.error('Failed to fetch bundle metrics:', error);
-      // Set fallback data so the component still renders
-      setMetrics(createFallbackMetrics());
-    } finally {
-      setLoading(false);
-      setRefreshing(false);
+      // Failed to fetch bundle metrics - development only logging
+      if (process.env.NODE_ENV === 'development') {
+        console.error('Failed to fetch bundle metrics:', error);
+      }
     }
   };
 

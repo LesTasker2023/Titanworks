@@ -43,7 +43,18 @@ export interface CleanupInfo {
     deleted: number;
     skipped: number;
   };
-  issues: any[]; // Array type to be defined when issues are present
+  issues: IssueItem[];
+}
+
+export interface ComponentInventoryItem {
+  name: string;
+  path: string;
+  hasComponent: boolean;
+  hasTest: boolean;
+  hasStory: boolean;
+  complexity: 'simple' | 'moderate' | 'complex';
+  testQuality: 'poor' | 'fair' | 'good' | 'excellent';
+  linesOfCode: number;
 }
 
 export interface ComponentsInfo {
@@ -53,20 +64,32 @@ export interface ComponentsInfo {
   architecture: Record<string, any>; // Empty object in current schema
 }
 
-export interface ComponentInventoryItem {
-  name: string;
+interface IssueItem {
+  type: string;
+  message: string;
+  file?: string;
+  line?: number;
+}
+
+interface WarningItem {
+  type: string;
+  message: string;
+  severity: 'low' | 'medium' | 'high';
+}
+
+interface PassedItem {
+  test: string;
+  description: string;
+  score: number;
+}
+
+export interface ComponentReport {
+  component: string;
   path: string;
-  hasComponent: boolean;
-  hasTest: boolean;
-  hasStory: boolean;
-  hasIndex: boolean;
-  hasDemo: boolean;
-  size: number;
-  complexity: 'low' | 'medium' | 'high';
-  lastModified: string;
-  indexExtensionIssue: boolean;
-  testCount: number;
-  testQuality: 'none' | 'fail' | 'pass' | 'excellent';
+  health: 'excellent' | 'good' | 'warning' | 'critical';
+  score: number;
+  issues: IssueItem[];
+  lastUpdated: string;
 }
 
 export interface ComponentMetrics {
@@ -144,8 +167,8 @@ export type PipelineStatus = 'pass' | 'fail';
 export interface BestPracticesInfo {
   score: number;
   issues: BestPracticeIssue[];
-  warnings: any[]; // Array type to be defined when warnings are present
-  passed: any[]; // Array type to be defined when passed items are present
+  warnings: WarningItem[];
+  passed: PassedItem[];
   categories: Record<string, BestPracticeCategory>;
 }
 
@@ -178,9 +201,9 @@ export type IssueSeverity = BestPracticeIssue['severity'];
 export type RecommendationPriority = Recommendation['priority'];
 
 // Type guards for runtime type checking
-export function isIntelligenceReport(obj: any): obj is IntelligenceReport {
+export function isIntelligenceReport(obj: unknown): obj is IntelligenceReport {
   return (
-    obj &&
+    !!obj &&
     typeof obj === 'object' &&
     'metadata' in obj &&
     'repository' in obj &&
@@ -191,9 +214,9 @@ export function isIntelligenceReport(obj: any): obj is IntelligenceReport {
   );
 }
 
-export function isComponentInventoryItem(obj: any): obj is ComponentInventoryItem {
+export function isComponentInventoryItem(obj: unknown): obj is ComponentInventoryItem {
   return (
-    obj &&
+    !!obj &&
     typeof obj === 'object' &&
     'name' in obj &&
     'path' in obj &&
