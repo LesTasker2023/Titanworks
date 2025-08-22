@@ -7,7 +7,6 @@
 
 import { execSync } from 'child_process';
 import fs from 'fs';
-import path from 'path';
 
 console.log('🚨 EMERGENCY: Optimizing bundle for Vercel 250MB limit...\n');
 
@@ -60,24 +59,24 @@ massiveDeps.forEach(dep => console.log(`   - ${dep}`));
 // 3. Create optimized vercel.json
 console.log('⚙️  Creating optimized vercel.json...');
 const vercelConfig = {
-  "framework": "nextjs",
-  "buildCommand": "next build",
-  "outputDirectory": ".next",
-  "functions": {
-    "src/app/**/route.ts": {
-      "maxDuration": 30
+  framework: 'nextjs',
+  buildCommand: 'next build',
+  outputDirectory: '.next',
+  functions: {
+    'src/app/**/route.ts': {
+      maxDuration: 30,
     },
-    "src/pages/api/**/*.ts": {
-      "maxDuration": 30
-    }
+    'src/pages/api/**/*.ts': {
+      maxDuration: 30,
+    },
   },
-  "regions": ["iad1"],
-  "rewrites": [
+  regions: ['iad1'],
+  rewrites: [
     {
-      "source": "/api/(.*)",
-      "destination": "/api/$1"
-    }
-  ]
+      source: '/api/(.*)',
+      destination: '/api/$1',
+    },
+  ],
 };
 
 fs.writeFileSync('vercel.json', JSON.stringify(vercelConfig, null, 2));
@@ -88,7 +87,7 @@ try {
   execSync('yarn analyze', { stdio: 'inherit' });
 } catch (error) {
   console.log('⚠️  Bundle analysis failed, building with optimization...');
-  
+
   // Emergency build with minimal bundle
   try {
     execSync('ANALYZE=false yarn build', { stdio: 'inherit' });
@@ -117,6 +116,8 @@ console.log('   2. Heavy dev dependencies externalized from serverless functions
 console.log('   3. Aggressive chunk splitting configured (200KB max chunks)');
 console.log('   4. Tree shaking optimized for production');
 console.log('\n💡 Next steps:');
-console.log('   - Run: git add . && git commit -m "EMERGENCY: Bundle optimization for Vercel 250MB limit"');
+console.log(
+  '   - Run: git add . && git commit -m "EMERGENCY: Bundle optimization for Vercel 250MB limit"'
+);
 console.log('   - Deploy to Vercel and monitor function sizes');
 console.log('   - If still failing, consider removing Storybook entirely from production');

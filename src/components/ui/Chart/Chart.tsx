@@ -2,7 +2,7 @@
 
 import * as React from 'react';
 // EMERGENCY: Import only used Recharts components instead of entire library
-import { ResponsiveContainer, Tooltip, Legend } from 'recharts';
+import { Legend, ResponsiveContainer, Tooltip } from 'recharts';
 
 import { cn } from '@/lib/utils';
 
@@ -323,9 +323,9 @@ function getPayloadConfigFromPayload(config: ChartConfig, payload: unknown, key:
 
 export {
   ChartContainer,
-  ChartTooltip,
-  ChartTooltipContent,
   ChartLegend,
   ChartLegendContent,
   ChartStyle,
+  ChartTooltip,
+  ChartTooltipContent,
 };
