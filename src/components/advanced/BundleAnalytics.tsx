@@ -1,31 +1,31 @@
 'use client';
 
-import { useState, useEffect } from 'react';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/Card';
 import { Badge } from '@/components/ui/Badge';
 import { Button } from '@/components/ui/Button';
-import { Progress } from '@/components/ui/Progress';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/Card';
 import { ChartContainer, ChartTooltip, ChartTooltipContent } from '@/components/ui/Chart';
+import { Progress } from '@/components/ui/Progress';
 import {
-  BarChart,
+  AlertTriangle,
+  CheckCircle,
+  FileText,
+  Package,
+  RefreshCw,
+  TrendingDown,
+  Zap,
+} from 'lucide-react';
+import { useEffect, useState } from 'react';
+import {
   Bar,
+  BarChart,
+  CartesianGrid,
+  Cell,
+  Pie,
+  PieChart,
+  ResponsiveContainer,
   XAxis,
   YAxis,
-  CartesianGrid,
-  ResponsiveContainer,
-  PieChart,
-  Pie,
-  Cell,
 } from 'recharts';
-import {
-  Package,
-  Zap,
-  TrendingDown,
-  RefreshCw,
-  FileText,
-  CheckCircle,
-  AlertTriangle,
-} from 'lucide-react';
 
 interface BundleMetrics {
   timestamp: string;

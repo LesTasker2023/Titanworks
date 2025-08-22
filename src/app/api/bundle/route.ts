@@ -1,7 +1,7 @@
-import { NextRequest, NextResponse } from 'next/server';
-import fs from 'fs';
-import path from 'path';
 import { execSync } from 'child_process';
+import fs from 'fs';
+import { NextRequest, NextResponse } from 'next/server';
+import path from 'path';
 
 interface BundleMetrics {
   timestamp: string;
