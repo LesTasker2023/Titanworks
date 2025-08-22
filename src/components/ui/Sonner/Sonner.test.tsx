@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react';
+﻿import { render, screen } from '@testing-library/react';
 import { describe, expect, it, vi } from 'vitest';
 import { Toaster } from './index';
 
@@ -24,19 +24,11 @@ describe('Sonner', () => {
   });
 
   describe('Accessibility', () => {
-    it.skip('can be focused - SKIPPED: Non-focusable element', () => {
-      expect(true).toBe(true);
-    });
-
     it('has proper ARIA attributes', () => {
       renderBasicSonner();
       const toastContainer = screen.getByRole('region', { name: /notifications/i });
       expect(toastContainer).toHaveAttribute('aria-live', 'polite');
       expect(toastContainer).toHaveAttribute('aria-relevant', 'additions text');
-    });
-
-    it.skip('supports keyboard navigation - SKIPPED: Non-focusable element', () => {
-      expect(true).toBe(true);
     });
 
     it('announces changes to screen readers', () => {

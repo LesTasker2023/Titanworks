@@ -14,7 +14,6 @@ import {
 import { ThemePickerSheet, ThemeToggle } from '@/components/ui/ThemeToggle';
 import { cn } from '@/lib/utils';
 import { Menu, X } from 'lucide-react';
-import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
 
@@ -84,7 +83,7 @@ export function Navigation({
             href="/"
             className="flex items-center gap-3 font-bold text-xl hover:text-interactive transition-colors"
           >
-            {brand.logo && (
+            {/* {brand.logo && (
               <Image
                 src={brand.logo.src}
                 alt={brand.logo.alt}
@@ -93,7 +92,7 @@ export function Navigation({
                 className="h-10 w-10"
                 priority
               />
-            )}
+            )} */}
             {brand.name}
           </Link>
 

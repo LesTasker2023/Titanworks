@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react';
+﻿import { render, screen } from '@testing-library/react';
 import { describe, expect, it, vi } from 'vitest';
 import { AspectRatio } from './AspectRatio';
 
@@ -26,22 +26,10 @@ describe('AspectRatio', () => {
   });
 
   describe('Accessibility', () => {
-    it.skip('can be focused - SKIPPED: Non-focusable element', () => {
-      // This element cannot receive focus (div/span/table)
-      // Focus tests disabled for accessibility accuracy
-      expect(true).toBe(true);
-    });
-
     it('has proper ARIA attributes', () => {
       renderBasicAspectRatio();
       const element = screen.getByTestId('aspectratio');
       expect(element).toBeInTheDocument();
-    });
-
-    it.skip('supports keyboard navigation - SKIPPED: Non-focusable element', () => {
-      // This element cannot receive focus (div/span/table)
-      // Focus tests disabled for accessibility accuracy
-      expect(true).toBe(true);
     });
 
     it('announces changes to screen readers', () => {

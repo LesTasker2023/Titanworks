@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react';
+﻿import { render, screen } from '@testing-library/react';
 // import userEvent from '@testing-library/user-event';
 import { describe, expect, it, vi } from 'vitest';
 import { Textarea } from './Textarea';
@@ -185,11 +185,6 @@ describe('Textarea', () => {
         </Textarea>
       );
       expect(screen.getByTestId('textarea')).toBeInTheDocument();
-    });
-
-    it.skip('maintains functionality with many children - SKIPPED: textarea can only have one child', () => {
-      // Textarea elements can only have at most one child according to React/HTML spec
-      expect(true).toBe(true);
     });
 
     it('handles component unmounting cleanly', () => {

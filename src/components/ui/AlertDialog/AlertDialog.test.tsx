@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react';
+﻿import { render, screen } from '@testing-library/react';
 import { describe, expect, it, vi } from 'vitest';
 import {
   AlertDialog,
@@ -48,18 +48,10 @@ describe('AlertDialog', () => {
   });
 
   describe('Accessibility', () => {
-    it.skip('can be focused - SKIPPED: Uses Radix focus management', () => {
-      expect(true).toBe(true);
-    });
-
     it('has proper ARIA attributes', () => {
       renderBasicAlertDialog();
       const content = screen.getByTestId('alert-content');
       expect(content).toHaveAttribute('role', 'alertdialog');
-    });
-
-    it.skip('supports keyboard navigation - SKIPPED: Uses Radix keyboard handling', () => {
-      expect(true).toBe(true);
     });
 
     it('announces changes to screen readers', () => {

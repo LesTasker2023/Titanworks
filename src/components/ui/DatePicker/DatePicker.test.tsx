@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react';
+﻿import { render, screen } from '@testing-library/react';
 // import userEvent from '@testing-library/user-event';
 import { describe, expect, it, vi } from 'vitest';
 import { DatePicker } from './DatePicker';
@@ -83,22 +83,10 @@ describe('DatePicker', () => {
   });
 
   describe('Accessibility', () => {
-    it.skip('can be focused - SKIPPED: Non-focusable element', () => {
-      // This element cannot receive focus (div/span/table)
-      // Focus tests disabled for accessibility accuracy
-      expect(true).toBe(true);
-    });
-
     it('has proper ARIA attributes', () => {
       renderBasicDatePicker();
       const element = screen.getByTestId('datepicker');
       expect(element).toBeInTheDocument();
-    });
-
-    it.skip('supports keyboard navigation - SKIPPED: Non-focusable element', () => {
-      // This element cannot receive focus (div/span/table)
-      // Focus tests disabled for accessibility accuracy
-      expect(true).toBe(true);
     });
 
     it('announces changes to screen readers', () => {

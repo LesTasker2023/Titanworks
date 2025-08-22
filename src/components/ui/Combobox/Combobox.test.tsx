@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react';
+﻿import { render, screen } from '@testing-library/react';
 import React from 'react';
 import { describe, expect, it, vi } from 'vitest';
 import { Combobox } from './Combobox';
@@ -175,7 +175,7 @@ describe('Combobox', () => {
     it('handles options with special characters', () => {
       const specialOptions = [
         { value: 'special@#$', label: 'Special @#$ Characters' },
-        { value: 'unicode-🚀', label: 'Unicode 🚀 Option' },
+        { value: 'unicode-ðŸš€', label: 'Unicode ðŸš€ Option' },
       ];
       render(<BasicCombobox options={specialOptions} />);
       expect(screen.getByRole('combobox')).toBeInTheDocument();

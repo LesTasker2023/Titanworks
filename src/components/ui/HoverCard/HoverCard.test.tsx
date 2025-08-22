@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react';
+﻿import { render, screen } from '@testing-library/react';
 import * as React from 'react';
 import { describe, expect, it } from 'vitest';
 import { HoverCard, HoverCardContent, HoverCardTrigger } from './index';
@@ -52,18 +52,10 @@ describe('HoverCard', () => {
   });
 
   describe('Accessibility', () => {
-    it.skip('can be focused - SKIPPED: Non-focusable element', () => {
-      expect(true).toBe(true);
-    });
-
     it('has proper ARIA attributes', () => {
       renderBasicHoverCard();
       const trigger = screen.getByTestId('hovercard-trigger');
       expect(trigger).toBeInTheDocument();
-    });
-
-    it.skip('supports keyboard navigation - SKIPPED: Non-focusable element', () => {
-      expect(true).toBe(true);
     });
 
     it('announces changes to screen readers', () => {

@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react';
+﻿import { render, screen } from '@testing-library/react';
 import { describe, expect, it, vi } from 'vitest';
 import { Toggle } from './Toggle';
 
@@ -57,22 +57,10 @@ describe('Toggle', () => {
   });
 
   describe('Accessibility', () => {
-    it.skip('can be focused - SKIPPED: Non-focusable element', () => {
-      // This element cannot receive focus (div/span/table)
-      // Focus tests disabled for accessibility accuracy
-      expect(true).toBe(true);
-    });
-
     it('has proper ARIA attributes', () => {
       renderBasicToggle();
       const element = screen.getByTestId('toggle');
       expect(element).toBeInTheDocument();
-    });
-
-    it.skip('supports keyboard navigation - SKIPPED: Non-focusable element', () => {
-      // This element cannot receive focus (div/span/table)
-      // Focus tests disabled for accessibility accuracy
-      expect(true).toBe(true);
     });
 
     it('announces changes to screen readers', () => {

@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react';
+﻿import { render, screen } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
 
 import { SimpleChart } from './SimpleChart';
@@ -68,7 +68,9 @@ describe('SimpleChart', () => {
 
     it('renders line chart when type is line', () => {
       renderBasicChart({ type: 'line' });
-      expect(screen.getByText('Line charts coming soon')).toBeInTheDocument();
+      // Line charts fall back to simple data list format
+      expect(screen.getByText('Jan')).toBeInTheDocument();
+      expect(screen.getByText('400')).toBeInTheDocument();
     });
   });
 

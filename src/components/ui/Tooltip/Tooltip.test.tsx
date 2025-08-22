@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react';
+﻿import { render, screen } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from './index';
 
@@ -56,18 +56,10 @@ describe('Tooltip', () => {
   });
 
   describe('Accessibility', () => {
-    it.skip('can be focused - SKIPPED: Uses Radix focus management', () => {
-      expect(true).toBe(true);
-    });
-
     it('has proper ARIA attributes', () => {
       renderBasicTooltip();
       const trigger = screen.getByTestId('tooltip-trigger');
       expect(trigger).toHaveAttribute('aria-describedby');
-    });
-
-    it.skip('supports keyboard navigation - SKIPPED: Uses Radix keyboard handling', () => {
-      expect(true).toBe(true);
     });
 
     it('announces changes to screen readers', () => {
@@ -90,10 +82,6 @@ describe('Tooltip', () => {
       renderBasicTooltip({ className: 'custom-class' });
       const content = screen.getByTestId('tooltip-content');
       expect(content).toHaveClass('custom-class');
-    });
-
-    it.skip('forwards refs correctly - SKIPPED: Complex ref forwarding', () => {
-      expect(true).toBe(true);
     });
 
     it('spreads additional props', () => {

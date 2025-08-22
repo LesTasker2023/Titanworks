@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react';
+﻿import { render, screen } from '@testing-library/react';
 import { describe, expect, it, vi } from 'vitest';
 import {
   Dialog,
@@ -101,18 +101,10 @@ describe('Dialog', () => {
   });
 
   describe('Accessibility', () => {
-    it.skip('can be focused - SKIPPED: Uses Radix focus management', () => {
-      expect(true).toBe(true);
-    });
-
     it('has proper ARIA attributes', () => {
       renderBasicDialog();
       const content = screen.getByTestId('dialog-content');
       expect(content).toHaveAttribute('role', 'dialog');
-    });
-
-    it.skip('supports keyboard navigation - SKIPPED: Uses Radix keyboard handling', () => {
-      expect(true).toBe(true);
     });
 
     it('announces changes to screen readers', () => {
