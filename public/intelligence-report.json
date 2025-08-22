@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "scanTime": "2025-08-22T11:04:25.555Z",
-    "version": "20250822-1204",
+    "scanTime": "2025-08-22T14:15:29.875Z",
+    "version": "20250822-1515",
     "scanner": "unified-intelligence-engine-v1",
     "duration": 0
   },
@@ -25,26 +25,26 @@
       }
     },
     "metrics": {
-      "totalFiles": 540,
+      "totalFiles": 537,
       "fileTypes": {
         ".lock": 1,
-        ".ts": 17,
+        ".ts": 16,
+        ".json": 14,
         ".tsbuildinfo": 1,
-        ".json": 13,
         ".js": 116,
         ".cjs": 2,
-        ".md": 15,
+        ".md": 10,
         ".ps1": 6,
-        ".mjs": 5,
+        ".mjs": 7,
         ".woff2": 8,
         ".html": 2,
         ".svg": 6,
         ".png": 3,
-        ".mp4": 1,
-        ".css": 4,
         ".scss": 15,
+        ".css": 4,
         ".tsx": 272,
         ".ico": 1,
+        ".mp4": 1,
         ".txt": 1,
         ".new": 2,
         ".snap": 49
@@ -226,6 +226,21 @@
         "indexExtensionIssue": false,
         "testCount": 18,
         "testQuality": "excellent"
+      },
+      "SimpleChart": {
+        "name": "SimpleChart",
+        "path": "src\\components\\ui\\SimpleChart",
+        "hasComponent": true,
+        "hasTest": false,
+        "hasStory": false,
+        "hasIndex": true,
+        "hasDemo": false,
+        "size": 2,
+        "complexity": "low",
+        "lastModified": "2025-08-22T13:37:35.525Z",
+        "indexExtensionIssue": false,
+        "testCount": 0,
+        "testQuality": "none"
       },
       "Sheet": {
         "name": "Sheet",
@@ -627,7 +642,7 @@
         "hasDemo": true,
         "size": 10,
         "complexity": "high",
-        "lastModified": "2025-08-20T01:14:44.452Z",
+        "lastModified": "2025-08-22T13:13:11.861Z",
         "indexExtensionIssue": false,
         "testCount": 20,
         "testQuality": "excellent"
@@ -799,35 +814,35 @@
       }
     },
     "metrics": {
-      "total": 49,
+      "total": 50,
       "withTests": 49,
       "withStories": 49,
-      "withIndex": 49,
+      "withIndex": 50,
       "withDemo": 49,
       "indexExtensionIssues": 0,
       "testQualityDistribution": {
-        "none": 0,
+        "none": 1,
         "fail": 0,
         "pass": 0,
         "excellent": 49
       },
-      "testCoverage": 100,
-      "storyCoverage": 100,
+      "testCoverage": 98,
+      "storyCoverage": 98,
       "indexCoverage": 100,
-      "qualityTestCoverage": 100
+      "qualityTestCoverage": 98
     },
     "quality": {
       "score": 93,
       "issues": ["Best practices score below threshold: 67%"],
       "strengths": [
-        "Strong test coverage: 100%",
-        "Good quality test coverage: 100% components with substantial tests",
+        "Strong test coverage: 98%",
+        "Good quality test coverage: 98% components with substantial tests",
         "Excellent component organization: 100% have index files"
       ],
       "metrics": {
         "componentCompleteness": {
-          "tests": 100,
-          "stories": 100,
+          "tests": 98,
+          "stories": 98,
           "indexes": 100
         }
       }
@@ -836,42 +851,49 @@
   },
   "codebase": {
     "files": {
-      "typescript": 131,
+      "typescript": 128,
       "tests": 51,
       "stories": 49,
-      "testRatio": 39
+      "testRatio": 40
     },
     "dependencies": {
       "production": 47,
       "development": 41,
-      "scripts": 70
+      "scripts": 72
     },
     "tests": {},
     "coverage": {},
     "pipeline": {
       "typescript": {
-        "status": "pass",
-        "duration": 7394,
-        "errors": []
+        "status": "fail",
+        "duration": 2847,
+        "errors": [
+          ".next/types/app/dashboard/page.ts(2,24): error TS2307: Cannot find module '../../../../src/app/dashboard/page.js' or its corresponding type declarations.",
+          ".next/types/app/dashboard/page.ts(5,29): error TS2307: Cannot find module '../../../../src/app/dashboard/page.js' or its corresponding type declarations."
+        ]
       },
       "linting": {
         "status": "pass",
-        "duration": 9298,
+        "duration": 4164,
         "errors": []
       },
       "testing": {
-        "status": "pass",
-        "duration": 31984,
-        "errors": []
+        "status": "fail",
+        "duration": 13131,
+        "errors": [
+          "\u001b[31m❯\u001b[39m src/test/monster-tests.spec.ts \u001b[2m(\u001b[22m\u001b[2m11 tests\u001b[22m\u001b[2m | \u001b[22m\u001b[31m3 failed\u001b[39m\u001b[2m)\u001b[22m\u001b[33m 326\u001b[2mms\u001b[22m\u001b[39m",
+          "\u001b[2m Test Files \u001b[22m \u001b[1m\u001b[31m1 failed\u001b[39m\u001b[22m\u001b[2m | \u001b[22m\u001b[1m\u001b[32m50 passed\u001b[39m\u001b[22m\u001b[90m (51)\u001b[39m",
+          "\u001b[2m      Tests \u001b[22m \u001b[1m\u001b[31m3 failed\u001b[39m\u001b[22m\u001b[2m | \u001b[22m\u001b[1m\u001b[32m1099 passed\u001b[39m\u001b[22m\u001b[2m | \u001b[22m\u001b[33m70 skipped\u001b[39m\u001b[90m (1172)\u001b[39m"
+        ]
       },
       "building": {
         "status": "pass",
-        "duration": 58666,
+        "duration": 34305,
         "errors": []
       },
       "overall": {
-        "status": "pass",
-        "score": 100
+        "status": "fail",
+        "score": 50
       }
     }
   },
@@ -982,7 +1004,7 @@
     {
       "priority": "medium",
       "category": "testing",
-      "issue": "Test-to-code ratio: 39%",
+      "issue": "Test-to-code ratio: 40%",
       "action": "Add comprehensive tests for existing components",
       "impact": "Reduces technical debt and improves confidence"
     },
