@@ -228,11 +228,17 @@ function ProductGallery({ images, productName }: { images: string[]; productName
       {/* Main Image */}
       <div className="relative">
         <div
-          className={`aspect-square bg-surface-secondary rounded-2xl flex items-center justify-center transition-all duration-300 ${
+          className={`aspect-square bg-surface-secondary rounded-2xl overflow-hidden transition-all duration-300 ${
             isZoomed ? 'scale-110' : 'scale-100'
           }`}
         >
-          <div className="text-8xl">{images[currentImage]}</div>
+          <Image
+            src={images[currentImage]}
+            alt={`Product view ${currentImage + 1}`}
+            className="w-full h-full object-cover"
+            width={600}
+            height={600}
+          />
         </div>
 
         {/* Navigation Arrows */}
@@ -825,8 +831,14 @@ export default function ProductPage() {
             {RELATED_PRODUCTS.map(product => (
               <Card key={product.id} className="group hover:shadow-lg transition-shadow">
                 <div className="relative">
-                  <div className="aspect-square bg-surface-secondary rounded-t-lg flex items-center justify-center text-4xl">
-                    {product.image}
+                  <div className="aspect-square bg-surface-secondary rounded-t-lg overflow-hidden">
+                    <Image
+                      src={product.image}
+                      alt={product.name}
+                      className="w-full h-full object-cover"
+                      width={300}
+                      height={300}
+                    />
                   </div>
                   <Button
                     size="sm"
@@ -983,8 +995,14 @@ export default function ProductPage() {
                     key={item.id}
                     className="flex items-center gap-4 p-4 border border-border rounded-lg"
                   >
-                    <div className="w-16 h-16 bg-surface-secondary rounded-lg flex items-center justify-center text-2xl">
-                      {item.product.images[0]}
+                    <div className="w-16 h-16 bg-surface-secondary rounded-lg overflow-hidden">
+                      <Image
+                        src={item.product.images[0]}
+                        alt={item.product.name}
+                        className="w-full h-full object-cover"
+                        width={64}
+                        height={64}
+                      />
                     </div>
                     <div className="flex-1">
                       <h4 className="font-medium text-content-primary">{item.product.name}</h4>
@@ -1649,8 +1667,14 @@ export default function ProductPage() {
               <h2 className="text-xl font-bold text-content-primary">Share Product</h2>
 
               <div className="flex items-center gap-4 p-4 bg-surface-secondary/30 rounded-lg">
-                <div className="w-16 h-16 bg-surface-secondary rounded-lg flex items-center justify-center text-2xl">
-                  {modalData.product.images[0]}
+                <div className="w-16 h-16 bg-surface-secondary rounded-lg overflow-hidden">
+                  <Image
+                    src={modalData.product.images[0]}
+                    alt={modalData.product.name}
+                    className="w-full h-full object-cover"
+                    width={64}
+                    height={64}
+                  />
                 </div>
                 <div>
                   <h3 className="font-semibold text-content-primary">{modalData.product.name}</h3>

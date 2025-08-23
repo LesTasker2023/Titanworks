@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { Badge } from '@/components/ui/Badge';
 import { Button } from '@/components/ui/Button';
 import { Card } from '@/components/ui/Card';
@@ -393,8 +394,14 @@ function VideoInfo({
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-4 border-b border-border">
         <div className="flex items-center gap-4">
           <div className="flex items-center gap-3">
-            <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-2xl">
-              {video.channelAvatar}
+            <div className="w-12 h-12 bg-primary rounded-full overflow-hidden">
+              <Image
+                src={video.channelAvatar}
+                alt={`${video.channel} avatar`}
+                className="w-full h-full object-cover"
+                width={48}
+                height={48}
+              />
             </div>
             <div>
               <div className="font-semibold text-content-primary flex items-center gap-2">
@@ -704,8 +711,14 @@ function CommentSection({
         {sortedComments.map(comment => (
           <div key={comment.id} className="space-y-3">
             <div className="flex gap-3">
-              <div className="w-10 h-10 bg-primary rounded-full flex items-center justify-center flex-shrink-0">
-                {comment.avatar}
+              <div className="w-10 h-10 bg-primary rounded-full overflow-hidden flex-shrink-0">
+                <Image
+                  src={comment.avatar}
+                  alt={`${comment.user} avatar`}
+                  className="w-full h-full object-cover"
+                  width={40}
+                  height={40}
+                />
               </div>
               <div className="flex-1 min-w-0">
                 <div className="flex items-center gap-2 mb-1">
@@ -762,8 +775,14 @@ function CommentSection({
                   <div className="space-y-3">
                     {comment.replies.map(reply => (
                       <div key={reply.id} className="flex gap-3">
-                        <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center flex-shrink-0">
-                          {reply.avatar}
+                        <div className="w-8 h-8 bg-primary rounded-full overflow-hidden flex-shrink-0">
+                          <Image
+                            src={reply.avatar}
+                            alt={`${reply.user} avatar`}
+                            className="w-full h-full object-cover"
+                            width={32}
+                            height={32}
+                          />
                         </div>
                         <div className="flex-1 min-w-0">
                           <div className="flex items-center gap-2 mb-1">
@@ -1484,8 +1503,13 @@ export default function YouTubePage() {
                       key={video.id}
                       className="flex items-center gap-3 p-2 hover:bg-surface-secondary rounded"
                     >
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img src={video.thumbnail} alt="" className="w-12 h-8 object-cover rounded" />
+                      <Image
+                        src={video.thumbnail}
+                        alt={video.title}
+                        className="w-12 h-8 object-cover rounded"
+                        width={48}
+                        height={32}
+                      />
                       <div>
                         <p className="text-sm font-medium text-content-primary">{video.title}</p>
                         <p className="text-xs text-content-secondary">{video.channel}</p>

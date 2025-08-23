@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { Badge } from '@/components/ui/Badge';
 import { Button } from '@/components/ui/Button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card';
@@ -225,8 +226,14 @@ function MenuItem({
       <div className="p-6">
         <div className="flex gap-4">
           {/* Item Image */}
-          <div className="w-20 h-20 bg-surface-secondary rounded-xl flex items-center justify-center text-3xl flex-shrink-0">
-            {item.image}
+          <div className="w-20 h-20 bg-surface-secondary rounded-xl overflow-hidden flex-shrink-0">
+            <Image
+              src={item.image}
+              alt={item.name}
+              className="w-full h-full object-cover"
+              width={80}
+              height={80}
+            />
           </div>
 
           {/* Item Details */}

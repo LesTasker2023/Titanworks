@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { Badge } from '@/components/ui/Badge';
 import { Button } from '@/components/ui/Button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card';
@@ -322,7 +323,13 @@ export default function Home() {
                       viewMode === 'list' ? 'w-32 h-32 flex-shrink-0' : 'h-48'
                     } bg-gradient-to-br ${platform.color} rounded-t-lg flex items-center justify-center overflow-hidden`}
                   >
-                    <div className="text-6xl opacity-80">{platform.image}</div>
+                    <Image
+                      src={platform.image}
+                      alt={platform.title}
+                      className="w-full h-full object-cover opacity-80"
+                      width={viewMode === 'list' ? 128 : 400}
+                      height={viewMode === 'list' ? 128 : 192}
+                    />
                     <div className="absolute inset-0 bg-black/20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
                       <IconComponent className="w-12 h-12 text-white" />
                     </div>

@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { Badge } from '@/components/ui/Badge';
 import { Button } from '@/components/ui/Button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card';
@@ -288,10 +289,15 @@ function HeroSection({ openModal }: { openModal: (type: string, data?: any) => v
   return (
     <section className="relative h-screen flex items-center justify-center overflow-hidden">
       {/* Background Slideshow */}
-      <div className="absolute inset-0 bg-gradient-to-br from-surface-secondary to-surface-primary">
-        <div className="absolute inset-0 flex items-center justify-center text-9xl opacity-20">
-          {heroImages[currentSlide]}
-        </div>
+      <div className="absolute inset-0">
+        <Image
+          src={heroImages[currentSlide]}
+          alt="Wedding photography"
+          className="w-full h-full object-cover opacity-60"
+          width={1920}
+          height={1080}
+        />
+        <div className="absolute inset-0 bg-gradient-to-br from-black/40 to-black/60" />
       </div>
 
       {/* Content */}
@@ -608,8 +614,14 @@ function TestimonialsSection() {
             <Card key={testimonial.id} className="hover:shadow-lg transition-shadow">
               <CardHeader>
                 <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-xl">
-                    {testimonial.avatar}
+                  <div className="w-12 h-12 bg-primary rounded-full overflow-hidden">
+                    <Image
+                      src={testimonial.avatar}
+                      alt={`${testimonial.name} avatar`}
+                      className="w-full h-full object-cover"
+                      width={48}
+                      height={48}
+                    />
                   </div>
                   <div>
                     <h3 className="font-semibold text-content-primary">{testimonial.name}</h3>
