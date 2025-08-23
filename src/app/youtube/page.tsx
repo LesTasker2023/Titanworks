@@ -1,6 +1,5 @@
 'use client';
 
-import Image from 'next/image';
 import { Badge } from '@/components/ui/Badge';
 import { Button } from '@/components/ui/Button';
 import { Card } from '@/components/ui/Card';
@@ -26,6 +25,7 @@ import {
   UserCheck,
   Users,
 } from 'lucide-react';
+import Image from 'next/image';
 import { useState } from 'react';
 
 interface Video {

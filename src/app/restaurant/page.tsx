@@ -1,6 +1,5 @@
 'use client';
 
-import Image from 'next/image';
 import { Badge } from '@/components/ui/Badge';
 import { Button } from '@/components/ui/Button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card';
@@ -32,6 +31,7 @@ import {
   Wine,
   Zap,
 } from 'lucide-react';
+import Image from 'next/image';
 import { useState } from 'react';
 
 interface MenuItem {

@@ -56,36 +56,49 @@ export function Navigation({
   },
   navigation = [
     {
-      label: 'Components',
-      href: '/component-showcase',
-    },
-    {
-      label: 'YouTube',
-      href: '/youtube',
-    },
-    {
-      label: 'Product',
-      href: '/product',
-    },
-    {
-      label: 'Restaurant',
-      href: '/restaurant',
-    },
-    {
-      label: 'SaaS',
-      href: '/saas',
-    },
-    {
-      label: 'Wedding',
-      href: '/wedding',
-    },
-    {
-      label: 'Analytics',
-      href: '/analytics',
-    },
-    {
-      label: 'Intel',
-      href: '/intel',
+      label: 'Demo',
+      items: [
+        {
+          href: '/component-showcase',
+          title: 'Components',
+          description: 'Showcase of all available UI components and patterns',
+        },
+        {
+          href: '/youtube',
+          title: 'YouTube Platform',
+          description: 'Video content management and creator dashboard',
+        },
+        {
+          href: '/product',
+          title: 'E-Commerce',
+          description: 'Product catalog and shopping experience',
+        },
+        {
+          href: '/restaurant',
+          title: 'Restaurant',
+          description: 'Fine dining menu and reservation system',
+        },
+        {
+          href: '/saas',
+          title: 'SaaS Dashboard',
+          description: 'Business analytics and management platform',
+        },
+        {
+          href: '/wedding',
+          title: 'Wedding Planner',
+          description: 'Event planning and wedding coordination',
+        },
+        {
+          href: '/analytics',
+          title: 'Analytics',
+          description: 'Data visualization and insights dashboard',
+        },
+        {
+          href: '/intel',
+          title: 'Intelligence',
+          description: 'AI-powered business intelligence platform',
+        },
+      ],
     },
   ],
   version = '1.36.0',
