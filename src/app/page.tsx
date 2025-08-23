@@ -50,7 +50,8 @@ const platformShowcase = [
     features: ['Video Management', 'Social Engagement', 'Creator Tools', 'Monetization'],
     metrics: { users: '2M+', engagement: '95%', revenue: '$50K/mo' },
     status: 'Enhanced',
-    image: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=400&h=250&fit=crop',
+    image:
+      'https://images.unsplash.com/photo-1611162617474-5b21e879e113?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600',
   },
   {
     id: 'product',
@@ -64,7 +65,8 @@ const platformShowcase = [
     features: ['Smart Cart', 'Product Comparison', 'Price Alerts', 'Warranty Management'],
     metrics: { conversion: '12%', revenue: '$120K/mo', satisfaction: '98%' },
     status: 'Enhanced',
-    image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=250&fit=crop',
+    image:
+      'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600',
   },
   {
     id: 'restaurant',
@@ -77,7 +79,8 @@ const platformShowcase = [
     features: ['Smart Reservations', 'Order Management', 'Wine Pairing', 'Loyalty Program'],
     metrics: { bookings: '500+/day', satisfaction: '96%', repeat: '80%' },
     status: 'Enhanced',
-    image: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=400&h=250&fit=crop',
+    image:
+      'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600',
   },
   {
     id: 'saas',
@@ -90,7 +93,8 @@ const platformShowcase = [
     features: ['Trial Management', 'Demo Booking', 'Enterprise Sales', 'Onboarding'],
     metrics: { conversion: '25%', mrr: '$80K', nps: '72' },
     status: 'Enhanced',
-    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=250&fit=crop',
+    image:
+      'https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600',
   },
   {
     id: 'wedding',
@@ -103,7 +107,8 @@ const platformShowcase = [
     features: ['Event Planning', 'Vendor Network', 'Timeline Management', 'Emergency Support'],
     metrics: { events: '200+/year', satisfaction: '99%', referrals: '90%' },
     status: 'Enhanced',
-    image: 'https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=400&h=250&fit=crop',
+    image:
+      'https://images.unsplash.com/photo-1519225421980-715cb0215aed?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600',
   },
   {
     id: 'analytics',
@@ -122,7 +127,8 @@ const platformShowcase = [
     ],
     metrics: { accuracy: '99.9%', speed: '<100ms', insights: '1000+' },
     status: 'Available',
-    image: '📊',
+    image:
+      'https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600',
   },
   {
     id: 'intelligence',
@@ -136,7 +142,8 @@ const platformShowcase = [
     features: ['ML Models', 'Predictive Analytics', 'Automation', 'NLP Processing'],
     metrics: { accuracy: '94%', automation: '80%', savings: '$200K/year' },
     status: 'Available',
-    image: '🧠',
+    image:
+      'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600',
   },
   {
     id: 'components',
@@ -149,7 +156,8 @@ const platformShowcase = [
     features: ['UI Components', 'Design System', 'Code Examples', 'Best Practices'],
     metrics: { components: '100+', downloads: '50K/mo', satisfaction: '97%' },
     status: 'Available',
-    image: '🎨',
+    image:
+      'https://images.unsplash.com/photo-1561070791-2526d30994b5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600',
   },
 ];
 

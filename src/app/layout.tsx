@@ -1,4 +1,5 @@
 import { Footer, Navigation } from '@/components/layout';
+import { AuthProvider } from '@/lib/auth/AuthProvider';
 import { getSiteMetadata } from '@/lib/siteConfig';
 import type { Metadata } from 'next';
 import { ThemeProvider } from 'next-themes';
@@ -26,9 +27,11 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={`${geistSans.variable} ${geistMono.variable} min-h-screen flex flex-col`}>
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
-          <Navigation />
-          <main className="flex-1">{children}</main>
-          <Footer />
+          <AuthProvider>
+            <Navigation />
+            <main className="flex-1">{children}</main>
+            <Footer />
+          </AuthProvider>
         </ThemeProvider>
       </body>
     </html>

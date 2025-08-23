@@ -54,11 +54,11 @@ const PRODUCT_DATA: Product = {
   colors: ['Black', 'White', 'Silver', 'Blue'],
   sizes: [],
   images: [
-    'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=800&h=600&fit=crop',
-    'https://images.unsplash.com/photo-1484704849700-f032a568e944?w=800&h=600&fit=crop',
-    'https://images.unsplash.com/photo-1583394838336-acd977736f90?w=800&h=600&fit=crop',
-    'https://images.unsplash.com/photo-1491927570842-0261e477d937?w=800&h=600&fit=crop',
-    'https://images.unsplash.com/photo-1529429617124-95b109e86bb8?w=800&h=600&fit=crop',
+    'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600',
+    'https://images.unsplash.com/photo-1484704849700-f032a568e944?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600',
+    'https://images.unsplash.com/photo-1583394838336-acd977736f90?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600',
+    'https://images.unsplash.com/photo-1491927570842-0261e477d937?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600',
+    'https://images.unsplash.com/photo-1529429617124-95b109e86bb8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600',
   ],
   description:
     'Experience crystal-clear audio with our premium wireless headphones featuring advanced noise cancellation, 30-hour battery life, and premium materials.',
@@ -82,7 +82,8 @@ const RELATED_PRODUCTS = [
     name: 'Wireless Earbuds Pro',
     price: 179,
     rating: 4.6,
-    image: 'https://images.unsplash.com/photo-1572569511254-d8f925fe2cbb?w=300&h=200&fit=crop',
+    image:
+      'https://images.unsplash.com/photo-1572569511254-d8f925fe2cbb?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=200',
     reviews: 1234,
   },
   {
@@ -90,7 +91,8 @@ const RELATED_PRODUCTS = [
     name: 'Gaming Headset RGB',
     price: 199,
     rating: 4.7,
-    image: 'https://images.unsplash.com/photo-1599669454699-248893623440?w=300&h=200&fit=crop',
+    image:
+      'https://images.unsplash.com/photo-1599669454699-248893623440?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=200',
     reviews: 892,
   },
   {
@@ -98,7 +100,8 @@ const RELATED_PRODUCTS = [
     name: 'Studio Monitor Headphones',
     price: 299,
     rating: 4.9,
-    image: 'https://images.unsplash.com/photo-1545127398-14699f92334b?w=300&h=200&fit=crop',
+    image:
+      'https://images.unsplash.com/photo-1545127398-14699f92334b?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=200',
     reviews: 567,
   },
   {
@@ -106,7 +109,8 @@ const RELATED_PRODUCTS = [
     name: 'Bluetooth Speaker',
     price: 89,
     rating: 4.5,
-    image: 'https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=300&h=200&fit=crop',
+    image:
+      'https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=200',
     reviews: 2156,
   },
 ];

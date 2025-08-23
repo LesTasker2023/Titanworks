@@ -90,8 +90,9 @@ const GALLERY_ITEMS: GalleryItem[] = [
   {
     id: '1',
     type: 'photo',
-    src: 'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=800&h=600&fit=crop',
-    thumbnail: 'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=300&h=200&fit=crop',
+    src: 'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600',
+    thumbnail:
+      'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=200',
     alt: 'Romantic couple portrait',
     category: 'portraits',
     couple: 'Sarah & James',
@@ -102,8 +103,9 @@ const GALLERY_ITEMS: GalleryItem[] = [
   {
     id: '2',
     type: 'video',
-    src: 'https://images.unsplash.com/photo-1519741497674-611481863552?w=800&h=600&fit=crop',
-    thumbnail: 'https://images.unsplash.com/photo-1519741497674-611481863552?w=300&h=200&fit=crop',
+    src: 'https://images.unsplash.com/photo-1519741497674-611481863552?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600',
+    thumbnail:
+      'https://images.unsplash.com/photo-1519741497674-611481863552?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=200',
     alt: 'Wedding ceremony highlights',
     category: 'ceremony',
     couple: 'Emma & David',
@@ -114,8 +116,9 @@ const GALLERY_ITEMS: GalleryItem[] = [
   {
     id: '3',
     type: 'photo',
-    src: 'https://images.unsplash.com/photo-1606216794074-735e91aa2c92?w=800&h=600&fit=crop',
-    thumbnail: 'https://images.unsplash.com/photo-1606216794074-735e91aa2c92?w=300&h=200&fit=crop',
+    src: 'https://images.unsplash.com/photo-1606216794074-735e91aa2c92?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600',
+    thumbnail:
+      'https://images.unsplash.com/photo-1606216794074-735e91aa2c92?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=200',
     alt: 'Bridal bouquet details',
     category: 'details',
     couple: 'Lisa & Michael',
@@ -228,12 +231,12 @@ const TESTIMONIALS: Testimonial[] = [
     comment:
       "Absolutely magical! They captured every precious moment of our special day. The photos are stunning and the videos bring back all the emotions. We couldn't be happier!",
     avatar:
-      'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=80&h=80&fit=crop&crop=face',
+      'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=80&h=80&crop=face',
     weddingDate: '2024-06-15',
     photos: [
-      'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=300&h=200&fit=crop',
-      'https://images.unsplash.com/photo-1606216794074-735e91aa2c92?w=300&h=200&fit=crop',
-      'https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=300&h=200&fit=crop',
+      'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=200',
+      'https://images.unsplash.com/photo-1606216794074-735e91aa2c92?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=200',
+      'https://images.unsplash.com/photo-1531123897727-8f129e1688ce?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=200',
     ],
   },
   {
@@ -244,12 +247,12 @@ const TESTIMONIALS: Testimonial[] = [
     comment:
       'Professional, creative, and so easy to work with. They made us feel comfortable throughout the entire process and delivered beyond our expectations.',
     avatar:
-      'https://images.unsplash.com/photo-1469371670807-013ccf25f16a?w=80&h=80&fit=crop&crop=face',
+      'https://images.unsplash.com/photo-1469371670807-013ccf25f16a?ixlib=rb-4.0.3&auto=format&fit=crop&w=80&h=80&crop=face',
     weddingDate: '2024-07-20',
     photos: [
-      'https://images.unsplash.com/photo-1469371670807-013ccf25f16a?w=300&h=200&fit=crop',
-      'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=300&h=200&fit=crop',
-      'https://images.unsplash.com/photo-1519741497674-611481863552?w=300&h=200&fit=crop',
+      'https://images.unsplash.com/photo-1469371670807-013ccf25f16a?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=200',
+      'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=200',
+      'https://images.unsplash.com/photo-1519741497674-611481863552?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=200',
     ],
   },
   {
@@ -260,12 +263,12 @@ const TESTIMONIALS: Testimonial[] = [
     comment:
       'The attention to detail is incredible. Every shot tells a story and captures the essence of our love. We treasure these memories forever.',
     avatar:
-      'https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=80&h=80&fit=crop&crop=face',
+      'https://images.unsplash.com/photo-1531123897727-8f129e1688ce?ixlib=rb-4.0.3&auto=format&fit=crop&w=80&h=80&crop=face',
     weddingDate: '2024-05-10',
     photos: [
-      'https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=300&h=200&fit=crop',
-      'https://images.unsplash.com/photo-1606216794074-735e91aa2c92?w=300&h=200&fit=crop',
-      'https://images.unsplash.com/photo-1597149451671-8e8a6b7be51b?w=300&h=200&fit=crop',
+      'https://images.unsplash.com/photo-1531123897727-8f129e1688ce?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=200',
+      'https://images.unsplash.com/photo-1606216794074-735e91aa2c92?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=200',
+      'https://images.unsplash.com/photo-1597149451671-8e8a6b7be51b?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=200',
     ],
   },
 ];
@@ -273,10 +276,10 @@ const TESTIMONIALS: Testimonial[] = [
 function HeroSection({ openModal }: { openModal: (type: string, data?: any) => void }) {
   const [currentSlide, setCurrentSlide] = useState(0);
   const heroImages = [
-    'https://images.unsplash.com/photo-1519741497674-611481863552?w=1200&h=800&fit=crop',
-    'https://images.unsplash.com/photo-1606216794074-735e91aa2c92?w=1200&h=800&fit=crop',
-    'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=1200&h=800&fit=crop',
-    'https://images.unsplash.com/photo-1469371670807-013ccf25f16a?w=1200&h=800&fit=crop',
+    'https://images.unsplash.com/photo-1519741497674-611481863552?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=800',
+    'https://images.unsplash.com/photo-1606216794074-735e91aa2c92?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=800',
+    'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=800',
+    'https://images.unsplash.com/photo-1469371670807-013ccf25f16a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=800',
   ];
 
   useEffect(() => {

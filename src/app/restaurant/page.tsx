@@ -68,7 +68,8 @@ const MENU_ITEMS = {
       description:
         'Crispy risotto balls with black truffle, parmigiano reggiano, and wild mushroom cream',
       price: 18,
-      image: 'https://images.unsplash.com/photo-1551218808-94e220e084d2?w=400&h=300&fit=crop',
+      image:
+        'https://images.unsplash.com/photo-1551218808-94e220e084d2?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300',
       badges: ['Chef Special', 'Vegetarian'],
       rating: 4.8,
       prepTime: '8 min',
@@ -80,7 +81,8 @@ const MENU_ITEMS = {
       name: 'Burrata Caprese',
       description: 'Creamy burrata with heirloom tomatoes, basil oil, and aged balsamic',
       price: 22,
-      image: 'https://images.unsplash.com/photo-1608897013039-887f21d8c804?w=400&h=300&fit=crop',
+      image:
+        'https://images.unsplash.com/photo-1608897013039-887f21d8c804?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300',
       badges: ['Fresh', 'Vegetarian'],
       rating: 4.9,
       prepTime: '5 min',
@@ -92,7 +94,8 @@ const MENU_ITEMS = {
       name: 'Tuna Tartare',
       description: 'Yellowfin tuna with avocado, citrus, and sesame oil',
       price: 26,
-      image: 'https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=400&h=300&fit=crop',
+      image:
+        'https://images.unsplash.com/photo-1546833999-b9f581a1996d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300',
       badges: ['Raw', 'Gluten Free'],
       rating: 4.7,
       prepTime: '10 min',
@@ -106,7 +109,8 @@ const MENU_ITEMS = {
       name: 'Dry-Aged Ribeye',
       description: '28-day aged USDA Prime ribeye with roasted bone marrow and seasonal vegetables',
       price: 65,
-      image: 'https://images.unsplash.com/photo-1558030137-d2f9136ab25e?w=400&h=300&fit=crop',
+      image:
+        'https://images.unsplash.com/photo-1558030137-d2f9136ab25e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300',
       badges: ['Premium', 'Gluten Free'],
       rating: 4.9,
       prepTime: '25 min',
@@ -118,7 +122,8 @@ const MENU_ITEMS = {
       name: 'Duck Confit',
       description: 'Slow-cooked duck leg with cherry gastrique and duck fat potatoes',
       price: 38,
-      image: 'https://images.unsplash.com/photo-1544378730-6d18d0963e10?w=400&h=300&fit=crop',
+      image:
+        'https://images.unsplash.com/photo-1544378730-6d18d0963e10?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300',
       badges: ['Chef Special'],
       rating: 4.6,
       prepTime: '20 min',
@@ -132,7 +137,8 @@ const MENU_ITEMS = {
       name: 'Lobster Ravioli',
       description: 'House-made pasta filled with Maine lobster in saffron cream sauce',
       price: 42,
-      image: 'https://images.unsplash.com/photo-1565680018434-b513d5cf5da5?w=400&h=300&fit=crop',
+      image:
+        'https://images.unsplash.com/photo-1565680018434-b513d5cf5da5?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300',
       badges: ['Premium', 'House Made'],
       rating: 4.8,
       prepTime: '15 min',
@@ -146,7 +152,8 @@ const MENU_ITEMS = {
       name: 'Chilean Sea Bass',
       description: 'Miso-glazed sea bass with shiitake mushrooms and bok choy',
       price: 48,
-      image: 'https://images.unsplash.com/photo-1560717845-968823efbf22?w=400&h=300&fit=crop',
+      image:
+        'https://images.unsplash.com/photo-1560717845-968823efbf22?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300',
       badges: ['Sustainable', 'Gluten Free'],
       rating: 4.7,
       prepTime: '18 min',
@@ -160,7 +167,8 @@ const MENU_ITEMS = {
       name: 'Barolo Riserva 2018',
       description: 'Full-bodied Nebbiolo from Piedmont with notes of cherry and truffle',
       price: 185,
-      image: 'https://images.unsplash.com/photo-1586370434639-0fe43b2d32d6?w=400&h=300&fit=crop',
+      image:
+        'https://images.unsplash.com/photo-1586370434639-0fe43b2d32d6?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300',
       badges: ['Award Winner', 'Limited'],
       rating: 4.9,
       prepTime: 'Immediate',
@@ -174,7 +182,8 @@ const MENU_ITEMS = {
       name: 'Chocolate Soufflé',
       description: 'Warm dark chocolate soufflé with vanilla bean ice cream',
       price: 16,
-      image: 'https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=400&h=300&fit=crop',
+      image:
+        'https://images.unsplash.com/photo-1578985545062-69928b1d9587?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300',
       badges: ['Signature', 'Made to Order'],
       rating: 4.8,
       prepTime: '20 min',

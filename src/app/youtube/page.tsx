@@ -63,7 +63,7 @@ const CURRENT_VIDEO: Video = {
   title: 'Big Buck Bunny - Open Source 3D Animation',
   channel: 'Blender Foundation',
   channelAvatar:
-    'https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=50&h=50&fit=crop&crop=face',
+    'https://images.unsplash.com/photo-1611162617474-5b21e879e113?ixlib=rb-4.0.3&auto=format&fit=crop&w=50&h=50&crop=face',
   views: '12.3M',
   uploadTime: '3 years ago',
   duration: '9:56',
@@ -102,7 +102,7 @@ const SIDEBAR_VIDEOS: Video[] = [
     title: 'Elephant Dream - First Blender Open Movie',
     channel: 'Blender Foundation',
     channelAvatar:
-      'https://images.unsplash.com/photo-1608889175123-8ee362201f81?w=50&h=50&fit=crop&crop=face',
+      'https://images.unsplash.com/photo-1608889175123-8ee362201f81?ixlib=rb-4.0.3&auto=format&fit=crop&w=50&h=50&crop=face',
     views: '8.9M',
     uploadTime: '17 years ago',
     duration: '10:53',
@@ -118,7 +118,7 @@ const SIDEBAR_VIDEOS: Video[] = [
     title: 'Sintel - Third Blender Open Movie',
     channel: 'Blender Foundation',
     channelAvatar:
-      'https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=50&h=50&fit=crop&crop=face',
+      'https://images.unsplash.com/photo-1611162617474-5b21e879e113?ixlib=rb-4.0.3&auto=format&fit=crop&w=50&h=50&crop=face',
     views: '15.6M',
     uploadTime: '13 years ago',
     duration: '14:48',
@@ -133,7 +133,7 @@ const SIDEBAR_VIDEOS: Video[] = [
     title: 'Tears of Steel - Live Action + CGI',
     channel: 'Blender Foundation',
     channelAvatar:
-      'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=50&h=50&fit=crop&crop=face',
+      'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?ixlib=rb-4.0.3&auto=format&fit=crop&w=50&h=50&crop=face',
     views: '11.2M',
     uploadTime: '12 years ago',
     duration: '12:14',
@@ -148,7 +148,7 @@ const SIDEBAR_VIDEOS: Video[] = [
     title: 'For Bigger Blazes - Fire Effects Demo',
     channel: 'Google Demo',
     channelAvatar:
-      'https://images.unsplash.com/photo-1529612700005-e35377bf1415?w=50&h=50&fit=crop&crop=face',
+      'https://images.unsplash.com/photo-1529612700005-e35377bf1415?ixlib=rb-4.0.3&auto=format&fit=crop&w=50&h=50&crop=face',
     views: '2.8M',
     uploadTime: '8 years ago',
     duration: '0:15',
@@ -164,7 +164,7 @@ const SIDEBAR_VIDEOS: Video[] = [
     title: 'For Bigger Fun - Adventure Demo',
     channel: 'Google Demo',
     channelAvatar:
-      'https://images.unsplash.com/photo-1511367461989-f85a21fda167?w=50&h=50&fit=crop&crop=face',
+      'https://images.unsplash.com/photo-1511367461989-f85a21fda167?ixlib=rb-4.0.3&auto=format&fit=crop&w=50&h=50&crop=face',
     views: '3.4M',
     uploadTime: '8 years ago',
     duration: '1:00',
@@ -179,7 +179,7 @@ const SIDEBAR_VIDEOS: Video[] = [
     title: 'For Bigger Joy - Happiness Demo',
     channel: 'Google Demo',
     channelAvatar:
-      'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=50&h=50&fit=crop&crop=face',
+      'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=50&h=50&crop=face',
     views: '1.9M',
     uploadTime: '8 years ago',
     duration: '0:30',
@@ -197,7 +197,7 @@ const COMMENTS: Comment[] = [
     id: '1',
     user: 'AnimationPro2024',
     avatar:
-      'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=40&h=40&fit=crop&crop=face',
+      'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=40&h=40&crop=face',
     content:
       'This is absolutely incredible! The quality of animation achieved with open source tools is mind-blowing. Big Buck Bunny was my introduction to Blender and it inspired me to start my career in 3D animation. The attention to detail in the fur, lighting, and character expressions is phenomenal.',
     likes: 1247,
@@ -208,7 +208,7 @@ const COMMENTS: Comment[] = [
         id: '1-1',
         user: 'Blender Foundation',
         avatar:
-          'https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=40&h=40&fit=crop&crop=face',
+          'https://images.unsplash.com/photo-1611162617474-5b21e879e113?ixlib=rb-4.0.3&auto=format&fit=crop&w=40&h=40&crop=face',
         content:
           "Thank you so much! We're thrilled that Big Buck Bunny inspired your animation journey. That's exactly what we hoped to achieve with this project. Keep creating amazing work!",
         likes: 89,
@@ -219,7 +219,7 @@ const COMMENTS: Comment[] = [
         id: '1-2',
         user: 'CreativeStudent',
         avatar:
-          'https://images.unsplash.com/photo-1494790108755-2616b612b77c?w=40&h=40&fit=crop&crop=face',
+          'https://images.unsplash.com/photo-1494790108755-2616b612b77c?ixlib=rb-4.0.3&auto=format&fit=crop&w=40&h=40&crop=face',
         content:
           "Same here! This was my first exposure to professional-quality open source animation. Now I'm studying 3D animation in college.",
         likes: 34,
@@ -231,7 +231,7 @@ const COMMENTS: Comment[] = [
     id: '2',
     user: 'OpenSourceFan',
     avatar:
-      'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=40&h=40&fit=crop&crop=face',
+      'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=40&h=40&crop=face',
     content:
       "The fact that this was made entirely with free and open source software is revolutionary. Blender has come so far since this was released. It's amazing to see what's possible when passionate developers and artists collaborate.",
     likes: 892,
@@ -241,7 +241,7 @@ const COMMENTS: Comment[] = [
         id: '2-1',
         user: 'TechEnthusiast',
         avatar:
-          'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=40&h=40&fit=crop&crop=face',
+          'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=40&h=40&crop=face',
         content:
           'Absolutely! Blender is now used by major studios. This project proved that open source can compete with expensive proprietary software.',
         likes: 156,
@@ -253,7 +253,7 @@ const COMMENTS: Comment[] = [
     id: '3',
     user: 'FilmStudent2023',
     avatar:
-      'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=40&h=40&fit=crop&crop=face',
+      'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=40&h=40&crop=face',
     content:
       'Watching this in film school right now. The storytelling is so effective despite being a short film. The way they build sympathy for Buck and then his transformation is masterful. Plus the technical achievement is incredible.',
     likes: 445,
@@ -263,7 +263,7 @@ const COMMENTS: Comment[] = [
     id: '4',
     user: 'ParentReviewer',
     avatar:
-      'https://images.unsplash.com/photo-1463453091185-61582044d556?w=40&h=40&fit=crop&crop=face',
+      'https://images.unsplash.com/photo-1463453091185-61582044d556?ixlib=rb-4.0.3&auto=format&fit=crop&w=40&h=40&crop=face',
     content:
       "My kids absolutely love this! It's so refreshing to find quality animation that's both entertaining and suitable for the whole family. The humor works on multiple levels too.",
     likes: 623,
@@ -273,7 +273,7 @@ const COMMENTS: Comment[] = [
     id: '5',
     user: 'BlenderNewbie',
     avatar:
-      'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=40&h=40&fit=crop&crop=face',
+      'https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&auto=format&fit=crop&w=40&h=40&crop=face',
     content:
       'Just started learning Blender and this is so inspiring! Can anyone recommend good tutorials for beginners? The level of detail here seems impossible to achieve.',
     likes: 234,
@@ -283,7 +283,7 @@ const COMMENTS: Comment[] = [
         id: '5-1',
         user: 'HelpfulMentor',
         avatar:
-          'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=40&h=40&fit=crop&crop=face',
+          'https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=40&h=40&crop=face',
         content:
           'Start with Donut tutorials by Blender Guru, then move to character modeling. This level takes years to master, but everyone starts somewhere!',
         likes: 67,
