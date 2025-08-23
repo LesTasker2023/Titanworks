@@ -892,7 +892,7 @@ export default function WeddingPage() {
   return (
     <div className="min-h-screen bg-surface-primary">
       {/* Navigation */}
-      <nav className="fixed top-0 w-full z-[99999] bg-surface-primary border-b border-border">
+      <nav className=" top-0 w-full z-[99999] bg-surface-primary border-b border-border">
         <div className="max-w-7xl mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2">
