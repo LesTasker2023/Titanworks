@@ -1,4 +1,4 @@
-import type { Preview } from '@storybook/nextjs-vite';
+import type { Preview } from '@storybook/nextjs';
 import React from 'react';
 // Import your global styles for Storybook (match layout.tsx exactly)
 import '../src/app/globals.css';

@@ -1,9 +1,7 @@
 /* Storybook Theme Integration - Complete Fix */
 
-/* Import Tailwind base classes first to ensure proper CSS variable resolution */
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
+/* Don't import Tailwind directly - import your compiled globals instead */
+/* These imports should be handled in preview.ts */
 
 /* Ensure Tailwind and CSS variables work in Storybook */
 html,

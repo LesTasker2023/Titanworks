@@ -5,8 +5,14 @@ const config: StorybookConfig = {
   addons: ['@chromatic-com/storybook', '@storybook/addon-docs', '@storybook/addon-a11y'],
   framework: {
     name: '@storybook/nextjs',
-    options: {},
+    options: {
+      nextConfigPath: '../next.config.ts',
+    },
   },
   staticDirs: ['..\\public'],
+
+  typescript: {
+    reactDocgen: 'react-docgen-typescript',
+  },
 };
 export default config;

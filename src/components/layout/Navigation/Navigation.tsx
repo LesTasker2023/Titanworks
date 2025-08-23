@@ -60,6 +60,14 @@ export function Navigation({
       href: '/component-showcase',
     },
     {
+      label: 'YouTube',
+      href: '/youtube',
+    },
+    {
+      label: 'Analytics',
+      href: '/analytics',
+    },
+    {
       label: 'Intel',
       href: '/intel',
     },
