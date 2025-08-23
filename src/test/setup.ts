@@ -1,45 +1,38 @@
 import '@testing-library/jest-dom';
-import { cleanup } from '@testing-library/react';
-import { afterEach, expect } from 'vitest';
+import { vi } from 'vitest';
 
-// Mock ResizeObserver for Radix UI
+// Mock ResizeObserver which is used by Chart components
 global.ResizeObserver = class ResizeObserver {
-  constructor() {}
   observe() {}
   unobserve() {}
   disconnect() {}
 };
 
-// Mock IntersectionObserver for Radix UI
-Object.defineProperty(window, 'IntersectionObserver', {
-  writable: true,
-  value: class IntersectionObserver {
-    constructor() {}
-    observe() {}
-    unobserve() {}
-    disconnect() {}
-  },
-});
-
-// Mock window.matchMedia for ThemeToggle component
+// Mock matchMedia which is used by Sonner components
 Object.defineProperty(window, 'matchMedia', {
   writable: true,
-  value: (query: string) => ({
+  value: vi.fn().mockImplementation((query: string) => ({
     matches: false,
     media: query,
     onchange: null,
-    addListener: () => {},
-    removeListener: () => {},
-    addEventListener: () => {},
-    removeEventListener: () => {},
-    dispatchEvent: () => {},
-  }),
+    addListener: vi.fn(), // deprecated
+    removeListener: vi.fn(), // deprecated
+    addEventListener: vi.fn(),
+    removeEventListener: vi.fn(),
+    dispatchEvent: vi.fn(),
+  })),
 });
 
-// Extend Vitest's expect with jest-dom matchers
-expect.extend({});
-
-// Cleanup after each test
-afterEach(() => {
-  cleanup();
-});
+// Mock IntersectionObserver
+global.IntersectionObserver = class IntersectionObserver {
+  constructor() {}
+  observe() {}
+  unobserve() {}
+  disconnect() {}
+  root: Element | null = null;
+  rootMargin: string = '';
+  thresholds: ReadonlyArray<number> = [];
+  takeRecords(): IntersectionObserverEntry[] {
+    return [];
+  }
+} as any;

@@ -7,7 +7,7 @@
 ## 🚀 Quick Start
 
 ```bash
-# Environment Setup
+# Environment Setu
 cp .env.example .env.local      # Configure Supabase credentials
 yarn install                   # Install dependencies
 
