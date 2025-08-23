@@ -1,50 +1,40 @@
 'use client';
 
-import { Button } from '@/components/ui/Button';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card';
 import { Badge } from '@/components/ui/Badge';
+import { Button } from '@/components/ui/Button';
+import { Card } from '@/components/ui/Card';
 import { Modal } from '@/components/ui/Modal';
 import {
-  BarChart3,
-  TrendingUp,
-  Users,
-  Zap,
-  Shield,
-  Globe,
-  ArrowRight,
-  Play,
-  CheckCircle,
-  Star,
-  Smartphone,
-  Monitor,
-  Tablet,
   Activity,
-  PieChart,
-  LineChart,
-  Eye,
-  Clock,
-  Target,
-  Calendar,
-  MessageCircle,
-  Phone,
-  Download,
+  ArrowRight,
+  BarChart3,
   Briefcase,
   Building,
-  CreditCard,
+  Calendar,
   Check,
-  X,
-  Settings,
+  CheckCircle,
+  Crown,
+  FileText,
+  Gift,
+  Globe,
   HelpCircle,
   Mail,
-  ChevronDown,
-  Lock,
-  Crown,
+  MessageCircle,
+  Monitor,
+  Phone,
+  Play,
   Rocket,
-  FileText,
+  Settings,
+  Shield,
+  Smartphone,
+  Tablet,
+  Target,
+  TrendingUp,
+  Users,
   Video,
-  Gift,
+  Zap,
 } from 'lucide-react';
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 const METRICS_DATA = [
   { label: 'Revenue', value: '$2.4M', change: '+12%', trend: 'up' },

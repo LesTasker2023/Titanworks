@@ -1,33 +1,30 @@
 'use client';
 
-import { Button } from '@/components/ui/Button';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card';
 import { Badge } from '@/components/ui/Badge';
+import { Button } from '@/components/ui/Button';
+import { Card, CardContent } from '@/components/ui/Card';
 import { Modal } from '@/components/ui/Modal';
 import {
-  Heart,
-  Star,
-  ShoppingCart,
-  Share2,
-  ZoomIn,
+  Camera,
+  Check,
   ChevronLeft,
   ChevronRight,
-  Truck,
-  Shield,
-  RotateCcw,
-  Check,
-  Plus,
-  Minus,
-  Eye,
-  Filter,
-  Grid3X3,
-  List,
-  Camera,
-  Play,
-  Volume2,
   Download,
+  Eye,
+  Grid3X3,
+  Heart,
+  List,
+  Minus,
+  Plus,
+  RotateCcw,
+  Share2,
+  Shield,
+  ShoppingCart,
+  Star,
+  Truck,
+  ZoomIn,
 } from 'lucide-react';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 interface Product {
   id: number;

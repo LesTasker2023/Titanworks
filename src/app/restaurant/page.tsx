@@ -1,44 +1,37 @@
 'use client';
 
+import { Badge } from '@/components/ui/Badge';
 import { Button } from '@/components/ui/Button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card';
-import { Badge } from '@/components/ui/Badge';
 import { Modal } from '@/components/ui/Modal';
 import {
-  Clock,
-  Star,
-  Heart,
-  Filter,
-  Search,
-  Plus,
-  Minus,
-  ShoppingCart,
-  Flame,
-  Leaf,
-  ChefHat,
   Award,
-  MapPin,
-  Phone,
-  Utensils,
-  Wine,
-  Coffee,
+  Bell,
   Cake,
   Calendar,
-  Users,
-  Bell,
-  Gift,
-  MessageCircle,
-  Camera,
-  Share2,
-  Info,
   Check,
-  X,
-  AlertCircle,
-  ThumbsUp,
-  Zap,
+  ChefHat,
+  Clock,
+  Coffee,
   Crown,
+  Filter,
+  Flame,
+  Gift,
+  Heart,
+  Info,
+  MapPin,
+  Minus,
+  Phone,
+  Plus,
+  Search,
+  ShoppingCart,
+  Star,
+  Users,
+  Utensils,
+  Wine,
+  Zap,
 } from 'lucide-react';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 interface MenuItem {
   id: number;

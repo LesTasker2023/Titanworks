@@ -3,8 +3,8 @@
 import { Badge } from '@/components/ui/Badge';
 import { Button } from '@/components/ui/Button';
 import { Card } from '@/components/ui/Card';
-import { VideoPlayer } from '@/components/ui/VideoPlayer';
 import { Modal } from '@/components/ui/Modal';
+import { VideoPlayer } from '@/components/ui/VideoPlayer';
 import {
   Bell,
   Calendar,

@@ -1,20 +1,18 @@
 'use client';
 
-import { useState, useRef, useEffect } from 'react';
 import { Button } from '@/components/ui/Button';
 import {
-  Play,
-  Pause,
-  Volume2,
-  VolumeX,
   Maximize,
-  SkipBack,
-  SkipForward,
-  Settings,
   Minimize,
+  Pause,
+  Play,
   RotateCcw,
   RotateCw,
+  Settings,
+  Volume2,
+  VolumeX,
 } from 'lucide-react';
+import { useEffect, useRef, useState } from 'react';
 
 interface VideoPlayerProps {
   src: string;

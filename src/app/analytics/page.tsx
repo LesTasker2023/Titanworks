@@ -1,52 +1,45 @@
 'use client';
 
-import Image from 'next/image';
 import { Badge } from '@/components/ui/Badge';
 import { Button } from '@/components/ui/Button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card';
 import { Modal } from '@/components/ui/Modal';
 import {
-  BarChart3,
-  TrendingUp,
-  Users,
-  Eye,
-  Clock,
-  ThumbsUp,
-  MessageCircle,
-  Share2,
-  Download,
-  Play,
-  Pause,
-  MoreHorizontal,
-  Calendar,
-  Globe,
-  Target,
-  Zap,
-  DollarSign,
   Award,
-  Filter,
-  RefreshCw,
-  Settings,
-  ExternalLink,
+  BarChart3,
+  Calendar,
+  CheckCircle,
   ChevronDown,
   ChevronUp,
-  TrendingDown,
-  AlertTriangle,
-  CheckCircle,
-  Star,
-  Heart,
-  Bookmark,
-  Upload,
-  Smartphone,
-  Monitor,
-  Tablet,
-  Youtube,
-  Twitter,
+  Clock,
+  DollarSign,
+  Download,
+  ExternalLink,
+  Eye,
   Facebook,
+  Globe,
+  Heart,
   Instagram,
+  Monitor,
+  MoreHorizontal,
+  Play,
+  RefreshCw,
+  Settings,
+  Share2,
   Shield,
+  Smartphone,
+  Tablet,
+  Target,
+  TrendingDown,
+  TrendingUp,
+  Twitter,
+  Upload,
+  Users,
+  Youtube,
+  Zap,
 } from 'lucide-react';
-import { useState, useEffect } from 'react';
+import Image from 'next/image';
+import { useState } from 'react';
 
 interface AnalyticsData {
   views: number;

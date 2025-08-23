@@ -1,33 +1,31 @@
 'use client';
 
+import { Badge } from '@/components/ui/Badge';
 import { Button } from '@/components/ui/Button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card';
-import { Badge } from '@/components/ui/Badge';
 import { getContent } from '@/lib/siteConfig';
 import {
-  ArrowRight,
-  Code,
-  ExternalLink,
-  Shield,
-  Zap,
-  Play,
-  ShoppingCart,
-  Utensils,
-  Briefcase,
-  Heart,
   BarChart3,
   Brain,
-  Layers,
-  Rocket,
-  Star,
-  Users,
-  TrendingUp,
-  Target,
+  Briefcase,
   CheckCircle,
-  Sparkles,
+  Code,
+  ExternalLink,
+  Heart,
+  Layers,
   Monitor,
+  Play,
+  Rocket,
+  Shield,
+  ShoppingCart,
   Smartphone,
+  Sparkles,
+  Star,
   Tablet,
+  Target,
+  TrendingUp,
+  Utensils,
+  Zap,
 } from 'lucide-react';
 import Link from 'next/link';
 import { useState } from 'react';
