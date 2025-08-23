@@ -24,6 +24,7 @@ import {
   Truck,
   ZoomIn,
 } from 'lucide-react';
+import Image from 'next/image';
 import { useState } from 'react';
 
 interface Product {
@@ -52,7 +53,13 @@ const PRODUCT_DATA: Product = {
   reviews: 2847,
   colors: ['Black', 'White', 'Silver', 'Blue'],
   sizes: [],
-  images: ['🎧', '🔊', '🎵', '📱', '💻'],
+  images: [
+    'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=800&h=600&fit=crop',
+    'https://images.unsplash.com/photo-1484704849700-f032a568e944?w=800&h=600&fit=crop',
+    'https://images.unsplash.com/photo-1583394838336-acd977736f90?w=800&h=600&fit=crop',
+    'https://images.unsplash.com/photo-1491927570842-0261e477d937?w=800&h=600&fit=crop',
+    'https://images.unsplash.com/photo-1529429617124-95b109e86bb8?w=800&h=600&fit=crop',
+  ],
   description:
     'Experience crystal-clear audio with our premium wireless headphones featuring advanced noise cancellation, 30-hour battery life, and premium materials.',
   features: [
@@ -70,9 +77,30 @@ const PRODUCT_DATA: Product = {
 };
 
 const RELATED_PRODUCTS = [
-  { id: 2, name: 'Wireless Earbuds Pro', price: 179, rating: 4.6, image: '🎵', reviews: 1234 },
-  { id: 3, name: 'Gaming Headset RGB', price: 199, rating: 4.7, image: '🎮', reviews: 892 },
-  { id: 4, name: 'Studio Monitor Headphones', price: 299, rating: 4.9, image: '🎧', reviews: 567 },
+  {
+    id: 2,
+    name: 'Wireless Earbuds Pro',
+    price: 179,
+    rating: 4.6,
+    image: 'https://images.unsplash.com/photo-1572569511254-d8f925fe2cbb?w=300&h=200&fit=crop',
+    reviews: 1234,
+  },
+  {
+    id: 3,
+    name: 'Gaming Headset RGB',
+    price: 199,
+    rating: 4.7,
+    image: 'https://images.unsplash.com/photo-1599669454699-248893623440?w=300&h=200&fit=crop',
+    reviews: 892,
+  },
+  {
+    id: 4,
+    name: 'Studio Monitor Headphones',
+    price: 299,
+    rating: 4.9,
+    image: 'https://images.unsplash.com/photo-1545127398-14699f92334b?w=300&h=200&fit=crop',
+    reviews: 567,
+  },
   { id: 5, name: 'Bluetooth Speaker', price: 89, rating: 4.5, image: '🔊', reviews: 2156 },
 ];
 
@@ -238,13 +266,19 @@ function ProductGallery({ images, productName }: { images: string[]; productName
           <button
             key={index}
             onClick={() => setCurrentImage(index)}
-            className={`flex-shrink-0 w-16 h-16 bg-surface-secondary rounded-lg flex items-center justify-center text-2xl transition-all ${
+            className={`flex-shrink-0 w-16 h-16 bg-surface-secondary rounded-lg overflow-hidden transition-all ${
               currentImage === index
                 ? 'ring-2 ring-primary bg-primary/10'
                 : 'hover:bg-surface-secondary/80'
             }`}
           >
-            {image}
+            <Image
+              src={image}
+              alt={`Product view ${index + 1}`}
+              className="w-full h-full object-cover"
+              width={64}
+              height={64}
+            />
           </button>
         ))}
       </div>

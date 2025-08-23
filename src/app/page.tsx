@@ -49,7 +49,7 @@ const platformShowcase = [
     features: ['Video Management', 'Social Engagement', 'Creator Tools', 'Monetization'],
     metrics: { users: '2M+', engagement: '95%', revenue: '$50K/mo' },
     status: 'Enhanced',
-    image: '🎬',
+    image: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=400&h=250&fit=crop',
   },
   {
     id: 'product',
@@ -63,7 +63,7 @@ const platformShowcase = [
     features: ['Smart Cart', 'Product Comparison', 'Price Alerts', 'Warranty Management'],
     metrics: { conversion: '12%', revenue: '$120K/mo', satisfaction: '98%' },
     status: 'Enhanced',
-    image: '🛒',
+    image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=250&fit=crop',
   },
   {
     id: 'restaurant',
@@ -76,7 +76,7 @@ const platformShowcase = [
     features: ['Smart Reservations', 'Order Management', 'Wine Pairing', 'Loyalty Program'],
     metrics: { bookings: '500+/day', satisfaction: '96%', repeat: '80%' },
     status: 'Enhanced',
-    image: '🍽️',
+    image: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=400&h=250&fit=crop',
   },
   {
     id: 'saas',
@@ -89,7 +89,7 @@ const platformShowcase = [
     features: ['Trial Management', 'Demo Booking', 'Enterprise Sales', 'Onboarding'],
     metrics: { conversion: '25%', mrr: '$80K', nps: '72' },
     status: 'Enhanced',
-    image: '💼',
+    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=250&fit=crop',
   },
   {
     id: 'wedding',
@@ -102,7 +102,7 @@ const platformShowcase = [
     features: ['Event Planning', 'Vendor Network', 'Timeline Management', 'Emergency Support'],
     metrics: { events: '200+/year', satisfaction: '99%', referrals: '90%' },
     status: 'Enhanced',
-    image: '💕',
+    image: 'https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=400&h=250&fit=crop',
   },
   {
     id: 'analytics',
