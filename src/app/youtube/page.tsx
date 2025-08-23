@@ -2273,7 +2273,7 @@ export default function YouTubePage() {
       </Modal>
 
       {/* Header */}
-      <header className="sticky top-0 z-50 bg-surface-primary border-b border-border px-4 py-3">
+      <header className="sticky top-0 z-[99999] bg-surface-primary border-b border-border px-4 py-3">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-4">
             <Button
