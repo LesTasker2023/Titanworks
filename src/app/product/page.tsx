@@ -101,7 +101,14 @@ const RELATED_PRODUCTS = [
     image: 'https://images.unsplash.com/photo-1545127398-14699f92334b?w=300&h=200&fit=crop',
     reviews: 567,
   },
-  { id: 5, name: 'Bluetooth Speaker', price: 89, rating: 4.5, image: '🔊', reviews: 2156 },
+  {
+    id: 5,
+    name: 'Bluetooth Speaker',
+    price: 89,
+    rating: 4.5,
+    image: 'https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=300&h=200&fit=crop',
+    reviews: 2156,
+  },
 ];
 
 const REVIEWS = [

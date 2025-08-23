@@ -159,7 +159,7 @@ const MENU_ITEMS = {
       name: 'Barolo Riserva 2018',
       description: 'Full-bodied Nebbiolo from Piedmont with notes of cherry and truffle',
       price: 185,
-      image: '🍷',
+      image: 'https://images.unsplash.com/photo-1586370434639-0fe43b2d32d6?w=400&h=300&fit=crop',
       badges: ['Award Winner', 'Limited'],
       rating: 4.9,
       prepTime: 'Immediate',
