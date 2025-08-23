@@ -64,6 +64,22 @@ export function Navigation({
       href: '/youtube',
     },
     {
+      label: 'Product',
+      href: '/product',
+    },
+    {
+      label: 'Restaurant',
+      href: '/restaurant',
+    },
+    {
+      label: 'SaaS',
+      href: '/saas',
+    },
+    {
+      label: 'Wedding',
+      href: '/wedding',
+    },
+    {
       label: 'Analytics',
       href: '/analytics',
     },
