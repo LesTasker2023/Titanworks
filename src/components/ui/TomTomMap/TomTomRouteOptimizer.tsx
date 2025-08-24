@@ -399,32 +399,43 @@ export const TomTomRouteOptimizer: React.FC<TomTomRouteOptimizerProps> = ({
 
     const orderedAddresses = optimizedRoute.order.map(index => geocodedAddresses[index]);
 
-    // Create waypoints (excluding origin and destination)
-    const waypoints = orderedAddresses
-      .slice(1, -1)
-      .map(addr => encodeURIComponent(addr.address))
-      .join('|');
+    // Google Maps URL format with proper waypoint handling
+    // For more than 8 addresses, we'll use the shorter format
+    if (orderedAddresses.length <= 8) {
+      // Use the full dir format for up to 8 addresses
+      const encodedAddresses = orderedAddresses.map(addr => encodeURIComponent(addr.address));
+      const url = `https://www.google.com/maps/dir/${encodedAddresses.join('/')}`;
 
-    // Build Google Maps URL
-    const origin = encodeURIComponent(orderedAddresses[0].address);
-    const destination = encodeURIComponent(orderedAddresses[orderedAddresses.length - 1].address);
+      console.log('Generated Google Maps URL (full route):', url);
+      console.log(
+        'Route order:',
+        orderedAddresses.map(addr => addr.address)
+      );
 
-    let url = `https://www.google.com/maps/dir/${origin}`;
+      window.open(url, '_blank');
+    } else {
+      // For more than 8 addresses, use destination with waypoints parameter
+      const origin = encodeURIComponent(orderedAddresses[0].address);
+      const destination = encodeURIComponent(orderedAddresses[orderedAddresses.length - 1].address);
 
-    if (waypoints) {
-      url += `/${waypoints}`;
+      // Take first 7 waypoints (Google Maps limit)
+      const waypoints = orderedAddresses
+        .slice(1, -1)
+        .slice(0, 7)
+        .map(addr => encodeURIComponent(addr.address))
+        .join('|');
+
+      const url = `https://www.google.com/maps/dir/${origin}/${destination}?waypoints=${waypoints}`;
+
+      console.log('Generated Google Maps URL (with waypoints param):', url);
+      console.log(
+        'Route order (first 9 addresses):',
+        orderedAddresses.slice(0, 9).map(addr => addr.address)
+      );
+      console.log('Note: Google Maps limits to 9 total stops via URL');
+
+      window.open(url, '_blank');
     }
-
-    url += `/${destination}`;
-
-    console.log('Generated Google Maps URL:', url);
-    console.log(
-      'Route order:',
-      orderedAddresses.map(addr => addr.address)
-    );
-
-    // Open in new tab
-    window.open(url, '_blank');
   }, [optimizedRoute, geocodedAddresses]);
 
   // Calculate optimal route
