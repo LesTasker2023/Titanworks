@@ -99,6 +99,16 @@ export function Navigation({
           title: 'Intelligence',
           description: 'AI-powered business intelligence platform',
         },
+        {
+          href: '/tomtom-map',
+          title: 'TomTom Maps',
+          description: 'Interactive mapping with geocoding and custom markers',
+        },
+        {
+          href: '/tomtom-route-optimizer',
+          title: 'Route Optimizer',
+          description: 'Optimize delivery routes with TomTom Route Matrix API',
+        },
       ],
     },
   ],
