@@ -29,7 +29,13 @@ function getDependencyDepth() {
       // Each level is represented by two characters (│ or space)
       depth = match[1].length / 2;
     }
-    if (depth > maxDepth) maxDepth = depth;
+  let pkg;
+  try {
+    pkg = JSON.parse(fs.readFileSync(PACKAGE_JSON, 'utf8'));
+  } catch (err) {
+    console.error(`Error reading or parsing package.json: ${err.message}`);
+    process.exit(1);
+  }
   }
   return maxDepth;
 }
