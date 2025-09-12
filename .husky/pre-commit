@@ -1,7 +1,19 @@
 #!/bin/sh
 
-# Stage all changes automatically
+# Stage all changes automatically (mechanical formatting & lint fixes first)
 echo "🎯 Auto-staging all changes..."
 git add .
 
-yarn lint-staged
+echo "🧹 Running lint-staged..."
+yarn lint-staged || exit 1
+
+echo "📜 Ensuring changelog updated if runtime changes present..."
+yarn ensure:changelog || exit 1
+
+echo "🛡  Type checking..."
+yarn type-check || exit 1
+
+echo "🧪 Running full test suite (may take ~15s)..."
+yarn test:run || exit 1
+
+echo "✅ Pre-commit checks passed."

@@ -249,3 +249,22 @@ Outcome: This ensures we remember HOW we solved hard problems while continuously
 - `vitest.a11y.config.ts` (future)
 
 End of unified guide.
+
+20. Versioning & Changelog Discipline
+
+---
+
+- Versioning: Semantic-ish incremental (no breaking API semantics yet) using `standard-version` (dev dependency). Each meaningful runtime change MUST bump version via `yarn release` (which updates `CHANGELOG.md` + version field) prior to merge to `main`.
+- Changelog file: `CHANGELOG.md` (top-level) – append only via tool. Manual edits to historical sections prohibited.
+- Pre-commit enforcement: Hook runs `ensure:changelog` script. If staged runtime-impacting files (src/, package.json, key configs) lack a staged CHANGELOG update, commit is blocked.
+- Full test + type gates moved into pre-commit (Section 4 augmentation) to reduce CI churn; developers experience immediate feedback loop.
+- Rationale: Ensures traceability (auditability for Section 19 breakthroughs) and prevents silent drift between code and published version.
+- Future: Introduce conventional commit scopes to auto-categorize (feat/fix/perf/refactor/docs/test/chore) in generated notes; add release tagging automation when repo gating matures.
+
+Enforcement Hierarchy:
+
+1. Local pre-commit (fast fail) – lint/format, changelog guard, type-check, tests.
+2. CI (future) – replicate + build + coverage diff gate.
+3. Release command – bumps version + generates changelog entry.
+
+Conflict Note: If an emergency hotfix must bypass full test run (rare), document exception reason inline in CHANGELOG under that entry and follow up with retroactive validation.

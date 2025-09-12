@@ -21,6 +21,8 @@
     "inventory:components": "powershell -ExecutionPolicy Bypass -File scripts/gen-component-inventory.ps1",
     "quality": "yarn type-check && yarn lint:fix && yarn format && yarn test:run && yarn build",
     "quality:check": "yarn type-check && yarn lint && yarn format:check && yarn test:run",
+    "ensure:changelog": "node scripts/ensure-changelog-update.mjs",
+    "release": "standard-version",
     "prepare": "husky",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
@@ -113,7 +115,8 @@
     "tailwindcss": "3.4.0",
     "typescript": "^5",
     "vite": "^7.1.2",
-    "vitest": "^3.2.4"
+    "vitest": "^3.2.4",
+    "standard-version": "^9.5.0"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
