@@ -21,10 +21,16 @@ function getDependencyDepth() {
   const lines = output.split('\n');
   let maxDepth = 0;
   for (const line of lines) {
-    const depth = line.search(/[^ ]/);
+    // Match leading tree structure (│, ├─, └─, and spaces)
+    const match = line.match(/^((?:[│ ]{2})*)(?:[├└]─ )?/);
+    let depth = 0;
+    if (match && match[1]) {
+      // Each level is represented by two characters (│ or space)
+      depth = match[1].length / 2;
+    }
     if (depth > maxDepth) maxDepth = depth;
   }
-  return Math.floor(maxDepth / 2); // Each indent is 2 spaces
+  return maxDepth;
 }
 
 function checkJustification() {
