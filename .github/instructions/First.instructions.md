@@ -12,6 +12,51 @@ Source-of-truth consolidation of: COPILOT_RULES.md, MuskMode behavioral contract
 
 Build a scalable, performant, maintainable Next.js (App Router) platform with TypeScript-first rigor, autonomous improvement, and aggressive elimination of waste. Prefer 10x structural leverage over 10% micro-tweaks. Challenge assumptions. Ship fast without creating entropy.
 
+### 1.1 Signal > Noise Doctrine
+
+Inspired by Steve Jobs' ruthless focus and Elon Musk's first-principles bias toward removing what is unnecessary: Every action, artifact, dependency, test, log line, style utility, and meeting must justify its existence in terms of accelerating validated product learning, reducing defect/latency risk, or compounding maintainability. Anything else is noise and should be deleted, consolidated, or blocked.
+
+Definition:
+
+- Signal: Changes or artifacts that measurably improve user value, reliability, performance, security posture, developer velocity, or strategic optionality.
+- Noise: Cosmetic churn, gold-plating without a ratcheting metric, duplicated abstractions, premature generalization, unowned TODOs, verbose logging without actionable use, snapshot assertions that never fail meaningfully, warnings ignored >7 days, dead branches, stale feature flags.
+
+Operating Rules (enforced via Sections 4, 5, 19, 20):
+
+- Before adding: remove or simplify at least one thing (net-negative complexity bias).
+- Any new test must prove a behavioral contract or guard a past/future regression (reference issue/PR when applicable). Pure snapshot dumps discouraged— prefer explicit expectations.
+- A console warning present for >1 week without remediation plan becomes a backlog item (Section 11) or is silenced legitimately.
+- Logs must have an explicit consumer (alert, SLO dashboard, debugging playbook) or be downgraded/removed.
+- Abstractions require two real call sites (Rule of 2). Otherwise, inline it.
+- Performance work needs baseline + target + post-metric (Section 19) or it's experimentation; label it clearly.
+- Changelog entries (Section 20) omit noise: no entries for internal refactors unless they alter external contract, perf profile, or DX interface.
+
+Tactics:
+
+- Weekly prune pass: delete dead code surfaced by `yarn scan:dead` (once implemented) and consolidate TODOs (must have owner + context tag per Section 15).
+- Require justification comment for introducing a new dependency (>0.5MB unpacked or transitive depth >3) citing alternative considered.
+- For each PR description: include a one-line "Signal Statement" answering: "What enduring leverage does this add?" If absent, challenge the PR scope.
+
+Failure Modes & Anti-Patterns:
+
+- Cargo-cult copying component patterns without variant pressure.
+- Adding design tokens unused by any component.
+- Adding types that merely restate implementation without shaping API boundaries.
+- Blanket `eslint-disable` comments without follow-up issue ID.
+
+Exit Criteria for Work Units:
+
+- If you cannot state the measurable or structural leverage in <120 characters, reconsider or split.
+- If removal of the change would not degrade a user path, SLO, security boundary, or future optionality within 90 days—it's noise.
+
+Enforcement Path:
+
+1. Reviewer requests explicit Signal Statement if missing.
+2. If unresolved, PR labeled `needs-signal` and deferred in favor of backlog P0/P1 items.
+3. Repeated noise submissions (≥3 in rolling 30 days) trigger a focused pairing review to recalibrate scope guidelines.
+
+Outcome: This doctrine institutionalizes a compounding signal-to-noise ratio improvement— fewer artifacts, higher clarity, faster iteration, and cleaner test & dependency surfaces.
+
 2. Environment & Tooling Standards
 
 ---
