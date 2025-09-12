@@ -11,9 +11,9 @@
  *   yarn track-warnings --backlog  # Generate backlog items for >7 day warnings
  */
 
+import crypto from 'node:crypto';
 import fs from 'node:fs';
 import path from 'node:path';
-import crypto from 'node:crypto';
 
 interface WarningEntry {
   id: string; // Hash of warning content for deduplication
@@ -300,4 +300,4 @@ async function main() {
 // Run if this is the main module
 main();
 
-export { updateLedger, parseWarningsFromTestOutput, getPersistentWarnings, generateBacklogItems };
+export { generateBacklogItems, getPersistentWarnings, parseWarningsFromTestOutput, updateLedger };

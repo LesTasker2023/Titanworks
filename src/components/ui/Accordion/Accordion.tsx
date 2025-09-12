@@ -1,5 +1,5 @@
-import * as React from 'react';
 import { stripTransientProps } from '@/utils/stripTransientProps';
+import * as React from 'react';
 
 export interface AccordionProps extends React.HTMLAttributes<HTMLDivElement> {
   items: { title: string; content: React.ReactNode; disabled?: boolean }[];
