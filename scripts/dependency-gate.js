@@ -9,6 +9,7 @@ const YARN_LOCK = path.join(__dirname, '../yarn.lock');
 const PACKAGE_JSON = path.join(__dirname, '../package.json');
 const SIZE_THRESHOLD_KB = 500; // Example: 500KB unpacked
 const DEPTH_THRESHOLD = 3; // Example: max 3 levels deep
+const YARN_LIST_DEPTH = 5; // Limit depth for performance and reliability
 
 function getFileSizeKb(filePath) {
   const stats = fs.statSync(filePath);
@@ -16,8 +17,8 @@ function getFileSizeKb(filePath) {
 }
 
 function getDependencyDepth() {
-  // Use 'yarn list' to get dependency tree depth
-  const output = execSync('yarn list --depth=99', { encoding: 'utf8' });
+  // Use 'yarn list' to get dependency tree depth, but limit depth for performance
+  const output = execSync(`yarn list --depth=${YARN_LIST_DEPTH}`, { encoding: 'utf8' });
   const lines = output.split('\n');
   let maxDepth = 0;
   for (const line of lines) {
@@ -48,7 +49,7 @@ function main() {
   const sizeKb = getFileSizeKb(YARN_LOCK);
   const depth = getDependencyDepth();
   console.log(`yarn.lock size: ${sizeKb} KB`);
-  console.log(`Dependency tree max depth: ${depth}`);
+  console.log(`Dependency tree max depth (limited to ${YARN_LIST_DEPTH}): ${depth}`);
   if (sizeKb > SIZE_THRESHOLD_KB || depth > DEPTH_THRESHOLD) {
     console.warn(
       'Dependency threshold exceeded. Please add justification to package.json for new/large deps.'
