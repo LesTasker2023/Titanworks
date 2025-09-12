@@ -1,5 +1,5 @@
 ﻿import { render, screen } from '@testing-library/react';
-// import userEvent from '@testing-library/user-event';
+import userEvent from '@testing-library/user-event';
 import { describe, expect, it, vi } from 'vitest';
 import { Button } from './Button';
 
@@ -40,6 +40,18 @@ describe('Button', () => {
     it('renders correctly', () => {
       renderBasicButton();
       expect(screen.getByTestId('button')).toBeInTheDocument();
+    });
+
+    it('fires onClick handler when clicked', async () => {
+      const handleClick = vi.fn();
+      const user = userEvent.setup();
+      render(
+        <Button data-testid="button" onClick={handleClick}>
+          Click me
+        </Button>
+      );
+      await user.click(screen.getByTestId('button'));
+      expect(handleClick).toHaveBeenCalledTimes(1);
     });
   });
 
