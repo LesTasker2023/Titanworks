@@ -30,9 +30,10 @@ function getDependencyDepth() {
 function checkJustification() {
   const pkg = JSON.parse(fs.readFileSync(PACKAGE_JSON, 'utf8'));
   const deps = Object.keys(pkg.dependencies || {});
+  const justifications = pkg.dependencyJustifications || {};
   for (const dep of deps) {
-    if (pkg[dep] && pkg[dep].justification) {
-      console.log(`Justification for ${dep}: ${pkg[dep].justification}`);
+    if (justifications[dep]) {
+      console.log(`Justification for ${dep}: ${justifications[dep]}`);
     }
   }
 }
