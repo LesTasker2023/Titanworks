@@ -44,6 +44,7 @@ function checkJustification() {
   const pkg = JSON.parse(fs.readFileSync(PACKAGE_JSON, 'utf8'));
   const deps = Object.keys(pkg.dependencies || {});
   const justifications = pkg.dependencyJustifications || {};
+  // Print justification for each dependency if present in package.json (Unified Guide §1.1)
   for (const dep of deps) {
     if (justifications[dep]) {
       console.log(`Justification for ${dep}: ${justifications[dep]}`);
