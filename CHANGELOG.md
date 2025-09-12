@@ -13,6 +13,10 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### Fixed
 
+- DOM prop warnings eliminated across all UI components (Button, Toggle, Toast, Accordion, Alert, Badge, Breadcrumb, DataTable, Pagination, Popover, Separator, Tooltip, Tabs, Chart, Table, Menubar)
+- Prevented React non-boolean attributes (active, loading, hover, error) from being passed to DOM elements
+- Preserved HTML semantics by maintaining valid HTML attributes (disabled, selected, etc.)
+
 - DOM prop warnings in Button, Toggle, Toast, Accordion, Alert, Badge, Breadcrumb, DataTable, Pagination, Popover, Separator, and Tooltip components
 - Applied stripTransientProps to prevent React warnings for non-boolean attributes (active, hover, loading, error) being passed to DOM elements
 - stripTransientProps: preserve 'disabled' and 'selected' HTML attributes for accessibility and semantic compliance

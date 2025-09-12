@@ -5,6 +5,7 @@ import { Check, ChevronRight, Circle } from 'lucide-react';
 import * as React from 'react';
 
 import { cn } from '@/lib/utils';
+import { stripTransientProps } from '@/utils/stripTransientProps';
 
 function MenubarMenu({ ...props }: React.ComponentProps<typeof MenubarPrimitive.Menu>) {
   return <MenubarPrimitive.Menu {...props} />;
@@ -36,7 +37,13 @@ const Menubar = React.forwardRef<
       'flex h-9 items-center space-x-1 rounded-md border bg-background p-1 shadow-sm',
       className
     )}
-    {...props}
+    {...stripTransientProps({
+      active: undefined,
+      hover: undefined,
+      loading: undefined,
+      error: undefined,
+      ...props,
+    })}
   />
 ));
 Menubar.displayName = MenubarPrimitive.Root.displayName;

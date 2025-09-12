@@ -5,6 +5,7 @@ import { cva, type VariantProps } from 'class-variance-authority';
 import * as React from 'react';
 
 import { cn } from '@/lib/utils';
+import { stripTransientProps } from '@/utils/stripTransientProps';
 
 // Enhanced Tabs with size variants and features
 const tabsVariants = cva('', {
@@ -72,7 +73,17 @@ interface TabsTriggerProps
 
 const Tabs = React.forwardRef<React.ElementRef<typeof TabsPrimitive.Root>, TabsProps>(
   ({ className, size, ...props }, ref) => (
-    <TabsPrimitive.Root ref={ref} className={cn(tabsVariants({ size }), className)} {...props} />
+    <TabsPrimitive.Root
+      ref={ref}
+      className={cn(tabsVariants({ size }), className)}
+      {...stripTransientProps({
+        active: undefined,
+        hover: undefined,
+        loading: undefined,
+        error: undefined,
+        ...props,
+      })}
+    />
   )
 );
 Tabs.displayName = TabsPrimitive.Root.displayName;
@@ -101,7 +112,7 @@ const TabsTrigger = React.forwardRef<
       className
     )}
     data-badge={badge}
-    {...props}
+    {...stripTransientProps({ loading, badge, ...props })}
   />
 ));
 TabsTrigger.displayName = TabsPrimitive.Trigger.displayName;
