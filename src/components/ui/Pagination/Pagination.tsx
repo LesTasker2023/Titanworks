@@ -1,4 +1,5 @@
 import { cn } from '@/lib/utils';
+import { stripTransientProps } from '@/utils/stripTransientProps';
 import { cva, type VariantProps } from 'class-variance-authority';
 import { ChevronLeft, ChevronRight, MoreHorizontal } from 'lucide-react';
 import { forwardRef, useMemo } from 'react';
@@ -201,7 +202,11 @@ const Pagination = forwardRef<HTMLDivElement, PaginationProps>(
     };
 
     return (
-      <div className={cn('flex flex-col items-center space-y-3', className)} ref={ref} {...props}>
+      <div
+        className={cn('flex flex-col items-center space-y-3', className)}
+        ref={ref}
+        {...stripTransientProps(props)}
+      >
         <nav className={cn(paginationContainerVariants({ size }))} aria-label="Pagination">
           {/* First page button */}
           {showFirstLast && !isFirstPage && (

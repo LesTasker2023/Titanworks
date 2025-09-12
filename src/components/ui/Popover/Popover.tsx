@@ -1,4 +1,5 @@
 import { cn } from '@/lib/utils';
+import { stripTransientProps } from '@/utils/stripTransientProps';
 import { cva, type VariantProps } from 'class-variance-authority';
 import { forwardRef } from 'react';
 
@@ -36,7 +37,11 @@ export interface PopoverProps
 const Popover = forwardRef<HTMLButtonElement, PopoverProps>(
   ({ className, variant, size, ...props }, ref) => {
     return (
-      <button className={cn(popoverVariants({ variant, size, className }))} ref={ref} {...props} />
+      <button
+        className={cn(popoverVariants({ variant, size, className }))}
+        ref={ref}
+        {...stripTransientProps(props)}
+      />
     );
   }
 );

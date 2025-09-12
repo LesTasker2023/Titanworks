@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [Unreleased]
+
+### Added
+
+- Warning ledger system for persistent warning tracking (§1.1 Signal>Noise doctrine)
+- stripTransientProps utility to prevent non-HTML attributes from leaking to DOM
+- CI/CD integration for automated warning monitoring and backlog generation
+- Package scripts for warning tracking: `track-warnings`, `track-warnings:report`, `track-warnings:backlog`
+
+### Fixed
+
+- DOM prop warnings in Button, Toggle, Toast, Accordion, Alert, Badge, Breadcrumb, DataTable, Pagination, Popover, Separator, and Tooltip components
+- Applied stripTransientProps to prevent React warnings for non-boolean attributes (active, hover, loading, error) being passed to DOM elements
+- stripTransientProps: preserve 'disabled' and 'selected' HTML attributes for accessibility and semantic compliance
+
 ## 1.54.0 (2025-09-12)
 
 ### Features

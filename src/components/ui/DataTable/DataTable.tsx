@@ -1,4 +1,5 @@
 import { cn } from '@/lib/utils';
+import { stripTransientProps } from '@/utils/stripTransientProps';
 import { cva, type VariantProps } from 'class-variance-authority';
 import { ChevronDown, ChevronUp, Loader2, Search } from 'lucide-react';
 import React from 'react';
@@ -263,7 +264,7 @@ const DataTable = React.forwardRef<HTMLDivElement, DataTableProps>(
         data-loading={loading}
         data-error={!!error}
         data-testid="datatable-component"
-        {...props}
+        {...stripTransientProps(props)}
       >
         {/* Filter bar */}
         {filterable && (

@@ -5,6 +5,7 @@ import { cva, type VariantProps } from 'class-variance-authority';
 import * as React from 'react';
 
 import { cn } from '@/lib/utils';
+import { stripTransientProps } from '@/utils/stripTransientProps';
 
 // Enhanced tooltip variants for enterprise usage
 const tooltipVariants = cva(
@@ -53,7 +54,7 @@ const TooltipContent = React.forwardRef<
     ref={ref}
     sideOffset={sideOffset}
     className={cn(tooltipVariants({ variant, size }), className)}
-    {...props}
+    {...stripTransientProps(props)}
   />
 ));
 TooltipContent.displayName = TooltipPrimitive.Content.displayName;

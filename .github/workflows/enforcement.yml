@@ -1,0 +1,108 @@
+name: Quality Enforcement
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  schedule:
+    # Weekly audit on Sundays at 6 AM UTC
+    - cron: '0 6 * * 0'
+
+jobs:
+  quality-gates:
+    runs-on: ubuntu-latest
+    name: Enforce Quality Standards
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'yarn'
+
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+
+      - name: Type check
+        run: yarn type-check
+
+      - name: Lint check
+        run: yarn lint
+
+      - name: Format check
+        run: yarn format:check
+
+      - name: Run tests with warning capture
+        run: |
+          yarn test:run 2>&1 | tee test-output.log
+          echo "TEST_OUTPUT_FILE=test-output.log" >> $GITHUB_ENV
+
+      - name: Track test warnings
+        run: |
+          # Parse warnings from test output and update ledger
+          cat test-output.log | yarn track-warnings || echo "Warning tracking failed - non-critical"
+
+          # Generate warning report
+          yarn track-warnings:report
+
+          # Check for persistent warnings (>7 days)
+          yarn track-warnings:backlog
+
+      - name: Build verification
+        run: yarn build
+
+      - name: Upload warning reports
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: quality-reports
+          path: |
+            reports/warning-ledger.json
+            reports/warning-backlog.md
+          retention-days: 30
+
+  scheduled-audit:
+    runs-on: ubuntu-latest
+    name: Weekly Quality Audit
+    if: github.event_name == 'schedule'
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'yarn'
+
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+
+      - name: Generate component inventory
+        run: yarn inventory:components
+
+      - name: Run comprehensive quality check
+        run: yarn quality:check
+
+      - name: Generate warning backlog
+        run: yarn track-warnings:backlog
+
+      - name: Check for persistent warnings
+        run: |
+          if [ -f reports/warning-backlog.md ]; then
+            echo "::warning::Persistent warnings found - review reports/warning-backlog.md"
+            cat reports/warning-backlog.md
+          fi
+
+      - name: Upload audit results
+        uses: actions/upload-artifact@v4
+        with:
+          name: weekly-audit-results
+          path: |
+            reports/
+          retention-days: 90

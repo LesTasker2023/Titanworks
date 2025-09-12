@@ -3,6 +3,7 @@ import { cva, type VariantProps } from 'class-variance-authority';
 import * as React from 'react';
 
 import { cn } from '@/lib/utils';
+import { stripTransientProps } from '@/utils/stripTransientProps';
 // import './Button.scss'; // ✅ DISABLED FOR TESTING
 
 const buttonVariants = cva(
@@ -58,7 +59,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         )}
         ref={ref}
         disabled={isDisabled}
-        {...props}
+        {...stripTransientProps(props)}
       />
     );
   }

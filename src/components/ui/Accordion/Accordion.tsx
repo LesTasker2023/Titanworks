@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { stripTransientProps } from '@/utils/stripTransientProps';
 
 export interface AccordionProps extends React.HTMLAttributes<HTMLDivElement> {
   items: { title: string; content: React.ReactNode; disabled?: boolean }[];
@@ -14,7 +15,7 @@ export const Accordion = React.forwardRef<HTMLDivElement, AccordionProps>(
 
     // Safety check for items
     if (!items || !Array.isArray(items)) {
-      return <div ref={ref} {...props} />;
+      return <div ref={ref} {...stripTransientProps(props)} />;
     }
 
     const handleKeyDown = (e: React.KeyboardEvent, idx: number) => {
@@ -39,7 +40,7 @@ export const Accordion = React.forwardRef<HTMLDivElement, AccordionProps>(
     };
 
     return (
-      <div ref={ref} {...props}>
+      <div ref={ref} {...stripTransientProps(props)}>
         {items.map((item, idx) => {
           const buttonId = `accordion-header-${idx}`;
           const regionId = `accordion-content-${idx}`;

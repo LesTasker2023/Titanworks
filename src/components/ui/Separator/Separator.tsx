@@ -5,6 +5,7 @@ import { cva, type VariantProps } from 'class-variance-authority';
 import * as React from 'react';
 
 import { cn } from '@/lib/utils';
+import { stripTransientProps } from '@/utils/stripTransientProps';
 
 // Enhanced separator variants for enterprise usage
 const separatorVariants = cva('shrink-0 bg-border transition-colors duration-200', {
@@ -88,7 +89,7 @@ const Separator = React.forwardRef<
               orientation === 'horizontal' ? 'flex-1' : 'flex-1',
               className
             )}
-            {...props}
+            {...stripTransientProps(props)}
           />
           <div
             className={cn(
@@ -116,7 +117,7 @@ const Separator = React.forwardRef<
         decorative={decorative}
         orientation={orientation}
         className={cn(separatorVariants({ orientation, variant, size, spacing }), className)}
-        {...props}
+        {...stripTransientProps(props)}
       />
     );
   }

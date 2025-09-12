@@ -1,6 +1,7 @@
 'use client';
 
 import { cn } from '@/lib/utils';
+import { stripTransientProps } from '@/utils/stripTransientProps';
 import * as ToastPrimitive from '@radix-ui/react-toast';
 import { cva, type VariantProps } from 'class-variance-authority';
 import { X } from 'lucide-react';
@@ -56,7 +57,7 @@ const Toast = React.forwardRef<
     <ToastPrimitive.Root
       ref={ref}
       className={cn(toastVariants({ variant }), className)}
-      {...props}
+      {...stripTransientProps(props)}
     />
   );
 });

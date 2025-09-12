@@ -2,6 +2,7 @@ import { cva, type VariantProps } from 'class-variance-authority';
 import * as React from 'react';
 
 import { cn } from '@/lib/utils';
+import { stripTransientProps } from '@/utils/stripTransientProps';
 // import './Badge.scss'; // ✅ DISABLED FOR TESTING
 
 const badgeVariants = cva(
@@ -50,7 +51,7 @@ const Badge = React.forwardRef<HTMLDivElement, BadgeProps>(
       <div
         ref={ref}
         className={cn(badgeVariants({ variant, size }), dot && 'pl-1.5', className)}
-        {...props}
+        {...stripTransientProps(props)}
       >
         {dot && (
           <span
