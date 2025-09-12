@@ -1,6 +1,5 @@
 #!/usr/bin/env node
 import { execSync } from 'node:child_process';
-import { readFileSync } from 'node:fs';
 
 // Simple guard: if there are staged changes touching src/ or package.json but CHANGELOG.md
 // was not staged in this commit, fail. Allows pure docs or config tweaks to skip if they
@@ -12,7 +11,9 @@ function getStaged() {
 }
 
 const staged = getStaged();
-const touchesRuntime = staged.some(f => /^(src\/|package.json|vitest.config|next.config|tailwind.config|tsconfig)/.test(f));
+const touchesRuntime = staged.some(f =>
+  /^(src\/|package.json|vitest.config|next.config|tailwind.config|tsconfig)/.test(f)
+);
 const changelogStaged = staged.includes('CHANGELOG.md');
 
 if (touchesRuntime && !changelogStaged) {
