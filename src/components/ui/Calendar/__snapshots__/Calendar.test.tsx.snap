@@ -71,11 +71,11 @@ exports[`Calendar > Snapshots > matches default snapshot 1`] = `
           class="select-none font-medium text-sm rdp-caption_label"
           role="status"
         >
-          August 2025
+          September 2025
         </span>
       </div>
       <table
-        aria-label="August 2025"
+        aria-label="September 2025"
         aria-multiselectable="false"
         class="rdp-month_grid"
         role="grid"
@@ -144,383 +144,311 @@ exports[`Calendar > Snapshots > matches default snapshot 1`] = `
             class="mt-2 flex w-full rdp-week"
           >
             <td
-              aria-label="Sunday, July 27th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground aria-selected:text-muted-foreground rdp-outside"
-              data-day="2025-07-27"
-              data-month="2025-07"
-              data-outside="true"
-              role="gridcell"
-            >
-              27
-            </td>
-            <td
-              aria-label="Monday, July 28th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground aria-selected:text-muted-foreground rdp-outside"
-              data-day="2025-07-28"
-              data-month="2025-07"
-              data-outside="true"
-              role="gridcell"
-            >
-              28
-            </td>
-            <td
-              aria-label="Tuesday, July 29th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground aria-selected:text-muted-foreground rdp-outside"
-              data-day="2025-07-29"
-              data-month="2025-07"
-              data-outside="true"
-              role="gridcell"
-            >
-              29
-            </td>
-            <td
-              aria-label="Wednesday, July 30th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground aria-selected:text-muted-foreground rdp-outside"
-              data-day="2025-07-30"
-              data-month="2025-07"
-              data-outside="true"
-              role="gridcell"
-            >
-              30
-            </td>
-            <td
-              aria-label="Thursday, July 31st, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground aria-selected:text-muted-foreground rdp-outside"
-              data-day="2025-07-31"
-              data-month="2025-07"
-              data-outside="true"
-              role="gridcell"
-            >
-              31
-            </td>
-            <td
-              aria-label="Friday, August 1st, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
-              data-day="2025-08-01"
-              role="gridcell"
-            >
-              1
-            </td>
-            <td
-              aria-label="Saturday, August 2nd, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
-              data-day="2025-08-02"
-              role="gridcell"
-            >
-              2
-            </td>
-          </tr>
-          <tr
-            class="mt-2 flex w-full rdp-week"
-          >
-            <td
-              aria-label="Sunday, August 3rd, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
-              data-day="2025-08-03"
-              role="gridcell"
-            >
-              3
-            </td>
-            <td
-              aria-label="Monday, August 4th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
-              data-day="2025-08-04"
-              role="gridcell"
-            >
-              4
-            </td>
-            <td
-              aria-label="Tuesday, August 5th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
-              data-day="2025-08-05"
-              role="gridcell"
-            >
-              5
-            </td>
-            <td
-              aria-label="Wednesday, August 6th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
-              data-day="2025-08-06"
-              role="gridcell"
-            >
-              6
-            </td>
-            <td
-              aria-label="Thursday, August 7th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
-              data-day="2025-08-07"
-              role="gridcell"
-            >
-              7
-            </td>
-            <td
-              aria-label="Friday, August 8th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
-              data-day="2025-08-08"
-              role="gridcell"
-            >
-              8
-            </td>
-            <td
-              aria-label="Saturday, August 9th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
-              data-day="2025-08-09"
-              role="gridcell"
-            >
-              9
-            </td>
-          </tr>
-          <tr
-            class="mt-2 flex w-full rdp-week"
-          >
-            <td
-              aria-label="Sunday, August 10th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
-              data-day="2025-08-10"
-              role="gridcell"
-            >
-              10
-            </td>
-            <td
-              aria-label="Monday, August 11th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
-              data-day="2025-08-11"
-              role="gridcell"
-            >
-              11
-            </td>
-            <td
-              aria-label="Tuesday, August 12th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
-              data-day="2025-08-12"
-              role="gridcell"
-            >
-              12
-            </td>
-            <td
-              aria-label="Wednesday, August 13th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
-              data-day="2025-08-13"
-              role="gridcell"
-            >
-              13
-            </td>
-            <td
-              aria-label="Thursday, August 14th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
-              data-day="2025-08-14"
-              role="gridcell"
-            >
-              14
-            </td>
-            <td
-              aria-label="Friday, August 15th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
-              data-day="2025-08-15"
-              role="gridcell"
-            >
-              15
-            </td>
-            <td
-              aria-label="Saturday, August 16th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
-              data-day="2025-08-16"
-              role="gridcell"
-            >
-              16
-            </td>
-          </tr>
-          <tr
-            class="mt-2 flex w-full rdp-week"
-          >
-            <td
-              aria-label="Sunday, August 17th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
-              data-day="2025-08-17"
-              role="gridcell"
-            >
-              17
-            </td>
-            <td
-              aria-label="Monday, August 18th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
-              data-day="2025-08-18"
-              role="gridcell"
-            >
-              18
-            </td>
-            <td
-              aria-label="Tuesday, August 19th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
-              data-day="2025-08-19"
-              role="gridcell"
-            >
-              19
-            </td>
-            <td
-              aria-label="Wednesday, August 20th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
-              data-day="2025-08-20"
-              role="gridcell"
-            >
-              20
-            </td>
-            <td
-              aria-label="Thursday, August 21st, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
-              data-day="2025-08-21"
-              role="gridcell"
-            >
-              21
-            </td>
-            <td
-              aria-label="Friday, August 22nd, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
-              data-day="2025-08-22"
-              role="gridcell"
-            >
-              22
-            </td>
-            <td
-              aria-label="Today, Saturday, August 23rd, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day bg-gray-800 text-white border-0 font-normal data-[selected=true]:!bg-brand data-[selected=true]:!text-white data-[selected=true]:!border-brand data-[selected=true]:!border-2 rdp-today"
-              data-day="2025-08-23"
-              data-today="true"
-              role="gridcell"
-            >
-              23
-            </td>
-          </tr>
-          <tr
-            class="mt-2 flex w-full rdp-week"
-          >
-            <td
-              aria-label="Sunday, August 24th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
-              data-day="2025-08-24"
-              role="gridcell"
-            >
-              24
-            </td>
-            <td
-              aria-label="Monday, August 25th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
-              data-day="2025-08-25"
-              role="gridcell"
-            >
-              25
-            </td>
-            <td
-              aria-label="Tuesday, August 26th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
-              data-day="2025-08-26"
-              role="gridcell"
-            >
-              26
-            </td>
-            <td
-              aria-label="Wednesday, August 27th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
-              data-day="2025-08-27"
-              role="gridcell"
-            >
-              27
-            </td>
-            <td
-              aria-label="Thursday, August 28th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
-              data-day="2025-08-28"
-              role="gridcell"
-            >
-              28
-            </td>
-            <td
-              aria-label="Friday, August 29th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
-              data-day="2025-08-29"
-              role="gridcell"
-            >
-              29
-            </td>
-            <td
-              aria-label="Saturday, August 30th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
-              data-day="2025-08-30"
-              role="gridcell"
-            >
-              30
-            </td>
-          </tr>
-          <tr
-            class="mt-2 flex w-full rdp-week"
-          >
-            <td
               aria-label="Sunday, August 31st, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground aria-selected:text-muted-foreground rdp-outside"
               data-day="2025-08-31"
+              data-month="2025-08"
+              data-outside="true"
               role="gridcell"
             >
               31
             </td>
             <td
               aria-label="Monday, September 1st, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground aria-selected:text-muted-foreground rdp-outside"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
               data-day="2025-09-01"
-              data-month="2025-09"
-              data-outside="true"
               role="gridcell"
             >
               1
             </td>
             <td
               aria-label="Tuesday, September 2nd, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground aria-selected:text-muted-foreground rdp-outside"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
               data-day="2025-09-02"
-              data-month="2025-09"
-              data-outside="true"
               role="gridcell"
             >
               2
             </td>
             <td
               aria-label="Wednesday, September 3rd, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground aria-selected:text-muted-foreground rdp-outside"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
               data-day="2025-09-03"
-              data-month="2025-09"
-              data-outside="true"
               role="gridcell"
             >
               3
             </td>
             <td
               aria-label="Thursday, September 4th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground aria-selected:text-muted-foreground rdp-outside"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
               data-day="2025-09-04"
-              data-month="2025-09"
-              data-outside="true"
               role="gridcell"
             >
               4
             </td>
             <td
               aria-label="Friday, September 5th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground aria-selected:text-muted-foreground rdp-outside"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
               data-day="2025-09-05"
-              data-month="2025-09"
-              data-outside="true"
               role="gridcell"
             >
               5
             </td>
             <td
               aria-label="Saturday, September 6th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground aria-selected:text-muted-foreground rdp-outside"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
               data-day="2025-09-06"
-              data-month="2025-09"
-              data-outside="true"
               role="gridcell"
             >
               6
+            </td>
+          </tr>
+          <tr
+            class="mt-2 flex w-full rdp-week"
+          >
+            <td
+              aria-label="Sunday, September 7th, 2025"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              data-day="2025-09-07"
+              role="gridcell"
+            >
+              7
+            </td>
+            <td
+              aria-label="Monday, September 8th, 2025"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              data-day="2025-09-08"
+              role="gridcell"
+            >
+              8
+            </td>
+            <td
+              aria-label="Tuesday, September 9th, 2025"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              data-day="2025-09-09"
+              role="gridcell"
+            >
+              9
+            </td>
+            <td
+              aria-label="Wednesday, September 10th, 2025"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              data-day="2025-09-10"
+              role="gridcell"
+            >
+              10
+            </td>
+            <td
+              aria-label="Thursday, September 11th, 2025"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              data-day="2025-09-11"
+              role="gridcell"
+            >
+              11
+            </td>
+            <td
+              aria-label="Today, Friday, September 12th, 2025"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day bg-gray-800 text-white border-0 font-normal data-[selected=true]:!bg-brand data-[selected=true]:!text-white data-[selected=true]:!border-brand data-[selected=true]:!border-2 rdp-today"
+              data-day="2025-09-12"
+              data-today="true"
+              role="gridcell"
+            >
+              12
+            </td>
+            <td
+              aria-label="Saturday, September 13th, 2025"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              data-day="2025-09-13"
+              role="gridcell"
+            >
+              13
+            </td>
+          </tr>
+          <tr
+            class="mt-2 flex w-full rdp-week"
+          >
+            <td
+              aria-label="Sunday, September 14th, 2025"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              data-day="2025-09-14"
+              role="gridcell"
+            >
+              14
+            </td>
+            <td
+              aria-label="Monday, September 15th, 2025"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              data-day="2025-09-15"
+              role="gridcell"
+            >
+              15
+            </td>
+            <td
+              aria-label="Tuesday, September 16th, 2025"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              data-day="2025-09-16"
+              role="gridcell"
+            >
+              16
+            </td>
+            <td
+              aria-label="Wednesday, September 17th, 2025"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              data-day="2025-09-17"
+              role="gridcell"
+            >
+              17
+            </td>
+            <td
+              aria-label="Thursday, September 18th, 2025"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              data-day="2025-09-18"
+              role="gridcell"
+            >
+              18
+            </td>
+            <td
+              aria-label="Friday, September 19th, 2025"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              data-day="2025-09-19"
+              role="gridcell"
+            >
+              19
+            </td>
+            <td
+              aria-label="Saturday, September 20th, 2025"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              data-day="2025-09-20"
+              role="gridcell"
+            >
+              20
+            </td>
+          </tr>
+          <tr
+            class="mt-2 flex w-full rdp-week"
+          >
+            <td
+              aria-label="Sunday, September 21st, 2025"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              data-day="2025-09-21"
+              role="gridcell"
+            >
+              21
+            </td>
+            <td
+              aria-label="Monday, September 22nd, 2025"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              data-day="2025-09-22"
+              role="gridcell"
+            >
+              22
+            </td>
+            <td
+              aria-label="Tuesday, September 23rd, 2025"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              data-day="2025-09-23"
+              role="gridcell"
+            >
+              23
+            </td>
+            <td
+              aria-label="Wednesday, September 24th, 2025"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              data-day="2025-09-24"
+              role="gridcell"
+            >
+              24
+            </td>
+            <td
+              aria-label="Thursday, September 25th, 2025"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              data-day="2025-09-25"
+              role="gridcell"
+            >
+              25
+            </td>
+            <td
+              aria-label="Friday, September 26th, 2025"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              data-day="2025-09-26"
+              role="gridcell"
+            >
+              26
+            </td>
+            <td
+              aria-label="Saturday, September 27th, 2025"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              data-day="2025-09-27"
+              role="gridcell"
+            >
+              27
+            </td>
+          </tr>
+          <tr
+            class="mt-2 flex w-full rdp-week"
+          >
+            <td
+              aria-label="Sunday, September 28th, 2025"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              data-day="2025-09-28"
+              role="gridcell"
+            >
+              28
+            </td>
+            <td
+              aria-label="Monday, September 29th, 2025"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              data-day="2025-09-29"
+              role="gridcell"
+            >
+              29
+            </td>
+            <td
+              aria-label="Tuesday, September 30th, 2025"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              data-day="2025-09-30"
+              role="gridcell"
+            >
+              30
+            </td>
+            <td
+              aria-label="Wednesday, October 1st, 2025"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground aria-selected:text-muted-foreground rdp-outside"
+              data-day="2025-10-01"
+              data-month="2025-10"
+              data-outside="true"
+              role="gridcell"
+            >
+              1
+            </td>
+            <td
+              aria-label="Thursday, October 2nd, 2025"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground aria-selected:text-muted-foreground rdp-outside"
+              data-day="2025-10-02"
+              data-month="2025-10"
+              data-outside="true"
+              role="gridcell"
+            >
+              2
+            </td>
+            <td
+              aria-label="Friday, October 3rd, 2025"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground aria-selected:text-muted-foreground rdp-outside"
+              data-day="2025-10-03"
+              data-month="2025-10"
+              data-outside="true"
+              role="gridcell"
+            >
+              3
+            </td>
+            <td
+              aria-label="Saturday, October 4th, 2025"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground aria-selected:text-muted-foreground rdp-outside"
+              data-day="2025-10-04"
+              data-month="2025-10"
+              data-outside="true"
+              role="gridcell"
+            >
+              4
             </td>
           </tr>
         </tbody>
@@ -601,11 +529,11 @@ exports[`Calendar > Snapshots > matches disabled state snapshot 1`] = `
           class="select-none font-medium text-sm rdp-caption_label"
           role="status"
         >
-          August 2025
+          September 2025
         </span>
       </div>
       <table
-        aria-label="August 2025"
+        aria-label="September 2025"
         aria-multiselectable="false"
         class="rdp-month_grid"
         role="grid"
@@ -674,425 +602,346 @@ exports[`Calendar > Snapshots > matches disabled state snapshot 1`] = `
             class="mt-2 flex w-full rdp-week"
           >
             <td
-              aria-label="Sunday, July 27th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground opacity-50 rdp-disabled text-muted-foreground aria-selected:text-muted-foreground rdp-outside"
-              data-day="2025-07-27"
-              data-disabled="true"
-              data-month="2025-07"
-              data-outside="true"
-              role="gridcell"
-            >
-              27
-            </td>
-            <td
-              aria-label="Monday, July 28th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground opacity-50 rdp-disabled text-muted-foreground aria-selected:text-muted-foreground rdp-outside"
-              data-day="2025-07-28"
-              data-disabled="true"
-              data-month="2025-07"
-              data-outside="true"
-              role="gridcell"
-            >
-              28
-            </td>
-            <td
-              aria-label="Tuesday, July 29th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground opacity-50 rdp-disabled text-muted-foreground aria-selected:text-muted-foreground rdp-outside"
-              data-day="2025-07-29"
-              data-disabled="true"
-              data-month="2025-07"
-              data-outside="true"
-              role="gridcell"
-            >
-              29
-            </td>
-            <td
-              aria-label="Wednesday, July 30th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground opacity-50 rdp-disabled text-muted-foreground aria-selected:text-muted-foreground rdp-outside"
-              data-day="2025-07-30"
-              data-disabled="true"
-              data-month="2025-07"
-              data-outside="true"
-              role="gridcell"
-            >
-              30
-            </td>
-            <td
-              aria-label="Thursday, July 31st, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground opacity-50 rdp-disabled text-muted-foreground aria-selected:text-muted-foreground rdp-outside"
-              data-day="2025-07-31"
-              data-disabled="true"
-              data-month="2025-07"
-              data-outside="true"
-              role="gridcell"
-            >
-              31
-            </td>
-            <td
-              aria-label="Friday, August 1st, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground opacity-50 rdp-disabled"
-              data-day="2025-08-01"
-              data-disabled="true"
-              role="gridcell"
-            >
-              1
-            </td>
-            <td
-              aria-label="Saturday, August 2nd, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground opacity-50 rdp-disabled"
-              data-day="2025-08-02"
-              data-disabled="true"
-              role="gridcell"
-            >
-              2
-            </td>
-          </tr>
-          <tr
-            class="mt-2 flex w-full rdp-week"
-          >
-            <td
-              aria-label="Sunday, August 3rd, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground opacity-50 rdp-disabled"
-              data-day="2025-08-03"
-              data-disabled="true"
-              role="gridcell"
-            >
-              3
-            </td>
-            <td
-              aria-label="Monday, August 4th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground opacity-50 rdp-disabled"
-              data-day="2025-08-04"
-              data-disabled="true"
-              role="gridcell"
-            >
-              4
-            </td>
-            <td
-              aria-label="Tuesday, August 5th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground opacity-50 rdp-disabled"
-              data-day="2025-08-05"
-              data-disabled="true"
-              role="gridcell"
-            >
-              5
-            </td>
-            <td
-              aria-label="Wednesday, August 6th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground opacity-50 rdp-disabled"
-              data-day="2025-08-06"
-              data-disabled="true"
-              role="gridcell"
-            >
-              6
-            </td>
-            <td
-              aria-label="Thursday, August 7th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground opacity-50 rdp-disabled"
-              data-day="2025-08-07"
-              data-disabled="true"
-              role="gridcell"
-            >
-              7
-            </td>
-            <td
-              aria-label="Friday, August 8th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground opacity-50 rdp-disabled"
-              data-day="2025-08-08"
-              data-disabled="true"
-              role="gridcell"
-            >
-              8
-            </td>
-            <td
-              aria-label="Saturday, August 9th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground opacity-50 rdp-disabled"
-              data-day="2025-08-09"
-              data-disabled="true"
-              role="gridcell"
-            >
-              9
-            </td>
-          </tr>
-          <tr
-            class="mt-2 flex w-full rdp-week"
-          >
-            <td
-              aria-label="Sunday, August 10th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground opacity-50 rdp-disabled"
-              data-day="2025-08-10"
-              data-disabled="true"
-              role="gridcell"
-            >
-              10
-            </td>
-            <td
-              aria-label="Monday, August 11th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground opacity-50 rdp-disabled"
-              data-day="2025-08-11"
-              data-disabled="true"
-              role="gridcell"
-            >
-              11
-            </td>
-            <td
-              aria-label="Tuesday, August 12th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground opacity-50 rdp-disabled"
-              data-day="2025-08-12"
-              data-disabled="true"
-              role="gridcell"
-            >
-              12
-            </td>
-            <td
-              aria-label="Wednesday, August 13th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground opacity-50 rdp-disabled"
-              data-day="2025-08-13"
-              data-disabled="true"
-              role="gridcell"
-            >
-              13
-            </td>
-            <td
-              aria-label="Thursday, August 14th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground opacity-50 rdp-disabled"
-              data-day="2025-08-14"
-              data-disabled="true"
-              role="gridcell"
-            >
-              14
-            </td>
-            <td
-              aria-label="Friday, August 15th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground opacity-50 rdp-disabled"
-              data-day="2025-08-15"
-              data-disabled="true"
-              role="gridcell"
-            >
-              15
-            </td>
-            <td
-              aria-label="Saturday, August 16th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground opacity-50 rdp-disabled"
-              data-day="2025-08-16"
-              data-disabled="true"
-              role="gridcell"
-            >
-              16
-            </td>
-          </tr>
-          <tr
-            class="mt-2 flex w-full rdp-week"
-          >
-            <td
-              aria-label="Sunday, August 17th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground opacity-50 rdp-disabled"
-              data-day="2025-08-17"
-              data-disabled="true"
-              role="gridcell"
-            >
-              17
-            </td>
-            <td
-              aria-label="Monday, August 18th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground opacity-50 rdp-disabled"
-              data-day="2025-08-18"
-              data-disabled="true"
-              role="gridcell"
-            >
-              18
-            </td>
-            <td
-              aria-label="Tuesday, August 19th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground opacity-50 rdp-disabled"
-              data-day="2025-08-19"
-              data-disabled="true"
-              role="gridcell"
-            >
-              19
-            </td>
-            <td
-              aria-label="Wednesday, August 20th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground opacity-50 rdp-disabled"
-              data-day="2025-08-20"
-              data-disabled="true"
-              role="gridcell"
-            >
-              20
-            </td>
-            <td
-              aria-label="Thursday, August 21st, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground opacity-50 rdp-disabled"
-              data-day="2025-08-21"
-              data-disabled="true"
-              role="gridcell"
-            >
-              21
-            </td>
-            <td
-              aria-label="Friday, August 22nd, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground opacity-50 rdp-disabled"
-              data-day="2025-08-22"
-              data-disabled="true"
-              role="gridcell"
-            >
-              22
-            </td>
-            <td
-              aria-label="Today, Saturday, August 23rd, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground opacity-50 rdp-disabled bg-gray-800 text-white border-0 font-normal data-[selected=true]:!bg-brand data-[selected=true]:!text-white data-[selected=true]:!border-brand data-[selected=true]:!border-2 rdp-today"
-              data-day="2025-08-23"
-              data-disabled="true"
-              data-today="true"
-              role="gridcell"
-            >
-              23
-            </td>
-          </tr>
-          <tr
-            class="mt-2 flex w-full rdp-week"
-          >
-            <td
-              aria-label="Sunday, August 24th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground opacity-50 rdp-disabled"
-              data-day="2025-08-24"
-              data-disabled="true"
-              role="gridcell"
-            >
-              24
-            </td>
-            <td
-              aria-label="Monday, August 25th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground opacity-50 rdp-disabled"
-              data-day="2025-08-25"
-              data-disabled="true"
-              role="gridcell"
-            >
-              25
-            </td>
-            <td
-              aria-label="Tuesday, August 26th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground opacity-50 rdp-disabled"
-              data-day="2025-08-26"
-              data-disabled="true"
-              role="gridcell"
-            >
-              26
-            </td>
-            <td
-              aria-label="Wednesday, August 27th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground opacity-50 rdp-disabled"
-              data-day="2025-08-27"
-              data-disabled="true"
-              role="gridcell"
-            >
-              27
-            </td>
-            <td
-              aria-label="Thursday, August 28th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground opacity-50 rdp-disabled"
-              data-day="2025-08-28"
-              data-disabled="true"
-              role="gridcell"
-            >
-              28
-            </td>
-            <td
-              aria-label="Friday, August 29th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground opacity-50 rdp-disabled"
-              data-day="2025-08-29"
-              data-disabled="true"
-              role="gridcell"
-            >
-              29
-            </td>
-            <td
-              aria-label="Saturday, August 30th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground opacity-50 rdp-disabled"
-              data-day="2025-08-30"
-              data-disabled="true"
-              role="gridcell"
-            >
-              30
-            </td>
-          </tr>
-          <tr
-            class="mt-2 flex w-full rdp-week"
-          >
-            <td
               aria-label="Sunday, August 31st, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground opacity-50 rdp-disabled"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground opacity-50 rdp-disabled text-muted-foreground aria-selected:text-muted-foreground rdp-outside"
               data-day="2025-08-31"
               data-disabled="true"
+              data-month="2025-08"
+              data-outside="true"
               role="gridcell"
             >
               31
             </td>
             <td
               aria-label="Monday, September 1st, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground opacity-50 rdp-disabled text-muted-foreground aria-selected:text-muted-foreground rdp-outside"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground opacity-50 rdp-disabled"
               data-day="2025-09-01"
               data-disabled="true"
-              data-month="2025-09"
-              data-outside="true"
               role="gridcell"
             >
               1
             </td>
             <td
               aria-label="Tuesday, September 2nd, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground opacity-50 rdp-disabled text-muted-foreground aria-selected:text-muted-foreground rdp-outside"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground opacity-50 rdp-disabled"
               data-day="2025-09-02"
               data-disabled="true"
-              data-month="2025-09"
-              data-outside="true"
               role="gridcell"
             >
               2
             </td>
             <td
               aria-label="Wednesday, September 3rd, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground opacity-50 rdp-disabled text-muted-foreground aria-selected:text-muted-foreground rdp-outside"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground opacity-50 rdp-disabled"
               data-day="2025-09-03"
               data-disabled="true"
-              data-month="2025-09"
-              data-outside="true"
               role="gridcell"
             >
               3
             </td>
             <td
               aria-label="Thursday, September 4th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground opacity-50 rdp-disabled text-muted-foreground aria-selected:text-muted-foreground rdp-outside"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground opacity-50 rdp-disabled"
               data-day="2025-09-04"
               data-disabled="true"
-              data-month="2025-09"
-              data-outside="true"
               role="gridcell"
             >
               4
             </td>
             <td
               aria-label="Friday, September 5th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground opacity-50 rdp-disabled text-muted-foreground aria-selected:text-muted-foreground rdp-outside"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground opacity-50 rdp-disabled"
               data-day="2025-09-05"
               data-disabled="true"
-              data-month="2025-09"
-              data-outside="true"
               role="gridcell"
             >
               5
             </td>
             <td
               aria-label="Saturday, September 6th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground opacity-50 rdp-disabled text-muted-foreground aria-selected:text-muted-foreground rdp-outside"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground opacity-50 rdp-disabled"
               data-day="2025-09-06"
               data-disabled="true"
-              data-month="2025-09"
-              data-outside="true"
               role="gridcell"
             >
               6
+            </td>
+          </tr>
+          <tr
+            class="mt-2 flex w-full rdp-week"
+          >
+            <td
+              aria-label="Sunday, September 7th, 2025"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground opacity-50 rdp-disabled"
+              data-day="2025-09-07"
+              data-disabled="true"
+              role="gridcell"
+            >
+              7
+            </td>
+            <td
+              aria-label="Monday, September 8th, 2025"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground opacity-50 rdp-disabled"
+              data-day="2025-09-08"
+              data-disabled="true"
+              role="gridcell"
+            >
+              8
+            </td>
+            <td
+              aria-label="Tuesday, September 9th, 2025"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground opacity-50 rdp-disabled"
+              data-day="2025-09-09"
+              data-disabled="true"
+              role="gridcell"
+            >
+              9
+            </td>
+            <td
+              aria-label="Wednesday, September 10th, 2025"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground opacity-50 rdp-disabled"
+              data-day="2025-09-10"
+              data-disabled="true"
+              role="gridcell"
+            >
+              10
+            </td>
+            <td
+              aria-label="Thursday, September 11th, 2025"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground opacity-50 rdp-disabled"
+              data-day="2025-09-11"
+              data-disabled="true"
+              role="gridcell"
+            >
+              11
+            </td>
+            <td
+              aria-label="Today, Friday, September 12th, 2025"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground opacity-50 rdp-disabled bg-gray-800 text-white border-0 font-normal data-[selected=true]:!bg-brand data-[selected=true]:!text-white data-[selected=true]:!border-brand data-[selected=true]:!border-2 rdp-today"
+              data-day="2025-09-12"
+              data-disabled="true"
+              data-today="true"
+              role="gridcell"
+            >
+              12
+            </td>
+            <td
+              aria-label="Saturday, September 13th, 2025"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground opacity-50 rdp-disabled"
+              data-day="2025-09-13"
+              data-disabled="true"
+              role="gridcell"
+            >
+              13
+            </td>
+          </tr>
+          <tr
+            class="mt-2 flex w-full rdp-week"
+          >
+            <td
+              aria-label="Sunday, September 14th, 2025"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground opacity-50 rdp-disabled"
+              data-day="2025-09-14"
+              data-disabled="true"
+              role="gridcell"
+            >
+              14
+            </td>
+            <td
+              aria-label="Monday, September 15th, 2025"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground opacity-50 rdp-disabled"
+              data-day="2025-09-15"
+              data-disabled="true"
+              role="gridcell"
+            >
+              15
+            </td>
+            <td
+              aria-label="Tuesday, September 16th, 2025"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground opacity-50 rdp-disabled"
+              data-day="2025-09-16"
+              data-disabled="true"
+              role="gridcell"
+            >
+              16
+            </td>
+            <td
+              aria-label="Wednesday, September 17th, 2025"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground opacity-50 rdp-disabled"
+              data-day="2025-09-17"
+              data-disabled="true"
+              role="gridcell"
+            >
+              17
+            </td>
+            <td
+              aria-label="Thursday, September 18th, 2025"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground opacity-50 rdp-disabled"
+              data-day="2025-09-18"
+              data-disabled="true"
+              role="gridcell"
+            >
+              18
+            </td>
+            <td
+              aria-label="Friday, September 19th, 2025"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground opacity-50 rdp-disabled"
+              data-day="2025-09-19"
+              data-disabled="true"
+              role="gridcell"
+            >
+              19
+            </td>
+            <td
+              aria-label="Saturday, September 20th, 2025"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground opacity-50 rdp-disabled"
+              data-day="2025-09-20"
+              data-disabled="true"
+              role="gridcell"
+            >
+              20
+            </td>
+          </tr>
+          <tr
+            class="mt-2 flex w-full rdp-week"
+          >
+            <td
+              aria-label="Sunday, September 21st, 2025"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground opacity-50 rdp-disabled"
+              data-day="2025-09-21"
+              data-disabled="true"
+              role="gridcell"
+            >
+              21
+            </td>
+            <td
+              aria-label="Monday, September 22nd, 2025"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground opacity-50 rdp-disabled"
+              data-day="2025-09-22"
+              data-disabled="true"
+              role="gridcell"
+            >
+              22
+            </td>
+            <td
+              aria-label="Tuesday, September 23rd, 2025"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground opacity-50 rdp-disabled"
+              data-day="2025-09-23"
+              data-disabled="true"
+              role="gridcell"
+            >
+              23
+            </td>
+            <td
+              aria-label="Wednesday, September 24th, 2025"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground opacity-50 rdp-disabled"
+              data-day="2025-09-24"
+              data-disabled="true"
+              role="gridcell"
+            >
+              24
+            </td>
+            <td
+              aria-label="Thursday, September 25th, 2025"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground opacity-50 rdp-disabled"
+              data-day="2025-09-25"
+              data-disabled="true"
+              role="gridcell"
+            >
+              25
+            </td>
+            <td
+              aria-label="Friday, September 26th, 2025"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground opacity-50 rdp-disabled"
+              data-day="2025-09-26"
+              data-disabled="true"
+              role="gridcell"
+            >
+              26
+            </td>
+            <td
+              aria-label="Saturday, September 27th, 2025"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground opacity-50 rdp-disabled"
+              data-day="2025-09-27"
+              data-disabled="true"
+              role="gridcell"
+            >
+              27
+            </td>
+          </tr>
+          <tr
+            class="mt-2 flex w-full rdp-week"
+          >
+            <td
+              aria-label="Sunday, September 28th, 2025"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground opacity-50 rdp-disabled"
+              data-day="2025-09-28"
+              data-disabled="true"
+              role="gridcell"
+            >
+              28
+            </td>
+            <td
+              aria-label="Monday, September 29th, 2025"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground opacity-50 rdp-disabled"
+              data-day="2025-09-29"
+              data-disabled="true"
+              role="gridcell"
+            >
+              29
+            </td>
+            <td
+              aria-label="Tuesday, September 30th, 2025"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground opacity-50 rdp-disabled"
+              data-day="2025-09-30"
+              data-disabled="true"
+              role="gridcell"
+            >
+              30
+            </td>
+            <td
+              aria-label="Wednesday, October 1st, 2025"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground opacity-50 rdp-disabled text-muted-foreground aria-selected:text-muted-foreground rdp-outside"
+              data-day="2025-10-01"
+              data-disabled="true"
+              data-month="2025-10"
+              data-outside="true"
+              role="gridcell"
+            >
+              1
+            </td>
+            <td
+              aria-label="Thursday, October 2nd, 2025"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground opacity-50 rdp-disabled text-muted-foreground aria-selected:text-muted-foreground rdp-outside"
+              data-day="2025-10-02"
+              data-disabled="true"
+              data-month="2025-10"
+              data-outside="true"
+              role="gridcell"
+            >
+              2
+            </td>
+            <td
+              aria-label="Friday, October 3rd, 2025"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground opacity-50 rdp-disabled text-muted-foreground aria-selected:text-muted-foreground rdp-outside"
+              data-day="2025-10-03"
+              data-disabled="true"
+              data-month="2025-10"
+              data-outside="true"
+              role="gridcell"
+            >
+              3
+            </td>
+            <td
+              aria-label="Saturday, October 4th, 2025"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground opacity-50 rdp-disabled text-muted-foreground aria-selected:text-muted-foreground rdp-outside"
+              data-day="2025-10-04"
+              data-disabled="true"
+              data-month="2025-10"
+              data-outside="true"
+              role="gridcell"
+            >
+              4
             </td>
           </tr>
         </tbody>
@@ -1173,11 +1022,11 @@ exports[`Calendar > Snapshots > matches focused state snapshot 1`] = `
           class="select-none font-medium text-sm rdp-caption_label"
           role="status"
         >
-          August 2025
+          September 2025
         </span>
       </div>
       <table
-        aria-label="August 2025"
+        aria-label="September 2025"
         aria-multiselectable="false"
         class="rdp-month_grid"
         role="grid"
@@ -1246,383 +1095,311 @@ exports[`Calendar > Snapshots > matches focused state snapshot 1`] = `
             class="mt-2 flex w-full rdp-week"
           >
             <td
-              aria-label="Sunday, July 27th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground aria-selected:text-muted-foreground rdp-outside"
-              data-day="2025-07-27"
-              data-month="2025-07"
-              data-outside="true"
-              role="gridcell"
-            >
-              27
-            </td>
-            <td
-              aria-label="Monday, July 28th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground aria-selected:text-muted-foreground rdp-outside"
-              data-day="2025-07-28"
-              data-month="2025-07"
-              data-outside="true"
-              role="gridcell"
-            >
-              28
-            </td>
-            <td
-              aria-label="Tuesday, July 29th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground aria-selected:text-muted-foreground rdp-outside"
-              data-day="2025-07-29"
-              data-month="2025-07"
-              data-outside="true"
-              role="gridcell"
-            >
-              29
-            </td>
-            <td
-              aria-label="Wednesday, July 30th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground aria-selected:text-muted-foreground rdp-outside"
-              data-day="2025-07-30"
-              data-month="2025-07"
-              data-outside="true"
-              role="gridcell"
-            >
-              30
-            </td>
-            <td
-              aria-label="Thursday, July 31st, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground aria-selected:text-muted-foreground rdp-outside"
-              data-day="2025-07-31"
-              data-month="2025-07"
-              data-outside="true"
-              role="gridcell"
-            >
-              31
-            </td>
-            <td
-              aria-label="Friday, August 1st, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
-              data-day="2025-08-01"
-              role="gridcell"
-            >
-              1
-            </td>
-            <td
-              aria-label="Saturday, August 2nd, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
-              data-day="2025-08-02"
-              role="gridcell"
-            >
-              2
-            </td>
-          </tr>
-          <tr
-            class="mt-2 flex w-full rdp-week"
-          >
-            <td
-              aria-label="Sunday, August 3rd, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
-              data-day="2025-08-03"
-              role="gridcell"
-            >
-              3
-            </td>
-            <td
-              aria-label="Monday, August 4th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
-              data-day="2025-08-04"
-              role="gridcell"
-            >
-              4
-            </td>
-            <td
-              aria-label="Tuesday, August 5th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
-              data-day="2025-08-05"
-              role="gridcell"
-            >
-              5
-            </td>
-            <td
-              aria-label="Wednesday, August 6th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
-              data-day="2025-08-06"
-              role="gridcell"
-            >
-              6
-            </td>
-            <td
-              aria-label="Thursday, August 7th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
-              data-day="2025-08-07"
-              role="gridcell"
-            >
-              7
-            </td>
-            <td
-              aria-label="Friday, August 8th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
-              data-day="2025-08-08"
-              role="gridcell"
-            >
-              8
-            </td>
-            <td
-              aria-label="Saturday, August 9th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
-              data-day="2025-08-09"
-              role="gridcell"
-            >
-              9
-            </td>
-          </tr>
-          <tr
-            class="mt-2 flex w-full rdp-week"
-          >
-            <td
-              aria-label="Sunday, August 10th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
-              data-day="2025-08-10"
-              role="gridcell"
-            >
-              10
-            </td>
-            <td
-              aria-label="Monday, August 11th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
-              data-day="2025-08-11"
-              role="gridcell"
-            >
-              11
-            </td>
-            <td
-              aria-label="Tuesday, August 12th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
-              data-day="2025-08-12"
-              role="gridcell"
-            >
-              12
-            </td>
-            <td
-              aria-label="Wednesday, August 13th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
-              data-day="2025-08-13"
-              role="gridcell"
-            >
-              13
-            </td>
-            <td
-              aria-label="Thursday, August 14th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
-              data-day="2025-08-14"
-              role="gridcell"
-            >
-              14
-            </td>
-            <td
-              aria-label="Friday, August 15th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
-              data-day="2025-08-15"
-              role="gridcell"
-            >
-              15
-            </td>
-            <td
-              aria-label="Saturday, August 16th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
-              data-day="2025-08-16"
-              role="gridcell"
-            >
-              16
-            </td>
-          </tr>
-          <tr
-            class="mt-2 flex w-full rdp-week"
-          >
-            <td
-              aria-label="Sunday, August 17th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
-              data-day="2025-08-17"
-              role="gridcell"
-            >
-              17
-            </td>
-            <td
-              aria-label="Monday, August 18th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
-              data-day="2025-08-18"
-              role="gridcell"
-            >
-              18
-            </td>
-            <td
-              aria-label="Tuesday, August 19th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
-              data-day="2025-08-19"
-              role="gridcell"
-            >
-              19
-            </td>
-            <td
-              aria-label="Wednesday, August 20th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
-              data-day="2025-08-20"
-              role="gridcell"
-            >
-              20
-            </td>
-            <td
-              aria-label="Thursday, August 21st, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
-              data-day="2025-08-21"
-              role="gridcell"
-            >
-              21
-            </td>
-            <td
-              aria-label="Friday, August 22nd, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
-              data-day="2025-08-22"
-              role="gridcell"
-            >
-              22
-            </td>
-            <td
-              aria-label="Today, Saturday, August 23rd, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day bg-gray-800 text-white border-0 font-normal data-[selected=true]:!bg-brand data-[selected=true]:!text-white data-[selected=true]:!border-brand data-[selected=true]:!border-2 rdp-today"
-              data-day="2025-08-23"
-              data-today="true"
-              role="gridcell"
-            >
-              23
-            </td>
-          </tr>
-          <tr
-            class="mt-2 flex w-full rdp-week"
-          >
-            <td
-              aria-label="Sunday, August 24th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
-              data-day="2025-08-24"
-              role="gridcell"
-            >
-              24
-            </td>
-            <td
-              aria-label="Monday, August 25th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
-              data-day="2025-08-25"
-              role="gridcell"
-            >
-              25
-            </td>
-            <td
-              aria-label="Tuesday, August 26th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
-              data-day="2025-08-26"
-              role="gridcell"
-            >
-              26
-            </td>
-            <td
-              aria-label="Wednesday, August 27th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
-              data-day="2025-08-27"
-              role="gridcell"
-            >
-              27
-            </td>
-            <td
-              aria-label="Thursday, August 28th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
-              data-day="2025-08-28"
-              role="gridcell"
-            >
-              28
-            </td>
-            <td
-              aria-label="Friday, August 29th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
-              data-day="2025-08-29"
-              role="gridcell"
-            >
-              29
-            </td>
-            <td
-              aria-label="Saturday, August 30th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
-              data-day="2025-08-30"
-              role="gridcell"
-            >
-              30
-            </td>
-          </tr>
-          <tr
-            class="mt-2 flex w-full rdp-week"
-          >
-            <td
               aria-label="Sunday, August 31st, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground aria-selected:text-muted-foreground rdp-outside"
               data-day="2025-08-31"
+              data-month="2025-08"
+              data-outside="true"
               role="gridcell"
             >
               31
             </td>
             <td
               aria-label="Monday, September 1st, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground aria-selected:text-muted-foreground rdp-outside"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
               data-day="2025-09-01"
-              data-month="2025-09"
-              data-outside="true"
               role="gridcell"
             >
               1
             </td>
             <td
               aria-label="Tuesday, September 2nd, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground aria-selected:text-muted-foreground rdp-outside"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
               data-day="2025-09-02"
-              data-month="2025-09"
-              data-outside="true"
               role="gridcell"
             >
               2
             </td>
             <td
               aria-label="Wednesday, September 3rd, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground aria-selected:text-muted-foreground rdp-outside"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
               data-day="2025-09-03"
-              data-month="2025-09"
-              data-outside="true"
               role="gridcell"
             >
               3
             </td>
             <td
               aria-label="Thursday, September 4th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground aria-selected:text-muted-foreground rdp-outside"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
               data-day="2025-09-04"
-              data-month="2025-09"
-              data-outside="true"
               role="gridcell"
             >
               4
             </td>
             <td
               aria-label="Friday, September 5th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground aria-selected:text-muted-foreground rdp-outside"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
               data-day="2025-09-05"
-              data-month="2025-09"
-              data-outside="true"
               role="gridcell"
             >
               5
             </td>
             <td
               aria-label="Saturday, September 6th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground aria-selected:text-muted-foreground rdp-outside"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
               data-day="2025-09-06"
-              data-month="2025-09"
-              data-outside="true"
               role="gridcell"
             >
               6
+            </td>
+          </tr>
+          <tr
+            class="mt-2 flex w-full rdp-week"
+          >
+            <td
+              aria-label="Sunday, September 7th, 2025"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              data-day="2025-09-07"
+              role="gridcell"
+            >
+              7
+            </td>
+            <td
+              aria-label="Monday, September 8th, 2025"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              data-day="2025-09-08"
+              role="gridcell"
+            >
+              8
+            </td>
+            <td
+              aria-label="Tuesday, September 9th, 2025"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              data-day="2025-09-09"
+              role="gridcell"
+            >
+              9
+            </td>
+            <td
+              aria-label="Wednesday, September 10th, 2025"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              data-day="2025-09-10"
+              role="gridcell"
+            >
+              10
+            </td>
+            <td
+              aria-label="Thursday, September 11th, 2025"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              data-day="2025-09-11"
+              role="gridcell"
+            >
+              11
+            </td>
+            <td
+              aria-label="Today, Friday, September 12th, 2025"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day bg-gray-800 text-white border-0 font-normal data-[selected=true]:!bg-brand data-[selected=true]:!text-white data-[selected=true]:!border-brand data-[selected=true]:!border-2 rdp-today"
+              data-day="2025-09-12"
+              data-today="true"
+              role="gridcell"
+            >
+              12
+            </td>
+            <td
+              aria-label="Saturday, September 13th, 2025"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              data-day="2025-09-13"
+              role="gridcell"
+            >
+              13
+            </td>
+          </tr>
+          <tr
+            class="mt-2 flex w-full rdp-week"
+          >
+            <td
+              aria-label="Sunday, September 14th, 2025"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              data-day="2025-09-14"
+              role="gridcell"
+            >
+              14
+            </td>
+            <td
+              aria-label="Monday, September 15th, 2025"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              data-day="2025-09-15"
+              role="gridcell"
+            >
+              15
+            </td>
+            <td
+              aria-label="Tuesday, September 16th, 2025"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              data-day="2025-09-16"
+              role="gridcell"
+            >
+              16
+            </td>
+            <td
+              aria-label="Wednesday, September 17th, 2025"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              data-day="2025-09-17"
+              role="gridcell"
+            >
+              17
+            </td>
+            <td
+              aria-label="Thursday, September 18th, 2025"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              data-day="2025-09-18"
+              role="gridcell"
+            >
+              18
+            </td>
+            <td
+              aria-label="Friday, September 19th, 2025"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              data-day="2025-09-19"
+              role="gridcell"
+            >
+              19
+            </td>
+            <td
+              aria-label="Saturday, September 20th, 2025"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              data-day="2025-09-20"
+              role="gridcell"
+            >
+              20
+            </td>
+          </tr>
+          <tr
+            class="mt-2 flex w-full rdp-week"
+          >
+            <td
+              aria-label="Sunday, September 21st, 2025"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              data-day="2025-09-21"
+              role="gridcell"
+            >
+              21
+            </td>
+            <td
+              aria-label="Monday, September 22nd, 2025"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              data-day="2025-09-22"
+              role="gridcell"
+            >
+              22
+            </td>
+            <td
+              aria-label="Tuesday, September 23rd, 2025"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              data-day="2025-09-23"
+              role="gridcell"
+            >
+              23
+            </td>
+            <td
+              aria-label="Wednesday, September 24th, 2025"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              data-day="2025-09-24"
+              role="gridcell"
+            >
+              24
+            </td>
+            <td
+              aria-label="Thursday, September 25th, 2025"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              data-day="2025-09-25"
+              role="gridcell"
+            >
+              25
+            </td>
+            <td
+              aria-label="Friday, September 26th, 2025"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              data-day="2025-09-26"
+              role="gridcell"
+            >
+              26
+            </td>
+            <td
+              aria-label="Saturday, September 27th, 2025"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              data-day="2025-09-27"
+              role="gridcell"
+            >
+              27
+            </td>
+          </tr>
+          <tr
+            class="mt-2 flex w-full rdp-week"
+          >
+            <td
+              aria-label="Sunday, September 28th, 2025"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              data-day="2025-09-28"
+              role="gridcell"
+            >
+              28
+            </td>
+            <td
+              aria-label="Monday, September 29th, 2025"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              data-day="2025-09-29"
+              role="gridcell"
+            >
+              29
+            </td>
+            <td
+              aria-label="Tuesday, September 30th, 2025"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              data-day="2025-09-30"
+              role="gridcell"
+            >
+              30
+            </td>
+            <td
+              aria-label="Wednesday, October 1st, 2025"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground aria-selected:text-muted-foreground rdp-outside"
+              data-day="2025-10-01"
+              data-month="2025-10"
+              data-outside="true"
+              role="gridcell"
+            >
+              1
+            </td>
+            <td
+              aria-label="Thursday, October 2nd, 2025"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground aria-selected:text-muted-foreground rdp-outside"
+              data-day="2025-10-02"
+              data-month="2025-10"
+              data-outside="true"
+              role="gridcell"
+            >
+              2
+            </td>
+            <td
+              aria-label="Friday, October 3rd, 2025"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground aria-selected:text-muted-foreground rdp-outside"
+              data-day="2025-10-03"
+              data-month="2025-10"
+              data-outside="true"
+              role="gridcell"
+            >
+              3
+            </td>
+            <td
+              aria-label="Saturday, October 4th, 2025"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground aria-selected:text-muted-foreground rdp-outside"
+              data-day="2025-10-04"
+              data-month="2025-10"
+              data-outside="true"
+              role="gridcell"
+            >
+              4
             </td>
           </tr>
         </tbody>
@@ -1703,11 +1480,11 @@ exports[`Calendar > Snapshots > matches hover state snapshot 1`] = `
           class="select-none font-medium text-sm rdp-caption_label"
           role="status"
         >
-          August 2025
+          September 2025
         </span>
       </div>
       <table
-        aria-label="August 2025"
+        aria-label="September 2025"
         aria-multiselectable="false"
         class="rdp-month_grid"
         role="grid"
@@ -1776,383 +1553,311 @@ exports[`Calendar > Snapshots > matches hover state snapshot 1`] = `
             class="mt-2 flex w-full rdp-week"
           >
             <td
-              aria-label="Sunday, July 27th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground aria-selected:text-muted-foreground rdp-outside"
-              data-day="2025-07-27"
-              data-month="2025-07"
-              data-outside="true"
-              role="gridcell"
-            >
-              27
-            </td>
-            <td
-              aria-label="Monday, July 28th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground aria-selected:text-muted-foreground rdp-outside"
-              data-day="2025-07-28"
-              data-month="2025-07"
-              data-outside="true"
-              role="gridcell"
-            >
-              28
-            </td>
-            <td
-              aria-label="Tuesday, July 29th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground aria-selected:text-muted-foreground rdp-outside"
-              data-day="2025-07-29"
-              data-month="2025-07"
-              data-outside="true"
-              role="gridcell"
-            >
-              29
-            </td>
-            <td
-              aria-label="Wednesday, July 30th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground aria-selected:text-muted-foreground rdp-outside"
-              data-day="2025-07-30"
-              data-month="2025-07"
-              data-outside="true"
-              role="gridcell"
-            >
-              30
-            </td>
-            <td
-              aria-label="Thursday, July 31st, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground aria-selected:text-muted-foreground rdp-outside"
-              data-day="2025-07-31"
-              data-month="2025-07"
-              data-outside="true"
-              role="gridcell"
-            >
-              31
-            </td>
-            <td
-              aria-label="Friday, August 1st, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
-              data-day="2025-08-01"
-              role="gridcell"
-            >
-              1
-            </td>
-            <td
-              aria-label="Saturday, August 2nd, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
-              data-day="2025-08-02"
-              role="gridcell"
-            >
-              2
-            </td>
-          </tr>
-          <tr
-            class="mt-2 flex w-full rdp-week"
-          >
-            <td
-              aria-label="Sunday, August 3rd, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
-              data-day="2025-08-03"
-              role="gridcell"
-            >
-              3
-            </td>
-            <td
-              aria-label="Monday, August 4th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
-              data-day="2025-08-04"
-              role="gridcell"
-            >
-              4
-            </td>
-            <td
-              aria-label="Tuesday, August 5th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
-              data-day="2025-08-05"
-              role="gridcell"
-            >
-              5
-            </td>
-            <td
-              aria-label="Wednesday, August 6th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
-              data-day="2025-08-06"
-              role="gridcell"
-            >
-              6
-            </td>
-            <td
-              aria-label="Thursday, August 7th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
-              data-day="2025-08-07"
-              role="gridcell"
-            >
-              7
-            </td>
-            <td
-              aria-label="Friday, August 8th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
-              data-day="2025-08-08"
-              role="gridcell"
-            >
-              8
-            </td>
-            <td
-              aria-label="Saturday, August 9th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
-              data-day="2025-08-09"
-              role="gridcell"
-            >
-              9
-            </td>
-          </tr>
-          <tr
-            class="mt-2 flex w-full rdp-week"
-          >
-            <td
-              aria-label="Sunday, August 10th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
-              data-day="2025-08-10"
-              role="gridcell"
-            >
-              10
-            </td>
-            <td
-              aria-label="Monday, August 11th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
-              data-day="2025-08-11"
-              role="gridcell"
-            >
-              11
-            </td>
-            <td
-              aria-label="Tuesday, August 12th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
-              data-day="2025-08-12"
-              role="gridcell"
-            >
-              12
-            </td>
-            <td
-              aria-label="Wednesday, August 13th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
-              data-day="2025-08-13"
-              role="gridcell"
-            >
-              13
-            </td>
-            <td
-              aria-label="Thursday, August 14th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
-              data-day="2025-08-14"
-              role="gridcell"
-            >
-              14
-            </td>
-            <td
-              aria-label="Friday, August 15th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
-              data-day="2025-08-15"
-              role="gridcell"
-            >
-              15
-            </td>
-            <td
-              aria-label="Saturday, August 16th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
-              data-day="2025-08-16"
-              role="gridcell"
-            >
-              16
-            </td>
-          </tr>
-          <tr
-            class="mt-2 flex w-full rdp-week"
-          >
-            <td
-              aria-label="Sunday, August 17th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
-              data-day="2025-08-17"
-              role="gridcell"
-            >
-              17
-            </td>
-            <td
-              aria-label="Monday, August 18th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
-              data-day="2025-08-18"
-              role="gridcell"
-            >
-              18
-            </td>
-            <td
-              aria-label="Tuesday, August 19th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
-              data-day="2025-08-19"
-              role="gridcell"
-            >
-              19
-            </td>
-            <td
-              aria-label="Wednesday, August 20th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
-              data-day="2025-08-20"
-              role="gridcell"
-            >
-              20
-            </td>
-            <td
-              aria-label="Thursday, August 21st, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
-              data-day="2025-08-21"
-              role="gridcell"
-            >
-              21
-            </td>
-            <td
-              aria-label="Friday, August 22nd, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
-              data-day="2025-08-22"
-              role="gridcell"
-            >
-              22
-            </td>
-            <td
-              aria-label="Today, Saturday, August 23rd, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day bg-gray-800 text-white border-0 font-normal data-[selected=true]:!bg-brand data-[selected=true]:!text-white data-[selected=true]:!border-brand data-[selected=true]:!border-2 rdp-today"
-              data-day="2025-08-23"
-              data-today="true"
-              role="gridcell"
-            >
-              23
-            </td>
-          </tr>
-          <tr
-            class="mt-2 flex w-full rdp-week"
-          >
-            <td
-              aria-label="Sunday, August 24th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
-              data-day="2025-08-24"
-              role="gridcell"
-            >
-              24
-            </td>
-            <td
-              aria-label="Monday, August 25th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
-              data-day="2025-08-25"
-              role="gridcell"
-            >
-              25
-            </td>
-            <td
-              aria-label="Tuesday, August 26th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
-              data-day="2025-08-26"
-              role="gridcell"
-            >
-              26
-            </td>
-            <td
-              aria-label="Wednesday, August 27th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
-              data-day="2025-08-27"
-              role="gridcell"
-            >
-              27
-            </td>
-            <td
-              aria-label="Thursday, August 28th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
-              data-day="2025-08-28"
-              role="gridcell"
-            >
-              28
-            </td>
-            <td
-              aria-label="Friday, August 29th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
-              data-day="2025-08-29"
-              role="gridcell"
-            >
-              29
-            </td>
-            <td
-              aria-label="Saturday, August 30th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
-              data-day="2025-08-30"
-              role="gridcell"
-            >
-              30
-            </td>
-          </tr>
-          <tr
-            class="mt-2 flex w-full rdp-week"
-          >
-            <td
               aria-label="Sunday, August 31st, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground aria-selected:text-muted-foreground rdp-outside"
               data-day="2025-08-31"
+              data-month="2025-08"
+              data-outside="true"
               role="gridcell"
             >
               31
             </td>
             <td
               aria-label="Monday, September 1st, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground aria-selected:text-muted-foreground rdp-outside"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
               data-day="2025-09-01"
-              data-month="2025-09"
-              data-outside="true"
               role="gridcell"
             >
               1
             </td>
             <td
               aria-label="Tuesday, September 2nd, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground aria-selected:text-muted-foreground rdp-outside"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
               data-day="2025-09-02"
-              data-month="2025-09"
-              data-outside="true"
               role="gridcell"
             >
               2
             </td>
             <td
               aria-label="Wednesday, September 3rd, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground aria-selected:text-muted-foreground rdp-outside"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
               data-day="2025-09-03"
-              data-month="2025-09"
-              data-outside="true"
               role="gridcell"
             >
               3
             </td>
             <td
               aria-label="Thursday, September 4th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground aria-selected:text-muted-foreground rdp-outside"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
               data-day="2025-09-04"
-              data-month="2025-09"
-              data-outside="true"
               role="gridcell"
             >
               4
             </td>
             <td
               aria-label="Friday, September 5th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground aria-selected:text-muted-foreground rdp-outside"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
               data-day="2025-09-05"
-              data-month="2025-09"
-              data-outside="true"
               role="gridcell"
             >
               5
             </td>
             <td
               aria-label="Saturday, September 6th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground aria-selected:text-muted-foreground rdp-outside"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
               data-day="2025-09-06"
-              data-month="2025-09"
-              data-outside="true"
               role="gridcell"
             >
               6
+            </td>
+          </tr>
+          <tr
+            class="mt-2 flex w-full rdp-week"
+          >
+            <td
+              aria-label="Sunday, September 7th, 2025"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              data-day="2025-09-07"
+              role="gridcell"
+            >
+              7
+            </td>
+            <td
+              aria-label="Monday, September 8th, 2025"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              data-day="2025-09-08"
+              role="gridcell"
+            >
+              8
+            </td>
+            <td
+              aria-label="Tuesday, September 9th, 2025"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              data-day="2025-09-09"
+              role="gridcell"
+            >
+              9
+            </td>
+            <td
+              aria-label="Wednesday, September 10th, 2025"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              data-day="2025-09-10"
+              role="gridcell"
+            >
+              10
+            </td>
+            <td
+              aria-label="Thursday, September 11th, 2025"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              data-day="2025-09-11"
+              role="gridcell"
+            >
+              11
+            </td>
+            <td
+              aria-label="Today, Friday, September 12th, 2025"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day bg-gray-800 text-white border-0 font-normal data-[selected=true]:!bg-brand data-[selected=true]:!text-white data-[selected=true]:!border-brand data-[selected=true]:!border-2 rdp-today"
+              data-day="2025-09-12"
+              data-today="true"
+              role="gridcell"
+            >
+              12
+            </td>
+            <td
+              aria-label="Saturday, September 13th, 2025"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              data-day="2025-09-13"
+              role="gridcell"
+            >
+              13
+            </td>
+          </tr>
+          <tr
+            class="mt-2 flex w-full rdp-week"
+          >
+            <td
+              aria-label="Sunday, September 14th, 2025"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              data-day="2025-09-14"
+              role="gridcell"
+            >
+              14
+            </td>
+            <td
+              aria-label="Monday, September 15th, 2025"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              data-day="2025-09-15"
+              role="gridcell"
+            >
+              15
+            </td>
+            <td
+              aria-label="Tuesday, September 16th, 2025"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              data-day="2025-09-16"
+              role="gridcell"
+            >
+              16
+            </td>
+            <td
+              aria-label="Wednesday, September 17th, 2025"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              data-day="2025-09-17"
+              role="gridcell"
+            >
+              17
+            </td>
+            <td
+              aria-label="Thursday, September 18th, 2025"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              data-day="2025-09-18"
+              role="gridcell"
+            >
+              18
+            </td>
+            <td
+              aria-label="Friday, September 19th, 2025"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              data-day="2025-09-19"
+              role="gridcell"
+            >
+              19
+            </td>
+            <td
+              aria-label="Saturday, September 20th, 2025"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              data-day="2025-09-20"
+              role="gridcell"
+            >
+              20
+            </td>
+          </tr>
+          <tr
+            class="mt-2 flex w-full rdp-week"
+          >
+            <td
+              aria-label="Sunday, September 21st, 2025"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              data-day="2025-09-21"
+              role="gridcell"
+            >
+              21
+            </td>
+            <td
+              aria-label="Monday, September 22nd, 2025"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              data-day="2025-09-22"
+              role="gridcell"
+            >
+              22
+            </td>
+            <td
+              aria-label="Tuesday, September 23rd, 2025"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              data-day="2025-09-23"
+              role="gridcell"
+            >
+              23
+            </td>
+            <td
+              aria-label="Wednesday, September 24th, 2025"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              data-day="2025-09-24"
+              role="gridcell"
+            >
+              24
+            </td>
+            <td
+              aria-label="Thursday, September 25th, 2025"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              data-day="2025-09-25"
+              role="gridcell"
+            >
+              25
+            </td>
+            <td
+              aria-label="Friday, September 26th, 2025"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              data-day="2025-09-26"
+              role="gridcell"
+            >
+              26
+            </td>
+            <td
+              aria-label="Saturday, September 27th, 2025"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              data-day="2025-09-27"
+              role="gridcell"
+            >
+              27
+            </td>
+          </tr>
+          <tr
+            class="mt-2 flex w-full rdp-week"
+          >
+            <td
+              aria-label="Sunday, September 28th, 2025"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              data-day="2025-09-28"
+              role="gridcell"
+            >
+              28
+            </td>
+            <td
+              aria-label="Monday, September 29th, 2025"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              data-day="2025-09-29"
+              role="gridcell"
+            >
+              29
+            </td>
+            <td
+              aria-label="Tuesday, September 30th, 2025"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              data-day="2025-09-30"
+              role="gridcell"
+            >
+              30
+            </td>
+            <td
+              aria-label="Wednesday, October 1st, 2025"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground aria-selected:text-muted-foreground rdp-outside"
+              data-day="2025-10-01"
+              data-month="2025-10"
+              data-outside="true"
+              role="gridcell"
+            >
+              1
+            </td>
+            <td
+              aria-label="Thursday, October 2nd, 2025"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground aria-selected:text-muted-foreground rdp-outside"
+              data-day="2025-10-02"
+              data-month="2025-10"
+              data-outside="true"
+              role="gridcell"
+            >
+              2
+            </td>
+            <td
+              aria-label="Friday, October 3rd, 2025"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground aria-selected:text-muted-foreground rdp-outside"
+              data-day="2025-10-03"
+              data-month="2025-10"
+              data-outside="true"
+              role="gridcell"
+            >
+              3
+            </td>
+            <td
+              aria-label="Saturday, October 4th, 2025"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground aria-selected:text-muted-foreground rdp-outside"
+              data-day="2025-10-04"
+              data-month="2025-10"
+              data-outside="true"
+              role="gridcell"
+            >
+              4
             </td>
           </tr>
         </tbody>
@@ -2233,11 +1938,11 @@ exports[`Calendar > Snapshots > matches selected state snapshot 1`] = `
           class="select-none font-medium text-sm rdp-caption_label"
           role="status"
         >
-          August 2025
+          September 2025
         </span>
       </div>
       <table
-        aria-label="August 2025"
+        aria-label="September 2025"
         aria-multiselectable="false"
         class="rdp-month_grid"
         role="grid"
@@ -2306,383 +2011,311 @@ exports[`Calendar > Snapshots > matches selected state snapshot 1`] = `
             class="mt-2 flex w-full rdp-week"
           >
             <td
-              aria-label="Sunday, July 27th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground aria-selected:text-muted-foreground rdp-outside"
-              data-day="2025-07-27"
-              data-month="2025-07"
-              data-outside="true"
-              role="gridcell"
-            >
-              27
-            </td>
-            <td
-              aria-label="Monday, July 28th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground aria-selected:text-muted-foreground rdp-outside"
-              data-day="2025-07-28"
-              data-month="2025-07"
-              data-outside="true"
-              role="gridcell"
-            >
-              28
-            </td>
-            <td
-              aria-label="Tuesday, July 29th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground aria-selected:text-muted-foreground rdp-outside"
-              data-day="2025-07-29"
-              data-month="2025-07"
-              data-outside="true"
-              role="gridcell"
-            >
-              29
-            </td>
-            <td
-              aria-label="Wednesday, July 30th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground aria-selected:text-muted-foreground rdp-outside"
-              data-day="2025-07-30"
-              data-month="2025-07"
-              data-outside="true"
-              role="gridcell"
-            >
-              30
-            </td>
-            <td
-              aria-label="Thursday, July 31st, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground aria-selected:text-muted-foreground rdp-outside"
-              data-day="2025-07-31"
-              data-month="2025-07"
-              data-outside="true"
-              role="gridcell"
-            >
-              31
-            </td>
-            <td
-              aria-label="Friday, August 1st, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
-              data-day="2025-08-01"
-              role="gridcell"
-            >
-              1
-            </td>
-            <td
-              aria-label="Saturday, August 2nd, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
-              data-day="2025-08-02"
-              role="gridcell"
-            >
-              2
-            </td>
-          </tr>
-          <tr
-            class="mt-2 flex w-full rdp-week"
-          >
-            <td
-              aria-label="Sunday, August 3rd, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
-              data-day="2025-08-03"
-              role="gridcell"
-            >
-              3
-            </td>
-            <td
-              aria-label="Monday, August 4th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
-              data-day="2025-08-04"
-              role="gridcell"
-            >
-              4
-            </td>
-            <td
-              aria-label="Tuesday, August 5th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
-              data-day="2025-08-05"
-              role="gridcell"
-            >
-              5
-            </td>
-            <td
-              aria-label="Wednesday, August 6th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
-              data-day="2025-08-06"
-              role="gridcell"
-            >
-              6
-            </td>
-            <td
-              aria-label="Thursday, August 7th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
-              data-day="2025-08-07"
-              role="gridcell"
-            >
-              7
-            </td>
-            <td
-              aria-label="Friday, August 8th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
-              data-day="2025-08-08"
-              role="gridcell"
-            >
-              8
-            </td>
-            <td
-              aria-label="Saturday, August 9th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
-              data-day="2025-08-09"
-              role="gridcell"
-            >
-              9
-            </td>
-          </tr>
-          <tr
-            class="mt-2 flex w-full rdp-week"
-          >
-            <td
-              aria-label="Sunday, August 10th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
-              data-day="2025-08-10"
-              role="gridcell"
-            >
-              10
-            </td>
-            <td
-              aria-label="Monday, August 11th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
-              data-day="2025-08-11"
-              role="gridcell"
-            >
-              11
-            </td>
-            <td
-              aria-label="Tuesday, August 12th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
-              data-day="2025-08-12"
-              role="gridcell"
-            >
-              12
-            </td>
-            <td
-              aria-label="Wednesday, August 13th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
-              data-day="2025-08-13"
-              role="gridcell"
-            >
-              13
-            </td>
-            <td
-              aria-label="Thursday, August 14th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
-              data-day="2025-08-14"
-              role="gridcell"
-            >
-              14
-            </td>
-            <td
-              aria-label="Friday, August 15th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
-              data-day="2025-08-15"
-              role="gridcell"
-            >
-              15
-            </td>
-            <td
-              aria-label="Saturday, August 16th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
-              data-day="2025-08-16"
-              role="gridcell"
-            >
-              16
-            </td>
-          </tr>
-          <tr
-            class="mt-2 flex w-full rdp-week"
-          >
-            <td
-              aria-label="Sunday, August 17th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
-              data-day="2025-08-17"
-              role="gridcell"
-            >
-              17
-            </td>
-            <td
-              aria-label="Monday, August 18th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
-              data-day="2025-08-18"
-              role="gridcell"
-            >
-              18
-            </td>
-            <td
-              aria-label="Tuesday, August 19th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
-              data-day="2025-08-19"
-              role="gridcell"
-            >
-              19
-            </td>
-            <td
-              aria-label="Wednesday, August 20th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
-              data-day="2025-08-20"
-              role="gridcell"
-            >
-              20
-            </td>
-            <td
-              aria-label="Thursday, August 21st, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
-              data-day="2025-08-21"
-              role="gridcell"
-            >
-              21
-            </td>
-            <td
-              aria-label="Friday, August 22nd, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
-              data-day="2025-08-22"
-              role="gridcell"
-            >
-              22
-            </td>
-            <td
-              aria-label="Today, Saturday, August 23rd, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day bg-gray-800 text-white border-0 font-normal data-[selected=true]:!bg-brand data-[selected=true]:!text-white data-[selected=true]:!border-brand data-[selected=true]:!border-2 rdp-today"
-              data-day="2025-08-23"
-              data-today="true"
-              role="gridcell"
-            >
-              23
-            </td>
-          </tr>
-          <tr
-            class="mt-2 flex w-full rdp-week"
-          >
-            <td
-              aria-label="Sunday, August 24th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
-              data-day="2025-08-24"
-              role="gridcell"
-            >
-              24
-            </td>
-            <td
-              aria-label="Monday, August 25th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
-              data-day="2025-08-25"
-              role="gridcell"
-            >
-              25
-            </td>
-            <td
-              aria-label="Tuesday, August 26th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
-              data-day="2025-08-26"
-              role="gridcell"
-            >
-              26
-            </td>
-            <td
-              aria-label="Wednesday, August 27th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
-              data-day="2025-08-27"
-              role="gridcell"
-            >
-              27
-            </td>
-            <td
-              aria-label="Thursday, August 28th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
-              data-day="2025-08-28"
-              role="gridcell"
-            >
-              28
-            </td>
-            <td
-              aria-label="Friday, August 29th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
-              data-day="2025-08-29"
-              role="gridcell"
-            >
-              29
-            </td>
-            <td
-              aria-label="Saturday, August 30th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
-              data-day="2025-08-30"
-              role="gridcell"
-            >
-              30
-            </td>
-          </tr>
-          <tr
-            class="mt-2 flex w-full rdp-week"
-          >
-            <td
               aria-label="Sunday, August 31st, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground aria-selected:text-muted-foreground rdp-outside"
               data-day="2025-08-31"
+              data-month="2025-08"
+              data-outside="true"
               role="gridcell"
             >
               31
             </td>
             <td
               aria-label="Monday, September 1st, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground aria-selected:text-muted-foreground rdp-outside"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
               data-day="2025-09-01"
-              data-month="2025-09"
-              data-outside="true"
               role="gridcell"
             >
               1
             </td>
             <td
               aria-label="Tuesday, September 2nd, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground aria-selected:text-muted-foreground rdp-outside"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
               data-day="2025-09-02"
-              data-month="2025-09"
-              data-outside="true"
               role="gridcell"
             >
               2
             </td>
             <td
               aria-label="Wednesday, September 3rd, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground aria-selected:text-muted-foreground rdp-outside"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
               data-day="2025-09-03"
-              data-month="2025-09"
-              data-outside="true"
               role="gridcell"
             >
               3
             </td>
             <td
               aria-label="Thursday, September 4th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground aria-selected:text-muted-foreground rdp-outside"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
               data-day="2025-09-04"
-              data-month="2025-09"
-              data-outside="true"
               role="gridcell"
             >
               4
             </td>
             <td
               aria-label="Friday, September 5th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground aria-selected:text-muted-foreground rdp-outside"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
               data-day="2025-09-05"
-              data-month="2025-09"
-              data-outside="true"
               role="gridcell"
             >
               5
             </td>
             <td
               aria-label="Saturday, September 6th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground aria-selected:text-muted-foreground rdp-outside"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
               data-day="2025-09-06"
-              data-month="2025-09"
-              data-outside="true"
               role="gridcell"
             >
               6
+            </td>
+          </tr>
+          <tr
+            class="mt-2 flex w-full rdp-week"
+          >
+            <td
+              aria-label="Sunday, September 7th, 2025"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              data-day="2025-09-07"
+              role="gridcell"
+            >
+              7
+            </td>
+            <td
+              aria-label="Monday, September 8th, 2025"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              data-day="2025-09-08"
+              role="gridcell"
+            >
+              8
+            </td>
+            <td
+              aria-label="Tuesday, September 9th, 2025"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              data-day="2025-09-09"
+              role="gridcell"
+            >
+              9
+            </td>
+            <td
+              aria-label="Wednesday, September 10th, 2025"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              data-day="2025-09-10"
+              role="gridcell"
+            >
+              10
+            </td>
+            <td
+              aria-label="Thursday, September 11th, 2025"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              data-day="2025-09-11"
+              role="gridcell"
+            >
+              11
+            </td>
+            <td
+              aria-label="Today, Friday, September 12th, 2025"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day bg-gray-800 text-white border-0 font-normal data-[selected=true]:!bg-brand data-[selected=true]:!text-white data-[selected=true]:!border-brand data-[selected=true]:!border-2 rdp-today"
+              data-day="2025-09-12"
+              data-today="true"
+              role="gridcell"
+            >
+              12
+            </td>
+            <td
+              aria-label="Saturday, September 13th, 2025"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              data-day="2025-09-13"
+              role="gridcell"
+            >
+              13
+            </td>
+          </tr>
+          <tr
+            class="mt-2 flex w-full rdp-week"
+          >
+            <td
+              aria-label="Sunday, September 14th, 2025"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              data-day="2025-09-14"
+              role="gridcell"
+            >
+              14
+            </td>
+            <td
+              aria-label="Monday, September 15th, 2025"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              data-day="2025-09-15"
+              role="gridcell"
+            >
+              15
+            </td>
+            <td
+              aria-label="Tuesday, September 16th, 2025"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              data-day="2025-09-16"
+              role="gridcell"
+            >
+              16
+            </td>
+            <td
+              aria-label="Wednesday, September 17th, 2025"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              data-day="2025-09-17"
+              role="gridcell"
+            >
+              17
+            </td>
+            <td
+              aria-label="Thursday, September 18th, 2025"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              data-day="2025-09-18"
+              role="gridcell"
+            >
+              18
+            </td>
+            <td
+              aria-label="Friday, September 19th, 2025"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              data-day="2025-09-19"
+              role="gridcell"
+            >
+              19
+            </td>
+            <td
+              aria-label="Saturday, September 20th, 2025"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              data-day="2025-09-20"
+              role="gridcell"
+            >
+              20
+            </td>
+          </tr>
+          <tr
+            class="mt-2 flex w-full rdp-week"
+          >
+            <td
+              aria-label="Sunday, September 21st, 2025"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              data-day="2025-09-21"
+              role="gridcell"
+            >
+              21
+            </td>
+            <td
+              aria-label="Monday, September 22nd, 2025"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              data-day="2025-09-22"
+              role="gridcell"
+            >
+              22
+            </td>
+            <td
+              aria-label="Tuesday, September 23rd, 2025"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              data-day="2025-09-23"
+              role="gridcell"
+            >
+              23
+            </td>
+            <td
+              aria-label="Wednesday, September 24th, 2025"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              data-day="2025-09-24"
+              role="gridcell"
+            >
+              24
+            </td>
+            <td
+              aria-label="Thursday, September 25th, 2025"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              data-day="2025-09-25"
+              role="gridcell"
+            >
+              25
+            </td>
+            <td
+              aria-label="Friday, September 26th, 2025"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              data-day="2025-09-26"
+              role="gridcell"
+            >
+              26
+            </td>
+            <td
+              aria-label="Saturday, September 27th, 2025"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              data-day="2025-09-27"
+              role="gridcell"
+            >
+              27
+            </td>
+          </tr>
+          <tr
+            class="mt-2 flex w-full rdp-week"
+          >
+            <td
+              aria-label="Sunday, September 28th, 2025"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              data-day="2025-09-28"
+              role="gridcell"
+            >
+              28
+            </td>
+            <td
+              aria-label="Monday, September 29th, 2025"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              data-day="2025-09-29"
+              role="gridcell"
+            >
+              29
+            </td>
+            <td
+              aria-label="Tuesday, September 30th, 2025"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              data-day="2025-09-30"
+              role="gridcell"
+            >
+              30
+            </td>
+            <td
+              aria-label="Wednesday, October 1st, 2025"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground aria-selected:text-muted-foreground rdp-outside"
+              data-day="2025-10-01"
+              data-month="2025-10"
+              data-outside="true"
+              role="gridcell"
+            >
+              1
+            </td>
+            <td
+              aria-label="Thursday, October 2nd, 2025"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground aria-selected:text-muted-foreground rdp-outside"
+              data-day="2025-10-02"
+              data-month="2025-10"
+              data-outside="true"
+              role="gridcell"
+            >
+              2
+            </td>
+            <td
+              aria-label="Friday, October 3rd, 2025"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground aria-selected:text-muted-foreground rdp-outside"
+              data-day="2025-10-03"
+              data-month="2025-10"
+              data-outside="true"
+              role="gridcell"
+            >
+              3
+            </td>
+            <td
+              aria-label="Saturday, October 4th, 2025"
+              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground aria-selected:text-muted-foreground rdp-outside"
+              data-day="2025-10-04"
+              data-month="2025-10"
+              data-outside="true"
+              role="gridcell"
+            >
+              4
             </td>
           </tr>
         </tbody>

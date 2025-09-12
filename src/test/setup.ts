@@ -36,3 +36,25 @@ global.IntersectionObserver = class IntersectionObserver {
     return [];
   }
 } as any;
+
+// Mock DOM APIs needed for MapLibre GL
+Object.defineProperty(window, 'URL', {
+  writable: true,
+  value: {
+    createObjectURL: vi.fn(() => 'mock-object-url'),
+    revokeObjectURL: vi.fn(),
+  },
+});
+
+// Mock Blob constructor for MapLibre GL worker
+global.Blob = class Blob {
+  constructor(parts?: BlobPart[], options?: BlobPropertyBag) {
+    // Mock implementation
+  }
+  size = 0;
+  type = '';
+  arrayBuffer = vi.fn().mockResolvedValue(new ArrayBuffer(0));
+  slice = vi.fn().mockReturnValue(this);
+  stream = vi.fn();
+  text = vi.fn().mockResolvedValue('');
+} as any;

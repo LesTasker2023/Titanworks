@@ -1,6 +1,5 @@
 'use client';
 
-import { UserProfile } from '@/components/auth/UserProfile';
 import { Container } from '@/components/layout/Container';
 import { Badge } from '@/components/ui/Badge';
 import { Button } from '@/components/ui/Button';
@@ -198,7 +197,6 @@ export function Navigation({
             <div className="flex items-center gap-2">
               <ThemePickerSheet />
               <ThemeToggle />
-              <UserProfile />
             </div>
           </div>
 
