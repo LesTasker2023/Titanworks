@@ -23,7 +23,7 @@ function getDependencyDepth() {
   let maxDepth = 0;
   for (const line of lines) {
     // Match leading tree structure (│, ├─, └─, and spaces)
-    const match = line.match(/^((?:[│ ]{2})*)(?:[├└]─ )?/);
+    if (depth !== -1 && depth > maxDepth) maxDepth = depth;
     let depth = 0;
     if (match && match[1]) {
       // Each level is represented by two characters (│ or space)
