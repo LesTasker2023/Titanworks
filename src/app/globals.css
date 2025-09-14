@@ -57,6 +57,12 @@
     --ring: var(--border-interactive);
     --radius: 0.5rem;
 
+    /* Radius Scale */
+    --radius-sm: 0.25rem;
+    --radius-md: 0.5rem;
+    --radius-lg: 0.75rem;
+    --radius-xl: 1rem;
+
     /* NEUTRAL SURFACE - Universal background for consistency */
     --neutral: var(--surface-neutral);
 
@@ -131,6 +137,12 @@
 
     /* DARK MODE OVERRIDES FOR SHADCN COMPATIBILITY */
     --secondary-foreground: 215 20% 85%; /* Lighter text for dark secondary buttons */
+
+    /* Radius Scale (consistent across themes) */
+    --radius-sm: 0.25rem;
+    --radius-md: 0.5rem;
+    --radius-lg: 0.75rem;
+    --radius-xl: 1rem;
   }
 }
 

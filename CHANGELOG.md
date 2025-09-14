@@ -11,6 +11,13 @@ All notable changes to this project will be documented in this file. See [standa
 - CI/CD integration for automated warning monitoring and backlog generation
 - Package scripts for warning tracking: `track-warnings`, `track-warnings:report`, `track-warnings:backlog`
 
+### Fixed
+
+- **Button Border Radius**: Added missing radius design tokens (--radius-sm, --radius-md, --radius-lg, --radius-xl) to globals.css
+  - Resolves Button components using var(--radius-md) when variable was undefined
+  - Fixes square button edges on home page and ensures consistent border radius across all components
+  - Variables added to both light and dark mode sections for theme consistency
+
 ### Changed
 
 - **CSS Naming Convention**: Converted PascalCase and camelCase CSS selectors to kebab-case for consistency
