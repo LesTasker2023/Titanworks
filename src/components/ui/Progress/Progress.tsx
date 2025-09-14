@@ -1,60 +1,60 @@
 'use client';
 
 import * as ProgressPrimitive from '@radix-ui/react-progress';
-import { cva, type VariantProps } from 'class-variance-authority';
 import * as React from 'react';
 
 import { cn } from '@/lib/utils';
+import './Progress.scss';
 
-const progressVariants = cva('relative w-full overflow-hidden rounded-full bg-primary/20', {
-  variants: {
-    size: {
-      sm: 'h-1',
-      default: 'h-2',
-      lg: 'h-3',
-      xl: 'h-4',
-    },
-    variant: {
-      default: 'bg-primary/20',
-      success: 'bg-green-100 dark:bg-green-900/20',
-      warning: 'bg-yellow-100 dark:bg-yellow-900/20',
-      danger: 'bg-red-100 dark:bg-red-900/20',
-    },
-  },
-  defaultVariants: {
-    size: 'default',
-    variant: 'default',
-  },
-});
+// Helper functions for BEM classes
+const getProgressRootClassName = (size?: string, variant?: string) => {
+  const baseClass = 'progress__root';
+  let className = baseClass;
 
-const indicatorVariants = cva('h-full w-full flex-1 transition-all duration-300 ease-in-out', {
-  variants: {
-    variant: {
-      default: 'bg-primary',
-      success: 'bg-green-500',
-      warning: 'bg-yellow-500',
-      danger: 'bg-red-500',
-    },
-  },
-  defaultVariants: {
-    variant: 'default',
-  },
-});
+  if (size) {
+    className += ` ${baseClass}--size-${size}`;
+  } else {
+    className += ` ${baseClass}--size-default`;
+  }
+
+  if (variant) {
+    className += ` ${baseClass}--variant-${variant}`;
+  } else {
+    className += ` ${baseClass}--variant-default`;
+  }
+
+  return className;
+};
+
+const getProgressIndicatorClassName = (variant?: string) => {
+  const baseClass = 'progress__indicator';
+  let className = baseClass;
+
+  if (variant) {
+    className += ` ${baseClass}--variant-${variant}`;
+  } else {
+    className += ` ${baseClass}--variant-default`;
+  }
+
+  return className;
+};
 
 export interface ProgressProps
-  extends React.ComponentPropsWithoutRef<typeof ProgressPrimitive.Root>,
-    VariantProps<typeof progressVariants> {}
+  extends React.ComponentPropsWithoutRef<typeof ProgressPrimitive.Root> {
+  size?: 'sm' | 'default' | 'lg' | 'xl';
+  variant?: 'default' | 'success' | 'warning' | 'danger';
+}
 
 const Progress = React.forwardRef<React.ElementRef<typeof ProgressPrimitive.Root>, ProgressProps>(
   ({ className, value, size, variant, ...props }, ref) => (
     <ProgressPrimitive.Root
       ref={ref}
-      className={cn(progressVariants({ size, variant }), className)}
+      className={cn(getProgressRootClassName(size, variant), className)}
       value={value}
       {...props}
     >
       <ProgressPrimitive.Indicator
-        className={cn(indicatorVariants({ variant }), 'rounded-full')}
+        className={getProgressIndicatorClassName(variant)}
         style={{ transform: `translateX(-${100 - (value || 0)}%)` }}
       />
     </ProgressPrimitive.Root>

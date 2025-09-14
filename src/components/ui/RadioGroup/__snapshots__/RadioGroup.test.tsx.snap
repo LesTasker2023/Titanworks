@@ -2,11 +2,11 @@
 
 exports[`RadioGroup > Snapshots > matches default snapshot 1`] = `
 <div
-  class="space-y-2"
+  class="radioGroup__container"
 >
   <div
     aria-required="false"
-    class="grid gap-2"
+    class="radioGroup__root"
     data-testid="radiogroup"
     dir="ltr"
     id="«r0»"

@@ -3,14 +3,14 @@
 exports[`NavigationMenu > Snapshots > matches default snapshot 1`] = `
 <nav
   aria-label="Main"
-  class="relative z-10 flex max-w-max flex-1 items-center justify-center"
+  class="navigationMenu__root"
   data-orientation="horizontal"
   data-testid="navigationmenu"
   dir="ltr"
 >
   Test content
   <div
-    class="absolute left-0 top-full flex justify-center"
+    class="navigationMenu__viewport-container"
   />
 </nav>
 `;

@@ -1,33 +1,8 @@
 import { cn } from '@/lib/utils';
 import { stripTransientProps } from '@/utils/stripTransientProps';
-import { cva, type VariantProps } from 'class-variance-authority';
 import { ChevronDown, ChevronUp, Loader2, Search } from 'lucide-react';
 import React from 'react';
-
-// Style guide compliant CVA system
-const dataTableVariants = cva(
-  'datatable w-full relative', // Base class from component-system.css
-  {
-    variants: {
-      variant: {
-        default: 'datatable--default border border-border',
-        success: 'datatable--success border border-success/20 bg-success/5',
-        warning: 'datatable--warning border border-warning/20 bg-warning/5',
-        danger: 'datatable--danger border border-destructive/20 bg-destructive/5',
-      },
-      size: {
-        sm: 'datatable--size-sm text-xs',
-        default: 'datatable--size-default text-sm',
-        lg: 'datatable--size-lg text-base',
-        xl: 'datatable--size-xl text-lg',
-      },
-    },
-    defaultVariants: {
-      variant: 'default',
-      size: 'default',
-    },
-  }
-);
+import './DataTable.scss';
 
 // Column definition interface
 export interface DataTableColumn<T = Record<string, unknown>> {
@@ -45,13 +20,20 @@ export interface SortConfig {
   direction: 'asc' | 'desc';
 }
 
+// Variant types
+export type DataTableVariant = 'default' | 'success' | 'warning' | 'danger';
+export type DataTableSize = 'sm' | 'default' | 'lg' | 'xl';
+
 // Style guide compliant interface
 export interface DataTableProps<T = Record<string, unknown>>
-  extends React.ComponentPropsWithoutRef<'div'>,
-    VariantProps<typeof dataTableVariants> {
+  extends React.ComponentPropsWithoutRef<'div'> {
   // Data props
   data: T[];
   columns: DataTableColumn<T>[];
+
+  // Style variants
+  variant?: DataTableVariant;
+  size?: DataTableSize;
 
   // Style guide required props
   loading?: boolean; // Universal enhancement (REQUIRED)
@@ -227,11 +209,11 @@ const DataTable = React.forwardRef<HTMLDivElement, DataTableProps>(
     // Style guide REQUIRED: Loading state handling (AFTER hooks)
     if (loading) {
       return (
-        <div className="datatable state-loading flex items-center justify-center p-8 min-h-[200px]">
-          <div className="flex items-center space-x-2">
-            <Loader2 className="h-6 w-6 animate-spin spinner" />
-            <span className="text-muted-foreground">Loading table data...</span>
-            <span className="sr-only" role="status">
+        <div className="dataTable dataTable--loading">
+          <div className="dataTable__loadingContent">
+            <Loader2 className="dataTable__spinner" />
+            <span className="dataTable__loadingText">Loading table data...</span>
+            <span className="dataTable__srOnly" role="status">
               Loading...
             </span>
           </div>
@@ -242,10 +224,10 @@ const DataTable = React.forwardRef<HTMLDivElement, DataTableProps>(
     // Error state (AFTER hooks)
     if (error) {
       return (
-        <div className={cn(dataTableVariants({ variant, size }), 'state-error', className)}>
-          <div className="p-4 text-center">
-            <div className="text-destructive font-medium mb-2">Error</div>
-            <div className="error-message text-sm text-muted-foreground">{error}</div>
+        <div className={cn('dataTable', `dataTable--${variant}`, 'dataTable--error', className)}>
+          <div className="dataTable__errorContent">
+            <div className="dataTable__errorTitle">Error</div>
+            <div className="dataTable__errorMessage">{error}</div>
           </div>
         </div>
       );
@@ -256,8 +238,10 @@ const DataTable = React.forwardRef<HTMLDivElement, DataTableProps>(
       <div
         ref={ref}
         className={cn(
-          dataTableVariants({ variant, size }),
-          disabled && 'disabled:opacity-50 disabled:pointer-events-none',
+          'dataTable',
+          `dataTable--${variant}`,
+          `dataTable--size${size.charAt(0).toUpperCase() + size.slice(1)}`,
+          disabled && 'dataTable--disabled',
           className
         )}
         aria-disabled={disabled}
@@ -268,15 +252,15 @@ const DataTable = React.forwardRef<HTMLDivElement, DataTableProps>(
       >
         {/* Filter bar */}
         {filterable && (
-          <div className="datatable__filter-bar p-4 border-b bg-muted/30">
-            <div className="relative max-w-sm">
-              <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
+          <div className="dataTable__filterBar">
+            <div className="dataTable__searchContainer">
+              <Search className="dataTable__searchIcon" />
               <input
                 type="text"
                 placeholder={searchPlaceholder}
                 value={internalSearchQuery}
                 onChange={e => handleSearch(e.target.value)}
-                className="w-full pl-10 pr-4 py-2 border border-border rounded-md bg-background focus:outline-none focus:ring-2 focus:ring-ring"
+                className="dataTable__searchInput"
                 disabled={disabled}
               />
             </div>
@@ -285,22 +269,16 @@ const DataTable = React.forwardRef<HTMLDivElement, DataTableProps>(
 
         {/* Table container */}
         <div
-          className="datatable__scroll-container overflow-auto"
+          className="dataTable__scrollContainer"
           style={{ maxHeight: stickyHeader ? maxHeight : undefined }}
         >
-          <table
-            className="w-full caption-bottom text-sm"
-            role="table"
-            aria-label={props['aria-label']}
-          >
-            {caption && <caption className="mt-4 text-sm text-muted-foreground">{caption}</caption>}
+          <table className="dataTable__table" role="table" aria-label={props['aria-label']}>
+            {caption && <caption className="dataTable__caption">{caption}</caption>}
 
-            <thead
-              className={cn('[&_tr]:border-b', stickyHeader && 'sticky top-0 bg-background z-10')}
-            >
+            <thead className={cn('dataTable__thead', stickyHeader && 'dataTable__thead--sticky')}>
               <tr>
                 {selectable && (
-                  <th className="h-10 px-2 w-12">
+                  <th className="dataTable__th dataTable__th--checkbox">
                     <input
                       type="checkbox"
                       checked={
@@ -313,7 +291,7 @@ const DataTable = React.forwardRef<HTMLDivElement, DataTableProps>(
                       }
                       onChange={handleSelectAll}
                       disabled={disabled || paginatedData.length === 0}
-                      className="rounded border-border"
+                      className="dataTable__checkbox"
                       aria-label="Select all rows"
                     />
                   </th>
@@ -323,9 +301,9 @@ const DataTable = React.forwardRef<HTMLDivElement, DataTableProps>(
                   <th
                     key={String(column.key)}
                     className={cn(
-                      'h-10 px-2 text-left align-middle font-medium text-muted-foreground',
-                      sortable && column.sortable && 'cursor-pointer hover:bg-muted/50 select-none',
-                      internalSort?.column === column.key && 'sorted bg-muted/30',
+                      'dataTable__th',
+                      sortable && column.sortable && 'dataTable__th--sortable',
+                      internalSort?.column === column.key && 'dataTable__th--sorted',
                       column.className
                     )}
                     style={{ width: column.width }}
@@ -346,28 +324,22 @@ const DataTable = React.forwardRef<HTMLDivElement, DataTableProps>(
                         : undefined
                     }
                   >
-                    <div className="flex items-center space-x-1">
+                    <div className="dataTable__thContent">
                       <span>{column.header}</span>
                       {sortable && column.sortable && (
-                        <div className="datatable__sort-indicator flex flex-col">
-                          <ChevronUp
-                            className={cn(
-                              'h-3 w-3 -mb-1',
-                              internalSort?.column === column.key &&
-                                internalSort.direction === 'asc'
-                                ? 'text-foreground datatable__sort-indicator--ascending'
-                                : 'text-muted-foreground'
-                            )}
-                          />
-                          <ChevronDown
-                            className={cn(
-                              'h-3 w-3',
-                              internalSort?.column === column.key &&
-                                internalSort.direction === 'desc'
-                                ? 'text-foreground datatable__sort-indicator--descending'
-                                : 'text-muted-foreground'
-                            )}
-                          />
+                        <div
+                          className={cn(
+                            'dataTable__sortIndicator',
+                            internalSort?.column === column.key &&
+                              internalSort.direction === 'asc' &&
+                              'dataTable__sortIndicator--ascending',
+                            internalSort?.column === column.key &&
+                              internalSort.direction === 'desc' &&
+                              'dataTable__sortIndicator--descending'
+                          )}
+                        >
+                          <ChevronUp className="dataTable__chevronUp" />
+                          <ChevronDown className="dataTable__chevronDown" />
                         </div>
                       )}
                     </div>
@@ -376,12 +348,12 @@ const DataTable = React.forwardRef<HTMLDivElement, DataTableProps>(
               </tr>
             </thead>
 
-            <tbody className="[&_tr:last-child]:border-0">
+            <tbody className="dataTable__tbody">
               {paginatedData.length === 0 ? (
                 <tr>
                   <td
                     colSpan={columns.length + (selectable ? 1 : 0)}
-                    className="p-8 text-center text-muted-foreground"
+                    className="dataTable__emptyState"
                     role="status"
                   >
                     {internalSearchQuery ? 'No results found' : emptyMessage}
@@ -396,10 +368,10 @@ const DataTable = React.forwardRef<HTMLDivElement, DataTableProps>(
                     <tr
                       key={rowId}
                       className={cn(
-                        'datatable__row border-b transition-colors hover:bg-muted/50',
-                        isSelected && 'datatable__row--selected bg-accent/10 border-ring',
-                        onRowClick && 'cursor-pointer',
-                        disabled && 'pointer-events-none'
+                        'dataTable__row',
+                        isSelected && 'dataTable__row--selected',
+                        onRowClick && 'dataTable__row--clickable',
+                        disabled && 'dataTable__row--disabled'
                       )}
                       onClick={() => !disabled && onRowClick?.(row, index)}
                       onDoubleClick={() => !disabled && onRowDoubleClick?.(row, index)}
@@ -407,13 +379,13 @@ const DataTable = React.forwardRef<HTMLDivElement, DataTableProps>(
                       role="row"
                     >
                       {selectable && (
-                        <td className="p-2 align-middle">
+                        <td className="dataTable__td">
                           <input
                             type="checkbox"
                             checked={isSelected}
                             onChange={() => handleRowSelect(rowId)}
                             disabled={disabled}
-                            className="rounded border-border"
+                            className="dataTable__checkbox"
                             aria-label={`Select row ${index + 1}`}
                           />
                         </td>
@@ -422,7 +394,7 @@ const DataTable = React.forwardRef<HTMLDivElement, DataTableProps>(
                       {columns.map(column => (
                         <td
                           key={String(column.key)}
-                          className={cn('p-2 align-middle', column.className)}
+                          className={cn('dataTable__td', column.className)}
                           role="cell"
                         >
                           {column.render
@@ -440,16 +412,16 @@ const DataTable = React.forwardRef<HTMLDivElement, DataTableProps>(
 
         {/* Pagination */}
         {pagination && (
-          <div className="datatable__pagination flex items-center justify-between p-4 border-t bg-muted/30">
-            <div className="text-sm text-muted-foreground">
+          <div className="dataTable__pagination">
+            <div className="dataTable__paginationInfo">
               Page {currentPage} of {calculatedTotalPages} ({sortedData.length} total)
             </div>
 
-            <div className="flex items-center space-x-2">
+            <div className="dataTable__paginationControls">
               <button
                 onClick={() => onPageChange?.(currentPage - 1)}
                 disabled={!hasPrevPage || disabled}
-                className="px-3 py-1 border border-border rounded hover:bg-muted disabled:opacity-50 disabled:cursor-not-allowed"
+                className="dataTable__paginationButton"
                 aria-label="Previous page"
               >
                 Previous
@@ -458,7 +430,7 @@ const DataTable = React.forwardRef<HTMLDivElement, DataTableProps>(
               <button
                 onClick={() => onPageChange?.(currentPage + 1)}
                 disabled={!hasNextPage || disabled}
-                className="px-3 py-1 border border-border rounded hover:bg-muted disabled:opacity-50 disabled:cursor-not-allowed"
+                className="dataTable__paginationButton"
                 aria-label="Next page"
               >
                 Next
@@ -475,4 +447,4 @@ const DataTable = React.forwardRef<HTMLDivElement, DataTableProps>(
 
 DataTable.displayName = 'DataTable';
 
-export { DataTable, dataTableVariants };
+export { DataTable };

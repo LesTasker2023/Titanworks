@@ -1,19 +1,71 @@
-// Alert component SCSS overrides
-// Use this file for ENHANCEMENTS that can't be achieved with Tailwind classes
-// Avoid duplicating what Tailwind already provides
+/* Alert Component - BEM Styling with Design Tokens */
 
 .alert {
-  // Enhanced alert animations for smooth entry/exit
+  position: relative;
+  width: 100%;
+  border-radius: var(--radius);
+  border: 1px solid hsl(var(--border-default));
+  padding: var(--spacing-3) var(--spacing-4);
+  font-size: var(--text-sm);
   animation: alert-enter 0.3s ease-out;
 
-  &.alert--dismissible {
+  /* Base variant - default */
+  &--default {
+    background-color: hsl(var(--surface-primary));
+    color: hsl(var(--content-primary));
+  }
+
+  /* Destructive variant */
+  &--destructive {
+    border-color: hsl(var(--status-error) / 0.5);
+    background-color: hsl(var(--surface-primary));
+    color: hsl(var(--status-error));
+
+    .alert__dismiss-icon {
+      color: hsl(var(--status-error));
+    }
+  }
+
+  /* Warning variant */
+  &--warning {
+    border-color: hsl(var(--status-warning) / 0.5);
+    background-color: hsl(var(--surface-primary));
+    color: hsl(32 95% 30%); /* Darker warning text for better contrast */
+
+    .alert__dismiss-icon {
+      color: hsl(32 95% 30%);
+    }
+  }
+
+  /* Success variant */
+  &--success {
+    border-color: hsl(var(--status-success) / 0.5);
+    background-color: hsl(var(--surface-primary));
+    color: hsl(142 76% 25%); /* Darker success text for better contrast */
+
+    .alert__dismiss-icon {
+      color: hsl(142 76% 25%);
+    }
+  }
+
+  /* Info variant */
+  &--info {
+    border-color: hsl(var(--status-info) / 0.5);
+    background-color: hsl(var(--surface-primary));
+    color: hsl(221 83% 35%); /* Darker info text for better contrast */
+
+    .alert__dismiss-icon {
+      color: hsl(221 83% 35%);
+    }
+  }
+
+  &--dismissible {
     // Extra padding for dismiss button
     padding-right: 2.5rem;
   }
 
   // Auto-hide progress indicator (optional enhancement)
-  &.alert--auto-hide {
-    position: relative;
+  &--auto-hide {
     overflow: hidden;
 
     &::after {
@@ -27,21 +79,65 @@
       animation: alert-progress var(--auto-hide-delay, 5000ms) linear;
     }
   }
+}
 
-  // Enhanced focus styles for dismiss button
-  .alert-dismiss {
-    transition: all 0.2s ease-in-out;
+.alert__title {
+  margin-bottom: var(--spacing-1);
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -0.025em;
+}
 
-    &:hover {
-      transform: scale(1.1);
-    }
+.alert__description {
+  font-size: var(--text-sm);
 
-    &:focus-visible {
-      outline: 2px solid currentColor;
-      outline-offset: 2px;
-      border-radius: 4px;
-    }
+  p {
+    line-height: 1.625;
   }
+}
+
+.alert__dismiss-button {
+  position: absolute;
+  right: var(--spacing-2);
+  top: var(--spacing-2);
+  border-radius: var(--spacing-1);
+  opacity: 0.7;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: var(--transition-default);
+
+  &:hover {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+}
+
+.alert__dismiss-icon {
+  height: var(--spacing-4);
+  width: var(--spacing-4);
+}
+
+.alert__dismiss-text {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
 // Alert animations
@@ -70,7 +166,7 @@
   .alert {
     animation: none;
 
-    &.alert--auto-hide::after {
+    &--auto-hide::after {
       animation: none;
       display: none;
     }
@@ -82,7 +178,7 @@
   .alert {
     border-width: 2px;
 
-    .alert-dismiss {
+    .alert__dismiss-button {
       outline: 1px solid currentColor;
     }
   }

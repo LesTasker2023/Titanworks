@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/nextjs';
-import { Popover } from './Popover';
+import { Button } from '../Button/Button';
+import { Popover, PopoverContent, PopoverTrigger } from './Popover';
 
 const meta: Meta<typeof Popover> = {
   title: 'UI/Popover',
@@ -8,47 +9,58 @@ const meta: Meta<typeof Popover> = {
     layout: 'centered',
   },
   tags: ['autodocs'],
-  argTypes: {
-    variant: {
-      control: { type: 'select' },
-      options: ['default', 'destructive', 'outline', 'secondary', 'ghost', 'link'],
-    },
-    size: {
-      control: { type: 'select' },
-      options: ['default', 'sm', 'lg', 'icon'],
-    },
-  },
+  argTypes: {},
 };
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
-  args: {
-    children: 'Popover',
-  },
-};
-
-export const Variants: Story = {
   render: () => (
-    <div className="flex gap-4">
-      <Popover variant="default">Default</Popover>
-      <Popover variant="destructive">Destructive</Popover>
-      <Popover variant="outline">Outline</Popover>
-      <Popover variant="secondary">Secondary</Popover>
-      <Popover variant="ghost">Ghost</Popover>
-      <Popover variant="link">Link</Popover>
-    </div>
+    <Popover>
+      <PopoverTrigger asChild>
+        <Button variant="outline">Open Popover</Button>
+      </PopoverTrigger>
+      <PopoverContent>
+        <div className="space-y-2">
+          <h4 className="font-medium leading-none">Dimensions</h4>
+          <p className="text-sm text-muted-foreground">Set the dimensions for the layer.</p>
+        </div>
+      </PopoverContent>
+    </Popover>
   ),
 };
 
-export const Sizes: Story = {
+export const WithCustomContent: Story = {
   render: () => (
-    <div className="flex gap-4 items-center">
-      <Popover size="sm">Small</Popover>
-      <Popover size="default">Default</Popover>
-      <Popover size="lg">Large</Popover>
-      <Popover size="icon">⭐</Popover>
-    </div>
+    <Popover>
+      <PopoverTrigger asChild>
+        <Button variant="outline">Settings</Button>
+      </PopoverTrigger>
+      <PopoverContent className="w-80">
+        <div className="space-y-4">
+          <div className="space-y-2">
+            <h4 className="font-medium leading-none">Account Settings</h4>
+            <p className="text-sm text-muted-foreground">
+              Manage your account settings and preferences.
+            </p>
+          </div>
+          <div className="space-y-2">
+            <label htmlFor="username" className="text-sm font-medium">
+              Username
+            </label>
+            <input
+              id="username"
+              type="text"
+              placeholder="Enter username"
+              className="w-full px-3 py-2 border rounded-md"
+            />
+          </div>
+          <div className="flex justify-end">
+            <Button size="sm">Save Changes</Button>
+          </div>
+        </div>
+      </PopoverContent>
+    </Popover>
   ),
 };

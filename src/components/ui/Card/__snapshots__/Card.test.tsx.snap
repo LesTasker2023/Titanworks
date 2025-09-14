@@ -2,7 +2,7 @@
 
 exports[`Card > Snapshots > matches default snapshot 1`] = `
 <div
-  class="rounded-lg border text-card-foreground shadow-sm transition-colors border-border bg-card"
+  class="card card--default"
   data-testid="card"
 >
   Test content
@@ -11,7 +11,7 @@ exports[`Card > Snapshots > matches default snapshot 1`] = `
 
 exports[`Card > Snapshots > matches disabled state snapshot 1`] = `
 <div
-  class="rounded-lg border text-card-foreground shadow-sm transition-colors border-border bg-card opacity-50 pointer-events-none"
+  class="card card--default card--disabled"
   data-testid="card"
 >
   Test content
@@ -20,14 +20,14 @@ exports[`Card > Snapshots > matches disabled state snapshot 1`] = `
 
 exports[`Card > Snapshots > matches loading state snapshot 1`] = `
 <div
-  class="rounded-lg border text-card-foreground shadow-sm transition-colors border-border bg-card relative"
+  class="card card--default card--loading"
   data-testid="card"
 >
   <div
-    class="absolute inset-0 flex items-center justify-center bg-background/80 rounded-lg"
+    class="card__loading-overlay"
   >
     <div
-      class="animate-spin h-6 w-6 border-2 border-primary border-t-transparent rounded-full"
+      class="card__loading-spinner"
     />
   </div>
   Test content

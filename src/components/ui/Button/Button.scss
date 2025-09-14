@@ -1,33 +1,153 @@
-// Button component SCSS overrides
-// Use this file for ENHANCEMENTS that can't be achieved with Tailwind classes
-// Avoid duplicating what Tailwind already provides
+// Button Component - BEM Styling with Design Tokens
 
 .button {
-  // Enhanced focus styles for better accessibility (supplements Tailwind's focus-visible)
+  // Base button styles
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-2);
+  white-space: nowrap;
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  transition: all 0.15s ease-in-out;
+  border: 1px solid transparent;
+  cursor: pointer;
+  text-decoration: none;
+
+  // Focus styles for accessibility
   &:focus-visible {
     outline: 2px solid hsl(var(--ring));
     outline-offset: 2px;
     box-shadow: 0 0 0 2px hsl(var(--ring) / 0.2);
   }
 
-  // Smooth transitions for all interactive states (enhance Tailwind's basic transitions)
-  transition: all 0.15s ease-in-out;
-
-  // Custom hover lift effect (not available in Tailwind)
-  &:hover:not(:disabled) {
-    transform: translateY(-1px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-
-  // Enhanced disabled state (supplement Tailwind's disabled styles)
+  // Disabled state
   &:disabled,
   &[aria-disabled="true"] {
+    pointer-events: none;
+    opacity: 0.5;
     cursor: not-allowed;
     transform: none !important;
     box-shadow: none !important;
   }
 
-  // Loading state with spinner (completely custom - not in Tailwind)
+  // SVG icon styles
+  svg {
+    pointer-events: none;
+    width: var(--spacing-4);
+    height: var(--spacing-4);
+    flex-shrink: 0;
+  }
+
+  // Variant: Default
+  &--default {
+    background-color: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
+    box-shadow: var(--shadow-sm);
+
+    &:hover:not(:disabled) {
+      background-color: hsl(var(--primary) / 0.9);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  // Variant: Destructive
+  &--destructive {
+    background-color: hsl(var(--destructive));
+    color: hsl(var(--destructive-foreground));
+    box-shadow: var(--shadow-sm);
+
+    &:hover:not(:disabled) {
+      background-color: hsl(var(--destructive) / 0.9);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  // Variant: Outline
+  &--outline {
+    border: 1px solid hsl(var(--surface-interactive));
+    background-color: hsl(var(--background));
+    color: hsl(var(--surface-interactive));
+    box-shadow: var(--shadow-sm);
+
+    &:hover:not(:disabled) {
+      background-color: hsl(var(--accent));
+      color: hsl(var(--accent-foreground));
+      transform: translateY(-1px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  // Variant: Secondary
+  &--secondary {
+    background-color: hsl(var(--secondary));
+    color: hsl(var(--secondary-foreground));
+    border: 1px solid hsl(var(--border-default));
+    box-shadow: var(--shadow-sm);
+
+    &:hover:not(:disabled) {
+      background-color: hsl(var(--secondary) / 0.7);
+      border-color: hsl(var(--border-interactive) / 0.5);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  // Variant: Ghost
+  &--ghost {
+    color: hsl(var(--surface-interactive));
+
+    &:hover:not(:disabled) {
+      background-color: hsl(var(--accent));
+      color: hsl(var(--accent-foreground));
+      transform: translateY(-1px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  // Variant: Link
+  &--link {
+    color: hsl(var(--primary));
+    text-decoration: underline;
+    text-underline-offset: 4px;
+
+    &:hover:not(:disabled) {
+      text-decoration: underline;
+    }
+  }
+
+  // Size: Default
+  &--default-size {
+    height: var(--spacing-9);
+    padding: var(--spacing-2) var(--spacing-4);
+  }
+
+  // Size: Small
+  &--sm {
+    height: var(--spacing-8);
+    border-radius: var(--radius-md);
+    padding: 0 var(--spacing-3);
+    font-size: var(--font-size-xs);
+  }
+
+  // Size: Large
+  &--lg {
+    height: var(--spacing-10);
+    border-radius: var(--radius-md);
+    padding: 0 var(--spacing-8);
+  }
+
+  // Size: Icon
+  &--icon {
+    height: var(--spacing-9);
+    width: var(--spacing-9);
+    padding: 0;
+  }
+
+  // Loading state
   &--loading {
     position: relative;
     color: transparent !important;
@@ -43,31 +163,26 @@
       margin-top: -8px;
       border: 2px solid;
       border-radius: 50%;
-      border-color: transparent;
-      animation: spin 1s linear infinite;
-    }
-
-    // Spinner colors for different variants (use CSS custom properties for consistency)
-    &::after {
       border-color: currentColor transparent currentColor currentColor;
       opacity: 0.8;
+      animation: spin 1s linear infinite;
     }
   }
 
-  // Dark mode enhancements (supplement Tailwind's dark mode)
+  // Dark mode enhancements
   [data-theme="dark"] & {
     &:hover:not(:disabled) {
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
     }
   }
 
-  // Mobile touch targets (accessibility enhancement)
+  // Mobile touch targets (accessibility)
   @media (max-width: 640px) {
-    min-height: 44px; // iOS accessibility requirement
+    min-height: 44px;
     min-width: 44px;
   }
 
-  // Reduced motion respect (accessibility - not in Tailwind)
+  // Reduced motion
   @media (prefers-reduced-motion: reduce) {
     transition: none;
     animation: none;
@@ -83,7 +198,7 @@
     }
   }
 
-  // High contrast mode (accessibility - not in Tailwind)
+  // High contrast mode
   @media (prefers-contrast: high) {
     border: 2px solid;
 
@@ -103,56 +218,39 @@
   }
 }
 
-// Button group utilities (custom layouts not available in Tailwind)
+// Button group utilities
 .button-group {
   display: flex;
-  gap: 0.5rem;
+  gap: var(--spacing-2);
   flex-wrap: wrap;
 
-  // Connected button styling (custom design pattern)
+  // Connected button styling
   &--connected {
     gap: 0;
 
     .button {
       border-radius: 0;
-      margin-left: -1px; // Overlap borders to avoid double thickness
+      margin-left: -1px;
 
       &:first-child {
-        border-top-left-radius: var(--radius);
-        border-bottom-left-radius: var(--radius);
+        border-top-left-radius: var(--radius-md);
+        border-bottom-left-radius: var(--radius-md);
         margin-left: 0;
       }
 
       &:last-child {
-        border-top-right-radius: var(--radius);
-        border-bottom-right-radius: var(--radius);
+        border-top-right-radius: var(--radius-md);
+        border-bottom-right-radius: var(--radius-md);
       }
 
       &:only-child {
-        border-radius: var(--radius);
+        border-radius: var(--radius-md);
         margin-left: 0;
       }
 
-      // Focus state handling for connected buttons
       &:focus-visible {
-        z-index: 1; // Ensure focus ring appears above adjacent buttons
+        z-index: 1;
       }
-    }
-  }
-
-  // Error state styling (STANDARDIZED ADDITION)
-  &--error {
-    border-color: hsl(var(--destructive));
-    background-color: hsl(var(--destructive));
-    color: hsl(var(--destructive-foreground));
-
-    &:hover:not(:disabled) {
-      background-color: hsl(var(--destructive) / 0.9);
-    }
-
-    &:focus-visible {
-      outline-color: hsl(var(--destructive));
-      box-shadow: 0 0 0 2px hsl(var(--destructive) / 0.2);
     }
   }
 }

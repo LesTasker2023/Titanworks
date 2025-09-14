@@ -1,0 +1,223 @@
+@import "../../../styles/globals.scss";
+
+.pagination {
+  // Main container
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  // Navigation container
+  &__nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.25rem;
+
+    // Size variants
+    &--size-sm {
+      font-size: 0.875rem;
+    }
+
+    &--size-default {
+      font-size: 0.875rem;
+    }
+
+    &--size-lg {
+      font-size: 1rem;
+    }
+  }
+
+  // Base item styles
+  &__item {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius);
+    font-weight: 500;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    border: none;
+    background: transparent;
+
+    &:focus-visible {
+      outline: none;
+      box-shadow: 0 0 0 2px var(--ring);
+      outline-offset: 2px;
+    }
+
+    &:disabled {
+      opacity: 0.5;
+      pointer-events: none;
+    }
+
+    // Variant styles
+    &--variant-default {
+      &:hover {
+        background-color: var(--accent);
+        color: var(--accent-foreground);
+      }
+    }
+
+    &--variant-active {
+      background-color: var(--primary);
+      color: var(--primary-foreground);
+
+      &:hover {
+        background-color: hsl(var(--primary) / 0.9);
+      }
+    }
+
+    &--variant-ghost {
+      &:hover {
+        background-color: var(--accent);
+        color: var(--accent-foreground);
+      }
+    }
+
+    &--variant-outline {
+      border: 1px solid var(--input);
+
+      &:hover {
+        background-color: var(--accent);
+        color: var(--accent-foreground);
+      }
+    }
+
+    // Size variants
+    &--size-sm {
+      height: 2rem;
+      width: 2rem;
+      font-size: 0.75rem;
+    }
+
+    &--size-default {
+      height: 2.25rem;
+      width: 2.25rem;
+      font-size: 0.875rem;
+    }
+
+    &--size-lg {
+      height: 2.5rem;
+      width: 2.5rem;
+      font-size: 1rem;
+    }
+
+    // Loading state
+    &--loading {
+      cursor: not-allowed;
+    }
+
+    // Ellipsis state
+    &--ellipsis {
+      cursor: default;
+    }
+  }
+
+  // Navigation buttons (prev/next/first/last)
+  &__nav-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius);
+    font-weight: 500;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    border: none;
+    background: transparent;
+    gap: 0.25rem;
+
+    &:focus-visible {
+      outline: none;
+      box-shadow: 0 0 0 2px var(--ring);
+      outline-offset: 2px;
+    }
+
+    &:disabled {
+      opacity: 0.5;
+      pointer-events: none;
+    }
+
+    // Variant styles
+    &--variant-default {
+      &:hover {
+        background-color: var(--accent);
+        color: var(--accent-foreground);
+      }
+    }
+
+    &--variant-outline {
+      border: 1px solid var(--input);
+
+      &:hover {
+        background-color: var(--accent);
+        color: var(--accent-foreground);
+      }
+    }
+
+    // Size variants
+    &--size-sm {
+      height: 2rem;
+      padding: 0 0.5rem;
+      font-size: 0.75rem;
+    }
+
+    &--size-default {
+      height: 2.25rem;
+      padding: 0 0.75rem;
+      font-size: 0.875rem;
+    }
+
+    &--size-lg {
+      height: 2.5rem;
+      padding: 0 1rem;
+      font-size: 1rem;
+    }
+
+    // Hide text on mobile, show on sm and up
+    .nav-text {
+      display: none;
+
+      @media (min-width: 640px) {
+        display: inline;
+      }
+    }
+
+    // Show mobile text only on mobile
+    .nav-text-mobile {
+      display: inline;
+
+      @media (min-width: 640px) {
+        display: none;
+      }
+    }
+  }
+
+  // Page info text
+  &__page-info {
+    font-size: 0.875rem;
+    color: var(--muted-foreground);
+  }
+
+  // Loading spinner
+  &__spinner {
+    height: 1rem;
+    width: 1rem;
+    animation: pagination-spin 1s linear infinite;
+    border-radius: 50%;
+    border: 2px solid currentColor;
+    border-top-color: transparent;
+  }
+}
+
+// Spinner animation
+@keyframes pagination-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

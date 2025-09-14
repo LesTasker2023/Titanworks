@@ -5,7 +5,7 @@ exports[`Select > Snapshots > matches default snapshot 1`] = `
   aria-autocomplete="none"
   aria-controls="radix-«r3»"
   aria-expanded="false"
-  class="flex h-9 w-full items-center justify-between whitespace-nowrap rounded-md border border-input bg-transparent px-3 py-2 text-sm shadow-sm ring-offset-background data-[placeholder]:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-ring disabled:cursor-not-allowed disabled:opacity-50 [&>span]:line-clamp-1 select-trigger"
+  class="select__trigger"
   data-placeholder=""
   data-state="closed"
   dir="ltr"
@@ -19,7 +19,7 @@ exports[`Select > Snapshots > matches default snapshot 1`] = `
   </span>
   <svg
     aria-hidden="true"
-    class="lucide lucide-chevron-down h-4 w-4 opacity-50"
+    class="lucide lucide-chevron-down select__icon"
     fill="none"
     height="24"
     stroke="currentColor"
@@ -42,7 +42,7 @@ exports[`Select > Snapshots > matches disabled state snapshot 1`] = `
   aria-autocomplete="none"
   aria-controls="radix-«rd»"
   aria-expanded="false"
-  class="flex h-9 w-full items-center justify-between whitespace-nowrap rounded-md border border-input bg-transparent px-3 py-2 text-sm shadow-sm ring-offset-background data-[placeholder]:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-ring disabled:cursor-not-allowed disabled:opacity-50 [&>span]:line-clamp-1 select-trigger"
+  class="select__trigger"
   data-disabled=""
   data-placeholder=""
   data-state="closed"
@@ -58,7 +58,7 @@ exports[`Select > Snapshots > matches disabled state snapshot 1`] = `
   </span>
   <svg
     aria-hidden="true"
-    class="lucide lucide-chevron-down h-4 w-4 opacity-50"
+    class="lucide lucide-chevron-down select__icon"
     fill="none"
     height="24"
     stroke="currentColor"
@@ -81,7 +81,7 @@ exports[`Select > Snapshots > matches error state snapshot 1`] = `
   aria-autocomplete="none"
   aria-controls="radix-«ri»"
   aria-expanded="false"
-  class="flex h-9 w-full items-center justify-between whitespace-nowrap rounded-md border border-input bg-transparent px-3 py-2 text-sm shadow-sm ring-offset-background data-[placeholder]:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-ring disabled:cursor-not-allowed disabled:opacity-50 [&>span]:line-clamp-1 select-trigger select-trigger--error"
+  class="select__trigger select__trigger--error"
   data-placeholder=""
   data-state="closed"
   dir="ltr"
@@ -95,7 +95,7 @@ exports[`Select > Snapshots > matches error state snapshot 1`] = `
   </span>
   <svg
     aria-hidden="true"
-    class="lucide lucide-chevron-down h-4 w-4 opacity-50"
+    class="lucide lucide-chevron-down select__icon"
     fill="none"
     height="24"
     stroke="currentColor"
@@ -118,7 +118,7 @@ exports[`Select > Snapshots > matches loading state snapshot 1`] = `
   aria-autocomplete="none"
   aria-controls="radix-«r8»"
   aria-expanded="false"
-  class="flex h-9 w-full items-center justify-between whitespace-nowrap rounded-md border border-input bg-transparent px-3 py-2 text-sm shadow-sm ring-offset-background data-[placeholder]:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-ring disabled:cursor-not-allowed disabled:opacity-50 [&>span]:line-clamp-1 select-trigger select-trigger--loading"
+  class="select__trigger select__trigger--loading"
   data-disabled=""
   data-placeholder=""
   data-state="closed"
@@ -134,7 +134,7 @@ exports[`Select > Snapshots > matches loading state snapshot 1`] = `
   </span>
   <div
     aria-hidden="true"
-    class="select-spinner"
+    class="select__spinner"
   />
 </button>
 `;

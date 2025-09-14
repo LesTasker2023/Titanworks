@@ -8,7 +8,7 @@ exports[`Accordion > Snapshots > matches default snapshot 1`] = `
     <button
       aria-controls="accordion-content-0"
       aria-expanded="false"
-      class="w-full text-left font-medium py-2 px-4 border-b border-border focus:outline-none focus-visible:ring-2 focus-visible:ring-ring transition-colors bg-background hover:bg-muted disabled:opacity-50 disabled:cursor-not-allowed"
+      class="accordion__button"
       id="accordion-header-0"
       type="button"
     >
@@ -17,7 +17,7 @@ exports[`Accordion > Snapshots > matches default snapshot 1`] = `
     <div
       aria-label="Content for Item 1"
       aria-labelledby="accordion-header-0"
-      class="px-4 py-2 text-muted-foreground bg-muted/50"
+      class="accordion__content accordion__content--hidden"
       hidden=""
       id="accordion-content-0"
       role="region"
@@ -29,7 +29,7 @@ exports[`Accordion > Snapshots > matches default snapshot 1`] = `
     <button
       aria-controls="accordion-content-1"
       aria-expanded="false"
-      class="w-full text-left font-medium py-2 px-4 border-b border-border focus:outline-none focus-visible:ring-2 focus-visible:ring-ring transition-colors bg-background hover:bg-muted disabled:opacity-50 disabled:cursor-not-allowed"
+      class="accordion__button"
       id="accordion-header-1"
       type="button"
     >
@@ -38,7 +38,7 @@ exports[`Accordion > Snapshots > matches default snapshot 1`] = `
     <div
       aria-label="Content for Item 2"
       aria-labelledby="accordion-header-1"
-      class="px-4 py-2 text-muted-foreground bg-muted/50"
+      class="accordion__content accordion__content--hidden"
       hidden=""
       id="accordion-content-1"
       role="region"
@@ -50,7 +50,7 @@ exports[`Accordion > Snapshots > matches default snapshot 1`] = `
     <button
       aria-controls="accordion-content-2"
       aria-expanded="false"
-      class="w-full text-left font-medium py-2 px-4 border-b border-border focus:outline-none focus-visible:ring-2 focus-visible:ring-ring transition-colors bg-background hover:bg-muted disabled:opacity-50 disabled:cursor-not-allowed"
+      class="accordion__button"
       disabled=""
       id="accordion-header-2"
       type="button"
@@ -60,7 +60,7 @@ exports[`Accordion > Snapshots > matches default snapshot 1`] = `
     <div
       aria-label="Content for Item 3"
       aria-labelledby="accordion-header-2"
-      class="px-4 py-2 text-muted-foreground bg-muted/50"
+      class="accordion__content accordion__content--hidden"
       hidden=""
       id="accordion-content-2"
       role="region"
@@ -80,7 +80,7 @@ exports[`Accordion > Snapshots > matches disabled state snapshot 1`] = `
     <button
       aria-controls="accordion-content-0"
       aria-expanded="false"
-      class="w-full text-left font-medium py-2 px-4 border-b border-border focus:outline-none focus-visible:ring-2 focus-visible:ring-ring transition-colors bg-background hover:bg-muted disabled:opacity-50 disabled:cursor-not-allowed"
+      class="accordion__button"
       id="accordion-header-0"
       type="button"
     >
@@ -89,7 +89,7 @@ exports[`Accordion > Snapshots > matches disabled state snapshot 1`] = `
     <div
       aria-label="Content for Item 1"
       aria-labelledby="accordion-header-0"
-      class="px-4 py-2 text-muted-foreground bg-muted/50"
+      class="accordion__content accordion__content--hidden"
       hidden=""
       id="accordion-content-0"
       role="region"
@@ -101,7 +101,7 @@ exports[`Accordion > Snapshots > matches disabled state snapshot 1`] = `
     <button
       aria-controls="accordion-content-1"
       aria-expanded="false"
-      class="w-full text-left font-medium py-2 px-4 border-b border-border focus:outline-none focus-visible:ring-2 focus-visible:ring-ring transition-colors bg-background hover:bg-muted disabled:opacity-50 disabled:cursor-not-allowed"
+      class="accordion__button"
       id="accordion-header-1"
       type="button"
     >
@@ -110,7 +110,7 @@ exports[`Accordion > Snapshots > matches disabled state snapshot 1`] = `
     <div
       aria-label="Content for Item 2"
       aria-labelledby="accordion-header-1"
-      class="px-4 py-2 text-muted-foreground bg-muted/50"
+      class="accordion__content accordion__content--hidden"
       hidden=""
       id="accordion-content-1"
       role="region"
@@ -122,7 +122,7 @@ exports[`Accordion > Snapshots > matches disabled state snapshot 1`] = `
     <button
       aria-controls="accordion-content-2"
       aria-expanded="false"
-      class="w-full text-left font-medium py-2 px-4 border-b border-border focus:outline-none focus-visible:ring-2 focus-visible:ring-ring transition-colors bg-background hover:bg-muted disabled:opacity-50 disabled:cursor-not-allowed"
+      class="accordion__button"
       disabled=""
       id="accordion-header-2"
       type="button"
@@ -132,7 +132,7 @@ exports[`Accordion > Snapshots > matches disabled state snapshot 1`] = `
     <div
       aria-label="Content for Item 3"
       aria-labelledby="accordion-header-2"
-      class="px-4 py-2 text-muted-foreground bg-muted/50"
+      class="accordion__content accordion__content--hidden"
       hidden=""
       id="accordion-content-2"
       role="region"
@@ -151,7 +151,7 @@ exports[`Accordion > Snapshots > matches hover state snapshot 1`] = `
     <button
       aria-controls="accordion-content-0"
       aria-expanded="false"
-      class="w-full text-left font-medium py-2 px-4 border-b border-border focus:outline-none focus-visible:ring-2 focus-visible:ring-ring transition-colors bg-background hover:bg-muted disabled:opacity-50 disabled:cursor-not-allowed"
+      class="accordion__button"
       id="accordion-header-0"
       type="button"
     >
@@ -160,7 +160,7 @@ exports[`Accordion > Snapshots > matches hover state snapshot 1`] = `
     <div
       aria-label="Content for Item 1"
       aria-labelledby="accordion-header-0"
-      class="px-4 py-2 text-muted-foreground bg-muted/50"
+      class="accordion__content accordion__content--hidden"
       hidden=""
       id="accordion-content-0"
       role="region"
@@ -172,7 +172,7 @@ exports[`Accordion > Snapshots > matches hover state snapshot 1`] = `
     <button
       aria-controls="accordion-content-1"
       aria-expanded="false"
-      class="w-full text-left font-medium py-2 px-4 border-b border-border focus:outline-none focus-visible:ring-2 focus-visible:ring-ring transition-colors bg-background hover:bg-muted disabled:opacity-50 disabled:cursor-not-allowed"
+      class="accordion__button"
       id="accordion-header-1"
       type="button"
     >
@@ -181,7 +181,7 @@ exports[`Accordion > Snapshots > matches hover state snapshot 1`] = `
     <div
       aria-label="Content for Item 2"
       aria-labelledby="accordion-header-1"
-      class="px-4 py-2 text-muted-foreground bg-muted/50"
+      class="accordion__content accordion__content--hidden"
       hidden=""
       id="accordion-content-1"
       role="region"
@@ -193,7 +193,7 @@ exports[`Accordion > Snapshots > matches hover state snapshot 1`] = `
     <button
       aria-controls="accordion-content-2"
       aria-expanded="false"
-      class="w-full text-left font-medium py-2 px-4 border-b border-border focus:outline-none focus-visible:ring-2 focus-visible:ring-ring transition-colors bg-background hover:bg-muted disabled:opacity-50 disabled:cursor-not-allowed"
+      class="accordion__button"
       disabled=""
       id="accordion-header-2"
       type="button"
@@ -203,7 +203,7 @@ exports[`Accordion > Snapshots > matches hover state snapshot 1`] = `
     <div
       aria-label="Content for Item 3"
       aria-labelledby="accordion-header-2"
-      class="px-4 py-2 text-muted-foreground bg-muted/50"
+      class="accordion__content accordion__content--hidden"
       hidden=""
       id="accordion-content-2"
       role="region"
@@ -222,7 +222,7 @@ exports[`Accordion > Snapshots > matches open state snapshot 1`] = `
     <button
       aria-controls="accordion-content-0"
       aria-expanded="true"
-      class="w-full text-left font-medium py-2 px-4 border-b border-border focus:outline-none focus-visible:ring-2 focus-visible:ring-ring transition-colors bg-background hover:bg-muted disabled:opacity-50 disabled:cursor-not-allowed"
+      class="accordion__button"
       id="accordion-header-0"
       type="button"
     >
@@ -231,7 +231,7 @@ exports[`Accordion > Snapshots > matches open state snapshot 1`] = `
     <div
       aria-label="Content for Item 1"
       aria-labelledby="accordion-header-0"
-      class="px-4 py-2 text-muted-foreground bg-muted/50"
+      class="accordion__content"
       data-testid="open-region"
       id="accordion-content-0"
       role="region"
@@ -243,7 +243,7 @@ exports[`Accordion > Snapshots > matches open state snapshot 1`] = `
     <button
       aria-controls="accordion-content-1"
       aria-expanded="false"
-      class="w-full text-left font-medium py-2 px-4 border-b border-border focus:outline-none focus-visible:ring-2 focus-visible:ring-ring transition-colors bg-background hover:bg-muted disabled:opacity-50 disabled:cursor-not-allowed"
+      class="accordion__button"
       id="accordion-header-1"
       type="button"
     >
@@ -252,7 +252,7 @@ exports[`Accordion > Snapshots > matches open state snapshot 1`] = `
     <div
       aria-label="Content for Item 2"
       aria-labelledby="accordion-header-1"
-      class="px-4 py-2 text-muted-foreground bg-muted/50"
+      class="accordion__content accordion__content--hidden"
       hidden=""
       id="accordion-content-1"
       role="region"
@@ -264,7 +264,7 @@ exports[`Accordion > Snapshots > matches open state snapshot 1`] = `
     <button
       aria-controls="accordion-content-2"
       aria-expanded="false"
-      class="w-full text-left font-medium py-2 px-4 border-b border-border focus:outline-none focus-visible:ring-2 focus-visible:ring-ring transition-colors bg-background hover:bg-muted disabled:opacity-50 disabled:cursor-not-allowed"
+      class="accordion__button"
       disabled=""
       id="accordion-header-2"
       type="button"
@@ -274,7 +274,7 @@ exports[`Accordion > Snapshots > matches open state snapshot 1`] = `
     <div
       aria-label="Content for Item 3"
       aria-labelledby="accordion-header-2"
-      class="px-4 py-2 text-muted-foreground bg-muted/50"
+      class="accordion__content accordion__content--hidden"
       hidden=""
       id="accordion-content-2"
       role="region"

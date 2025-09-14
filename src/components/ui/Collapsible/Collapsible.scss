@@ -1,0 +1,48 @@
+// Collapsible Component Styles
+// Radix primitive wrapper - no styling required
+// Styling will be applied via composed components that use this primitive
+
+.collapsible {
+  // Base collapsible root - inherits from Radix
+  &__trigger {
+    // Trigger element styling
+    cursor: pointer;
+    outline: none;
+
+    &:focus-visible {
+      outline: 2px solid var(--color-primary);
+      outline-offset: 2px;
+    }
+  }
+
+  &__content {
+    // Content area that shows/hides
+    overflow: hidden;
+
+    &[data-state="closed"] {
+      animation: slideUp 150ms cubic-bezier(0.87, 0, 0.13, 1);
+    }
+
+    &[data-state="open"] {
+      animation: slideDown 150ms cubic-bezier(0.87, 0, 0.13, 1);
+    }
+  }
+}
+
+@keyframes slideDown {
+  from {
+    height: 0;
+  }
+  to {
+    height: var(--radix-collapsible-content-height);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    height: var(--radix-collapsible-content-height);
+  }
+  to {
+    height: 0;
+  }
+}

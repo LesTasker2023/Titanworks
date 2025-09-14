@@ -5,7 +5,7 @@ exports[`Combobox > Snapshots > matches default snapshot 1`] = `
   aria-controls="radix-«r0»"
   aria-expanded="false"
   aria-haspopup="dialog"
-  class="inline-flex items-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border border-input bg-background shadow-sm hover:bg-accent hover:text-accent-foreground [color:hsl(var(--surface-interactive))] [border-color:hsl(var(--surface-interactive))] h-9 px-4 py-2 button w-full justify-between text-muted-foreground"
+  class="button button--outline button--default-size combobox__trigger combobox__trigger--placeholder"
   data-state="closed"
   data-testid="combobox"
   role="combobox"
@@ -14,7 +14,7 @@ exports[`Combobox > Snapshots > matches default snapshot 1`] = `
   Select option...
   <svg
     aria-hidden="true"
-    class="lucide lucide-chevrons-up-down ml-2 h-4 w-4 shrink-0 opacity-50"
+    class="lucide lucide-chevrons-up-down combobox__icon"
     fill="none"
     height="24"
     stroke="currentColor"
@@ -40,7 +40,7 @@ exports[`Combobox > Snapshots > matches disabled state snapshot 1`] = `
   aria-controls="radix-«r1»"
   aria-expanded="false"
   aria-haspopup="dialog"
-  class="inline-flex items-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border border-input bg-background shadow-sm hover:bg-accent hover:text-accent-foreground [color:hsl(var(--surface-interactive))] [border-color:hsl(var(--surface-interactive))] h-9 px-4 py-2 button w-full justify-between text-muted-foreground"
+  class="button button--outline button--default-size combobox__trigger combobox__trigger--placeholder"
   data-state="closed"
   data-testid="combobox"
   disabled=""
@@ -50,7 +50,7 @@ exports[`Combobox > Snapshots > matches disabled state snapshot 1`] = `
   Select option...
   <svg
     aria-hidden="true"
-    class="lucide lucide-chevrons-up-down ml-2 h-4 w-4 shrink-0 opacity-50"
+    class="lucide lucide-chevrons-up-down combobox__icon"
     fill="none"
     height="24"
     stroke="currentColor"
@@ -76,7 +76,7 @@ exports[`Combobox > Snapshots > matches empty state snapshot 1`] = `
   aria-controls="radix-«r3»"
   aria-expanded="false"
   aria-haspopup="dialog"
-  class="inline-flex items-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border border-input bg-background shadow-sm hover:bg-accent hover:text-accent-foreground [color:hsl(var(--surface-interactive))] [border-color:hsl(var(--surface-interactive))] h-9 px-4 py-2 button w-full justify-between text-muted-foreground"
+  class="button button--outline button--default-size combobox__trigger combobox__trigger--placeholder"
   data-state="closed"
   data-testid="combobox"
   role="combobox"
@@ -85,7 +85,7 @@ exports[`Combobox > Snapshots > matches empty state snapshot 1`] = `
   Select option...
   <svg
     aria-hidden="true"
-    class="lucide lucide-chevrons-up-down ml-2 h-4 w-4 shrink-0 opacity-50"
+    class="lucide lucide-chevrons-up-down combobox__icon"
     fill="none"
     height="24"
     stroke="currentColor"
@@ -111,7 +111,7 @@ exports[`Combobox > Snapshots > matches selected state snapshot 1`] = `
   aria-controls="radix-«r2»"
   aria-expanded="false"
   aria-haspopup="dialog"
-  class="inline-flex items-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border border-input bg-background shadow-sm hover:bg-accent hover:text-accent-foreground [color:hsl(var(--surface-interactive))] [border-color:hsl(var(--surface-interactive))] h-9 px-4 py-2 button w-full justify-between"
+  class="button button--outline button--default-size combobox__trigger"
   data-state="closed"
   data-testid="combobox"
   role="combobox"
@@ -120,7 +120,7 @@ exports[`Combobox > Snapshots > matches selected state snapshot 1`] = `
   Option 1
   <svg
     aria-hidden="true"
-    class="lucide lucide-chevrons-up-down ml-2 h-4 w-4 shrink-0 opacity-50"
+    class="lucide lucide-chevrons-up-down combobox__icon"
     fill="none"
     height="24"
     stroke="currentColor"

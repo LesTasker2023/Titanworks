@@ -2,7 +2,7 @@
 
 exports[`Skeleton > Snapshots > matches default snapshot 1`] = `
 <div
-  class="animate-pulse rounded-md bg-primary/10"
+  class="skeleton"
   data-testid="skeleton"
 >
   Test content

@@ -2,19 +2,19 @@
 
 exports[`ColorPicker > Snapshots > matches custom color snapshot 1`] = `
 <div
-  class="relative "
+  class="color-picker "
 >
   <button
     aria-label="Test color picker"
-    class="justify-center whitespace-nowrap font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border border-input bg-background shadow-sm hover:bg-accent hover:text-accent-foreground [color:hsl(var(--surface-interactive))] [border-color:hsl(var(--surface-interactive))] h-8 rounded-md px-3 text-xs button flex items-center gap-2"
+    class="button button--outline button--sm colorPicker__trigger"
   >
     <div
-      class="w-4 h-4 rounded-full border border-border"
+      class="colorPicker__colorSwatch"
       style="background-color: rgb(24, 24, 27);"
     />
     <svg
       aria-hidden="true"
-      class="lucide lucide-palette w-4 h-4"
+      class="lucide lucide-palette colorPicker__icon"
       fill="none"
       height="24"
       stroke="currentColor"
@@ -54,7 +54,7 @@ exports[`ColorPicker > Snapshots > matches custom color snapshot 1`] = `
       />
     </svg>
     <span
-      class="hidden sm:inline"
+      class="colorPicker__label"
     >
       Brand Color
     </span>
@@ -64,19 +64,19 @@ exports[`ColorPicker > Snapshots > matches custom color snapshot 1`] = `
 
 exports[`ColorPicker > Snapshots > matches default snapshot 1`] = `
 <div
-  class="relative "
+  class="color-picker "
 >
   <button
     aria-label="Test color picker"
-    class="justify-center whitespace-nowrap font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border border-input bg-background shadow-sm hover:bg-accent hover:text-accent-foreground [color:hsl(var(--surface-interactive))] [border-color:hsl(var(--surface-interactive))] h-8 rounded-md px-3 text-xs button flex items-center gap-2"
+    class="button button--outline button--sm colorPicker__trigger"
   >
     <div
-      class="w-4 h-4 rounded-full border border-border"
+      class="colorPicker__colorSwatch"
       style="background-color: rgb(24, 24, 27);"
     />
     <svg
       aria-hidden="true"
-      class="lucide lucide-palette w-4 h-4"
+      class="lucide lucide-palette colorPicker__icon"
       fill="none"
       height="24"
       stroke="currentColor"
@@ -116,7 +116,7 @@ exports[`ColorPicker > Snapshots > matches default snapshot 1`] = `
       />
     </svg>
     <span
-      class="hidden sm:inline"
+      class="colorPicker__label"
     >
       Brand Color
     </span>
@@ -126,20 +126,20 @@ exports[`ColorPicker > Snapshots > matches default snapshot 1`] = `
 
 exports[`ColorPicker > Snapshots > matches disabled state snapshot 1`] = `
 <div
-  class="relative "
+  class="color-picker "
 >
   <button
     aria-label="Test color picker"
-    class="justify-center whitespace-nowrap font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border border-input bg-background shadow-sm hover:bg-accent hover:text-accent-foreground [color:hsl(var(--surface-interactive))] [border-color:hsl(var(--surface-interactive))] h-8 rounded-md px-3 text-xs button flex items-center gap-2"
+    class="button button--outline button--sm colorPicker__trigger"
     disabled=""
   >
     <div
-      class="w-4 h-4 rounded-full border border-border"
+      class="colorPicker__colorSwatch"
       style="background-color: rgb(24, 24, 27);"
     />
     <svg
       aria-hidden="true"
-      class="lucide lucide-palette w-4 h-4"
+      class="lucide lucide-palette colorPicker__icon"
       fill="none"
       height="24"
       stroke="currentColor"
@@ -179,7 +179,7 @@ exports[`ColorPicker > Snapshots > matches disabled state snapshot 1`] = `
       />
     </svg>
     <span
-      class="hidden sm:inline"
+      class="colorPicker__label"
     >
       Brand Color
     </span>
@@ -189,19 +189,19 @@ exports[`ColorPicker > Snapshots > matches disabled state snapshot 1`] = `
 
 exports[`ColorPicker > Snapshots > matches with className snapshot 1`] = `
 <div
-  class="relative custom-class"
+  class="color-picker custom-class"
 >
   <button
     aria-label="Test color picker"
-    class="justify-center whitespace-nowrap font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border border-input bg-background shadow-sm hover:bg-accent hover:text-accent-foreground [color:hsl(var(--surface-interactive))] [border-color:hsl(var(--surface-interactive))] h-8 rounded-md px-3 text-xs button flex items-center gap-2"
+    class="button button--outline button--sm colorPicker__trigger"
   >
     <div
-      class="w-4 h-4 rounded-full border border-border"
+      class="colorPicker__colorSwatch"
       style="background-color: rgb(24, 24, 27);"
     />
     <svg
       aria-hidden="true"
-      class="lucide lucide-palette w-4 h-4"
+      class="lucide lucide-palette colorPicker__icon"
       fill="none"
       height="24"
       stroke="currentColor"
@@ -241,7 +241,7 @@ exports[`ColorPicker > Snapshots > matches with className snapshot 1`] = `
       />
     </svg>
     <span
-      class="hidden sm:inline"
+      class="colorPicker__label"
     >
       Brand Color
     </span>

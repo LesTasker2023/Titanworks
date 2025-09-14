@@ -1,104 +1,44 @@
 'use client';
 
 import * as SliderPrimitive from '@radix-ui/react-slider';
-import { cva, type VariantProps } from 'class-variance-authority';
 import * as React from 'react';
+import './Slider.scss';
 
 import { cn } from '@/lib/utils';
 
-const sliderVariants = cva('relative flex w-full touch-none select-none items-center', {
-  variants: {
-    variant: {
-      default: 'data-[orientation=vertical]:flex-col',
-      success: 'data-[orientation=vertical]:flex-col',
-      warning: 'data-[orientation=vertical]:flex-col',
-      danger: 'data-[orientation=vertical]:flex-col',
-    },
-    size: {
-      sm: 'h-3',
-      default: 'h-4',
-      lg: 'h-5',
-      xl: 'h-6',
-    },
-  },
-  defaultVariants: {
-    variant: 'default',
-    size: 'default',
-  },
-});
+// Helper function to generate BEM classes based on props
+function getSliderClasses(variant: string = 'default', size: string = 'default'): string {
+  return cn('slider', `slider--variant-${variant}`, `slider--size-${size}`);
+}
 
-const trackVariants = cva('relative grow overflow-hidden rounded-full bg-neutral', {
-  variants: {
-    variant: {
-      default: 'bg-neutral',
-      success: 'bg-neutral',
-      warning: 'bg-neutral',
-      danger: 'bg-neutral',
-    },
-    size: {
-      sm: 'h-1',
-      default: 'h-1.5',
-      lg: 'h-2',
-      xl: 'h-2.5',
-    },
-    orientation: {
-      horizontal: 'w-full',
-      vertical: 'w-1.5 h-full',
-    },
-  },
-  defaultVariants: {
-    variant: 'default',
-    size: 'default',
-    orientation: 'horizontal',
-  },
-});
+function getTrackClasses(
+  variant: string = 'default',
+  size: string = 'default',
+  orientation: string = 'horizontal'
+): string {
+  return cn(
+    'slider__track',
+    `slider__track--variant-${variant}`,
+    `slider__track--size-${size}`,
+    `slider__track--orientation-${orientation}`
+  );
+}
 
-const rangeVariants = cva('absolute bg-primary', {
-  variants: {
-    variant: {
-      default: 'bg-primary',
-      success: 'bg-green-600',
-      warning: 'bg-yellow-600',
-      danger: 'bg-red-600',
-    },
-    orientation: {
-      horizontal: 'h-full',
-      vertical: 'w-full',
-    },
-  },
-  defaultVariants: {
-    variant: 'default',
-    orientation: 'horizontal',
-  },
-});
+function getRangeClasses(variant: string = 'default', orientation: string = 'horizontal'): string {
+  return cn(
+    'slider__range',
+    `slider__range--variant-${variant}`,
+    `slider__range--orientation-${orientation}`
+  );
+}
 
-const thumbVariants = cva(
-  'block rounded-full border bg-background shadow transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50',
-  {
-    variants: {
-      variant: {
-        default: 'border-primary/50',
-        success: 'border-green-600/50',
-        warning: 'border-yellow-600/50',
-        danger: 'border-red-600/50',
-      },
-      size: {
-        sm: 'h-3 w-3',
-        default: 'h-4 w-4',
-        lg: 'h-5 w-5',
-        xl: 'h-6 w-6',
-      },
-    },
-    defaultVariants: {
-      variant: 'default',
-      size: 'default',
-    },
-  }
-);
+function getThumbClasses(variant: string = 'default', size: string = 'default'): string {
+  return cn('slider__thumb', `slider__thumb--variant-${variant}`, `slider__thumb--size-${size}`);
+}
 
-export interface SliderProps
-  extends React.ComponentPropsWithoutRef<typeof SliderPrimitive.Root>,
-    VariantProps<typeof sliderVariants> {
+export interface SliderProps extends React.ComponentPropsWithoutRef<typeof SliderPrimitive.Root> {
+  variant?: 'default' | 'success' | 'warning' | 'danger';
+  size?: 'sm' | 'default' | 'lg' | 'xl';
   showValue?: boolean;
   valuePosition?: 'top' | 'bottom' | 'left' | 'right';
   loading?: boolean;
@@ -159,11 +99,9 @@ const Slider = React.forwardRef<React.ElementRef<typeof SliderPrimitive.Root>, S
 
     if (loading) {
       return (
-        <div
-          className={cn('flex items-center gap-2', sliderVariants({ variant, size, className }))}
-        >
-          <div className="animate-pulse rounded-full bg-muted h-1.5 w-full" />
-          <div className="animate-spin w-3 h-3 border border-gray-300 border-t-gray-600 rounded-full" />
+        <div className={cn('slider__loading', className)}>
+          <div className="slider__loading-track" />
+          <div className="slider__loading-spinner" />
         </div>
       );
     }
@@ -171,7 +109,7 @@ const Slider = React.forwardRef<React.ElementRef<typeof SliderPrimitive.Root>, S
     const sliderElement = (
       <SliderPrimitive.Root
         ref={ref}
-        className={cn(sliderVariants({ variant, size, className }))}
+        className={cn(getSliderClasses(variant, size), className)}
         orientation={orientation}
         value={value || internalValue}
         defaultValue={defaultValue}
@@ -179,22 +117,15 @@ const Slider = React.forwardRef<React.ElementRef<typeof SliderPrimitive.Root>, S
         {...props}
       >
         <SliderPrimitive.Track
-          className={trackVariants({
-            variant,
-            size,
-            orientation: orientation as 'horizontal' | 'vertical',
-          })}
+          className={getTrackClasses(variant, size, orientation as 'horizontal' | 'vertical')}
         >
           <SliderPrimitive.Range
-            className={rangeVariants({
-              variant,
-              orientation: orientation as 'horizontal' | 'vertical',
-            })}
+            className={getRangeClasses(variant, orientation as 'horizontal' | 'vertical')}
           />
         </SliderPrimitive.Track>
         {/* Render one or two thumbs based on value length */}
         {(value || internalValue).map((_, i) => (
-          <SliderPrimitive.Thumb key={i} className={thumbVariants({ variant, size })} />
+          <SliderPrimitive.Thumb key={i} className={getThumbClasses(variant, size)} />
         ))}
       </SliderPrimitive.Root>
     );
@@ -206,29 +137,29 @@ const Slider = React.forwardRef<React.ElementRef<typeof SliderPrimitive.Root>, S
     // Value display positioning
     if (orientation === 'vertical') {
       return (
-        <div className="flex items-center gap-2">
+        <div className="slider__value-display">
           {valuePosition === 'left' && (
-            <span className="text-sm font-medium min-w-8 text-right">{displayValue}</span>
+            <span className="slider__value-display-value">{displayValue}</span>
           )}
           {sliderElement}
           {valuePosition === 'right' && (
-            <span className="text-sm font-medium min-w-8">{displayValue}</span>
+            <span className="slider__value-display-value">{displayValue}</span>
           )}
         </div>
       );
     }
 
     return (
-      <div className="space-y-2">
+      <div className="slider__container">
         {valuePosition === 'top' && (
-          <div className="flex justify-center">
-            <span className="text-sm font-medium">{displayValue}</span>
+          <div className="slider__value-display-center">
+            <span className="slider__value-display-value">{displayValue}</span>
           </div>
         )}
         {sliderElement}
         {valuePosition === 'bottom' && (
-          <div className="flex justify-center">
-            <span className="text-sm font-medium">{displayValue}</span>
+          <div className="slider__value-display-center">
+            <span className="slider__value-display-value">{displayValue}</span>
           </div>
         )}
       </div>
@@ -238,4 +169,4 @@ const Slider = React.forwardRef<React.ElementRef<typeof SliderPrimitive.Root>, S
 
 Slider.displayName = SliderPrimitive.Root.displayName;
 
-export { rangeVariants, Slider, sliderVariants, thumbVariants, trackVariants };
+export { Slider };

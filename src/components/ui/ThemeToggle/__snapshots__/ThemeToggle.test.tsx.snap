@@ -3,6 +3,7 @@
 exports[`ThemeToggle > Snapshots > matches default snapshot 1`] = `
 <button
   aria-label="Toggle theme"
+  class="theme-toggle"
   data-testid="themetoggle"
   title="Toggle theme"
 >

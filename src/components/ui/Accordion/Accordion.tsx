@@ -1,5 +1,6 @@
 import { stripTransientProps } from '@/utils/stripTransientProps';
 import * as React from 'react';
+import './Accordion.scss';
 
 export interface AccordionProps extends React.HTMLAttributes<HTMLDivElement> {
   items: { title: string; content: React.ReactNode; disabled?: boolean }[];
@@ -54,7 +55,7 @@ export const Accordion = React.forwardRef<HTMLDivElement, AccordionProps>(
                 aria-expanded={isOpen}
                 aria-controls={regionId}
                 disabled={isDisabled}
-                className="w-full text-left font-medium py-2 px-4 border-b border-border focus:outline-none focus-visible:ring-2 focus-visible:ring-ring transition-colors bg-background hover:bg-muted disabled:opacity-50 disabled:cursor-not-allowed"
+                className="accordion__button"
                 onClick={e => {
                   e.stopPropagation();
                   if (!isDisabled) {
@@ -71,10 +72,9 @@ export const Accordion = React.forwardRef<HTMLDivElement, AccordionProps>(
                 aria-labelledby={buttonId}
                 aria-label={`Content for ${item.title}`}
                 hidden={!isOpen}
-                className={
-                  `px-4 py-2 text-muted-foreground bg-muted/50` +
-                  (className && isOpen ? ` ${className}` : '')
-                }
+                className={`accordion__content${!isOpen ? ' accordion__content--hidden' : ''}${
+                  className && isOpen ? ` ${className}` : ''
+                }`}
                 data-testid={isOpen ? 'open-region' : undefined}
               >
                 {item.content}

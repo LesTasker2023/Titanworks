@@ -14,6 +14,8 @@ import {
 } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
 
+import './VideoPlayer.scss';
+
 interface VideoPlayerProps {
   src: string;
   title: string;
@@ -190,7 +192,7 @@ export function VideoPlayer({
 
   return (
     <div
-      className={`relative bg-black rounded-lg overflow-hidden group ${className}`}
+      className={`video-player ${className}`}
       onMouseMove={() => setShowControls(true)}
       onMouseLeave={() => isPlaying && setShowControls(false)}
     >
@@ -199,71 +201,65 @@ export function VideoPlayer({
         ref={videoRef}
         src={src}
         poster={poster}
-        className="w-full h-full object-cover"
+        className="video-player__video"
         onClick={togglePlay}
         onDoubleClick={toggleFullscreen}
       />
 
       {/* Loading Spinner */}
       {isLoading && (
-        <div className="absolute inset-0 flex items-center justify-center bg-black/50">
-          <div className="w-12 h-12 border-4 border-white/30 border-t-white rounded-full animate-spin" />
+        <div className="video-player__loading">
+          <div className="video-player__spinner" />
         </div>
       )}
 
       {/* Play Button Overlay */}
       {!isPlaying && !isLoading && (
-        <div className="absolute inset-0 flex items-center justify-center">
-          <Button
-            size="lg"
-            onClick={togglePlay}
-            className="w-20 h-20 rounded-full bg-white/20 backdrop-blur-sm hover:bg-white/30 border-2 border-white/50"
-          >
-            <Play className="w-8 h-8 text-white ml-1" />
+        <div className="video-player__play-overlay">
+          <Button size="lg" onClick={togglePlay} className="video-player__play-button">
+            <Play />
           </Button>
         </div>
       )}
 
       {/* Controls */}
       <div
-        className={`absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-4 transition-opacity duration-300 ${
-          showControls ? 'opacity-100' : 'opacity-0'
-        }`}
+        className={`video-player__controls ${showControls ? '' : 'video-player__controls--hidden'}`}
       >
         {/* Progress Bar */}
         <div
           ref={progressRef}
-          className="w-full h-2 bg-white/30 rounded-full mb-4 cursor-pointer relative"
+          className="video-player__progress-container"
           onClick={handleProgressClick}
         >
           {/* Buffered Progress */}
           <div
-            className="absolute h-full bg-white/50 rounded-full"
+            className="video-player__progress-buffered"
             style={{ width: `${bufferedPercentage}%` }}
           />
           {/* Current Progress */}
           <div
-            className="absolute h-full bg-white rounded-full transition-all"
+            className="video-player__progress-current"
             style={{ width: `${progressPercentage}%` }}
           />
           {/* Progress Handle */}
           <div
-            className="absolute w-4 h-4 bg-white rounded-full -mt-1 transition-all transform -translate-x-2 opacity-0 group-hover:opacity-100"
+            className="video-player__progress-handle"
             style={{ left: `${progressPercentage}%` }}
           />
         </div>
 
         {/* Control Buttons */}
-        <div className="flex items-center justify-between text-white">
-          <div className="flex items-center gap-3">
+        <div className="video-player__controls-row">
+          <div className="video-player__controls-left">
             {/* Play/Pause */}
             <Button
               variant="ghost"
               size="sm"
               onClick={togglePlay}
-              className="text-white hover:bg-white/20"
+              className="video-player__control-button video-player__control-button--play"
             >
-              {isPlaying ? <Pause className="w-6 h-6" /> : <Play className="w-6 h-6" />}
+              {isPlaying ? <Pause /> : <Play />}
             </Button>
 
             {/* Skip Buttons */}
@@ -271,82 +267,101 @@ export function VideoPlayer({
               variant="ghost"
               size="sm"
               onClick={() => skip(-10)}
-              className="text-white hover:bg-white/20"
+              className="video-player__control-button video-player__control-button--small"
             >
-              <RotateCcw className="w-5 h-5" />
+              <RotateCcw />
             </Button>
 
             <Button
               variant="ghost"
               size="sm"
               onClick={() => skip(10)}
-              className="text-white hover:bg-white/20"
+              className="video-player__control-button video-player__control-button--small"
             >
-              <RotateCw className="w-5 h-5" />
+              <RotateCw />
             </Button>
 
             {/* Volume */}
-            <div className="flex items-center gap-2">
+            <div className="video-player__volume-container">
               <Button
                 variant="ghost"
                 size="sm"
                 onClick={toggleMute}
-                className="text-white hover:bg-white/20"
+                className="video-player__control-button video-player__control-button--small"
               >
-                {isMuted || volume === 0 ? (
-                  <VolumeX className="w-5 h-5" />
-                ) : (
-                  <Volume2 className="w-5 h-5" />
-                )}
+                {isMuted || volume === 0 ? <VolumeX /> : <Volume2 />}
               </Button>
 
-              <input
-                type="range"
-                min="0"
-                max="1"
-                step="0.1"
-                value={isMuted ? 0 : volume}
-                onChange={e => handleVolumeChange(Number(e.target.value))}
-                className="w-20 h-1 bg-white/30 rounded-lg appearance-none cursor-pointer [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-3 [&::-webkit-slider-thumb]:h-3 [&::-webkit-slider-thumb]:bg-white [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:cursor-pointer"
-              />
+              <div className="video-player__volume-slider">
+                <div
+                  className="video-player__volume-level"
+                  style={{ width: `${(isMuted ? 0 : volume) * 100}%` }}
+                />
+                <input
+                  type="range"
+                  min="0"
+                  max="1"
+                  step="0.1"
+                  value={isMuted ? 0 : volume}
+                  onChange={e => handleVolumeChange(Number(e.target.value))}
+                  style={{
+                    position: 'absolute',
+                    inset: 0,
+                    opacity: 0,
+                    cursor: 'pointer',
+                  }}
+                />
+              </div>
             </div>
 
             {/* Time Display */}
-            <span className="text-sm font-mono">
+            <span className="video-player__time">
               {formatTime(currentTime)} / {formatTime(duration)}
             </span>
           </div>
 
-          <div className="flex items-center gap-2">
+          <div className="video-player__controls-right">
             {/* Playback Speed */}
             <select
               value={playbackRate}
               onChange={e => changePlaybackRate(Number(e.target.value))}
-              className="bg-transparent text-white text-sm border border-white/30 rounded px-2 py-1 focus:outline-none focus:border-white/50"
+              className="video-player__control-button"
+              style={{
+                backgroundColor: 'transparent',
+                color: 'white',
+                fontSize: '0.875rem',
+                border: '1px solid rgba(255, 255, 255, 0.3)',
+                borderRadius: 'var(--radius)',
+                padding: '0.25rem 0.5rem',
+              }}
             >
-              <option value={0.5} className="bg-black">
+              <option value={0.5} style={{ backgroundColor: 'black' }}>
                 0.5x
               </option>
-              <option value={0.75} className="bg-black">
+              <option value={0.75} style={{ backgroundColor: 'black' }}>
                 0.75x
               </option>
-              <option value={1} className="bg-black">
+              <option value={1} style={{ backgroundColor: 'black' }}>
                 Normal
               </option>
-              <option value={1.25} className="bg-black">
+              <option value={1.25} style={{ backgroundColor: 'black' }}>
                 1.25x
               </option>
-              <option value={1.5} className="bg-black">
+              <option value={1.5} style={{ backgroundColor: 'black' }}>
                 1.5x
               </option>
-              <option value={2} className="bg-black">
+              <option value={2} style={{ backgroundColor: 'black' }}>
                 2x
               </option>
             </select>
 
             {/* Settings */}
-            <Button variant="ghost" size="sm" className="text-white hover:bg-white/20">
-              <Settings className="w-5 h-5" />
+            <Button
+              variant="ghost"
+              size="sm"
+              className="video-player__control-button video-player__control-button--small"
+            >
+              <Settings />
             </Button>
 
             {/* Fullscreen */}
@@ -354,9 +369,9 @@ export function VideoPlayer({
               variant="ghost"
               size="sm"
               onClick={toggleFullscreen}
-              className="text-white hover:bg-white/20"
+              className="video-player__control-button video-player__control-button--small"
             >
-              {isFullscreen ? <Minimize className="w-5 h-5" /> : <Maximize className="w-5 h-5" />}
+              {isFullscreen ? <Minimize /> : <Maximize />}
             </Button>
           </div>
         </div>

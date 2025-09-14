@@ -1,0 +1,30 @@
+@import "../../../styles/globals.scss";
+
+.toaster {
+  // Base toaster group styling already handled by Sonner library
+
+  // Toast container styling
+  .toast {
+    background-color: hsl(var(--color-background));
+    color: hsl(var(--color-foreground));
+    border: 1px solid hsl(var(--color-border));
+    box-shadow: var(--shadow-lg);
+
+    // Toast description
+    .toast__description {
+      color: hsl(var(--color-muted-foreground));
+    }
+
+    // Toast action button
+    .toast__action-button {
+      background-color: hsl(var(--color-primary));
+      color: hsl(var(--color-primary-foreground));
+    }
+
+    // Toast cancel button
+    .toast__cancel-button {
+      background-color: hsl(var(--color-muted));
+      color: hsl(var(--color-muted-foreground));
+    }
+  }
+}

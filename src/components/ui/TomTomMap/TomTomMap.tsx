@@ -4,6 +4,8 @@ import 'maplibre-gl/dist/maplibre-gl.css';
 import React, { useCallback, useEffect, useState } from 'react';
 import Map, { Marker, Popup } from 'react-map-gl/maplibre';
 
+import './TomTomMap.scss';
+
 export interface Address {
   id: string;
   address: string;
@@ -135,32 +137,21 @@ export const TomTomMap: React.FC<TomTomMapProps> = ({
   };
 
   return (
-    <div className={cn('relative overflow-hidden rounded-lg border', className)}>
+    <div className={cn('tomtom-map', className)}>
       {/* Loading and Error States */}
-      {isLoading && (
-        <div className="absolute inset-0 z-50 flex items-center justify-center bg-background/80">
-          <div className="flex items-center space-x-2">
-            <div className="h-4 w-4 animate-spin rounded-full border-2 border-primary border-t-transparent" />
-            <span className="text-sm">Geocoding addresses...</span>
-          </div>
-        </div>
-      )}
+      {isLoading && <div className="tomtom-map__loading">Geocoding addresses...</div>}
 
-      {error && (
-        <div className="absolute top-2 left-2 z-50 rounded-md bg-destructive px-3 py-2 text-sm text-destructive-foreground">
-          {error}
-        </div>
-      )}
+      {error && <div className="tomtom-map__error">{error}</div>}
 
       {/* Controls */}
       {showGeocodeButton && (
-        <div className="absolute top-2 right-2 z-50">
+        <div className="tomtom-map__controls">
           <button
             onClick={geocodeAddresses}
             disabled={isLoading}
-            className="flex items-center space-x-1 rounded-md bg-primary px-3 py-1 text-sm text-primary-foreground hover:bg-primary/90 disabled:opacity-50"
+            className="tomtom-map__refresh-button"
           >
-            <Navigation className="h-3 w-3" />
+            <Navigation />
             <span>Refresh</span>
           </button>
         </div>
@@ -192,10 +183,10 @@ export const TomTomMap: React.FC<TomTomMapProps> = ({
               onClick={() => handleMarkerClick(address)}
             >
               <button
-                className="flex h-8 w-8 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-lg hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+                className="tomtom-map__marker"
                 aria-label={`Location: ${address.label || address.address}`}
               >
-                <MapPin className="h-4 w-4" />
+                <MapPin />
               </button>
             </Marker>
           ))}
@@ -209,13 +200,13 @@ export const TomTomMap: React.FC<TomTomMapProps> = ({
               onClose={() => setSelectedAddress(null)}
               closeButton={true}
               closeOnClick={false}
-              className="max-w-xs"
+              className="tomtom-map__popup"
             >
-              <div className="p-3">
-                <h3 className="font-semibold text-sm">{selectedAddress.label || 'Location'}</h3>
-                <p className="text-xs text-muted-foreground mt-1">{selectedAddress.address}</p>
+              <div className="tomtom-map__popup-content">
+                <h3 className="tomtom-map__popup-title">{selectedAddress.label || 'Location'}</h3>
+                <p className="tomtom-map__popup-address">{selectedAddress.address}</p>
                 {selectedAddress.description && (
-                  <p className="text-xs mt-2">{selectedAddress.description}</p>
+                  <p className="tomtom-map__popup-description">{selectedAddress.description}</p>
                 )}
               </div>
             </Popup>
@@ -227,17 +218,19 @@ export const TomTomMap: React.FC<TomTomMapProps> = ({
 
       {/* Address List */}
       {geocodedAddresses.length > 0 && (
-        <div className="absolute bottom-0 left-0 right-0 z-40 max-h-32 overflow-y-auto bg-background/95 backdrop-blur-sm">
-          <div className="p-2 space-y-1">
+        <div className="tomtom-map__address-list">
+          <div className="tomtom-map__address-list-container">
             {geocodedAddresses.map(address => (
               <button
                 key={address.id}
                 onClick={() => handleMarkerClick(address)}
-                className="w-full text-left p-2 text-xs rounded hover:bg-accent hover:text-accent-foreground transition-colors"
+                className="tomtom-map__address-list-item"
               >
-                <div className="font-medium truncate">{address.label || address.address}</div>
+                <div className="tomtom-map__address-list-label">
+                  {address.label || address.address}
+                </div>
                 {address.description && (
-                  <div className="text-muted-foreground truncate">{address.description}</div>
+                  <div className="tomtom-map__address-list-description">{address.description}</div>
                 )}
               </button>
             ))}

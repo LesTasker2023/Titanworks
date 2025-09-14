@@ -11,6 +11,15 @@ All notable changes to this project will be documented in this file. See [standa
 - CI/CD integration for automated warning monitoring and backlog generation
 - Package scripts for warning tracking: `track-warnings`, `track-warnings:report`, `track-warnings:backlog`
 
+### Changed
+
+- **CSS Naming Convention**: Converted PascalCase and camelCase CSS selectors to kebab-case for consistency
+  - SimpleChart: `simpleChart` → `simple-chart` with all sub-elements (bar-container, pie-item, line-value, etc.)
+  - Slider: `valueDisplay` → `value-display`
+  - Sonner: `actionButton`/`cancelButton` → `action-button`/`cancel-button`
+  - ColorPicker: `actionButton` → `action-button` (partial conversion)
+  - Maintains BEM methodology with consistent kebab-case naming throughout codebase
+
 ### Fixed
 
 - DOM prop warnings eliminated across all UI components (Button, Toggle, Toast, Accordion, Alert, Badge, Breadcrumb, DataTable, Pagination, Popover, Separator, Tooltip, Tabs, Chart, Table, Menubar)

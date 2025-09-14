@@ -3,6 +3,8 @@
 import { useTheme } from 'next-themes';
 import * as React from 'react';
 
+import './ThemeToggle.scss';
+
 export interface ThemeToggleProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   icon?: React.ReactNode;
   label?: string;
@@ -25,14 +27,27 @@ export const ThemeToggle = React.forwardRef<HTMLButtonElement, ThemeToggleProps>
     // Show a neutral icon until hydrated to prevent mismatch
     if (!mounted) {
       return (
-        <button ref={ref} aria-label={label} title={label} {...props}>
+        <button
+          className="theme-toggle theme-toggle--loading"
+          ref={ref}
+          aria-label={label}
+          title={label}
+          {...props}
+        >
           {icon || '🌓'}
         </button>
       );
     }
 
     return (
-      <button ref={ref} aria-label={label} title={label} onClick={toggleTheme} {...props}>
+      <button
+        className="theme-toggle"
+        ref={ref}
+        aria-label={label}
+        title={label}
+        onClick={toggleTheme}
+        {...props}
+      >
         {icon ? icon : theme === 'light' ? '🌞' : '🌙'}
       </button>
     );

@@ -2,11 +2,11 @@
 
 exports[`Avatar > Snapshots > matches default snapshot 1`] = `
 <span
-  class="relative flex shrink-0 overflow-hidden rounded-full h-10 w-10 avatar"
+  class="avatar avatar--default"
   data-testid="avatar"
 >
   <span
-    class="flex h-full w-full items-center justify-center rounded-full bg-muted text-muted-foreground font-medium"
+    class="avatar__fallback"
   >
     U
   </span>
@@ -15,11 +15,11 @@ exports[`Avatar > Snapshots > matches default snapshot 1`] = `
 
 exports[`Avatar > Snapshots > matches loading state snapshot 1`] = `
 <span
-  class="relative flex shrink-0 overflow-hidden rounded-full h-10 w-10 avatar avatar--loading"
+  class="avatar avatar--default avatar--loading"
   data-testid="avatar"
 >
   <span
-    class="flex h-full w-full items-center justify-center rounded-full bg-muted text-muted-foreground font-medium"
+    class="avatar__fallback"
   >
     U
   </span>

@@ -1,29 +1,12 @@
 'use client';
 
 import * as AvatarPrimitive from '@radix-ui/react-avatar';
-import { cva, type VariantProps } from 'class-variance-authority';
 import * as React from 'react';
 
-import { cn } from '@/lib/utils';
-// import './Avatar.scss'; // ✅ DISABLED FOR TESTING
+import './Avatar.scss';
 
-const avatarVariants = cva('relative flex shrink-0 overflow-hidden rounded-full', {
-  variants: {
-    size: {
-      sm: 'h-8 w-8',
-      default: 'h-10 w-10',
-      lg: 'h-12 w-12',
-      xl: 'h-16 w-16',
-    },
-  },
-  defaultVariants: {
-    size: 'default',
-  },
-});
-
-export interface AvatarProps
-  extends React.ComponentPropsWithoutRef<typeof AvatarPrimitive.Root>,
-    VariantProps<typeof avatarVariants> {
+export interface AvatarProps extends React.ComponentPropsWithoutRef<typeof AvatarPrimitive.Root> {
+  size?: 'sm' | 'default' | 'lg' | 'xl';
   src?: string;
   alt?: string;
   fallback?: string;
@@ -33,7 +16,10 @@ export interface AvatarProps
 }
 
 const Avatar = React.forwardRef<React.ElementRef<typeof AvatarPrimitive.Root>, AvatarProps>(
-  ({ className, size, src, alt, fallback, loading = false, status, name, ...props }, ref) => {
+  (
+    { className, size = 'default', src, alt, fallback, loading = false, status, name, ...props },
+    ref
+  ) => {
     // Generate initials from name
     const getInitials = (fullName: string) => {
       return fullName
@@ -46,29 +32,27 @@ const Avatar = React.forwardRef<React.ElementRef<typeof AvatarPrimitive.Root>, A
 
     const displayFallback = fallback || (name ? getInitials(name) : 'U');
 
+    const avatarClassNames = [
+      'avatar',
+      `avatar--${size}`,
+      loading && 'avatar--loading',
+      status === 'online' && 'avatar--online',
+      status === 'offline' && 'avatar--offline',
+      className,
+    ]
+      .filter(Boolean)
+      .join(' ');
+
     return (
-      <AvatarPrimitive.Root
-        ref={ref}
-        className={cn(
-          avatarVariants({ size }),
-          'avatar', // Base SCSS class for enhancements
-          {
-            'avatar--loading': loading,
-            'avatar--online': status === 'online',
-            'avatar--offline': status === 'offline',
-          },
-          className
-        )}
-        {...props}
-      >
+      <AvatarPrimitive.Root ref={ref} className={avatarClassNames} {...props}>
         {src && (
           <AvatarPrimitive.Image
             src={src}
             alt={alt || name || 'Avatar'}
-            className="aspect-square h-full w-full avatar-image"
+            className="avatar__image"
           />
         )}
-        <AvatarPrimitive.Fallback className="flex h-full w-full items-center justify-center rounded-full bg-muted text-muted-foreground font-medium">
+        <AvatarPrimitive.Fallback className="avatar__fallback">
           {displayFallback}
         </AvatarPrimitive.Fallback>
       </AvatarPrimitive.Root>
@@ -82,11 +66,7 @@ const AvatarImage = React.forwardRef<
   React.ElementRef<typeof AvatarPrimitive.Image>,
   React.ComponentPropsWithoutRef<typeof AvatarPrimitive.Image>
 >(({ className, ...props }, ref) => (
-  <AvatarPrimitive.Image
-    ref={ref}
-    className={cn('aspect-square h-full w-full', className)}
-    {...props}
-  />
+  <AvatarPrimitive.Image ref={ref} className={`avatar__image ${className || ''}`} {...props} />
 ));
 AvatarImage.displayName = AvatarPrimitive.Image.displayName;
 
@@ -96,13 +76,10 @@ const AvatarFallback = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <AvatarPrimitive.Fallback
     ref={ref}
-    className={cn(
-      'flex h-full w-full items-center justify-center rounded-full bg-muted',
-      className
-    )}
+    className={`avatar__fallback ${className || ''}`}
     {...props}
   />
 ));
 AvatarFallback.displayName = AvatarPrimitive.Fallback.displayName;
 
-export { Avatar, AvatarFallback, AvatarImage, avatarVariants };
+export { Avatar, AvatarFallback, AvatarImage };

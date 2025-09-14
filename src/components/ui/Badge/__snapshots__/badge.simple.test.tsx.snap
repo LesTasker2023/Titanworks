@@ -5,17 +5,17 @@ exports[`Badge > Snapshots > matches all sizes snapshot 1`] = `
   data-testid="sizes-container"
 >
   <div
-    class="inline-flex items-center rounded-md border font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-primary text-primary-foreground shadow hover:bg-primary/80 px-2 py-0.5 text-xs"
+    class="badge badge--default badge--sm"
   >
     Small
   </div>
   <div
-    class="inline-flex items-center rounded-md border font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-primary text-primary-foreground shadow hover:bg-primary/80 px-2.5 py-0.5 text-xs"
+    class="badge badge--default badge--default"
   >
     Default
   </div>
   <div
-    class="inline-flex items-center rounded-md border font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-primary text-primary-foreground shadow hover:bg-primary/80 px-3 py-1 text-sm"
+    class="badge badge--default badge--lg"
   >
     Large
   </div>
@@ -27,22 +27,22 @@ exports[`Badge > Snapshots > matches all variants snapshot 1`] = `
   data-testid="variants-container"
 >
   <div
-    class="inline-flex items-center rounded-md border font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-primary text-primary-foreground shadow hover:bg-primary/80 px-2.5 py-0.5 text-xs"
+    class="badge badge--default badge--default"
   >
     Default
   </div>
   <div
-    class="inline-flex items-center rounded-md border font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-destructive text-destructive-foreground shadow hover:bg-destructive/80 px-2.5 py-0.5 text-xs"
+    class="badge badge--destructive badge--default"
   >
     Destructive
   </div>
   <div
-    class="inline-flex items-center rounded-md border font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 text-foreground px-2.5 py-0.5 text-xs"
+    class="badge badge--outline badge--default"
   >
     Outline
   </div>
   <div
-    class="inline-flex items-center rounded-md border font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80 px-2.5 py-0.5 text-xs"
+    class="badge badge--secondary badge--default"
   >
     Secondary
   </div>
@@ -51,7 +51,7 @@ exports[`Badge > Snapshots > matches all variants snapshot 1`] = `
 
 exports[`Badge > Snapshots > matches default snapshot 1`] = `
 <div
-  class="inline-flex items-center rounded-md border font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-primary text-primary-foreground shadow hover:bg-primary/80 px-2.5 py-0.5 text-xs"
+  class="badge badge--default badge--default"
 >
   Default
 </div>
@@ -59,11 +59,11 @@ exports[`Badge > Snapshots > matches default snapshot 1`] = `
 
 exports[`Badge > Snapshots > matches dot indicator snapshot 1`] = `
 <div
-  class="inline-flex items-center rounded-md border font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-primary text-primary-foreground shadow hover:bg-primary/80 px-2.5 py-0.5 text-xs pl-1.5"
+  class="badge badge--default badge--default badge--dot"
 >
   <span
     aria-hidden="true"
-    class="mr-1.5 h-1.5 w-1.5 rounded-full bg-current opacity-75"
+    class="badge__dot"
   />
   With Dot
 </div>
@@ -71,16 +71,16 @@ exports[`Badge > Snapshots > matches dot indicator snapshot 1`] = `
 
 exports[`Badge > Snapshots > matches removable state snapshot 1`] = `
 <div
-  class="inline-flex items-center rounded-md border font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-primary text-primary-foreground shadow hover:bg-primary/80 px-2.5 py-0.5 text-xs"
+  class="badge badge--default badge--default"
 >
   Removable
   <button
     aria-label="Remove badge"
-    class="ml-1.5 -mr-1 h-3.5 w-3.5 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
+    class="badge__remove-button"
     type="button"
   >
     <svg
-      class="h-3 w-3"
+      class="badge__remove-icon"
       fill="none"
       stroke="currentColor"
       viewBox="0 0 24 24"

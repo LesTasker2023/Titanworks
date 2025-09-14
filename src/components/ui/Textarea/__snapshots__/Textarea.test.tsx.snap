@@ -2,7 +2,7 @@
 
 exports[`Textarea > Snapshots > matches default snapshot 1`] = `
 <textarea
-  class="flex min-h-[60px] w-full rounded-md border border-input bg-transparent px-3 py-2 text-base shadow-sm placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 md:text-sm textarea"
+  class="textarea"
   data-testid="textarea"
 >
   Test content
@@ -11,7 +11,7 @@ exports[`Textarea > Snapshots > matches default snapshot 1`] = `
 
 exports[`Textarea > Snapshots > matches disabled state snapshot 1`] = `
 <textarea
-  class="flex min-h-[60px] w-full rounded-md border border-input bg-transparent px-3 py-2 text-base shadow-sm placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 md:text-sm textarea"
+  class="textarea"
   data-testid="textarea"
   disabled=""
 >
@@ -24,7 +24,7 @@ exports[`Textarea > Snapshots > matches error state snapshot 1`] = `
   class="textarea-wrapper"
 >
   <textarea
-    class="flex min-h-[60px] w-full rounded-md border border-input bg-transparent px-3 py-2 text-base shadow-sm placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 md:text-sm textarea textarea--error"
+    class="textarea textarea--error"
     data-testid="textarea"
   >
     Test content
@@ -41,7 +41,7 @@ exports[`Textarea > Snapshots > matches error state snapshot 1`] = `
 
 exports[`Textarea > Snapshots > matches loading state snapshot 1`] = `
 <textarea
-  class="flex min-h-[60px] w-full rounded-md border border-input bg-transparent px-3 py-2 text-base shadow-sm placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 md:text-sm textarea textarea--loading"
+  class="textarea textarea--loading"
   data-testid="textarea"
   disabled=""
 >
@@ -51,7 +51,7 @@ exports[`Textarea > Snapshots > matches loading state snapshot 1`] = `
 
 exports[`Textarea > Snapshots > matches required state snapshot 1`] = `
 <textarea
-  class="flex min-h-[60px] w-full rounded-md border border-input bg-transparent px-3 py-2 text-base shadow-sm placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 md:text-sm textarea"
+  class="textarea"
   data-testid="textarea"
   required=""
 >

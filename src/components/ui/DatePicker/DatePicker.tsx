@@ -8,6 +8,7 @@ import { Button } from '@/components/ui/Button';
 import { Calendar } from '@/components/ui/Calendar';
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/Popover';
 import { cn } from '@/lib/utils';
+import './DatePicker.scss';
 
 export interface DatePickerProps {
   date?: Date;
@@ -43,17 +44,17 @@ const DatePicker = React.forwardRef<HTMLButtonElement, DatePickerProps>(
             variant="outline"
             disabled={disabled}
             className={cn(
-              'w-full justify-start text-left font-normal',
-              !date && 'text-muted-foreground',
+              'datePicker__trigger',
+              !date && 'datePicker__trigger--placeholder',
               className
             )}
             {...props}
           >
-            <CalendarIcon className="mr-2 h-4 w-4" />
+            <CalendarIcon className="datePicker__icon" />
             {date ? format(date, dateFormat) : <span>{placeholder}</span>}
           </Button>
         </PopoverTrigger>
-        <PopoverContent className="w-auto p-0" align="start">
+        <PopoverContent className="datePicker__content" align="start">
           <Calendar
             mode="single"
             selected={date}

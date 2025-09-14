@@ -1,0 +1,99 @@
+@import "../../../styles/globals.scss";
+
+.table {
+  // Table container
+  &__container {
+    position: relative;
+    width: 100%;
+    overflow: auto;
+  }
+
+  // Base table
+  &__root {
+    width: 100%;
+    caption-side: bottom;
+    font-size: var(--font-size-sm);
+    line-height: var(--line-height-sm);
+  }
+
+  // Table header
+  &__header {
+    tr {
+      border-bottom: 1px solid hsl(var(--color-border));
+    }
+  }
+
+  // Table body
+  &__body {
+    tr:last-child {
+      border: 0;
+    }
+  }
+
+  // Table footer
+  &__footer {
+    border-top: 1px solid hsl(var(--color-border));
+    background-color: hsl(var(--color-muted) / 0.5);
+    font-weight: var(--font-weight-medium);
+
+    tr:last-child {
+      border-bottom: 0;
+    }
+  }
+
+  // Table row
+  &__row {
+    border-bottom: 1px solid hsl(var(--color-border));
+    transition: background-color 0.2s;
+
+    &:hover {
+      background-color: hsl(var(--color-muted) / 0.5);
+    }
+
+    &[data-state="selected"] {
+      background-color: hsl(var(--color-muted));
+    }
+  }
+
+  // Table head cell
+  &__head {
+    height: var(--space-10);
+    padding: var(--space-2);
+    text-align: left;
+    vertical-align: middle;
+    font-weight: var(--font-weight-medium);
+    color: hsl(var(--color-muted-foreground));
+
+    // Special handling for checkboxes
+    &:has([role="checkbox"]) {
+      padding-right: 0;
+    }
+
+    [role="checkbox"] {
+      transform: translateY(2px);
+    }
+  }
+
+  // Table cell
+  &__cell {
+    padding: var(--space-2);
+    vertical-align: middle;
+
+    // Special handling for checkboxes
+    &:has([role="checkbox"]) {
+      padding-right: 0;
+    }
+
+    [role="checkbox"] {
+      transform: translateY(2px);
+    }
+  }
+
+  // Table caption
+  &__caption {
+    margin-top: var(--space-4);
+    font-size: var(--font-size-sm);
+    line-height: var(--line-height-sm);
+    color: hsl(var(--color-muted-foreground));
+  }
+}

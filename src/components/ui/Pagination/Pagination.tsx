@@ -1,8 +1,8 @@
 import { cn } from '@/lib/utils';
 import { stripTransientProps } from '@/utils/stripTransientProps';
-import { cva, type VariantProps } from 'class-variance-authority';
 import { ChevronLeft, ChevronRight, MoreHorizontal } from 'lucide-react';
 import { forwardRef, useMemo } from 'react';
+import './Pagination.scss';
 
 /**
  * 🎯 Enterprise Pagination Component
@@ -16,67 +16,54 @@ import { forwardRef, useMemo } from 'react';
  * - Perfect complement to DataTable component
  */
 
-// Base pagination container styles
-const paginationContainerVariants = cva('flex items-center justify-center space-x-1', {
-  variants: {
-    size: {
-      sm: 'text-sm',
-      default: 'text-sm',
-      lg: 'text-base',
-    },
-  },
-  defaultVariants: {
-    size: 'default',
-  },
-});
-
-// Individual pagination item styles
-const paginationItemVariants = cva(
-  'inline-flex items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none',
-  {
-    variants: {
-      variant: {
-        default: 'hover:bg-accent hover:text-accent-foreground',
-        active: 'bg-primary text-primary-foreground hover:bg-primary/90',
-        ghost: 'hover:bg-accent hover:text-accent-foreground',
-        outline: 'border border-input hover:bg-accent hover:text-accent-foreground',
-      },
-      size: {
-        sm: 'h-8 w-8 text-xs',
-        default: 'h-9 w-9 text-sm',
-        lg: 'h-10 w-10 text-base',
-      },
-    },
-    defaultVariants: {
-      variant: 'default',
-      size: 'default',
-    },
+// Helper functions for BEM classes
+const getPaginationNavClassName = (size?: string) => {
+  const baseClass = 'pagination__nav';
+  if (size) {
+    return `${baseClass} ${baseClass}--size-${size}`;
   }
-);
+  return `${baseClass} ${baseClass}--size-default`;
+};
 
-// Navigation button styles (prev/next)
-const paginationNavVariants = cva(
-  'inline-flex items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none gap-1',
-  {
-    variants: {
-      variant: {
-        default: 'hover:bg-accent hover:text-accent-foreground',
-        outline: 'border border-input hover:bg-accent hover:text-accent-foreground',
-      },
-      size: {
-        sm: 'h-8 px-2 text-xs',
-        default: 'h-9 px-3 text-sm',
-        lg: 'h-10 px-4 text-base',
-      },
-    },
-    defaultVariants: {
-      variant: 'default',
-      size: 'default',
-    },
+const getPaginationItemClassName = (variant?: string, size?: string) => {
+  const baseClass = 'pagination__item';
+  let className = baseClass;
+
+  if (variant) {
+    className += ` ${baseClass}--variant-${variant}`;
+  } else {
+    className += ` ${baseClass}--variant-default`;
   }
-);
 
-export interface PaginationProps extends VariantProps<typeof paginationContainerVariants> {
+  if (size) {
+    className += ` ${baseClass}--size-${size}`;
+  } else {
+    className += ` ${baseClass}--size-default`;
+  }
+
+  return className;
+};
+
+const getPaginationNavButtonClassName = (variant?: string, size?: string) => {
+  const baseClass = 'pagination__nav-button';
+  let className = baseClass;
+
+  if (variant) {
+    className += ` ${baseClass}--variant-${variant}`;
+  } else {
+    className += ` ${baseClass}--variant-default`;
+  }
+
+  if (size) {
+    className += ` ${baseClass}--size-${size}`;
+  } else {
+    className += ` ${baseClass}--size-default`;
+  }
+
+  return className;
+};
+
+export interface PaginationProps {
   /** Current page (1-indexed) */
   currentPage: number;
   /** Total number of pages */
@@ -101,6 +88,8 @@ export interface PaginationProps extends VariantProps<typeof paginationContainer
   totalItems?: number;
   /** Items per page (for page info) */
   itemsPerPage?: number;
+  /** Size variant */
+  size?: 'sm' | 'default' | 'lg';
 }
 
 /**
@@ -203,21 +192,21 @@ const Pagination = forwardRef<HTMLDivElement, PaginationProps>(
 
     return (
       <div
-        className={cn('flex flex-col items-center space-y-3', className)}
+        className={cn('pagination__container', className)}
         ref={ref}
         {...stripTransientProps(props)}
       >
-        <nav className={cn(paginationContainerVariants({ size }))} aria-label="Pagination">
+        <nav className={getPaginationNavClassName(size)} aria-label="Pagination">
           {/* First page button */}
           {showFirstLast && !isFirstPage && (
             <button
               onClick={() => handlePageChange(1)}
               disabled={loading || disabled}
-              className={cn(paginationNavVariants({ size }))}
+              className={getPaginationNavButtonClassName('default', size)}
               aria-label="Go to first page"
             >
-              <span className="hidden sm:inline">First</span>
-              <span className="sm:hidden">1</span>
+              <span className="nav-text">First</span>
+              <span className="nav-text-mobile">1</span>
             </button>
           )}
 
@@ -226,11 +215,11 @@ const Pagination = forwardRef<HTMLDivElement, PaginationProps>(
             <button
               onClick={() => handlePageChange(currentPage - 1)}
               disabled={isFirstPage || loading || disabled}
-              className={cn(paginationNavVariants({ size }))}
+              className={getPaginationNavButtonClassName('default', size)}
               aria-label="Go to previous page"
             >
               <ChevronLeft className="h-4 w-4" />
-              <span className="hidden sm:inline">Previous</span>
+              <span className="nav-text">Previous</span>
             </button>
           )}
 
@@ -241,7 +230,10 @@ const Pagination = forwardRef<HTMLDivElement, PaginationProps>(
               return (
                 <span
                   key={`ellipsis-${index}`}
-                  className={cn(paginationItemVariants({ size }), 'cursor-default')}
+                  className={cn(
+                    getPaginationItemClassName('default', size),
+                    'pagination__item--ellipsis'
+                  )}
                   aria-hidden="true"
                 >
                   <MoreHorizontal className="h-4 w-4" />
@@ -258,19 +250,13 @@ const Pagination = forwardRef<HTMLDivElement, PaginationProps>(
                 onClick={() => handlePageChange(page)}
                 disabled={loading || disabled}
                 className={cn(
-                  paginationItemVariants({
-                    variant: isActive ? 'active' : 'default',
-                    size,
-                  })
+                  getPaginationItemClassName(isActive ? 'active' : 'default', size),
+                  loading && isActive && 'pagination__item--loading'
                 )}
                 aria-label={`Go to page ${page}`}
                 aria-current={isActive ? 'page' : undefined}
               >
-                {loading && isActive ? (
-                  <div className="h-4 w-4 animate-spin rounded-full border-2 border-current border-t-transparent" />
-                ) : (
-                  page
-                )}
+                {loading && isActive ? <div className="pagination__spinner" /> : page}
               </button>
             );
           })}
@@ -280,10 +266,10 @@ const Pagination = forwardRef<HTMLDivElement, PaginationProps>(
             <button
               onClick={() => handlePageChange(currentPage + 1)}
               disabled={isLastPage || loading || disabled}
-              className={cn(paginationNavVariants({ size }))}
+              className={getPaginationNavButtonClassName('default', size)}
               aria-label="Go to next page"
             >
-              <span className="hidden sm:inline">Next</span>
+              <span className="nav-text">Next</span>
               <ChevronRight className="h-4 w-4" />
             </button>
           )}
@@ -293,17 +279,17 @@ const Pagination = forwardRef<HTMLDivElement, PaginationProps>(
             <button
               onClick={() => handlePageChange(totalPages)}
               disabled={loading || disabled}
-              className={cn(paginationNavVariants({ size }))}
+              className={getPaginationNavButtonClassName('default', size)}
               aria-label="Go to last page"
             >
-              <span className="hidden sm:inline">Last</span>
-              <span className="sm:hidden">{totalPages}</span>
+              <span className="nav-text">Last</span>
+              <span className="nav-text-mobile">{totalPages}</span>
             </button>
           )}
         </nav>
 
         {/* Page info text */}
-        {pageInfo && <div className="text-sm text-muted-foreground">{pageInfo}</div>}
+        {pageInfo && <div className="pagination__page-info">{pageInfo}</div>}
       </div>
     );
   }
@@ -311,4 +297,4 @@ const Pagination = forwardRef<HTMLDivElement, PaginationProps>(
 
 Pagination.displayName = 'Pagination';
 
-export { Pagination, paginationContainerVariants, paginationItemVariants, paginationNavVariants };
+export { Pagination };

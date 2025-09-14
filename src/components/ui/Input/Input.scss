@@ -1,95 +1,118 @@
-// Input component SCSS overrides
-// Use this file for ENHANCEMENTS that can't be achieved with Tailwind classes
-// Avoid duplicating what Tailwind already provides
+@import "../../../styles/globals.scss";
 
+/* Input Component */
 .input {
-  // Enhanced focus styles for better accessibility (supplements Tailwind's focus-visible)
-  &:focus-visible {
-    outline: 2px solid hsl(var(--ring));
-    outline-offset: 2px;
-    box-shadow: 0 0 0 2px hsl(var(--ring) / 0.2);
+  display: flex;
+  height: calc(var(--spacing-unit) * 9);
+  width: 100%;
+  border-radius: var(--radius-md);
+  border: var(--border-width) solid var(--color-input);
+  background-color: transparent;
+  padding-left: calc(var(--spacing-unit) * 3);
+  padding-right: calc(var(--spacing-unit) * 3);
+  padding-top: calc(var(--spacing-unit) * 1);
+  padding-bottom: calc(var(--spacing-unit) * 1);
+  font-size: var(--font-size-base);
+  box-shadow: var(--shadow-sm);
+  transition:
+    color var(--duration-200) var(--easing-ease-out),
+    background-color var(--duration-200) var(--easing-ease-out),
+    border-color var(--duration-200) var(--easing-ease-out);
+
+  &::file-selector-button {
+    border: none;
+    background-color: transparent;
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-medium);
+    color: var(--color-foreground);
   }
 
-  // Smooth transitions for all interactive states (enhance Tailwind's basic transitions)
-  transition: all 0.15s ease-in-out;
+  &::placeholder {
+    color: var(--color-muted-foreground);
+  }
 
-  // Enhanced hover effect (not available in Tailwind)
+  &:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 1px var(--color-ring);
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+
+  /* Enhanced hover effect */
   &:hover:not(:disabled):not(:focus-visible) {
-    border-color: hsl(var(--ring) / 0.6);
+    border-color: var(--color-ring);
+    opacity: 0.6;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
   }
 
-  // Error state styling
+  /* Error state */
   &--error {
-    border-color: hsl(var(--destructive));
-    box-shadow: 0 0 0 1px hsl(var(--destructive) / 0.2);
+    border-color: var(--color-destructive);
+    box-shadow: 0 0 0 1px var(--color-destructive);
+    opacity: 0.2;
 
     &:focus-visible {
-      outline-color: hsl(var(--destructive));
-      box-shadow: 0 0 0 2px hsl(var(--destructive) / 0.2);
+      outline-color: var(--color-destructive);
+      box-shadow: 0 0 0 2px var(--color-destructive);
+      opacity: 0.2;
     }
   }
 
-  // Loading state with subtle animation
+  /* Loading state */
   &--loading {
     position: relative;
     pointer-events: none;
+    cursor: wait;
 
     &::after {
       content: "";
       position: absolute;
-      right: 12px;
+      right: calc(var(--spacing-unit) * 3);
       top: 50%;
-      margin-top: -8px;
-      width: 16px;
-      height: 16px;
+      margin-top: calc(var(--spacing-unit) * -2);
+      width: calc(var(--spacing-unit) * 4);
+      height: calc(var(--spacing-unit) * 4);
       border: 2px solid;
       border-radius: 50%;
-      border-color: hsl(var(--muted-foreground)) transparent hsl(var(--muted-foreground)) hsl(var(--muted-foreground));
+      border-color: var(--color-muted-foreground) transparent var(--color-muted-foreground)
+        var(--color-muted-foreground);
       animation: spin 1s linear infinite;
       opacity: 0.7;
     }
   }
 
-  // Enhanced disabled state (supplement Tailwind's disabled styles)
+  /* Enhanced disabled state */
   &:disabled {
-    background-color: hsl(var(--muted) / 0.5);
+    background-color: var(--color-muted);
+    opacity: 0.5;
     cursor: not-allowed;
   }
 
-  // File input enhancements
+  /* File input enhancements */
   &[type="file"] {
     cursor: pointer;
 
     &::file-selector-button {
-      margin-right: 12px;
-      padding: 4px 12px;
-      border-radius: 4px;
-      border: 1px solid hsl(var(--border));
-      background: hsl(var(--background));
-      color: hsl(var(--foreground));
-      font-size: 0.875rem;
+      margin-right: calc(var(--spacing-unit) * 3);
+      padding: calc(var(--spacing-unit) * 1) calc(var(--spacing-unit) * 3);
+      border-radius: calc(var(--spacing-unit) * 1);
+      border: var(--border-width) solid var(--color-border);
+      background: var(--color-background);
+      color: var(--color-foreground);
+      font-size: var(--font-size-sm);
       cursor: pointer;
-      transition: all 0.15s ease-in-out;
+      transition: all var(--duration-150) var(--easing-ease-in-out);
 
       &:hover {
-        background: hsl(var(--accent));
+        background: var(--color-accent);
       }
     }
   }
 
-  // Search input enhancements
-  &[type="search"] {
-    &::-webkit-search-cancel-button {
-      appearance: none;
-      width: 16px;
-      height: 16px;
-      background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='currentColor'%3e%3cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M6 18L18 6M6 6l12 12'/%3e%3c/svg%3e");
-      cursor: pointer;
-    }
-  }
-
-  // Number input spinner styling
+  /* Number input spinner styling */
   &[type="number"] {
     &::-webkit-outer-spin-button,
     &::-webkit-inner-spin-button {
@@ -97,37 +120,46 @@
       margin: 0;
     }
 
-    // For Firefox
+    /* For Firefox */
     appearance: textfield;
     -moz-appearance: textfield;
   }
 
-  // Dark mode enhancements (supplement Tailwind's dark mode)
-  [data-theme="dark"] & {
-    &:hover:not(:disabled):not(:focus-visible) {
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  /* Search input enhancements */
+  &[type="search"] {
+    &::-webkit-search-cancel-button {
+      appearance: none;
+      width: calc(var(--spacing-unit) * 4);
+      height: calc(var(--spacing-unit) * 4);
+      background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='currentColor'%3e%3cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M6 18L18 6M6 6l12 12'/%3e%3c/svg%3e");
+      cursor: pointer;
     }
   }
 
-  // Mobile touch targets (accessibility enhancement)
+  /* Mobile touch targets */
   @media (max-width: 640px) {
-    min-height: 44px; // iOS accessibility requirement
-    font-size: 16px; // Prevent zoom on iOS
+    min-height: calc(var(--spacing-unit) * 11); /* iOS accessibility requirement */
+    font-size: calc(var(--spacing-unit) * 4); /* Prevent zoom on iOS */
   }
 
-  // Reduced motion respect (accessibility - not in Tailwind)
+  /* Medium screen text size */
+  @media (min-width: 768px) {
+    font-size: var(--font-size-sm);
+  }
+
+  /* Reduced motion respect */
   @media (prefers-reduced-motion: reduce) {
     transition: none;
     animation: none;
 
     &--loading::after {
       animation: none;
-      border: 2px solid hsl(var(--muted-foreground));
+      border: 2px solid var(--color-muted-foreground);
       border-top-color: transparent;
     }
   }
 
-  // High contrast mode (accessibility - not in Tailwind)
+  /* High contrast mode */
   @media (prefers-contrast: high) {
     border: 2px solid;
 
@@ -137,47 +169,49 @@
   }
 }
 
-// Input wrapper styling
+/* Input wrapper for label, error, helper text */
 .input-wrapper {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: calc(var(--spacing-unit) * 2);
   width: 100%;
 }
 
-// Label styling
+/* Input label */
 .input-label {
-  font-weight: 500;
-  color: hsl(var(--foreground));
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  line-height: 1;
+  color: var(--color-foreground);
 
-  // Required indicator
+  /* Required indicator */
   &--required::after {
     content: " *";
-    color: hsl(var(--destructive));
+    color: var(--color-destructive);
   }
 }
 
-// Error message styling
+/* Input error message */
 .input-error {
   display: flex;
   align-items: center;
-  gap: 0.25rem;
-  color: hsl(var(--destructive));
-  font-size: 0.875rem;
+  gap: calc(var(--spacing-unit) * 1);
+  color: var(--color-destructive);
+  font-size: var(--font-size-sm);
 
   &::before {
     content: "⚠";
-    font-size: 0.75rem;
+    font-size: var(--font-size-xs);
   }
 }
 
-// Helper text styling
+/* Input helper text */
 .input-helper {
-  color: hsl(var(--muted-foreground));
-  font-size: 0.875rem;
+  color: var(--color-muted-foreground);
+  font-size: var(--font-size-sm);
 }
 
-// Loading spinner animation
+/* Loading spinner animation */
 @keyframes spin {
   from {
     transform: rotate(0deg);
@@ -187,7 +221,7 @@
   }
 }
 
-// Input group utilities (for combining inputs with buttons/icons)
+/* Input group utilities */
 .input-group {
   display: flex;
   position: relative;
@@ -205,29 +239,29 @@
     }
 
     &:focus-visible {
-      z-index: 1; // Ensure focus ring appears above adjacent elements
+      z-index: 1; /* Ensure focus ring appears above adjacent elements */
     }
   }
 
-  // Input group addon styling
+  /* Input group addon styling */
   &-addon {
     display: flex;
     align-items: center;
-    padding: 0 12px;
-    background: hsl(var(--muted));
-    border: 1px solid hsl(var(--border));
-    color: hsl(var(--muted-foreground));
-    font-size: 0.875rem;
+    padding: 0 calc(var(--spacing-unit) * 3);
+    background: var(--color-muted);
+    border: var(--border-width) solid var(--color-border);
+    color: var(--color-muted-foreground);
+    font-size: var(--font-size-sm);
 
     &:first-child {
-      border-top-left-radius: var(--radius);
-      border-bottom-left-radius: var(--radius);
+      border-top-left-radius: var(--radius-md);
+      border-bottom-left-radius: var(--radius-md);
       border-right: none;
     }
 
     &:last-child {
-      border-top-right-radius: var(--radius);
-      border-bottom-right-radius: var(--radius);
+      border-top-right-radius: var(--radius-md);
+      border-bottom-right-radius: var(--radius-md);
       border-left: none;
     }
   }

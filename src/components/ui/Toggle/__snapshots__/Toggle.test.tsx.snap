@@ -3,7 +3,7 @@
 exports[`Toggle > Snapshots > matches active state snapshot 1`] = `
 <button
   aria-pressed="false"
-  class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors hover:bg-muted hover:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=on]:[background-color:hsl(var(--surface-interactive))] data-[state=on]:[color:hsl(var(--content-inverse))] bg-transparent h-10 px-3"
+  class="toggle toggle--default toggle--size-default"
   data-state="off"
   data-testid="toggle"
   type="button"
@@ -15,7 +15,7 @@ exports[`Toggle > Snapshots > matches active state snapshot 1`] = `
 exports[`Toggle > Snapshots > matches default snapshot 1`] = `
 <button
   aria-pressed="false"
-  class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors hover:bg-muted hover:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=on]:[background-color:hsl(var(--surface-interactive))] data-[state=on]:[color:hsl(var(--content-inverse))] bg-transparent h-10 px-3"
+  class="toggle toggle--default toggle--size-default"
   data-state="off"
   data-testid="toggle"
   type="button"
@@ -27,7 +27,7 @@ exports[`Toggle > Snapshots > matches default snapshot 1`] = `
 exports[`Toggle > Snapshots > matches disabled state snapshot 1`] = `
 <button
   aria-pressed="false"
-  class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors hover:bg-muted hover:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=on]:[background-color:hsl(var(--surface-interactive))] data-[state=on]:[color:hsl(var(--content-inverse))] bg-transparent h-10 px-3"
+  class="toggle toggle--default toggle--size-default"
   data-disabled=""
   data-state="off"
   data-testid="toggle"
@@ -41,7 +41,7 @@ exports[`Toggle > Snapshots > matches disabled state snapshot 1`] = `
 exports[`Toggle > Snapshots > matches hover state snapshot 1`] = `
 <button
   aria-pressed="false"
-  class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors hover:bg-muted hover:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=on]:[background-color:hsl(var(--surface-interactive))] data-[state=on]:[color:hsl(var(--content-inverse))] bg-transparent h-10 px-3"
+  class="toggle toggle--default toggle--size-default"
   data-state="off"
   data-testid="toggle"
   type="button"

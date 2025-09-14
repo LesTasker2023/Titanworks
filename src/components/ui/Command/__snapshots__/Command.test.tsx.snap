@@ -2,7 +2,7 @@
 
 exports[`Command > Snapshots > matches default snapshot 1`] = `
 <div
-  class="flex h-full w-full flex-col overflow-hidden rounded-md bg-popover text-popover-foreground"
+  class="command"
   cmdk-root=""
   data-testid="command"
   tabindex="-1"
@@ -19,7 +19,7 @@ exports[`Command > Snapshots > matches default snapshot 1`] = `
 
 exports[`Command > Snapshots > matches disabled state snapshot 1`] = `
 <div
-  class="flex h-full w-full flex-col overflow-hidden rounded-md bg-popover text-popover-foreground"
+  class="command"
   cmdk-root=""
   data-testid="command"
   disabled=""
@@ -37,7 +37,7 @@ exports[`Command > Snapshots > matches disabled state snapshot 1`] = `
 
 exports[`Command > Snapshots > matches selected state snapshot 1`] = `
 <div
-  class="flex h-full w-full flex-col overflow-hidden rounded-md bg-popover text-popover-foreground"
+  class="command"
   cmdk-root=""
   data-testid="command"
   tabindex="-1"

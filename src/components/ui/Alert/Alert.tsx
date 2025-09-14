@@ -1,35 +1,11 @@
-import { cva, type VariantProps } from 'class-variance-authority';
 import { X } from 'lucide-react';
 import * as React from 'react';
 
-import { cn } from '@/lib/utils';
 import { stripTransientProps } from '@/utils/stripTransientProps';
-// import './Alert.scss'; // ✅ DISABLED FOR TESTING
+import './Alert.scss';
 
-const alertVariants = cva(
-  'relative w-full rounded-lg border px-4 py-3 text-sm [&>svg+div]:translate-y-[-3px] [&>svg]:absolute [&>svg]:left-4 [&>svg]:top-4 [&>svg]:text-foreground [&>svg~*]:pl-7',
-  {
-    variants: {
-      variant: {
-        default: 'bg-background text-foreground',
-        destructive:
-          'border-destructive/50 text-destructive dark:border-destructive [&>svg]:text-destructive',
-        warning:
-          'border-yellow-500/50 text-yellow-900 dark:border-yellow-500 dark:text-yellow-50 [&>svg]:text-yellow-900 dark:[&>svg]:text-yellow-50',
-        success:
-          'border-green-500/50 text-green-900 dark:border-green-500 dark:text-green-50 [&>svg]:text-green-900 dark:[&>svg]:text-green-50',
-        info: 'border-blue-500/50 text-blue-900 dark:border-blue-500 dark:text-blue-50 [&>svg]:text-blue-900 dark:[&>svg]:text-blue-50',
-      },
-    },
-    defaultVariants: {
-      variant: 'default',
-    },
-  }
-);
-
-export interface AlertProps
-  extends React.HTMLAttributes<HTMLDivElement>,
-    VariantProps<typeof alertVariants> {
+export interface AlertProps extends React.HTMLAttributes<HTMLDivElement> {
+  variant?: 'default' | 'destructive' | 'warning' | 'success' | 'info';
   dismissible?: boolean;
   onDismiss?: () => void;
   autoHide?: boolean;
@@ -40,7 +16,7 @@ const Alert = React.forwardRef<HTMLDivElement, AlertProps>(
   (
     {
       className,
-      variant,
+      variant = 'default',
       dismissible = false,
       onDismiss,
       autoHide = false,
@@ -82,19 +58,21 @@ const Alert = React.forwardRef<HTMLDivElement, AlertProps>(
 
     if (!isVisible) return null;
 
+    const alertClassNames = [
+      'alert',
+      `alert--${variant}`,
+      dismissible && 'alert--dismissible',
+      autoHide && 'alert--auto-hide',
+      className,
+    ]
+      .filter(Boolean)
+      .join(' ');
+
     return (
       <div
         ref={ref}
         role="alert"
-        className={cn(
-          alertVariants({ variant }),
-          'alert',
-          {
-            'alert--dismissible': dismissible,
-            'alert--auto-hide': autoHide,
-          },
-          className
-        )}
+        className={alertClassNames}
         style={
           autoHide
             ? ({ '--auto-hide-delay': `${autoHideDelay}ms` } as React.CSSProperties)
@@ -106,11 +84,11 @@ const Alert = React.forwardRef<HTMLDivElement, AlertProps>(
         {dismissible && (
           <button
             onClick={handleDismiss}
-            className="alert-dismiss absolute right-2 top-2 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
+            className="alert__dismiss-button"
             aria-label="Dismiss alert"
           >
-            <X className="h-4 w-4" />
-            <span className="sr-only">Close</span>
+            <X className="alert__dismiss-icon" />
+            <span className="alert__dismiss-text">Close</span>
           </button>
         )}
       </div>
@@ -121,11 +99,7 @@ Alert.displayName = 'Alert';
 
 const AlertTitle = React.forwardRef<HTMLParagraphElement, React.HTMLAttributes<HTMLHeadingElement>>(
   ({ className, ...props }, ref) => (
-    <h5
-      ref={ref}
-      className={cn('mb-1 font-medium leading-none tracking-tight', className)}
-      {...stripTransientProps(props)}
-    />
+    <h5 ref={ref} className={`alert__title ${className || ''}`} {...stripTransientProps(props)} />
   )
 );
 AlertTitle.displayName = 'AlertTitle';
@@ -136,10 +110,10 @@ const AlertDescription = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <div
     ref={ref}
-    className={cn('text-sm [&_p]:leading-relaxed', className)}
+    className={`alert__description ${className || ''}`}
     {...stripTransientProps(props)}
   />
 ));
 AlertDescription.displayName = 'AlertDescription';
 
-export { Alert, AlertDescription, AlertTitle, alertVariants };
+export { Alert, AlertDescription, AlertTitle };

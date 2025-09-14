@@ -14,6 +14,7 @@ import {
 } from '@/components/ui/Command';
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/Popover';
 import { cn } from '@/lib/utils';
+import './Combobox.scss';
 
 export interface ComboboxProps {
   value?: string;
@@ -55,17 +56,17 @@ const Combobox = React.forwardRef<HTMLButtonElement, ComboboxProps>(
             aria-expanded={open}
             disabled={disabled}
             className={cn(
-              'w-full justify-between',
-              !selectedOption && 'text-muted-foreground',
+              'combobox__trigger',
+              !selectedOption && 'combobox__trigger--placeholder',
               className
             )}
             {...props}
           >
             {selectedOption ? selectedOption.label : placeholder}
-            <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
+            <ChevronsUpDown className="combobox__icon" />
           </Button>
         </PopoverTrigger>
-        <PopoverContent className="w-full p-0">
+        <PopoverContent className="combobox__content">
           <Command>
             <CommandInput placeholder={searchPlaceholder} />
             <CommandList>
@@ -82,8 +83,10 @@ const Combobox = React.forwardRef<HTMLButtonElement, ComboboxProps>(
                   >
                     <Check
                       className={cn(
-                        'mr-2 h-4 w-4',
-                        value === option.value ? 'opacity-100' : 'opacity-0'
+                        'combobox__item-check',
+                        value === option.value
+                          ? 'combobox__item-check--visible'
+                          : 'combobox__item-check--hidden'
                       )}
                     />
                     {option.label}

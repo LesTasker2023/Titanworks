@@ -1,95 +1,206 @@
-// Badge component SCSS enhancements
-// Use this file for ENHANCEMENTS that can't be achieved with Tailwind classes
-// Avoid duplicating what Tailwind already provides
+/* Badge Component - BEM Styling with Design Tokens */
 
 .badge {
-  // Smooth transitions for all interactive states (STANDARDIZED)
-  transition: all 0.15s ease-in-out;
+  display: inline-flex;
+  align-items: center;
+  border-radius: var(--spacing-1);
+  border: 1px solid transparent;
+  font-weight: 600;
+  transition: var(--transition-fast);
 
-  // Enhanced dot animation
-  &--dot {
-    .badge-dot {
-      animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-    }
+  /* Focus styles */
+  &:focus {
+    outline: none;
   }
 
-  // Enhanced remove button interactions
-  &__remove-btn {
-    // Smooth transitions for button interactions (STANDARDIZED)
-    transition: all 0.15s ease-in-out;
+  &:focus-visible {
+    outline: 2px solid hsl(var(--ring));
+    outline-offset: 2px;
+  }
+
+  /* Size variants */
+  &--default {
+    padding: var(--spacing-1) calc(var(--spacing-2) + var(--spacing-1));
+    font-size: var(--text-xs);
+  }
+
+  &--sm {
+    padding: var(--spacing-1) var(--spacing-2);
+    font-size: var(--text-xs);
+  }
+
+  &--lg {
+    padding: var(--spacing-2) var(--spacing-3);
+    font-size: var(--text-sm);
+  }
+
+  /* Color variants */
+  &--default {
+    background-color: hsl(var(--surface-interactive));
+    color: hsl(var(--content-inverse));
+    box-shadow: var(--shadow-sm);
 
     &:hover {
-      transform: scale(1.1);
-    }
-
-    &:active {
-      transform: scale(0.95);
-    }
-
-    // Enhanced focus styles for accessibility (STANDARDIZED)
-    &:focus-visible {
-      outline: 2px solid hsl(var(--ring));
-      outline-offset: 2px;
-      box-shadow: 0 0 0 2px hsl(var(--ring) / 0.2);
+      background-color: hsl(var(--surface-interactive) / 0.8);
     }
   }
 
-  // Status-specific animations
+  &--secondary {
+    background-color: hsl(var(--surface-secondary));
+    color: hsl(var(--content-primary));
+
+    &:hover {
+      background-color: hsl(var(--surface-secondary) / 0.8);
+    }
+  }
+
+  &--destructive {
+    background-color: hsl(var(--status-error));
+    color: hsl(var(--content-inverse));
+    box-shadow: var(--shadow-sm);
+
+    &:hover {
+      background-color: hsl(var(--status-error) / 0.8);
+    }
+  }
+
   &--success {
-    animation: gentle-glow 3s ease-in-out infinite alternate;
+    background-color: hsl(var(--status-success));
+    color: hsl(var(--content-inverse));
+    box-shadow: var(--shadow-sm);
+
+    &:hover {
+      background-color: hsl(var(--status-success) / 0.8);
+    }
   }
 
   &--warning {
-    animation: subtle-pulse 2s ease-in-out infinite;
+    background-color: hsl(var(--status-warning));
+    color: hsl(var(--content-inverse));
+    box-shadow: var(--shadow-sm);
+
+    &:hover {
+      background-color: hsl(var(--status-warning) / 0.8);
+    }
   }
 
-  // Error state styling (STANDARDIZED ADDITION)
-  &--error {
-    border-color: hsl(var(--destructive));
-    background-color: hsl(var(--destructive) / 0.1);
+  &--info {
+    background-color: hsl(var(--status-info));
+    color: hsl(var(--content-inverse));
+    box-shadow: var(--shadow-sm);
 
-    &:focus-visible {
-      outline-color: hsl(var(--destructive));
-      box-shadow: 0 0 0 2px hsl(var(--destructive) / 0.2);
+    &:hover {
+      background-color: hsl(var(--status-info) / 0.8);
+    }
+  }
+
+  &--outline {
+    background-color: transparent;
+    border-color: hsl(var(--border-default));
+    color: hsl(var(--content-primary));
+
+    &:hover {
+      background-color: hsl(var(--surface-secondary));
+    }
+  }
+
+  /* Dot variant */
+  &--dot {
+    padding-left: var(--spacing-2);
+  }
+}
+
+.badge__dot {
+  margin-right: var(--spacing-2);
+  height: var(--spacing-2);
+  width: var(--spacing-2);
+  border-radius: 50%;
+  background-color: currentColor;
+  opacity: 0.75;
+  animation: badge-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.badge__remove-button {
+  margin-left: var(--spacing-2);
+  margin-right: calc(var(--spacing-1) * -1);
+  height: var(--spacing-4);
+  width: var(--spacing-4);
+  border-radius: var(--spacing-1);
+  opacity: 0.7;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: var(--transition-fast);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &:focus-visible {
+    outline: 2px solid hsl(var(--ring));
+    outline-offset: 2px;
+  }
+}
+
+.badge__remove-icon {
+  height: var(--spacing-3);
+  width: var(--spacing-3);
+  stroke-width: 2;
+}
+
+/* Animations */
+@keyframes badge-pulse {
+  0%,
+  100% {
+    opacity: 0.75;
+  }
+  50% {
+    opacity: 0.25;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .badge {
+    transition: none;
+
+    &__dot {
+      animation: none;
+    }
+
+    &__remove-button {
+      transition: none;
+
+      &:hover {
+        transform: none;
+      }
+
+      &:active {
+        transform: none;
+      }
     }
   }
 }
 
-// Keyframe animations
-@keyframes gentle-glow {
-  0% {
-    box-shadow: 0 0 5px rgba(34, 197, 94, 0.3);
-  }
-  100% {
-    box-shadow: 0 0 10px rgba(34, 197, 94, 0.5);
-  }
-}
-
-@keyframes subtle-pulse {
-  0%,
-  100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.85;
-  }
-}
-
-// High contrast support
+/* High contrast mode support */
 @media (prefers-contrast: high) {
   .badge {
     border-width: 2px;
-    font-weight: 700;
-  }
-}
 
-// Reduced motion support
-@media (prefers-reduced-motion: reduce) {
-  .badge {
-    animation: none;
-
-    .badge-dot {
-      animation: none;
+    &--outline {
+      border-color: currentColor;
     }
   }
 }

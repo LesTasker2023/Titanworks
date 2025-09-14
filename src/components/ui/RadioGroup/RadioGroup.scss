@@ -1,97 +1,110 @@
-// RadioGroup component SCSS overrides
-// Use this file for ENHANCEMENTS that can't be achieved with Tailwind classes
-// Avoid duplicating what Tailwind already provides
+@import "../../../styles/globals.scss";
 
-.radiogroup-wrapper {
-  // Enhanced focus styles for better accessibility
-  .radiogroup--loading {
-    opacity: 0.7;
-    pointer-events: none;
+.radioGroup {
+  // Root container with label, input, and helper text
+  &__container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
 
-    &::after {
-      content: "";
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 16px;
-      height: 16px;
-      margin: -8px 0 0 -8px;
-      border: 2px solid transparent;
-      border-top-color: hsl(var(--primary));
-      border-radius: 50%;
-      animation: radiogroup-spin 1s linear infinite;
+  // Label styles
+  &__label {
+    font-size: 0.875rem;
+    font-weight: 500;
+    line-height: 1;
+    cursor: pointer;
+
+    &--required::after {
+      content: "*";
+      margin-left: 0.125rem;
+      color: var(--destructive);
+    }
+
+    &--error {
+      color: var(--destructive);
+    }
+
+    &--disabled {
+      cursor: not-allowed;
+      opacity: 0.7;
     }
   }
 
-  // Error state styling (STANDARDIZED ADDITION)
-  &--error {
-    .radiogroup-item {
-      border-color: hsl(var(--destructive));
+  // Root radio group container
+  &__root {
+    display: grid;
+    gap: 0.5rem;
+  }
 
-      &:focus-visible {
-        outline-color: hsl(var(--destructive));
-        box-shadow: 0 0 0 2px hsl(var(--destructive) / 0.2);
-      }
+  // Individual radio item
+  &__item {
+    aspect-ratio: 1;
+    height: 1rem;
+    width: 1rem;
+    border-radius: 50%;
+    border: 1px solid var(--primary);
+    color: var(--primary);
+    background: transparent;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.2s ease;
 
-      &[data-state="checked"] {
-        border-color: hsl(var(--destructive));
-        background-color: hsl(var(--destructive));
-      }
+    &:focus {
+      outline: none;
     }
-  }
-}
-
-@keyframes radiogroup-spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-// Enhanced radio item styles
-.radiogroup-item {
-  // Enhanced focus styles for better accessibility
-  &:focus-visible {
-    outline: 2px solid hsl(var(--ring));
-    outline-offset: 2px;
-  }
-
-  // Smooth transitions
-  transition: all 0.2s ease-in-out;
-
-  // Enhanced hover states
-  &:hover:not(:disabled) {
-    border-color: hsl(var(--primary));
-    box-shadow: 0 0 0 1px hsl(var(--primary) / 0.3);
-  }
-
-  // Loading state
-  &--loading {
-    opacity: 0.5;
-    cursor: not-allowed;
-  }
-}
-
-// High contrast mode support
-@media (prefers-contrast: high) {
-  .radiogroup-item {
-    border-width: 2px;
 
     &:focus-visible {
-      outline-width: 3px;
+      box-shadow: 0 0 0 2px var(--ring);
+      outline-offset: 2px;
+    }
+
+    &:disabled {
+      cursor: not-allowed;
+      opacity: 0.5;
+    }
+
+    &:hover:not(:disabled) {
+      background-color: var(--accent);
+    }
+
+    // When checked
+    &[data-state="checked"] {
+      border-color: var(--primary);
+      background-color: transparent;
     }
   }
-}
 
-// Reduced motion support
-@media (prefers-reduced-motion: reduce) {
-  .radiogroup--loading::after {
-    animation: none;
+  // Radio indicator (the dot in the center)
+  &__indicator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+
+    svg {
+      height: 0.625rem;
+      width: 0.625rem;
+      fill: currentColor;
+    }
   }
 
-  .radiogroup-item {
-    transition: none;
+  // Helper text
+  &__helper-text {
+    font-size: 0.875rem;
+    color: var(--muted-foreground);
+  }
+
+  // Error text
+  &__error-text {
+    font-size: 0.875rem;
+    color: var(--destructive);
+  }
+
+  // Loading text
+  &__loading-text {
+    font-size: 0.875rem;
+    color: var(--muted-foreground);
   }
 }

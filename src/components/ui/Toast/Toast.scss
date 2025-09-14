@@ -1,0 +1,266 @@
+// Toast component styles
+@import "../../../styles/design-tokens.scss";
+
+// Toast Viewport - container for all toasts
+.toast-viewport {
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  max-height: 100vh;
+  width: 100%;
+  flex-direction: column-reverse;
+  padding: 1rem;
+
+  @media (min-width: 640px) {
+    bottom: 0;
+    right: 0;
+    top: auto;
+    flex-direction: column;
+  }
+
+  @media (min-width: 768px) {
+    max-width: 420px;
+  }
+}
+
+// Base toast styles
+.toast {
+  pointer-events: auto;
+  position: relative;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  column-gap: 1rem;
+  overflow: hidden;
+  border-radius: var(--radius);
+  border: 1px solid;
+  padding: 1.5rem 2rem 1.5rem 1.5rem;
+  box-shadow: var(--shadow-lg);
+  transition: all 0.15s ease-in-out;
+
+  // Swipe gestures
+  &[data-swipe="cancel"] {
+    transform: translateX(0);
+  }
+
+  &[data-swipe="end"] {
+    transform: translateX(var(--radix-toast-swipe-end-x));
+  }
+
+  &[data-swipe="move"] {
+    transform: translateX(var(--radix-toast-swipe-move-x));
+    transition: none;
+  }
+
+  // Animation states
+  &[data-state="open"] {
+    animation: toast-slide-in-from-top 0.2s ease-out;
+
+    @media (min-width: 640px) {
+      animation: toast-slide-in-from-bottom 0.2s ease-out;
+    }
+  }
+
+  &[data-state="closed"] {
+    animation:
+      toast-slide-out-to-right 0.2s ease-in forwards,
+      toast-fade-out 0.2s ease-in forwards;
+  }
+
+  &[data-swipe="end"] {
+    animation: toast-slide-out-to-right 0.2s ease-in forwards;
+  }
+
+  // Variant styles
+  &--default {
+    border-color: hsl(var(--border));
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+  }
+
+  &--success {
+    border-color: hsl(var(--status-success));
+    background-color: hsl(var(--status-success) / 0.1);
+    color: hsl(var(--status-success));
+  }
+
+  &--error {
+    border-color: hsl(var(--status-error));
+    background-color: hsl(var(--status-error) / 0.1);
+    color: hsl(var(--status-error));
+  }
+
+  &--warning {
+    border-color: hsl(var(--status-warning));
+    background-color: hsl(var(--status-warning) / 0.1);
+    color: hsl(var(--status-warning));
+  }
+
+  &--info {
+    border-color: hsl(212 100% 80%);
+    background-color: hsl(212 100% 97%);
+    color: hsl(212 84% 25%);
+
+    @media (prefers-color-scheme: dark) {
+      border-color: hsl(212 55% 25%);
+      background-color: hsl(212 42% 8%);
+      color: hsl(212 50% 90%);
+    }
+  }
+}
+
+// Toast Action button
+.toast-action {
+  display: inline-flex;
+  height: 2rem;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius);
+  border: 1px solid hsl(var(--border));
+  background-color: transparent;
+  padding: 0 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  transition: all 0.15s ease-in-out;
+
+  &:hover {
+    background-color: hsl(var(--secondary));
+  }
+
+  &:focus {
+    outline: 2px solid hsl(var(--ring));
+    outline-offset: 2px;
+  }
+
+  &:disabled {
+    pointer-events: none;
+    opacity: 0.5;
+  }
+
+  // Variant-specific action styles
+  .toast--success & {
+    border-color: hsl(var(--status-success));
+
+    &:hover {
+      border-color: hsl(var(--status-success));
+      background-color: hsl(var(--status-success) / 0.2);
+    }
+  }
+
+  .toast--error & {
+    border-color: hsl(var(--status-error));
+
+    &:hover {
+      border-color: hsl(var(--status-error));
+      background-color: hsl(var(--status-error) / 0.1);
+    }
+  }
+}
+
+// Toast Close button
+.toast-close {
+  position: absolute;
+  right: 0.5rem;
+  top: 0.5rem;
+  border-radius: var(--radius);
+  padding: 0.25rem;
+  color: hsl(var(--foreground) / 0.5);
+  opacity: 0;
+  transition: opacity 0.15s ease-in-out;
+
+  &:hover {
+    color: hsl(var(--foreground));
+  }
+
+  &:focus {
+    opacity: 1;
+    outline: 2px solid hsl(var(--ring));
+    outline-offset: 2px;
+  }
+
+  .toast:hover & {
+    opacity: 1;
+  }
+
+  // Variant-specific close styles
+  .toast--success & {
+    color: hsl(var(--status-success));
+  }
+
+  .toast--error & {
+    color: hsl(var(--status-error));
+  }
+
+  .toast--warning & {
+    color: hsl(var(--status-warning));
+  }
+
+  .toast--info & {
+    color: hsl(212 84% 25%);
+
+    @media (prefers-color-scheme: dark) {
+      color: hsl(212 50% 90%);
+    }
+  }
+
+  svg {
+    width: 1rem;
+    height: 1rem;
+  }
+}
+
+// Toast Title
+.toast-title {
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+// Toast Description
+.toast-description {
+  font-size: 0.875rem;
+  opacity: 0.9;
+}
+
+// Toast animations
+@keyframes toast-slide-in-from-top {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes toast-slide-in-from-bottom {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes toast-slide-out-to-right {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes toast-fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}

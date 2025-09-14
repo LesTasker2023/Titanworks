@@ -2,14 +2,14 @@
 
 exports[`Input > Snapshots > matches default snapshot 1`] = `
 <input
-  class="flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-base shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 md:text-sm input"
+  class="input"
   data-testid="input"
 />
 `;
 
 exports[`Input > Snapshots > matches disabled state snapshot 1`] = `
 <input
-  class="flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-base shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 md:text-sm input"
+  class="input"
   data-testid="input"
   disabled=""
 />
@@ -20,18 +20,18 @@ exports[`Input > Snapshots > matches error state snapshot 1`] = `
   class="input-wrapper"
 >
   <input
-    class="flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-base shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 md:text-sm input input--error"
+    class="input input--error"
     data-testid="input"
   />
   <p
-    class="input-error text-sm text-destructive mt-1"
+    class="input-error"
   />
 </div>
 `;
 
 exports[`Input > Snapshots > matches loading state snapshot 1`] = `
 <input
-  class="flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-base shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 md:text-sm input input--loading"
+  class="input input--loading"
   data-testid="input"
   disabled=""
 />

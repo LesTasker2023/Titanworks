@@ -3,7 +3,7 @@
 exports[`Carousel > Snapshots > matches default snapshot 1`] = `
 <div
   aria-roledescription="carousel"
-  class="relative"
+  class="carousel"
   data-testid="carousel"
   role="region"
 >
@@ -14,7 +14,7 @@ exports[`Carousel > Snapshots > matches default snapshot 1`] = `
 exports[`Carousel > Snapshots > matches disabled state snapshot 1`] = `
 <div
   aria-roledescription="carousel"
-  class="relative"
+  class="carousel"
   data-testid="carousel"
   disabled=""
   role="region"

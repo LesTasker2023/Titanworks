@@ -2,7 +2,7 @@
 
 exports[`Tabs > Snapshots > matches active state snapshot 1`] = `
 <div
-  class=""
+  class="tabs"
   data-orientation="horizontal"
   data-testid="tabs"
   dir="ltr"
@@ -13,7 +13,7 @@ exports[`Tabs > Snapshots > matches active state snapshot 1`] = `
 
 exports[`Tabs > Snapshots > matches default snapshot 1`] = `
 <div
-  class=""
+  class="tabs"
   data-orientation="horizontal"
   data-testid="tabs"
   dir="ltr"
@@ -24,7 +24,7 @@ exports[`Tabs > Snapshots > matches default snapshot 1`] = `
 
 exports[`Tabs > Snapshots > matches disabled state snapshot 1`] = `
 <div
-  class=""
+  class="tabs"
   data-orientation="horizontal"
   data-testid="tabs"
   dir="ltr"
@@ -36,7 +36,7 @@ exports[`Tabs > Snapshots > matches disabled state snapshot 1`] = `
 
 exports[`Tabs > Snapshots > matches loading state snapshot 1`] = `
 <div
-  class=""
+  class="tabs"
   data-orientation="horizontal"
   data-testid="tabs"
   dir="ltr"

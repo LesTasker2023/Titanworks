@@ -2,124 +2,134 @@
 
 exports[`SimpleChart > Snapshots > matches bar type snapshot 1`] = `
 <div
-  class="space-y-2 "
+  class="simple-chart__bar-container "
 >
   <div
-    class="space-y-1"
+    class="simple-chart__bar-item"
   >
     <div
-      class="flex justify-between text-xs"
+      class="simple-chart__bar-header"
     >
-      <span>
+      <span
+        class="simple-chart__bar-label"
+      >
         Jan
       </span>
       <span
-        class="font-mono"
+        class="simple-chart__bar-value"
       >
         400
       </span>
     </div>
     <div
-      class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2"
+      class="simple-chart__bar-track"
     >
       <div
-        class="h-2 rounded-full"
+        class="simple-chart__bar-progress"
         style="width: 80%; background-color: hsl(var(--surface-interactive));"
       />
     </div>
   </div>
   <div
-    class="space-y-1"
+    class="simple-chart__bar-item"
   >
     <div
-      class="flex justify-between text-xs"
+      class="simple-chart__bar-header"
     >
-      <span>
+      <span
+        class="simple-chart__bar-label"
+      >
         Feb
       </span>
       <span
-        class="font-mono"
+        class="simple-chart__bar-value"
       >
         300
       </span>
     </div>
     <div
-      class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2"
+      class="simple-chart__bar-track"
     >
       <div
-        class="h-2 rounded-full"
+        class="simple-chart__bar-progress"
         style="width: 60%; background-color: hsl(var(--surface-interactive));"
       />
     </div>
   </div>
   <div
-    class="space-y-1"
+    class="simple-chart__bar-item"
   >
     <div
-      class="flex justify-between text-xs"
+      class="simple-chart__bar-header"
     >
-      <span>
+      <span
+        class="simple-chart__bar-label"
+      >
         Mar
       </span>
       <span
-        class="font-mono"
+        class="simple-chart__bar-value"
       >
         500
       </span>
     </div>
     <div
-      class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2"
+      class="simple-chart__bar-track"
     >
       <div
-        class="h-2 rounded-full"
+        class="simple-chart__bar-progress"
         style="width: 100%; background-color: hsl(var(--surface-interactive));"
       />
     </div>
   </div>
   <div
-    class="space-y-1"
+    class="simple-chart__bar-item"
   >
     <div
-      class="flex justify-between text-xs"
+      class="simple-chart__bar-header"
     >
-      <span>
+      <span
+        class="simple-chart__bar-label"
+      >
         Apr
       </span>
       <span
-        class="font-mono"
+        class="simple-chart__bar-value"
       >
         280
       </span>
     </div>
     <div
-      class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2"
+      class="simple-chart__bar-track"
     >
       <div
-        class="h-2 rounded-full"
+        class="simple-chart__bar-progress"
         style="width: 56.00000000000001%; background-color: hsl(var(--surface-interactive));"
       />
     </div>
   </div>
   <div
-    class="space-y-1"
+    class="simple-chart__bar-item"
   >
     <div
-      class="flex justify-between text-xs"
+      class="simple-chart__bar-header"
     >
-      <span>
+      <span
+        class="simple-chart__bar-label"
+      >
         May
       </span>
       <span
-        class="font-mono"
+        class="simple-chart__bar-value"
       >
         390
       </span>
     </div>
     <div
-      class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2"
+      class="simple-chart__bar-track"
     >
       <div
-        class="h-2 rounded-full"
+        class="simple-chart__bar-progress"
         style="width: 78%; background-color: hsl(var(--surface-interactive));"
       />
     </div>
@@ -129,124 +139,134 @@ exports[`SimpleChart > Snapshots > matches bar type snapshot 1`] = `
 
 exports[`SimpleChart > Snapshots > matches default snapshot 1`] = `
 <div
-  class="space-y-2 "
+  class="simple-chart__bar-container "
 >
   <div
-    class="space-y-1"
+    class="simple-chart__bar-item"
   >
     <div
-      class="flex justify-between text-xs"
+      class="simple-chart__bar-header"
     >
-      <span>
+      <span
+        class="simple-chart__bar-label"
+      >
         Jan
       </span>
       <span
-        class="font-mono"
+        class="simple-chart__bar-value"
       >
         400
       </span>
     </div>
     <div
-      class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2"
+      class="simple-chart__bar-track"
     >
       <div
-        class="h-2 rounded-full"
+        class="simple-chart__bar-progress"
         style="width: 80%; background-color: hsl(var(--surface-interactive));"
       />
     </div>
   </div>
   <div
-    class="space-y-1"
+    class="simple-chart__bar-item"
   >
     <div
-      class="flex justify-between text-xs"
+      class="simple-chart__bar-header"
     >
-      <span>
+      <span
+        class="simple-chart__bar-label"
+      >
         Feb
       </span>
       <span
-        class="font-mono"
+        class="simple-chart__bar-value"
       >
         300
       </span>
     </div>
     <div
-      class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2"
+      class="simple-chart__bar-track"
     >
       <div
-        class="h-2 rounded-full"
+        class="simple-chart__bar-progress"
         style="width: 60%; background-color: hsl(var(--surface-interactive));"
       />
     </div>
   </div>
   <div
-    class="space-y-1"
+    class="simple-chart__bar-item"
   >
     <div
-      class="flex justify-between text-xs"
+      class="simple-chart__bar-header"
     >
-      <span>
+      <span
+        class="simple-chart__bar-label"
+      >
         Mar
       </span>
       <span
-        class="font-mono"
+        class="simple-chart__bar-value"
       >
         500
       </span>
     </div>
     <div
-      class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2"
+      class="simple-chart__bar-track"
     >
       <div
-        class="h-2 rounded-full"
+        class="simple-chart__bar-progress"
         style="width: 100%; background-color: hsl(var(--surface-interactive));"
       />
     </div>
   </div>
   <div
-    class="space-y-1"
+    class="simple-chart__bar-item"
   >
     <div
-      class="flex justify-between text-xs"
+      class="simple-chart__bar-header"
     >
-      <span>
+      <span
+        class="simple-chart__bar-label"
+      >
         Apr
       </span>
       <span
-        class="font-mono"
+        class="simple-chart__bar-value"
       >
         280
       </span>
     </div>
     <div
-      class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2"
+      class="simple-chart__bar-track"
     >
       <div
-        class="h-2 rounded-full"
+        class="simple-chart__bar-progress"
         style="width: 56.00000000000001%; background-color: hsl(var(--surface-interactive));"
       />
     </div>
   </div>
   <div
-    class="space-y-1"
+    class="simple-chart__bar-item"
   >
     <div
-      class="flex justify-between text-xs"
+      class="simple-chart__bar-header"
     >
-      <span>
+      <span
+        class="simple-chart__bar-label"
+      >
         May
       </span>
       <span
-        class="font-mono"
+        class="simple-chart__bar-value"
       >
         390
       </span>
     </div>
     <div
-      class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2"
+      class="simple-chart__bar-track"
     >
       <div
-        class="h-2 rounded-full"
+        class="simple-chart__bar-progress"
         style="width: 78%; background-color: hsl(var(--surface-interactive));"
       />
     </div>
@@ -256,24 +276,26 @@ exports[`SimpleChart > Snapshots > matches default snapshot 1`] = `
 
 exports[`SimpleChart > Snapshots > matches pie type snapshot 1`] = `
 <div
-  class="space-y-2 "
+  class="simple-chart__pie-container "
 >
   <div
-    class="flex items-center justify-between text-sm"
+    class="simple-chart__pie-item"
   >
     <div
-      class="flex items-center gap-2"
+      class="simple-chart__pie-label-group"
     >
       <div
-        class="w-3 h-3 rounded-full"
+        class="simple-chart__pie-indicator"
         style="background-color: rgb(217, 38, 38);"
       />
-      <span>
+      <span
+        class="simple-chart__pie-label"
+      >
         Jan
       </span>
     </div>
     <span
-      class="font-mono"
+      class="simple-chart__pie-value"
     >
       400
        (
@@ -282,21 +304,23 @@ exports[`SimpleChart > Snapshots > matches pie type snapshot 1`] = `
     </span>
   </div>
   <div
-    class="flex items-center justify-between text-sm"
+    class="simple-chart__pie-item"
   >
     <div
-      class="flex items-center gap-2"
+      class="simple-chart__pie-label-group"
     >
       <div
-        class="w-3 h-3 rounded-full"
+        class="simple-chart__pie-indicator"
         style="background-color: rgb(217, 217, 38);"
       />
-      <span>
+      <span
+        class="simple-chart__pie-label"
+      >
         Feb
       </span>
     </div>
     <span
-      class="font-mono"
+      class="simple-chart__pie-value"
     >
       300
        (
@@ -305,21 +329,23 @@ exports[`SimpleChart > Snapshots > matches pie type snapshot 1`] = `
     </span>
   </div>
   <div
-    class="flex items-center justify-between text-sm"
+    class="simple-chart__pie-item"
   >
     <div
-      class="flex items-center gap-2"
+      class="simple-chart__pie-label-group"
     >
       <div
-        class="w-3 h-3 rounded-full"
+        class="simple-chart__pie-indicator"
         style="background-color: rgb(38, 217, 38);"
       />
-      <span>
+      <span
+        class="simple-chart__pie-label"
+      >
         Mar
       </span>
     </div>
     <span
-      class="font-mono"
+      class="simple-chart__pie-value"
     >
       500
        (
@@ -328,21 +354,23 @@ exports[`SimpleChart > Snapshots > matches pie type snapshot 1`] = `
     </span>
   </div>
   <div
-    class="flex items-center justify-between text-sm"
+    class="simple-chart__pie-item"
   >
     <div
-      class="flex items-center gap-2"
+      class="simple-chart__pie-label-group"
     >
       <div
-        class="w-3 h-3 rounded-full"
+        class="simple-chart__pie-indicator"
         style="background-color: rgb(38, 217, 217);"
       />
-      <span>
+      <span
+        class="simple-chart__pie-label"
+      >
         Apr
       </span>
     </div>
     <span
-      class="font-mono"
+      class="simple-chart__pie-value"
     >
       280
        (
@@ -351,21 +379,23 @@ exports[`SimpleChart > Snapshots > matches pie type snapshot 1`] = `
     </span>
   </div>
   <div
-    class="flex items-center justify-between text-sm"
+    class="simple-chart__pie-item"
   >
     <div
-      class="flex items-center gap-2"
+      class="simple-chart__pie-label-group"
     >
       <div
-        class="w-3 h-3 rounded-full"
+        class="simple-chart__pie-indicator"
         style="background-color: rgb(38, 38, 217);"
       />
-      <span>
+      <span
+        class="simple-chart__pie-label"
+      >
         May
       </span>
     </div>
     <span
-      class="font-mono"
+      class="simple-chart__pie-value"
     >
       390
        (

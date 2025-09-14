@@ -1,386 +1,322 @@
-// Select component SCSS overrides
-// Use this file for ENHANCEMENTS that can't be achieved with Tailwind classes
-// Avoid duplicating what Tailwind already provides
+@import "../../../styles/globals.scss";
 
-// Select trigger enhancements
-.select-trigger {
-  // Proper cursor pointer for interactive element
-  cursor: pointer;
-
-  // Enhanced focus styles for better accessibility (supplements Tailwind's focus-visible)
-  &:focus-visible {
-    outline: 2px solid hsl(var(--ring));
-    outline-offset: 2px;
-    box-shadow: 0 0 0 2px hsl(var(--ring) / 0.2);
+.select {
+  // Container
+  &__container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.375rem;
   }
 
-  // Smooth transitions for all interactive states (enhance Tailwind's basic transitions)
-  transition: all 0.15s ease-in-out;
-
-  // Enhanced hover effect (not available in Tailwind)
-  &:hover:not([data-disabled]):not(:focus-visible) {
-    border-color: hsl(var(--ring) / 0.6);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-    cursor: pointer; // Ensure cursor is visible on hover
-  }
-
-  // Error state styling
-  &--error {
-    border-color: hsl(var(--destructive));
-    box-shadow: 0 0 0 1px hsl(var(--destructive) / 0.2);
-
-    &:focus-visible {
-      outline-color: hsl(var(--destructive));
-      box-shadow: 0 0 0 2px hsl(var(--destructive) / 0.2);
-    }
-  }
-
-  // Loading state with spinner
-  &--loading {
-    pointer-events: none;
-    opacity: 0.7;
-    cursor: wait;
-  }
-
-  // Enhanced disabled state (supplement Tailwind's disabled styles)
-  &:disabled,
-  &[data-disabled] {
-    cursor: not-allowed;
-    background-color: hsl(var(--muted) / 0.5);
-  }
-
-  // Mobile touch targets (accessibility enhancement)
-  @media (max-width: 640px) {
-    min-height: 44px; // iOS accessibility requirement
-    font-size: 16px; // Prevent zoom on iOS
-  }
-}
-
-// Loading spinner animation
-.select-spinner {
-  width: 16px;
-  height: 16px;
-  border: 2px solid;
-  border-radius: 50%;
-  border-color: hsl(var(--muted-foreground)) transparent hsl(var(--muted-foreground)) hsl(var(--muted-foreground));
-  animation: selectSpin 1s linear infinite;
-  opacity: 0.7;
-
-  @media (prefers-reduced-motion: reduce) {
-    animation: none;
-    border: 2px solid hsl(var(--muted-foreground));
-    border-top-color: transparent;
-  }
-}
-
-// Select content enhancements - CRITICAL for dropdown background
-.select-content,
-.select-content.bg-popover,
-[class*="bg-popover"] {
-  // Ensure proper background with multiple fallbacks
-  background-color: white !important; // Fallback 1: Always visible
-  background-color: hsl(var(--popover)) !important; // Fallback 2: Theme aware
-  background-color: hsl(0 0% 100%) !important; // Fallback 3: Explicit white
-
-  // Force border and shadow visibility
-  border: 1px solid hsl(var(--border), hsl(214.3 31.8% 91.4%)) !important;
-  box-shadow:
-    0 4px 6px -1px rgba(0, 0, 0, 0.1),
-    0 2px 4px -1px rgba(0, 0, 0, 0.06) !important;
-
-  // Ensure z-index is high enough
-  z-index: 1000 !important;
-
-  // Enhanced scrollbar styling
-  &::-webkit-scrollbar {
-    width: 8px;
-  }
-
-  &::-webkit-scrollbar-track {
-    background: hsl(var(--muted) / 0.3);
-    border-radius: 4px;
-  }
-
-  &::-webkit-scrollbar-thumb {
-    background: hsl(var(--muted-foreground) / 0.4);
-    border-radius: 4px;
-
-    &:hover {
-      background: hsl(var(--muted-foreground) / 0.6);
-    }
-  }
-
-  // Enhanced animation performance
-  animation-duration: 0.15s;
-  animation-timing-function: ease-out;
-
-  // High contrast support
-  @media (prefers-contrast: high) {
-    border: 2px solid !important;
-  }
-
-  // Dark mode background fix with explicit fallback
-  [data-theme="dark"] & {
-    background-color: hsl(222.2 84% 4.9%) !important; // Explicit dark background
-    border-color: hsl(217.2 32.6% 17.5%) !important; // Explicit dark border
-  }
-
-  // System dark mode fallback
-  @media (prefers-color-scheme: dark) {
-    background-color: hsl(222.2 84% 4.9%) !important;
-    border-color: hsl(217.2 32.6% 17.5%) !important;
-  }
-}
-
-// Search functionality styling
-.select-search {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.75rem;
-  border-bottom: 1px solid hsl(var(--border));
-  background: hsl(var(--background));
-  position: sticky;
-  top: 0;
-  z-index: 10;
-}
-
-.select-search-input {
-  flex: 1;
-  border: none;
-  outline: none;
-  background: transparent;
-  font-size: 0.875rem;
-  color: hsl(var(--foreground));
-  cursor: text;
-
-  &::placeholder {
-    color: hsl(var(--muted-foreground));
-  }
-
-  &:focus {
-    outline: none;
-  }
-}
-
-.select-search-clear {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 20px;
-  height: 20px;
-  border: none;
-  background: transparent;
-  color: hsl(var(--muted-foreground));
-  cursor: pointer;
-  border-radius: 2px;
-  transition: background-color 0.15s ease-in-out;
-
-  &:hover {
-    background: hsl(var(--muted) / 0.5);
-    color: hsl(var(--foreground));
-  }
-
-  &:focus-visible {
-    outline: 2px solid hsl(var(--ring));
-    outline-offset: 1px;
-  }
-}
-
-// Enhanced select item styling - CRITICAL for hover pointer
-.select-item {
-  cursor: pointer; // Essential for proper UX
-
-  // Smooth transitions for interactive states
-  transition: all 0.15s ease-in-out;
-
-  // Enhanced hover state
-  &:hover:not([data-disabled]) {
-    cursor: pointer;
-    background-color: hsl(var(--accent));
-    color: hsl(var(--accent-foreground));
-  }
-
-  // Enhanced focus and selection states
-  &[data-highlighted] {
-    background: hsl(var(--accent));
-    color: hsl(var(--accent-foreground));
-    cursor: pointer;
-  }
-
-  &[data-selected] {
-    background: hsl(var(--primary) / 0.1);
-    color: hsl(var(--primary));
+  // Label
+  &__label {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
     font-weight: 500;
-    cursor: pointer;
+    color: var(--foreground);
+
+    &--required::after {
+      content: " *";
+      color: var(--destructive);
+    }
   }
 
-  &[data-disabled] {
-    color: hsl(var(--muted-foreground));
-    pointer-events: none;
-    cursor: not-allowed;
+  // Trigger
+  &__trigger {
+    display: flex;
+    height: 2.25rem;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    white-space: nowrap;
+    border-radius: 0.375rem;
+    border: 1px solid var(--input);
+    background-color: transparent;
+    padding: 0.5rem 0.75rem;
+    font-size: 0.875rem;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    transition: all 0.15s ease-in-out;
+    cursor: pointer;
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 0 1px var(--ring);
+    }
+
+    &:disabled {
+      cursor: not-allowed;
+      opacity: 0.5;
+    }
+
+    &[data-placeholder] {
+      color: var(--muted-foreground);
+    }
+
+    & > span {
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 1;
+      line-clamp: 1;
+    }
+
+    // Error state
+    &--error {
+      border-color: var(--destructive);
+      box-shadow: 0 0 0 1px var(--destructive);
+    }
+
+    // Loading state
+    &--loading {
+      pointer-events: none;
+      opacity: 0.7;
+      cursor: wait;
+    }
+  }
+
+  // Icon
+  &__icon {
+    height: 1rem;
+    width: 1rem;
     opacity: 0.5;
   }
 
-  // Enhanced keyboard navigation
-  &:focus-visible {
-    outline: 2px solid hsl(var(--ring));
-    outline-offset: -1px;
-  }
-}
-
-// Select label enhancements
-.select-label {
-  color: hsl(var(--muted-foreground));
-  font-weight: 600;
-}
-
-// Select separator styling
-.select-separator {
-  background-color: hsl(var(--border));
-  margin: 0.25rem 0;
-}
-
-// Select wrapper styling (for enhanced components)
-.select-wrapper {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  width: 100%;
-}
-
-// Label styling
-.select-field-label {
-  font-weight: 500;
-  color: hsl(var(--foreground));
-  font-size: 0.875rem;
-  cursor: pointer; // Labels should be clickable
-
-  // Required indicator
-  &--required::after {
-    content: " *";
-    color: hsl(var(--destructive));
-  }
-}
-
-// Error message styling
-.select-error {
-  display: flex;
-  align-items: center;
-  gap: 0.25rem;
-  color: hsl(var(--destructive));
-  font-size: 0.875rem;
-
-  &::before {
-    content: "⚠";
-    font-size: 0.75rem;
-  }
-}
-
-// Helper text styling
-.select-helper {
-  color: hsl(var(--muted-foreground));
-  font-size: 0.875rem;
-}
-
-// Scroll buttons should have pointer cursor
-[data-radix-select-scroll-up-button],
-[data-radix-select-scroll-down-button] {
-  cursor: pointer;
-
-  &:hover {
-    background: hsl(var(--accent));
-    color: hsl(var(--accent-foreground));
-  }
-}
-
-// Fix for Radix UI Select viewport
-[data-radix-select-viewport] {
-  background-color: inherit;
-}
-
-// Radix UI Select Content Portal fix - Force background visibility
-[data-radix-popper-content-wrapper] {
-  z-index: 50;
-
-  // Target the actual content element
-  > div {
-    background-color: white !important;
-    background-color: hsl(var(--popover), white) !important;
-    border: 1px solid hsl(var(--border), #e5e7eb) !important;
+  // Content (dropdown)
+  &__content {
+    position: relative;
+    z-index: 50;
+    max-height: 24rem;
+    min-width: 8rem;
+    overflow: hidden;
+    border-radius: 0.375rem;
+    border: 1px solid var(--border);
+    background-color: var(--popover);
+    color: var(--popover-foreground);
     box-shadow:
       0 10px 15px -3px rgba(0, 0, 0, 0.1),
-      0 4px 6px -2px rgba(0, 0, 0, 0.05) !important;
+      0 4px 6px -2px rgba(0, 0, 0, 0.05);
 
-    // Dark mode override
-    @media (prefers-color-scheme: dark) {
-      background-color: hsl(222.2 84% 4.9%) !important;
-      border-color: hsl(217.2 32.6% 17.5%) !important;
+    &[data-state="open"] {
+      animation: selectContentShow 0.15s ease-out;
     }
-  }
-}
 
-// More specific Radix selectors for background
-[data-radix-select-content] {
-  background-color: white !important;
-  border: 1px solid #e5e7eb !important;
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1) !important;
+    &[data-state="closed"] {
+      animation: selectContentHide 0.15s ease-in;
+    }
 
-  @media (prefers-color-scheme: dark) {
-    background-color: hsl(222.2 84% 4.9%) !important;
-    border-color: hsl(217.2 32.6% 17.5%) !important;
-  }
-}
+    &[data-side="top"] {
+      animation: selectContentSlideUpAndFade 0.15s ease-out;
+    }
 
-// Reduced motion respect (accessibility)
-@media (prefers-reduced-motion: reduce) {
-  .select-trigger,
-  .select-content,
-  .select-item {
-    transition: none;
-    animation: none;
-  }
-
-  .select-spinner {
-    animation: none;
-  }
-}
-
-// High contrast mode (accessibility)
-@media (prefers-contrast: high) {
-  .select-trigger {
-    border: 2px solid;
-
-    &:focus-visible {
-      outline-width: 3px;
+    &[data-side="bottom"] {
+      animation: selectContentSlideDownAndFade 0.15s ease-out;
     }
   }
 
-  .select-content {
-    border: 2px solid !important;
-  }
-}
+  // Viewport
+  &__viewport {
+    padding: 0.25rem;
 
-// Dark mode enhancements (supplement Tailwind's dark mode)
-[data-theme="dark"] {
-  .select-trigger {
-    &:hover:not([data-disabled]):not(:focus-visible) {
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    &:focus {
+      outline: none;
     }
   }
 
-  .select-content {
-    background-color: hsl(var(--popover)) !important;
-    border-color: hsl(var(--border)) !important;
+  // Scroll buttons
+  &__scroll-button {
+    display: flex;
+    cursor: default;
+    align-items: center;
+    justify-content: center;
+    padding: 0.25rem 0;
+  }
+
+  // Search container
+  &__search {
+    position: relative;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid var(--border);
+    padding: 0.375rem;
+    background-color: var(--background);
+
+    &__icon {
+      position: absolute;
+      left: 0.75rem;
+      height: 1rem;
+      width: 1rem;
+      opacity: 0.5;
+    }
+
+    &__input {
+      height: 2rem;
+      width: 100%;
+      border: none;
+      outline: none;
+      background-color: transparent;
+      padding: 0 2rem 0 2rem;
+      font-size: 0.875rem;
+      color: var(--foreground);
+
+      &::placeholder {
+        color: var(--muted-foreground);
+      }
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    &__clear {
+      position: absolute;
+      right: 0.75rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.125rem;
+      border-radius: 0.125rem;
+      cursor: pointer;
+      opacity: 0.7;
+      transition: opacity 0.15s ease;
+
+      &:hover {
+        opacity: 1;
+      }
+
+      svg {
+        height: 1rem;
+        width: 1rem;
+      }
+    }
+  }
+
+  // Label inside dropdown
+  &__dropdown-label {
+    padding: 0.5rem 0.375rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+  }
+
+  // Item
+  &__item {
+    position: relative;
+    display: flex;
+    width: 100%;
+    cursor: default;
+    user-select: none;
+    align-items: center;
+    border-radius: 0.125rem;
+    padding: 0.375rem 0.5rem 0.375rem 2rem;
+    font-size: 0.875rem;
+    outline: none;
+
+    &:focus {
+      background-color: var(--accent);
+      color: var(--accent-foreground);
+    }
+
+    &[data-disabled] {
+      pointer-events: none;
+      opacity: 0.5;
+    }
+
+    // Item indicator (checkmark)
+    &__indicator {
+      position: absolute;
+      right: 0.5rem;
+      display: flex;
+      height: 0.875rem;
+      width: 0.875rem;
+      align-items: center;
+      justify-content: center;
+
+      svg {
+        height: 1rem;
+        width: 1rem;
+      }
+    }
+  }
+
+  // Separator
+  &__separator {
+    margin: 0.25rem -0.25rem;
+    height: 1px;
+    background-color: var(--muted);
+  }
+
+  // Helper text
+  &__helper {
+    font-size: 0.875rem;
+    color: var(--muted-foreground);
+  }
+
+  // Error text
+  &__error {
+    font-size: 0.875rem;
+    color: var(--destructive);
+  }
+
+  // Loading spinner
+  &__spinner {
+    width: 1rem;
+    height: 1rem;
+    border: 2px solid var(--muted-foreground);
+    border-radius: 50%;
+    border-top-color: transparent;
+    animation: selectSpin 1s linear infinite;
   }
 }
 
-// Loading spinner keyframes animation
+// Animations
 @keyframes selectSpin {
   from {
     transform: rotate(0deg);
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+@keyframes selectContentShow {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes selectContentHide {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+}
+
+@keyframes selectContentSlideDownAndFade {
+  from {
+    opacity: 0;
+    transform: translateY(-2px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes selectContentSlideUpAndFade {
+  from {
+    opacity: 0;
+    transform: translateY(2px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

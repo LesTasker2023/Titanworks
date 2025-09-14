@@ -1,0 +1,180 @@
+@import "../../../styles/globals.scss";
+
+.modal {
+  // Base overlay styles
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  background-color: rgb(0 0 0 / 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+
+  // Animation variants
+  &--animation-default {
+    animation: modal-fade-in 0.2s ease-out;
+  }
+
+  &--animation-fast {
+    animation: modal-fade-in 0.1s ease-out;
+  }
+
+  &--animation-slow {
+    animation: modal-fade-in 0.3s ease-out;
+  }
+
+  &--animation-none {
+    // No animation applied
+    animation: none;
+  }
+
+  // Modal content container
+  &__content {
+    position: relative;
+    background-color: var(--background);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-lg);
+    width: 100%;
+    max-height: 80vh;
+    overflow: auto;
+
+    // Size variants
+    &--size-sm {
+      max-width: 24rem;
+    }
+
+    &--size-md {
+      max-width: 28rem;
+    }
+
+    &--size-lg {
+      max-width: 32rem;
+    }
+
+    &--size-xl {
+      max-width: 36rem;
+    }
+
+    &--size-2xl {
+      max-width: 42rem;
+    }
+
+    &--size-3xl {
+      max-width: 48rem;
+    }
+
+    &--size-4xl {
+      max-width: 56rem;
+    }
+
+    &--size-full {
+      max-width: 95vw;
+    }
+
+    // Padding variants
+    &--padding-none {
+      padding: 0;
+    }
+
+    &--padding-sm {
+      padding: 1rem;
+    }
+
+    &--padding-md {
+      padding: 1.5rem;
+    }
+
+    &--padding-lg {
+      padding: 2rem;
+    }
+  }
+
+  // Modal header
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem 1.5rem 0;
+  }
+
+  // Modal title
+  &__title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: -0.025em;
+  }
+
+  // Modal description
+  &__description {
+    font-size: 0.875rem;
+    color: var(--muted-foreground);
+  }
+
+  // Modal content area
+  &__content-area {
+    padding: 1.5rem 1.5rem 0;
+  }
+
+  // Modal footer
+  &__footer {
+    display: flex;
+    flex-direction: column-reverse;
+    padding: 1.5rem 1.5rem 0;
+
+    @media (min-width: 640px) {
+      flex-direction: row;
+      justify-content: flex-end;
+      gap: 0.5rem;
+    }
+  }
+
+  // Modal close button
+  &__close-button {
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    border-radius: var(--radius-sm);
+    opacity: 0.7;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+
+    &:hover {
+      opacity: 1;
+    }
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 0 2px var(--ring);
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--ring);
+      outline-offset: 2px;
+    }
+
+    &:disabled {
+      pointer-events: none;
+    }
+
+    // Close icon
+    svg {
+      height: 1rem;
+      width: 1rem;
+    }
+  }
+}
+
+// Keyframe for fade-in animation
+@keyframes modal-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

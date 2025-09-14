@@ -1,21 +1,44 @@
-// Avatar component SCSS enhancements
-// Use this file for ENHANCEMENTS that can't be achieved with Tailwind classes
-// Avoid duplicating what Tailwind already provides
+/* Avatar Component - BEM Styling with Design Tokens */
 
 .avatar {
-  // Standard focus pattern - all components
+  position: relative;
+  display: flex;
+  flex-shrink: 0;
+  overflow: hidden;
+  border-radius: 50%;
+  transition: var(--transition-fast);
+
+  /* Size variants */
+  &--sm {
+    height: 2rem; /* 32px */
+    width: 2rem;
+  }
+
+  &--default {
+    height: 2.5rem; /* 40px */
+    width: 2.5rem;
+  }
+
+  &--lg {
+    height: 3rem; /* 48px */
+    width: 3rem;
+  }
+
+  &--xl {
+    height: 4rem; /* 64px */
+    width: 4rem;
+  }
+
+  /* Focus styles */
   &:focus-visible {
     outline: 2px solid hsl(var(--ring));
     outline-offset: 2px;
     box-shadow: 0 0 0 2px hsl(var(--ring) / 0.2);
   }
 
-  // Standard transition - all components
-  transition: all 0.15s ease-in-out;
-
-  // Avatar-specific enhancements
+  /* Loading state */
   &--loading {
-    .avatar-image {
+    .avatar__image {
       opacity: 0.5;
 
       &::after {
@@ -23,13 +46,14 @@
         position: absolute;
         inset: 0;
         border: 2px solid transparent;
-        border-top: 2px solid hsl(var(--primary));
+        border-top: 2px solid hsl(var(--surface-interactive));
         border-radius: 50%;
         animation: avatar-spin 1s linear infinite;
       }
     }
   }
 
+  /* Status indicators */
   &--online {
     &::after {
       content: "";
@@ -38,8 +62,8 @@
       right: 0;
       width: 25%;
       height: 25%;
-      background-color: hsl(var(--success, 142 76% 36%));
-      border: 2px solid hsl(var(--background));
+      background-color: hsl(var(--status-success));
+      border: 2px solid hsl(var(--surface-primary));
       border-radius: 50%;
     }
   }
@@ -52,27 +76,61 @@
       right: 0;
       width: 25%;
       height: 25%;
-      background-color: hsl(var(--muted-foreground));
-      border: 2px solid hsl(var(--background));
+      background-color: hsl(var(--content-secondary));
+      border: 2px solid hsl(var(--surface-primary));
       border-radius: 50%;
-    }
-  }
-
-  &--error {
-    border-color: hsl(var(--destructive));
-
-    &:focus-visible {
-      outline-color: hsl(var(--destructive));
-      box-shadow: 0 0 0 2px hsl(var(--destructive) / 0.2);
     }
   }
 }
 
+.avatar__image {
+  aspect-ratio: 1;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.avatar__fallback {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: hsl(var(--surface-secondary));
+  color: hsl(var(--content-secondary));
+  font-weight: 500;
+  font-size: var(--text-sm);
+}
+
+/* Animations */
 @keyframes avatar-spin {
   from {
     transform: rotate(0deg);
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .avatar {
+    transition: none;
+
+    &--loading .avatar__image::after {
+      animation: none;
+    }
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .avatar {
+    outline: 1px solid hsl(var(--border-default));
+
+    &::after {
+      border-width: 3px !important;
+    }
   }
 }

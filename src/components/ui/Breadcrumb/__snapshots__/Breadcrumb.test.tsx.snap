@@ -3,6 +3,7 @@
 exports[`Breadcrumb > Snapshots > matches default snapshot 1`] = `
 <nav
   aria-label="breadcrumb"
+  class="breadcrumb "
   data-testid="breadcrumb"
 >
   Test content
@@ -12,6 +13,7 @@ exports[`Breadcrumb > Snapshots > matches default snapshot 1`] = `
 exports[`Breadcrumb > Snapshots > matches disabled state snapshot 1`] = `
 <nav
   aria-label="breadcrumb"
+  class="breadcrumb "
   data-testid="breadcrumb"
   disabled=""
 >
@@ -22,6 +24,7 @@ exports[`Breadcrumb > Snapshots > matches disabled state snapshot 1`] = `
 exports[`Breadcrumb > Snapshots > matches hover state snapshot 1`] = `
 <nav
   aria-label="breadcrumb"
+  class="breadcrumb "
   data-testid="breadcrumb"
 >
   Test content

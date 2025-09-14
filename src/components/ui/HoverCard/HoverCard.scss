@@ -1,0 +1,130 @@
+@import "../../../styles/globals.scss";
+
+/* HoverCard Component */
+.hoverCard__content {
+  z-index: 50;
+  width: calc(var(--spacing-unit) * 64);
+  border-radius: var(--radius-md);
+  border: var(--border-width) solid var(--color-border);
+  background-color: var(--color-popover);
+  padding: calc(var(--spacing-unit) * 4);
+  color: var(--color-popover-foreground);
+  box-shadow: var(--shadow-md);
+  outline: none;
+  transform-origin: var(--radix-hover-card-content-transform-origin);
+
+  /* Animation states */
+  &[data-state="open"] {
+    animation:
+      fadeIn 150ms ease-out,
+      zoomIn 150ms ease-out;
+  }
+
+  &[data-state="closed"] {
+    animation:
+      fadeOut 150ms ease-in,
+      zoomOut 150ms ease-in;
+  }
+
+  /* Direction-specific animations */
+  &[data-side="bottom"] {
+    animation:
+      fadeIn 150ms ease-out,
+      zoomIn 150ms ease-out,
+      slideInFromTop 150ms ease-out;
+  }
+
+  &[data-side="left"] {
+    animation:
+      fadeIn 150ms ease-out,
+      zoomIn 150ms ease-out,
+      slideInFromRight 150ms ease-out;
+  }
+
+  &[data-side="right"] {
+    animation:
+      fadeIn 150ms ease-out,
+      zoomIn 150ms ease-out,
+      slideInFromLeft 150ms ease-out;
+  }
+
+  &[data-side="top"] {
+    animation:
+      fadeIn 150ms ease-out,
+      zoomIn 150ms ease-out,
+      slideInFromBottom 150ms ease-out;
+  }
+}
+
+/* Animation keyframes */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(0.95);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes zoomOut {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(0.95);
+  }
+}
+
+@keyframes slideInFromTop {
+  from {
+    transform: translateY(-8px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInFromBottom {
+  from {
+    transform: translateY(8px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInFromLeft {
+  from {
+    transform: translateX(-8px);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromRight {
+  from {
+    transform: translateX(8px);
+  }
+  to {
+    transform: translateX(0);
+  }
+}

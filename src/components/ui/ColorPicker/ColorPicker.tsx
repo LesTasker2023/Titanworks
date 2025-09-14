@@ -3,6 +3,7 @@
 import { Palette } from 'lucide-react';
 import { useCallback, useEffect, useState } from 'react';
 import { Button } from '../Button';
+import './ColorPicker.scss';
 
 interface ColorPickerProps {
   defaultColor?: string;
@@ -113,59 +114,47 @@ function ColorPicker({
   // Render neutral state until mounted to prevent hydration mismatch
   if (!mounted) {
     return (
-      <Button variant="outline" size="sm" className="flex items-center gap-2" disabled>
-        <div
-          className="w-4 h-4 rounded-full border border-border"
-          style={{ backgroundColor: defaultColor }}
-        />
-        <Palette className="w-4 h-4" />
-        <span className="hidden sm:inline">Brand Color</span>
+      <Button variant="outline" size="sm" className="colorPicker__trigger" disabled>
+        <div className="colorPicker__colorSwatch" style={{ backgroundColor: defaultColor }} />
+        <Palette className="colorPicker__icon" />
+        <span className="colorPicker__label">Brand Color</span>
       </Button>
     );
   }
 
   return (
-    <div className={`relative ${className}`}>
+    <div className={`color-picker ${className}`}>
       <Button
         variant="outline"
         size="sm"
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center gap-2"
+        className="colorPicker__trigger"
         aria-label={ariaLabel}
         disabled={disabled}
       >
-        <div
-          className="w-4 h-4 rounded-full border border-border"
-          style={{ backgroundColor: selectedColor }}
-        />
-        <Palette className="w-4 h-4" />
-        <span className="hidden sm:inline">Brand Color</span>
+        <div className="colorPicker__colorSwatch" style={{ backgroundColor: selectedColor }} />
+        <Palette className="colorPicker__icon" />
+        <span className="colorPicker__label">Brand Color</span>
       </Button>
 
       {isOpen && (
-        <div className="absolute top-full right-0 mt-2 p-4 bg-background border border-border rounded-lg shadow-lg z-50 min-w-[280px]">
-          <div className="space-y-4">
-            <div>
-              <h3 className="text-sm font-medium mb-2">Choose Brand Color</h3>
-              <p className="text-xs text-muted-foreground mb-3">
-                See your brand colors applied instantly across the entire site.
-              </p>
+        <div className="colorPicker__dropdown">
+          <div className="colorPicker__content">
+            <div className="colorPicker__header">
+              <h3>Choose Brand Color</h3>
+              <p>See your brand colors applied instantly across the entire site.</p>
             </div>
 
             {/* Preset Colors */}
             <div>
-              <label className="text-xs font-medium text-muted-foreground mb-2 block">
-                Preset Colors
-              </label>
-              <div className="grid grid-cols-6 gap-2">
+              <label className="colorPicker__section-label">Preset Colors</label>
+              <div className="colorPicker__presetGrid">
                 {PRESET_COLORS.map(color => (
                   <button
                     key={color}
                     onClick={() => handleColorSelect(color)}
-                    className={`w-8 h-8 rounded-full border-2 transition-all hover:scale-110 ${
-                      selectedColor === color
-                        ? 'border-foreground ring-2 ring-offset-2 ring-offset-background ring-foreground/20'
-                        : 'border-border hover:border-foreground/50'
+                    className={`colorPicker__presetColor ${
+                      selectedColor === color ? 'colorPicker__presetColor--selected' : ''
                     }`}
                     style={{ backgroundColor: color }}
                     title={color}
@@ -176,15 +165,13 @@ function ColorPicker({
 
             {/* Custom Color */}
             <div>
-              <label className="text-xs font-medium text-muted-foreground mb-2 block">
-                Custom Color
-              </label>
-              <div className="flex gap-2">
+              <label className="colorPicker__section-label">Custom Color</label>
+              <div className="colorPicker__customInputs">
                 <input
                   type="color"
                   value={customColor}
                   onChange={handleCustomColorChange}
-                  className="w-12 h-8 rounded border border-border cursor-pointer"
+                  className="colorPicker__colorInput"
                 />
                 <input
                   type="text"
@@ -196,31 +183,40 @@ function ColorPicker({
                     }
                   }}
                   placeholder="#000000"
-                  className="flex-1 px-2 py-1 text-sm border border-border rounded bg-background"
+                  className="colorPicker__textInput"
                 />
               </div>
             </div>
 
             {/* Actions */}
-            <div className="flex gap-2 pt-2 border-t border-border">
-              <Button size="sm" variant="outline" onClick={resetToDefault} className="flex-1">
+            <div className="colorPicker__actions">
+              <Button
+                size="sm"
+                variant="outline"
+                onClick={resetToDefault}
+                className="colorPicker__action-button"
+              >
                 Reset
               </Button>
-              <Button size="sm" onClick={() => setIsOpen(false)} className="flex-1">
+              <Button
+                size="sm"
+                onClick={() => setIsOpen(false)}
+                className="colorPicker__action-button"
+              >
                 Apply
               </Button>
             </div>
 
-            <p className="text-xs text-muted-foreground">
+            <p className="colorPicker__hint">
               💡 Colors are automatically adjusted for proper contrast across light and dark themes
             </p>
 
             {/* Contrast Preview */}
-            <div className="border border-border rounded p-2">
-              <div className="text-xs font-medium mb-2">Contrast Preview:</div>
-              <div className="grid grid-cols-2 gap-2 text-xs">
+            <div className="colorPicker__preview">
+              <div className="colorPicker__preview-title">Contrast Preview:</div>
+              <div className="colorPicker__preview-grid">
                 <div
-                  className="p-2 rounded text-center"
+                  className="colorPicker__preview-item"
                   style={{
                     backgroundColor: selectedColor,
                     color:
@@ -232,11 +228,10 @@ function ColorPicker({
                   Primary Button
                 </div>
                 <div
-                  className="p-2 rounded text-center border"
+                  className="colorPicker__preview-item colorPicker__preview-item--outline"
                   style={{
                     borderColor: selectedColor,
                     color: selectedColor,
-                    backgroundColor: 'transparent',
                   }}
                 >
                   Outline Button

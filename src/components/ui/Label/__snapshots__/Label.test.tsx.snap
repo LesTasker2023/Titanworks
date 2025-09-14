@@ -2,7 +2,7 @@
 
 exports[`Label > Snapshots > matches default snapshot 1`] = `
 <label
-  class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+  class="label"
   data-testid="label"
 >
   Test content
@@ -11,7 +11,7 @@ exports[`Label > Snapshots > matches default snapshot 1`] = `
 
 exports[`Label > Snapshots > matches disabled state snapshot 1`] = `
 <label
-  class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+  class="label"
   data-testid="label"
   disabled=""
 >

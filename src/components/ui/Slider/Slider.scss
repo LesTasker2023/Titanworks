@@ -1,120 +1,241 @@
-// Enhanced SCSS for Slider component
-// Only add what Tailwind can't do: complex animations, transitions, touch interactions
+@import "../../../styles/globals.scss";
 
 .slider {
-  // Enhanced focus states for accessibility
-  &:focus-within {
-    .slider__thumb {
-      box-shadow:
-        0 0 0 2px var(--ring),
-        0 0 0 4px var(--ring-offset);
-      transition: box-shadow 0.2s ease-in-out;
-    }
+  position: relative;
+  display: flex;
+  width: 100%;
+  touch-action: none;
+  user-select: none;
+  align-items: center;
+
+  // Size variants
+  &--size-sm {
+    height: var(--space-3);
   }
 
-  // Smooth value transitions
-  .slider__range {
-    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  &--size-default {
+    height: var(--space-4);
   }
 
-  // Enhanced thumb hover states
-  .slider__thumb {
-    transition: all 0.15s ease-in-out;
-
-    &:hover:not(:disabled) {
-      transform: scale(1.05);
-      box-shadow:
-        0 4px 8px rgba(0, 0, 0, 0.12),
-        0 2px 4px rgba(0, 0, 0, 0.08);
-    }
-
-    &:active:not(:disabled) {
-      transform: scale(0.95);
-    }
-
-    // Touch-friendly sizing on mobile
-    @media (max-width: 768px) {
-      width: 20px;
-      height: 20px;
-      min-width: 20px;
-      min-height: 20px;
-    }
+  &--size-lg {
+    height: var(--space-5);
   }
 
-  // Vertical orientation enhancements
+  &--size-xl {
+    height: var(--space-6);
+  }
+
+  // Vertical orientation
   &[data-orientation="vertical"] {
-    .slider__track {
-      width: 6px;
-      min-height: 100px;
+    flex-direction: column;
+  }
+
+  // Container for value display
+  &__container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+
+  // Track styling
+  &__track {
+    position: relative;
+    flex-grow: 1;
+    overflow: hidden;
+    border-radius: var(--border-radius-full);
+    background-color: hsl(var(--color-neutral));
+
+    // Track variants
+    &--variant-success {
+      background-color: hsl(var(--color-neutral));
     }
 
-    .slider__thumb {
-      margin-left: -1px;
-      margin-top: -8px;
+    &--variant-warning {
+      background-color: hsl(var(--color-neutral));
+    }
+
+    &--variant-danger {
+      background-color: hsl(var(--color-neutral));
+    }
+
+    // Track sizes
+    &--size-sm {
+      height: var(--space-1);
+    }
+
+    &--size-default {
+      height: var(--space-1-5);
+    }
+
+    &--size-lg {
+      height: var(--space-2);
+    }
+
+    &--size-xl {
+      height: var(--space-2-5);
+    }
+
+    // Track orientation
+    &--orientation-horizontal {
+      width: 100%;
+    }
+
+    &--orientation-vertical {
+      width: var(--space-1-5);
+      height: 100%;
     }
   }
 
-  // Loading state animation
-  &.slider--loading {
-    .slider__track {
-      background: linear-gradient(90deg, var(--muted) 25%, var(--muted-foreground) 50%, var(--muted) 75%);
-      background-size: 200% 100%;
-      animation: loading-shimmer 2s infinite;
+  // Range styling
+  &__range {
+    position: absolute;
+    background-color: hsl(var(--color-primary));
+
+    // Range variants
+    &--variant-success {
+      background-color: hsl(var(--color-success));
+    }
+
+    &--variant-warning {
+      background-color: hsl(var(--color-warning));
+    }
+
+    &--variant-danger {
+      background-color: hsl(var(--color-destructive));
+    }
+
+    // Range orientation
+    &--orientation-horizontal {
+      height: 100%;
+    }
+
+    &--orientation-vertical {
+      width: 100%;
+    }
+  }
+
+  // Thumb styling
+  &__thumb {
+    display: block;
+    border-radius: var(--border-radius-full);
+    border: 1px solid hsl(var(--color-border));
+    background-color: hsl(var(--color-background));
+    box-shadow: var(--shadow);
+    transition:
+      background-color 0.2s,
+      transform 0.2s;
+
+    &:focus-visible {
+      outline: none;
+      box-shadow: 0 0 0 1px hsl(var(--color-ring));
+    }
+
+    &:disabled {
+      pointer-events: none;
+      opacity: 0.5;
+    }
+
+    // Thumb variants
+    &--variant-default {
+      border-color: hsl(var(--color-primary) / 0.5);
+    }
+
+    &--variant-success {
+      border-color: hsl(var(--color-success) / 0.5);
+    }
+
+    &--variant-warning {
+      border-color: hsl(var(--color-warning) / 0.5);
+    }
+
+    &--variant-danger {
+      border-color: hsl(var(--color-destructive) / 0.5);
+    }
+
+    // Thumb sizes
+    &--size-sm {
+      width: var(--space-3);
+      height: var(--space-3);
+    }
+
+    &--size-default {
+      width: var(--space-4);
+      height: var(--space-4);
+    }
+
+    &--size-lg {
+      width: var(--space-5);
+      height: var(--space-5);
+    }
+
+    &--size-xl {
+      width: var(--space-6);
+      height: var(--space-6);
+    }
+  }
+
+  // Loading state
+  &__loading {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+
+    &-track {
+      animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+      border-radius: var(--border-radius-full);
+      background-color: hsl(var(--color-muted));
+      height: var(--space-1-5);
+      width: 100%;
+    }
+
+    &-spinner {
+      animation: spin 1s linear infinite;
+      width: var(--space-3);
+      height: var(--space-3);
+      border: 1px solid hsl(var(--color-border));
+      border-top-color: hsl(var(--color-foreground));
+      border-radius: var(--border-radius-full);
+    }
+  }
+
+  // Value display
+  &__value-display {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+
+    &-value {
+      font-size: var(--font-size-sm);
+      font-weight: var(--font-weight-medium);
+      min-width: var(--space-8);
+
+      .slider__value-display:first-child & {
+        text-align: right;
+      }
+    }
+
+    &-center {
+      display: flex;
+      justify-content: center;
     }
   }
 }
 
-// Smooth value label animations
-.slider__value {
-  transition: all 0.2s ease-in-out;
-
-  &--appearing {
-    opacity: 0;
-    transform: translateY(-4px);
-    animation: slideIn 0.2s ease-out forwards;
-  }
-}
-
-@keyframes loading-shimmer {
-  0% {
-    background-position: -200% 0;
-  }
+@keyframes pulse {
+  0%,
   100% {
-    background-position: 200% 0;
-  }
-}
-
-@keyframes slideIn {
-  to {
     opacity: 1;
-    transform: translateY(0);
+  }
+  50% {
+    opacity: 0.5;
   }
 }
 
-// High contrast mode support
-@media (prefers-contrast: high) {
-  .slider {
-    .slider__track {
-      border: 1px solid currentColor;
-    }
-
-    .slider__range {
-      background: currentColor;
-    }
-
-    .slider__thumb {
-      border: 2px solid currentColor;
-      background: var(--background);
-    }
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
   }
-}
-
-// Reduced motion support
-@media (prefers-reduced-motion: reduce) {
-  .slider {
-    * {
-      transition: none !important;
-      animation: none !important;
-    }
+  to {
+    transform: rotate(360deg);
   }
 }

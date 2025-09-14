@@ -2,7 +2,7 @@
 
 exports[`Form > Snapshots > matches default snapshot 1`] = `
 <form
-  class="w-full bg-background space-y-4"
+  class="form form--variant-default form--size-default"
   data-testid="form"
 >
   Test content

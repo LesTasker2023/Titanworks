@@ -5,6 +5,7 @@ import { Circle } from 'lucide-react';
 import * as React from 'react';
 
 import { cn } from '@/lib/utils';
+import './RadioGroup.scss';
 
 export interface RadioGroupProps
   extends React.ComponentPropsWithoutRef<typeof RadioGroupPrimitive.Root> {
@@ -26,14 +27,15 @@ const RadioGroup = React.forwardRef<
     const groupId = React.useId();
 
     return (
-      <div className="space-y-2">
+      <div className="radioGroup__container">
         {label && (
           <label
             htmlFor={groupId}
             className={cn(
-              'text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70',
-              required && "after:content-['*'] after:ml-0.5 after:text-destructive",
-              error && 'text-destructive'
+              'radioGroup__label',
+              required && 'radioGroup__label--required',
+              error && 'radioGroup__label--error',
+              (disabled || loading) && 'radioGroup__label--disabled'
             )}
           >
             {label}
@@ -41,16 +43,16 @@ const RadioGroup = React.forwardRef<
         )}
         <RadioGroupPrimitive.Root
           id={groupId}
-          className={cn('grid gap-2', className)}
+          className={cn('radioGroup__root', className)}
           disabled={disabled || loading}
           ref={ref}
           {...props}
         >
           {children}
         </RadioGroupPrimitive.Root>
-        {helperText && !error && <p className="text-sm text-muted-foreground">{helperText}</p>}
-        {error && <p className="text-sm text-destructive">{error}</p>}
-        {loading && <p className="text-sm text-muted-foreground">Loading...</p>}
+        {helperText && !error && <p className="radioGroup__helper-text">{helperText}</p>}
+        {error && <p className="radioGroup__error-text">{error}</p>}
+        {loading && <p className="radioGroup__loading-text">Loading...</p>}
       </div>
     );
   }
@@ -63,16 +65,9 @@ const RadioGroupItem = React.forwardRef<
   React.ComponentPropsWithoutRef<typeof RadioGroupPrimitive.Item>
 >(({ className, ...props }, ref) => {
   return (
-    <RadioGroupPrimitive.Item
-      ref={ref}
-      className={cn(
-        'aspect-square h-4 w-4 rounded-full border border-primary text-primary ring-offset-background focus:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50',
-        className
-      )}
-      {...props}
-    >
-      <RadioGroupPrimitive.Indicator className="flex items-center justify-center">
-        <Circle className="h-2.5 w-2.5 fill-current text-current" />
+    <RadioGroupPrimitive.Item ref={ref} className={cn('radioGroup__item', className)} {...props}>
+      <RadioGroupPrimitive.Indicator className="radioGroup__indicator">
+        <Circle />
       </RadioGroupPrimitive.Indicator>
     </RadioGroupPrimitive.Item>
   );

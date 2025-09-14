@@ -2,7 +2,7 @@
 
 exports[`Alert > Snapshots > matches default snapshot 1`] = `
 <div
-  class="relative w-full rounded-lg border px-4 py-3 text-sm [&>svg+div]:translate-y-[-3px] [&>svg]:absolute [&>svg]:left-4 [&>svg]:top-4 [&>svg]:text-foreground [&>svg~*]:pl-7 bg-background text-foreground alert"
+  class="alert alert--default"
   data-testid="alert"
   role="alert"
 >
@@ -12,7 +12,7 @@ exports[`Alert > Snapshots > matches default snapshot 1`] = `
 
 exports[`Alert > Snapshots > matches hover state snapshot 1`] = `
 <div
-  class="relative w-full rounded-lg border px-4 py-3 text-sm [&>svg+div]:translate-y-[-3px] [&>svg]:absolute [&>svg]:left-4 [&>svg]:top-4 [&>svg]:text-foreground [&>svg~*]:pl-7 bg-background text-foreground alert"
+  class="alert alert--default"
   data-testid="alert"
   role="alert"
 >

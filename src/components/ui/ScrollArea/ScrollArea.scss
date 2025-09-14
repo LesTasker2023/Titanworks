@@ -1,0 +1,48 @@
+@import "../../../styles/globals.scss";
+
+.scroll-area {
+  // Root container
+  &__root {
+    position: relative;
+    overflow: hidden;
+  }
+
+  // Viewport
+  &__viewport {
+    height: 100%;
+    width: 100%;
+    border-radius: inherit;
+  }
+
+  // Scrollbar
+  &__scrollbar {
+    display: flex;
+    touch-action: none;
+    user-select: none;
+    transition: color 0.2s ease;
+
+    // Vertical orientation
+    &--vertical {
+      height: 100%;
+      width: 0.625rem;
+      border-left: 1px solid transparent;
+      padding: 1px;
+    }
+
+    // Horizontal orientation
+    &--horizontal {
+      height: 0.625rem;
+      flex-direction: column;
+      border-top: 1px solid transparent;
+      padding: 1px;
+    }
+  }
+
+  // Scrollbar thumb
+  &__thumb {
+    position: relative;
+    flex: 1;
+    border-radius: 9999px;
+    background-color: var(--border);
+  }
+}

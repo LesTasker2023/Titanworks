@@ -2,16 +2,16 @@
 
 exports[`Pagination > Snapshots > matches active state snapshot 1`] = `
 <div
-  class="flex flex-col items-center space-y-3"
+  class="pagination__container"
   data-testid="pagination"
 >
   <nav
     aria-label="Pagination"
-    class="flex items-center justify-center space-x-1 text-sm"
+    class="pagination__nav pagination__nav--size-default"
   >
     <button
       aria-label="Go to previous page"
-      class="inline-flex items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none gap-1 hover:bg-accent hover:text-accent-foreground h-9 px-3 text-sm"
+      class="pagination__nav-button pagination__nav-button--variant-default pagination__nav-button--size-default"
       disabled=""
     >
       <svg
@@ -32,7 +32,7 @@ exports[`Pagination > Snapshots > matches active state snapshot 1`] = `
         />
       </svg>
       <span
-        class="hidden sm:inline"
+        class="nav-text"
       >
         Previous
       </span>
@@ -40,37 +40,37 @@ exports[`Pagination > Snapshots > matches active state snapshot 1`] = `
     <button
       aria-current="page"
       aria-label="Go to page 1"
-      class="inline-flex items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none bg-primary text-primary-foreground hover:bg-primary/90 h-9 w-9 text-sm"
+      class="pagination__item pagination__item--variant-active pagination__item--size-default"
     >
       1
     </button>
     <button
       aria-label="Go to page 2"
-      class="inline-flex items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none hover:bg-accent hover:text-accent-foreground h-9 w-9 text-sm"
+      class="pagination__item pagination__item--variant-default pagination__item--size-default"
     >
       2
     </button>
     <button
       aria-label="Go to page 3"
-      class="inline-flex items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none hover:bg-accent hover:text-accent-foreground h-9 w-9 text-sm"
+      class="pagination__item pagination__item--variant-default pagination__item--size-default"
     >
       3
     </button>
     <button
       aria-label="Go to page 4"
-      class="inline-flex items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none hover:bg-accent hover:text-accent-foreground h-9 w-9 text-sm"
+      class="pagination__item pagination__item--variant-default pagination__item--size-default"
     >
       4
     </button>
     <button
       aria-label="Go to page 5"
-      class="inline-flex items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none hover:bg-accent hover:text-accent-foreground h-9 w-9 text-sm"
+      class="pagination__item pagination__item--variant-default pagination__item--size-default"
     >
       5
     </button>
     <span
       aria-hidden="true"
-      class="inline-flex items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none hover:bg-accent hover:text-accent-foreground h-9 w-9 text-sm cursor-default"
+      class="pagination__item pagination__item--variant-default pagination__item--size-default pagination__item--ellipsis"
     >
       <svg
         aria-hidden="true"
@@ -104,16 +104,16 @@ exports[`Pagination > Snapshots > matches active state snapshot 1`] = `
     </span>
     <button
       aria-label="Go to page 10"
-      class="inline-flex items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none hover:bg-accent hover:text-accent-foreground h-9 w-9 text-sm"
+      class="pagination__item pagination__item--variant-default pagination__item--size-default"
     >
       10
     </button>
     <button
       aria-label="Go to next page"
-      class="inline-flex items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none gap-1 hover:bg-accent hover:text-accent-foreground h-9 px-3 text-sm"
+      class="pagination__nav-button pagination__nav-button--variant-default pagination__nav-button--size-default"
     >
       <span
-        class="hidden sm:inline"
+        class="nav-text"
       >
         Next
       </span>
@@ -137,15 +137,15 @@ exports[`Pagination > Snapshots > matches active state snapshot 1`] = `
     </button>
     <button
       aria-label="Go to last page"
-      class="inline-flex items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none gap-1 hover:bg-accent hover:text-accent-foreground h-9 px-3 text-sm"
+      class="pagination__nav-button pagination__nav-button--variant-default pagination__nav-button--size-default"
     >
       <span
-        class="hidden sm:inline"
+        class="nav-text"
       >
         Last
       </span>
       <span
-        class="sm:hidden"
+        class="nav-text-mobile"
       >
         10
       </span>
@@ -156,16 +156,16 @@ exports[`Pagination > Snapshots > matches active state snapshot 1`] = `
 
 exports[`Pagination > Snapshots > matches default snapshot 1`] = `
 <div
-  class="flex flex-col items-center space-y-3"
+  class="pagination__container"
   data-testid="pagination"
 >
   <nav
     aria-label="Pagination"
-    class="flex items-center justify-center space-x-1 text-sm"
+    class="pagination__nav pagination__nav--size-default"
   >
     <button
       aria-label="Go to previous page"
-      class="inline-flex items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none gap-1 hover:bg-accent hover:text-accent-foreground h-9 px-3 text-sm"
+      class="pagination__nav-button pagination__nav-button--variant-default pagination__nav-button--size-default"
       disabled=""
     >
       <svg
@@ -186,7 +186,7 @@ exports[`Pagination > Snapshots > matches default snapshot 1`] = `
         />
       </svg>
       <span
-        class="hidden sm:inline"
+        class="nav-text"
       >
         Previous
       </span>
@@ -194,37 +194,37 @@ exports[`Pagination > Snapshots > matches default snapshot 1`] = `
     <button
       aria-current="page"
       aria-label="Go to page 1"
-      class="inline-flex items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none bg-primary text-primary-foreground hover:bg-primary/90 h-9 w-9 text-sm"
+      class="pagination__item pagination__item--variant-active pagination__item--size-default"
     >
       1
     </button>
     <button
       aria-label="Go to page 2"
-      class="inline-flex items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none hover:bg-accent hover:text-accent-foreground h-9 w-9 text-sm"
+      class="pagination__item pagination__item--variant-default pagination__item--size-default"
     >
       2
     </button>
     <button
       aria-label="Go to page 3"
-      class="inline-flex items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none hover:bg-accent hover:text-accent-foreground h-9 w-9 text-sm"
+      class="pagination__item pagination__item--variant-default pagination__item--size-default"
     >
       3
     </button>
     <button
       aria-label="Go to page 4"
-      class="inline-flex items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none hover:bg-accent hover:text-accent-foreground h-9 w-9 text-sm"
+      class="pagination__item pagination__item--variant-default pagination__item--size-default"
     >
       4
     </button>
     <button
       aria-label="Go to page 5"
-      class="inline-flex items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none hover:bg-accent hover:text-accent-foreground h-9 w-9 text-sm"
+      class="pagination__item pagination__item--variant-default pagination__item--size-default"
     >
       5
     </button>
     <span
       aria-hidden="true"
-      class="inline-flex items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none hover:bg-accent hover:text-accent-foreground h-9 w-9 text-sm cursor-default"
+      class="pagination__item pagination__item--variant-default pagination__item--size-default pagination__item--ellipsis"
     >
       <svg
         aria-hidden="true"
@@ -258,16 +258,16 @@ exports[`Pagination > Snapshots > matches default snapshot 1`] = `
     </span>
     <button
       aria-label="Go to page 10"
-      class="inline-flex items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none hover:bg-accent hover:text-accent-foreground h-9 w-9 text-sm"
+      class="pagination__item pagination__item--variant-default pagination__item--size-default"
     >
       10
     </button>
     <button
       aria-label="Go to next page"
-      class="inline-flex items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none gap-1 hover:bg-accent hover:text-accent-foreground h-9 px-3 text-sm"
+      class="pagination__nav-button pagination__nav-button--variant-default pagination__nav-button--size-default"
     >
       <span
-        class="hidden sm:inline"
+        class="nav-text"
       >
         Next
       </span>
@@ -291,15 +291,15 @@ exports[`Pagination > Snapshots > matches default snapshot 1`] = `
     </button>
     <button
       aria-label="Go to last page"
-      class="inline-flex items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none gap-1 hover:bg-accent hover:text-accent-foreground h-9 px-3 text-sm"
+      class="pagination__nav-button pagination__nav-button--variant-default pagination__nav-button--size-default"
     >
       <span
-        class="hidden sm:inline"
+        class="nav-text"
       >
         Last
       </span>
       <span
-        class="sm:hidden"
+        class="nav-text-mobile"
       >
         10
       </span>
@@ -310,16 +310,16 @@ exports[`Pagination > Snapshots > matches default snapshot 1`] = `
 
 exports[`Pagination > Snapshots > matches disabled state snapshot 1`] = `
 <div
-  class="flex flex-col items-center space-y-3"
+  class="pagination__container"
   data-testid="pagination"
 >
   <nav
     aria-label="Pagination"
-    class="flex items-center justify-center space-x-1 text-sm"
+    class="pagination__nav pagination__nav--size-default"
   >
     <button
       aria-label="Go to previous page"
-      class="inline-flex items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none gap-1 hover:bg-accent hover:text-accent-foreground h-9 px-3 text-sm"
+      class="pagination__nav-button pagination__nav-button--variant-default pagination__nav-button--size-default"
       disabled=""
     >
       <svg
@@ -340,7 +340,7 @@ exports[`Pagination > Snapshots > matches disabled state snapshot 1`] = `
         />
       </svg>
       <span
-        class="hidden sm:inline"
+        class="nav-text"
       >
         Previous
       </span>
@@ -348,42 +348,42 @@ exports[`Pagination > Snapshots > matches disabled state snapshot 1`] = `
     <button
       aria-current="page"
       aria-label="Go to page 1"
-      class="inline-flex items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none bg-primary text-primary-foreground hover:bg-primary/90 h-9 w-9 text-sm"
+      class="pagination__item pagination__item--variant-active pagination__item--size-default"
       disabled=""
     >
       1
     </button>
     <button
       aria-label="Go to page 2"
-      class="inline-flex items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none hover:bg-accent hover:text-accent-foreground h-9 w-9 text-sm"
+      class="pagination__item pagination__item--variant-default pagination__item--size-default"
       disabled=""
     >
       2
     </button>
     <button
       aria-label="Go to page 3"
-      class="inline-flex items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none hover:bg-accent hover:text-accent-foreground h-9 w-9 text-sm"
+      class="pagination__item pagination__item--variant-default pagination__item--size-default"
       disabled=""
     >
       3
     </button>
     <button
       aria-label="Go to page 4"
-      class="inline-flex items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none hover:bg-accent hover:text-accent-foreground h-9 w-9 text-sm"
+      class="pagination__item pagination__item--variant-default pagination__item--size-default"
       disabled=""
     >
       4
     </button>
     <button
       aria-label="Go to page 5"
-      class="inline-flex items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none hover:bg-accent hover:text-accent-foreground h-9 w-9 text-sm"
+      class="pagination__item pagination__item--variant-default pagination__item--size-default"
       disabled=""
     >
       5
     </button>
     <span
       aria-hidden="true"
-      class="inline-flex items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none hover:bg-accent hover:text-accent-foreground h-9 w-9 text-sm cursor-default"
+      class="pagination__item pagination__item--variant-default pagination__item--size-default pagination__item--ellipsis"
     >
       <svg
         aria-hidden="true"
@@ -417,18 +417,18 @@ exports[`Pagination > Snapshots > matches disabled state snapshot 1`] = `
     </span>
     <button
       aria-label="Go to page 10"
-      class="inline-flex items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none hover:bg-accent hover:text-accent-foreground h-9 w-9 text-sm"
+      class="pagination__item pagination__item--variant-default pagination__item--size-default"
       disabled=""
     >
       10
     </button>
     <button
       aria-label="Go to next page"
-      class="inline-flex items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none gap-1 hover:bg-accent hover:text-accent-foreground h-9 px-3 text-sm"
+      class="pagination__nav-button pagination__nav-button--variant-default pagination__nav-button--size-default"
       disabled=""
     >
       <span
-        class="hidden sm:inline"
+        class="nav-text"
       >
         Next
       </span>
@@ -452,16 +452,16 @@ exports[`Pagination > Snapshots > matches disabled state snapshot 1`] = `
     </button>
     <button
       aria-label="Go to last page"
-      class="inline-flex items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none gap-1 hover:bg-accent hover:text-accent-foreground h-9 px-3 text-sm"
+      class="pagination__nav-button pagination__nav-button--variant-default pagination__nav-button--size-default"
       disabled=""
     >
       <span
-        class="hidden sm:inline"
+        class="nav-text"
       >
         Last
       </span>
       <span
-        class="sm:hidden"
+        class="nav-text-mobile"
       >
         10
       </span>
@@ -472,16 +472,16 @@ exports[`Pagination > Snapshots > matches disabled state snapshot 1`] = `
 
 exports[`Pagination > Snapshots > matches hover state snapshot 1`] = `
 <div
-  class="flex flex-col items-center space-y-3"
+  class="pagination__container"
   data-testid="pagination"
 >
   <nav
     aria-label="Pagination"
-    class="flex items-center justify-center space-x-1 text-sm"
+    class="pagination__nav pagination__nav--size-default"
   >
     <button
       aria-label="Go to previous page"
-      class="inline-flex items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none gap-1 hover:bg-accent hover:text-accent-foreground h-9 px-3 text-sm"
+      class="pagination__nav-button pagination__nav-button--variant-default pagination__nav-button--size-default"
       disabled=""
     >
       <svg
@@ -502,7 +502,7 @@ exports[`Pagination > Snapshots > matches hover state snapshot 1`] = `
         />
       </svg>
       <span
-        class="hidden sm:inline"
+        class="nav-text"
       >
         Previous
       </span>
@@ -510,37 +510,37 @@ exports[`Pagination > Snapshots > matches hover state snapshot 1`] = `
     <button
       aria-current="page"
       aria-label="Go to page 1"
-      class="inline-flex items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none bg-primary text-primary-foreground hover:bg-primary/90 h-9 w-9 text-sm"
+      class="pagination__item pagination__item--variant-active pagination__item--size-default"
     >
       1
     </button>
     <button
       aria-label="Go to page 2"
-      class="inline-flex items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none hover:bg-accent hover:text-accent-foreground h-9 w-9 text-sm"
+      class="pagination__item pagination__item--variant-default pagination__item--size-default"
     >
       2
     </button>
     <button
       aria-label="Go to page 3"
-      class="inline-flex items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none hover:bg-accent hover:text-accent-foreground h-9 w-9 text-sm"
+      class="pagination__item pagination__item--variant-default pagination__item--size-default"
     >
       3
     </button>
     <button
       aria-label="Go to page 4"
-      class="inline-flex items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none hover:bg-accent hover:text-accent-foreground h-9 w-9 text-sm"
+      class="pagination__item pagination__item--variant-default pagination__item--size-default"
     >
       4
     </button>
     <button
       aria-label="Go to page 5"
-      class="inline-flex items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none hover:bg-accent hover:text-accent-foreground h-9 w-9 text-sm"
+      class="pagination__item pagination__item--variant-default pagination__item--size-default"
     >
       5
     </button>
     <span
       aria-hidden="true"
-      class="inline-flex items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none hover:bg-accent hover:text-accent-foreground h-9 w-9 text-sm cursor-default"
+      class="pagination__item pagination__item--variant-default pagination__item--size-default pagination__item--ellipsis"
     >
       <svg
         aria-hidden="true"
@@ -574,16 +574,16 @@ exports[`Pagination > Snapshots > matches hover state snapshot 1`] = `
     </span>
     <button
       aria-label="Go to page 10"
-      class="inline-flex items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none hover:bg-accent hover:text-accent-foreground h-9 w-9 text-sm"
+      class="pagination__item pagination__item--variant-default pagination__item--size-default"
     >
       10
     </button>
     <button
       aria-label="Go to next page"
-      class="inline-flex items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none gap-1 hover:bg-accent hover:text-accent-foreground h-9 px-3 text-sm"
+      class="pagination__nav-button pagination__nav-button--variant-default pagination__nav-button--size-default"
     >
       <span
-        class="hidden sm:inline"
+        class="nav-text"
       >
         Next
       </span>
@@ -607,15 +607,15 @@ exports[`Pagination > Snapshots > matches hover state snapshot 1`] = `
     </button>
     <button
       aria-label="Go to last page"
-      class="inline-flex items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none gap-1 hover:bg-accent hover:text-accent-foreground h-9 px-3 text-sm"
+      class="pagination__nav-button pagination__nav-button--variant-default pagination__nav-button--size-default"
     >
       <span
-        class="hidden sm:inline"
+        class="nav-text"
       >
         Last
       </span>
       <span
-        class="sm:hidden"
+        class="nav-text-mobile"
       >
         10
       </span>
@@ -626,16 +626,16 @@ exports[`Pagination > Snapshots > matches hover state snapshot 1`] = `
 
 exports[`Pagination > Snapshots > matches loading state snapshot 1`] = `
 <div
-  class="flex flex-col items-center space-y-3"
+  class="pagination__container"
   data-testid="pagination"
 >
   <nav
     aria-label="Pagination"
-    class="flex items-center justify-center space-x-1 text-sm"
+    class="pagination__nav pagination__nav--size-default"
   >
     <button
       aria-label="Go to previous page"
-      class="inline-flex items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none gap-1 hover:bg-accent hover:text-accent-foreground h-9 px-3 text-sm"
+      class="pagination__nav-button pagination__nav-button--variant-default pagination__nav-button--size-default"
       disabled=""
     >
       <svg
@@ -656,7 +656,7 @@ exports[`Pagination > Snapshots > matches loading state snapshot 1`] = `
         />
       </svg>
       <span
-        class="hidden sm:inline"
+        class="nav-text"
       >
         Previous
       </span>
@@ -664,44 +664,44 @@ exports[`Pagination > Snapshots > matches loading state snapshot 1`] = `
     <button
       aria-current="page"
       aria-label="Go to page 1"
-      class="inline-flex items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none bg-primary text-primary-foreground hover:bg-primary/90 h-9 w-9 text-sm"
+      class="pagination__item pagination__item--variant-active pagination__item--size-default pagination__item--loading"
       disabled=""
     >
       <div
-        class="h-4 w-4 animate-spin rounded-full border-2 border-current border-t-transparent"
+        class="pagination__spinner"
       />
     </button>
     <button
       aria-label="Go to page 2"
-      class="inline-flex items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none hover:bg-accent hover:text-accent-foreground h-9 w-9 text-sm"
+      class="pagination__item pagination__item--variant-default pagination__item--size-default"
       disabled=""
     >
       2
     </button>
     <button
       aria-label="Go to page 3"
-      class="inline-flex items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none hover:bg-accent hover:text-accent-foreground h-9 w-9 text-sm"
+      class="pagination__item pagination__item--variant-default pagination__item--size-default"
       disabled=""
     >
       3
     </button>
     <button
       aria-label="Go to page 4"
-      class="inline-flex items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none hover:bg-accent hover:text-accent-foreground h-9 w-9 text-sm"
+      class="pagination__item pagination__item--variant-default pagination__item--size-default"
       disabled=""
     >
       4
     </button>
     <button
       aria-label="Go to page 5"
-      class="inline-flex items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none hover:bg-accent hover:text-accent-foreground h-9 w-9 text-sm"
+      class="pagination__item pagination__item--variant-default pagination__item--size-default"
       disabled=""
     >
       5
     </button>
     <span
       aria-hidden="true"
-      class="inline-flex items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none hover:bg-accent hover:text-accent-foreground h-9 w-9 text-sm cursor-default"
+      class="pagination__item pagination__item--variant-default pagination__item--size-default pagination__item--ellipsis"
     >
       <svg
         aria-hidden="true"
@@ -735,18 +735,18 @@ exports[`Pagination > Snapshots > matches loading state snapshot 1`] = `
     </span>
     <button
       aria-label="Go to page 10"
-      class="inline-flex items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none hover:bg-accent hover:text-accent-foreground h-9 w-9 text-sm"
+      class="pagination__item pagination__item--variant-default pagination__item--size-default"
       disabled=""
     >
       10
     </button>
     <button
       aria-label="Go to next page"
-      class="inline-flex items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none gap-1 hover:bg-accent hover:text-accent-foreground h-9 px-3 text-sm"
+      class="pagination__nav-button pagination__nav-button--variant-default pagination__nav-button--size-default"
       disabled=""
     >
       <span
-        class="hidden sm:inline"
+        class="nav-text"
       >
         Next
       </span>
@@ -770,16 +770,16 @@ exports[`Pagination > Snapshots > matches loading state snapshot 1`] = `
     </button>
     <button
       aria-label="Go to last page"
-      class="inline-flex items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none gap-1 hover:bg-accent hover:text-accent-foreground h-9 px-3 text-sm"
+      class="pagination__nav-button pagination__nav-button--variant-default pagination__nav-button--size-default"
       disabled=""
     >
       <span
-        class="hidden sm:inline"
+        class="nav-text"
       >
         Last
       </span>
       <span
-        class="sm:hidden"
+        class="nav-text-mobile"
       >
         10
       </span>

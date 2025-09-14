@@ -1,41 +1,24 @@
 import { cn } from '@/lib/utils';
-import { cva, type VariantProps } from 'class-variance-authority';
 import { forwardRef } from 'react';
+import './Form.scss';
 
-const formVariants = cva(
-  // Base styles for form container
-  'space-y-4 w-full',
-  {
-    variants: {
-      variant: {
-        default: 'bg-background',
-        card: 'bg-card border border-border rounded-lg p-6',
-        inline: 'flex flex-row space-y-0 space-x-4 items-end',
-      },
-      size: {
-        default: 'space-y-4',
-        sm: 'space-y-2',
-        lg: 'space-y-6',
-        compact: 'space-y-1',
-      },
-    },
-    defaultVariants: {
-      variant: 'default',
-      size: 'default',
-    },
-  }
-);
+// Variant types
+export type FormVariant = 'default' | 'card' | 'inline';
+export type FormSize = 'default' | 'sm' | 'lg' | 'compact';
 
-export interface FormProps
-  extends React.FormHTMLAttributes<HTMLFormElement>,
-    VariantProps<typeof formVariants> {}
+export interface FormProps extends React.FormHTMLAttributes<HTMLFormElement> {
+  variant?: FormVariant;
+  size?: FormSize;
+}
 
 const Form = forwardRef<HTMLFormElement, FormProps>(
-  ({ className, variant, size, ...props }, ref) => {
-    return <form className={cn(formVariants({ variant, size, className }))} ref={ref} {...props} />;
+  ({ className, variant = 'default', size = 'default', ...props }, ref) => {
+    const formClassName = cn('form', `form--variant-${variant}`, `form--size-${size}`, className);
+
+    return <form className={formClassName} ref={ref} {...props} />;
   }
 );
 
 Form.displayName = 'Form';
 
-export { Form, formVariants };
+export { Form };

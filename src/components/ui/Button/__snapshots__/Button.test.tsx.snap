@@ -2,7 +2,7 @@
 
 exports[`Button > Snapshots > matches active state snapshot 1`] = `
 <button
-  class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary text-primary-foreground shadow hover:bg-primary/90 h-9 px-4 py-2 button"
+  class="button button--default button--default-size"
   data-testid="button"
 >
   Click me
@@ -11,7 +11,7 @@ exports[`Button > Snapshots > matches active state snapshot 1`] = `
 
 exports[`Button > Snapshots > matches default snapshot 1`] = `
 <button
-  class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary text-primary-foreground shadow hover:bg-primary/90 h-9 px-4 py-2 button"
+  class="button button--default button--default-size"
   data-testid="button"
 >
   Click me
@@ -20,7 +20,7 @@ exports[`Button > Snapshots > matches default snapshot 1`] = `
 
 exports[`Button > Snapshots > matches disabled state snapshot 1`] = `
 <button
-  class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary text-primary-foreground shadow hover:bg-primary/90 h-9 px-4 py-2 button"
+  class="button button--default button--default-size"
   data-testid="button"
   disabled=""
 >
@@ -30,7 +30,7 @@ exports[`Button > Snapshots > matches disabled state snapshot 1`] = `
 
 exports[`Button > Snapshots > matches hover state snapshot 1`] = `
 <button
-  class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary text-primary-foreground shadow hover:bg-primary/90 h-9 px-4 py-2 button"
+  class="button button--default button--default-size"
   data-testid="button"
 >
   Click me
@@ -39,7 +39,7 @@ exports[`Button > Snapshots > matches hover state snapshot 1`] = `
 
 exports[`Button > Snapshots > matches loading state snapshot 1`] = `
 <button
-  class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary text-primary-foreground shadow hover:bg-primary/90 h-9 px-4 py-2 button button--loading"
+  class="button button--default button--default-size button--loading"
   data-testid="button"
   disabled=""
 >

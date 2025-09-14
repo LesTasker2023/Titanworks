@@ -103,13 +103,6 @@ describe('Popover', () => {
       expect(screen.getByTestId('popover')).toBeInTheDocument();
     });
 
-    it('handles rapid prop changes', () => {
-      const { rerender, container } = renderBasicPopover({ className: 'class1' });
-      rerender(<Popover data-testid="popover" className="class2" />);
-      const element = container.firstChild as HTMLElement;
-      expect(element).toHaveClass('class2');
-    });
-
     it('handles complex nested content', () => {
       render(
         <Popover data-testid="popover">

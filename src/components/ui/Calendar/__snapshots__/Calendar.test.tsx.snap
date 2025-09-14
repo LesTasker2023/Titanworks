@@ -2,25 +2,25 @@
 
 exports[`Calendar > Snapshots > matches default snapshot 1`] = `
 <div
-  class="w-fit rdp-root bg-background group/calendar p-3 [--cell-size:2rem] [[data-slot=card-content]_&]:bg-transparent [[data-slot=popover-content]_&]:bg-transparent rtl:**:[.rdp-button\\_next>svg]:rotate-180 rtl:**:[.rdp-button\\_previous>svg]:rotate-180"
+  class="calendar__root rdp-root calendar"
   data-slot="calendar"
   data-testid="calendar"
 >
   <div
-    class="relative flex flex-col gap-4 md:flex-row rdp-months"
+    class="calendar__months rdp-months"
   >
     <nav
       aria-label=""
-      class="absolute inset-x-0 top-0 flex w-full items-center justify-between gap-1 rdp-nav"
+      class="calendar__nav rdp-nav"
     >
       <button
         aria-label="Go to the Previous Month"
-        class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground [color:hsl(var(--surface-interactive))] h-[--cell-size] w-[--cell-size] select-none p-0 aria-disabled:opacity-50 rdp-button_previous"
+        class="button button--ghost button--icon calendar__button-previous rdp-button_previous"
         type="button"
       >
         <svg
           aria-hidden="true"
-          class="lucide lucide-chevron-left size-4 rdp-chevron"
+          class="lucide lucide-chevron-left calendar__chevron rdp-chevron"
           fill="none"
           height="24"
           stroke="currentColor"
@@ -38,12 +38,12 @@ exports[`Calendar > Snapshots > matches default snapshot 1`] = `
       </button>
       <button
         aria-label="Go to the Next Month"
-        class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground [color:hsl(var(--surface-interactive))] h-[--cell-size] w-[--cell-size] select-none p-0 aria-disabled:opacity-50 rdp-button_next"
+        class="button button--ghost button--icon calendar__button-next rdp-button_next"
         type="button"
       >
         <svg
           aria-hidden="true"
-          class="lucide lucide-chevron-right size-4 rdp-chevron"
+          class="lucide lucide-chevron-right calendar__chevron rdp-chevron"
           fill="none"
           height="24"
           stroke="currentColor"
@@ -61,14 +61,14 @@ exports[`Calendar > Snapshots > matches default snapshot 1`] = `
       </button>
     </nav>
     <div
-      class="flex w-full flex-col gap-4 rdp-month"
+      class="calendar__month rdp-month"
     >
       <div
-        class="flex h-[--cell-size] w-full items-center justify-center px-[--cell-size] rdp-month_caption"
+        class="calendar__month-caption rdp-month_caption"
       >
         <span
           aria-live="polite"
-          class="select-none font-medium text-sm rdp-caption_label"
+          class="calendar__caption-label calendar__caption-label--label rdp-caption_label"
           role="status"
         >
           September 2025
@@ -84,53 +84,53 @@ exports[`Calendar > Snapshots > matches default snapshot 1`] = `
           aria-hidden="true"
         >
           <tr
-            class="flex rdp-weekdays"
+            class="calendar__weekdays rdp-weekdays"
           >
             <th
               aria-label="Sunday"
-              class="text-muted-foreground flex-1 select-none rounded-md text-[0.8rem] font-normal rdp-weekday"
+              class="calendar__weekday rdp-weekday"
               scope="col"
             >
               Su
             </th>
             <th
               aria-label="Monday"
-              class="text-muted-foreground flex-1 select-none rounded-md text-[0.8rem] font-normal rdp-weekday"
+              class="calendar__weekday rdp-weekday"
               scope="col"
             >
               Mo
             </th>
             <th
               aria-label="Tuesday"
-              class="text-muted-foreground flex-1 select-none rounded-md text-[0.8rem] font-normal rdp-weekday"
+              class="calendar__weekday rdp-weekday"
               scope="col"
             >
               Tu
             </th>
             <th
               aria-label="Wednesday"
-              class="text-muted-foreground flex-1 select-none rounded-md text-[0.8rem] font-normal rdp-weekday"
+              class="calendar__weekday rdp-weekday"
               scope="col"
             >
               We
             </th>
             <th
               aria-label="Thursday"
-              class="text-muted-foreground flex-1 select-none rounded-md text-[0.8rem] font-normal rdp-weekday"
+              class="calendar__weekday rdp-weekday"
               scope="col"
             >
               Th
             </th>
             <th
               aria-label="Friday"
-              class="text-muted-foreground flex-1 select-none rounded-md text-[0.8rem] font-normal rdp-weekday"
+              class="calendar__weekday rdp-weekday"
               scope="col"
             >
               Fr
             </th>
             <th
               aria-label="Saturday"
-              class="text-muted-foreground flex-1 select-none rounded-md text-[0.8rem] font-normal rdp-weekday"
+              class="calendar__weekday rdp-weekday"
               scope="col"
             >
               Sa
@@ -141,11 +141,11 @@ exports[`Calendar > Snapshots > matches default snapshot 1`] = `
           class="rdp-weeks"
         >
           <tr
-            class="mt-2 flex w-full rdp-week"
+            class="calendar__week rdp-week"
           >
             <td
               aria-label="Sunday, August 31st, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground aria-selected:text-muted-foreground rdp-outside"
+              class="calendar__day rdp-day calendar__outside rdp-outside"
               data-day="2025-08-31"
               data-month="2025-08"
               data-outside="true"
@@ -155,7 +155,7 @@ exports[`Calendar > Snapshots > matches default snapshot 1`] = `
             </td>
             <td
               aria-label="Monday, September 1st, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              class="calendar__day rdp-day"
               data-day="2025-09-01"
               role="gridcell"
             >
@@ -163,7 +163,7 @@ exports[`Calendar > Snapshots > matches default snapshot 1`] = `
             </td>
             <td
               aria-label="Tuesday, September 2nd, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              class="calendar__day rdp-day"
               data-day="2025-09-02"
               role="gridcell"
             >
@@ -171,7 +171,7 @@ exports[`Calendar > Snapshots > matches default snapshot 1`] = `
             </td>
             <td
               aria-label="Wednesday, September 3rd, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              class="calendar__day rdp-day"
               data-day="2025-09-03"
               role="gridcell"
             >
@@ -179,7 +179,7 @@ exports[`Calendar > Snapshots > matches default snapshot 1`] = `
             </td>
             <td
               aria-label="Thursday, September 4th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              class="calendar__day rdp-day"
               data-day="2025-09-04"
               role="gridcell"
             >
@@ -187,7 +187,7 @@ exports[`Calendar > Snapshots > matches default snapshot 1`] = `
             </td>
             <td
               aria-label="Friday, September 5th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              class="calendar__day rdp-day"
               data-day="2025-09-05"
               role="gridcell"
             >
@@ -195,7 +195,7 @@ exports[`Calendar > Snapshots > matches default snapshot 1`] = `
             </td>
             <td
               aria-label="Saturday, September 6th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              class="calendar__day rdp-day"
               data-day="2025-09-06"
               role="gridcell"
             >
@@ -203,11 +203,11 @@ exports[`Calendar > Snapshots > matches default snapshot 1`] = `
             </td>
           </tr>
           <tr
-            class="mt-2 flex w-full rdp-week"
+            class="calendar__week rdp-week"
           >
             <td
               aria-label="Sunday, September 7th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              class="calendar__day rdp-day"
               data-day="2025-09-07"
               role="gridcell"
             >
@@ -215,7 +215,7 @@ exports[`Calendar > Snapshots > matches default snapshot 1`] = `
             </td>
             <td
               aria-label="Monday, September 8th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              class="calendar__day rdp-day"
               data-day="2025-09-08"
               role="gridcell"
             >
@@ -223,7 +223,7 @@ exports[`Calendar > Snapshots > matches default snapshot 1`] = `
             </td>
             <td
               aria-label="Tuesday, September 9th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              class="calendar__day rdp-day"
               data-day="2025-09-09"
               role="gridcell"
             >
@@ -231,7 +231,7 @@ exports[`Calendar > Snapshots > matches default snapshot 1`] = `
             </td>
             <td
               aria-label="Wednesday, September 10th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              class="calendar__day rdp-day"
               data-day="2025-09-10"
               role="gridcell"
             >
@@ -239,24 +239,23 @@ exports[`Calendar > Snapshots > matches default snapshot 1`] = `
             </td>
             <td
               aria-label="Thursday, September 11th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              class="calendar__day rdp-day"
               data-day="2025-09-11"
               role="gridcell"
             >
               11
             </td>
             <td
-              aria-label="Today, Friday, September 12th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day bg-gray-800 text-white border-0 font-normal data-[selected=true]:!bg-brand data-[selected=true]:!text-white data-[selected=true]:!border-brand data-[selected=true]:!border-2 rdp-today"
+              aria-label="Friday, September 12th, 2025"
+              class="calendar__day rdp-day"
               data-day="2025-09-12"
-              data-today="true"
               role="gridcell"
             >
               12
             </td>
             <td
               aria-label="Saturday, September 13th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              class="calendar__day rdp-day"
               data-day="2025-09-13"
               role="gridcell"
             >
@@ -264,19 +263,20 @@ exports[`Calendar > Snapshots > matches default snapshot 1`] = `
             </td>
           </tr>
           <tr
-            class="mt-2 flex w-full rdp-week"
+            class="calendar__week rdp-week"
           >
             <td
-              aria-label="Sunday, September 14th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              aria-label="Today, Sunday, September 14th, 2025"
+              class="calendar__day rdp-day calendar__today rdp-today"
               data-day="2025-09-14"
+              data-today="true"
               role="gridcell"
             >
               14
             </td>
             <td
               aria-label="Monday, September 15th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              class="calendar__day rdp-day"
               data-day="2025-09-15"
               role="gridcell"
             >
@@ -284,7 +284,7 @@ exports[`Calendar > Snapshots > matches default snapshot 1`] = `
             </td>
             <td
               aria-label="Tuesday, September 16th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              class="calendar__day rdp-day"
               data-day="2025-09-16"
               role="gridcell"
             >
@@ -292,7 +292,7 @@ exports[`Calendar > Snapshots > matches default snapshot 1`] = `
             </td>
             <td
               aria-label="Wednesday, September 17th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              class="calendar__day rdp-day"
               data-day="2025-09-17"
               role="gridcell"
             >
@@ -300,7 +300,7 @@ exports[`Calendar > Snapshots > matches default snapshot 1`] = `
             </td>
             <td
               aria-label="Thursday, September 18th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              class="calendar__day rdp-day"
               data-day="2025-09-18"
               role="gridcell"
             >
@@ -308,7 +308,7 @@ exports[`Calendar > Snapshots > matches default snapshot 1`] = `
             </td>
             <td
               aria-label="Friday, September 19th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              class="calendar__day rdp-day"
               data-day="2025-09-19"
               role="gridcell"
             >
@@ -316,7 +316,7 @@ exports[`Calendar > Snapshots > matches default snapshot 1`] = `
             </td>
             <td
               aria-label="Saturday, September 20th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              class="calendar__day rdp-day"
               data-day="2025-09-20"
               role="gridcell"
             >
@@ -324,11 +324,11 @@ exports[`Calendar > Snapshots > matches default snapshot 1`] = `
             </td>
           </tr>
           <tr
-            class="mt-2 flex w-full rdp-week"
+            class="calendar__week rdp-week"
           >
             <td
               aria-label="Sunday, September 21st, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              class="calendar__day rdp-day"
               data-day="2025-09-21"
               role="gridcell"
             >
@@ -336,7 +336,7 @@ exports[`Calendar > Snapshots > matches default snapshot 1`] = `
             </td>
             <td
               aria-label="Monday, September 22nd, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              class="calendar__day rdp-day"
               data-day="2025-09-22"
               role="gridcell"
             >
@@ -344,7 +344,7 @@ exports[`Calendar > Snapshots > matches default snapshot 1`] = `
             </td>
             <td
               aria-label="Tuesday, September 23rd, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              class="calendar__day rdp-day"
               data-day="2025-09-23"
               role="gridcell"
             >
@@ -352,7 +352,7 @@ exports[`Calendar > Snapshots > matches default snapshot 1`] = `
             </td>
             <td
               aria-label="Wednesday, September 24th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              class="calendar__day rdp-day"
               data-day="2025-09-24"
               role="gridcell"
             >
@@ -360,7 +360,7 @@ exports[`Calendar > Snapshots > matches default snapshot 1`] = `
             </td>
             <td
               aria-label="Thursday, September 25th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              class="calendar__day rdp-day"
               data-day="2025-09-25"
               role="gridcell"
             >
@@ -368,7 +368,7 @@ exports[`Calendar > Snapshots > matches default snapshot 1`] = `
             </td>
             <td
               aria-label="Friday, September 26th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              class="calendar__day rdp-day"
               data-day="2025-09-26"
               role="gridcell"
             >
@@ -376,7 +376,7 @@ exports[`Calendar > Snapshots > matches default snapshot 1`] = `
             </td>
             <td
               aria-label="Saturday, September 27th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              class="calendar__day rdp-day"
               data-day="2025-09-27"
               role="gridcell"
             >
@@ -384,11 +384,11 @@ exports[`Calendar > Snapshots > matches default snapshot 1`] = `
             </td>
           </tr>
           <tr
-            class="mt-2 flex w-full rdp-week"
+            class="calendar__week rdp-week"
           >
             <td
               aria-label="Sunday, September 28th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              class="calendar__day rdp-day"
               data-day="2025-09-28"
               role="gridcell"
             >
@@ -396,7 +396,7 @@ exports[`Calendar > Snapshots > matches default snapshot 1`] = `
             </td>
             <td
               aria-label="Monday, September 29th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              class="calendar__day rdp-day"
               data-day="2025-09-29"
               role="gridcell"
             >
@@ -404,7 +404,7 @@ exports[`Calendar > Snapshots > matches default snapshot 1`] = `
             </td>
             <td
               aria-label="Tuesday, September 30th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              class="calendar__day rdp-day"
               data-day="2025-09-30"
               role="gridcell"
             >
@@ -412,7 +412,7 @@ exports[`Calendar > Snapshots > matches default snapshot 1`] = `
             </td>
             <td
               aria-label="Wednesday, October 1st, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground aria-selected:text-muted-foreground rdp-outside"
+              class="calendar__day rdp-day calendar__outside rdp-outside"
               data-day="2025-10-01"
               data-month="2025-10"
               data-outside="true"
@@ -422,7 +422,7 @@ exports[`Calendar > Snapshots > matches default snapshot 1`] = `
             </td>
             <td
               aria-label="Thursday, October 2nd, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground aria-selected:text-muted-foreground rdp-outside"
+              class="calendar__day rdp-day calendar__outside rdp-outside"
               data-day="2025-10-02"
               data-month="2025-10"
               data-outside="true"
@@ -432,7 +432,7 @@ exports[`Calendar > Snapshots > matches default snapshot 1`] = `
             </td>
             <td
               aria-label="Friday, October 3rd, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground aria-selected:text-muted-foreground rdp-outside"
+              class="calendar__day rdp-day calendar__outside rdp-outside"
               data-day="2025-10-03"
               data-month="2025-10"
               data-outside="true"
@@ -442,7 +442,7 @@ exports[`Calendar > Snapshots > matches default snapshot 1`] = `
             </td>
             <td
               aria-label="Saturday, October 4th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground aria-selected:text-muted-foreground rdp-outside"
+              class="calendar__day rdp-day calendar__outside rdp-outside"
               data-day="2025-10-04"
               data-month="2025-10"
               data-outside="true"
@@ -460,25 +460,25 @@ exports[`Calendar > Snapshots > matches default snapshot 1`] = `
 
 exports[`Calendar > Snapshots > matches disabled state snapshot 1`] = `
 <div
-  class="w-fit rdp-root bg-background group/calendar p-3 [--cell-size:2rem] [[data-slot=card-content]_&]:bg-transparent [[data-slot=popover-content]_&]:bg-transparent rtl:**:[.rdp-button\\_next>svg]:rotate-180 rtl:**:[.rdp-button\\_previous>svg]:rotate-180"
+  class="calendar__root rdp-root calendar"
   data-slot="calendar"
   data-testid="calendar"
 >
   <div
-    class="relative flex flex-col gap-4 md:flex-row rdp-months"
+    class="calendar__months rdp-months"
   >
     <nav
       aria-label=""
-      class="absolute inset-x-0 top-0 flex w-full items-center justify-between gap-1 rdp-nav"
+      class="calendar__nav rdp-nav"
     >
       <button
         aria-label="Go to the Previous Month"
-        class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground [color:hsl(var(--surface-interactive))] h-[--cell-size] w-[--cell-size] select-none p-0 aria-disabled:opacity-50 rdp-button_previous"
+        class="button button--ghost button--icon calendar__button-previous rdp-button_previous"
         type="button"
       >
         <svg
           aria-hidden="true"
-          class="lucide lucide-chevron-left size-4 rdp-chevron"
+          class="lucide lucide-chevron-left calendar__chevron rdp-chevron"
           fill="none"
           height="24"
           stroke="currentColor"
@@ -496,12 +496,12 @@ exports[`Calendar > Snapshots > matches disabled state snapshot 1`] = `
       </button>
       <button
         aria-label="Go to the Next Month"
-        class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground [color:hsl(var(--surface-interactive))] h-[--cell-size] w-[--cell-size] select-none p-0 aria-disabled:opacity-50 rdp-button_next"
+        class="button button--ghost button--icon calendar__button-next rdp-button_next"
         type="button"
       >
         <svg
           aria-hidden="true"
-          class="lucide lucide-chevron-right size-4 rdp-chevron"
+          class="lucide lucide-chevron-right calendar__chevron rdp-chevron"
           fill="none"
           height="24"
           stroke="currentColor"
@@ -519,14 +519,14 @@ exports[`Calendar > Snapshots > matches disabled state snapshot 1`] = `
       </button>
     </nav>
     <div
-      class="flex w-full flex-col gap-4 rdp-month"
+      class="calendar__month rdp-month"
     >
       <div
-        class="flex h-[--cell-size] w-full items-center justify-center px-[--cell-size] rdp-month_caption"
+        class="calendar__month-caption rdp-month_caption"
       >
         <span
           aria-live="polite"
-          class="select-none font-medium text-sm rdp-caption_label"
+          class="calendar__caption-label calendar__caption-label--label rdp-caption_label"
           role="status"
         >
           September 2025
@@ -542,53 +542,53 @@ exports[`Calendar > Snapshots > matches disabled state snapshot 1`] = `
           aria-hidden="true"
         >
           <tr
-            class="flex rdp-weekdays"
+            class="calendar__weekdays rdp-weekdays"
           >
             <th
               aria-label="Sunday"
-              class="text-muted-foreground flex-1 select-none rounded-md text-[0.8rem] font-normal rdp-weekday"
+              class="calendar__weekday rdp-weekday"
               scope="col"
             >
               Su
             </th>
             <th
               aria-label="Monday"
-              class="text-muted-foreground flex-1 select-none rounded-md text-[0.8rem] font-normal rdp-weekday"
+              class="calendar__weekday rdp-weekday"
               scope="col"
             >
               Mo
             </th>
             <th
               aria-label="Tuesday"
-              class="text-muted-foreground flex-1 select-none rounded-md text-[0.8rem] font-normal rdp-weekday"
+              class="calendar__weekday rdp-weekday"
               scope="col"
             >
               Tu
             </th>
             <th
               aria-label="Wednesday"
-              class="text-muted-foreground flex-1 select-none rounded-md text-[0.8rem] font-normal rdp-weekday"
+              class="calendar__weekday rdp-weekday"
               scope="col"
             >
               We
             </th>
             <th
               aria-label="Thursday"
-              class="text-muted-foreground flex-1 select-none rounded-md text-[0.8rem] font-normal rdp-weekday"
+              class="calendar__weekday rdp-weekday"
               scope="col"
             >
               Th
             </th>
             <th
               aria-label="Friday"
-              class="text-muted-foreground flex-1 select-none rounded-md text-[0.8rem] font-normal rdp-weekday"
+              class="calendar__weekday rdp-weekday"
               scope="col"
             >
               Fr
             </th>
             <th
               aria-label="Saturday"
-              class="text-muted-foreground flex-1 select-none rounded-md text-[0.8rem] font-normal rdp-weekday"
+              class="calendar__weekday rdp-weekday"
               scope="col"
             >
               Sa
@@ -599,11 +599,11 @@ exports[`Calendar > Snapshots > matches disabled state snapshot 1`] = `
           class="rdp-weeks"
         >
           <tr
-            class="mt-2 flex w-full rdp-week"
+            class="calendar__week rdp-week"
           >
             <td
               aria-label="Sunday, August 31st, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground opacity-50 rdp-disabled text-muted-foreground aria-selected:text-muted-foreground rdp-outside"
+              class="calendar__day rdp-day calendar__disabled rdp-disabled calendar__outside rdp-outside"
               data-day="2025-08-31"
               data-disabled="true"
               data-month="2025-08"
@@ -614,7 +614,7 @@ exports[`Calendar > Snapshots > matches disabled state snapshot 1`] = `
             </td>
             <td
               aria-label="Monday, September 1st, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground opacity-50 rdp-disabled"
+              class="calendar__day rdp-day calendar__disabled rdp-disabled"
               data-day="2025-09-01"
               data-disabled="true"
               role="gridcell"
@@ -623,7 +623,7 @@ exports[`Calendar > Snapshots > matches disabled state snapshot 1`] = `
             </td>
             <td
               aria-label="Tuesday, September 2nd, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground opacity-50 rdp-disabled"
+              class="calendar__day rdp-day calendar__disabled rdp-disabled"
               data-day="2025-09-02"
               data-disabled="true"
               role="gridcell"
@@ -632,7 +632,7 @@ exports[`Calendar > Snapshots > matches disabled state snapshot 1`] = `
             </td>
             <td
               aria-label="Wednesday, September 3rd, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground opacity-50 rdp-disabled"
+              class="calendar__day rdp-day calendar__disabled rdp-disabled"
               data-day="2025-09-03"
               data-disabled="true"
               role="gridcell"
@@ -641,7 +641,7 @@ exports[`Calendar > Snapshots > matches disabled state snapshot 1`] = `
             </td>
             <td
               aria-label="Thursday, September 4th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground opacity-50 rdp-disabled"
+              class="calendar__day rdp-day calendar__disabled rdp-disabled"
               data-day="2025-09-04"
               data-disabled="true"
               role="gridcell"
@@ -650,7 +650,7 @@ exports[`Calendar > Snapshots > matches disabled state snapshot 1`] = `
             </td>
             <td
               aria-label="Friday, September 5th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground opacity-50 rdp-disabled"
+              class="calendar__day rdp-day calendar__disabled rdp-disabled"
               data-day="2025-09-05"
               data-disabled="true"
               role="gridcell"
@@ -659,7 +659,7 @@ exports[`Calendar > Snapshots > matches disabled state snapshot 1`] = `
             </td>
             <td
               aria-label="Saturday, September 6th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground opacity-50 rdp-disabled"
+              class="calendar__day rdp-day calendar__disabled rdp-disabled"
               data-day="2025-09-06"
               data-disabled="true"
               role="gridcell"
@@ -668,11 +668,11 @@ exports[`Calendar > Snapshots > matches disabled state snapshot 1`] = `
             </td>
           </tr>
           <tr
-            class="mt-2 flex w-full rdp-week"
+            class="calendar__week rdp-week"
           >
             <td
               aria-label="Sunday, September 7th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground opacity-50 rdp-disabled"
+              class="calendar__day rdp-day calendar__disabled rdp-disabled"
               data-day="2025-09-07"
               data-disabled="true"
               role="gridcell"
@@ -681,7 +681,7 @@ exports[`Calendar > Snapshots > matches disabled state snapshot 1`] = `
             </td>
             <td
               aria-label="Monday, September 8th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground opacity-50 rdp-disabled"
+              class="calendar__day rdp-day calendar__disabled rdp-disabled"
               data-day="2025-09-08"
               data-disabled="true"
               role="gridcell"
@@ -690,7 +690,7 @@ exports[`Calendar > Snapshots > matches disabled state snapshot 1`] = `
             </td>
             <td
               aria-label="Tuesday, September 9th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground opacity-50 rdp-disabled"
+              class="calendar__day rdp-day calendar__disabled rdp-disabled"
               data-day="2025-09-09"
               data-disabled="true"
               role="gridcell"
@@ -699,7 +699,7 @@ exports[`Calendar > Snapshots > matches disabled state snapshot 1`] = `
             </td>
             <td
               aria-label="Wednesday, September 10th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground opacity-50 rdp-disabled"
+              class="calendar__day rdp-day calendar__disabled rdp-disabled"
               data-day="2025-09-10"
               data-disabled="true"
               role="gridcell"
@@ -708,7 +708,7 @@ exports[`Calendar > Snapshots > matches disabled state snapshot 1`] = `
             </td>
             <td
               aria-label="Thursday, September 11th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground opacity-50 rdp-disabled"
+              class="calendar__day rdp-day calendar__disabled rdp-disabled"
               data-day="2025-09-11"
               data-disabled="true"
               role="gridcell"
@@ -716,18 +716,17 @@ exports[`Calendar > Snapshots > matches disabled state snapshot 1`] = `
               11
             </td>
             <td
-              aria-label="Today, Friday, September 12th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground opacity-50 rdp-disabled bg-gray-800 text-white border-0 font-normal data-[selected=true]:!bg-brand data-[selected=true]:!text-white data-[selected=true]:!border-brand data-[selected=true]:!border-2 rdp-today"
+              aria-label="Friday, September 12th, 2025"
+              class="calendar__day rdp-day calendar__disabled rdp-disabled"
               data-day="2025-09-12"
               data-disabled="true"
-              data-today="true"
               role="gridcell"
             >
               12
             </td>
             <td
               aria-label="Saturday, September 13th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground opacity-50 rdp-disabled"
+              class="calendar__day rdp-day calendar__disabled rdp-disabled"
               data-day="2025-09-13"
               data-disabled="true"
               role="gridcell"
@@ -736,20 +735,21 @@ exports[`Calendar > Snapshots > matches disabled state snapshot 1`] = `
             </td>
           </tr>
           <tr
-            class="mt-2 flex w-full rdp-week"
+            class="calendar__week rdp-week"
           >
             <td
-              aria-label="Sunday, September 14th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground opacity-50 rdp-disabled"
+              aria-label="Today, Sunday, September 14th, 2025"
+              class="calendar__day rdp-day calendar__disabled rdp-disabled calendar__today rdp-today"
               data-day="2025-09-14"
               data-disabled="true"
+              data-today="true"
               role="gridcell"
             >
               14
             </td>
             <td
               aria-label="Monday, September 15th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground opacity-50 rdp-disabled"
+              class="calendar__day rdp-day calendar__disabled rdp-disabled"
               data-day="2025-09-15"
               data-disabled="true"
               role="gridcell"
@@ -758,7 +758,7 @@ exports[`Calendar > Snapshots > matches disabled state snapshot 1`] = `
             </td>
             <td
               aria-label="Tuesday, September 16th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground opacity-50 rdp-disabled"
+              class="calendar__day rdp-day calendar__disabled rdp-disabled"
               data-day="2025-09-16"
               data-disabled="true"
               role="gridcell"
@@ -767,7 +767,7 @@ exports[`Calendar > Snapshots > matches disabled state snapshot 1`] = `
             </td>
             <td
               aria-label="Wednesday, September 17th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground opacity-50 rdp-disabled"
+              class="calendar__day rdp-day calendar__disabled rdp-disabled"
               data-day="2025-09-17"
               data-disabled="true"
               role="gridcell"
@@ -776,7 +776,7 @@ exports[`Calendar > Snapshots > matches disabled state snapshot 1`] = `
             </td>
             <td
               aria-label="Thursday, September 18th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground opacity-50 rdp-disabled"
+              class="calendar__day rdp-day calendar__disabled rdp-disabled"
               data-day="2025-09-18"
               data-disabled="true"
               role="gridcell"
@@ -785,7 +785,7 @@ exports[`Calendar > Snapshots > matches disabled state snapshot 1`] = `
             </td>
             <td
               aria-label="Friday, September 19th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground opacity-50 rdp-disabled"
+              class="calendar__day rdp-day calendar__disabled rdp-disabled"
               data-day="2025-09-19"
               data-disabled="true"
               role="gridcell"
@@ -794,7 +794,7 @@ exports[`Calendar > Snapshots > matches disabled state snapshot 1`] = `
             </td>
             <td
               aria-label="Saturday, September 20th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground opacity-50 rdp-disabled"
+              class="calendar__day rdp-day calendar__disabled rdp-disabled"
               data-day="2025-09-20"
               data-disabled="true"
               role="gridcell"
@@ -803,11 +803,11 @@ exports[`Calendar > Snapshots > matches disabled state snapshot 1`] = `
             </td>
           </tr>
           <tr
-            class="mt-2 flex w-full rdp-week"
+            class="calendar__week rdp-week"
           >
             <td
               aria-label="Sunday, September 21st, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground opacity-50 rdp-disabled"
+              class="calendar__day rdp-day calendar__disabled rdp-disabled"
               data-day="2025-09-21"
               data-disabled="true"
               role="gridcell"
@@ -816,7 +816,7 @@ exports[`Calendar > Snapshots > matches disabled state snapshot 1`] = `
             </td>
             <td
               aria-label="Monday, September 22nd, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground opacity-50 rdp-disabled"
+              class="calendar__day rdp-day calendar__disabled rdp-disabled"
               data-day="2025-09-22"
               data-disabled="true"
               role="gridcell"
@@ -825,7 +825,7 @@ exports[`Calendar > Snapshots > matches disabled state snapshot 1`] = `
             </td>
             <td
               aria-label="Tuesday, September 23rd, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground opacity-50 rdp-disabled"
+              class="calendar__day rdp-day calendar__disabled rdp-disabled"
               data-day="2025-09-23"
               data-disabled="true"
               role="gridcell"
@@ -834,7 +834,7 @@ exports[`Calendar > Snapshots > matches disabled state snapshot 1`] = `
             </td>
             <td
               aria-label="Wednesday, September 24th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground opacity-50 rdp-disabled"
+              class="calendar__day rdp-day calendar__disabled rdp-disabled"
               data-day="2025-09-24"
               data-disabled="true"
               role="gridcell"
@@ -843,7 +843,7 @@ exports[`Calendar > Snapshots > matches disabled state snapshot 1`] = `
             </td>
             <td
               aria-label="Thursday, September 25th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground opacity-50 rdp-disabled"
+              class="calendar__day rdp-day calendar__disabled rdp-disabled"
               data-day="2025-09-25"
               data-disabled="true"
               role="gridcell"
@@ -852,7 +852,7 @@ exports[`Calendar > Snapshots > matches disabled state snapshot 1`] = `
             </td>
             <td
               aria-label="Friday, September 26th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground opacity-50 rdp-disabled"
+              class="calendar__day rdp-day calendar__disabled rdp-disabled"
               data-day="2025-09-26"
               data-disabled="true"
               role="gridcell"
@@ -861,7 +861,7 @@ exports[`Calendar > Snapshots > matches disabled state snapshot 1`] = `
             </td>
             <td
               aria-label="Saturday, September 27th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground opacity-50 rdp-disabled"
+              class="calendar__day rdp-day calendar__disabled rdp-disabled"
               data-day="2025-09-27"
               data-disabled="true"
               role="gridcell"
@@ -870,11 +870,11 @@ exports[`Calendar > Snapshots > matches disabled state snapshot 1`] = `
             </td>
           </tr>
           <tr
-            class="mt-2 flex w-full rdp-week"
+            class="calendar__week rdp-week"
           >
             <td
               aria-label="Sunday, September 28th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground opacity-50 rdp-disabled"
+              class="calendar__day rdp-day calendar__disabled rdp-disabled"
               data-day="2025-09-28"
               data-disabled="true"
               role="gridcell"
@@ -883,7 +883,7 @@ exports[`Calendar > Snapshots > matches disabled state snapshot 1`] = `
             </td>
             <td
               aria-label="Monday, September 29th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground opacity-50 rdp-disabled"
+              class="calendar__day rdp-day calendar__disabled rdp-disabled"
               data-day="2025-09-29"
               data-disabled="true"
               role="gridcell"
@@ -892,7 +892,7 @@ exports[`Calendar > Snapshots > matches disabled state snapshot 1`] = `
             </td>
             <td
               aria-label="Tuesday, September 30th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground opacity-50 rdp-disabled"
+              class="calendar__day rdp-day calendar__disabled rdp-disabled"
               data-day="2025-09-30"
               data-disabled="true"
               role="gridcell"
@@ -901,7 +901,7 @@ exports[`Calendar > Snapshots > matches disabled state snapshot 1`] = `
             </td>
             <td
               aria-label="Wednesday, October 1st, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground opacity-50 rdp-disabled text-muted-foreground aria-selected:text-muted-foreground rdp-outside"
+              class="calendar__day rdp-day calendar__disabled rdp-disabled calendar__outside rdp-outside"
               data-day="2025-10-01"
               data-disabled="true"
               data-month="2025-10"
@@ -912,7 +912,7 @@ exports[`Calendar > Snapshots > matches disabled state snapshot 1`] = `
             </td>
             <td
               aria-label="Thursday, October 2nd, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground opacity-50 rdp-disabled text-muted-foreground aria-selected:text-muted-foreground rdp-outside"
+              class="calendar__day rdp-day calendar__disabled rdp-disabled calendar__outside rdp-outside"
               data-day="2025-10-02"
               data-disabled="true"
               data-month="2025-10"
@@ -923,7 +923,7 @@ exports[`Calendar > Snapshots > matches disabled state snapshot 1`] = `
             </td>
             <td
               aria-label="Friday, October 3rd, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground opacity-50 rdp-disabled text-muted-foreground aria-selected:text-muted-foreground rdp-outside"
+              class="calendar__day rdp-day calendar__disabled rdp-disabled calendar__outside rdp-outside"
               data-day="2025-10-03"
               data-disabled="true"
               data-month="2025-10"
@@ -934,7 +934,7 @@ exports[`Calendar > Snapshots > matches disabled state snapshot 1`] = `
             </td>
             <td
               aria-label="Saturday, October 4th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground opacity-50 rdp-disabled text-muted-foreground aria-selected:text-muted-foreground rdp-outside"
+              class="calendar__day rdp-day calendar__disabled rdp-disabled calendar__outside rdp-outside"
               data-day="2025-10-04"
               data-disabled="true"
               data-month="2025-10"
@@ -953,25 +953,25 @@ exports[`Calendar > Snapshots > matches disabled state snapshot 1`] = `
 
 exports[`Calendar > Snapshots > matches focused state snapshot 1`] = `
 <div
-  class="w-fit rdp-root bg-background group/calendar p-3 [--cell-size:2rem] [[data-slot=card-content]_&]:bg-transparent [[data-slot=popover-content]_&]:bg-transparent rtl:**:[.rdp-button\\_next>svg]:rotate-180 rtl:**:[.rdp-button\\_previous>svg]:rotate-180"
+  class="calendar__root rdp-root calendar"
   data-slot="calendar"
   data-testid="calendar"
 >
   <div
-    class="relative flex flex-col gap-4 md:flex-row rdp-months"
+    class="calendar__months rdp-months"
   >
     <nav
       aria-label=""
-      class="absolute inset-x-0 top-0 flex w-full items-center justify-between gap-1 rdp-nav"
+      class="calendar__nav rdp-nav"
     >
       <button
         aria-label="Go to the Previous Month"
-        class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground [color:hsl(var(--surface-interactive))] h-[--cell-size] w-[--cell-size] select-none p-0 aria-disabled:opacity-50 rdp-button_previous"
+        class="button button--ghost button--icon calendar__button-previous rdp-button_previous"
         type="button"
       >
         <svg
           aria-hidden="true"
-          class="lucide lucide-chevron-left size-4 rdp-chevron"
+          class="lucide lucide-chevron-left calendar__chevron rdp-chevron"
           fill="none"
           height="24"
           stroke="currentColor"
@@ -989,12 +989,12 @@ exports[`Calendar > Snapshots > matches focused state snapshot 1`] = `
       </button>
       <button
         aria-label="Go to the Next Month"
-        class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground [color:hsl(var(--surface-interactive))] h-[--cell-size] w-[--cell-size] select-none p-0 aria-disabled:opacity-50 rdp-button_next"
+        class="button button--ghost button--icon calendar__button-next rdp-button_next"
         type="button"
       >
         <svg
           aria-hidden="true"
-          class="lucide lucide-chevron-right size-4 rdp-chevron"
+          class="lucide lucide-chevron-right calendar__chevron rdp-chevron"
           fill="none"
           height="24"
           stroke="currentColor"
@@ -1012,14 +1012,14 @@ exports[`Calendar > Snapshots > matches focused state snapshot 1`] = `
       </button>
     </nav>
     <div
-      class="flex w-full flex-col gap-4 rdp-month"
+      class="calendar__month rdp-month"
     >
       <div
-        class="flex h-[--cell-size] w-full items-center justify-center px-[--cell-size] rdp-month_caption"
+        class="calendar__month-caption rdp-month_caption"
       >
         <span
           aria-live="polite"
-          class="select-none font-medium text-sm rdp-caption_label"
+          class="calendar__caption-label calendar__caption-label--label rdp-caption_label"
           role="status"
         >
           September 2025
@@ -1035,53 +1035,53 @@ exports[`Calendar > Snapshots > matches focused state snapshot 1`] = `
           aria-hidden="true"
         >
           <tr
-            class="flex rdp-weekdays"
+            class="calendar__weekdays rdp-weekdays"
           >
             <th
               aria-label="Sunday"
-              class="text-muted-foreground flex-1 select-none rounded-md text-[0.8rem] font-normal rdp-weekday"
+              class="calendar__weekday rdp-weekday"
               scope="col"
             >
               Su
             </th>
             <th
               aria-label="Monday"
-              class="text-muted-foreground flex-1 select-none rounded-md text-[0.8rem] font-normal rdp-weekday"
+              class="calendar__weekday rdp-weekday"
               scope="col"
             >
               Mo
             </th>
             <th
               aria-label="Tuesday"
-              class="text-muted-foreground flex-1 select-none rounded-md text-[0.8rem] font-normal rdp-weekday"
+              class="calendar__weekday rdp-weekday"
               scope="col"
             >
               Tu
             </th>
             <th
               aria-label="Wednesday"
-              class="text-muted-foreground flex-1 select-none rounded-md text-[0.8rem] font-normal rdp-weekday"
+              class="calendar__weekday rdp-weekday"
               scope="col"
             >
               We
             </th>
             <th
               aria-label="Thursday"
-              class="text-muted-foreground flex-1 select-none rounded-md text-[0.8rem] font-normal rdp-weekday"
+              class="calendar__weekday rdp-weekday"
               scope="col"
             >
               Th
             </th>
             <th
               aria-label="Friday"
-              class="text-muted-foreground flex-1 select-none rounded-md text-[0.8rem] font-normal rdp-weekday"
+              class="calendar__weekday rdp-weekday"
               scope="col"
             >
               Fr
             </th>
             <th
               aria-label="Saturday"
-              class="text-muted-foreground flex-1 select-none rounded-md text-[0.8rem] font-normal rdp-weekday"
+              class="calendar__weekday rdp-weekday"
               scope="col"
             >
               Sa
@@ -1092,11 +1092,11 @@ exports[`Calendar > Snapshots > matches focused state snapshot 1`] = `
           class="rdp-weeks"
         >
           <tr
-            class="mt-2 flex w-full rdp-week"
+            class="calendar__week rdp-week"
           >
             <td
               aria-label="Sunday, August 31st, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground aria-selected:text-muted-foreground rdp-outside"
+              class="calendar__day rdp-day calendar__outside rdp-outside"
               data-day="2025-08-31"
               data-month="2025-08"
               data-outside="true"
@@ -1106,7 +1106,7 @@ exports[`Calendar > Snapshots > matches focused state snapshot 1`] = `
             </td>
             <td
               aria-label="Monday, September 1st, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              class="calendar__day rdp-day"
               data-day="2025-09-01"
               role="gridcell"
             >
@@ -1114,7 +1114,7 @@ exports[`Calendar > Snapshots > matches focused state snapshot 1`] = `
             </td>
             <td
               aria-label="Tuesday, September 2nd, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              class="calendar__day rdp-day"
               data-day="2025-09-02"
               role="gridcell"
             >
@@ -1122,7 +1122,7 @@ exports[`Calendar > Snapshots > matches focused state snapshot 1`] = `
             </td>
             <td
               aria-label="Wednesday, September 3rd, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              class="calendar__day rdp-day"
               data-day="2025-09-03"
               role="gridcell"
             >
@@ -1130,7 +1130,7 @@ exports[`Calendar > Snapshots > matches focused state snapshot 1`] = `
             </td>
             <td
               aria-label="Thursday, September 4th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              class="calendar__day rdp-day"
               data-day="2025-09-04"
               role="gridcell"
             >
@@ -1138,7 +1138,7 @@ exports[`Calendar > Snapshots > matches focused state snapshot 1`] = `
             </td>
             <td
               aria-label="Friday, September 5th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              class="calendar__day rdp-day"
               data-day="2025-09-05"
               role="gridcell"
             >
@@ -1146,7 +1146,7 @@ exports[`Calendar > Snapshots > matches focused state snapshot 1`] = `
             </td>
             <td
               aria-label="Saturday, September 6th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              class="calendar__day rdp-day"
               data-day="2025-09-06"
               role="gridcell"
             >
@@ -1154,11 +1154,11 @@ exports[`Calendar > Snapshots > matches focused state snapshot 1`] = `
             </td>
           </tr>
           <tr
-            class="mt-2 flex w-full rdp-week"
+            class="calendar__week rdp-week"
           >
             <td
               aria-label="Sunday, September 7th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              class="calendar__day rdp-day"
               data-day="2025-09-07"
               role="gridcell"
             >
@@ -1166,7 +1166,7 @@ exports[`Calendar > Snapshots > matches focused state snapshot 1`] = `
             </td>
             <td
               aria-label="Monday, September 8th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              class="calendar__day rdp-day"
               data-day="2025-09-08"
               role="gridcell"
             >
@@ -1174,7 +1174,7 @@ exports[`Calendar > Snapshots > matches focused state snapshot 1`] = `
             </td>
             <td
               aria-label="Tuesday, September 9th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              class="calendar__day rdp-day"
               data-day="2025-09-09"
               role="gridcell"
             >
@@ -1182,7 +1182,7 @@ exports[`Calendar > Snapshots > matches focused state snapshot 1`] = `
             </td>
             <td
               aria-label="Wednesday, September 10th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              class="calendar__day rdp-day"
               data-day="2025-09-10"
               role="gridcell"
             >
@@ -1190,24 +1190,23 @@ exports[`Calendar > Snapshots > matches focused state snapshot 1`] = `
             </td>
             <td
               aria-label="Thursday, September 11th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              class="calendar__day rdp-day"
               data-day="2025-09-11"
               role="gridcell"
             >
               11
             </td>
             <td
-              aria-label="Today, Friday, September 12th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day bg-gray-800 text-white border-0 font-normal data-[selected=true]:!bg-brand data-[selected=true]:!text-white data-[selected=true]:!border-brand data-[selected=true]:!border-2 rdp-today"
+              aria-label="Friday, September 12th, 2025"
+              class="calendar__day rdp-day"
               data-day="2025-09-12"
-              data-today="true"
               role="gridcell"
             >
               12
             </td>
             <td
               aria-label="Saturday, September 13th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              class="calendar__day rdp-day"
               data-day="2025-09-13"
               role="gridcell"
             >
@@ -1215,19 +1214,20 @@ exports[`Calendar > Snapshots > matches focused state snapshot 1`] = `
             </td>
           </tr>
           <tr
-            class="mt-2 flex w-full rdp-week"
+            class="calendar__week rdp-week"
           >
             <td
-              aria-label="Sunday, September 14th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              aria-label="Today, Sunday, September 14th, 2025"
+              class="calendar__day rdp-day calendar__today rdp-today"
               data-day="2025-09-14"
+              data-today="true"
               role="gridcell"
             >
               14
             </td>
             <td
               aria-label="Monday, September 15th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              class="calendar__day rdp-day"
               data-day="2025-09-15"
               role="gridcell"
             >
@@ -1235,7 +1235,7 @@ exports[`Calendar > Snapshots > matches focused state snapshot 1`] = `
             </td>
             <td
               aria-label="Tuesday, September 16th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              class="calendar__day rdp-day"
               data-day="2025-09-16"
               role="gridcell"
             >
@@ -1243,7 +1243,7 @@ exports[`Calendar > Snapshots > matches focused state snapshot 1`] = `
             </td>
             <td
               aria-label="Wednesday, September 17th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              class="calendar__day rdp-day"
               data-day="2025-09-17"
               role="gridcell"
             >
@@ -1251,7 +1251,7 @@ exports[`Calendar > Snapshots > matches focused state snapshot 1`] = `
             </td>
             <td
               aria-label="Thursday, September 18th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              class="calendar__day rdp-day"
               data-day="2025-09-18"
               role="gridcell"
             >
@@ -1259,7 +1259,7 @@ exports[`Calendar > Snapshots > matches focused state snapshot 1`] = `
             </td>
             <td
               aria-label="Friday, September 19th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              class="calendar__day rdp-day"
               data-day="2025-09-19"
               role="gridcell"
             >
@@ -1267,7 +1267,7 @@ exports[`Calendar > Snapshots > matches focused state snapshot 1`] = `
             </td>
             <td
               aria-label="Saturday, September 20th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              class="calendar__day rdp-day"
               data-day="2025-09-20"
               role="gridcell"
             >
@@ -1275,11 +1275,11 @@ exports[`Calendar > Snapshots > matches focused state snapshot 1`] = `
             </td>
           </tr>
           <tr
-            class="mt-2 flex w-full rdp-week"
+            class="calendar__week rdp-week"
           >
             <td
               aria-label="Sunday, September 21st, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              class="calendar__day rdp-day"
               data-day="2025-09-21"
               role="gridcell"
             >
@@ -1287,7 +1287,7 @@ exports[`Calendar > Snapshots > matches focused state snapshot 1`] = `
             </td>
             <td
               aria-label="Monday, September 22nd, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              class="calendar__day rdp-day"
               data-day="2025-09-22"
               role="gridcell"
             >
@@ -1295,7 +1295,7 @@ exports[`Calendar > Snapshots > matches focused state snapshot 1`] = `
             </td>
             <td
               aria-label="Tuesday, September 23rd, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              class="calendar__day rdp-day"
               data-day="2025-09-23"
               role="gridcell"
             >
@@ -1303,7 +1303,7 @@ exports[`Calendar > Snapshots > matches focused state snapshot 1`] = `
             </td>
             <td
               aria-label="Wednesday, September 24th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              class="calendar__day rdp-day"
               data-day="2025-09-24"
               role="gridcell"
             >
@@ -1311,7 +1311,7 @@ exports[`Calendar > Snapshots > matches focused state snapshot 1`] = `
             </td>
             <td
               aria-label="Thursday, September 25th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              class="calendar__day rdp-day"
               data-day="2025-09-25"
               role="gridcell"
             >
@@ -1319,7 +1319,7 @@ exports[`Calendar > Snapshots > matches focused state snapshot 1`] = `
             </td>
             <td
               aria-label="Friday, September 26th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              class="calendar__day rdp-day"
               data-day="2025-09-26"
               role="gridcell"
             >
@@ -1327,7 +1327,7 @@ exports[`Calendar > Snapshots > matches focused state snapshot 1`] = `
             </td>
             <td
               aria-label="Saturday, September 27th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              class="calendar__day rdp-day"
               data-day="2025-09-27"
               role="gridcell"
             >
@@ -1335,11 +1335,11 @@ exports[`Calendar > Snapshots > matches focused state snapshot 1`] = `
             </td>
           </tr>
           <tr
-            class="mt-2 flex w-full rdp-week"
+            class="calendar__week rdp-week"
           >
             <td
               aria-label="Sunday, September 28th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              class="calendar__day rdp-day"
               data-day="2025-09-28"
               role="gridcell"
             >
@@ -1347,7 +1347,7 @@ exports[`Calendar > Snapshots > matches focused state snapshot 1`] = `
             </td>
             <td
               aria-label="Monday, September 29th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              class="calendar__day rdp-day"
               data-day="2025-09-29"
               role="gridcell"
             >
@@ -1355,7 +1355,7 @@ exports[`Calendar > Snapshots > matches focused state snapshot 1`] = `
             </td>
             <td
               aria-label="Tuesday, September 30th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              class="calendar__day rdp-day"
               data-day="2025-09-30"
               role="gridcell"
             >
@@ -1363,7 +1363,7 @@ exports[`Calendar > Snapshots > matches focused state snapshot 1`] = `
             </td>
             <td
               aria-label="Wednesday, October 1st, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground aria-selected:text-muted-foreground rdp-outside"
+              class="calendar__day rdp-day calendar__outside rdp-outside"
               data-day="2025-10-01"
               data-month="2025-10"
               data-outside="true"
@@ -1373,7 +1373,7 @@ exports[`Calendar > Snapshots > matches focused state snapshot 1`] = `
             </td>
             <td
               aria-label="Thursday, October 2nd, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground aria-selected:text-muted-foreground rdp-outside"
+              class="calendar__day rdp-day calendar__outside rdp-outside"
               data-day="2025-10-02"
               data-month="2025-10"
               data-outside="true"
@@ -1383,7 +1383,7 @@ exports[`Calendar > Snapshots > matches focused state snapshot 1`] = `
             </td>
             <td
               aria-label="Friday, October 3rd, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground aria-selected:text-muted-foreground rdp-outside"
+              class="calendar__day rdp-day calendar__outside rdp-outside"
               data-day="2025-10-03"
               data-month="2025-10"
               data-outside="true"
@@ -1393,7 +1393,7 @@ exports[`Calendar > Snapshots > matches focused state snapshot 1`] = `
             </td>
             <td
               aria-label="Saturday, October 4th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground aria-selected:text-muted-foreground rdp-outside"
+              class="calendar__day rdp-day calendar__outside rdp-outside"
               data-day="2025-10-04"
               data-month="2025-10"
               data-outside="true"
@@ -1411,25 +1411,25 @@ exports[`Calendar > Snapshots > matches focused state snapshot 1`] = `
 
 exports[`Calendar > Snapshots > matches hover state snapshot 1`] = `
 <div
-  class="w-fit rdp-root bg-background group/calendar p-3 [--cell-size:2rem] [[data-slot=card-content]_&]:bg-transparent [[data-slot=popover-content]_&]:bg-transparent rtl:**:[.rdp-button\\_next>svg]:rotate-180 rtl:**:[.rdp-button\\_previous>svg]:rotate-180"
+  class="calendar__root rdp-root calendar"
   data-slot="calendar"
   data-testid="calendar"
 >
   <div
-    class="relative flex flex-col gap-4 md:flex-row rdp-months"
+    class="calendar__months rdp-months"
   >
     <nav
       aria-label=""
-      class="absolute inset-x-0 top-0 flex w-full items-center justify-between gap-1 rdp-nav"
+      class="calendar__nav rdp-nav"
     >
       <button
         aria-label="Go to the Previous Month"
-        class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground [color:hsl(var(--surface-interactive))] h-[--cell-size] w-[--cell-size] select-none p-0 aria-disabled:opacity-50 rdp-button_previous"
+        class="button button--ghost button--icon calendar__button-previous rdp-button_previous"
         type="button"
       >
         <svg
           aria-hidden="true"
-          class="lucide lucide-chevron-left size-4 rdp-chevron"
+          class="lucide lucide-chevron-left calendar__chevron rdp-chevron"
           fill="none"
           height="24"
           stroke="currentColor"
@@ -1447,12 +1447,12 @@ exports[`Calendar > Snapshots > matches hover state snapshot 1`] = `
       </button>
       <button
         aria-label="Go to the Next Month"
-        class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground [color:hsl(var(--surface-interactive))] h-[--cell-size] w-[--cell-size] select-none p-0 aria-disabled:opacity-50 rdp-button_next"
+        class="button button--ghost button--icon calendar__button-next rdp-button_next"
         type="button"
       >
         <svg
           aria-hidden="true"
-          class="lucide lucide-chevron-right size-4 rdp-chevron"
+          class="lucide lucide-chevron-right calendar__chevron rdp-chevron"
           fill="none"
           height="24"
           stroke="currentColor"
@@ -1470,14 +1470,14 @@ exports[`Calendar > Snapshots > matches hover state snapshot 1`] = `
       </button>
     </nav>
     <div
-      class="flex w-full flex-col gap-4 rdp-month"
+      class="calendar__month rdp-month"
     >
       <div
-        class="flex h-[--cell-size] w-full items-center justify-center px-[--cell-size] rdp-month_caption"
+        class="calendar__month-caption rdp-month_caption"
       >
         <span
           aria-live="polite"
-          class="select-none font-medium text-sm rdp-caption_label"
+          class="calendar__caption-label calendar__caption-label--label rdp-caption_label"
           role="status"
         >
           September 2025
@@ -1493,53 +1493,53 @@ exports[`Calendar > Snapshots > matches hover state snapshot 1`] = `
           aria-hidden="true"
         >
           <tr
-            class="flex rdp-weekdays"
+            class="calendar__weekdays rdp-weekdays"
           >
             <th
               aria-label="Sunday"
-              class="text-muted-foreground flex-1 select-none rounded-md text-[0.8rem] font-normal rdp-weekday"
+              class="calendar__weekday rdp-weekday"
               scope="col"
             >
               Su
             </th>
             <th
               aria-label="Monday"
-              class="text-muted-foreground flex-1 select-none rounded-md text-[0.8rem] font-normal rdp-weekday"
+              class="calendar__weekday rdp-weekday"
               scope="col"
             >
               Mo
             </th>
             <th
               aria-label="Tuesday"
-              class="text-muted-foreground flex-1 select-none rounded-md text-[0.8rem] font-normal rdp-weekday"
+              class="calendar__weekday rdp-weekday"
               scope="col"
             >
               Tu
             </th>
             <th
               aria-label="Wednesday"
-              class="text-muted-foreground flex-1 select-none rounded-md text-[0.8rem] font-normal rdp-weekday"
+              class="calendar__weekday rdp-weekday"
               scope="col"
             >
               We
             </th>
             <th
               aria-label="Thursday"
-              class="text-muted-foreground flex-1 select-none rounded-md text-[0.8rem] font-normal rdp-weekday"
+              class="calendar__weekday rdp-weekday"
               scope="col"
             >
               Th
             </th>
             <th
               aria-label="Friday"
-              class="text-muted-foreground flex-1 select-none rounded-md text-[0.8rem] font-normal rdp-weekday"
+              class="calendar__weekday rdp-weekday"
               scope="col"
             >
               Fr
             </th>
             <th
               aria-label="Saturday"
-              class="text-muted-foreground flex-1 select-none rounded-md text-[0.8rem] font-normal rdp-weekday"
+              class="calendar__weekday rdp-weekday"
               scope="col"
             >
               Sa
@@ -1550,11 +1550,11 @@ exports[`Calendar > Snapshots > matches hover state snapshot 1`] = `
           class="rdp-weeks"
         >
           <tr
-            class="mt-2 flex w-full rdp-week"
+            class="calendar__week rdp-week"
           >
             <td
               aria-label="Sunday, August 31st, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground aria-selected:text-muted-foreground rdp-outside"
+              class="calendar__day rdp-day calendar__outside rdp-outside"
               data-day="2025-08-31"
               data-month="2025-08"
               data-outside="true"
@@ -1564,7 +1564,7 @@ exports[`Calendar > Snapshots > matches hover state snapshot 1`] = `
             </td>
             <td
               aria-label="Monday, September 1st, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              class="calendar__day rdp-day"
               data-day="2025-09-01"
               role="gridcell"
             >
@@ -1572,7 +1572,7 @@ exports[`Calendar > Snapshots > matches hover state snapshot 1`] = `
             </td>
             <td
               aria-label="Tuesday, September 2nd, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              class="calendar__day rdp-day"
               data-day="2025-09-02"
               role="gridcell"
             >
@@ -1580,7 +1580,7 @@ exports[`Calendar > Snapshots > matches hover state snapshot 1`] = `
             </td>
             <td
               aria-label="Wednesday, September 3rd, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              class="calendar__day rdp-day"
               data-day="2025-09-03"
               role="gridcell"
             >
@@ -1588,7 +1588,7 @@ exports[`Calendar > Snapshots > matches hover state snapshot 1`] = `
             </td>
             <td
               aria-label="Thursday, September 4th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              class="calendar__day rdp-day"
               data-day="2025-09-04"
               role="gridcell"
             >
@@ -1596,7 +1596,7 @@ exports[`Calendar > Snapshots > matches hover state snapshot 1`] = `
             </td>
             <td
               aria-label="Friday, September 5th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              class="calendar__day rdp-day"
               data-day="2025-09-05"
               role="gridcell"
             >
@@ -1604,7 +1604,7 @@ exports[`Calendar > Snapshots > matches hover state snapshot 1`] = `
             </td>
             <td
               aria-label="Saturday, September 6th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              class="calendar__day rdp-day"
               data-day="2025-09-06"
               role="gridcell"
             >
@@ -1612,11 +1612,11 @@ exports[`Calendar > Snapshots > matches hover state snapshot 1`] = `
             </td>
           </tr>
           <tr
-            class="mt-2 flex w-full rdp-week"
+            class="calendar__week rdp-week"
           >
             <td
               aria-label="Sunday, September 7th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              class="calendar__day rdp-day"
               data-day="2025-09-07"
               role="gridcell"
             >
@@ -1624,7 +1624,7 @@ exports[`Calendar > Snapshots > matches hover state snapshot 1`] = `
             </td>
             <td
               aria-label="Monday, September 8th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              class="calendar__day rdp-day"
               data-day="2025-09-08"
               role="gridcell"
             >
@@ -1632,7 +1632,7 @@ exports[`Calendar > Snapshots > matches hover state snapshot 1`] = `
             </td>
             <td
               aria-label="Tuesday, September 9th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              class="calendar__day rdp-day"
               data-day="2025-09-09"
               role="gridcell"
             >
@@ -1640,7 +1640,7 @@ exports[`Calendar > Snapshots > matches hover state snapshot 1`] = `
             </td>
             <td
               aria-label="Wednesday, September 10th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              class="calendar__day rdp-day"
               data-day="2025-09-10"
               role="gridcell"
             >
@@ -1648,24 +1648,23 @@ exports[`Calendar > Snapshots > matches hover state snapshot 1`] = `
             </td>
             <td
               aria-label="Thursday, September 11th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              class="calendar__day rdp-day"
               data-day="2025-09-11"
               role="gridcell"
             >
               11
             </td>
             <td
-              aria-label="Today, Friday, September 12th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day bg-gray-800 text-white border-0 font-normal data-[selected=true]:!bg-brand data-[selected=true]:!text-white data-[selected=true]:!border-brand data-[selected=true]:!border-2 rdp-today"
+              aria-label="Friday, September 12th, 2025"
+              class="calendar__day rdp-day"
               data-day="2025-09-12"
-              data-today="true"
               role="gridcell"
             >
               12
             </td>
             <td
               aria-label="Saturday, September 13th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              class="calendar__day rdp-day"
               data-day="2025-09-13"
               role="gridcell"
             >
@@ -1673,19 +1672,20 @@ exports[`Calendar > Snapshots > matches hover state snapshot 1`] = `
             </td>
           </tr>
           <tr
-            class="mt-2 flex w-full rdp-week"
+            class="calendar__week rdp-week"
           >
             <td
-              aria-label="Sunday, September 14th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              aria-label="Today, Sunday, September 14th, 2025"
+              class="calendar__day rdp-day calendar__today rdp-today"
               data-day="2025-09-14"
+              data-today="true"
               role="gridcell"
             >
               14
             </td>
             <td
               aria-label="Monday, September 15th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              class="calendar__day rdp-day"
               data-day="2025-09-15"
               role="gridcell"
             >
@@ -1693,7 +1693,7 @@ exports[`Calendar > Snapshots > matches hover state snapshot 1`] = `
             </td>
             <td
               aria-label="Tuesday, September 16th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              class="calendar__day rdp-day"
               data-day="2025-09-16"
               role="gridcell"
             >
@@ -1701,7 +1701,7 @@ exports[`Calendar > Snapshots > matches hover state snapshot 1`] = `
             </td>
             <td
               aria-label="Wednesday, September 17th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              class="calendar__day rdp-day"
               data-day="2025-09-17"
               role="gridcell"
             >
@@ -1709,7 +1709,7 @@ exports[`Calendar > Snapshots > matches hover state snapshot 1`] = `
             </td>
             <td
               aria-label="Thursday, September 18th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              class="calendar__day rdp-day"
               data-day="2025-09-18"
               role="gridcell"
             >
@@ -1717,7 +1717,7 @@ exports[`Calendar > Snapshots > matches hover state snapshot 1`] = `
             </td>
             <td
               aria-label="Friday, September 19th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              class="calendar__day rdp-day"
               data-day="2025-09-19"
               role="gridcell"
             >
@@ -1725,7 +1725,7 @@ exports[`Calendar > Snapshots > matches hover state snapshot 1`] = `
             </td>
             <td
               aria-label="Saturday, September 20th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              class="calendar__day rdp-day"
               data-day="2025-09-20"
               role="gridcell"
             >
@@ -1733,11 +1733,11 @@ exports[`Calendar > Snapshots > matches hover state snapshot 1`] = `
             </td>
           </tr>
           <tr
-            class="mt-2 flex w-full rdp-week"
+            class="calendar__week rdp-week"
           >
             <td
               aria-label="Sunday, September 21st, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              class="calendar__day rdp-day"
               data-day="2025-09-21"
               role="gridcell"
             >
@@ -1745,7 +1745,7 @@ exports[`Calendar > Snapshots > matches hover state snapshot 1`] = `
             </td>
             <td
               aria-label="Monday, September 22nd, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              class="calendar__day rdp-day"
               data-day="2025-09-22"
               role="gridcell"
             >
@@ -1753,7 +1753,7 @@ exports[`Calendar > Snapshots > matches hover state snapshot 1`] = `
             </td>
             <td
               aria-label="Tuesday, September 23rd, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              class="calendar__day rdp-day"
               data-day="2025-09-23"
               role="gridcell"
             >
@@ -1761,7 +1761,7 @@ exports[`Calendar > Snapshots > matches hover state snapshot 1`] = `
             </td>
             <td
               aria-label="Wednesday, September 24th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              class="calendar__day rdp-day"
               data-day="2025-09-24"
               role="gridcell"
             >
@@ -1769,7 +1769,7 @@ exports[`Calendar > Snapshots > matches hover state snapshot 1`] = `
             </td>
             <td
               aria-label="Thursday, September 25th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              class="calendar__day rdp-day"
               data-day="2025-09-25"
               role="gridcell"
             >
@@ -1777,7 +1777,7 @@ exports[`Calendar > Snapshots > matches hover state snapshot 1`] = `
             </td>
             <td
               aria-label="Friday, September 26th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              class="calendar__day rdp-day"
               data-day="2025-09-26"
               role="gridcell"
             >
@@ -1785,7 +1785,7 @@ exports[`Calendar > Snapshots > matches hover state snapshot 1`] = `
             </td>
             <td
               aria-label="Saturday, September 27th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              class="calendar__day rdp-day"
               data-day="2025-09-27"
               role="gridcell"
             >
@@ -1793,11 +1793,11 @@ exports[`Calendar > Snapshots > matches hover state snapshot 1`] = `
             </td>
           </tr>
           <tr
-            class="mt-2 flex w-full rdp-week"
+            class="calendar__week rdp-week"
           >
             <td
               aria-label="Sunday, September 28th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              class="calendar__day rdp-day"
               data-day="2025-09-28"
               role="gridcell"
             >
@@ -1805,7 +1805,7 @@ exports[`Calendar > Snapshots > matches hover state snapshot 1`] = `
             </td>
             <td
               aria-label="Monday, September 29th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              class="calendar__day rdp-day"
               data-day="2025-09-29"
               role="gridcell"
             >
@@ -1813,7 +1813,7 @@ exports[`Calendar > Snapshots > matches hover state snapshot 1`] = `
             </td>
             <td
               aria-label="Tuesday, September 30th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              class="calendar__day rdp-day"
               data-day="2025-09-30"
               role="gridcell"
             >
@@ -1821,7 +1821,7 @@ exports[`Calendar > Snapshots > matches hover state snapshot 1`] = `
             </td>
             <td
               aria-label="Wednesday, October 1st, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground aria-selected:text-muted-foreground rdp-outside"
+              class="calendar__day rdp-day calendar__outside rdp-outside"
               data-day="2025-10-01"
               data-month="2025-10"
               data-outside="true"
@@ -1831,7 +1831,7 @@ exports[`Calendar > Snapshots > matches hover state snapshot 1`] = `
             </td>
             <td
               aria-label="Thursday, October 2nd, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground aria-selected:text-muted-foreground rdp-outside"
+              class="calendar__day rdp-day calendar__outside rdp-outside"
               data-day="2025-10-02"
               data-month="2025-10"
               data-outside="true"
@@ -1841,7 +1841,7 @@ exports[`Calendar > Snapshots > matches hover state snapshot 1`] = `
             </td>
             <td
               aria-label="Friday, October 3rd, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground aria-selected:text-muted-foreground rdp-outside"
+              class="calendar__day rdp-day calendar__outside rdp-outside"
               data-day="2025-10-03"
               data-month="2025-10"
               data-outside="true"
@@ -1851,7 +1851,7 @@ exports[`Calendar > Snapshots > matches hover state snapshot 1`] = `
             </td>
             <td
               aria-label="Saturday, October 4th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground aria-selected:text-muted-foreground rdp-outside"
+              class="calendar__day rdp-day calendar__outside rdp-outside"
               data-day="2025-10-04"
               data-month="2025-10"
               data-outside="true"
@@ -1869,25 +1869,25 @@ exports[`Calendar > Snapshots > matches hover state snapshot 1`] = `
 
 exports[`Calendar > Snapshots > matches selected state snapshot 1`] = `
 <div
-  class="w-fit rdp-root bg-background group/calendar p-3 [--cell-size:2rem] [[data-slot=card-content]_&]:bg-transparent [[data-slot=popover-content]_&]:bg-transparent rtl:**:[.rdp-button\\_next>svg]:rotate-180 rtl:**:[.rdp-button\\_previous>svg]:rotate-180"
+  class="calendar__root rdp-root calendar"
   data-slot="calendar"
   data-testid="calendar"
 >
   <div
-    class="relative flex flex-col gap-4 md:flex-row rdp-months"
+    class="calendar__months rdp-months"
   >
     <nav
       aria-label=""
-      class="absolute inset-x-0 top-0 flex w-full items-center justify-between gap-1 rdp-nav"
+      class="calendar__nav rdp-nav"
     >
       <button
         aria-label="Go to the Previous Month"
-        class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground [color:hsl(var(--surface-interactive))] h-[--cell-size] w-[--cell-size] select-none p-0 aria-disabled:opacity-50 rdp-button_previous"
+        class="button button--ghost button--icon calendar__button-previous rdp-button_previous"
         type="button"
       >
         <svg
           aria-hidden="true"
-          class="lucide lucide-chevron-left size-4 rdp-chevron"
+          class="lucide lucide-chevron-left calendar__chevron rdp-chevron"
           fill="none"
           height="24"
           stroke="currentColor"
@@ -1905,12 +1905,12 @@ exports[`Calendar > Snapshots > matches selected state snapshot 1`] = `
       </button>
       <button
         aria-label="Go to the Next Month"
-        class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground [color:hsl(var(--surface-interactive))] h-[--cell-size] w-[--cell-size] select-none p-0 aria-disabled:opacity-50 rdp-button_next"
+        class="button button--ghost button--icon calendar__button-next rdp-button_next"
         type="button"
       >
         <svg
           aria-hidden="true"
-          class="lucide lucide-chevron-right size-4 rdp-chevron"
+          class="lucide lucide-chevron-right calendar__chevron rdp-chevron"
           fill="none"
           height="24"
           stroke="currentColor"
@@ -1928,14 +1928,14 @@ exports[`Calendar > Snapshots > matches selected state snapshot 1`] = `
       </button>
     </nav>
     <div
-      class="flex w-full flex-col gap-4 rdp-month"
+      class="calendar__month rdp-month"
     >
       <div
-        class="flex h-[--cell-size] w-full items-center justify-center px-[--cell-size] rdp-month_caption"
+        class="calendar__month-caption rdp-month_caption"
       >
         <span
           aria-live="polite"
-          class="select-none font-medium text-sm rdp-caption_label"
+          class="calendar__caption-label calendar__caption-label--label rdp-caption_label"
           role="status"
         >
           September 2025
@@ -1951,53 +1951,53 @@ exports[`Calendar > Snapshots > matches selected state snapshot 1`] = `
           aria-hidden="true"
         >
           <tr
-            class="flex rdp-weekdays"
+            class="calendar__weekdays rdp-weekdays"
           >
             <th
               aria-label="Sunday"
-              class="text-muted-foreground flex-1 select-none rounded-md text-[0.8rem] font-normal rdp-weekday"
+              class="calendar__weekday rdp-weekday"
               scope="col"
             >
               Su
             </th>
             <th
               aria-label="Monday"
-              class="text-muted-foreground flex-1 select-none rounded-md text-[0.8rem] font-normal rdp-weekday"
+              class="calendar__weekday rdp-weekday"
               scope="col"
             >
               Mo
             </th>
             <th
               aria-label="Tuesday"
-              class="text-muted-foreground flex-1 select-none rounded-md text-[0.8rem] font-normal rdp-weekday"
+              class="calendar__weekday rdp-weekday"
               scope="col"
             >
               Tu
             </th>
             <th
               aria-label="Wednesday"
-              class="text-muted-foreground flex-1 select-none rounded-md text-[0.8rem] font-normal rdp-weekday"
+              class="calendar__weekday rdp-weekday"
               scope="col"
             >
               We
             </th>
             <th
               aria-label="Thursday"
-              class="text-muted-foreground flex-1 select-none rounded-md text-[0.8rem] font-normal rdp-weekday"
+              class="calendar__weekday rdp-weekday"
               scope="col"
             >
               Th
             </th>
             <th
               aria-label="Friday"
-              class="text-muted-foreground flex-1 select-none rounded-md text-[0.8rem] font-normal rdp-weekday"
+              class="calendar__weekday rdp-weekday"
               scope="col"
             >
               Fr
             </th>
             <th
               aria-label="Saturday"
-              class="text-muted-foreground flex-1 select-none rounded-md text-[0.8rem] font-normal rdp-weekday"
+              class="calendar__weekday rdp-weekday"
               scope="col"
             >
               Sa
@@ -2008,11 +2008,11 @@ exports[`Calendar > Snapshots > matches selected state snapshot 1`] = `
           class="rdp-weeks"
         >
           <tr
-            class="mt-2 flex w-full rdp-week"
+            class="calendar__week rdp-week"
           >
             <td
               aria-label="Sunday, August 31st, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground aria-selected:text-muted-foreground rdp-outside"
+              class="calendar__day rdp-day calendar__outside rdp-outside"
               data-day="2025-08-31"
               data-month="2025-08"
               data-outside="true"
@@ -2022,7 +2022,7 @@ exports[`Calendar > Snapshots > matches selected state snapshot 1`] = `
             </td>
             <td
               aria-label="Monday, September 1st, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              class="calendar__day rdp-day"
               data-day="2025-09-01"
               role="gridcell"
             >
@@ -2030,7 +2030,7 @@ exports[`Calendar > Snapshots > matches selected state snapshot 1`] = `
             </td>
             <td
               aria-label="Tuesday, September 2nd, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              class="calendar__day rdp-day"
               data-day="2025-09-02"
               role="gridcell"
             >
@@ -2038,7 +2038,7 @@ exports[`Calendar > Snapshots > matches selected state snapshot 1`] = `
             </td>
             <td
               aria-label="Wednesday, September 3rd, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              class="calendar__day rdp-day"
               data-day="2025-09-03"
               role="gridcell"
             >
@@ -2046,7 +2046,7 @@ exports[`Calendar > Snapshots > matches selected state snapshot 1`] = `
             </td>
             <td
               aria-label="Thursday, September 4th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              class="calendar__day rdp-day"
               data-day="2025-09-04"
               role="gridcell"
             >
@@ -2054,7 +2054,7 @@ exports[`Calendar > Snapshots > matches selected state snapshot 1`] = `
             </td>
             <td
               aria-label="Friday, September 5th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              class="calendar__day rdp-day"
               data-day="2025-09-05"
               role="gridcell"
             >
@@ -2062,7 +2062,7 @@ exports[`Calendar > Snapshots > matches selected state snapshot 1`] = `
             </td>
             <td
               aria-label="Saturday, September 6th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              class="calendar__day rdp-day"
               data-day="2025-09-06"
               role="gridcell"
             >
@@ -2070,11 +2070,11 @@ exports[`Calendar > Snapshots > matches selected state snapshot 1`] = `
             </td>
           </tr>
           <tr
-            class="mt-2 flex w-full rdp-week"
+            class="calendar__week rdp-week"
           >
             <td
               aria-label="Sunday, September 7th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              class="calendar__day rdp-day"
               data-day="2025-09-07"
               role="gridcell"
             >
@@ -2082,7 +2082,7 @@ exports[`Calendar > Snapshots > matches selected state snapshot 1`] = `
             </td>
             <td
               aria-label="Monday, September 8th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              class="calendar__day rdp-day"
               data-day="2025-09-08"
               role="gridcell"
             >
@@ -2090,7 +2090,7 @@ exports[`Calendar > Snapshots > matches selected state snapshot 1`] = `
             </td>
             <td
               aria-label="Tuesday, September 9th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              class="calendar__day rdp-day"
               data-day="2025-09-09"
               role="gridcell"
             >
@@ -2098,7 +2098,7 @@ exports[`Calendar > Snapshots > matches selected state snapshot 1`] = `
             </td>
             <td
               aria-label="Wednesday, September 10th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              class="calendar__day rdp-day"
               data-day="2025-09-10"
               role="gridcell"
             >
@@ -2106,24 +2106,23 @@ exports[`Calendar > Snapshots > matches selected state snapshot 1`] = `
             </td>
             <td
               aria-label="Thursday, September 11th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              class="calendar__day rdp-day"
               data-day="2025-09-11"
               role="gridcell"
             >
               11
             </td>
             <td
-              aria-label="Today, Friday, September 12th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day bg-gray-800 text-white border-0 font-normal data-[selected=true]:!bg-brand data-[selected=true]:!text-white data-[selected=true]:!border-brand data-[selected=true]:!border-2 rdp-today"
+              aria-label="Friday, September 12th, 2025"
+              class="calendar__day rdp-day"
               data-day="2025-09-12"
-              data-today="true"
               role="gridcell"
             >
               12
             </td>
             <td
               aria-label="Saturday, September 13th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              class="calendar__day rdp-day"
               data-day="2025-09-13"
               role="gridcell"
             >
@@ -2131,19 +2130,20 @@ exports[`Calendar > Snapshots > matches selected state snapshot 1`] = `
             </td>
           </tr>
           <tr
-            class="mt-2 flex w-full rdp-week"
+            class="calendar__week rdp-week"
           >
             <td
-              aria-label="Sunday, September 14th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              aria-label="Today, Sunday, September 14th, 2025"
+              class="calendar__day rdp-day calendar__today rdp-today"
               data-day="2025-09-14"
+              data-today="true"
               role="gridcell"
             >
               14
             </td>
             <td
               aria-label="Monday, September 15th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              class="calendar__day rdp-day"
               data-day="2025-09-15"
               role="gridcell"
             >
@@ -2151,7 +2151,7 @@ exports[`Calendar > Snapshots > matches selected state snapshot 1`] = `
             </td>
             <td
               aria-label="Tuesday, September 16th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              class="calendar__day rdp-day"
               data-day="2025-09-16"
               role="gridcell"
             >
@@ -2159,7 +2159,7 @@ exports[`Calendar > Snapshots > matches selected state snapshot 1`] = `
             </td>
             <td
               aria-label="Wednesday, September 17th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              class="calendar__day rdp-day"
               data-day="2025-09-17"
               role="gridcell"
             >
@@ -2167,7 +2167,7 @@ exports[`Calendar > Snapshots > matches selected state snapshot 1`] = `
             </td>
             <td
               aria-label="Thursday, September 18th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              class="calendar__day rdp-day"
               data-day="2025-09-18"
               role="gridcell"
             >
@@ -2175,7 +2175,7 @@ exports[`Calendar > Snapshots > matches selected state snapshot 1`] = `
             </td>
             <td
               aria-label="Friday, September 19th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              class="calendar__day rdp-day"
               data-day="2025-09-19"
               role="gridcell"
             >
@@ -2183,7 +2183,7 @@ exports[`Calendar > Snapshots > matches selected state snapshot 1`] = `
             </td>
             <td
               aria-label="Saturday, September 20th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              class="calendar__day rdp-day"
               data-day="2025-09-20"
               role="gridcell"
             >
@@ -2191,11 +2191,11 @@ exports[`Calendar > Snapshots > matches selected state snapshot 1`] = `
             </td>
           </tr>
           <tr
-            class="mt-2 flex w-full rdp-week"
+            class="calendar__week rdp-week"
           >
             <td
               aria-label="Sunday, September 21st, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              class="calendar__day rdp-day"
               data-day="2025-09-21"
               role="gridcell"
             >
@@ -2203,7 +2203,7 @@ exports[`Calendar > Snapshots > matches selected state snapshot 1`] = `
             </td>
             <td
               aria-label="Monday, September 22nd, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              class="calendar__day rdp-day"
               data-day="2025-09-22"
               role="gridcell"
             >
@@ -2211,7 +2211,7 @@ exports[`Calendar > Snapshots > matches selected state snapshot 1`] = `
             </td>
             <td
               aria-label="Tuesday, September 23rd, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              class="calendar__day rdp-day"
               data-day="2025-09-23"
               role="gridcell"
             >
@@ -2219,7 +2219,7 @@ exports[`Calendar > Snapshots > matches selected state snapshot 1`] = `
             </td>
             <td
               aria-label="Wednesday, September 24th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              class="calendar__day rdp-day"
               data-day="2025-09-24"
               role="gridcell"
             >
@@ -2227,7 +2227,7 @@ exports[`Calendar > Snapshots > matches selected state snapshot 1`] = `
             </td>
             <td
               aria-label="Thursday, September 25th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              class="calendar__day rdp-day"
               data-day="2025-09-25"
               role="gridcell"
             >
@@ -2235,7 +2235,7 @@ exports[`Calendar > Snapshots > matches selected state snapshot 1`] = `
             </td>
             <td
               aria-label="Friday, September 26th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              class="calendar__day rdp-day"
               data-day="2025-09-26"
               role="gridcell"
             >
@@ -2243,7 +2243,7 @@ exports[`Calendar > Snapshots > matches selected state snapshot 1`] = `
             </td>
             <td
               aria-label="Saturday, September 27th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              class="calendar__day rdp-day"
               data-day="2025-09-27"
               role="gridcell"
             >
@@ -2251,11 +2251,11 @@ exports[`Calendar > Snapshots > matches selected state snapshot 1`] = `
             </td>
           </tr>
           <tr
-            class="mt-2 flex w-full rdp-week"
+            class="calendar__week rdp-week"
           >
             <td
               aria-label="Sunday, September 28th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              class="calendar__day rdp-day"
               data-day="2025-09-28"
               role="gridcell"
             >
@@ -2263,7 +2263,7 @@ exports[`Calendar > Snapshots > matches selected state snapshot 1`] = `
             </td>
             <td
               aria-label="Monday, September 29th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              class="calendar__day rdp-day"
               data-day="2025-09-29"
               role="gridcell"
             >
@@ -2271,7 +2271,7 @@ exports[`Calendar > Snapshots > matches selected state snapshot 1`] = `
             </td>
             <td
               aria-label="Tuesday, September 30th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day"
+              class="calendar__day rdp-day"
               data-day="2025-09-30"
               role="gridcell"
             >
@@ -2279,7 +2279,7 @@ exports[`Calendar > Snapshots > matches selected state snapshot 1`] = `
             </td>
             <td
               aria-label="Wednesday, October 1st, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground aria-selected:text-muted-foreground rdp-outside"
+              class="calendar__day rdp-day calendar__outside rdp-outside"
               data-day="2025-10-01"
               data-month="2025-10"
               data-outside="true"
@@ -2289,7 +2289,7 @@ exports[`Calendar > Snapshots > matches selected state snapshot 1`] = `
             </td>
             <td
               aria-label="Thursday, October 2nd, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground aria-selected:text-muted-foreground rdp-outside"
+              class="calendar__day rdp-day calendar__outside rdp-outside"
               data-day="2025-10-02"
               data-month="2025-10"
               data-outside="true"
@@ -2299,7 +2299,7 @@ exports[`Calendar > Snapshots > matches selected state snapshot 1`] = `
             </td>
             <td
               aria-label="Friday, October 3rd, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground aria-selected:text-muted-foreground rdp-outside"
+              class="calendar__day rdp-day calendar__outside rdp-outside"
               data-day="2025-10-03"
               data-month="2025-10"
               data-outside="true"
@@ -2309,7 +2309,7 @@ exports[`Calendar > Snapshots > matches selected state snapshot 1`] = `
             </td>
             <td
               aria-label="Saturday, October 4th, 2025"
-              class="group/day relative aspect-square h-full w-full select-none p-0 text-center [&:first-child[data-selected=true]_button]:rounded-l-md [&:last-child[data-selected=true]_button]:rounded-r-md rdp-day text-muted-foreground aria-selected:text-muted-foreground rdp-outside"
+              class="calendar__day rdp-day calendar__outside rdp-outside"
               data-day="2025-10-04"
               data-month="2025-10"
               data-outside="true"

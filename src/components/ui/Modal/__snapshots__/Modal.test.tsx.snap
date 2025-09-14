@@ -5,18 +5,18 @@ exports[`Modal > Snapshots > matches default snapshot 1`] = `
   aria-describedby="modal-description"
   aria-labelledby="modal-title"
   aria-modal="true"
-  class="fixed inset-0 z-50 bg-black/80 flex items-center justify-center p-4 animate-in fade-in-0 duration-200"
+  class="modal modal--animation-default"
   data-testid="modal"
   role="dialog"
 >
   <div
-    class="relative bg-background border rounded-lg shadow-lg w-full max-h-[80vh] overflow-auto max-w-md p-6"
+    class="modal__content modal__content--size-md modal__content--padding-md"
   >
     <div
-      class="p-6 pt-0"
+      class="modal__content-area"
     >
       <div
-        class="flex items-center justify-between p-6 pb-0"
+        class="modal__header"
       >
         Modal Title
       </div>
@@ -24,7 +24,7 @@ exports[`Modal > Snapshots > matches default snapshot 1`] = `
         Custom content
       </div>
       <div
-        class="flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2 p-6 pt-0"
+        class="modal__footer"
       >
         Modal Footer
       </div>
@@ -38,18 +38,18 @@ exports[`Modal > Snapshots > matches different animation snapshot 1`] = `
   aria-describedby="modal-description"
   aria-labelledby="modal-title"
   aria-modal="true"
-  class="fixed inset-0 z-50 bg-black/80 flex items-center justify-center p-4 animate-in fade-in-0 duration-100"
+  class="modal modal--animation-fast"
   data-testid="modal"
   role="dialog"
 >
   <div
-    class="relative bg-background border rounded-lg shadow-lg w-full max-h-[80vh] overflow-auto max-w-md p-6"
+    class="modal__content modal__content--size-md modal__content--padding-md"
   >
     <div
-      class="p-6 pt-0"
+      class="modal__content-area"
     >
       <div
-        class="flex items-center justify-between p-6 pb-0"
+        class="modal__header"
       >
         Modal Title
       </div>
@@ -57,7 +57,7 @@ exports[`Modal > Snapshots > matches different animation snapshot 1`] = `
         Custom content
       </div>
       <div
-        class="flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2 p-6 pt-0"
+        class="modal__footer"
       >
         Modal Footer
       </div>
@@ -71,18 +71,18 @@ exports[`Modal > Snapshots > matches different padding snapshot 1`] = `
   aria-describedby="modal-description"
   aria-labelledby="modal-title"
   aria-modal="true"
-  class="fixed inset-0 z-50 bg-black/80 flex items-center justify-center p-4 animate-in fade-in-0 duration-200"
+  class="modal modal--animation-default"
   data-testid="modal"
   role="dialog"
 >
   <div
-    class="relative bg-background border rounded-lg shadow-lg w-full max-h-[80vh] overflow-auto max-w-md p-8"
+    class="modal__content modal__content--size-md modal__content--padding-lg"
   >
     <div
-      class="p-6 pt-0"
+      class="modal__content-area"
     >
       <div
-        class="flex items-center justify-between p-6 pb-0"
+        class="modal__header"
       >
         Modal Title
       </div>
@@ -90,7 +90,7 @@ exports[`Modal > Snapshots > matches different padding snapshot 1`] = `
         Custom content
       </div>
       <div
-        class="flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2 p-6 pt-0"
+        class="modal__footer"
       >
         Modal Footer
       </div>
@@ -104,18 +104,18 @@ exports[`Modal > Snapshots > matches different size snapshot 1`] = `
   aria-describedby="modal-description"
   aria-labelledby="modal-title"
   aria-modal="true"
-  class="fixed inset-0 z-50 bg-black/80 flex items-center justify-center p-4 animate-in fade-in-0 duration-200"
+  class="modal modal--animation-default"
   data-testid="modal"
   role="dialog"
 >
   <div
-    class="relative bg-background border rounded-lg shadow-lg w-full max-h-[80vh] overflow-auto max-w-lg p-6"
+    class="modal__content modal__content--size-lg modal__content--padding-md"
   >
     <div
-      class="p-6 pt-0"
+      class="modal__content-area"
     >
       <div
-        class="flex items-center justify-between p-6 pb-0"
+        class="modal__header"
       >
         Modal Title
       </div>
@@ -123,7 +123,7 @@ exports[`Modal > Snapshots > matches different size snapshot 1`] = `
         Custom content
       </div>
       <div
-        class="flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2 p-6 pt-0"
+        class="modal__footer"
       >
         Modal Footer
       </div>
@@ -137,19 +137,19 @@ exports[`Modal > Snapshots > matches disabled state snapshot 1`] = `
   aria-describedby="modal-description"
   aria-labelledby="modal-title"
   aria-modal="true"
-  class="fixed inset-0 z-50 bg-black/80 flex items-center justify-center p-4 animate-in fade-in-0 duration-200"
+  class="modal modal--animation-default"
   data-testid="modal"
   disabled=""
   role="dialog"
 >
   <div
-    class="relative bg-background border rounded-lg shadow-lg w-full max-h-[80vh] overflow-auto max-w-md p-6"
+    class="modal__content modal__content--size-md modal__content--padding-md"
   >
     <div
-      class="p-6 pt-0"
+      class="modal__content-area"
     >
       <div
-        class="flex items-center justify-between p-6 pb-0"
+        class="modal__header"
       >
         Modal Title
       </div>
@@ -157,7 +157,7 @@ exports[`Modal > Snapshots > matches disabled state snapshot 1`] = `
         Custom content
       </div>
       <div
-        class="flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2 p-6 pt-0"
+        class="modal__footer"
       >
         Modal Footer
       </div>

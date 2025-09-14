@@ -6,6 +6,7 @@ import { Legend, ResponsiveContainer, Tooltip } from 'recharts';
 
 import { cn } from '@/lib/utils';
 import { stripTransientProps } from '@/utils/stripTransientProps';
+import './Chart.scss';
 
 interface ChartPayloadItem {
   name?: string;
@@ -61,10 +62,7 @@ const ChartContainer = React.forwardRef<
       <div
         data-chart={chartId}
         ref={ref}
-        className={cn(
-          "flex aspect-video justify-center text-xs [&_.recharts-cartesian-axis-tick_text]:fill-muted-foreground [&_.recharts-cartesian-grid_line[stroke='#ccc']]:stroke-border/50 [&_.recharts-curve.recharts-tooltip-cursor]:stroke-border [&_.recharts-dot[stroke='#fff']]:stroke-transparent [&_.recharts-layer]:outline-none [&_.recharts-polar-grid_[stroke='#ccc']]:stroke-border [&_.recharts-radial-bar-background-sector]:fill-muted [&_.recharts-rectangle.recharts-tooltip-cursor]:fill-muted [&_.recharts-reference-line_[stroke='#ccc']]:stroke-border [&_.recharts-sector[stroke='#fff']]:stroke-transparent [&_.recharts-sector]:outline-none [&_.recharts-surface]:outline-none",
-          className
-        )}
+        className={cn('chart', className)}
         {...stripTransientProps({
           active: undefined,
           hover: undefined,
@@ -158,7 +156,9 @@ const ChartTooltipContent = React.forwardRef<
 
       if (labelFormatter) {
         return (
-          <div className={cn('font-medium', labelClassName)}>{labelFormatter(value, payload)}</div>
+          <div className={cn('chart-tooltip__label', labelClassName)}>
+            {labelFormatter(value, payload)}
+          </div>
         );
       }
 
@@ -166,7 +166,7 @@ const ChartTooltipContent = React.forwardRef<
         return null;
       }
 
-      return <div className={cn('font-medium', labelClassName)}>{value}</div>;
+      return <div className={cn('chart-tooltip__label', labelClassName)}>{value}</div>;
     }, [label, labelFormatter, payload, hideLabel, labelClassName, config, labelKey]);
 
     if (!active || !payload?.length) {
@@ -176,15 +176,9 @@ const ChartTooltipContent = React.forwardRef<
     const nestLabel = payload.length === 1 && indicator !== 'dot';
 
     return (
-      <div
-        ref={ref}
-        className={cn(
-          'grid min-w-[8rem] items-start gap-1.5 rounded-lg border border-border/50 bg-background px-2.5 py-1.5 text-xs shadow-xl',
-          className
-        )}
-      >
+      <div ref={ref} className={cn('chart-tooltip', className)}>
         {!nestLabel ? tooltipLabel : null}
-        <div className="grid gap-1.5">
+        <div className="chart-tooltip__content">
           {(payload as Array<Record<string, unknown>>).map(
             (item: Record<string, unknown>, index: number) => {
               const key = `${nameKey || item.name || item.dataKey || 'value'}`;
@@ -196,18 +190,16 @@ const ChartTooltipContent = React.forwardRef<
                 <div
                   key={String(item.dataKey || index)}
                   className={cn(
-                    'flex w-full flex-wrap items-stretch gap-2 [&>svg]:h-2.5 [&>svg]:w-2.5 [&>svg]:text-muted-foreground',
-                    indicator === 'dot' && 'items-center'
+                    'chart-tooltip__item',
+                    indicator === 'dot' && 'chart-tooltip__item--dot'
                   )}
                 >
                   {item?.value !== undefined && item.name ? (
-                    <div className="grid gap-1.5 flex-1 min-w-0">
-                      <span className="text-muted-foreground">
+                    <div className="chart-tooltip__item-simple">
+                      <span className="chart-tooltip__item-name">
                         {itemConfig?.label || String(item.name)}
                       </span>
-                      <span className="font-mono font-medium tabular-nums text-foreground">
-                        {String(item.value)}
-                      </span>
+                      <span className="chart-tooltip__item-value">{String(item.value)}</span>
                     </div>
                   ) : (
                     <>
@@ -216,16 +208,13 @@ const ChartTooltipContent = React.forwardRef<
                       ) : (
                         !hideIndicator && (
                           <div
-                            className={cn(
-                              'shrink-0 rounded-[2px] border-[--color-border] bg-[--color-bg]',
-                              {
-                                'h-2.5 w-2.5': indicator === 'dot',
-                                'w-1': indicator === 'line',
-                                'w-0 border-[1.5px] border-dashed bg-transparent':
-                                  indicator === 'dashed',
-                                'my-0.5': nestLabel && indicator === 'dashed',
-                              }
-                            )}
+                            className={cn('chart-tooltip__indicator', {
+                              'chart-tooltip__indicator--dot': indicator === 'dot',
+                              'chart-tooltip__indicator--line': indicator === 'line',
+                              'chart-tooltip__indicator--dashed': indicator === 'dashed',
+                              'chart-tooltip__indicator--nested':
+                                nestLabel && indicator === 'dashed',
+                            })}
                             style={
                               {
                                 '--color-bg': indicatorColor,
@@ -237,20 +226,20 @@ const ChartTooltipContent = React.forwardRef<
                       )}
                       <div
                         className={cn(
-                          'flex flex-1 justify-between leading-none',
-                          nestLabel ? 'items-end' : 'items-center'
+                          'chart-tooltip__item-content',
+                          nestLabel
+                            ? 'chart-tooltip__item-content--nested'
+                            : 'chart-tooltip__item-content--normal'
                         )}
                       >
-                        <div className="grid gap-1.5">
+                        <div className="chart-tooltip__item-details">
                           {nestLabel ? tooltipLabel : null}
-                          <span className="text-muted-foreground">
+                          <span className="chart-tooltip__item-name">
                             {itemConfig?.label || String(item.name || '')}
                           </span>
                         </div>
                         {item.value !== undefined && item.value !== null && (
-                          <span className="font-mono font-medium tabular-nums text-foreground">
-                            {String(item.value)}
-                          </span>
+                          <span className="chart-tooltip__item-value">{String(item.value)}</span>
                         )}
                       </div>
                     </>
@@ -287,8 +276,8 @@ const ChartLegendContent = React.forwardRef<
     <div
       ref={ref}
       className={cn(
-        'flex items-center justify-center gap-4',
-        verticalAlign === 'top' ? 'pb-3' : 'pt-3',
+        'chart-legend',
+        verticalAlign === 'top' ? 'chart-legend--top' : 'chart-legend--bottom',
         className
       )}
     >
@@ -297,17 +286,12 @@ const ChartLegendContent = React.forwardRef<
         const itemConfig = getPayloadConfigFromPayload(config, item, key);
 
         return (
-          <div
-            key={String(item.value || Math.random())}
-            className={cn(
-              'flex items-center gap-1.5 [&>svg]:h-3 [&>svg]:w-3 [&>svg]:text-muted-foreground'
-            )}
-          >
+          <div key={String(item.value || Math.random())} className="chart-legend__item">
             {itemConfig?.icon && !hideIcon ? (
               <itemConfig.icon />
             ) : (
               <div
-                className="h-2 w-2 shrink-0 rounded-[2px]"
+                className="chart-legend__indicator"
                 style={{
                   backgroundColor: String(item.color || '#000'),
                 }}

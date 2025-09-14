@@ -3,29 +3,29 @@
 exports[`DataTable > Snapshots > matches checked state snapshot 1`] = `
 <div
   aria-disabled="false"
-  class="datatable w-full relative datatable--default border border-border datatable--size-default text-sm"
+  class="dataTable dataTable--default dataTable--sizeDefault"
   data-error="false"
   data-loading="false"
   data-testid="datatable"
 >
   <div
-    class="datatable__scroll-container overflow-auto"
+    class="dataTable__scrollContainer"
   >
     <table
-      class="w-full caption-bottom text-sm"
+      class="dataTable__table"
       role="table"
     >
       <thead
-        class="[&_tr]:border-b"
+        class="dataTable__thead"
       >
         <tr>
           <th
-            class="h-10 px-2 text-left align-middle font-medium text-muted-foreground"
+            class="dataTable__th"
             role="columnheader"
             tabindex="-1"
           >
             <div
-              class="flex items-center space-x-1"
+              class="dataTable__thContent"
             >
               <span>
                 Name
@@ -33,12 +33,12 @@ exports[`DataTable > Snapshots > matches checked state snapshot 1`] = `
             </div>
           </th>
           <th
-            class="h-10 px-2 text-left align-middle font-medium text-muted-foreground"
+            class="dataTable__th"
             role="columnheader"
             tabindex="-1"
           >
             <div
-              class="flex items-center space-x-1"
+              class="dataTable__thContent"
             >
               <span>
                 Value
@@ -48,37 +48,37 @@ exports[`DataTable > Snapshots > matches checked state snapshot 1`] = `
         </tr>
       </thead>
       <tbody
-        class="[&_tr:last-child]:border-0"
+        class="dataTable__tbody"
       >
         <tr
-          class="datatable__row border-b transition-colors hover:bg-muted/50"
+          class="dataTable__row"
           role="row"
         >
           <td
-            class="p-2 align-middle"
+            class="dataTable__td"
             role="cell"
           >
             Test Item 1
           </td>
           <td
-            class="p-2 align-middle"
+            class="dataTable__td"
             role="cell"
           >
             A
           </td>
         </tr>
         <tr
-          class="datatable__row border-b transition-colors hover:bg-muted/50"
+          class="dataTable__row"
           role="row"
         >
           <td
-            class="p-2 align-middle"
+            class="dataTable__td"
             role="cell"
           >
             Test Item 2
           </td>
           <td
-            class="p-2 align-middle"
+            class="dataTable__td"
             role="cell"
           >
             B
@@ -93,29 +93,29 @@ exports[`DataTable > Snapshots > matches checked state snapshot 1`] = `
 exports[`DataTable > Snapshots > matches default snapshot 1`] = `
 <div
   aria-disabled="false"
-  class="datatable w-full relative datatable--default border border-border datatable--size-default text-sm"
+  class="dataTable dataTable--default dataTable--sizeDefault"
   data-error="false"
   data-loading="false"
   data-testid="datatable"
 >
   <div
-    class="datatable__scroll-container overflow-auto"
+    class="dataTable__scrollContainer"
   >
     <table
-      class="w-full caption-bottom text-sm"
+      class="dataTable__table"
       role="table"
     >
       <thead
-        class="[&_tr]:border-b"
+        class="dataTable__thead"
       >
         <tr>
           <th
-            class="h-10 px-2 text-left align-middle font-medium text-muted-foreground"
+            class="dataTable__th"
             role="columnheader"
             tabindex="-1"
           >
             <div
-              class="flex items-center space-x-1"
+              class="dataTable__thContent"
             >
               <span>
                 Name
@@ -123,12 +123,12 @@ exports[`DataTable > Snapshots > matches default snapshot 1`] = `
             </div>
           </th>
           <th
-            class="h-10 px-2 text-left align-middle font-medium text-muted-foreground"
+            class="dataTable__th"
             role="columnheader"
             tabindex="-1"
           >
             <div
-              class="flex items-center space-x-1"
+              class="dataTable__thContent"
             >
               <span>
                 Value
@@ -138,37 +138,37 @@ exports[`DataTable > Snapshots > matches default snapshot 1`] = `
         </tr>
       </thead>
       <tbody
-        class="[&_tr:last-child]:border-0"
+        class="dataTable__tbody"
       >
         <tr
-          class="datatable__row border-b transition-colors hover:bg-muted/50"
+          class="dataTable__row"
           role="row"
         >
           <td
-            class="p-2 align-middle"
+            class="dataTable__td"
             role="cell"
           >
             Test Item 1
           </td>
           <td
-            class="p-2 align-middle"
+            class="dataTable__td"
             role="cell"
           >
             A
           </td>
         </tr>
         <tr
-          class="datatable__row border-b transition-colors hover:bg-muted/50"
+          class="dataTable__row"
           role="row"
         >
           <td
-            class="p-2 align-middle"
+            class="dataTable__td"
             role="cell"
           >
             Test Item 2
           </td>
           <td
-            class="p-2 align-middle"
+            class="dataTable__td"
             role="cell"
           >
             B
@@ -183,29 +183,29 @@ exports[`DataTable > Snapshots > matches default snapshot 1`] = `
 exports[`DataTable > Snapshots > matches disabled state snapshot 1`] = `
 <div
   aria-disabled="true"
-  class="datatable w-full relative datatable--default border border-border datatable--size-default text-sm disabled:opacity-50 disabled:pointer-events-none"
+  class="dataTable dataTable--default dataTable--sizeDefault dataTable--disabled"
   data-error="false"
   data-loading="false"
   data-testid="datatable"
 >
   <div
-    class="datatable__scroll-container overflow-auto"
+    class="dataTable__scrollContainer"
   >
     <table
-      class="w-full caption-bottom text-sm"
+      class="dataTable__table"
       role="table"
     >
       <thead
-        class="[&_tr]:border-b"
+        class="dataTable__thead"
       >
         <tr>
           <th
-            class="h-10 px-2 text-left align-middle font-medium text-muted-foreground"
+            class="dataTable__th"
             role="columnheader"
             tabindex="-1"
           >
             <div
-              class="flex items-center space-x-1"
+              class="dataTable__thContent"
             >
               <span>
                 Name
@@ -213,12 +213,12 @@ exports[`DataTable > Snapshots > matches disabled state snapshot 1`] = `
             </div>
           </th>
           <th
-            class="h-10 px-2 text-left align-middle font-medium text-muted-foreground"
+            class="dataTable__th"
             role="columnheader"
             tabindex="-1"
           >
             <div
-              class="flex items-center space-x-1"
+              class="dataTable__thContent"
             >
               <span>
                 Value
@@ -228,37 +228,37 @@ exports[`DataTable > Snapshots > matches disabled state snapshot 1`] = `
         </tr>
       </thead>
       <tbody
-        class="[&_tr:last-child]:border-0"
+        class="dataTable__tbody"
       >
         <tr
-          class="datatable__row border-b transition-colors hover:bg-muted/50 pointer-events-none"
+          class="dataTable__row dataTable__row--disabled"
           role="row"
         >
           <td
-            class="p-2 align-middle"
+            class="dataTable__td"
             role="cell"
           >
             Test Item 1
           </td>
           <td
-            class="p-2 align-middle"
+            class="dataTable__td"
             role="cell"
           >
             A
           </td>
         </tr>
         <tr
-          class="datatable__row border-b transition-colors hover:bg-muted/50 pointer-events-none"
+          class="dataTable__row dataTable__row--disabled"
           role="row"
         >
           <td
-            class="p-2 align-middle"
+            class="dataTable__td"
             role="cell"
           >
             Test Item 2
           </td>
           <td
-            class="p-2 align-middle"
+            class="dataTable__td"
             role="cell"
           >
             B
@@ -272,18 +272,18 @@ exports[`DataTable > Snapshots > matches disabled state snapshot 1`] = `
 
 exports[`DataTable > Snapshots > matches error state snapshot 1`] = `
 <div
-  class="datatable w-full relative datatable--default border border-border datatable--size-default text-sm state-error"
+  class="dataTable dataTable--default dataTable--error"
 >
   <div
-    class="p-4 text-center"
+    class="dataTable__errorContent"
   >
     <div
-      class="text-destructive font-medium mb-2"
+      class="dataTable__errorTitle"
     >
       Error
     </div>
     <div
-      class="error-message text-sm text-muted-foreground"
+      class="dataTable__errorMessage"
     />
   </div>
 </div>
@@ -292,29 +292,29 @@ exports[`DataTable > Snapshots > matches error state snapshot 1`] = `
 exports[`DataTable > Snapshots > matches hover state snapshot 1`] = `
 <div
   aria-disabled="false"
-  class="datatable w-full relative datatable--default border border-border datatable--size-default text-sm"
+  class="dataTable dataTable--default dataTable--sizeDefault"
   data-error="false"
   data-loading="false"
   data-testid="datatable"
 >
   <div
-    class="datatable__scroll-container overflow-auto"
+    class="dataTable__scrollContainer"
   >
     <table
-      class="w-full caption-bottom text-sm"
+      class="dataTable__table"
       role="table"
     >
       <thead
-        class="[&_tr]:border-b"
+        class="dataTable__thead"
       >
         <tr>
           <th
-            class="h-10 px-2 text-left align-middle font-medium text-muted-foreground"
+            class="dataTable__th"
             role="columnheader"
             tabindex="-1"
           >
             <div
-              class="flex items-center space-x-1"
+              class="dataTable__thContent"
             >
               <span>
                 Name
@@ -322,12 +322,12 @@ exports[`DataTable > Snapshots > matches hover state snapshot 1`] = `
             </div>
           </th>
           <th
-            class="h-10 px-2 text-left align-middle font-medium text-muted-foreground"
+            class="dataTable__th"
             role="columnheader"
             tabindex="-1"
           >
             <div
-              class="flex items-center space-x-1"
+              class="dataTable__thContent"
             >
               <span>
                 Value
@@ -337,37 +337,37 @@ exports[`DataTable > Snapshots > matches hover state snapshot 1`] = `
         </tr>
       </thead>
       <tbody
-        class="[&_tr:last-child]:border-0"
+        class="dataTable__tbody"
       >
         <tr
-          class="datatable__row border-b transition-colors hover:bg-muted/50"
+          class="dataTable__row"
           role="row"
         >
           <td
-            class="p-2 align-middle"
+            class="dataTable__td"
             role="cell"
           >
             Test Item 1
           </td>
           <td
-            class="p-2 align-middle"
+            class="dataTable__td"
             role="cell"
           >
             A
           </td>
         </tr>
         <tr
-          class="datatable__row border-b transition-colors hover:bg-muted/50"
+          class="dataTable__row"
           role="row"
         >
           <td
-            class="p-2 align-middle"
+            class="dataTable__td"
             role="cell"
           >
             Test Item 2
           </td>
           <td
-            class="p-2 align-middle"
+            class="dataTable__td"
             role="cell"
           >
             B
@@ -381,14 +381,14 @@ exports[`DataTable > Snapshots > matches hover state snapshot 1`] = `
 
 exports[`DataTable > Snapshots > matches loading state snapshot 1`] = `
 <div
-  class="datatable state-loading flex items-center justify-center p-8 min-h-[200px]"
+  class="dataTable dataTable--loading"
 >
   <div
-    class="flex items-center space-x-2"
+    class="dataTable__loadingContent"
   >
     <svg
       aria-hidden="true"
-      class="lucide lucide-loader-circle h-6 w-6 animate-spin spinner"
+      class="lucide lucide-loader-circle dataTable__spinner"
       fill="none"
       height="24"
       stroke="currentColor"
@@ -404,12 +404,12 @@ exports[`DataTable > Snapshots > matches loading state snapshot 1`] = `
       />
     </svg>
     <span
-      class="text-muted-foreground"
+      class="dataTable__loadingText"
     >
       Loading table data...
     </span>
     <span
-      class="sr-only"
+      class="dataTable__srOnly"
       role="status"
     >
       Loading...
@@ -421,30 +421,30 @@ exports[`DataTable > Snapshots > matches loading state snapshot 1`] = `
 exports[`DataTable > Snapshots > matches required state snapshot 1`] = `
 <div
   aria-disabled="false"
-  class="datatable w-full relative datatable--default border border-border datatable--size-default text-sm"
+  class="dataTable dataTable--default dataTable--sizeDefault"
   data-error="false"
   data-loading="false"
   data-testid="datatable"
   required=""
 >
   <div
-    class="datatable__scroll-container overflow-auto"
+    class="dataTable__scrollContainer"
   >
     <table
-      class="w-full caption-bottom text-sm"
+      class="dataTable__table"
       role="table"
     >
       <thead
-        class="[&_tr]:border-b"
+        class="dataTable__thead"
       >
         <tr>
           <th
-            class="h-10 px-2 text-left align-middle font-medium text-muted-foreground"
+            class="dataTable__th"
             role="columnheader"
             tabindex="-1"
           >
             <div
-              class="flex items-center space-x-1"
+              class="dataTable__thContent"
             >
               <span>
                 Name
@@ -452,12 +452,12 @@ exports[`DataTable > Snapshots > matches required state snapshot 1`] = `
             </div>
           </th>
           <th
-            class="h-10 px-2 text-left align-middle font-medium text-muted-foreground"
+            class="dataTable__th"
             role="columnheader"
             tabindex="-1"
           >
             <div
-              class="flex items-center space-x-1"
+              class="dataTable__thContent"
             >
               <span>
                 Value
@@ -467,37 +467,37 @@ exports[`DataTable > Snapshots > matches required state snapshot 1`] = `
         </tr>
       </thead>
       <tbody
-        class="[&_tr:last-child]:border-0"
+        class="dataTable__tbody"
       >
         <tr
-          class="datatable__row border-b transition-colors hover:bg-muted/50"
+          class="dataTable__row"
           role="row"
         >
           <td
-            class="p-2 align-middle"
+            class="dataTable__td"
             role="cell"
           >
             Test Item 1
           </td>
           <td
-            class="p-2 align-middle"
+            class="dataTable__td"
             role="cell"
           >
             A
           </td>
         </tr>
         <tr
-          class="datatable__row border-b transition-colors hover:bg-muted/50"
+          class="dataTable__row"
           role="row"
         >
           <td
-            class="p-2 align-middle"
+            class="dataTable__td"
             role="cell"
           >
             Test Item 2
           </td>
           <td
-            class="p-2 align-middle"
+            class="dataTable__td"
             role="cell"
           >
             B
@@ -512,29 +512,29 @@ exports[`DataTable > Snapshots > matches required state snapshot 1`] = `
 exports[`DataTable > Snapshots > matches selected state snapshot 1`] = `
 <div
   aria-disabled="false"
-  class="datatable w-full relative datatable--default border border-border datatable--size-default text-sm"
+  class="dataTable dataTable--default dataTable--sizeDefault"
   data-error="false"
   data-loading="false"
   data-testid="datatable"
 >
   <div
-    class="datatable__scroll-container overflow-auto"
+    class="dataTable__scrollContainer"
   >
     <table
-      class="w-full caption-bottom text-sm"
+      class="dataTable__table"
       role="table"
     >
       <thead
-        class="[&_tr]:border-b"
+        class="dataTable__thead"
       >
         <tr>
           <th
-            class="h-10 px-2 text-left align-middle font-medium text-muted-foreground"
+            class="dataTable__th"
             role="columnheader"
             tabindex="-1"
           >
             <div
-              class="flex items-center space-x-1"
+              class="dataTable__thContent"
             >
               <span>
                 Name
@@ -542,12 +542,12 @@ exports[`DataTable > Snapshots > matches selected state snapshot 1`] = `
             </div>
           </th>
           <th
-            class="h-10 px-2 text-left align-middle font-medium text-muted-foreground"
+            class="dataTable__th"
             role="columnheader"
             tabindex="-1"
           >
             <div
-              class="flex items-center space-x-1"
+              class="dataTable__thContent"
             >
               <span>
                 Value
@@ -557,37 +557,37 @@ exports[`DataTable > Snapshots > matches selected state snapshot 1`] = `
         </tr>
       </thead>
       <tbody
-        class="[&_tr:last-child]:border-0"
+        class="dataTable__tbody"
       >
         <tr
-          class="datatable__row border-b transition-colors hover:bg-muted/50"
+          class="dataTable__row"
           role="row"
         >
           <td
-            class="p-2 align-middle"
+            class="dataTable__td"
             role="cell"
           >
             Test Item 1
           </td>
           <td
-            class="p-2 align-middle"
+            class="dataTable__td"
             role="cell"
           >
             A
           </td>
         </tr>
         <tr
-          class="datatable__row border-b transition-colors hover:bg-muted/50"
+          class="dataTable__row"
           role="row"
         >
           <td
-            class="p-2 align-middle"
+            class="dataTable__td"
             role="cell"
           >
             Test Item 2
           </td>
           <td
-            class="p-2 align-middle"
+            class="dataTable__td"
             role="cell"
           >
             B

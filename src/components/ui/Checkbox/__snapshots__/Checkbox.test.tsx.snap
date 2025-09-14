@@ -3,7 +3,7 @@
 exports[`Checkbox > Snapshots > matches checked state snapshot 1`] = `
 <button
   aria-checked="true"
-  class="peer h-4 w-4 shrink-0 rounded-sm border border-primary shadow focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground checkbox"
+  class="checkbox"
   data-state="checked"
   data-testid="checkbox"
   role="checkbox"
@@ -11,13 +11,13 @@ exports[`Checkbox > Snapshots > matches checked state snapshot 1`] = `
   value="on"
 >
   <span
-    class="flex items-center justify-center text-current"
+    class="checkbox__indicator"
     data-state="checked"
     style="pointer-events: none;"
   >
     <svg
       aria-hidden="true"
-      class="lucide lucide-check h-4 w-4"
+      class="lucide lucide-check checkbox__check-icon"
       fill="none"
       height="24"
       stroke="currentColor"
@@ -39,7 +39,7 @@ exports[`Checkbox > Snapshots > matches checked state snapshot 1`] = `
 exports[`Checkbox > Snapshots > matches default snapshot 1`] = `
 <button
   aria-checked="false"
-  class="peer h-4 w-4 shrink-0 rounded-sm border border-primary shadow focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground checkbox"
+  class="checkbox"
   data-state="unchecked"
   data-testid="checkbox"
   role="checkbox"
@@ -51,7 +51,7 @@ exports[`Checkbox > Snapshots > matches default snapshot 1`] = `
 exports[`Checkbox > Snapshots > matches disabled state snapshot 1`] = `
 <button
   aria-checked="false"
-  class="peer h-4 w-4 shrink-0 rounded-sm border border-primary shadow focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground checkbox"
+  class="checkbox"
   data-disabled=""
   data-state="unchecked"
   data-testid="checkbox"
@@ -67,11 +67,11 @@ exports[`Checkbox > Snapshots > matches error state snapshot 1`] = `
   class="checkbox-wrapper"
 >
   <div
-    class="flex items-start space-x-2"
+    class="checkbox-wrapper__content"
   >
     <button
       aria-checked="false"
-      class="peer h-4 w-4 shrink-0 rounded-sm border border-primary shadow focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground checkbox checkbox--error"
+      class="checkbox checkbox--error"
       data-state="unchecked"
       data-testid="checkbox"
       role="checkbox"
@@ -79,10 +79,10 @@ exports[`Checkbox > Snapshots > matches error state snapshot 1`] = `
       value="on"
     />
     <div
-      class="grid gap-1.5 leading-none"
+      class="checkbox-wrapper__text"
     >
       <p
-        class="text-xs text-destructive"
+        class="checkbox-wrapper__error-text"
       />
     </div>
   </div>
@@ -92,7 +92,7 @@ exports[`Checkbox > Snapshots > matches error state snapshot 1`] = `
 exports[`Checkbox > Snapshots > matches loading state snapshot 1`] = `
 <button
   aria-checked="false"
-  class="peer h-4 w-4 shrink-0 rounded-sm border border-primary shadow focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground checkbox checkbox--loading"
+  class="checkbox checkbox--loading"
   data-disabled=""
   data-state="unchecked"
   data-testid="checkbox"
@@ -106,7 +106,7 @@ exports[`Checkbox > Snapshots > matches loading state snapshot 1`] = `
 exports[`Checkbox > Snapshots > matches required state snapshot 1`] = `
 <button
   aria-checked="false"
-  class="peer h-4 w-4 shrink-0 rounded-sm border border-primary shadow focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground checkbox"
+  class="checkbox"
   data-state="unchecked"
   data-testid="checkbox"
   role="checkbox"

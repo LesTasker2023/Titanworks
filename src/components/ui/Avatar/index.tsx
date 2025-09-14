@@ -1,3 +1,3 @@
-export { Avatar, AvatarFallback, AvatarImage, avatarVariants } from './Avatar';
+export { Avatar, AvatarFallback, AvatarImage } from './Avatar';
 export type { AvatarProps } from './Avatar';
 export { default as AvatarDemo } from './demo';
