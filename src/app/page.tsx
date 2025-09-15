@@ -3,8 +3,7 @@
 import { Badge } from '@/components/ui/Badge';
 import { Button } from '@/components/ui/Button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card';
-import { getCurrentDomain, getDomainConfig, type DomainConfig } from '@/lib/domain';
-import { getContent } from '@/lib/siteConfig';
+import { getSiteMetadata, getMetrics } from '@/lib/siteConfig';
 import {
   BarChart3,
   Brain,
@@ -27,77 +26,62 @@ import {
 } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 
-// Component for dynamic hero loading
-function DomainHero() {
-  const [HeroComponent, setHeroComponent] = useState<React.ComponentType | null>(null);
-  const [loading, setLoading] = useState(true);
+// Simple hero section - no more dynamic loading
+function HeroSection() {
+  const metadata = getSiteMetadata();
+  const metrics = getMetrics();
 
-  useEffect(() => {
-    const loadDomainComponent = async () => {
-      try {
-        const domain = getCurrentDomain();
-        const config = getDomainConfig(domain);
+  return (
+    <section className="hero-section bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 text-white py-24">
+      <div className="container mx-auto px-4">
+        <div className="text-center mb-16">
+          <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+            {metadata.title}
+          </h1>
+          <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto leading-relaxed">
+            {metadata.description}
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+            <Button
+              size="lg"
+              className="bg-blue-600 hover:bg-blue-700 text-white font-semibold text-lg transition-all transform hover:scale-105 shadow-lg"
+            >
+              Explore Components
+            </Button>
+            <Button
+              variant="outline"
+              size="lg"
+              className="border-2 border-blue-400 hover:border-blue-300 text-blue-400 hover:text-blue-300 font-semibold text-lg transition-all"
+            >
+              View Documentation
+            </Button>
+          </div>
+        </div>
 
-        let component;
-        if (config.components.hero === 'DefaultHero') {
-          const { DefaultHero } = await import('@/components/domains/shared');
-          component = DefaultHero;
-        } else if (config.components.hero === 'EnterpriseHero') {
-          const { EnterpriseHero } = await import('@/components/domains/daedalus');
-          component = EnterpriseHero;
-        } else if (config.components.hero === 'ProductHero') {
-          const { ProductHero } = await import('@/components/domains/airpods');
-          component = ProductHero;
-        } else {
-          // Fallback to default for any unknown component
-          console.warn(
-            `Unknown hero component: ${config.components.hero}, falling back to DefaultHero`
-          );
-          const { DefaultHero } = await import('@/components/domains/shared');
-          component = DefaultHero;
-        }
-
-        setHeroComponent(() => component);
-      } catch (error) {
-        console.error('Failed to load hero component:', error);
-        // Always ensure we have a fallback
-        try {
-          const { DefaultHero } = await import('@/components/domains/shared');
-          setHeroComponent(() => DefaultHero);
-        } catch (fallbackError) {
-          console.error('Failed to load fallback component:', fallbackError);
-          setHeroComponent(null);
-        }
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    loadDomainComponent();
-  }, []);
-
-  if (loading) {
-    return (
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-blue-600"></div>
-      </div>
-    );
-  }
-
-  if (!HeroComponent) {
-    return (
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="text-center">
-          <h1 className="text-2xl font-bold text-gray-800 mb-4">Welcome</h1>
-          <p className="text-gray-600">Loading content...</p>
+        {/* Metrics Dashboard */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
+          <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 text-center border border-white/20">
+            <div className="text-3xl font-bold text-blue-400">{metrics.totalComponents}</div>
+            <div className="text-sm text-gray-300 mt-2">Components</div>
+          </div>
+          <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 text-center border border-white/20">
+            <div className="text-3xl font-bold text-green-400">{metrics.testsCoverage}%</div>
+            <div className="text-sm text-gray-300 mt-2">Test Coverage</div>
+          </div>
+          <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 text-center border border-white/20">
+            <div className="text-3xl font-bold text-purple-400">{metrics.storiesCoverage}%</div>
+            <div className="text-sm text-gray-300 mt-2">Stories Coverage</div>
+          </div>
+          <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 text-center border border-white/20">
+            <div className="text-3xl font-bold text-orange-400">{metrics.qualityScore}</div>
+            <div className="text-sm text-gray-300 mt-2">Quality Score</div>
+          </div>
         </div>
       </div>
-    );
-  }
-
-  return React.createElement(HeroComponent);
+    </section>
+  );
 }
 
 const iconMap = {
@@ -231,38 +215,10 @@ const platformShowcase = [
 ];
 
 export default function Home() {
-  const content = getContent();
-  const [selectedCategory, setSelectedCategory] = useState<string>('all');
-  const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
-  const [domainConfig, setDomainConfig] = useState<DomainConfig | null>(null);
-
-  useEffect(() => {
-    const domain = getCurrentDomain();
-    const config = getDomainConfig(domain);
-    setDomainConfig(config);
-  }, []);
-
-  const categories = [
-    'all',
-    'Entertainment',
-    'E-Commerce',
-    'Hospitality',
-    'Business',
-    'Events',
-    'Analytics',
-    'AI/ML',
-    'Development',
-  ];
-
-  const filteredPlatforms =
-    selectedCategory === 'all'
-      ? platformShowcase
-      : platformShowcase.filter(platform => platform.category === selectedCategory);
-
   return (
     <main className="flex min-h-screen flex-col">
-      {/* Domain-specific Hero Section */}
-      <DomainHero />
+      {/* Hero Section */}
+      <HeroSection />
 
       {/* Platform Showcase */}
       <section id="platforms" className="py-20 px-4 bg-muted/10">
@@ -273,72 +229,27 @@ export default function Home() {
               Explore our comprehensive suite of enhanced platforms, each showcasing strategic modal
               implementations and real business logic
             </p>
-
-            {/* Category Filters */}
-            <div className="flex flex-wrap justify-center gap-2 mb-8">
-              {categories.map(category => (
-                <Button
-                  key={category}
-                  variant={selectedCategory === category ? 'default' : 'outline'}
-                  size="sm"
-                  onClick={() => setSelectedCategory(category)}
-                  className="capitalize"
-                >
-                  {category === 'all' ? 'All Platforms' : category}
-                </Button>
-              ))}
-            </div>
-
-            {/* View Mode Toggle */}
-            <div className="flex justify-center gap-2 mb-8">
-              <Button
-                variant={viewMode === 'grid' ? 'default' : 'outline'}
-                size="sm"
-                onClick={() => setViewMode('grid')}
-              >
-                <Monitor className="w-4 h-4 mr-2" />
-                Grid View
-              </Button>
-              <Button
-                variant={viewMode === 'list' ? 'default' : 'outline'}
-                size="sm"
-                onClick={() => setViewMode('list')}
-              >
-                <Layers className="w-4 h-4 mr-2" />
-                List View
-              </Button>
-            </div>
           </div>
 
           {/* Platform Grid */}
-          <div
-            className={`grid gap-6 ${
-              viewMode === 'grid'
-                ? 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3'
-                : 'grid-cols-1 max-w-4xl mx-auto'
-            }`}
-          >
-            {filteredPlatforms.map(platform => {
+          <div className="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+            {platformShowcase.map(platform => {
               const IconComponent = platform.icon;
               return (
                 <Card
                   key={platform.id}
-                  className={`group hover:shadow-xl transition-all duration-300 hover:-translate-y-1 ${
-                    viewMode === 'list' ? 'flex flex-row' : 'flex flex-col'
-                  }`}
+                  className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-1 flex flex-col"
                 >
                   {/* Platform Image/Icon */}
                   <div
-                    className={`relative ${
-                      viewMode === 'list' ? 'w-32 h-32 flex-shrink-0' : 'h-48'
-                    } bg-gradient-to-br ${platform.color} rounded-t-lg flex items-center justify-center overflow-hidden`}
+                    className={`relative h-48 bg-gradient-to-br ${platform.color} rounded-t-lg flex items-center justify-center overflow-hidden`}
                   >
                     <Image
                       src={platform.image}
                       alt={platform.title}
                       className="w-full h-full object-cover opacity-80"
-                      width={viewMode === 'list' ? 128 : 400}
-                      height={viewMode === 'list' ? 128 : 192}
+                      width={400}
+                      height={192}
                     />
                     <div className="absolute inset-0 bg-black/20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
                       <IconComponent className="w-12 h-12 text-white" />

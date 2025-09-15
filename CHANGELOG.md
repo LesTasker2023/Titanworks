@@ -4,6 +4,25 @@ All notable changes to this project will be documented in this file. See [standa
 
 ## [Unreleased]
 
+### Changed
+
+- **Major Simplification**: Removed multi-domain/tenant system to unify all deployments
+  - All deployments now use identical codebase without domain-specific customization
+  - Simplified homepage with single HeroSection (removed dynamic component loading)
+  - Reduced main page bundle size from 8.72kB to 7.56kB with cleaner architecture
+  - Unified layout system using standard Navigation/Footer components
+  - Streamlined environment configuration removing domain-specific variables
+  - Eliminated runtime complexity from domain detection and configuration switching
+
+### Removed
+
+- **Domain System**: Deleted entire multi-tenant architecture
+  - Removed `src/lib/domain.ts` and all domain configuration logic
+  - Deleted `src/components/domains/` directory with EnterpriseHero, ProductHero, etc.
+  - Removed domain-specific pages: `/titanworks`, `/airpods`, `/titandigital`, etc.
+  - Cleaned up DomainNavigation and DomainFooter components
+  - Simplified .env.local removing tenant-specific environment variables
+
 ### Fixed
 
 - **Critical Production Error**: Fixed React minified error #130 in multi-domain system
