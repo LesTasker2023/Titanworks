@@ -61,8 +61,12 @@ export function getCurrentDomain(): DomainType {
   return 'daedalus'; // Default fallback
 }
 
-// Get domain-specific configuration
-export function getDomainConfig(domain: DomainType = getCurrentDomain()): DomainConfig {
+// Get configuration for a specific domain
+export function getDomainConfig(domain?: DomainType): DomainConfig {
+  if (!domain) {
+    domain = getCurrentDomain();
+  }
+
   const configs: Record<DomainType, DomainConfig> = {
     daedalus: {
       type: 'daedalus',
@@ -95,7 +99,7 @@ export function getDomainConfig(domain: DomainType = getCurrentDomain()): Domain
       layout: 'default',
       theme: 'dark',
       components: {
-        hero: 'ServiceHero',
+        hero: 'DefaultHero',
         navigation: 'DefaultNav',
         footer: 'DefaultFooter',
       },
@@ -107,9 +111,9 @@ export function getDomainConfig(domain: DomainType = getCurrentDomain()): Domain
       layout: 'default',
       theme: 'auto',
       components: {
-        hero: 'TechHero',
-        navigation: 'TechNav',
-        footer: 'TechFooter',
+        hero: 'DefaultHero',
+        navigation: 'DefaultNav',
+        footer: 'DefaultFooter',
       },
     },
     titanlabs: {
@@ -119,9 +123,9 @@ export function getDomainConfig(domain: DomainType = getCurrentDomain()): Domain
       layout: 'minimal',
       theme: 'light',
       components: {
-        hero: 'ResearchHero',
-        navigation: 'ResearchNav',
-        footer: 'ResearchFooter',
+        hero: 'DefaultHero',
+        navigation: 'DefaultNav',
+        footer: 'DefaultFooter',
       },
     },
     titanmedia: {
@@ -131,9 +135,9 @@ export function getDomainConfig(domain: DomainType = getCurrentDomain()): Domain
       layout: 'default',
       theme: 'dark',
       components: {
-        hero: 'MediaHero',
-        navigation: 'MediaNav',
-        footer: 'MediaFooter',
+        hero: 'DefaultHero',
+        navigation: 'DefaultNav',
+        footer: 'DefaultFooter',
       },
     },
     titanworks: {
@@ -143,9 +147,9 @@ export function getDomainConfig(domain: DomainType = getCurrentDomain()): Domain
       layout: 'enterprise',
       theme: 'auto',
       components: {
-        hero: 'PortfolioHero',
-        navigation: 'PortfolioNav',
-        footer: 'PortfolioFooter',
+        hero: 'DefaultHero',
+        navigation: 'DefaultNav',
+        footer: 'DefaultFooter',
       },
     },
     custom: {
@@ -164,7 +168,8 @@ export function getDomainConfig(domain: DomainType = getCurrentDomain()): Domain
     },
   };
 
-  return configs[domain];
+  // Return the config if it exists, otherwise return a default safe config
+  return configs[domain] || configs.daedalus;
 }
 
 // Check if a feature is enabled for current domain

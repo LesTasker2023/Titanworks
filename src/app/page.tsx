@@ -51,17 +51,25 @@ function DomainHero() {
           const { ProductHero } = await import('@/components/domains/airpods');
           component = ProductHero;
         } else {
-          // Fallback to default
+          // Fallback to default for any unknown component
+          console.warn(
+            `Unknown hero component: ${config.components.hero}, falling back to DefaultHero`
+          );
           const { DefaultHero } = await import('@/components/domains/shared');
           component = DefaultHero;
         }
 
-        setHeroComponent(component);
+        setHeroComponent(() => component);
       } catch (error) {
         console.error('Failed to load hero component:', error);
-        // Fallback to default
-        const { DefaultHero } = await import('@/components/domains/shared');
-        setHeroComponent(DefaultHero);
+        // Always ensure we have a fallback
+        try {
+          const { DefaultHero } = await import('@/components/domains/shared');
+          setHeroComponent(() => DefaultHero);
+        } catch (fallbackError) {
+          console.error('Failed to load fallback component:', fallbackError);
+          setHeroComponent(null);
+        }
       } finally {
         setLoading(false);
       }
@@ -79,7 +87,14 @@ function DomainHero() {
   }
 
   if (!HeroComponent) {
-    return <div>Error loading component</div>;
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="text-center">
+          <h1 className="text-2xl font-bold text-gray-800 mb-4">Welcome</h1>
+          <p className="text-gray-600">Loading content...</p>
+        </div>
+      </div>
+    );
   }
 
   return React.createElement(HeroComponent);
