@@ -25,35 +25,66 @@ import {
   Utensils,
   Zap,
 } from 'lucide-react';
-import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
+import React from 'react';
 
-// Dynamic imports for domain-specific components
-const DomainHero = dynamic(() =>
-  import('@/components/domains').then(mod => {
-    const domain = getCurrentDomain();
-    const config = getDomainConfig(domain);
-    return mod.getDomainComponent(config.components.hero);
-  })
-);
+// Component for dynamic hero loading
+function DomainHero() {
+  const [HeroComponent, setHeroComponent] = useState<React.ComponentType | null>(null);
+  const [loading, setLoading] = useState(true);
 
-const DomainNav = dynamic(() =>
-  import('@/components/domains').then(mod => {
-    const domain = getCurrentDomain();
-    const config = getDomainConfig(domain);
-    return mod.getDomainComponent(config.components.navigation);
-  })
-);
+  useEffect(() => {
+    const loadDomainComponent = async () => {
+      try {
+        const domain = getCurrentDomain();
+        const config = getDomainConfig(domain);
 
-const DomainFooter = dynamic(() =>
-  import('@/components/domains').then(mod => {
-    const domain = getCurrentDomain();
-    const config = getDomainConfig(domain);
-    return mod.getDomainComponent(config.components.footer);
-  })
-);
+        let component;
+        if (config.components.hero === 'DefaultHero') {
+          const { DefaultHero } = await import('@/components/domains/shared');
+          component = DefaultHero;
+        } else if (config.components.hero === 'EnterpriseHero') {
+          const { EnterpriseHero } = await import('@/components/domains/daedalus');
+          component = EnterpriseHero;
+        } else if (config.components.hero === 'ProductHero') {
+          const { ProductHero } = await import('@/components/domains/airpods');
+          component = ProductHero;
+        } else {
+          // Fallback to default
+          const { DefaultHero } = await import('@/components/domains/shared');
+          component = DefaultHero;
+        }
+
+        setHeroComponent(component);
+      } catch (error) {
+        console.error('Failed to load hero component:', error);
+        // Fallback to default
+        const { DefaultHero } = await import('@/components/domains/shared');
+        setHeroComponent(DefaultHero);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    loadDomainComponent();
+  }, []);
+
+  if (loading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-blue-600"></div>
+      </div>
+    );
+  }
+
+  if (!HeroComponent) {
+    return <div>Error loading component</div>;
+  }
+
+  return React.createElement(HeroComponent);
+}
 
 const iconMap = {
   Zap,

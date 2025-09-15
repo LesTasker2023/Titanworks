@@ -4,6 +4,14 @@ All notable changes to this project will be documented in this file. See [standa
 
 ## [Unreleased]
 
+### Fixed
+
+- **Critical Production Error**: Fixed React minified error #130 in multi-domain system
+  - Replaced build-time dynamic imports with runtime component loading
+  - Resolved invalid object being passed to React during component resolution
+  - Fixed "Uncaught SyntaxError: Invalid or unexpected token" in production builds
+  - All Vercel deployments now work correctly with domain-specific components
+
 ### Added
 
 - **Multi-Domain Deployment System**: Complete infrastructure for deploying single repository to unlimited domains
