@@ -52,7 +52,7 @@ describe('Badge', () => {
   it('applies variant classes correctly', () => {
     render(<Badge variant="secondary">Secondary Badge</Badge>);
     const badge = screen.getByText('Secondary Badge');
-    expect(badge).toHaveClass('bg-secondary');
+    expect(badge).toHaveClass('badge--secondary');
   });
 
   it('supports custom className', () => {

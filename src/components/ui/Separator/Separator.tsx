@@ -46,7 +46,7 @@ const Separator = React.forwardRef<
     if (children) {
       // Text separator variant
       return (
-        <div className={separatorClasses}>
+        <div className={separatorClasses} {...props}>
           <span className="separator__text">{children}</span>
         </div>
       );

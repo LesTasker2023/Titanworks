@@ -3,6 +3,7 @@
 exports[`Separator > Snapshots > matches active state snapshot 1`] = `
 <div
   class="separator separator--horizontal separator--spacing-default separator--with-text"
+  data-testid="separator"
 >
   <span
     class="separator__text"
@@ -15,6 +16,7 @@ exports[`Separator > Snapshots > matches active state snapshot 1`] = `
 exports[`Separator > Snapshots > matches default snapshot 1`] = `
 <div
   class="separator separator--horizontal separator--spacing-default separator--with-text"
+  data-testid="separator"
 >
   <span
     class="separator__text"

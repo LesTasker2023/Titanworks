@@ -1,7 +1,46 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`Popover > Snapshots > matches default snapshot 1`] = `Test content`;
+exports[`Popover > Snapshots > matches default snapshot 1`] = `
+<button
+  aria-controls="radix-«r0»"
+  aria-expanded="false"
+  aria-haspopup="dialog"
+  data-state="closed"
+  data-testid="popover-trigger"
+  type="button"
+>
+  <div>
+    Open Popover
+  </div>
+</button>
+`;
 
-exports[`Popover > Snapshots > matches disabled state snapshot 1`] = `Test content`;
+exports[`Popover > Snapshots > matches disabled state snapshot 1`] = `
+<button
+  aria-controls="radix-«r1»"
+  aria-expanded="false"
+  aria-haspopup="dialog"
+  data-state="closed"
+  data-testid="popover-trigger"
+  type="button"
+>
+  <div>
+    Open Popover
+  </div>
+</button>
+`;
 
-exports[`Popover > Snapshots > matches hover state snapshot 1`] = `Test content`;
+exports[`Popover > Snapshots > matches hover state snapshot 1`] = `
+<button
+  aria-controls="radix-«r2»"
+  aria-expanded="false"
+  aria-haspopup="dialog"
+  data-state="closed"
+  data-testid="popover-trigger"
+  type="button"
+>
+  <div>
+    Open Popover
+  </div>
+</button>
+`;

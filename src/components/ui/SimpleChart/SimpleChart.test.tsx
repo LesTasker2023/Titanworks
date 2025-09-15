@@ -53,17 +53,17 @@ describe('SimpleChart', () => {
   describe('Chart Types', () => {
     it('renders bar chart by default', () => {
       const { container } = renderBasicChart();
-      expect(container.querySelector('.space-y-2')).toBeInTheDocument();
+      expect(container.querySelector('.simple-chart__bar-container')).toBeInTheDocument();
     });
 
     it('renders bar chart when type is bar', () => {
       const { container } = renderBasicChart({ type: 'bar' });
-      expect(container.querySelector('.space-y-2')).toBeInTheDocument();
+      expect(container.querySelector('.simple-chart__bar-container')).toBeInTheDocument();
     });
 
     it('renders pie chart when type is pie', () => {
       const { container } = renderBasicChart({ type: 'pie' });
-      expect(container.querySelector('.w-3.h-3.rounded-full')).toBeInTheDocument();
+      expect(container.querySelector('.simple-chart__pie-indicator')).toBeInTheDocument();
     });
 
     it('renders line chart when type is line', () => {
