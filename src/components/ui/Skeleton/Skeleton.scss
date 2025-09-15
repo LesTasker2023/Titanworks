@@ -1,11 +1,8 @@
-@import "../../../styles/globals.scss";
-
 .skeleton {
   animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
   border-radius: var(--border-radius-md);
   background-color: hsl(var(--color-primary) / 0.1);
 }
-
 @keyframes pulse {
   0%,
   100% {

@@ -1,5 +1,4 @@
 /* Accordion Component - BEM Styling with Design Tokens */
-
 .accordion__button {
   width: 100%;
   text-align: left;
@@ -8,33 +7,27 @@
   border-bottom: 1px solid hsl(var(--border-default));
   background-color: hsl(var(--surface-primary));
   transition: var(--transition-default);
-
   /* Focus styles */
   &:focus {
     outline: none;
   }
-
   &:focus-visible {
     box-shadow: 0 0 0 2px hsl(var(--ring));
   }
-
   /* Hover state */
   &:hover:not(:disabled) {
     background-color: hsl(var(--surface-secondary));
   }
-
   /* Disabled state */
   &:disabled {
     opacity: 0.5;
     cursor: not-allowed;
   }
 }
-
 .accordion__content {
   padding: var(--spacing-2) var(--spacing-4);
   color: hsl(var(--content-secondary));
   background-color: hsl(var(--surface-secondary) / 0.5);
-
   &--hidden {
     display: none;
   }

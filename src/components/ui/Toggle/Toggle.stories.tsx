@@ -1,6 +1,7 @@
-import type { Meta, StoryObj } from '@storybook/nextjs';
+import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 import { Bold, Italic, Underline } from 'lucide-react';
 import { Toggle } from './Toggle';
+import './Toggle.scss';
 
 const meta: Meta<typeof Toggle> = {
   title: 'UI/Toggle',

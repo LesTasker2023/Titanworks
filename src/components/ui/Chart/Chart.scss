@@ -1,61 +1,47 @@
 // Chart Component - BEM Styling with Design Tokens
-
 .chart {
   display: flex;
   aspect-ratio: 16/9;
   justify-content: center;
   font-size: var(--font-size-xs);
-
   // Recharts specific styling
   .recharts-cartesian-axis-tick text {
     fill: hsl(var(--muted-foreground));
   }
-
   .recharts-cartesian-grid line[stroke="#ccc"] {
     stroke: hsl(var(--border) / 0.5);
   }
-
   .recharts-curve.recharts-tooltip-cursor {
     stroke: hsl(var(--border));
   }
-
   .recharts-dot[stroke="#fff"] {
     stroke: transparent;
   }
-
   .recharts-layer {
     outline: none;
   }
-
   .recharts-polar-grid [stroke="#ccc"] {
     stroke: hsl(var(--border));
   }
-
   .recharts-radial-bar-background-sector {
     fill: hsl(var(--muted));
   }
-
   .recharts-rectangle.recharts-tooltip-cursor {
     fill: hsl(var(--muted));
   }
-
   .recharts-reference-line [stroke="#ccc"] {
     stroke: hsl(var(--border));
   }
-
   .recharts-sector[stroke="#fff"] {
     stroke: transparent;
   }
-
   .recharts-sector {
     outline: none;
   }
-
   .recharts-surface {
     outline: none;
   }
 }
-
 .chart-tooltip {
   display: grid;
   min-width: 8rem;
@@ -67,44 +53,36 @@
   padding: var(--spacing-2) var(--spacing-3);
   font-size: var(--font-size-xs);
   box-shadow: var(--shadow-xl);
-
   &__label {
     font-weight: var(--font-weight-medium);
   }
-
   &__content {
     display: grid;
     gap: var(--spacing-2);
   }
-
   &__item {
     display: flex;
     width: 100%;
     flex-wrap: wrap;
     align-items: stretch;
     gap: var(--spacing-2);
-
     svg {
       height: var(--spacing-3);
       width: var(--spacing-3);
       color: hsl(var(--muted-foreground));
     }
-
     &--dot {
       align-items: center;
     }
   }
-
   &__item-simple {
     display: grid;
     gap: var(--spacing-2);
     flex: 1;
     min-width: 0;
-
     .chart-tooltip__item-name {
       color: hsl(var(--muted-foreground));
     }
-
     .chart-tooltip__item-value {
       font-family: var(--font-mono);
       font-weight: var(--font-weight-medium);
@@ -112,58 +90,47 @@
       color: hsl(var(--foreground));
     }
   }
-
   &__indicator {
     flex-shrink: 0;
     border-radius: 2px;
     border: var(--color-border);
     background-color: var(--color-bg);
-
     &--dot {
       height: var(--spacing-3);
       width: var(--spacing-3);
     }
-
     &--line {
       width: var(--spacing-1);
     }
-
     &--dashed {
       width: 0;
       border-width: 1.5px;
       border-style: dashed;
       background-color: transparent;
-
       &.chart-tooltip__indicator--nested {
         margin: var(--spacing-1) 0;
       }
     }
   }
-
   &__item-content {
     display: flex;
     flex: 1;
     justify-content: space-between;
     line-height: 1;
-
     &--nested {
       align-items: end;
     }
-
     &--normal {
       align-items: center;
     }
   }
-
   &__item-details {
     display: grid;
     gap: var(--spacing-2);
   }
-
   &__item-name {
     color: hsl(var(--muted-foreground));
   }
-
   &__item-value {
     font-family: var(--font-mono);
     font-weight: var(--font-weight-medium);
@@ -171,33 +138,27 @@
     color: hsl(var(--foreground));
   }
 }
-
 .chart-legend {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: var(--spacing-4);
-
   &--top {
     padding-bottom: var(--spacing-3);
   }
-
   &--bottom {
     padding-top: var(--spacing-3);
   }
-
   &__item {
     display: flex;
     align-items: center;
     gap: var(--spacing-2);
-
     svg {
       height: var(--spacing-3);
       width: var(--spacing-3);
       color: hsl(var(--muted-foreground));
     }
   }
-
   &__indicator {
     height: var(--spacing-2);
     width: var(--spacing-2);

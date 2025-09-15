@@ -2,7 +2,6 @@
 
 import * as TabsPrimitive from '@radix-ui/react-tabs';
 import * as React from 'react';
-import './Tabs.scss';
 
 import { cn } from '@/lib/utils';
 import { stripTransientProps } from '@/utils/stripTransientProps';

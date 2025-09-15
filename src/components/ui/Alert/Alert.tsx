@@ -2,7 +2,6 @@ import { X } from 'lucide-react';
 import * as React from 'react';
 
 import { stripTransientProps } from '@/utils/stripTransientProps';
-import './Alert.scss';
 
 export interface AlertProps extends React.HTMLAttributes<HTMLDivElement> {
   variant?: 'default' | 'destructive' | 'warning' | 'success' | 'info';

@@ -1,5 +1,6 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 import { TomTomMap } from './TomTomMap';
+import './TomTomMap.scss';
 
 const meta: Meta<typeof TomTomMap> = {
   title: 'UI/TomTomMap',

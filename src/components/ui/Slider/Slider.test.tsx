@@ -39,11 +39,11 @@ describe('Slider', () => {
       const { container } = renderBasicSlider({ loading: true });
       // In loading state, check for presence
       expect(container.firstChild).toBeInTheDocument();
-      expect(container.firstChild).toHaveClass('gap-2');
+      expect(container.firstChild).toHaveClass('slider__loading');
       if (container.firstChild && 'querySelector' in container.firstChild) {
         const element = container.firstChild as HTMLElement;
-        if (element.querySelector('.animate-pulse')) {
-          expect(container.firstChild).toHaveClass('gap-2');
+        if (element.querySelector('.slider__loading-spinner')) {
+          expect(container.firstChild).toHaveClass('slider__loading');
         }
       }
     });
@@ -72,7 +72,7 @@ describe('Slider', () => {
       const { container } = renderBasicSlider({ loading: true });
       // In loading state, check for presence
       expect(container.firstChild).toBeInTheDocument();
-      expect(container.firstChild).toHaveClass('gap-2');
+      expect(container.firstChild).toHaveClass('slider__loading');
     });
     it('handles formatValue prop correctly', () => {
       const { container } = renderBasicSlider({ formatValue: (value: number) => `${value}%` });

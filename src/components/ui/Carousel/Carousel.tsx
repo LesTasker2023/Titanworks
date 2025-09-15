@@ -6,7 +6,6 @@ import * as React from 'react';
 
 import { Button } from '@/components/ui/Button';
 import { cn } from '@/lib/utils';
-import './Carousel.scss';
 
 type CarouselApi = UseEmblaCarouselType[1];
 type UseCarouselParameters = Parameters<typeof useEmblaCarousel>;

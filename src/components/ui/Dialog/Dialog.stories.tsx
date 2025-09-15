@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/nextjs';
+import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 import { Button } from '../Button';
 import { Input } from '../Input';
 import { Label } from '../Label';
@@ -11,6 +11,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from './Dialog';
+import './Dialog.scss';
 
 const meta: Meta<typeof Dialog> = {
   title: 'UI/Dialog',

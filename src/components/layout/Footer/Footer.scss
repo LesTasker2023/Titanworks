@@ -1,0 +1,186 @@
+// Footer Component - BEM Styling with Design Tokens
+.footer {
+  margin-top: auto;
+  border-top: 1px solid hsl(var(--border-default));
+  background-color: hsl(var(--surface-secondary) / 0.5);
+
+  &__content {
+    padding: 3rem 0;
+
+    @media (min-width: 1024px) {
+      padding: 4rem 0;
+    }
+  }
+
+  &__grid {
+    display: grid;
+    gap: 2rem;
+
+    @media (min-width: 1024px) {
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 2rem;
+    }
+  }
+
+  &__brand {
+    @media (min-width: 1024px) {
+      grid-column: span 2;
+    }
+
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  &__brand-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  &__brand-title {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: hsl(var(--content-primary));
+  }
+
+  &__brand-description {
+    font-size: 0.875rem;
+    color: hsl(var(--content-secondary));
+    max-width: 28rem;
+    line-height: 1.625;
+  }
+
+  &__stats {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  &__stats-title {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: hsl(var(--content-secondary));
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  &__stats-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  &__social {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  &__social-title {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: hsl(var(--content-secondary));
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  &__social-links {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  &__section {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  &__section-title {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: hsl(var(--content-secondary));
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  &__section-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__section-link {
+    font-size: 0.875rem;
+    color: hsl(var(--content-secondary));
+    text-decoration: none;
+    transition: color 0.15s ease-in-out;
+
+    &:hover {
+      color: hsl(var(--surface-interactive));
+    }
+  }
+
+  &__bottom {
+    border-top: 1px solid hsl(var(--border-default));
+    padding: 1.5rem 0;
+  }
+
+  &__bottom-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    @media (min-width: 768px) {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+
+  &__copyright {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+    color: hsl(var(--content-secondary));
+  }
+
+  &__made-with {
+    display: none;
+
+    @media (min-width: 640px) {
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+    }
+  }
+
+  &__heart-icon {
+    width: 0.75rem;
+    height: 0.75rem;
+    fill: #ef4444;
+    color: #ef4444;
+  }
+
+  &__legal-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+  }
+
+  &__legal-link {
+    font-size: 0.875rem;
+    color: hsl(var(--content-secondary));
+    text-decoration: none;
+    transition: color 0.15s ease-in-out;
+
+    &:hover {
+      color: hsl(var(--surface-interactive));
+    }
+  }
+}

@@ -2,7 +2,6 @@ import { cn } from '@/lib/utils';
 import { stripTransientProps } from '@/utils/stripTransientProps';
 import { ChevronLeft, ChevronRight, MoreHorizontal } from 'lucide-react';
 import { forwardRef, useMemo } from 'react';
-import './Pagination.scss';
 
 /**
  * 🎯 Enterprise Pagination Component

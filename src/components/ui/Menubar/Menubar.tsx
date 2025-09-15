@@ -6,7 +6,6 @@ import * as React from 'react';
 
 import { cn } from '@/lib/utils';
 import { stripTransientProps } from '@/utils/stripTransientProps';
-import './Menubar.scss';
 
 function MenubarMenu({ ...props }: React.ComponentProps<typeof MenubarPrimitive.Menu>) {
   return <MenubarPrimitive.Menu {...props} />;

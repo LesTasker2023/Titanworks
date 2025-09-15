@@ -1,6 +1,7 @@
-import type { Meta, StoryObj } from '@storybook/nextjs';
+import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 import { useState } from 'react';
 import { RadioGroup, RadioGroupItem } from './RadioGroup';
+import './RadioGroup.scss';
 
 const meta = {
   title: 'UI/RadioGroup',

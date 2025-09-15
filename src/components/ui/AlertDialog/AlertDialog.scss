@@ -1,21 +1,17 @@
 /* AlertDialog Component - BEM Styling with Design Tokens */
-
 .alert-dialog__overlay {
   position: fixed;
   inset: 0;
   z-index: 50;
   background-color: hsl(0 0% 0% / 0.8);
-
   /* Animation states */
   &[data-state="open"] {
     animation: alert-dialog-fade-in 200ms ease-out;
   }
-
   &[data-state="closed"] {
     animation: alert-dialog-fade-out 200ms ease-in;
   }
 }
-
 .alert-dialog__content {
   position: fixed;
   left: 50%;
@@ -32,67 +28,55 @@
   padding: var(--spacing-6);
   box-shadow: var(--shadow-lg);
   transition: var(--transition-default);
-
   /* Animation states */
   &[data-state="open"] {
     animation: alert-dialog-content-show 200ms ease-out;
   }
-
   &[data-state="closed"] {
     animation: alert-dialog-content-hide 200ms ease-in;
   }
-
   /* Responsive border radius */
   @media (min-width: 640px) {
     border-radius: var(--radius);
   }
 }
-
 .alert-dialog__header {
   display: flex;
   flex-direction: column;
   gap: var(--spacing-2);
   text-align: center;
-
   @media (min-width: 640px) {
     text-align: left;
   }
 }
-
 .alert-dialog__footer {
   display: flex;
   flex-direction: column-reverse;
-
   @media (min-width: 640px) {
     flex-direction: row;
     justify-content: flex-end;
     gap: var(--spacing-2);
   }
 }
-
 .alert-dialog__title {
   font-size: var(--text-lg);
   font-weight: 600;
   line-height: 1.25;
   color: hsl(var(--content-primary));
 }
-
 .alert-dialog__description {
   font-size: var(--text-sm);
   color: hsl(var(--content-secondary));
   line-height: 1.5;
 }
-
 .alert-dialog__cancel {
   /* Cancel button inherits button styles */
   /* Will be handled by Button component's BEM classes */
   margin-top: var(--spacing-2);
-
   @media (min-width: 640px) {
     margin-top: 0;
   }
 }
-
 /* Animations */
 @keyframes alert-dialog-fade-in {
   from {
@@ -102,7 +86,6 @@
     opacity: 1;
   }
 }
-
 @keyframes alert-dialog-fade-out {
   from {
     opacity: 1;
@@ -111,7 +94,6 @@
     opacity: 0;
   }
 }
-
 @keyframes alert-dialog-content-show {
   from {
     opacity: 0;
@@ -122,7 +104,6 @@
     transform: translate(-50%, -50%) scale(1);
   }
 }
-
 @keyframes alert-dialog-content-hide {
   from {
     opacity: 1;
@@ -133,7 +114,6 @@
     transform: translate(-50%, -50%) scale(0.95);
   }
 }
-
 /* Reduced motion support */
 @media (prefers-reduced-motion: reduce) {
   .alert-dialog__overlay,

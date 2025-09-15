@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/nextjs';
+import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 import { Calculator, Calendar, CreditCard, Settings, Smile, User } from 'lucide-react';
 import {
   Command,
@@ -10,6 +10,7 @@ import {
   CommandSeparator,
   CommandShortcut,
 } from './Command';
+import './Command.scss';
 
 const meta: Meta<typeof Command> = {
   title: 'UI/Command',

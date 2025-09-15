@@ -1,0 +1,87 @@
+// Container Component - BEM Styling with Design Tokens
+
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+
+  // Size variants
+  &--size-sm {
+    max-width: 42rem; // max-w-2xl
+  }
+
+  &--size-md {
+    max-width: 56rem; // max-w-4xl
+  }
+
+  &--size-lg {
+    max-width: 72rem; // max-w-6xl
+  }
+
+  &--size-xl {
+    max-width: 80rem; // max-w-7xl
+  }
+
+  &--size-7xl {
+    max-width: 88rem; // max-w-8xl (custom)
+  }
+
+  &--size-full {
+    max-width: 100%; // max-w-full
+  }
+
+  &--size-content {
+    max-width: 65ch; // max-w-prose
+  }
+
+  // Padding variants
+  &--padding-none {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  &--padding-sm {
+    padding-left: var(--spacing-4);
+    padding-right: var(--spacing-4);
+
+    @media (min-width: 640px) {
+      padding-left: var(--spacing-6);
+      padding-right: var(--spacing-6);
+    }
+  }
+
+  &--padding-md {
+    padding-left: var(--spacing-4);
+    padding-right: var(--spacing-4);
+
+    @media (min-width: 640px) {
+      padding-left: var(--spacing-6);
+      padding-right: var(--spacing-6);
+    }
+
+    @media (min-width: 1024px) {
+      padding-left: var(--spacing-8);
+      padding-right: var(--spacing-8);
+    }
+  }
+
+  &--padding-lg {
+    padding-left: var(--spacing-6);
+    padding-right: var(--spacing-6);
+
+    @media (min-width: 640px) {
+      padding-left: var(--spacing-8);
+      padding-right: var(--spacing-8);
+    }
+
+    @media (min-width: 1024px) {
+      padding-left: var(--spacing-12);
+      padding-right: var(--spacing-12);
+    }
+  }
+
+  // Center variant
+  &--center {
+    text-align: center;
+  }
+}

@@ -3,8 +3,6 @@
 import * as AvatarPrimitive from '@radix-ui/react-avatar';
 import * as React from 'react';
 
-import './Avatar.scss';
-
 export interface AvatarProps extends React.ComponentPropsWithoutRef<typeof AvatarPrimitive.Root> {
   size?: 'sm' | 'default' | 'lg' | 'xl';
   src?: string;

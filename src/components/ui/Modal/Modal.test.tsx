@@ -1,7 +1,6 @@
-﻿import { render, screen, fireEvent } from '@testing-library/react';
-import React from 'react';
+﻿import { fireEvent, render, screen } from '@testing-library/react';
 import { describe, expect, it, vi } from 'vitest';
-import { Modal, ModalContent, ModalHeader, ModalFooter } from './Modal';
+import { Modal, ModalContent, ModalFooter, ModalHeader } from './Modal';
 
 describe('Modal', () => {
   // Helper component that disables portal for testing
@@ -168,35 +167,35 @@ describe('Modal', () => {
     it('applies size variants correctly', () => {
       const { rerender } = render(<BasicModal size="sm" />);
       let modal = screen.getByRole('dialog');
-      expect(modal.firstChild).toHaveClass('max-w-sm');
+      expect(modal.firstChild).toHaveClass('modal__content--size-sm');
 
       rerender(<BasicModal size="lg" />);
       modal = screen.getByRole('dialog');
-      expect(modal.firstChild).toHaveClass('max-w-lg');
+      expect(modal.firstChild).toHaveClass('modal__content--size-lg');
     });
 
     it('applies padding variants correctly', () => {
       const { rerender } = render(<BasicModal padding="sm" />);
       let modal = screen.getByRole('dialog');
-      expect(modal.firstChild).toHaveClass('p-4');
+      expect(modal.firstChild).toHaveClass('modal__content--padding-sm');
 
       rerender(<BasicModal padding="lg" />);
       modal = screen.getByRole('dialog');
-      expect(modal.firstChild).toHaveClass('p-8');
+      expect(modal.firstChild).toHaveClass('modal__content--padding-lg');
     });
 
     it('applies animation variants correctly', () => {
       const { rerender } = render(<BasicModal animation="fast" />);
       let modal = screen.getByRole('dialog');
-      expect(modal).toHaveClass('duration-100');
+      expect(modal).toHaveClass('modal--animation-fast');
 
       rerender(<BasicModal animation="slow" />);
       modal = screen.getByRole('dialog');
-      expect(modal).toHaveClass('duration-300');
+      expect(modal).toHaveClass('modal--animation-slow');
 
       rerender(<BasicModal animation="none" />);
       modal = screen.getByRole('dialog');
-      expect(modal).not.toHaveClass('animate-in');
+      expect(modal).toHaveClass('modal--animation-none');
     });
   });
 

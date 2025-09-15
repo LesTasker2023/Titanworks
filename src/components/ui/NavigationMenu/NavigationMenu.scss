@@ -1,5 +1,3 @@
-@import "../../../styles/globals.scss";
-
 .navigationMenu {
   // Root container
   &__root {
@@ -11,7 +9,6 @@
     align-items: center;
     justify-content: center;
   }
-
   // Menu list
   &__list {
     display: flex;
@@ -21,7 +18,6 @@
     justify-content: center;
     gap: 0.25rem;
   }
-
   // Menu trigger
   &__trigger {
     display: inline-flex;
@@ -37,36 +33,29 @@
     transition: all 0.2s ease;
     cursor: pointer;
     border: none;
-
     &:hover {
       background-color: hsl(var(--surface-interactive) / 0.1);
       color: hsl(var(--surface-interactive));
     }
-
     &:focus {
       background-color: hsl(var(--surface-interactive) / 0.1);
       color: hsl(var(--surface-interactive));
       outline: none;
     }
-
     &:disabled {
       pointer-events: none;
       opacity: 0.5;
     }
-
     &[data-state="open"] {
       color: hsl(var(--surface-interactive));
       background-color: hsl(var(--surface-interactive) / 0.5);
     }
-
     &[data-state="open"]:hover {
       background-color: hsl(var(--surface-interactive) / 0.1);
     }
-
     &[data-state="open"]:focus {
       background-color: hsl(var(--surface-interactive) / 0.1);
     }
-
     // Chevron icon
     .chevron-icon {
       position: relative;
@@ -76,49 +65,39 @@
       width: 0.75rem;
       transition: transform 0.3s ease;
     }
-
     &[data-state="open"] .chevron-icon {
       transform: rotate(180deg);
     }
   }
-
   // Menu content
   &__content {
     left: 0;
     top: 0;
     width: 100%;
-
     // Animation states
     &[data-motion^="from-"] {
       animation: navigationMenu-fade-in 0.2s ease-out;
     }
-
     &[data-motion^="to-"] {
       animation: navigationMenu-fade-out 0.2s ease-out;
     }
-
     &[data-motion="from-end"] {
       animation: navigationMenu-slide-in-from-right 0.2s ease-out;
     }
-
     &[data-motion="from-start"] {
       animation: navigationMenu-slide-in-from-left 0.2s ease-out;
     }
-
     &[data-motion="to-end"] {
       animation: navigationMenu-slide-out-to-right 0.2s ease-out;
     }
-
     &[data-motion="to-start"] {
       animation: navigationMenu-slide-out-to-left 0.2s ease-out;
     }
-
     @media (min-width: 768px) {
       position: absolute;
       width: auto;
     }
   }
-
   // Viewport container
   &__viewport-container {
     position: absolute;
@@ -127,7 +106,6 @@
     display: flex;
     justify-content: center;
   }
-
   // Viewport
   &__viewport {
     position: relative;
@@ -141,20 +119,16 @@
     color: var(--popover-foreground);
     box-shadow: var(--shadow-lg);
     transform-origin: top center;
-
     &[data-state="open"] {
       animation: navigationMenu-zoom-in 0.2s ease-out;
     }
-
     &[data-state="closed"] {
       animation: navigationMenu-zoom-out 0.2s ease-out;
     }
-
     @media (min-width: 768px) {
       width: var(--radix-navigation-menu-viewport-width);
     }
   }
-
   // Indicator
   &__indicator {
     top: 100%;
@@ -164,15 +138,12 @@
     align-items: flex-end;
     justify-content: center;
     overflow: hidden;
-
     &[data-state="visible"] {
       animation: navigationMenu-fade-in 0.2s ease-out;
     }
-
     &[data-state="hidden"] {
       animation: navigationMenu-fade-out 0.2s ease-out;
     }
-
     // Arrow indicator
     &__arrow {
       position: relative;
@@ -186,7 +157,6 @@
     }
   }
 }
-
 // Animations
 @keyframes navigationMenu-fade-in {
   from {
@@ -196,7 +166,6 @@
     opacity: 1;
   }
 }
-
 @keyframes navigationMenu-fade-out {
   from {
     opacity: 1;
@@ -205,7 +174,6 @@
     opacity: 0;
   }
 }
-
 @keyframes navigationMenu-slide-in-from-right {
   from {
     transform: translateX(13rem);
@@ -216,7 +184,6 @@
     opacity: 1;
   }
 }
-
 @keyframes navigationMenu-slide-in-from-left {
   from {
     transform: translateX(-13rem);
@@ -227,7 +194,6 @@
     opacity: 1;
   }
 }
-
 @keyframes navigationMenu-slide-out-to-right {
   from {
     transform: translateX(0);
@@ -238,7 +204,6 @@
     opacity: 0;
   }
 }
-
 @keyframes navigationMenu-slide-out-to-left {
   from {
     transform: translateX(0);
@@ -249,7 +214,6 @@
     opacity: 0;
   }
 }
-
 @keyframes navigationMenu-zoom-in {
   from {
     opacity: 0;
@@ -260,7 +224,6 @@
     transform: scale(1);
   }
 }
-
 @keyframes navigationMenu-zoom-out {
   from {
     opacity: 1;

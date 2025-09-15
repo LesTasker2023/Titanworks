@@ -70,7 +70,6 @@ const nextConfig: NextConfig = {
         '@storybook/addon-docs': 'commonjs @storybook/addon-docs',
         '@storybook/addon-a11y': 'commonjs @storybook/addon-a11y',
         '@chromatic-com/storybook': 'commonjs @chromatic-com/storybook',
-        '@storybook/nextjs': 'commonjs @storybook/nextjs',
         '@storybook/nextjs-vite': 'commonjs @storybook/nextjs-vite',
         '@vitest/browser': 'commonjs @vitest/browser',
         '@vitest/coverage-v8': 'commonjs @vitest/coverage-v8',

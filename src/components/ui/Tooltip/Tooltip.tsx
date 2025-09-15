@@ -6,8 +6,6 @@ import * as React from 'react';
 import { cn } from '@/lib/utils';
 import { stripTransientProps } from '@/utils/stripTransientProps';
 
-import './Tooltip.scss';
-
 // Helper function for tooltip classes
 const getTooltipClasses = (
   variant?: 'default' | 'secondary' | 'destructive' | 'outline' | 'muted' | 'accent',

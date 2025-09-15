@@ -1,5 +1,3 @@
-@import "../../../styles/globals.scss";
-
 .radioGroup {
   // Root container with label, input, and helper text
   &__container {
@@ -7,36 +5,30 @@
     flex-direction: column;
     gap: 0.5rem;
   }
-
   // Label styles
   &__label {
     font-size: 0.875rem;
     font-weight: 500;
     line-height: 1;
     cursor: pointer;
-
     &--required::after {
       content: "*";
       margin-left: 0.125rem;
       color: var(--destructive);
     }
-
     &--error {
       color: var(--destructive);
     }
-
     &--disabled {
       cursor: not-allowed;
       opacity: 0.7;
     }
   }
-
   // Root radio group container
   &__root {
     display: grid;
     gap: 0.5rem;
   }
-
   // Individual radio item
   &__item {
     aspect-ratio: 1;
@@ -49,32 +41,26 @@
     cursor: pointer;
     position: relative;
     transition: all 0.2s ease;
-
     &:focus {
       outline: none;
     }
-
     &:focus-visible {
       box-shadow: 0 0 0 2px var(--ring);
       outline-offset: 2px;
     }
-
     &:disabled {
       cursor: not-allowed;
       opacity: 0.5;
     }
-
     &:hover:not(:disabled) {
       background-color: var(--accent);
     }
-
     // When checked
     &[data-state="checked"] {
       border-color: var(--primary);
       background-color: transparent;
     }
   }
-
   // Radio indicator (the dot in the center)
   &__indicator {
     display: flex;
@@ -82,26 +68,22 @@
     justify-content: center;
     width: 100%;
     height: 100%;
-
     svg {
       height: 0.625rem;
       width: 0.625rem;
       fill: currentColor;
     }
   }
-
   // Helper text
   &__helper-text {
     font-size: 0.875rem;
     color: var(--muted-foreground);
   }
-
   // Error text
   &__error-text {
     font-size: 0.875rem;
     color: var(--destructive);
   }
-
   // Loading text
   &__loading-text {
     font-size: 0.875rem;

@@ -266,18 +266,18 @@ exports[`Calendar > Snapshots > matches default snapshot 1`] = `
             class="calendar__week rdp-week"
           >
             <td
-              aria-label="Today, Sunday, September 14th, 2025"
-              class="calendar__day rdp-day calendar__today rdp-today"
+              aria-label="Sunday, September 14th, 2025"
+              class="calendar__day rdp-day"
               data-day="2025-09-14"
-              data-today="true"
               role="gridcell"
             >
               14
             </td>
             <td
-              aria-label="Monday, September 15th, 2025"
-              class="calendar__day rdp-day"
+              aria-label="Today, Monday, September 15th, 2025"
+              class="calendar__day rdp-day calendar__today rdp-today"
               data-day="2025-09-15"
+              data-today="true"
               role="gridcell"
             >
               15
@@ -738,20 +738,20 @@ exports[`Calendar > Snapshots > matches disabled state snapshot 1`] = `
             class="calendar__week rdp-week"
           >
             <td
-              aria-label="Today, Sunday, September 14th, 2025"
-              class="calendar__day rdp-day calendar__disabled rdp-disabled calendar__today rdp-today"
+              aria-label="Sunday, September 14th, 2025"
+              class="calendar__day rdp-day calendar__disabled rdp-disabled"
               data-day="2025-09-14"
               data-disabled="true"
-              data-today="true"
               role="gridcell"
             >
               14
             </td>
             <td
-              aria-label="Monday, September 15th, 2025"
-              class="calendar__day rdp-day calendar__disabled rdp-disabled"
+              aria-label="Today, Monday, September 15th, 2025"
+              class="calendar__day rdp-day calendar__disabled rdp-disabled calendar__today rdp-today"
               data-day="2025-09-15"
               data-disabled="true"
+              data-today="true"
               role="gridcell"
             >
               15
@@ -1217,18 +1217,18 @@ exports[`Calendar > Snapshots > matches focused state snapshot 1`] = `
             class="calendar__week rdp-week"
           >
             <td
-              aria-label="Today, Sunday, September 14th, 2025"
-              class="calendar__day rdp-day calendar__today rdp-today"
+              aria-label="Sunday, September 14th, 2025"
+              class="calendar__day rdp-day"
               data-day="2025-09-14"
-              data-today="true"
               role="gridcell"
             >
               14
             </td>
             <td
-              aria-label="Monday, September 15th, 2025"
-              class="calendar__day rdp-day"
+              aria-label="Today, Monday, September 15th, 2025"
+              class="calendar__day rdp-day calendar__today rdp-today"
               data-day="2025-09-15"
+              data-today="true"
               role="gridcell"
             >
               15
@@ -1675,18 +1675,18 @@ exports[`Calendar > Snapshots > matches hover state snapshot 1`] = `
             class="calendar__week rdp-week"
           >
             <td
-              aria-label="Today, Sunday, September 14th, 2025"
-              class="calendar__day rdp-day calendar__today rdp-today"
+              aria-label="Sunday, September 14th, 2025"
+              class="calendar__day rdp-day"
               data-day="2025-09-14"
-              data-today="true"
               role="gridcell"
             >
               14
             </td>
             <td
-              aria-label="Monday, September 15th, 2025"
-              class="calendar__day rdp-day"
+              aria-label="Today, Monday, September 15th, 2025"
+              class="calendar__day rdp-day calendar__today rdp-today"
               data-day="2025-09-15"
+              data-today="true"
               role="gridcell"
             >
               15
@@ -2133,18 +2133,18 @@ exports[`Calendar > Snapshots > matches selected state snapshot 1`] = `
             class="calendar__week rdp-week"
           >
             <td
-              aria-label="Today, Sunday, September 14th, 2025"
-              class="calendar__day rdp-day calendar__today rdp-today"
+              aria-label="Sunday, September 14th, 2025"
+              class="calendar__day rdp-day"
               data-day="2025-09-14"
-              data-today="true"
               role="gridcell"
             >
               14
             </td>
             <td
-              aria-label="Monday, September 15th, 2025"
-              class="calendar__day rdp-day"
+              aria-label="Today, Monday, September 15th, 2025"
+              class="calendar__day rdp-day calendar__today rdp-today"
               data-day="2025-09-15"
+              data-today="true"
               role="gridcell"
             >
               15

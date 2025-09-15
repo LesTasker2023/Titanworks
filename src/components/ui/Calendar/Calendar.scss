@@ -1,16 +1,13 @@
 // Calendar Component - BEM Styling with Design Tokens
-
 .calendar {
   background-color: hsl(var(--background));
   padding: var(--spacing-3);
   --cell-size: 2rem;
-
   // Remove background in specific contexts
   [data-slot="card-content"] &,
   [data-slot="popover-content"] & {
     background-color: transparent;
   }
-
   // RTL support
   .rtl {
     .rdp-button_next > svg {
@@ -20,24 +17,20 @@
       transform: rotate(180deg);
     }
   }
-
   // Root styling
   &__root {
     width: fit-content;
   }
-
   // Months container
   &__months {
     position: relative;
     display: flex;
     flex-direction: column;
     gap: var(--spacing-4);
-
     @media (min-width: 768px) {
       flex-direction: row;
     }
   }
-
   // Individual month
   &__month {
     display: flex;
@@ -45,7 +38,6 @@
     flex-direction: column;
     gap: var(--spacing-4);
   }
-
   // Navigation
   &__nav {
     position: absolute;
@@ -58,7 +50,6 @@
     justify-content: space-between;
     gap: var(--spacing-1);
   }
-
   // Navigation buttons
   &__button-previous,
   &__button-next {
@@ -66,12 +57,10 @@
     width: var(--cell-size);
     user-select: none;
     padding: 0;
-
     &[aria-disabled="true"] {
       opacity: 0.5;
     }
   }
-
   // Month caption
   &__month-caption {
     display: flex;
@@ -82,7 +71,6 @@
     padding-left: var(--cell-size);
     padding-right: var(--cell-size);
   }
-
   // Dropdowns
   &__dropdowns {
     display: flex;
@@ -94,35 +82,29 @@
     font-size: var(--font-size-sm);
     font-weight: var(--font-weight-medium);
   }
-
   &__dropdown-root {
     position: relative;
     border-radius: var(--radius-md);
     border: 1px solid hsl(var(--input));
     box-shadow: var(--shadow-xs);
-
     &:focus-within {
       border-color: hsl(var(--ring));
       box-shadow: 0 0 0 3px hsl(var(--ring) / 0.5);
     }
   }
-
   &__dropdown {
     background-color: hsl(var(--popover));
     position: absolute;
     inset: 0;
     opacity: 0;
   }
-
   // Caption label
   &__caption-label {
     user-select: none;
     font-weight: var(--font-weight-medium);
-
     &--label {
       font-size: var(--font-size-sm);
     }
-
     &--button {
       display: flex;
       height: var(--spacing-8);
@@ -132,7 +114,6 @@
       padding-left: var(--spacing-2);
       padding-right: var(--spacing-1);
       font-size: var(--font-size-sm);
-
       svg {
         color: hsl(var(--muted-foreground));
         width: var(--spacing-4);
@@ -140,18 +121,15 @@
       }
     }
   }
-
   // Table
   &__table {
     width: 100%;
     border-collapse: collapse;
   }
-
   // Weekdays
   &__weekdays {
     display: flex;
   }
-
   &__weekday {
     color: hsl(var(--muted-foreground));
     flex: 1;
@@ -160,19 +138,16 @@
     font-size: 0.8rem;
     font-weight: var(--font-weight-normal);
   }
-
   // Week
   &__week {
     margin-top: var(--spacing-2);
     display: flex;
     width: 100%;
   }
-
   &__week-number-header {
     width: var(--cell-size);
     user-select: none;
   }
-
   &__week-number {
     color: hsl(var(--muted-foreground));
     user-select: none;
@@ -183,7 +158,6 @@
     justify-content: center;
     text-align: center;
   }
-
   // Day cell
   &__day {
     position: relative;
@@ -193,76 +167,63 @@
     user-select: none;
     padding: 0;
     text-align: center;
-
     &:first-child[data-selected="true"] button {
       border-top-left-radius: var(--radius-md);
       border-bottom-left-radius: var(--radius-md);
     }
-
     &:last-child[data-selected="true"] button {
       border-top-right-radius: var(--radius-md);
       border-bottom-right-radius: var(--radius-md);
     }
   }
-
   // Range styling
   &__range-start {
     background-color: hsl(var(--accent));
     border-top-left-radius: var(--radius-md);
     border-bottom-left-radius: var(--radius-md);
   }
-
   &__range-middle {
     border-radius: 0;
   }
-
   &__range-end {
     background-color: hsl(var(--accent));
     border-top-right-radius: var(--radius-md);
     border-bottom-right-radius: var(--radius-md);
   }
-
   // Today styling
   &__today {
     background-color: #1f2937;
     color: white;
     border: 0;
     font-weight: var(--font-weight-normal);
-
     &[data-selected="true"] {
       background-color: hsl(var(--primary)) !important;
       color: white !important;
       border: 2px solid hsl(var(--primary)) !important;
     }
   }
-
   // Outside month
   &__outside {
     color: hsl(var(--muted-foreground));
-
     &[aria-selected="true"] {
       color: hsl(var(--muted-foreground));
     }
   }
-
   // Disabled
   &__disabled {
     color: hsl(var(--muted-foreground));
     opacity: 0.5;
   }
-
   // Hidden
   &__hidden {
     visibility: hidden;
   }
-
   // Chevron icons
   &__chevron {
     width: var(--spacing-4);
     height: var(--spacing-4);
   }
 }
-
 // Calendar Day Button specific styling
 .calendar-day-button {
   // Base styling - black background with visible border
@@ -280,20 +241,17 @@
   gap: var(--spacing-1);
   font-weight: var(--font-weight-normal);
   line-height: 1;
-
   // Hover states
   &:hover {
     background-color: hsl(var(--primary) / 0.2) !important;
     color: hsl(var(--primary)) !important;
     border-color: hsl(var(--primary) / 0.4) !important;
   }
-
   // Today modifier (not selected)
   &--today:not(.calendar-day-button--selected) {
     background-color: #1f2937;
     border: 0;
   }
-
   // Selected state
   &--selected {
     background-color: hsl(var(--primary)) !important;
@@ -302,7 +260,6 @@
     box-shadow: var(--shadow-lg) !important;
     font-weight: var(--font-weight-semibold) !important;
   }
-
   // Range states
   &--range-middle {
     background-color: hsl(var(--primary) / 0.3) !important;
@@ -310,14 +267,12 @@
     border-color: hsl(var(--primary) / 0.5) !important;
     border-radius: 0;
   }
-
   &--range-start,
   &--range-end {
     background-color: hsl(var(--primary)) !important;
     color: white !important;
     border-color: hsl(var(--primary)) !important;
   }
-
   // Focus states
   &:focus-visible,
   .calendar__day[data-focused="true"] & {
@@ -326,14 +281,12 @@
     position: relative;
     z-index: 10;
   }
-
   // Span styling for additional content
   span {
     font-size: var(--font-size-xs);
     opacity: 0.7;
   }
 }
-
 // Calendar day container for selected state background
 .calendar-day-container {
   &--selected {

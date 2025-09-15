@@ -5,8 +5,6 @@ import { stripTransientProps } from '@/utils/stripTransientProps';
 import * as TogglePrimitive from '@radix-ui/react-toggle';
 import * as React from 'react';
 
-import './Toggle.scss';
-
 // Helper function for toggle classes
 const getToggleClasses = (variant?: 'default' | 'outline', size?: 'default' | 'sm' | 'lg') => {
   const baseClass = 'toggle';

@@ -1,5 +1,6 @@
-import type { Meta, StoryObj } from '@storybook/nextjs';
+import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 import { Label } from './Label';
+import './Label.scss';
 
 const meta: Meta<typeof Label> = {
   title: 'UI/Label',

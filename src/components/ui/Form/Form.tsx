@@ -1,6 +1,5 @@
 import { cn } from '@/lib/utils';
 import { forwardRef } from 'react';
-import './Form.scss';
 
 // Variant types
 export type FormVariant = 'default' | 'card' | 'inline';

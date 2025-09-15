@@ -1,5 +1,4 @@
 // Button Component - BEM Styling with Design Tokens
-
 .button {
   // Base button styles
   display: inline-flex;
@@ -14,14 +13,12 @@
   border: 1px solid transparent;
   cursor: pointer;
   text-decoration: none;
-
   // Focus styles for accessibility
   &:focus-visible {
     outline: 2px solid hsl(var(--ring));
     outline-offset: 2px;
     box-shadow: 0 0 0 2px hsl(var(--ring) / 0.2);
   }
-
   // Disabled state
   &:disabled,
   &[aria-disabled="true"] {
@@ -31,7 +28,6 @@
     transform: none !important;
     box-shadow: none !important;
   }
-
   // SVG icon styles
   svg {
     pointer-events: none;
@@ -39,40 +35,34 @@
     height: var(--spacing-4);
     flex-shrink: 0;
   }
-
   // Variant: Default
   &--default {
     background-color: hsl(var(--primary));
     color: hsl(var(--primary-foreground));
     box-shadow: var(--shadow-sm);
-
     &:hover:not(:disabled) {
       background-color: hsl(var(--primary) / 0.9);
       transform: translateY(-1px);
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
   }
-
   // Variant: Destructive
   &--destructive {
     background-color: hsl(var(--destructive));
     color: hsl(var(--destructive-foreground));
     box-shadow: var(--shadow-sm);
-
     &:hover:not(:disabled) {
       background-color: hsl(var(--destructive) / 0.9);
       transform: translateY(-1px);
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
   }
-
   // Variant: Outline
   &--outline {
     border: 1px solid hsl(var(--surface-interactive));
     background-color: hsl(var(--background));
     color: hsl(var(--surface-interactive));
     box-shadow: var(--shadow-sm);
-
     &:hover:not(:disabled) {
       background-color: hsl(var(--accent));
       color: hsl(var(--accent-foreground));
@@ -80,14 +70,12 @@
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
   }
-
   // Variant: Secondary
   &--secondary {
     background-color: hsl(var(--secondary));
     color: hsl(var(--secondary-foreground));
     border: 1px solid hsl(var(--border-default));
     box-shadow: var(--shadow-sm);
-
     &:hover:not(:disabled) {
       background-color: hsl(var(--secondary) / 0.7);
       border-color: hsl(var(--border-interactive) / 0.5);
@@ -95,11 +83,9 @@
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
   }
-
   // Variant: Ghost
   &--ghost {
     color: hsl(var(--surface-interactive));
-
     &:hover:not(:disabled) {
       background-color: hsl(var(--accent));
       color: hsl(var(--accent-foreground));
@@ -107,24 +93,20 @@
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
   }
-
   // Variant: Link
   &--link {
     color: hsl(var(--primary));
     text-decoration: underline;
     text-underline-offset: 4px;
-
     &:hover:not(:disabled) {
       text-decoration: underline;
     }
   }
-
   // Size: Default
   &--default-size {
     height: var(--spacing-9);
     padding: var(--spacing-2) var(--spacing-4);
   }
-
   // Size: Small
   &--sm {
     height: var(--spacing-8);
@@ -132,82 +114,96 @@
     padding: 0 var(--spacing-3);
     font-size: var(--font-size-xs);
   }
-
   // Size: Large
   &--lg {
     height: var(--spacing-10);
     border-radius: var(--radius-md);
     padding: 0 var(--spacing-8);
   }
-
   // Size: Icon
   &--icon {
     height: var(--spacing-9);
     width: var(--spacing-9);
     padding: 0;
   }
-
   // Loading state
   &--loading {
     position: relative;
-    color: transparent !important;
-
+    opacity: 0.8;
+    cursor: wait;
+    // Add extra padding on the right for spinner space
+    padding-right: calc(var(--spacing-3) + 20px) !important;
     &::after {
       content: "";
       position: absolute;
       width: 16px;
       height: 16px;
       top: 50%;
-      left: 50%;
-      margin-left: -8px;
+      right: var(--spacing-3);
       margin-top: -8px;
       border: 2px solid;
       border-radius: 50%;
       border-color: currentColor transparent currentColor currentColor;
-      opacity: 0.8;
       animation: spin 1s linear infinite;
     }
+    // Size-specific spinner positioning and padding
+    &.button--sm {
+      padding-right: calc(var(--spacing-2) + 16px) !important;
+      &::after {
+        width: 12px;
+        height: 12px;
+        margin-top: -6px;
+        border-width: 1.5px;
+        right: var(--spacing-2);
+      }
+    }
+    &.button--lg {
+      padding-right: calc(var(--spacing-4) + 24px) !important;
+      &::after {
+        width: 18px;
+        height: 18px;
+        margin-top: -9px;
+        border-width: 2.5px;
+        right: var(--spacing-4);
+      }
+    }
+    &.button--icon::after {
+      right: 50%;
+      margin-right: -8px;
+    }
   }
-
   // Dark mode enhancements
   [data-theme="dark"] & {
     &:hover:not(:disabled) {
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
     }
   }
-
   // Mobile touch targets (accessibility)
   @media (max-width: 640px) {
     min-height: 44px;
     min-width: 44px;
   }
-
   // Reduced motion
   @media (prefers-reduced-motion: reduce) {
     transition: none;
     animation: none;
-
     &:hover:not(:disabled) {
       transform: none;
     }
-
     &--loading::after {
       animation: none;
       border: 2px solid currentColor;
       border-top-color: transparent;
     }
   }
-
   // High contrast mode
   @media (prefers-contrast: high) {
     border: 2px solid;
-
     &:hover:not(:disabled) {
       border-width: 3px;
     }
   }
 }
-
 // Loading spinner animation
 @keyframes spin {
   from {
@@ -217,37 +213,30 @@
     transform: rotate(360deg);
   }
 }
-
 // Button group utilities
 .button-group {
   display: flex;
   gap: var(--spacing-2);
   flex-wrap: wrap;
-
   // Connected button styling
   &--connected {
     gap: 0;
-
     .button {
       border-radius: 0;
       margin-left: -1px;
-
       &:first-child {
         border-top-left-radius: var(--radius-md);
         border-bottom-left-radius: var(--radius-md);
         margin-left: 0;
       }
-
       &:last-child {
         border-top-right-radius: var(--radius-md);
         border-bottom-right-radius: var(--radius-md);
       }
-
       &:only-child {
         border-radius: var(--radius-md);
         margin-left: 0;
       }
-
       &:focus-visible {
         z-index: 1;
       }

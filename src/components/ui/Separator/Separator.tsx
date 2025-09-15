@@ -2,7 +2,6 @@
 
 import * as SeparatorPrimitive from '@radix-ui/react-separator';
 import * as React from 'react';
-import './Separator.scss';
 
 import { cn } from '@/lib/utils';
 
@@ -47,7 +46,7 @@ const Separator = React.forwardRef<
     if (children) {
       // Text separator variant
       return (
-        <div className={separatorClasses}>
+        <div className={separatorClasses} {...props}>
           <span className="separator__text">{children}</span>
         </div>
       );

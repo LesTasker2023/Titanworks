@@ -1,4 +1,5 @@
-import type { Meta, StoryObj } from '@storybook/nextjs';
+import type { Meta, StoryObj } from '@storybook/nextjs-vite';
+import './AspectRatio.scss';
 
 const meta: Meta = {
   title: 'UI/AspectRatio',

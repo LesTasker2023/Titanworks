@@ -4,8 +4,6 @@ import 'maplibre-gl/dist/maplibre-gl.css';
 import React, { useCallback, useEffect, useState } from 'react';
 import Map, { Marker, Popup } from 'react-map-gl/maplibre';
 
-import './TomTomMap.scss';
-
 export interface Address {
   id: string;
   address: string;

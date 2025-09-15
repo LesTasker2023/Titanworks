@@ -5,7 +5,6 @@ import { Circle } from 'lucide-react';
 import * as React from 'react';
 
 import { cn } from '@/lib/utils';
-import './RadioGroup.scss';
 
 export interface RadioGroupProps
   extends React.ComponentPropsWithoutRef<typeof RadioGroupPrimitive.Root> {

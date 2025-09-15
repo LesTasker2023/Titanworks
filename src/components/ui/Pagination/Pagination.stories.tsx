@@ -1,5 +1,6 @@
-import type { Meta, StoryObj } from '@storybook/nextjs';
+import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 import { Pagination } from './Pagination';
+import './Pagination.scss';
 
 const meta: Meta<typeof Pagination> = {
   title: 'UI/Pagination',

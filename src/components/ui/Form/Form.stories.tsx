@@ -1,5 +1,6 @@
-import type { Meta, StoryObj } from '@storybook/nextjs';
+import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 import { Form } from './Form';
+import './Form.scss';
 
 const meta: Meta<typeof Form> = {
   title: 'UI/Form',

@@ -66,7 +66,7 @@ describe('DataTable', () => {
   describe('States', () => {
     it('handles loading state correctly', () => {
       renderBasicDataTable({ loading: true });
-      const element = document.querySelector('.datatable.state-loading');
+      const element = document.querySelector('.dataTable--loading');
       expect(element).toBeInTheDocument();
     });
     it('handles disabled state correctly', () => {
@@ -75,8 +75,8 @@ describe('DataTable', () => {
       expect(element).toBeInTheDocument();
     });
     it('handles error state correctly', () => {
-      renderBasicDataTable({ error: true });
-      const element = document.querySelector('.datatable.state-error');
+      renderBasicDataTable({ error: 'Test error' });
+      const element = document.querySelector('.dataTable--error');
       expect(element).toBeInTheDocument();
     });
     it('handles required state correctly', () => {

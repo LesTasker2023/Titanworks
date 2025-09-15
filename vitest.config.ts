@@ -1,13 +1,27 @@
+/// <reference types="vitest/config" />
 import react from '@vitejs/plugin-react';
+import { fileURLToPath } from 'node:url';
 import path from 'path';
 import { defineConfig } from 'vitest/config';
+const dirname =
+  typeof __dirname !== 'undefined' ? __dirname : path.dirname(fileURLToPath(import.meta.url));
 
+// More info at: https://storybook.js.org/docs/next/writing-tests/integrations/vitest-addon
 export default defineConfig({
   plugins: [react()],
   test: {
     environment: 'jsdom',
     setupFiles: ['./src/test/setup.ts'],
     globals: true,
+    // Exclude story files from unit tests
+    exclude: [
+      '**/node_modules/**',
+      '**/dist/**',
+      '**/*.stories.tsx',
+      '**/*.stories.ts',
+      '**/storybook-static/**',
+      '.storybook/**',
+    ],
     coverage: {
       provider: 'v8',
       reportsDirectory: './coverage',

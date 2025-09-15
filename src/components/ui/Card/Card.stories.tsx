@@ -1,5 +1,6 @@
-import type { Meta, StoryObj } from '@storybook/nextjs';
+import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 import { Card } from './Card';
+import './Card.scss';
 
 const meta: Meta<typeof Card> = {
   title: 'UI/Card',

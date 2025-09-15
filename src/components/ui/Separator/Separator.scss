@@ -1,113 +1,90 @@
-@import "../../../styles/globals.scss";
-
 .separator {
   // Base styles
   flex-shrink: 0;
   background-color: var(--border);
   transition: color 0.2s ease;
-
   // Orientations
   &--horizontal {
     height: 1px;
     width: 100%;
   }
-
   &--vertical {
     height: 100%;
     width: 1px;
   }
-
   // Variants
   &--default {
     background-color: var(--border);
   }
-
   &--muted {
     background-color: var(--muted);
   }
-
   &--accent {
     background-color: var(--accent);
   }
-
   &--primary {
     background-color: var(--primary);
     opacity: 0.2;
   }
-
   &--destructive {
     background-color: var(--destructive);
     opacity: 0.2;
   }
-
   // Sizes
   &--sm {
     &.separator--horizontal {
       height: 0.5px;
     }
-
     &.separator--vertical {
       width: 0.5px;
     }
   }
-
   &--lg {
     &.separator--horizontal {
       height: 2px;
     }
-
     &.separator--vertical {
       width: 2px;
     }
   }
-
   // Spacing
   &--spacing-sm {
     &.separator--horizontal {
       margin: 0.5rem 0;
     }
-
     &.separator--vertical {
       margin: 0 0.5rem;
     }
   }
-
   &--spacing-default {
     &.separator--horizontal {
       margin: 1rem 0;
     }
-
     &.separator--vertical {
       margin: 0 1rem;
     }
   }
-
   &--spacing-lg {
     &.separator--horizontal {
       margin: 1.5rem 0;
     }
-
     &.separator--vertical {
       margin: 0 1.5rem;
     }
   }
-
   &--spacing-xl {
     &.separator--horizontal {
       margin: 2rem 0;
     }
-
     &.separator--vertical {
       margin: 0 2rem;
     }
   }
-
   // Text separator when children are present
   &--with-text {
     display: flex;
     align-items: center;
     text-align: center;
-
     &::before,
     &::after {
       content: "";
@@ -115,16 +92,13 @@
       height: 1px;
       background-color: var(--border);
     }
-
     &::before {
       margin-right: 1rem;
     }
-
     &::after {
       margin-left: 1rem;
     }
   }
-
   // Text content
   &__text {
     padding: 0 1rem;

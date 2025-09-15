@@ -1,17 +1,13 @@
-@import "../../../styles/globals.scss";
-
 /* Form Component */
 .form {
   display: flex;
   flex-direction: column;
   width: 100%;
-
   /* Base variants */
   &--variant-default {
     background-color: var(--color-background);
     gap: calc(var(--spacing-unit) * 4);
   }
-
   &--variant-card {
     background-color: var(--color-card);
     border: var(--border-width) solid var(--color-border);
@@ -19,26 +15,21 @@
     padding: calc(var(--spacing-unit) * 6);
     gap: calc(var(--spacing-unit) * 4);
   }
-
   &--variant-inline {
     flex-direction: row;
     align-items: flex-end;
     gap: calc(var(--spacing-unit) * 4);
   }
-
   /* Size variants */
   &--size-default {
     gap: calc(var(--spacing-unit) * 4);
   }
-
   &--size-sm {
     gap: calc(var(--spacing-unit) * 2);
   }
-
   &--size-lg {
     gap: calc(var(--spacing-unit) * 6);
   }
-
   &--size-compact {
     gap: calc(var(--spacing-unit) * 1);
   }

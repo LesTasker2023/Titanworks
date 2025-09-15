@@ -4,7 +4,6 @@
   overflow: hidden;
   border-radius: var(--radius-lg);
   border: 1px solid hsl(var(--border));
-
   // Loading indicator
   &__loading {
     position: absolute;
@@ -18,7 +17,6 @@
     font-size: 0.875rem;
     box-shadow: var(--shadow-lg);
   }
-
   // Error message
   &__error {
     position: absolute;
@@ -31,7 +29,6 @@
     padding: 0.5rem 0.75rem;
     font-size: 0.875rem;
   }
-
   // Controls container
   &__controls {
     position: absolute;
@@ -39,7 +36,6 @@
     right: 0.5rem;
     z-index: 50;
   }
-
   // Refresh button
   &__refresh-button {
     display: flex;
@@ -53,25 +49,20 @@
     border: none;
     cursor: pointer;
     transition: background-color 0.15s ease-in-out;
-
     &:hover {
       background-color: hsl(var(--primary) / 0.9);
     }
-
     &:disabled {
       opacity: 0.5;
       cursor: not-allowed;
     }
-
     svg {
       width: 0.75rem;
       height: 0.75rem;
     }
   }
-
   // Map container (styled via inline props)
   // Height and width are set dynamically via component props
-
   // Marker button
   &__marker {
     display: flex;
@@ -86,47 +77,38 @@
     border: none;
     cursor: pointer;
     transition: all 0.15s ease-in-out;
-
     &:hover {
       background-color: hsl(var(--primary) / 0.9);
     }
-
     &:focus {
       outline: 2px solid hsl(var(--primary));
       outline-offset: 2px;
     }
-
     svg {
       width: 1rem;
       height: 1rem;
     }
   }
-
   // Popup content
   &__popup {
     max-width: 20rem;
-
     &-content {
       padding: 0.75rem;
     }
-
     &-title {
       font-weight: 600;
       font-size: 0.875rem;
     }
-
     &-address {
       font-size: 0.75rem;
       color: hsl(var(--muted-foreground));
       margin-top: 0.25rem;
     }
-
     &-description {
       font-size: 0.75rem;
       margin-top: 0.5rem;
     }
   }
-
   // Address list overlay
   &__address-list {
     position: absolute;
@@ -138,14 +120,12 @@
     overflow-y: auto;
     background-color: hsl(var(--background) / 0.95);
     backdrop-filter: blur(8px);
-
     &-container {
       padding: 0.5rem;
       display: flex;
       flex-direction: column;
       gap: 0.25rem;
     }
-
     &-item {
       width: 100%;
       text-align: left;
@@ -156,20 +136,17 @@
       background: transparent;
       cursor: pointer;
       transition: all 0.15s ease-in-out;
-
       &:hover {
         background-color: hsl(var(--accent));
         color: hsl(var(--accent-foreground));
       }
     }
-
     &-label {
       font-weight: 500;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
     }
-
     &-description {
       color: hsl(var(--muted-foreground));
       white-space: nowrap;

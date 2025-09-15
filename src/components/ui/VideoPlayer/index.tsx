@@ -14,8 +14,6 @@ import {
 } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
 
-import './VideoPlayer.scss';
-
 interface VideoPlayerProps {
   src: string;
   title: string;

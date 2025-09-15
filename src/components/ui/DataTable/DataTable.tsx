@@ -2,7 +2,6 @@ import { cn } from '@/lib/utils';
 import { stripTransientProps } from '@/utils/stripTransientProps';
 import { ChevronDown, ChevronUp, Loader2, Search } from 'lucide-react';
 import React from 'react';
-import './DataTable.scss';
 
 // Column definition interface
 export interface DataTableColumn<T = Record<string, unknown>> {

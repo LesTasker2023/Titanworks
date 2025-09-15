@@ -3,7 +3,6 @@
 import { Palette } from 'lucide-react';
 import { useCallback, useEffect, useState } from 'react';
 import { Button } from '../Button';
-import './ColorPicker.scss';
 
 interface ColorPickerProps {
   defaultColor?: string;

@@ -1,22 +1,18 @@
 // Dialog Component Styles
 // BEM Methodology: .dialog__element--modifier
-
 .dialog {
   &__overlay {
     position: fixed;
     inset: 0;
     z-index: 50;
     background-color: rgba(0, 0, 0, 0.8);
-
     &[data-state="open"] {
       animation: fadeIn 200ms;
     }
-
     &[data-state="closed"] {
       animation: fadeOut 200ms;
     }
   }
-
   &__content {
     position: fixed;
     left: 50%;
@@ -31,11 +27,9 @@
     padding: var(--spacing-6);
     box-shadow: var(--shadow-lg);
     transition-duration: 200ms;
-
     @media (min-width: 640px) {
       border-radius: var(--radius-lg);
     }
-
     &[data-state="open"] {
       animation:
         fadeIn 200ms,
@@ -43,7 +37,6 @@
         slideInFromLeft 200ms,
         slideInFromTop 200ms;
     }
-
     &[data-state="closed"] {
       animation:
         fadeOut 200ms,
@@ -51,45 +44,36 @@
         slideOutToLeft 200ms,
         slideOutToTop 200ms;
     }
-
     // Variants
     &--default {
       border-color: var(--color-border);
     }
-
     &--success {
       border-color: var(--color-success-20);
       background-color: var(--color-success-5);
     }
-
     &--warning {
       border-color: var(--color-warning-20);
       background-color: var(--color-warning-5);
     }
-
     &--danger {
       border-color: var(--color-destructive-20);
       background-color: var(--color-destructive-5);
     }
-
     // Sizes
     &--sizeSm {
       max-width: 24rem;
     }
-
     &--sizeMd {
       max-width: 32rem;
     }
-
     &--sizeLg {
       max-width: 42rem;
     }
-
     &--sizeXl {
       max-width: 56rem;
     }
   }
-
   &__loadingOverlay {
     position: absolute;
     inset: 0;
@@ -100,7 +84,6 @@
     z-index: 10;
     border-radius: var(--radius-lg);
   }
-
   &__loadingSpinner {
     animation: spin 1s linear infinite;
     border-radius: 50%;
@@ -111,7 +94,6 @@
     border-color: transparent;
     border-bottom-color: var(--color-primary);
   }
-
   &__closeButton {
     position: absolute;
     right: var(--spacing-4);
@@ -119,33 +101,27 @@
     border-radius: var(--radius-sm);
     opacity: 0.7;
     transition-property: opacity;
-
     &:hover {
       opacity: 1;
     }
-
     &:focus {
       outline: none;
       box-shadow:
         0 0 0 2px var(--color-ring),
         0 0 0 4px var(--color-background);
     }
-
     &:disabled {
       pointer-events: none;
     }
-
     &[data-state="open"] {
       background-color: var(--color-accent);
       color: var(--color-muted-foreground);
     }
   }
-
   &__closeIcon {
     height: var(--spacing-4);
     width: var(--spacing-4);
   }
-
   &__srOnly {
     position: absolute;
     width: 1px;
@@ -157,42 +133,35 @@
     white-space: nowrap;
     border: 0;
   }
-
   &__header {
     display: flex;
     flex-direction: column;
     gap: var(--spacing-1-5);
     text-align: center;
-
     @media (min-width: 640px) {
       text-align: left;
     }
   }
-
   &__footer {
     display: flex;
     flex-direction: column-reverse;
-
     @media (min-width: 640px) {
       flex-direction: row;
       justify-content: flex-end;
       gap: var(--spacing-2);
     }
   }
-
   &__title {
     font-size: var(--font-size-lg);
     font-weight: 600;
     line-height: 1;
     letter-spacing: -0.025em;
   }
-
   &__description {
     font-size: var(--font-size-sm);
     color: var(--color-muted-foreground);
   }
 }
-
 // Animation keyframes
 @keyframes fadeIn {
   from {
@@ -202,7 +171,6 @@
     opacity: 1;
   }
 }
-
 @keyframes fadeOut {
   from {
     opacity: 1;
@@ -211,7 +179,6 @@
     opacity: 0;
   }
 }
-
 @keyframes zoomIn {
   from {
     transform: translate(-50%, -50%) scale(0.95);
@@ -220,7 +187,6 @@
     transform: translate(-50%, -50%) scale(1);
   }
 }
-
 @keyframes zoomOut {
   from {
     transform: translate(-50%, -50%) scale(1);
@@ -229,7 +195,6 @@
     transform: translate(-50%, -50%) scale(0.95);
   }
 }
-
 @keyframes slideInFromLeft {
   from {
     transform: translate(-52%, -50%);
@@ -238,7 +203,6 @@
     transform: translate(-50%, -50%);
   }
 }
-
 @keyframes slideOutToLeft {
   from {
     transform: translate(-50%, -50%);
@@ -247,7 +211,6 @@
     transform: translate(-52%, -50%);
   }
 }
-
 @keyframes slideInFromTop {
   from {
     transform: translate(-50%, -52%);
@@ -256,7 +219,6 @@
     transform: translate(-50%, -50%);
   }
 }
-
 @keyframes slideOutToTop {
   from {
     transform: translate(-50%, -50%);
@@ -265,7 +227,6 @@
     transform: translate(-50%, -52%);
   }
 }
-
 @keyframes spin {
   from {
     transform: rotate(0deg);

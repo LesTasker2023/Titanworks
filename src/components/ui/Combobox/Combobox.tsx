@@ -14,7 +14,6 @@ import {
 } from '@/components/ui/Command';
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/Popover';
 import { cn } from '@/lib/utils';
-import './Combobox.scss';
 
 export interface ComboboxProps {
   value?: string;

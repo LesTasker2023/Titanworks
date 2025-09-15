@@ -1,6 +1,7 @@
-import type { Meta, StoryObj } from '@storybook/nextjs';
+import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 import React from 'react';
 import { DataTable } from './DataTable';
+import './DataTable.scss';
 
 // Sample data for stories
 const sampleData = [

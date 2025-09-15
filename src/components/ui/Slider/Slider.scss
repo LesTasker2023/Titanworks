@@ -1,5 +1,3 @@
-@import "../../../styles/globals.scss";
-
 .slider {
   position: relative;
   display: flex;
@@ -7,36 +5,29 @@
   touch-action: none;
   user-select: none;
   align-items: center;
-
   // Size variants
   &--size-sm {
     height: var(--space-3);
   }
-
   &--size-default {
     height: var(--space-4);
   }
-
   &--size-lg {
     height: var(--space-5);
   }
-
   &--size-xl {
     height: var(--space-6);
   }
-
   // Vertical orientation
   &[data-orientation="vertical"] {
     flex-direction: column;
   }
-
   // Container for value display
   &__container {
     display: flex;
     flex-direction: column;
     gap: var(--space-2);
   }
-
   // Track styling
   &__track {
     position: relative;
@@ -44,76 +35,60 @@
     overflow: hidden;
     border-radius: var(--border-radius-full);
     background-color: hsl(var(--color-neutral));
-
     // Track variants
     &--variant-success {
       background-color: hsl(var(--color-neutral));
     }
-
     &--variant-warning {
       background-color: hsl(var(--color-neutral));
     }
-
     &--variant-danger {
       background-color: hsl(var(--color-neutral));
     }
-
     // Track sizes
     &--size-sm {
       height: var(--space-1);
     }
-
     &--size-default {
       height: var(--space-1-5);
     }
-
     &--size-lg {
       height: var(--space-2);
     }
-
     &--size-xl {
       height: var(--space-2-5);
     }
-
     // Track orientation
     &--orientation-horizontal {
       width: 100%;
     }
-
     &--orientation-vertical {
       width: var(--space-1-5);
       height: 100%;
     }
   }
-
   // Range styling
   &__range {
     position: absolute;
     background-color: hsl(var(--color-primary));
-
     // Range variants
     &--variant-success {
       background-color: hsl(var(--color-success));
     }
-
     &--variant-warning {
       background-color: hsl(var(--color-warning));
     }
-
     &--variant-danger {
       background-color: hsl(var(--color-destructive));
     }
-
     // Range orientation
     &--orientation-horizontal {
       height: 100%;
     }
-
     &--orientation-vertical {
       width: 100%;
     }
   }
-
   // Thumb styling
   &__thumb {
     display: block;
@@ -124,62 +99,50 @@
     transition:
       background-color 0.2s,
       transform 0.2s;
-
     &:focus-visible {
       outline: none;
       box-shadow: 0 0 0 1px hsl(var(--color-ring));
     }
-
     &:disabled {
       pointer-events: none;
       opacity: 0.5;
     }
-
     // Thumb variants
     &--variant-default {
       border-color: hsl(var(--color-primary) / 0.5);
     }
-
     &--variant-success {
       border-color: hsl(var(--color-success) / 0.5);
     }
-
     &--variant-warning {
       border-color: hsl(var(--color-warning) / 0.5);
     }
-
     &--variant-danger {
       border-color: hsl(var(--color-destructive) / 0.5);
     }
-
     // Thumb sizes
     &--size-sm {
       width: var(--space-3);
       height: var(--space-3);
     }
-
     &--size-default {
       width: var(--space-4);
       height: var(--space-4);
     }
-
     &--size-lg {
       width: var(--space-5);
       height: var(--space-5);
     }
-
     &--size-xl {
       width: var(--space-6);
       height: var(--space-6);
     }
   }
-
   // Loading state
   &__loading {
     display: flex;
     align-items: center;
     gap: var(--space-2);
-
     &-track {
       animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
       border-radius: var(--border-radius-full);
@@ -187,7 +150,6 @@
       height: var(--space-1-5);
       width: 100%;
     }
-
     &-spinner {
       animation: spin 1s linear infinite;
       width: var(--space-3);
@@ -197,30 +159,25 @@
       border-radius: var(--border-radius-full);
     }
   }
-
   // Value display
   &__value-display {
     display: flex;
     align-items: center;
     gap: var(--space-2);
-
     &-value {
       font-size: var(--font-size-sm);
       font-weight: var(--font-weight-medium);
       min-width: var(--space-8);
-
       .slider__value-display:first-child & {
         text-align: right;
       }
     }
-
     &-center {
       display: flex;
       justify-content: center;
     }
   }
 }
-
 @keyframes pulse {
   0%,
   100% {
@@ -230,7 +187,6 @@
     opacity: 0.5;
   }
 }
-
 @keyframes spin {
   from {
     transform: rotate(0deg);

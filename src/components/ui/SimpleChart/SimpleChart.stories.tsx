@@ -1,6 +1,6 @@
-import type { Meta, StoryObj } from '@storybook/react';
-
+import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 import { SimpleChart } from './SimpleChart';
+import './SimpleChart.scss';
 
 const meta: Meta<typeof SimpleChart> = {
   title: 'UI/SimpleChart',

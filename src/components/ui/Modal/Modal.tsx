@@ -1,7 +1,6 @@
 import { cn } from '@/lib/utils';
 import { forwardRef, useEffect } from 'react';
 import { createPortal } from 'react-dom';
-import './Modal.scss';
 
 const getModalClassName = (animation?: string) => {
   const baseClass = 'modal';

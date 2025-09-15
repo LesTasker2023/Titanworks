@@ -1,35 +1,28 @@
 // ColorPicker Component Styles
 // BEM Methodology: .colorPicker__element--modifier
-
 .colorPicker {
   position: relative;
-
   &__trigger {
     display: flex;
     align-items: center;
     gap: var(--spacing-2);
   }
-
   &__colorSwatch {
     width: var(--spacing-4);
     height: var(--spacing-4);
     border-radius: var(--radius-full);
     border: 1px solid var(--color-border);
   }
-
   &__icon {
     width: var(--spacing-4);
     height: var(--spacing-4);
   }
-
   &__label {
     display: none;
-
     @media (min-width: 640px) {
       display: inline;
     }
   }
-
   &__dropdown {
     position: absolute;
     top: 100%;
@@ -45,13 +38,11 @@
     z-index: 50;
     min-width: 280px;
   }
-
   &__content {
     display: flex;
     flex-direction: column;
     gap: var(--spacing-4);
   }
-
   &__header {
     h3 {
       font-size: var(--font-size-sm);
@@ -59,14 +50,12 @@
       margin-bottom: var(--spacing-2);
       color: var(--color-foreground);
     }
-
     p {
       font-size: var(--font-size-xs);
       color: var(--color-muted-foreground);
       margin-bottom: var(--spacing-3);
     }
   }
-
   &__section {
     &-label {
       font-size: var(--font-size-xs);
@@ -76,13 +65,11 @@
       display: block;
     }
   }
-
   &__presetGrid {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     gap: var(--spacing-2);
   }
-
   &__presetColor {
     width: var(--spacing-8);
     height: var(--spacing-8);
@@ -90,12 +77,10 @@
     border: 2px solid var(--color-border);
     transition: all 0.2s ease-in-out;
     cursor: pointer;
-
     &:hover {
       transform: scale(1.1);
       border-color: var(--color-foreground-50);
     }
-
     &--selected {
       border-color: var(--color-foreground);
       box-shadow:
@@ -103,12 +88,10 @@
         0 0 0 4px var(--color-foreground-20);
     }
   }
-
   &__customInputs {
     display: flex;
     gap: var(--spacing-2);
   }
-
   &__colorInput {
     width: var(--spacing-12);
     height: var(--spacing-8);
@@ -116,7 +99,6 @@
     border: 1px solid var(--color-border);
     cursor: pointer;
   }
-
   &__textInput {
     flex: 1;
     padding: var(--spacing-1) var(--spacing-2);
@@ -125,58 +107,48 @@
     border-radius: var(--radius);
     background-color: var(--color-background);
     color: var(--color-foreground);
-
     &::placeholder {
       color: var(--color-muted-foreground);
     }
-
     &:focus {
       outline: none;
       border-color: var(--color-primary);
       box-shadow: 0 0 0 2px var(--color-primary-20);
     }
   }
-
   &__actions {
     display: flex;
     gap: var(--spacing-2);
     padding-top: var(--spacing-2);
     border-top: 1px solid var(--color-border);
   }
-
   &__action-button {
     flex: 1;
   }
-
   &__hint {
     font-size: var(--font-size-xs);
     color: var(--color-muted-foreground);
   }
-
   &__preview {
     border: 1px solid var(--color-border);
     border-radius: var(--radius);
     padding: var(--spacing-2);
-
     &-title {
       font-size: var(--font-size-xs);
       font-weight: 500;
       margin-bottom: var(--spacing-2);
       color: var(--color-foreground);
     }
-
     &-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: var(--spacing-2);
       font-size: var(--font-size-xs);
     }
-
     &-item {
       padding: var(--spacing-2);
       border-radius: var(--radius);
       text-align: center;
-
       &--outline {
         background-color: transparent;
         border: 1px solid;

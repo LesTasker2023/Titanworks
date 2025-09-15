@@ -2,7 +2,7 @@ import '@testing-library/jest-dom';
 import { vi } from 'vitest';
 
 // Mock ResizeObserver which is used by Chart components
-global.ResizeObserver = class ResizeObserver {
+(globalThis as any).ResizeObserver = class ResizeObserver {
   observe() {}
   unobserve() {}
   disconnect() {}
@@ -24,7 +24,7 @@ Object.defineProperty(window, 'matchMedia', {
 });
 
 // Mock IntersectionObserver
-global.IntersectionObserver = class IntersectionObserver {
+(globalThis as any).IntersectionObserver = class IntersectionObserver {
   constructor() {}
   observe() {}
   unobserve() {}
@@ -38,7 +38,7 @@ global.IntersectionObserver = class IntersectionObserver {
 } as any;
 
 // Mock DOM APIs needed for MapLibre GL
-Object.defineProperty(window, 'URL', {
+Object.defineProperty(globalThis, 'URL', {
   writable: true,
   value: {
     createObjectURL: vi.fn(() => 'mock-object-url'),
@@ -47,7 +47,7 @@ Object.defineProperty(window, 'URL', {
 });
 
 // Mock Blob constructor for MapLibre GL worker
-global.Blob = class Blob {
+(globalThis as any).Blob = class Blob {
   constructor(parts?: BlobPart[], options?: BlobPropertyBag) {
     // Mock implementation
   }

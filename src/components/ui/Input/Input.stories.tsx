@@ -1,5 +1,6 @@
-import type { Meta, StoryObj } from '@storybook/nextjs';
+import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 import { Input } from './Input';
+import './Input.scss';
 
 /**
  * 📋 Input Component Stories

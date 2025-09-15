@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/nextjs';
+import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 import { useState } from 'react';
 import {
   Modal,
@@ -10,6 +10,7 @@ import {
   ModalTitle,
   type ModalProps,
 } from './Modal';
+import './Modal.scss';
 
 const meta: Meta<typeof Modal> = {
   title: 'UI/Modal',
