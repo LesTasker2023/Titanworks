@@ -1,5 +1,11 @@
 import siteConfigData from '../../data/siteConfig.json';
 
+// Helper function to get environment variable with fallback
+const getEnvVar = (key: string, fallback: string | number | boolean = ''): string => {
+  const value = process.env[key];
+  return value !== undefined ? value : String(fallback);
+};
+
 // Type definitions for site configuration
 export interface SiteConfig {
   site: {
@@ -160,8 +166,168 @@ export interface SiteConfig {
   };
 }
 
-// Export the configuration with type safety
-export const siteConfig: SiteConfig = siteConfigData as SiteConfig;
+// Build site config from environment variables with fallbacks
+const buildSiteConfig = (): SiteConfig => {
+  return {
+    site: {
+      name: getEnvVar('NEXT_PUBLIC_SITE_NAME', siteConfigData.site.name),
+      title: getEnvVar('NEXT_PUBLIC_SITE_TITLE', siteConfigData.site.title),
+      description: getEnvVar('NEXT_PUBLIC_SITE_DESCRIPTION', siteConfigData.site.description),
+      url: getEnvVar('NEXT_PUBLIC_SITE_URL', siteConfigData.site.url),
+      logo: {
+        path: getEnvVar('NEXT_PUBLIC_LOGO_PATH', siteConfigData.site.logo.path),
+        alt: getEnvVar('NEXT_PUBLIC_LOGO_ALT', siteConfigData.site.logo.alt),
+        width: parseInt(getEnvVar('NEXT_PUBLIC_LOGO_WIDTH', siteConfigData.site.logo.width)),
+        height: parseInt(getEnvVar('NEXT_PUBLIC_LOGO_HEIGHT', siteConfigData.site.logo.height)),
+      },
+      brand: {
+        displayName: getEnvVar(
+          'NEXT_PUBLIC_BRAND_DISPLAY_NAME',
+          siteConfigData.site.brand.displayName
+        ),
+        tagline: getEnvVar('NEXT_PUBLIC_BRAND_TAGLINE', siteConfigData.site.brand.tagline),
+        theme: {
+          primaryColor: getEnvVar(
+            'NEXT_PUBLIC_THEME_PRIMARY_COLOR',
+            siteConfigData.site.brand.theme.primaryColor
+          ),
+          accentColor: getEnvVar(
+            'NEXT_PUBLIC_THEME_ACCENT_COLOR',
+            siteConfigData.site.brand.theme.accentColor
+          ),
+        },
+      },
+    },
+    project: {
+      version: getEnvVar('NEXT_PUBLIC_PROJECT_VERSION', siteConfigData.project.version),
+      grade: getEnvVar('NEXT_PUBLIC_PROJECT_GRADE', siteConfigData.project.grade),
+      lastUpdated: getEnvVar(
+        'NEXT_PUBLIC_PROJECT_LAST_UPDATED',
+        siteConfigData.project.lastUpdated
+      ),
+      status: getEnvVar('NEXT_PUBLIC_PROJECT_STATUS', siteConfigData.project.status),
+      repository: {
+        name: getEnvVar('NEXT_PUBLIC_REPO_NAME', siteConfigData.project.repository.name),
+        owner: getEnvVar('NEXT_PUBLIC_REPO_OWNER', siteConfigData.project.repository.owner),
+        url: getEnvVar('NEXT_PUBLIC_REPO_URL', siteConfigData.project.repository.url),
+      },
+    },
+    metrics: {
+      totalComponents: parseInt(
+        getEnvVar('NEXT_PUBLIC_METRICS_TOTAL_COMPONENTS', siteConfigData.metrics.totalComponents)
+      ),
+      storiesCoverage: parseInt(
+        getEnvVar('NEXT_PUBLIC_METRICS_STORIES_COVERAGE', siteConfigData.metrics.storiesCoverage)
+      ),
+      testsCoverage: parseInt(
+        getEnvVar('NEXT_PUBLIC_METRICS_TESTS_COVERAGE', siteConfigData.metrics.testsCoverage)
+      ),
+      exportCoverage: parseInt(
+        getEnvVar('NEXT_PUBLIC_METRICS_EXPORT_COVERAGE', siteConfigData.metrics.exportCoverage)
+      ),
+      qualityScore: parseFloat(
+        getEnvVar('NEXT_PUBLIC_METRICS_QUALITY_SCORE', siteConfigData.metrics.qualityScore)
+      ),
+    },
+    content: {
+      hero: {
+        headline: getEnvVar('NEXT_PUBLIC_HERO_HEADLINE', siteConfigData.content.hero.headline),
+        tagline: getEnvVar('NEXT_PUBLIC_HERO_TAGLINE', siteConfigData.content.hero.tagline),
+        description: getEnvVar(
+          'NEXT_PUBLIC_HERO_DESCRIPTION',
+          siteConfigData.content.hero.description
+        ),
+        primaryCta: {
+          text: getEnvVar(
+            'NEXT_PUBLIC_HERO_PRIMARY_CTA_TEXT',
+            siteConfigData.content.hero.primaryCta.text
+          ),
+          href: getEnvVar(
+            'NEXT_PUBLIC_HERO_PRIMARY_CTA_HREF',
+            siteConfigData.content.hero.primaryCta.href
+          ),
+        },
+        secondaryCta: {
+          text: getEnvVar(
+            'NEXT_PUBLIC_HERO_SECONDARY_CTA_TEXT',
+            siteConfigData.content.hero.secondaryCta.text
+          ),
+          href: getEnvVar(
+            'NEXT_PUBLIC_HERO_SECONDARY_CTA_HREF',
+            siteConfigData.content.hero.secondaryCta.href
+          ),
+        },
+      },
+      socialProof: {
+        headline: getEnvVar(
+          'NEXT_PUBLIC_SOCIAL_PROOF_HEADLINE',
+          siteConfigData.content.socialProof.headline
+        ),
+        metrics: siteConfigData.content.socialProof.metrics, // Keep as is for now, can be made configurable later
+      },
+      valueProps: siteConfigData.content.valueProps, // Keep as is
+      copyright: getEnvVar('NEXT_PUBLIC_COPYRIGHT', siteConfigData.content.copyright),
+      footer: {
+        companyName: getEnvVar(
+          'NEXT_PUBLIC_FOOTER_COMPANY_NAME',
+          siteConfigData.content.footer.companyName
+        ),
+        year: getEnvVar('NEXT_PUBLIC_FOOTER_YEAR', siteConfigData.content.footer.year),
+      },
+    },
+    contact: {
+      supportEmail: getEnvVar('NEXT_PUBLIC_SUPPORT_EMAIL', siteConfigData.contact.supportEmail),
+      generalEmail: getEnvVar('NEXT_PUBLIC_GENERAL_EMAIL', siteConfigData.contact.generalEmail),
+      salesEmail: getEnvVar('NEXT_PUBLIC_SALES_EMAIL', siteConfigData.contact.salesEmail),
+      phone: getEnvVar('NEXT_PUBLIC_PHONE', siteConfigData.contact.phone),
+      address: {
+        street: getEnvVar('NEXT_PUBLIC_ADDRESS_STREET', siteConfigData.contact.address.street),
+        city: getEnvVar('NEXT_PUBLIC_ADDRESS_CITY', siteConfigData.contact.address.city),
+        state: getEnvVar('NEXT_PUBLIC_ADDRESS_STATE', siteConfigData.contact.address.state),
+        zip: getEnvVar('NEXT_PUBLIC_ADDRESS_ZIP', siteConfigData.contact.address.zip),
+        country: getEnvVar('NEXT_PUBLIC_ADDRESS_COUNTRY', siteConfigData.contact.address.country),
+      },
+      socialMedia: {
+        twitter: getEnvVar(
+          'NEXT_PUBLIC_SOCIAL_TWITTER',
+          siteConfigData.contact.socialMedia.twitter
+        ),
+        linkedin: getEnvVar(
+          'NEXT_PUBLIC_SOCIAL_LINKEDIN',
+          siteConfigData.contact.socialMedia.linkedin
+        ),
+        github: getEnvVar('NEXT_PUBLIC_SOCIAL_GITHUB', siteConfigData.contact.socialMedia.github),
+      },
+    },
+    branding: {
+      companyName: getEnvVar(
+        'NEXT_PUBLIC_BRANDING_COMPANY_NAME',
+        siteConfigData.branding.companyName
+      ),
+      legalName: getEnvVar('NEXT_PUBLIC_BRANDING_LEGAL_NAME', siteConfigData.branding.legalName),
+      foundedYear: parseInt(
+        getEnvVar('NEXT_PUBLIC_BRANDING_FOUNDED_YEAR', siteConfigData.branding.foundedYear)
+      ),
+      industry: getEnvVar('NEXT_PUBLIC_BRANDING_INDUSTRY', siteConfigData.branding.industry),
+      mission: getEnvVar('NEXT_PUBLIC_BRANDING_MISSION', siteConfigData.branding.mission),
+      vision: getEnvVar('NEXT_PUBLIC_BRANDING_VISION', siteConfigData.branding.vision),
+      values: siteConfigData.branding.values, // Keep as is
+    },
+    technical: siteConfigData.technical, // Keep as is
+    features: siteConfigData.features, // Keep as is
+    navigation: siteConfigData.navigation, // Keep as is
+    seo: {
+      keywords: siteConfigData.seo.keywords, // Keep as is
+      author: getEnvVar('NEXT_PUBLIC_SEO_AUTHOR', siteConfigData.seo.author),
+      robots: getEnvVar('NEXT_PUBLIC_SEO_ROBOTS', siteConfigData.seo.robots),
+      ogImage: getEnvVar('NEXT_PUBLIC_SEO_OG_IMAGE', siteConfigData.seo.ogImage),
+    },
+    build: siteConfigData.build, // Keep as is
+  };
+};
+
+// Export the built config
+const siteConfig: SiteConfig = buildSiteConfig();
 
 // Helper functions for common access patterns
 export const getSiteMetadata = () => ({

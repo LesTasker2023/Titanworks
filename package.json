@@ -1,5 +1,7 @@
 {
-  "name": "daedalus",
+  "name": "titanworks",
+  "description": "Titanworks - Professional Portfolio & Platform Ecosystem",
+  "repository": "https://github.com/LesTasker2023/Titanworks.git",
   "version": "1.54.0",
   "private": true,
   "type": "module",

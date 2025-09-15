@@ -1,5 +1,6 @@
-import { Footer, Navigation } from '@/components/layout';
+import { DomainFooter, DomainNavigation } from '@/components/layout';
 import { AuthProvider } from '@/lib/auth/AuthProvider';
+import { getCurrentDomain, getDomainConfig } from '@/lib/domain';
 import { getSiteMetadata } from '@/lib/siteConfig';
 import type { Metadata } from 'next';
 import { ThemeProvider } from 'next-themes';
@@ -23,22 +24,25 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const domain = getCurrentDomain();
+  const config = getDomainConfig(domain);
+
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} min-h-screen flex flex-col`}
+        className={`${geistSans.variable} ${geistMono.variable} min-h-screen flex flex-col ${config.theme === 'dark' ? 'dark' : ''}`}
         suppressHydrationWarning
       >
         <ThemeProvider
           attribute="class"
-          defaultTheme="light"
-          enableSystem
+          defaultTheme={config.theme}
+          enableSystem={config.theme === 'auto'}
           disableTransitionOnChange
         >
           <AuthProvider>
-            <Navigation />
+            <DomainNavigation />
             <main className="flex-1">{children}</main>
-            <Footer />
+            <DomainFooter />
           </AuthProvider>
         </ThemeProvider>
       </body>

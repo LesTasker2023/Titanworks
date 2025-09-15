@@ -3,6 +3,7 @@
 import { Badge } from '@/components/ui/Badge';
 import { Button } from '@/components/ui/Button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card';
+import { getCurrentDomain, getDomainConfig, type DomainConfig } from '@/lib/domain';
 import { getContent } from '@/lib/siteConfig';
 import {
   BarChart3,
@@ -19,17 +20,40 @@ import {
   Shield,
   ShoppingCart,
   Smartphone,
-  Sparkles,
   Star,
   Tablet,
-  Target,
-  TrendingUp,
   Utensils,
   Zap,
 } from 'lucide-react';
+import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+
+// Dynamic imports for domain-specific components
+const DomainHero = dynamic(() =>
+  import('@/components/domains').then(mod => {
+    const domain = getCurrentDomain();
+    const config = getDomainConfig(domain);
+    return mod.getDomainComponent(config.components.hero);
+  })
+);
+
+const DomainNav = dynamic(() =>
+  import('@/components/domains').then(mod => {
+    const domain = getCurrentDomain();
+    const config = getDomainConfig(domain);
+    return mod.getDomainComponent(config.components.navigation);
+  })
+);
+
+const DomainFooter = dynamic(() =>
+  import('@/components/domains').then(mod => {
+    const domain = getCurrentDomain();
+    const config = getDomainConfig(domain);
+    return mod.getDomainComponent(config.components.footer);
+  })
+);
 
 const iconMap = {
   Zap,
@@ -165,6 +189,13 @@ export default function Home() {
   const content = getContent();
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
+  const [domainConfig, setDomainConfig] = useState<DomainConfig | null>(null);
+
+  useEffect(() => {
+    const domain = getCurrentDomain();
+    const config = getDomainConfig(domain);
+    setDomainConfig(config);
+  }, []);
 
   const categories = [
     'all',
@@ -185,82 +216,8 @@ export default function Home() {
 
   return (
     <main className="flex min-h-screen flex-col">
-      {/* Hero Section */}
-      <section className="flex flex-col items-center justify-center min-h-[90vh] px-4 text-center bg-gradient-to-br from-background via-muted/20 to-primary/5 relative overflow-hidden">
-        {/* Background Pattern */}
-        <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
-
-        <div className="max-w-6xl mx-auto relative z-10">
-          <div className="inline-flex items-center px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-8 border border-primary/20">
-            <Rocket className="w-4 h-4 mr-2" />
-            {content.hero.tagline} - Platform Ecosystem
-          </div>
-
-          <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-8 bg-gradient-to-r from-foreground to-primary bg-clip-text text-transparent">
-            Mission Control Hub
-          </h1>
-
-          <p className="text-xl md:text-2xl text-muted-foreground mb-6 max-w-4xl mx-auto leading-relaxed">
-            Experience our complete platform ecosystem - from entertainment and e-commerce to AI
-            intelligence and business automation
-          </p>
-
-          <div className="flex flex-wrap items-center justify-center gap-6 mb-12 text-sm text-muted-foreground">
-            <div className="flex items-center gap-2">
-              <CheckCircle className="w-4 h-4 text-green-500" />
-              <span>8 Enhanced Platforms</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <TrendingUp className="w-4 h-4 text-blue-500" />
-              <span>Real Business Logic</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <Sparkles className="w-4 h-4 text-purple-500" />
-              <span>Strategic Modal Systems</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <Target className="w-4 h-4 text-orange-500" />
-              <span>Industry-Specific Features</span>
-            </div>
-          </div>
-
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-            <Button asChild size="lg" className="text-lg px-8 py-4 h-auto">
-              <Link href="#platforms">
-                <Monitor className="mr-2 h-5 w-5" />
-                Explore Platforms
-              </Link>
-            </Button>
-
-            <Button asChild variant="outline" size="lg" className="text-lg px-8 py-4 h-auto">
-              <Link href="/component-showcase">
-                <Code className="mr-2 h-5 w-5" />
-                View Components
-              </Link>
-            </Button>
-          </div>
-
-          {/* Platform Stats */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto">
-            <div className="text-center p-4 rounded-lg bg-background/50 backdrop-blur-sm border">
-              <div className="text-2xl font-bold text-primary">5</div>
-              <div className="text-sm text-muted-foreground">Enhanced Platforms</div>
-            </div>
-            <div className="text-center p-4 rounded-lg bg-background/50 backdrop-blur-sm border">
-              <div className="text-2xl font-bold text-blue-500">100+</div>
-              <div className="text-sm text-muted-foreground">Modal Features</div>
-            </div>
-            <div className="text-center p-4 rounded-lg bg-background/50 backdrop-blur-sm border">
-              <div className="text-2xl font-bold text-green-500">8</div>
-              <div className="text-sm text-muted-foreground">Industry Verticals</div>
-            </div>
-            <div className="text-center p-4 rounded-lg bg-background/50 backdrop-blur-sm border">
-              <div className="text-2xl font-bold text-purple-500">∞</div>
-              <div className="text-sm text-muted-foreground">Possibilities</div>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Domain-specific Hero Section */}
+      <DomainHero />
 
       {/* Platform Showcase */}
       <section id="platforms" className="py-20 px-4 bg-muted/10">
