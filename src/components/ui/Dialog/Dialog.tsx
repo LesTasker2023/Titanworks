@@ -5,7 +5,6 @@ import { X } from 'lucide-react';
 import * as React from 'react';
 
 import { cn } from '@/lib/utils';
-import './Dialog.scss';
 
 // Variant types
 export type DialogVariant = 'default' | 'success' | 'warning' | 'danger';

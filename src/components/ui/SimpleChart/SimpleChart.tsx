@@ -1,8 +1,6 @@
 // EMERGENCY: Create a simple chart replacement to eliminate Recharts bloat
 // This replaces complex charts with simple visual elements for Vercel 250MB limit
 
-import './SimpleChart.scss';
-
 export const SimpleChart = ({
   data,
   type = 'bar',

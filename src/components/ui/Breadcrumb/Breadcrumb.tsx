@@ -3,7 +3,6 @@ import { Slot } from '@radix-ui/react-slot';
 import { ChevronRight, MoreHorizontal } from 'lucide-react';
 
 import { stripTransientProps } from '@/utils/stripTransientProps';
-import './Breadcrumb.scss';
 
 const Breadcrumb = React.forwardRef<
   HTMLElement,

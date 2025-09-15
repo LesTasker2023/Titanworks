@@ -1,9 +1,9 @@
 import { Slot } from '@radix-ui/react-slot';
 import * as React from 'react';
+import './Button.scss';
 
 import { cn } from '@/lib/utils';
 import { stripTransientProps } from '@/utils/stripTransientProps';
-import './Button.scss';
 
 export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: 'default' | 'destructive' | 'outline' | 'secondary' | 'ghost' | 'link';

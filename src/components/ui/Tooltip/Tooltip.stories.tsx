@@ -1,7 +1,8 @@
-import type { Meta, StoryObj } from '@storybook/nextjs';
+import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 import { Plus } from 'lucide-react';
 import { Button } from '../Button';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from './Tooltip';
+import './Tooltip.scss';
 
 const meta: Meta<typeof Tooltip> = {
   title: 'UI/Tooltip',

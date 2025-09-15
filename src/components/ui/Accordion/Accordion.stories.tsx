@@ -1,5 +1,6 @@
-import type { Meta, StoryObj } from '@storybook/nextjs';
+import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 import { Accordion } from './Accordion';
+import './Accordion.scss';
 
 const meta: Meta<typeof Accordion> = {
   title: 'Components/Accordion',

@@ -1,16 +1,13 @@
 // Combobox Component Styles
 // BEM Methodology: .combobox__element--modifier
-
 .combobox {
   &__trigger {
     width: 100%;
     justify-content: space-between;
-
     &--placeholder {
       color: var(--color-muted-foreground);
     }
   }
-
   &__icon {
     margin-left: var(--spacing-2);
     height: var(--spacing-4);
@@ -18,22 +15,18 @@
     flex-shrink: 0;
     opacity: 0.5;
   }
-
   &__content {
     width: 100%;
     padding: 0;
   }
-
   &__item {
     &-check {
       margin-right: var(--spacing-2);
       height: var(--spacing-4);
       width: var(--spacing-4);
-
       &--visible {
         opacity: 1;
       }
-
       &--hidden {
         opacity: 0;
       }

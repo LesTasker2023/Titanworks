@@ -1,6 +1,7 @@
-import type { Meta, StoryObj } from '@storybook/nextjs';
+import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 import { useState } from 'react';
 import { Combobox } from './Combobox';
+import './Combobox.scss';
 
 const meta: Meta<typeof Combobox> = {
   title: 'UI/Combobox',

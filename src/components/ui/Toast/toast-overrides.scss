@@ -15,9 +15,7 @@
  * - Dark/light mode support
  * - Animation performance optimization
  */
-
 /* ===== TOAST CONTAINER & VIEWPORT ===== */
-
 /* Toast viewport positioning and responsive behavior */
 .toast-viewport {
   /* Desktop positioning */
@@ -25,54 +23,43 @@
     --toast-viewport-padding: 1.5rem;
     --toast-max-width: 420px;
   }
-
   /* Mobile optimizations */
   @media (max-width: 639px) {
     --toast-viewport-padding: 1rem;
     --toast-max-width: calc(100vw - 2rem);
   }
-
   /* High contrast mode support */
   @media (prefers-contrast: high) {
     --toast-border-width: 2px;
   }
 }
-
 /* ===== TOAST ROOT STYLING ===== */
-
 /* Base toast styling overrides */
 .toast-root {
   /* Custom shadow for better elevation */
   --toast-shadow: 0 10px 38px -10px rgba(22, 23, 24, 0.35), 0 10px 20px -15px rgba(22, 23, 24, 0.2);
-
   /* Animation timing customization */
   --toast-animation-duration: 350ms;
   --toast-animation-easing: cubic-bezier(0.16, 1, 0.3, 1);
-
   /* Enhanced styling */
   box-shadow: var(--toast-shadow);
   backdrop-filter: blur(8px);
-
   /* Hover state enhancement */
   &:hover {
     transform: translateY(-1px);
     transition: transform 200ms ease-out;
   }
 }
-
 /* ===== VARIANT CUSTOMIZATIONS ===== */
-
 /* Success variant enhancements */
 .toast-root[data-variant="success"] {
   --toast-bg: rgba(34, 197, 94, 0.1);
   --toast-border: rgba(34, 197, 94, 0.2);
   --toast-text: rgba(21, 128, 61, 1);
-
   /* Success icon glow effect */
   .toast-icon {
     filter: drop-shadow(0 0 4px rgba(34, 197, 94, 0.3));
   }
-
   /* Dark mode adjustments */
   @media (prefers-color-scheme: dark) {
     --toast-bg: rgba(34, 197, 94, 0.15);
@@ -80,13 +67,11 @@
     --toast-text: rgba(134, 239, 172, 1);
   }
 }
-
 /* Error variant enhancements */
 .toast-root[data-variant="error"] {
   --toast-bg: rgba(239, 68, 68, 0.1);
   --toast-border: rgba(239, 68, 68, 0.2);
   --toast-text: rgba(185, 28, 28, 1);
-
   /* Error pulse animation */
   &::before {
     content: "";
@@ -96,7 +81,6 @@
     background: rgba(239, 68, 68, 0.1);
     animation: error-pulse 2s infinite;
   }
-
   /* Dark mode adjustments */
   @media (prefers-color-scheme: dark) {
     --toast-bg: rgba(239, 68, 68, 0.15);
@@ -104,13 +88,11 @@
     --toast-text: rgba(252, 165, 165, 1);
   }
 }
-
 /* Warning variant enhancements */
 .toast-root[data-variant="warning"] {
   --toast-bg: rgba(245, 158, 11, 0.1);
   --toast-border: rgba(245, 158, 11, 0.2);
   --toast-text: rgba(180, 83, 9, 1);
-
   /* Warning attention indicator */
   &::after {
     content: "";
@@ -123,7 +105,6 @@
     transform: translateY(-50%);
     border-radius: 0 2px 2px 0;
   }
-
   /* Dark mode adjustments */
   @media (prefers-color-scheme: dark) {
     --toast-bg: rgba(245, 158, 11, 0.15);
@@ -131,16 +112,13 @@
     --toast-text: rgba(253, 230, 138, 1);
   }
 }
-
 /* Info variant enhancements */
 .toast-root[data-variant="info"] {
   --toast-bg: rgba(59, 130, 246, 0.1);
   --toast-border: rgba(59, 130, 246, 0.2);
   --toast-text: rgba(30, 64, 175, 1);
-
   /* Info gradient accent */
   background: linear-gradient(135deg, var(--toast-bg) 0%, rgba(59, 130, 246, 0.05) 100%);
-
   /* Dark mode adjustments */
   @media (prefers-color-scheme: dark) {
     --toast-bg: rgba(59, 130, 246, 0.15);
@@ -148,34 +126,27 @@
     --toast-text: rgba(147, 197, 253, 1);
   }
 }
-
 /* ===== TOAST CONTENT STYLING ===== */
-
 /* Title styling enhancements */
 .toast-title {
   font-weight: 600;
   line-height: 1.4;
   margin-bottom: 0.25rem;
-
   /* Responsive typography */
   @media (max-width: 639px) {
     font-size: 0.875rem;
   }
 }
-
 /* Description styling enhancements */
 .toast-description {
   line-height: 1.5;
   color: rgba(var(--toast-text), 0.8);
-
   /* Responsive typography */
   @media (max-width: 639px) {
     font-size: 0.8125rem;
   }
 }
-
 /* ===== TOAST CONTROLS ===== */
-
 /* Close button enhancements */
 .toast-close {
   /* Enhanced focus states */
@@ -184,43 +155,35 @@
     outline-offset: 2px;
     border-radius: 4px;
   }
-
   /* Hover animation */
   &:hover {
     background-color: rgba(0, 0, 0, 0.1);
     transform: scale(1.1);
     transition: all 200ms ease-out;
   }
-
   /* Active state */
   &:active {
     transform: scale(0.95);
   }
 }
-
 /* Action button enhancements */
 .toast-action {
   /* Enhanced interactive states */
   transition: all 200ms ease-out;
-
   &:hover {
     transform: translateY(-1px);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   }
-
   &:active {
     transform: translateY(0);
   }
-
   /* Focus state */
   &:focus-visible {
     outline: 2px solid rgba(59, 130, 246, 0.6);
     outline-offset: 2px;
   }
 }
-
 /* ===== ANIMATIONS ===== */
-
 /* Custom keyframe animations */
 @keyframes error-pulse {
   0%,
@@ -231,7 +194,6 @@
     opacity: 0.1;
   }
 }
-
 @keyframes toast-slide-in-right {
   from {
     transform: translateX(calc(100% + var(--toast-viewport-padding)));
@@ -240,7 +202,6 @@
     transform: translateX(0);
   }
 }
-
 @keyframes toast-slide-out-right {
   from {
     transform: translateX(0);
@@ -249,38 +210,31 @@
     transform: translateX(calc(100% + var(--toast-viewport-padding)));
   }
 }
-
 /* ===== RESPONSIVE OVERRIDES ===== */
-
 /* Mobile-specific adjustments */
 @media (max-width: 639px) {
   .toast-root {
     /* Reduce padding on mobile */
     padding: 1rem;
-
     /* Adjust margins */
     margin-bottom: 0.75rem;
   }
-
   /* Simplified animations for better performance */
   .toast-root * {
     transition-duration: 250ms !important;
   }
 }
-
 /* High contrast mode */
 @media (prefers-contrast: high) {
   .toast-root {
     border-width: 2px;
     border-style: solid;
   }
-
   .toast-close,
   .toast-action {
     border: 2px solid currentColor;
   }
 }
-
 /* Reduced motion preferences */
 @media (prefers-reduced-motion: reduce) {
   .toast-root,
@@ -291,34 +245,27 @@
     animation: none !important;
   }
 }
-
 /* ===== PRINT STYLES ===== */
-
 @media print {
   .toast-viewport,
   .toast-root {
     display: none !important;
   }
 }
-
 /* ===== CUSTOM PROPERTIES FOR THEMING ===== */
-
 :root {
   /* Toast spacing */
   --toast-gap: 0.75rem;
   --toast-padding: 1rem;
   --toast-border-radius: 0.5rem;
-
   /* Toast timing */
   --toast-duration-default: 5000ms;
   --toast-duration-success: 4000ms;
   --toast-duration-error: 8000ms;
   --toast-duration-warning: 6000ms;
   --toast-duration-info: 5000ms;
-
   /* Toast z-index */
   --toast-z-index: 100;
-
   /* Toast breakpoints */
   --toast-mobile-breakpoint: 640px;
 }

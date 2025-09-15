@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/nextjs';
+import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -7,6 +7,7 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from './NavigationMenu';
+import './NavigationMenu.scss';
 
 /**
  * 📋 NavigationMenu Component Stories

@@ -6,6 +6,16 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### Added
 
+- **Comprehensive Storybook Integration**: Complete overhaul of Storybook setup with modern tooling
+  - Fresh Storybook 9.1.5 installation with Vite integration for improved performance
+  - SCSS compilation support with proper Hot Module Replacement (HMR)
+  - Systematic SCSS imports added to all 52+ component stories for complete styling coverage
+- **Enhanced Design Token System**: Extended spacing and design token coverage
+  - Added missing spacing tokens (--spacing-5, --spacing-9, --spacing-10) for proper component sizing
+  - Improved semantic color token architecture with better dark mode support
+- **BEM-Style SCSS Architecture**: Converted entire UI component library from Tailwind to maintainable SCSS
+  - Individual component SCSS modules with proper design token integration
+  - Semantic class naming following BEM methodology for better maintainability
 - Warning ledger system for persistent warning tracking (§1.1 Signal>Noise doctrine)
 - stripTransientProps utility to prevent non-HTML attributes from leaking to DOM
 - CI/CD integration for automated warning monitoring and backlog generation
@@ -13,10 +23,25 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### Fixed
 
+- **Button Loading State Issues**: Complete resolution of loading button functionality
+  - Fixed text visibility during loading state (removed color: transparent override)
+  - Resolved spinner positioning and text overlap with proper padding calculations
+  - Added size-specific spinner variants for small, default, and large button sizes
+  - Implemented proper cursor states (wait) during loading operations
+- **Component Sizing Issues**: Fixed button size inconsistencies
+  - Large buttons now properly sized (2.5rem vs 2.25rem default) with missing spacing tokens
+  - Consistent spacing across all component size variants
 - **Button Border Radius**: Added missing radius design tokens (--radius-sm, --radius-md, --radius-lg, --radius-xl) to globals.css
   - Resolves Button components using var(--radius-md) when variable was undefined
   - Fixes square button edges on home page and ensures consistent border radius across all components
   - Variables added to both light and dark mode sections for theme consistency
+
+### Changed
+
+- **Storybook Development Experience**: Dramatically improved component development workflow
+  - All components now display with proper styling in Storybook interface
+  - Fast HMR updates for immediate visual feedback during development
+  - Comprehensive component story coverage with interactive examples
 
 ### Changed
 

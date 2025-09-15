@@ -7,7 +7,6 @@ import * as React from 'react';
 
 import { Dialog, DialogContent } from '@/components/ui/Dialog';
 import { cn } from '@/lib/utils';
-import './Command.scss';
 
 const Command = React.forwardRef<
   React.ElementRef<typeof CommandPrimitive>,

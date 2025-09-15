@@ -1,6 +1,7 @@
-import type { Meta, StoryObj } from '@storybook/nextjs';
+import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 import React, { useState } from 'react';
 import { Textarea } from './Textarea';
+import './Textarea.scss';
 
 const meta = {
   title: 'UI/Textarea',

@@ -1,7 +1,6 @@
 import * as React from 'react';
 
 import { stripTransientProps } from '@/utils/stripTransientProps';
-import './Badge.scss';
 
 export interface BadgeProps extends React.HTMLAttributes<HTMLDivElement> {
   variant?: 'default' | 'secondary' | 'destructive' | 'success' | 'warning' | 'info' | 'outline';

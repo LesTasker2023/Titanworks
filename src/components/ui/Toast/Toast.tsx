@@ -6,8 +6,6 @@ import * as ToastPrimitive from '@radix-ui/react-toast';
 import { X } from 'lucide-react';
 import * as React from 'react';
 
-import './Toast.scss';
-
 // Toast Provider - manages toast state
 const ToastProvider = ToastPrimitive.Provider;
 

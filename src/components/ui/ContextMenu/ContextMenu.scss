@@ -1,6 +1,5 @@
 // ContextMenu Component Styles
 // BEM Methodology: .contextMenu__element--modifier
-
 .contextMenu {
   &__subTrigger {
     display: flex;
@@ -14,28 +13,23 @@
     padding-bottom: var(--spacing-1-5);
     font-size: var(--font-size-sm);
     outline: none;
-
     &:focus {
       background-color: var(--color-accent);
       color: var(--color-accent-foreground);
     }
-
     &[data-state="open"] {
       background-color: var(--color-accent);
       color: var(--color-accent-foreground);
     }
-
     &--inset {
       padding-left: var(--spacing-8);
     }
-
     &-icon {
       margin-left: auto;
       height: var(--spacing-4);
       width: var(--spacing-4);
     }
   }
-
   &__subContent {
     z-index: 50;
     min-width: 8rem;
@@ -47,36 +41,29 @@
     color: var(--color-popover-foreground);
     box-shadow: var(--shadow-lg);
     transform-origin: var(--radix-context-menu-content-transform-origin);
-
     &[data-state="open"] {
       animation:
         fadeIn 200ms,
         zoomIn 200ms;
     }
-
     &[data-state="closed"] {
       animation:
         fadeOut 200ms,
         zoomOut 200ms;
     }
-
     &[data-side="bottom"] {
       animation: slideInFromTop 200ms;
     }
-
     &[data-side="left"] {
       animation: slideInFromRight 200ms;
     }
-
     &[data-side="right"] {
       animation: slideInFromLeft 200ms;
     }
-
     &[data-side="top"] {
       animation: slideInFromBottom 200ms;
     }
   }
-
   &__content {
     z-index: 50;
     max-height: var(--radix-context-menu-content-available-height);
@@ -90,36 +77,29 @@
     color: var(--color-popover-foreground);
     box-shadow: var(--shadow-md);
     transform-origin: var(--radix-context-menu-content-transform-origin);
-
     &[data-state="open"] {
       animation:
         fadeIn 200ms,
         zoomIn 200ms;
     }
-
     &[data-state="closed"] {
       animation:
         fadeOut 200ms,
         zoomOut 200ms;
     }
-
     &[data-side="bottom"] {
       animation: slideInFromTop 200ms;
     }
-
     &[data-side="left"] {
       animation: slideInFromRight 200ms;
     }
-
     &[data-side="right"] {
       animation: slideInFromLeft 200ms;
     }
-
     &[data-side="top"] {
       animation: slideInFromBottom 200ms;
     }
   }
-
   &__item {
     position: relative;
     display: flex;
@@ -133,22 +113,18 @@
     padding-bottom: var(--spacing-1-5);
     font-size: var(--font-size-sm);
     outline: none;
-
     &:focus {
       background-color: var(--color-accent);
       color: var(--color-accent-foreground);
     }
-
     &[data-disabled] {
       pointer-events: none;
       opacity: 0.5;
     }
-
     &--inset {
       padding-left: var(--spacing-8);
     }
   }
-
   &__checkboxItem {
     position: relative;
     display: flex;
@@ -162,17 +138,14 @@
     padding-right: var(--spacing-2);
     font-size: var(--font-size-sm);
     outline: none;
-
     &:focus {
       background-color: var(--color-accent);
       color: var(--color-accent-foreground);
     }
-
     &[data-disabled] {
       pointer-events: none;
       opacity: 0.5;
     }
-
     &-indicator {
       position: absolute;
       left: var(--spacing-2);
@@ -181,14 +154,12 @@
       width: var(--spacing-3-5);
       align-items: center;
       justify-content: center;
-
       svg {
         height: var(--spacing-4);
         width: var(--spacing-4);
       }
     }
   }
-
   &__radioItem {
     position: relative;
     display: flex;
@@ -202,17 +173,14 @@
     padding-right: var(--spacing-2);
     font-size: var(--font-size-sm);
     outline: none;
-
     &:focus {
       background-color: var(--color-accent);
       color: var(--color-accent-foreground);
     }
-
     &[data-disabled] {
       pointer-events: none;
       opacity: 0.5;
     }
-
     &-indicator {
       position: absolute;
       left: var(--spacing-2);
@@ -221,7 +189,6 @@
       width: var(--spacing-3-5);
       align-items: center;
       justify-content: center;
-
       svg {
         height: var(--spacing-4);
         width: var(--spacing-4);
@@ -229,7 +196,6 @@
       }
     }
   }
-
   &__label {
     padding-left: var(--spacing-2);
     padding-right: var(--spacing-2);
@@ -238,12 +204,10 @@
     font-size: var(--font-size-sm);
     font-weight: 600;
     color: var(--color-foreground);
-
     &--inset {
       padding-left: var(--spacing-8);
     }
   }
-
   &__separator {
     margin-left: calc(-1 * var(--spacing-1));
     margin-right: calc(-1 * var(--spacing-1));
@@ -252,7 +216,6 @@
     height: 1px;
     background-color: var(--color-border);
   }
-
   &__shortcut {
     margin-left: auto;
     font-size: var(--font-size-xs);
@@ -260,7 +223,6 @@
     color: var(--color-muted-foreground);
   }
 }
-
 // Animation keyframes
 @keyframes fadeIn {
   from {
@@ -270,7 +232,6 @@
     opacity: 1;
   }
 }
-
 @keyframes fadeOut {
   from {
     opacity: 1;
@@ -279,7 +240,6 @@
     opacity: 0;
   }
 }
-
 @keyframes zoomIn {
   from {
     transform: scale(0.95);
@@ -288,7 +248,6 @@
     transform: scale(1);
   }
 }
-
 @keyframes zoomOut {
   from {
     transform: scale(1);
@@ -297,7 +256,6 @@
     transform: scale(0.95);
   }
 }
-
 @keyframes slideInFromTop {
   from {
     transform: translateY(-2px);
@@ -306,7 +264,6 @@
     transform: translateY(0);
   }
 }
-
 @keyframes slideInFromBottom {
   from {
     transform: translateY(2px);
@@ -315,7 +272,6 @@
     transform: translateY(0);
   }
 }
-
 @keyframes slideInFromLeft {
   from {
     transform: translateX(-2px);
@@ -324,7 +280,6 @@
     transform: translateX(0);
   }
 }
-
 @keyframes slideInFromRight {
   from {
     transform: translateX(2px);

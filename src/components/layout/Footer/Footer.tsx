@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/Button';
 import { cn } from '@/lib/utils';
 import { Github, Heart, Star, Twitter } from 'lucide-react';
 import Link from 'next/link';
+import './Footer.scss';
 
 interface FooterLink {
   label: string;
@@ -90,25 +91,23 @@ export default function Footer({
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className={cn('mt-auto border-t bg-muted/50', className)}>
+    <footer className={cn('footer', className)}>
       <Container size="xl" padding="md">
         {/* Main Footer Content */}
-        <div className="py-12 lg:py-16">
-          <div className="grid gap-8 lg:grid-cols-5">
+        <div className="footer__content">
+          <div className="footer__grid">
             {/* Brand Section */}
-            <div className="lg:col-span-2 space-y-4">
-              <div className="space-y-3">
-                <h3 className="text-lg font-bold">{brand}</h3>
-                <p className="text-sm text-muted-foreground max-w-md">{description}</p>
+            <div className="footer__brand">
+              <div className="footer__brand-info">
+                <h3 className="footer__brand-title">{brand}</h3>
+                <p className="footer__brand-description">{description}</p>
               </div>
 
               {/* Stats */}
               {showStats && stats && (
-                <div className="space-y-3">
-                  <h4 className="text-sm font-medium text-muted-foreground uppercase tracking-wider">
-                    Project Stats
-                  </h4>
-                  <div className="flex flex-wrap gap-2">
+                <div className="footer__stats">
+                  <h4 className="footer__stats-title">Project Stats</h4>
+                  <div className="footer__stats-badges">
                     <Badge variant="secondary">{stats.components} Components</Badge>
                     <Badge variant="secondary">{stats.tests} Test Coverage</Badge>
                     <Badge variant="secondary">{stats.stories} Storybook Coverage</Badge>
@@ -117,11 +116,9 @@ export default function Footer({
               )}
 
               {/* Social Links */}
-              <div className="space-y-3">
-                <h4 className="text-sm font-medium text-muted-foreground uppercase tracking-wider">
-                  Connect
-                </h4>
-                <div className="flex items-center gap-2">
+              <div className="footer__social">
+                <h4 className="footer__social-title">Connect</h4>
+                <div className="footer__social-links">
                   {socialLinks.map(social => (
                     <Button
                       key={social.name}
@@ -152,17 +149,12 @@ export default function Footer({
 
             {/* Footer Sections */}
             {sections.map(section => (
-              <div key={section.title} className="space-y-3">
-                <h4 className="text-sm font-medium text-muted-foreground uppercase tracking-wider">
-                  {section.title}
-                </h4>
-                <ul className="space-y-2">
+              <div key={section.title} className="footer__section">
+                <h4 className="footer__section-title">{section.title}</h4>
+                <ul className="footer__section-list">
                   {section.links.map(link => (
                     <li key={link.href}>
-                      <Link
-                        href={link.href}
-                        className="text-sm hover:text-primary transition-colors"
-                      >
+                      <Link href={link.href} className="footer__section-link">
                         {link.label}
                       </Link>
                     </li>
@@ -174,28 +166,24 @@ export default function Footer({
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t py-6">
-          <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+        <div className="footer__bottom">
+          <div className="footer__bottom-content">
             {/* Copyright */}
-            <div className="flex items-center gap-2 text-sm text-muted-foreground">
+            <div className="footer__copyright">
               <span>
                 © {currentYear} {brand}. All rights reserved.
               </span>
-              <div className="hidden sm:flex items-center gap-1">
+              <div className="footer__made-with">
                 <span>Made with</span>
-                <Heart className="h-3 w-3 fill-red-500 text-red-500" />
+                <Heart className="footer__heart-icon" />
                 <span>using React & TypeScript</span>
               </div>
             </div>
 
             {/* Legal Links */}
-            <div className="flex flex-wrap gap-6">
+            <div className="footer__legal-links">
               {legalLinks.map(link => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className="text-sm text-muted-foreground hover:text-primary transition-colors"
-                >
+                <Link key={link.href} href={link.href} className="footer__legal-link">
                   {link.label}
                 </Link>
               ))}

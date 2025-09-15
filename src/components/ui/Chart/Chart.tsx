@@ -6,7 +6,6 @@ import { Legend, ResponsiveContainer, Tooltip } from 'recharts';
 
 import { cn } from '@/lib/utils';
 import { stripTransientProps } from '@/utils/stripTransientProps';
-import './Chart.scss';
 
 interface ChartPayloadItem {
   name?: string;

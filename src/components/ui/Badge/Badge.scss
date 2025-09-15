@@ -1,5 +1,4 @@
 /* Badge Component - BEM Styling with Design Tokens */
-
 .badge {
   display: inline-flex;
   align-items: center;
@@ -7,109 +6,88 @@
   border: 1px solid transparent;
   font-weight: 600;
   transition: var(--transition-fast);
-
   /* Focus styles */
   &:focus {
     outline: none;
   }
-
   &:focus-visible {
     outline: 2px solid hsl(var(--ring));
     outline-offset: 2px;
   }
-
   /* Size variants */
   &--default {
     padding: var(--spacing-1) calc(var(--spacing-2) + var(--spacing-1));
     font-size: var(--text-xs);
   }
-
   &--sm {
     padding: var(--spacing-1) var(--spacing-2);
     font-size: var(--text-xs);
   }
-
   &--lg {
     padding: var(--spacing-2) var(--spacing-3);
     font-size: var(--text-sm);
   }
-
   /* Color variants */
   &--default {
     background-color: hsl(var(--surface-interactive));
     color: hsl(var(--content-inverse));
     box-shadow: var(--shadow-sm);
-
     &:hover {
       background-color: hsl(var(--surface-interactive) / 0.8);
     }
   }
-
   &--secondary {
     background-color: hsl(var(--surface-secondary));
     color: hsl(var(--content-primary));
-
     &:hover {
       background-color: hsl(var(--surface-secondary) / 0.8);
     }
   }
-
   &--destructive {
     background-color: hsl(var(--status-error));
     color: hsl(var(--content-inverse));
     box-shadow: var(--shadow-sm);
-
     &:hover {
       background-color: hsl(var(--status-error) / 0.8);
     }
   }
-
   &--success {
     background-color: hsl(var(--status-success));
     color: hsl(var(--content-inverse));
     box-shadow: var(--shadow-sm);
-
     &:hover {
       background-color: hsl(var(--status-success) / 0.8);
     }
   }
-
   &--warning {
     background-color: hsl(var(--status-warning));
     color: hsl(var(--content-inverse));
     box-shadow: var(--shadow-sm);
-
     &:hover {
       background-color: hsl(var(--status-warning) / 0.8);
     }
   }
-
   &--info {
     background-color: hsl(var(--status-info));
     color: hsl(var(--content-inverse));
     box-shadow: var(--shadow-sm);
-
     &:hover {
       background-color: hsl(var(--status-info) / 0.8);
     }
   }
-
   &--outline {
     background-color: transparent;
     border-color: hsl(var(--border-default));
     color: hsl(var(--content-primary));
-
     &:hover {
       background-color: hsl(var(--surface-secondary));
     }
   }
-
   /* Dot variant */
   &--dot {
     padding-left: var(--spacing-2);
   }
 }
-
 .badge__dot {
   margin-right: var(--spacing-2);
   height: var(--spacing-2);
@@ -119,7 +97,6 @@
   opacity: 0.75;
   animation: badge-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
-
 .badge__remove-button {
   margin-left: var(--spacing-2);
   margin-right: calc(var(--spacing-1) * -1);
@@ -134,32 +111,26 @@
   display: flex;
   align-items: center;
   justify-content: center;
-
   &:hover {
     opacity: 1;
     transform: scale(1.1);
   }
-
   &:active {
     transform: scale(0.95);
   }
-
   &:focus {
     outline: none;
   }
-
   &:focus-visible {
     outline: 2px solid hsl(var(--ring));
     outline-offset: 2px;
   }
 }
-
 .badge__remove-icon {
   height: var(--spacing-3);
   width: var(--spacing-3);
   stroke-width: 2;
 }
-
 /* Animations */
 @keyframes badge-pulse {
   0%,
@@ -170,35 +141,28 @@
     opacity: 0.25;
   }
 }
-
 /* Reduced motion support */
 @media (prefers-reduced-motion: reduce) {
   .badge {
     transition: none;
-
     &__dot {
       animation: none;
     }
-
     &__remove-button {
       transition: none;
-
       &:hover {
         transform: none;
       }
-
       &:active {
         transform: none;
       }
     }
   }
 }
-
 /* High contrast mode support */
 @media (prefers-contrast: high) {
   .badge {
     border-width: 2px;
-
     &--outline {
       border-color: currentColor;
     }

@@ -1,5 +1,4 @@
 /* Alert Component - BEM Styling with Design Tokens */
-
 .alert {
   position: relative;
   width: 100%;
@@ -8,66 +7,54 @@
   padding: var(--spacing-3) var(--spacing-4);
   font-size: var(--text-sm);
   animation: alert-enter 0.3s ease-out;
-
   /* Base variant - default */
   &--default {
     background-color: hsl(var(--surface-primary));
     color: hsl(var(--content-primary));
   }
-
   /* Destructive variant */
   &--destructive {
     border-color: hsl(var(--status-error) / 0.5);
     background-color: hsl(var(--surface-primary));
     color: hsl(var(--status-error));
-
     .alert__dismiss-icon {
       color: hsl(var(--status-error));
     }
   }
-
   /* Warning variant */
   &--warning {
     border-color: hsl(var(--status-warning) / 0.5);
     background-color: hsl(var(--surface-primary));
     color: hsl(32 95% 30%); /* Darker warning text for better contrast */
-
     .alert__dismiss-icon {
       color: hsl(32 95% 30%);
     }
   }
-
   /* Success variant */
   &--success {
     border-color: hsl(var(--status-success) / 0.5);
     background-color: hsl(var(--surface-primary));
     color: hsl(142 76% 25%); /* Darker success text for better contrast */
-
     .alert__dismiss-icon {
       color: hsl(142 76% 25%);
     }
   }
-
   /* Info variant */
   &--info {
     border-color: hsl(var(--status-info) / 0.5);
     background-color: hsl(var(--surface-primary));
     color: hsl(221 83% 35%); /* Darker info text for better contrast */
-
     .alert__dismiss-icon {
       color: hsl(221 83% 35%);
     }
   }
-
   &--dismissible {
     // Extra padding for dismiss button
     padding-right: 2.5rem;
   }
-
   // Auto-hide progress indicator (optional enhancement)
   &--auto-hide {
     overflow: hidden;
-
     &::after {
       content: "";
       position: absolute;
@@ -80,22 +67,18 @@
     }
   }
 }
-
 .alert__title {
   margin-bottom: var(--spacing-1);
   font-weight: 500;
   line-height: 1;
   letter-spacing: -0.025em;
 }
-
 .alert__description {
   font-size: var(--text-sm);
-
   p {
     line-height: 1.625;
   }
 }
-
 .alert__dismiss-button {
   position: absolute;
   right: var(--spacing-2);
@@ -106,28 +89,23 @@
   border: none;
   cursor: pointer;
   transition: var(--transition-default);
-
   &:hover {
     opacity: 1;
     transform: scale(1.1);
   }
-
   &:focus {
     outline: none;
   }
-
   &:focus-visible {
     outline: 2px solid currentColor;
     outline-offset: 2px;
     border-radius: 4px;
   }
 }
-
 .alert__dismiss-icon {
   height: var(--spacing-4);
   width: var(--spacing-4);
 }
-
 .alert__dismiss-text {
   position: absolute;
   width: 1px;
@@ -139,7 +117,6 @@
   white-space: nowrap;
   border: 0;
 }
-
 // Alert animations
 @keyframes alert-enter {
   from {
@@ -151,7 +128,6 @@
     transform: translateY(0);
   }
 }
-
 @keyframes alert-progress {
   from {
     width: 100%;
@@ -160,24 +136,20 @@
     width: 0%;
   }
 }
-
 // Reduced motion support
 @media (prefers-reduced-motion: reduce) {
   .alert {
     animation: none;
-
     &--auto-hide::after {
       animation: none;
       display: none;
     }
   }
 }
-
 // High contrast mode support
 @media (prefers-contrast: high) {
   .alert {
     border-width: 2px;
-
     .alert__dismiss-button {
       outline: 1px solid currentColor;
     }

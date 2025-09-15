@@ -3,7 +3,6 @@
 import * as SheetPrimitive from '@radix-ui/react-dialog';
 import { X } from 'lucide-react';
 import * as React from 'react';
-import './Sheet.scss';
 
 import { cn } from '@/lib/utils';
 

@@ -1,6 +1,5 @@
 import { cn } from '@/lib/utils';
 import * as React from 'react';
-import './Skeleton.scss';
 
 type SkeletonProps = React.HTMLAttributes<HTMLDivElement>;
 

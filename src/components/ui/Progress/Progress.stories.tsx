@@ -1,5 +1,6 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 import { Progress } from './Progress';
+import './Progress.scss';
 
 const meta: Meta<typeof Progress> = {
   title: 'Components/Progress',

@@ -1,6 +1,7 @@
 // Using Next.js framework package instead of direct renderer
-import type { Meta, StoryObj } from '@storybook/nextjs';
+import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 import { Calendar } from './Calendar';
+import './Calendar.scss';
 
 const meta: Meta<typeof Calendar> = {
   title: 'Components/Calendar',

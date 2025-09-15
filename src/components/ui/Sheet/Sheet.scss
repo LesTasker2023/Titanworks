@@ -1,5 +1,3 @@
-@import "../../../styles/globals.scss";
-
 .sheet {
   // Overlay
   &__overlay {
@@ -7,16 +5,13 @@
     inset: 0;
     z-index: 9999;
     background-color: rgba(0, 0, 0, 0.8);
-
     &[data-state="open"] {
       animation: sheetOverlayShow 0.15s ease-out;
     }
-
     &[data-state="closed"] {
       animation: sheetOverlayHide 0.15s ease-in;
     }
   }
-
   // Content container
   &__content {
     position: fixed;
@@ -32,11 +27,9 @@
       0 10px 10px -5px rgba(0, 0, 0, 0.04);
     transition: all 0.15s ease-in-out;
     gap: 1rem;
-
     &:focus {
       outline: none;
     }
-
     // Side variants
     &--top {
       top: 0;
@@ -46,16 +39,13 @@
       border-top: none;
       border-left: none;
       border-right: none;
-
       &[data-state="open"] {
         animation: sheetSlideInFromTop 0.15s ease-out;
       }
-
       &[data-state="closed"] {
         animation: sheetSlideOutToTop 0.15s ease-in;
       }
     }
-
     &--bottom {
       bottom: 0;
       right: 0;
@@ -64,16 +54,13 @@
       border-bottom: none;
       border-left: none;
       border-right: none;
-
       &[data-state="open"] {
         animation: sheetSlideInFromBottom 0.15s ease-out;
       }
-
       &[data-state="closed"] {
         animation: sheetSlideOutToBottom 0.15s ease-in;
       }
     }
-
     &--left {
       top: 0;
       bottom: 0;
@@ -84,20 +71,16 @@
       border-top: none;
       border-left: none;
       border-bottom: none;
-
       @media (min-width: 640px) {
         max-width: 20rem;
       }
-
       &[data-state="open"] {
         animation: sheetSlideInFromLeft 0.15s ease-out;
       }
-
       &[data-state="closed"] {
         animation: sheetSlideOutToLeft 0.15s ease-in;
       }
     }
-
     &--right {
       top: 0;
       bottom: 0;
@@ -108,21 +91,17 @@
       border-top: none;
       border-right: none;
       border-bottom: none;
-
       @media (min-width: 640px) {
         max-width: 20rem;
       }
-
       &[data-state="open"] {
         animation: sheetSlideInFromRight 0.15s ease-out;
       }
-
       &[data-state="closed"] {
         animation: sheetSlideOutToRight 0.15s ease-in;
       }
     }
   }
-
   // Close button
   &__close {
     position: absolute;
@@ -133,56 +112,46 @@
     transition: opacity 0.15s ease;
     outline-offset: 2px;
     cursor: pointer;
-
     &:hover {
       opacity: 1;
     }
-
     &:focus {
       outline: none;
       box-shadow: 0 0 0 2px var(--ring);
       outline-offset: 2px;
     }
-
     &:disabled {
       pointer-events: none;
     }
-
     &[data-state="open"] {
       background-color: var(--secondary);
     }
-
     svg {
       height: 1rem;
       width: 1rem;
     }
   }
-
   // Header
   &__header {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
     text-align: center;
-
     @media (min-width: 640px) {
       text-align: left;
     }
   }
-
   // Footer
   &__footer {
     display: flex;
     flex-direction: column-reverse;
     gap: 0.5rem;
-
     @media (min-width: 640px) {
       flex-direction: row;
       justify-content: flex-end;
       gap: 0.5rem;
     }
   }
-
   // Title
   &__title {
     font-size: 1.125rem;
@@ -190,14 +159,12 @@
     font-weight: 600;
     color: var(--foreground);
   }
-
   // Description
   &__description {
     font-size: 0.875rem;
     color: var(--muted-foreground);
   }
 }
-
 // Animations
 @keyframes sheetOverlayShow {
   from {
@@ -207,7 +174,6 @@
     opacity: 1;
   }
 }
-
 @keyframes sheetOverlayHide {
   from {
     opacity: 1;
@@ -216,7 +182,6 @@
     opacity: 0;
   }
 }
-
 @keyframes sheetSlideInFromTop {
   from {
     transform: translateY(-100%);
@@ -225,7 +190,6 @@
     transform: translateY(0);
   }
 }
-
 @keyframes sheetSlideOutToTop {
   from {
     transform: translateY(0);
@@ -234,7 +198,6 @@
     transform: translateY(-100%);
   }
 }
-
 @keyframes sheetSlideInFromBottom {
   from {
     transform: translateY(100%);
@@ -243,7 +206,6 @@
     transform: translateY(0);
   }
 }
-
 @keyframes sheetSlideOutToBottom {
   from {
     transform: translateY(0);
@@ -252,7 +214,6 @@
     transform: translateY(100%);
   }
 }
-
 @keyframes sheetSlideInFromLeft {
   from {
     transform: translateX(-100%);
@@ -261,7 +222,6 @@
     transform: translateX(0);
   }
 }
-
 @keyframes sheetSlideOutToLeft {
   from {
     transform: translateX(0);
@@ -270,7 +230,6 @@
     transform: translateX(-100%);
   }
 }
-
 @keyframes sheetSlideInFromRight {
   from {
     transform: translateX(100%);
@@ -279,7 +238,6 @@
     transform: translateX(0);
   }
 }
-
 @keyframes sheetSlideOutToRight {
   from {
     transform: translateX(0);

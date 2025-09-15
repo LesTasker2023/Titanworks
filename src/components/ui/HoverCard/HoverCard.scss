@@ -1,5 +1,3 @@
-@import "../../../styles/globals.scss";
-
 /* HoverCard Component */
 .hoverCard__content {
   z-index: 50;
@@ -12,20 +10,17 @@
   box-shadow: var(--shadow-md);
   outline: none;
   transform-origin: var(--radix-hover-card-content-transform-origin);
-
   /* Animation states */
   &[data-state="open"] {
     animation:
       fadeIn 150ms ease-out,
       zoomIn 150ms ease-out;
   }
-
   &[data-state="closed"] {
     animation:
       fadeOut 150ms ease-in,
       zoomOut 150ms ease-in;
   }
-
   /* Direction-specific animations */
   &[data-side="bottom"] {
     animation:
@@ -33,21 +28,18 @@
       zoomIn 150ms ease-out,
       slideInFromTop 150ms ease-out;
   }
-
   &[data-side="left"] {
     animation:
       fadeIn 150ms ease-out,
       zoomIn 150ms ease-out,
       slideInFromRight 150ms ease-out;
   }
-
   &[data-side="right"] {
     animation:
       fadeIn 150ms ease-out,
       zoomIn 150ms ease-out,
       slideInFromLeft 150ms ease-out;
   }
-
   &[data-side="top"] {
     animation:
       fadeIn 150ms ease-out,
@@ -55,7 +47,6 @@
       slideInFromBottom 150ms ease-out;
   }
 }
-
 /* Animation keyframes */
 @keyframes fadeIn {
   from {
@@ -65,7 +56,6 @@
     opacity: 1;
   }
 }
-
 @keyframes fadeOut {
   from {
     opacity: 1;
@@ -74,7 +64,6 @@
     opacity: 0;
   }
 }
-
 @keyframes zoomIn {
   from {
     transform: scale(0.95);
@@ -83,7 +72,6 @@
     transform: scale(1);
   }
 }
-
 @keyframes zoomOut {
   from {
     transform: scale(1);
@@ -92,7 +80,6 @@
     transform: scale(0.95);
   }
 }
-
 @keyframes slideInFromTop {
   from {
     transform: translateY(-8px);
@@ -101,7 +88,6 @@
     transform: translateY(0);
   }
 }
-
 @keyframes slideInFromBottom {
   from {
     transform: translateY(8px);
@@ -110,7 +96,6 @@
     transform: translateY(0);
   }
 }
-
 @keyframes slideInFromLeft {
   from {
     transform: translateX(-8px);
@@ -119,7 +104,6 @@
     transform: translateX(0);
   }
 }
-
 @keyframes slideInFromRight {
   from {
     transform: translateX(8px);

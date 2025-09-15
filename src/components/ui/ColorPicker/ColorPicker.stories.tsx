@@ -1,5 +1,6 @@
-import type { Meta, StoryObj } from '@storybook/nextjs';
+import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 import { ColorPicker } from './ColorPicker';
+import './ColorPicker.scss';
 
 const meta: Meta<typeof ColorPicker> = {
   title: 'Components/ColorPicker',

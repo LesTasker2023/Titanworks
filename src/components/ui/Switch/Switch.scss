@@ -1,5 +1,3 @@
-@import "../../../styles/globals.scss";
-
 .switch {
   display: inline-flex;
   height: var(--space-5);
@@ -13,29 +11,24 @@
   transition:
     background-color 0.2s,
     color 0.2s;
-
   &:focus-visible {
     outline: none;
     box-shadow:
       0 0 0 2px hsl(var(--color-ring)),
       0 0 0 4px hsl(var(--color-background));
   }
-
   &:disabled {
     cursor: not-allowed;
     opacity: 0.5;
   }
-
   // Checked state
   &[data-state="checked"] {
     background-color: hsl(var(--color-primary));
   }
-
   // Unchecked state
   &[data-state="unchecked"] {
     background-color: hsl(var(--color-input));
   }
-
   // Thumb styling
   &__thumb {
     pointer-events: none;
@@ -46,12 +39,10 @@
     background-color: hsl(var(--color-background));
     box-shadow: var(--shadow-lg);
     transition: transform 0.2s;
-
     // Checked position
     .switch[data-state="checked"] & {
       transform: translateX(var(--space-4));
     }
-
     // Unchecked position
     .switch[data-state="unchecked"] & {
       transform: translateX(0);

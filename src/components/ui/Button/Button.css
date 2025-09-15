@@ -1,0 +1,260 @@
+/* Button Component - Pure CSS Version (Converted from SCSS) */
+
+/* Base button styles */
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-2);
+  white-space: nowrap;
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  transition: all 0.15s ease-in-out;
+  border: 1px solid transparent;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+/* Focus styles for accessibility */
+.button:focus-visible {
+  outline: 2px solid hsl(var(--ring));
+  outline-offset: 2px;
+  box-shadow: 0 0 0 2px hsl(var(--ring) / 0.2);
+}
+
+/* Disabled state */
+.button:disabled,
+.button[aria-disabled='true'] {
+  pointer-events: none;
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+/* SVG icon styles */
+.button svg {
+  pointer-events: none;
+  width: var(--spacing-4);
+  height: var(--spacing-4);
+  flex-shrink: 0;
+}
+
+/* Variant: Default */
+.button--default {
+  background-color: hsl(var(--primary));
+  color: hsl(var(--primary-foreground));
+  box-shadow: var(--shadow-sm);
+}
+
+.button--default:hover:not(:disabled) {
+  background-color: hsl(var(--primary) / 0.9);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Variant: Destructive */
+.button--destructive {
+  background-color: hsl(var(--destructive));
+  color: hsl(var(--destructive-foreground));
+  box-shadow: var(--shadow-sm);
+}
+
+.button--destructive:hover:not(:disabled) {
+  background-color: hsl(var(--destructive) / 0.9);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Variant: Outline */
+.button--outline {
+  border: 1px solid hsl(var(--surface-interactive));
+  background-color: hsl(var(--background));
+  color: hsl(var(--surface-interactive));
+  box-shadow: var(--shadow-sm);
+}
+
+.button--outline:hover:not(:disabled) {
+  background-color: hsl(var(--accent));
+  color: hsl(var(--accent-foreground));
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Variant: Secondary */
+.button--secondary {
+  background-color: hsl(var(--secondary));
+  color: hsl(var(--secondary-foreground));
+  border: 1px solid hsl(var(--border-default));
+  box-shadow: var(--shadow-sm);
+}
+
+.button--secondary:hover:not(:disabled) {
+  background-color: hsl(var(--secondary) / 0.7);
+  border-color: hsl(var(--border-interactive) / 0.5);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Variant: Ghost */
+.button--ghost {
+  color: hsl(var(--surface-interactive));
+}
+
+.button--ghost:hover:not(:disabled) {
+  background-color: hsl(var(--accent));
+  color: hsl(var(--accent-foreground));
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Variant: Link */
+.button--link {
+  color: hsl(var(--primary));
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.button--link:hover:not(:disabled) {
+  text-decoration: underline;
+}
+
+/* Size: Default */
+.button--default-size {
+  height: var(--spacing-9);
+  padding: var(--spacing-2) var(--spacing-4);
+}
+
+/* Size: Small */
+.button--sm {
+  height: var(--spacing-8);
+  border-radius: var(--radius-md);
+  padding: 0 var(--spacing-3);
+  font-size: var(--font-size-xs);
+}
+
+/* Size: Large */
+.button--lg {
+  height: var(--spacing-10);
+  border-radius: var(--radius-md);
+  padding: 0 var(--spacing-8);
+}
+
+/* Size: Icon */
+.button--icon {
+  height: var(--spacing-9);
+  width: var(--spacing-9);
+  padding: 0;
+}
+
+/* Loading state */
+.button--loading {
+  position: relative;
+  color: transparent !important;
+}
+
+.button--loading::after {
+  content: '';
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  top: 50%;
+  left: 50%;
+  margin-left: -8px;
+  margin-top: -8px;
+  border: 2px solid;
+  border-radius: 50%;
+  border-color: currentColor transparent currentColor currentColor;
+  opacity: 0.8;
+  animation: spin 1s linear infinite;
+}
+
+/* Dark mode enhancements */
+[data-theme='dark'] .button:hover:not(:disabled) {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Mobile touch targets (accessibility) */
+@media (max-width: 640px) {
+  .button {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .button {
+    transition: none;
+    animation: none;
+  }
+
+  .button:hover:not(:disabled) {
+    transform: none;
+  }
+
+  .button--loading::after {
+    animation: none;
+    border: 2px solid currentColor;
+    border-top-color: transparent;
+  }
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+  .button {
+    border: 2px solid;
+  }
+
+  .button:hover:not(:disabled) {
+    border-width: 3px;
+  }
+}
+
+/* Loading spinner animation */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Button group utilities */
+.button-group {
+  display: flex;
+  gap: var(--spacing-2);
+  flex-wrap: wrap;
+}
+
+/* Connected button styling */
+.button-group--connected {
+  gap: 0;
+}
+
+.button-group--connected .button {
+  border-radius: 0;
+  margin-left: -1px;
+}
+
+.button-group--connected .button:first-child {
+  border-top-left-radius: var(--radius-md);
+  border-bottom-left-radius: var(--radius-md);
+  margin-left: 0;
+}
+
+.button-group--connected .button:last-child {
+  border-top-right-radius: var(--radius-md);
+  border-bottom-right-radius: var(--radius-md);
+}
+
+.button-group--connected .button:only-child {
+  border-radius: var(--radius-md);
+  margin-left: 0;
+}
+
+.button-group--connected .button:focus-visible {
+  z-index: 1;
+}

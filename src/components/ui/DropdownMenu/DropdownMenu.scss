@@ -1,7 +1,4 @@
-@import "../../../styles/globals.scss";
-
 /* DropdownMenu Components */
-
 /* SubTrigger */
 .dropdownMenu__subTrigger {
   display: flex;
@@ -16,31 +13,25 @@
   padding-bottom: calc(var(--spacing-unit) * 1.5);
   font-size: var(--font-size-sm);
   outline: none;
-
   &:focus {
     background-color: hsl(var(--surface-interactive) / 0.1);
   }
-
   &[data-state="open"] {
     background-color: hsl(var(--surface-interactive) / 0.1);
   }
-
   svg {
     pointer-events: none;
     width: calc(var(--spacing-unit) * 4);
     height: calc(var(--spacing-unit) * 4);
     flex-shrink: 0;
   }
-
   &--inset {
     padding-left: calc(var(--spacing-unit) * 8);
   }
 }
-
 .dropdownMenu__chevron {
   margin-left: auto;
 }
-
 /* SubContent */
 .dropdownMenu__subContent {
   z-index: 50;
@@ -53,40 +44,34 @@
   color: var(--color-popover-foreground);
   box-shadow: var(--shadow-lg);
   transform-origin: var(--radix-dropdown-menu-content-transform-origin);
-
   &[data-state="open"] {
     animation:
       fadeIn 150ms ease-out,
       zoomIn 150ms ease-out;
   }
-
   &[data-state="closed"] {
     animation:
       fadeOut 150ms ease-in,
       zoomOut 150ms ease-in;
   }
-
   &[data-side="bottom"] {
     animation:
       fadeIn 150ms ease-out,
       zoomIn 150ms ease-out,
       slideInFromTop 150ms ease-out;
   }
-
   &[data-side="left"] {
     animation:
       fadeIn 150ms ease-out,
       zoomIn 150ms ease-out,
       slideInFromRight 150ms ease-out;
   }
-
   &[data-side="right"] {
     animation:
       fadeIn 150ms ease-out,
       zoomIn 150ms ease-out,
       slideInFromLeft 150ms ease-out;
   }
-
   &[data-side="top"] {
     animation:
       fadeIn 150ms ease-out,
@@ -94,7 +79,6 @@
       slideInFromBottom 150ms ease-out;
   }
 }
-
 /* Content */
 .dropdownMenu__content {
   z-index: 50;
@@ -109,40 +93,34 @@
   color: var(--color-popover-foreground);
   box-shadow: var(--shadow-md);
   transform-origin: var(--radix-dropdown-menu-content-transform-origin);
-
   &[data-state="open"] {
     animation:
       fadeIn 150ms ease-out,
       zoomIn 150ms ease-out;
   }
-
   &[data-state="closed"] {
     animation:
       fadeOut 150ms ease-in,
       zoomOut 150ms ease-in;
   }
-
   &[data-side="bottom"] {
     animation:
       fadeIn 150ms ease-out,
       zoomIn 150ms ease-out,
       slideInFromTop 150ms ease-out;
   }
-
   &[data-side="left"] {
     animation:
       fadeIn 150ms ease-out,
       zoomIn 150ms ease-out,
       slideInFromRight 150ms ease-out;
   }
-
   &[data-side="right"] {
     animation:
       fadeIn 150ms ease-out,
       zoomIn 150ms ease-out,
       slideInFromLeft 150ms ease-out;
   }
-
   &[data-side="top"] {
     animation:
       fadeIn 150ms ease-out,
@@ -150,7 +128,6 @@
       slideInFromBottom 150ms ease-out;
   }
 }
-
 /* Item */
 .dropdownMenu__item {
   position: relative;
@@ -169,28 +146,23 @@
   transition:
     color var(--duration-200) var(--easing-ease-out),
     background-color var(--duration-200) var(--easing-ease-out);
-
   &:focus {
     background-color: hsl(var(--surface-interactive) / 0.1);
     color: hsl(var(--surface-interactive));
   }
-
   &[data-disabled] {
     pointer-events: none;
     opacity: 0.5;
   }
-
   & > svg {
     width: calc(var(--spacing-unit) * 4);
     height: calc(var(--spacing-unit) * 4);
     flex-shrink: 0;
   }
-
   &--inset {
     padding-left: calc(var(--spacing-unit) * 8);
   }
 }
-
 /* CheckboxItem */
 .dropdownMenu__checkboxItem {
   position: relative;
@@ -208,18 +180,15 @@
   transition:
     color var(--duration-200) var(--easing-ease-out),
     background-color var(--duration-200) var(--easing-ease-out);
-
   &:focus {
     background-color: hsl(var(--surface-interactive) / 0.1);
     color: hsl(var(--surface-interactive));
   }
-
   &[data-disabled] {
     pointer-events: none;
     opacity: 0.5;
   }
 }
-
 .dropdownMenu__checkboxIndicator {
   position: absolute;
   left: calc(var(--spacing-unit) * 2);
@@ -228,13 +197,11 @@
   width: calc(var(--spacing-unit) * 3.5);
   align-items: center;
   justify-content: center;
-
   .dropdownMenu__checkIcon {
     height: calc(var(--spacing-unit) * 4);
     width: calc(var(--spacing-unit) * 4);
   }
 }
-
 /* RadioItem */
 .dropdownMenu__radioItem {
   position: relative;
@@ -252,18 +219,15 @@
   transition:
     color var(--duration-200) var(--easing-ease-out),
     background-color var(--duration-200) var(--easing-ease-out);
-
   &:focus {
     background-color: hsl(var(--surface-interactive) / 0.1);
     color: hsl(var(--surface-interactive));
   }
-
   &[data-disabled] {
     pointer-events: none;
     opacity: 0.5;
   }
 }
-
 .dropdownMenu__radioIndicator {
   position: absolute;
   left: calc(var(--spacing-unit) * 2);
@@ -272,14 +236,12 @@
   width: calc(var(--spacing-unit) * 3.5);
   align-items: center;
   justify-content: center;
-
   .dropdownMenu__radioIcon {
     height: calc(var(--spacing-unit) * 2);
     width: calc(var(--spacing-unit) * 2);
     fill: currentColor;
   }
 }
-
 /* Label */
 .dropdownMenu__label {
   padding-left: calc(var(--spacing-unit) * 2);
@@ -288,12 +250,10 @@
   padding-bottom: calc(var(--spacing-unit) * 1.5);
   font-size: var(--font-size-sm);
   font-weight: var(--font-weight-semibold);
-
   &--inset {
     padding-left: calc(var(--spacing-unit) * 8);
   }
 }
-
 /* Separator */
 .dropdownMenu__separator {
   margin-left: calc(var(--spacing-unit) * -1);
@@ -303,7 +263,6 @@
   height: 1px;
   background-color: var(--color-muted);
 }
-
 /* Shortcut */
 .dropdownMenu__shortcut {
   margin-left: auto;
@@ -311,7 +270,6 @@
   letter-spacing: 0.1em;
   opacity: 0.6;
 }
-
 /* Animation keyframes */
 @keyframes fadeIn {
   from {
@@ -321,7 +279,6 @@
     opacity: 1;
   }
 }
-
 @keyframes fadeOut {
   from {
     opacity: 1;
@@ -330,7 +287,6 @@
     opacity: 0;
   }
 }
-
 @keyframes zoomIn {
   from {
     transform: scale(0.95);
@@ -339,7 +295,6 @@
     transform: scale(1);
   }
 }
-
 @keyframes zoomOut {
   from {
     transform: scale(1);
@@ -348,7 +303,6 @@
     transform: scale(0.95);
   }
 }
-
 @keyframes slideInFromTop {
   from {
     transform: translateY(-8px);
@@ -357,7 +311,6 @@
     transform: translateY(0);
   }
 }
-
 @keyframes slideInFromBottom {
   from {
     transform: translateY(8px);
@@ -366,7 +319,6 @@
     transform: translateY(0);
   }
 }
-
 @keyframes slideInFromLeft {
   from {
     transform: translateX(-8px);
@@ -375,7 +327,6 @@
     transform: translateX(0);
   }
 }
-
 @keyframes slideInFromRight {
   from {
     transform: translateX(8px);

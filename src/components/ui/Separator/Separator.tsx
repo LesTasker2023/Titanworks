@@ -2,7 +2,6 @@
 
 import * as SeparatorPrimitive from '@radix-ui/react-separator';
 import * as React from 'react';
-import './Separator.scss';
 
 import { cn } from '@/lib/utils';
 

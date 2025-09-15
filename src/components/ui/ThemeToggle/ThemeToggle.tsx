@@ -3,8 +3,6 @@
 import { useTheme } from 'next-themes';
 import * as React from 'react';
 
-import './ThemeToggle.scss';
-
 export interface ThemeToggleProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   icon?: React.ReactNode;
   label?: string;
