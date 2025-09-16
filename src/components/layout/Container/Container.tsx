@@ -1,8 +1,26 @@
 'use client';
 
-import { cn } from '@/lib/utils';
 import React from 'react';
 import './Container.scss';
+
+// Simple className utility to replace cn
+function classNames(
+  ...classes: (string | Record<string, boolean> | undefined | null | false)[]
+): string {
+  return classes
+    .map(cls => {
+      if (typeof cls === 'string') return cls;
+      if (typeof cls === 'object' && cls !== null) {
+        return Object.entries(cls)
+          .filter(([_, value]) => value)
+          .map(([key]) => key)
+          .join(' ');
+      }
+      return '';
+    })
+    .filter(Boolean)
+    .join(' ');
+}
 
 export interface ContainerProps extends React.HTMLAttributes<HTMLDivElement> {
   as?: React.ElementType;
@@ -16,7 +34,7 @@ const Container = React.forwardRef<HTMLDivElement, ContainerProps>(
     { className, size = 'xl', padding = 'md', center = false, as: Component = 'div', ...props },
     ref
   ) => {
-    const containerClasses = cn(
+    const containerClasses = classNames(
       'container',
       `container--size-${size}`,
       `container--padding-${padding}`,

@@ -1,4 +1,3 @@
-export { default as SelectDemo } from './demo';
 export {
   Select,
   SelectContent,
