@@ -6,18 +6,20 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### Added
 
-- **Simple Multi-Tenant System**: Environment-based metadata customization for multiple domains
-  - Site title, description, and branding now configurable via `NEXT_PUBLIC_SITE_*` environment variables
-  - Ready-to-deploy configurations for 4 domains: Daedalus, Titanworks, TitanDigital, TitanLabs
-  - Comprehensive deployment guide (`SIMPLE_MULTI_TENANT_GUIDE.md`) with Vercel setup instructions
-  - Example environment files (`.env.{domain}.example`) for quick copy-paste deployment
+- **Multi-Tenant Theme System**: Dynamic color customization with environment-based theming
+  - 5-color theme system (primary, accent, text, background, border) configurable via environment variables
+  - Hex-to-HSL conversion for design system compatibility with CSS custom properties
+  - 8 domain-specific color palettes matching business nature (gothic, professional, corporate, etc.)
+  - Dynamic CSS injection system in layout.tsx for build-time theme application
+  - Production-ready theme system that works correctly in Vercel deployments
+  - Updated deployment guide with color palette examples and Vercel configuration
+
+- **Enhanced Multi-Tenant System**: Extended environment-based customization
+  - Site title, description, and branding configurable via `NEXT_PUBLIC_SITE_*` environment variables
+  - Ready-to-deploy configurations for 8 real business domains with unique color schemes
+  - Comprehensive deployment guide (`SIMPLE_MULTI_TENANT_GUIDE.md`) with complete setup instructions
+  - Example environment files for each domain with business-appropriate color palettes
   - Zero code changes required for new domains - only environment variable configuration
-  - Maintains unified functionality while enabling per-domain branding and SEO optimization
-
-### Changed
-
-- **Major Simplification**: Removed multi-domain/tenant system to unify all deployments
-  - All deployments now use identical codebase without domain-specific customization
   - Simplified homepage with single HeroSection (removed dynamic component loading)
   - Reduced main page bundle size from 8.72kB to 7.56kB with cleaner architecture
   - Unified layout system using standard Navigation/Footer components

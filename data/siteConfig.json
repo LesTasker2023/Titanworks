@@ -15,7 +15,10 @@
             "tagline": "Enterprise Component Excellence",
             "theme": {
                 "primaryColor": "#18181b",
-                "accentColor": "#3b82f6"
+                "accentColor": "#3b82f6",
+                "textColor": "#1f2937",
+                "backgroundColor": "#ffffff",
+                "borderColor": "#e5e7eb"
             }
         }
     },

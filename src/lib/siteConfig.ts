@@ -25,6 +25,9 @@ export interface SiteConfig {
       theme: {
         primaryColor: string;
         accentColor: string;
+        textColor: string;
+        backgroundColor: string;
+        borderColor: string;
       };
     };
   };
@@ -195,6 +198,9 @@ const buildSiteConfig = (): SiteConfig => {
             'NEXT_PUBLIC_THEME_ACCENT_COLOR',
             siteConfigData.site.brand.theme.accentColor
           ),
+          textColor: getEnvVar('NEXT_PUBLIC_THEME_TEXT_COLOR', '#1f2937'),
+          backgroundColor: getEnvVar('NEXT_PUBLIC_THEME_BACKGROUND_COLOR', '#ffffff'),
+          borderColor: getEnvVar('NEXT_PUBLIC_THEME_BORDER_COLOR', '#e5e7eb'),
         },
       },
     },

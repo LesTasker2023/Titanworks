@@ -1,6 +1,7 @@
 import { Footer, Navigation } from '@/components/layout';
 import { AuthProvider } from '@/lib/auth/AuthProvider';
 import { getSiteMetadata } from '@/lib/siteConfig';
+import { generateThemeCss } from '@/lib/theme';
 import type { Metadata } from 'next';
 import { ThemeProvider } from 'next-themes';
 import { Geist, Geist_Mono } from 'next/font/google';
@@ -25,6 +26,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <style dangerouslySetInnerHTML={{ __html: generateThemeCss() }} />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} min-h-screen flex flex-col`}
         suppressHydrationWarning

@@ -29,44 +29,114 @@ NEXT_PUBLIC_SITE_URL=https://yourdomain.com
 ```bash
 NEXT_PUBLIC_BRAND_DISPLAY_NAME=Your Brand
 NEXT_PUBLIC_BRAND_TAGLINE=Your Brand Tagline
+NEXT_PUBLIC_THEME_PRIMARY_COLOR=#your-primary-color
+NEXT_PUBLIC_THEME_ACCENT_COLOR=#your-accent-color
+NEXT_PUBLIC_THEME_TEXT_COLOR=#your-text-color
+NEXT_PUBLIC_THEME_BACKGROUND_COLOR=#your-background-color
+NEXT_PUBLIC_THEME_BORDER_COLOR=#your-border-color
 ```
+
+## Color Palettes by Domain
+
+Each domain has a unique color scheme that matches its business nature:
+
+- **Till Death**: Gothic purple & rose gold (`#6b21a8`, `#e879f9`)
+- **Les Tasker**: Professional blue & silver (`#1e40af`, `#3b82f6`)
+- **BBC WOIRA**: BBC red & corporate gray (`#bb1919`, `#dc2626`)
+- **Titanworks**: Industrial orange & steel (`#ea580c`, `#fb923c`)
+- **Trigger Kings**: Military green & camo (`#166534`, `#22c55e`)
+- **Olympus Comps**: Luxury gold & royal purple (`#7c2d92`, `#a855f7`)
+- **Strong Salts**: Fitness red & power black (`#dc2626`, `#ef4444`)
+- **Project Snatch**: Stealth gray & cyan (`#374151`, `#06b6d4`)
 
 ## Domain Examples
 
-### Daedalus (Default/Fallback)
+### Till Death - Alternative Weddings (till-death.co.uk)
 
 ```bash
-NEXT_PUBLIC_SITE_NAME=Daedalus
-NEXT_PUBLIC_SITE_TITLE=Daedalus - Unified Engineering & AI Operations
-NEXT_PUBLIC_SITE_DESCRIPTION=Scalable Next.js platform with TypeScript-first rigor and comprehensive component ecosystem.
-NEXT_PUBLIC_SITE_URL=https://daedalus.dev
+NEXT_PUBLIC_SITE_NAME=Till Death
+NEXT_PUBLIC_SITE_TITLE=Till Death - Alternative Weddings & Events
+NEXT_PUBLIC_SITE_DESCRIPTION=Unique and alternative wedding planning services for couples who want something extraordinary and unconventional.
+NEXT_PUBLIC_SITE_URL=https://till-death.co.uk
+NEXT_PUBLIC_THEME_PRIMARY_COLOR=#6b21a8
+NEXT_PUBLIC_THEME_ACCENT_COLOR=#e879f9
 ```
 
-### Titanworks
+### Les Tasker Portfolio (lestasker.co.uk)
+
+```bash
+NEXT_PUBLIC_SITE_NAME=Les Tasker
+NEXT_PUBLIC_SITE_TITLE=Les Tasker - Full Stack Developer & Digital Creator
+NEXT_PUBLIC_SITE_DESCRIPTION=Professional portfolio showcasing full stack development, 3D printing, and digital innovation projects.
+NEXT_PUBLIC_SITE_URL=https://lestasker.co.uk
+NEXT_PUBLIC_THEME_PRIMARY_COLOR=#1e40af
+NEXT_PUBLIC_THEME_ACCENT_COLOR=#3b82f6
+```
+
+### BBC WOIRA Knowledge Base (bbcwoira.co.uk)
+
+```bash
+NEXT_PUBLIC_SITE_NAME=BBC WOIRA
+NEXT_PUBLIC_SITE_TITLE=BBC WOIRA - Knowledge Base & Documentation
+NEXT_PUBLIC_SITE_DESCRIPTION=Comprehensive knowledge base and documentation system for BBC WOIRA operations and procedures.
+NEXT_PUBLIC_SITE_URL=https://bbcwoira.co.uk
+NEXT_PUBLIC_THEME_PRIMARY_COLOR=#bb1919
+NEXT_PUBLIC_THEME_ACCENT_COLOR=#dc2626
+```
+
+### Titanworks 3D Printing (titanworks.uk)
 
 ```bash
 NEXT_PUBLIC_SITE_NAME=Titanworks
-NEXT_PUBLIC_SITE_TITLE=Titanworks - Engineering Excellence & Innovation
-NEXT_PUBLIC_SITE_DESCRIPTION=Advanced engineering solutions with cutting-edge technology and innovative development practices.
-NEXT_PUBLIC_SITE_URL=https://titanworks.dev
+NEXT_PUBLIC_SITE_TITLE=Titanworks - Professional 3D Printing Services
+NEXT_PUBLIC_SITE_DESCRIPTION=Premium 3D printing services, prototyping, and manufacturing solutions for businesses and individuals.
+NEXT_PUBLIC_SITE_URL=https://titanworks.uk
+NEXT_PUBLIC_THEME_PRIMARY_COLOR=#ea580c
+NEXT_PUBLIC_THEME_ACCENT_COLOR=#fb923c
 ```
 
-### TitanDigital
+### Trigger Kings Paintball (triggerkings.co.uk)
 
 ```bash
-NEXT_PUBLIC_SITE_NAME=TitanDigital
-NEXT_PUBLIC_SITE_TITLE=TitanDigital - Digital Marketing & Web Solutions
-NEXT_PUBLIC_SITE_DESCRIPTION=Professional digital marketing services, web development, and brand strategy for modern businesses.
-NEXT_PUBLIC_SITE_URL=https://titandigital.com
+NEXT_PUBLIC_SITE_NAME=Trigger Kings
+NEXT_PUBLIC_SITE_TITLE=Trigger Kings - Mobile Paintball Shooting Range
+NEXT_PUBLIC_SITE_DESCRIPTION=Professional mobile paintball shooting range services for events, parties, and team building activities.
+NEXT_PUBLIC_SITE_URL=https://triggerkings.co.uk
+NEXT_PUBLIC_THEME_PRIMARY_COLOR=#166534
+NEXT_PUBLIC_THEME_ACCENT_COLOR=#22c55e
 ```
 
-### TitanLabs
+### Olympus Competitions (olympuscomps.co.uk)
 
 ```bash
-NEXT_PUBLIC_SITE_NAME=TitanLabs
-NEXT_PUBLIC_SITE_TITLE=TitanLabs - Research & Development Innovation
-NEXT_PUBLIC_SITE_DESCRIPTION=Cutting-edge research and development laboratory specializing in emerging technologies and breakthrough solutions.
-NEXT_PUBLIC_SITE_URL=https://titanlabs.tech
+NEXT_PUBLIC_SITE_NAME=Olympus Competitions
+NEXT_PUBLIC_SITE_TITLE=Olympus Competitions - Premium Raffles & Draws
+NEXT_PUBLIC_SITE_DESCRIPTION=Exclusive competitions, premium raffles, and exciting prize draws with luxury rewards and experiences.
+NEXT_PUBLIC_SITE_URL=https://olympuscomps.co.uk
+NEXT_PUBLIC_THEME_PRIMARY_COLOR=#7c2d92
+NEXT_PUBLIC_THEME_ACCENT_COLOR=#a855f7
+```
+
+### Strong Salts Supplements (strongsalts.co.uk)
+
+```bash
+NEXT_PUBLIC_SITE_NAME=Strong Salts
+NEXT_PUBLIC_SITE_TITLE=Strong Salts - Premium Gym Supplements & Smelling Salts
+NEXT_PUBLIC_SITE_DESCRIPTION=High-performance gym supplements featuring our flagship smelling salts for maximum workout intensity and focus.
+NEXT_PUBLIC_SITE_URL=https://strongsalts.co.uk
+NEXT_PUBLIC_THEME_PRIMARY_COLOR=#dc2626
+NEXT_PUBLIC_THEME_ACCENT_COLOR=#ef4444
+```
+
+### Project Snatch R&D (compralo.co.uk)
+
+```bash
+NEXT_PUBLIC_SITE_NAME=Project Snatch
+NEXT_PUBLIC_SITE_TITLE=Project Snatch - Private Research & Development
+NEXT_PUBLIC_SITE_DESCRIPTION=Confidential research and development workspace for innovative projects and experimental technologies.
+NEXT_PUBLIC_SITE_URL=https://compralo.co.uk
+NEXT_PUBLIC_THEME_PRIMARY_COLOR=#374151
+NEXT_PUBLIC_THEME_ACCENT_COLOR=#06b6d4
 ```
 
 ## Vercel Deployment Steps
@@ -75,10 +145,14 @@ NEXT_PUBLIC_SITE_URL=https://titanlabs.tech
 
 For each domain, create a separate Vercel project:
 
-- Project 1: `daedalus-main` → daedalus.dev
-- Project 2: `titanworks` → titanworks.dev
-- Project 3: `titandigital` → titandigital.com
-- Project 4: `titanlabs` → titanlabs.tech
+- Project 1: `till-death` → till-death.co.uk
+- Project 2: `lestasker-portfolio` → lestasker.co.uk
+- Project 3: `bbcwoira-kb` → bbcwoira.co.uk
+- Project 4: `titanworks-3d` → titanworks.uk
+- Project 5: `triggerkings-paintball` → triggerkings.co.uk
+- Project 6: `olympuscomps` → olympuscomps.co.uk
+- Project 7: `strongsalts` → strongsalts.co.uk
+- Project 8: `project-snatch` → compralo.co.uk
 
 ### 2. Connect Same Repository
 
@@ -88,26 +162,30 @@ All projects connect to the same GitHub repository (`LesTasker2023/Titanworks`)
 
 In each Vercel project's Settings → Environment Variables:
 
-**For Titanworks project:**
+**For Titanworks 3D Printing project:**
 
 ```
 NEXT_PUBLIC_SITE_NAME = Titanworks
-NEXT_PUBLIC_SITE_TITLE = Titanworks - Engineering Excellence & Innovation
-NEXT_PUBLIC_SITE_DESCRIPTION = Advanced engineering solutions with cutting-edge technology and innovative development practices.
-NEXT_PUBLIC_SITE_URL = https://titanworks.dev
+NEXT_PUBLIC_SITE_TITLE = Titanworks - Professional 3D Printing Services
+NEXT_PUBLIC_SITE_DESCRIPTION = Premium 3D printing services, prototyping, and manufacturing solutions for businesses and individuals.
+NEXT_PUBLIC_SITE_URL = https://titanworks.uk
 NEXT_PUBLIC_BRAND_DISPLAY_NAME = Titanworks
-NEXT_PUBLIC_BRAND_TAGLINE = Engineering the Future
+NEXT_PUBLIC_BRAND_TAGLINE = Professional 3D Printing Services
+NEXT_PUBLIC_THEME_PRIMARY_COLOR = #ea580c
+NEXT_PUBLIC_THEME_ACCENT_COLOR = #fb923c
 ```
 
-**For TitanDigital project:**
+**For Strong Salts Supplements project:**
 
 ```
-NEXT_PUBLIC_SITE_NAME = TitanDigital
-NEXT_PUBLIC_SITE_TITLE = TitanDigital - Digital Marketing & Web Solutions
-NEXT_PUBLIC_SITE_DESCRIPTION = Professional digital marketing services, web development, and brand strategy for modern businesses.
-NEXT_PUBLIC_SITE_URL = https://titandigital.com
-NEXT_PUBLIC_BRAND_DISPLAY_NAME = TitanDigital
-NEXT_PUBLIC_BRAND_TAGLINE = Digital Excellence Delivered
+NEXT_PUBLIC_SITE_NAME = Strong Salts
+NEXT_PUBLIC_SITE_TITLE = Strong Salts - Premium Gym Supplements & Smelling Salts
+NEXT_PUBLIC_SITE_DESCRIPTION = High-performance gym supplements featuring our flagship smelling salts for maximum workout intensity and focus.
+NEXT_PUBLIC_SITE_URL = https://strongsalts.co.uk
+NEXT_PUBLIC_BRAND_DISPLAY_NAME = Strong Salts
+NEXT_PUBLIC_BRAND_TAGLINE = Premium Gym Supplements & Smelling Salts
+NEXT_PUBLIC_THEME_PRIMARY_COLOR = #dc2626
+NEXT_PUBLIC_THEME_ACCENT_COLOR = #ef4444
 ```
 
 _(Repeat for each domain)_
@@ -164,7 +242,11 @@ _(Repeat for each domain)_
 
 Ready-to-copy environment configurations are available:
 
-- `.env.daedalus.example`
-- `.env.titanworks.example`
-- `.env.titandigital.example`
-- `.env.titanlabs.example`
+- `.env.till-death.example` - Alternative weddings (Gothic purple theme)
+- `.env.lestasker.example` - Personal portfolio (Professional blue theme)
+- `.env.bbcwoira.example` - Knowledge base (BBC red theme)
+- `.env.titanworks.example` - 3D printing business (Industrial orange theme)
+- `.env.triggerkings.example` - Mobile paintball (Military green theme)
+- `.env.olympuscomps.example` - Raffles & draws (Luxury purple theme)
+- `.env.strongsalts.example` - Gym supplements (Fitness red theme)
+- `.env.project-snatch.example` - Private R&D (Stealth gray theme)
