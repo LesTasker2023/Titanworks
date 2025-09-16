@@ -1,8 +1,10 @@
+@import '../../../styles/design-tokens';
+
 /* Accordion Component - BEM Styling with Design Tokens */
 .accordion__button {
   width: 100%;
   text-align: left;
-  font-weight: 500;
+  font-weight: var(--font-weight-medium);
   padding: var(--spacing-2) var(--spacing-4);
   border-bottom: 1px solid hsl(var(--border-default));
   background-color: hsl(var(--surface-primary));

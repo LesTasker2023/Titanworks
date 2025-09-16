@@ -1,3 +1,5 @@
+@import '../../../styles/design-tokens';
+
 // Dialog Component Styles
 // BEM Methodology: .dialog__element--modifier
 .dialog {
@@ -22,7 +24,7 @@
     width: 100%;
     transform: translate(-50%, -50%);
     gap: var(--spacing-4);
-    border: 1px solid var(--color-border);
+    border: var(--border-width-thin) solid var(--color-border);
     background-color: var(--color-background);
     padding: var(--spacing-6);
     box-shadow: var(--shadow-lg);
@@ -89,7 +91,7 @@
     border-radius: 50%;
     height: var(--spacing-6);
     width: var(--spacing-6);
-    border-width: 2px;
+    border-width: var(--border-width-thick);
     border-style: solid;
     border-color: transparent;
     border-bottom-color: var(--color-primary);
@@ -153,7 +155,7 @@
   }
   &__title {
     font-size: var(--font-size-lg);
-    font-weight: 600;
+    font-weight: var(--font-weight-semibold);
     line-height: 1;
     letter-spacing: -0.025em;
   }

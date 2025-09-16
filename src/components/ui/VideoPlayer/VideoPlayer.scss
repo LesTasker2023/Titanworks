@@ -1,8 +1,10 @@
+@import "../../../styles/design-tokens";
+
 // VideoPlayer component styles
 .video-player {
   position: relative;
-  background-color: #000;
-  border-radius: var(--radius-lg);
+  background-color: hsl(0 0% 0%); // Pure black for video background
+  border-radius: $border-radius-lg;
   overflow: hidden;
   // Main video element
   &__video {
@@ -17,14 +19,14 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: hsl(0 0% 0% / 0.5);
   }
   // Loading spinner
   &__spinner {
-    width: 3rem;
-    height: 3rem;
-    border: 4px solid rgba(255, 255, 255, 0.3);
-    border-top-color: white;
+    width: $spacing-2xl;
+    height: $spacing-2xl;
+    border: 4px solid hsl(0 0% 100% / 0.3);
+    border-top-color: hsl(var(--content-inverse));
     border-radius: 50%;
     animation: video-spinner-spin 1s linear infinite;
   }
@@ -37,25 +39,25 @@
     justify-content: center;
   }
   &__play-button {
-    width: 5rem;
-    height: 5rem;
+    width: calc($spacing-unit * 20); // 5rem equivalent
+    height: calc($spacing-unit * 20);
     border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: hsl(0 0% 100% / 0.2);
     backdrop-filter: blur(8px);
-    border: 2px solid rgba(255, 255, 255, 0.5);
+    border: var(--border-width-thick) solid hsl(0 0% 100% / 0.5);
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
     transition: all 0.2s ease;
     &:hover {
-      background-color: rgba(255, 255, 255, 0.3);
+      background-color: hsl(0 0% 100% / 0.3);
     }
     svg {
-      width: 2rem;
-      height: 2rem;
-      color: white;
-      margin-left: 0.25rem; // Slight offset for play icon
+      width: $spacing-xl;
+      height: $spacing-xl;
+      color: hsl(var(--content-inverse));
+      margin-left: $spacing-xs; // Slight offset for play icon
     }
   }
   // Controls overlay
@@ -64,8 +66,8 @@
     bottom: 0;
     left: 0;
     right: 0;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.4), transparent);
-    padding: 1rem;
+    background: linear-gradient(to top, hsl(0 0% 0% / 0.8), hsl(0 0% 0% / 0.4), transparent);
+    padding: $spacing-md;
     transition: opacity 0.3s ease;
     &--hidden {
       opacity: 0;
@@ -74,8 +76,8 @@
   // Progress bar container
   &__progress-container {
     width: 100%;
-    height: 0.5rem;
-    background-color: rgba(255, 255, 255, 0.3);
+    height: $spacing-sm;
+    background-color: hsl(0 0% 100% / 0.3);
     border-radius: 9999px;
     margin-bottom: 1rem;
     cursor: pointer;

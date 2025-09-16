@@ -1,3 +1,5 @@
+@import '../../../styles/design-tokens';
+
 .slider {
   position: relative;
   display: flex;
@@ -93,7 +95,7 @@
   &__thumb {
     display: block;
     border-radius: var(--border-radius-full);
-    border: 1px solid hsl(var(--color-border));
+    border: var(--border-width-thin) solid hsl(var(--color-border));
     background-color: hsl(var(--color-background));
     box-shadow: var(--shadow);
     transition:
@@ -154,7 +156,7 @@
       animation: spin 1s linear infinite;
       width: var(--space-3);
       height: var(--space-3);
-      border: 1px solid hsl(var(--color-border));
+      border: var(--border-width-thin) solid hsl(var(--color-border));
       border-top-color: hsl(var(--color-foreground));
       border-radius: var(--border-radius-full);
     }

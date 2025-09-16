@@ -1,3 +1,5 @@
+@import '../../../styles/design-tokens';
+
 .pagination {
   // Main container
   &__container {
@@ -29,7 +31,7 @@
     align-items: center;
     justify-content: center;
     border-radius: var(--radius);
-    font-weight: 500;
+    font-weight: var(--font-weight-medium);
     transition: all 0.2s ease;
     cursor: pointer;
     border: none;
@@ -37,7 +39,7 @@
     &:focus-visible {
       outline: none;
       box-shadow: 0 0 0 2px var(--ring);
-      outline-offset: 2px;
+      outline-offset: var(--border-width-thick);
     }
     &:disabled {
       opacity: 0.5;
@@ -64,7 +66,7 @@
       }
     }
     &--variant-outline {
-      border: 1px solid var(--input);
+      border: var(--border-width-thin) solid var(--input);
       &:hover {
         background-color: var(--accent);
         color: var(--accent-foreground);
@@ -101,7 +103,7 @@
     align-items: center;
     justify-content: center;
     border-radius: var(--radius);
-    font-weight: 500;
+    font-weight: var(--font-weight-medium);
     transition: all 0.2s ease;
     cursor: pointer;
     border: none;
@@ -110,7 +112,7 @@
     &:focus-visible {
       outline: none;
       box-shadow: 0 0 0 2px var(--ring);
-      outline-offset: 2px;
+      outline-offset: var(--border-width-thick);
     }
     &:disabled {
       opacity: 0.5;
@@ -124,7 +126,7 @@
       }
     }
     &--variant-outline {
-      border: 1px solid var(--input);
+      border: var(--border-width-thin) solid var(--input);
       &:hover {
         background-color: var(--accent);
         color: var(--accent-foreground);
@@ -172,7 +174,7 @@
     width: 1rem;
     animation: pagination-spin 1s linear infinite;
     border-radius: 50%;
-    border: 2px solid currentColor;
+    border: var(--border-width-thick) solid currentColor;
     border-top-color: transparent;
   }
 }

@@ -1,0 +1,271 @@
+/**
+ * Design Tokens SCSS - Environment Variable Controlled
+ * 
+ * This file provides SCSS variables and mixins that pull their values from
+ * CSS custom properties, which are set from environment variables via
+ * the DesignTokenProvider component.
+ * 
+ * Usage:
+ * @import 'design-tokens';
+ * .my-component {
+ *   background-color: hsl(var(--surface-primary));
+ *   color: hsl(var(--content-primary));
+ *   @include font-base;
+ * }
+ */
+
+// ===========================================
+// SURFACE TOKENS
+// ===========================================
+
+:export {
+  // Export tokens for JavaScript consumption
+  surfacePrimary: var(--surface-primary);
+  surfaceSecondary: var(--surface-secondary);
+  surfaceInteractive: var(--surface-interactive);
+}
+
+// SCSS Variables (mapped to CSS custom properties)
+$surface-primary: var(--surface-primary);
+$surface-secondary: var(--surface-secondary);
+$surface-secondary-button: var(--surface-secondary-button);
+$surface-neutral: var(--surface-neutral);
+$surface-interactive: var(--surface-interactive);
+$surface-accent: var(--surface-accent);
+
+// ===========================================
+// CONTENT TOKENS
+// ===========================================
+
+$content-primary: var(--content-primary);
+$content-secondary: var(--content-secondary);
+$content-inverse: var(--content-inverse);
+$content-muted: var(--content-muted);
+
+// ===========================================
+// BORDER TOKENS
+// ===========================================
+
+$border-default: var(--border-default);
+$border-interactive: var(--border-interactive);
+$border-muted: var(--border-muted);
+
+// ===========================================
+// STATUS TOKENS
+// ===========================================
+
+$status-success: var(--status-success);
+$status-warning: var(--status-warning);
+$status-error: var(--status-error);
+$status-info: var(--status-info);
+
+// ===========================================
+// TYPOGRAPHY TOKENS
+// ===========================================
+
+$font-family-base: var(--font-family-base);
+$font-family-mono: var(--font-family-mono);
+
+// ===========================================
+// SPACING TOKENS
+// ===========================================
+
+$spacing-unit: var(--spacing-unit);
+$spacing-xs: var(--spacing-xs);
+$spacing-sm: var(--spacing-sm);
+$spacing-md: var(--spacing-md);
+$spacing-lg: var(--spacing-lg);
+$spacing-xl: var(--spacing-xl);
+$spacing-2xl: var(--spacing-2xl);
+
+// Typography
+$font-size-sm: var(--font-size-sm);
+$font-size-base: var(--font-size-base);
+$font-size-lg: var(--font-size-lg);
+$font-size-xl: var(--font-size-xl);
+$font-size-2xl: var(--font-size-2xl);
+$font-size-3xl: var(--font-size-3xl);
+$font-size-4xl: var(--font-size-4xl);
+
+$font-weight-normal: var(--font-weight-normal);
+$font-weight-medium: var(--font-weight-medium);
+$font-weight-semibold: var(--font-weight-semibold);
+$font-weight-bold: var(--font-weight-bold);
+
+// Border radius
+$border-radius-sm: var(--border-radius-sm);
+$border-radius-md: var(--border-radius-md);
+$border-radius-lg: var(--border-radius-lg);
+
+$radius-sm: var(--radius-sm);
+$radius-md: var(--radius-md);
+$radius-lg: var(--radius-lg);
+$radius-xl: var(--radius-xl);
+$radius-xs: var(--radius-xs);
+
+// Border width
+$border-width-thin: var(--border-width-thin);
+$border-width-default: var(--border-width-default);
+$border-width-thick: var(--border-width-thick);
+
+// ===========================================
+// UTILITY MIXINS
+// ===========================================
+
+// Surface mixins
+@mixin surface-primary {
+  background-color: hsl($surface-primary);
+  color: hsl($content-primary);
+}
+
+@mixin surface-secondary {
+  background-color: hsl($surface-secondary);
+  color: hsl($content-primary);
+}
+
+@mixin surface-interactive {
+  background-color: hsl($surface-interactive);
+  color: hsl($content-inverse);
+}
+
+@mixin surface-accent {
+  background-color: hsl($surface-accent);
+  color: hsl($content-inverse);
+}
+
+// Typography mixins
+@mixin font-base {
+  font-family: #{$font-family-base};
+}
+
+@mixin font-mono {
+  font-family: #{$font-family-mono};
+}
+
+// Border mixins
+@mixin border-default {
+  border: 1px solid hsl($border-default);
+}
+
+@mixin border-interactive {
+  border: 1px solid hsl($border-interactive);
+}
+
+@mixin border-subtle {
+  border: 1px solid hsl($border-muted);
+}
+
+@mixin border-primary {
+  border: 1px solid hsl($border-interactive);
+}
+
+// Content mixins
+@mixin content-primary {
+  color: hsl($content-primary);
+}
+
+@mixin content-secondary {
+  color: hsl($content-secondary);
+}
+
+// Status mixins
+@mixin status-success {
+  background-color: hsl($status-success);
+  color: hsl($content-inverse);
+}
+
+@mixin status-warning {
+  background-color: hsl($status-warning);
+  color: hsl($content-inverse);
+}
+
+@mixin status-error {
+  background-color: hsl($status-error);
+  color: hsl($content-inverse);
+}
+
+@mixin status-info {
+  background-color: hsl($status-info);
+  color: hsl($content-inverse);
+}
+
+// Radius mixins
+@mixin radius-sm {
+  border-radius: $radius-sm;
+}
+
+@mixin radius-md {
+  border-radius: $radius-md;
+}
+
+@mixin radius-lg {
+  border-radius: $radius-lg;
+}
+
+@mixin radius-xl {
+  border-radius: $radius-xl;
+}
+
+// ===========================================
+// COMPONENT UTILITIES
+// ===========================================
+
+// Button base styles using design tokens
+@mixin button-base {
+  @include font-base;
+  @include radius-md;
+  padding: calc($spacing-unit * 2) calc($spacing-unit * 4);
+  @include border-interactive;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+@mixin button-primary {
+  @include button-base;
+  @include surface-interactive;
+}
+
+@mixin button-secondary {
+  @include button-base;
+  background-color: hsl($surface-secondary-button);
+  color: hsl($content-primary);
+}
+
+// Input base styles using design tokens
+@mixin input-base {
+  @include font-base;
+  @include radius-md;
+  @include border-default;
+  background-color: hsl($surface-neutral);
+  color: hsl($content-primary);
+  padding: calc($spacing-unit * 2) calc($spacing-unit * 3);
+  transition: border-color 0.2s ease-in-out;
+
+  &:focus {
+    outline: none;
+    border-color: hsl($border-interactive);
+    box-shadow: 0 0 0 2px hsla($border-interactive / 0.2);
+  }
+
+  &::placeholder {
+    color: hsl($content-secondary);
+  }
+}
+
+// Card base styles using design tokens
+@mixin card-base {
+  @include surface-primary;
+  @include radius-lg;
+  @include border-default;
+  padding: calc($spacing-unit * 6);
+  box-shadow: 0 1px 3px hsla($content-primary / 0.1);
+}

@@ -1,0 +1,88 @@
+@import "../../../styles/design-tokens";
+
+.homepage1 {
+  @include surface-primary;
+  min-height: 100vh;
+
+  &__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: $spacing-xl $spacing-lg;
+  }
+
+  &__header {
+    text-align: center;
+    margin-bottom: $spacing-2xl;
+  }
+
+  &__title {
+    @include content-primary;
+    font-size: $font-size-4xl;
+    font-weight: $font-weight-bold;
+    margin-bottom: $spacing-md;
+  }
+
+  &__subtitle {
+    @include content-secondary;
+    font-size: $font-size-lg;
+    margin-bottom: $spacing-lg;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-2xl;
+  }
+
+  &__hero {
+    text-align: center;
+    padding: $spacing-2xl;
+    @include surface-secondary;
+    @include border-subtle;
+    border-radius: $border-radius-lg;
+  }
+
+  &__hero-title {
+    @include content-primary;
+    font-size: $font-size-2xl;
+    font-weight: $font-weight-semibold;
+    margin-bottom: $spacing-md;
+  }
+
+  &__hero-description {
+    @include content-secondary;
+    font-size: $font-size-base;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  &__features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: $spacing-lg;
+  }
+
+  &__feature {
+    padding: $spacing-lg;
+    @include surface-secondary;
+    @include border-subtle;
+    border-radius: $border-radius-md;
+    transition: transform 0.2s ease;
+
+    &:hover {
+      transform: translateY(-2px);
+    }
+  }
+
+  &__feature-title {
+    @include content-primary;
+    font-size: $font-size-lg;
+    font-weight: $font-weight-semibold;
+    margin-bottom: $spacing-sm;
+  }
+
+  &__feature-description {
+    @include content-secondary;
+    font-size: $font-size-sm;
+  }
+}

@@ -1,18 +1,20 @@
+@import '../../../styles/design-tokens';
+
 // Checkbox Component - BEM Styling with Design Tokens
 .checkbox {
   height: var(--spacing-4);
   width: var(--spacing-4);
   flex-shrink: 0;
   border-radius: var(--radius-sm);
-  border: 1px solid hsl(var(--primary));
+  border: var(--border-width-thin) solid hsl(var(--primary));
   box-shadow: var(--shadow-sm);
   transition: all 0.15s ease-in-out;
   // Focus styles
   &:focus-visible {
     outline: none;
     box-shadow: 0 0 0 1px hsl(var(--ring));
-    outline: 2px solid hsl(var(--ring));
-    outline-offset: 2px;
+    outline: var(--border-width-thick) solid hsl(var(--ring));
+    outline-offset: var(--border-width-thick);
   }
   // Disabled state
   &:disabled {
@@ -46,7 +48,7 @@
       width: 8px;
       height: 8px;
       margin: -4px 0 0 -4px;
-      border: 1px solid;
+      border: var(--border-width-thin) solid;
       border-radius: 50%;
       border-color: currentColor transparent currentColor currentColor;
       animation: checkboxSpin 1s linear infinite;
@@ -189,7 +191,7 @@
 // High contrast mode support
 @media (prefers-contrast: high) {
   .checkbox {
-    border-width: 2px;
+    border-width: var(--border-width-thick);
     &:focus-visible {
       outline-width: 3px;
     }

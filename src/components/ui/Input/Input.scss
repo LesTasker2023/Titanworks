@@ -1,3 +1,5 @@
+@import '../../../styles/design-tokens';
+
 /* Input Component */
 .input {
   display: flex;
@@ -64,7 +66,7 @@
       margin-top: calc(var(--spacing-unit) * -2);
       width: calc(var(--spacing-unit) * 4);
       height: calc(var(--spacing-unit) * 4);
-      border: 2px solid;
+      border: var(--border-width-thick) solid;
       border-radius: 50%;
       border-color: var(--color-muted-foreground) transparent var(--color-muted-foreground)
         var(--color-muted-foreground);
@@ -132,13 +134,13 @@
     animation: none;
     &--loading::after {
       animation: none;
-      border: 2px solid var(--color-muted-foreground);
+      border: var(--border-width-thick) solid var(--color-muted-foreground);
       border-top-color: transparent;
     }
   }
   /* High contrast mode */
   @media (prefers-contrast: high) {
-    border: 2px solid;
+    border: var(--border-width-thick) solid;
     &:focus-visible {
       outline-width: 3px;
     }

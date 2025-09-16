@@ -1,3 +1,5 @@
+@import '../../../styles/design-tokens';
+
 .switch {
   display: inline-flex;
   height: var(--space-5);
@@ -6,7 +8,7 @@
   cursor: pointer;
   align-items: center;
   border-radius: var(--border-radius-full);
-  border: 2px solid transparent;
+  border: var(--border-width-thick) solid transparent;
   box-shadow: var(--shadow-sm);
   transition:
     background-color 0.2s,

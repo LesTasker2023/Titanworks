@@ -1,10 +1,12 @@
+@import '../../../styles/design-tokens';
+
 .toaster {
   // Base toaster group styling already handled by Sonner library
   // Toast container styling
   .toast {
     background-color: hsl(var(--color-background));
     color: hsl(var(--color-foreground));
-    border: 1px solid hsl(var(--color-border));
+    border: var(--border-width-thin) solid hsl(var(--color-border));
     box-shadow: var(--shadow-lg);
     // Toast description
     .toast__description {

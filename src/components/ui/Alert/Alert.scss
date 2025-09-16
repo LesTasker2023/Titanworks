@@ -1,9 +1,11 @@
+@import '../../../styles/design-tokens';
+
 /* Alert Component - BEM Styling with Design Tokens */
 .alert {
   position: relative;
   width: 100%;
   border-radius: var(--radius);
-  border: 1px solid hsl(var(--border-default));
+  border: var(--border-width-thin) solid hsl(var(--border-default));
   padding: var(--spacing-3) var(--spacing-4);
   font-size: var(--text-sm);
   animation: alert-enter 0.3s ease-out;
@@ -69,7 +71,7 @@
 }
 .alert__title {
   margin-bottom: var(--spacing-1);
-  font-weight: 500;
+  font-weight: var(--font-weight-medium);
   line-height: 1;
   letter-spacing: -0.025em;
 }
@@ -97,9 +99,9 @@
     outline: none;
   }
   &:focus-visible {
-    outline: 2px solid currentColor;
-    outline-offset: 2px;
-    border-radius: 4px;
+    outline: var(--border-width-thick) solid currentColor;
+    outline-offset: var(--border-width-thick);
+    border-radius: var(--radius-sm);
   }
 }
 .alert__dismiss-icon {
@@ -149,9 +151,9 @@
 // High contrast mode support
 @media (prefers-contrast: high) {
   .alert {
-    border-width: 2px;
+    border-width: var(--border-width-thick);
     .alert__dismiss-button {
-      outline: 1px solid currentColor;
+      outline: var(--border-width-thin) solid currentColor;
     }
   }
 }

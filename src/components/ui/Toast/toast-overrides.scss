@@ -1,3 +1,5 @@
+@import '../../../styles/design-tokens';
+
 /**
  * 🎨 Toast Component SCSS Override
  * 
@@ -30,7 +32,7 @@
   }
   /* High contrast mode support */
   @media (prefers-contrast: high) {
-    --toast-border-width: 2px;
+    --toast-border-width: var(--border-width-thick);
   }
 }
 /* ===== TOAST ROOT STYLING ===== */
@@ -129,7 +131,7 @@
 /* ===== TOAST CONTENT STYLING ===== */
 /* Title styling enhancements */
 .toast-title {
-  font-weight: 600;
+  font-weight: var(--font-weight-semibold);
   line-height: 1.4;
   margin-bottom: 0.25rem;
   /* Responsive typography */
@@ -151,9 +153,9 @@
 .toast-close {
   /* Enhanced focus states */
   &:focus-visible {
-    outline: 2px solid rgba(59, 130, 246, 0.6);
-    outline-offset: 2px;
-    border-radius: 4px;
+    outline: var(--border-width-thick) solid rgba(59, 130, 246, 0.6);
+    outline-offset: var(--border-width-thick);
+    border-radius: var(--radius-sm);
   }
   /* Hover animation */
   &:hover {
@@ -179,8 +181,8 @@
   }
   /* Focus state */
   &:focus-visible {
-    outline: 2px solid rgba(59, 130, 246, 0.6);
-    outline-offset: 2px;
+    outline: var(--border-width-thick) solid rgba(59, 130, 246, 0.6);
+    outline-offset: var(--border-width-thick);
   }
 }
 /* ===== ANIMATIONS ===== */
@@ -227,12 +229,12 @@
 /* High contrast mode */
 @media (prefers-contrast: high) {
   .toast-root {
-    border-width: 2px;
+    border-width: var(--border-width-thick);
     border-style: solid;
   }
   .toast-close,
   .toast-action {
-    border: 2px solid currentColor;
+    border: var(--border-width-thick) solid currentColor;
   }
 }
 /* Reduced motion preferences */

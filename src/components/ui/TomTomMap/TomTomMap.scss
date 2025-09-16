@@ -1,9 +1,11 @@
+@import '../../../styles/design-tokens';
+
 // TomTomMap component styles
 .tomtom-map {
   position: relative;
   overflow: hidden;
   border-radius: var(--radius-lg);
-  border: 1px solid hsl(var(--border));
+  border: var(--border-width-thin) solid hsl(var(--border));
   // Loading indicator
   &__loading {
     position: absolute;
@@ -81,8 +83,8 @@
       background-color: hsl(var(--primary) / 0.9);
     }
     &:focus {
-      outline: 2px solid hsl(var(--primary));
-      outline-offset: 2px;
+      outline: var(--border-width-thick) solid hsl(var(--primary));
+      outline-offset: var(--border-width-thick);
     }
     svg {
       width: 1rem;
@@ -96,7 +98,7 @@
       padding: 0.75rem;
     }
     &-title {
-      font-weight: 600;
+      font-weight: var(--font-weight-semibold);
       font-size: 0.875rem;
     }
     &-address {
@@ -142,7 +144,7 @@
       }
     }
     &-label {
-      font-weight: 500;
+      font-weight: var(--font-weight-medium);
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;

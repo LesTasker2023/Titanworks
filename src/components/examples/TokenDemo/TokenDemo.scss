@@ -1,0 +1,224 @@
+/**
+ * TokenDemo SCSS - Demonstrates environment-controlled design tokens
+ * 
+ * This file shows how to use design tokens that pull their values
+ * from environment variables via CSS custom properties.
+ */
+
+@import "../../styles/design-tokens";
+
+.token-demo {
+  @include surface-primary;
+  padding: calc(var(--spacing-unit) * 8);
+  margin: calc(var(--spacing-unit) * 4);
+  @include radius-lg;
+  max-width: 1200px;
+
+  &__header {
+    text-align: center;
+    margin-bottom: calc(var(--spacing-unit) * 8);
+  }
+
+  &__title {
+    @include font-base;
+    color: hsl(var(--content-primary));
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: calc(var(--spacing-unit) * 2);
+  }
+
+  &__description {
+    color: hsl(var(--content-secondary));
+    font-size: 1.1rem;
+    margin-bottom: 0;
+
+    code {
+      @include font-mono;
+      background-color: hsl(var(--surface-secondary));
+      padding: calc(var(--spacing-unit) / 2) var(--spacing-unit);
+      @include radius-sm;
+      font-size: 0.9em;
+    }
+  }
+
+  &__grid {
+    display: grid;
+    gap: calc(var(--spacing-unit) * 6);
+  }
+
+  &__section {
+    background-color: hsl(var(--surface-secondary));
+    padding: calc(var(--spacing-unit) * 6);
+    @include radius-md;
+    @include border-default;
+  }
+
+  &__section-title {
+    @include font-base;
+    color: hsl(var(--content-primary));
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: calc(var(--spacing-unit) * 4);
+  }
+
+  &__color-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: calc(var(--spacing-unit) * 4);
+  }
+
+  &__color {
+    padding: calc(var(--spacing-unit) * 4);
+    @include radius-md;
+    @include border-default;
+    text-align: center;
+
+    span {
+      display: block;
+      font-weight: 600;
+      margin-bottom: calc(var(--spacing-unit) * 2);
+    }
+
+    code {
+      @include font-mono;
+      font-size: 0.85rem;
+      opacity: 0.8;
+    }
+
+    // Surface colors
+    &--surface-primary {
+      background-color: hsl(var(--surface-primary));
+      color: hsl(var(--content-primary));
+    }
+
+    &--surface-secondary {
+      background-color: hsl(var(--surface-secondary));
+      color: hsl(var(--content-primary));
+    }
+
+    &--surface-interactive {
+      background-color: hsl(var(--surface-interactive));
+      color: hsl(var(--content-inverse));
+    }
+
+    &--surface-accent {
+      background-color: hsl(var(--surface-accent));
+      color: hsl(var(--content-inverse));
+    }
+
+    // Status colors
+    &--status-success {
+      background-color: hsl(var(--status-success));
+      color: hsl(var(--content-inverse));
+    }
+
+    &--status-warning {
+      background-color: hsl(var(--status-warning));
+      color: hsl(var(--content-inverse));
+    }
+
+    &--status-error {
+      background-color: hsl(var(--status-error));
+      color: hsl(var(--content-inverse));
+    }
+
+    &--status-info {
+      background-color: hsl(var(--status-info));
+      color: hsl(var(--content-inverse));
+    }
+  }
+
+  &__components {
+    display: flex;
+    flex-wrap: wrap;
+    gap: calc(var(--spacing-unit) * 4);
+    align-items: center;
+  }
+
+  &__button {
+    // Use the button mixin from design tokens
+    &--primary {
+      @include button-primary;
+    }
+
+    &--secondary {
+      @include button-secondary;
+    }
+  }
+
+  &__input {
+    @include input-base;
+    flex: 1;
+    min-width: 250px;
+  }
+
+  &__card {
+    @include card-base;
+    text-align: center;
+    min-width: 200px;
+  }
+
+  &__text {
+    &--base {
+      @include font-base;
+      color: hsl(var(--content-primary));
+      margin-bottom: calc(var(--spacing-unit) * 2);
+    }
+
+    &--mono {
+      @include font-mono;
+      color: hsl(var(--content-secondary));
+      margin-bottom: calc(var(--spacing-unit) * 2);
+    }
+
+    &--small {
+      font-size: 0.9rem;
+      color: hsl(var(--content-secondary));
+      margin-bottom: 0;
+    }
+  }
+
+  &__footer {
+    margin-top: calc(var(--spacing-unit) * 8);
+    text-align: center;
+    padding-top: calc(var(--spacing-unit) * 6);
+    border-top: 1px solid hsl(var(--border-muted));
+
+    p {
+      color: hsl(var(--content-secondary));
+      margin: 0;
+    }
+
+    code {
+      @include font-mono;
+      background-color: hsl(var(--surface-secondary));
+      padding: calc(var(--spacing-unit) / 2) var(--spacing-unit);
+      @include radius-sm;
+    }
+
+    strong {
+      color: hsl(var(--content-primary));
+    }
+  }
+}
+
+// Responsive adjustments
+@media (max-width: 768px) {
+  .token-demo {
+    padding: calc(var(--spacing-unit) * 4);
+    margin: calc(var(--spacing-unit) * 2);
+
+    &__components {
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    &__input {
+      min-width: auto;
+    }
+
+    &__color-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+}

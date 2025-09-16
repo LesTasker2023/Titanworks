@@ -1,3 +1,5 @@
+@import '../../../styles/design-tokens';
+
 .resizable {
   // Panel Group container
   &__panel-group {
@@ -30,7 +32,7 @@
     &:focus-visible {
       outline: none;
       box-shadow: 0 0 0 1px var(--ring);
-      outline-offset: 1px;
+      outline-offset: var(--border-width-thin);
     }
     &:hover {
       background-color: var(--accent);
@@ -58,7 +60,7 @@
       align-items: center;
       justify-content: center;
       border-radius: var(--radius-sm);
-      border: 1px solid var(--border);
+      border: var(--border-width-thin) solid var(--border);
       background-color: var(--border);
       // Icon
       svg {

@@ -1,7 +1,9 @@
+@import '../../../styles/design-tokens';
+
 // Card Component - BEM Styling with Design Tokens
 .card {
   border-radius: var(--radius-lg);
-  border: 1px solid hsl(var(--border));
+  border: var(--border-width-thin) solid hsl(var(--border));
   background-color: hsl(var(--card));
   color: hsl(var(--card-foreground));
   box-shadow: var(--shadow-sm);
@@ -73,7 +75,7 @@
   &__loading-spinner {
     height: var(--spacing-6);
     width: var(--spacing-6);
-    border: 2px solid hsl(var(--primary));
+    border: var(--border-width-thick) solid hsl(var(--primary));
     border-top-color: transparent;
     border-radius: 50%;
     animation: spin 1s linear infinite;

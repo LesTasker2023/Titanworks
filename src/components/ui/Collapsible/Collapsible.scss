@@ -1,3 +1,5 @@
+@import '../../../styles/design-tokens';
+
 // Collapsible Component Styles
 // Radix primitive wrapper - no styling required
 // Styling will be applied via composed components that use this primitive
@@ -8,8 +10,8 @@
     cursor: pointer;
     outline: none;
     &:focus-visible {
-      outline: 2px solid var(--color-primary);
-      outline-offset: 2px;
+      outline: var(--border-width-thick) solid var(--color-primary);
+      outline-offset: var(--border-width-thick);
     }
   }
   &__content {

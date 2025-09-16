@@ -1,3 +1,5 @@
+@import '../../../styles/design-tokens';
+
 /* Avatar Component - BEM Styling with Design Tokens */
 .avatar {
   position: relative;
@@ -25,8 +27,8 @@
   }
   /* Focus styles */
   &:focus-visible {
-    outline: 2px solid hsl(var(--ring));
-    outline-offset: 2px;
+    outline: var(--border-width-thick) solid hsl(var(--ring));
+    outline-offset: var(--border-width-thick);
     box-shadow: 0 0 0 2px hsl(var(--ring) / 0.2);
   }
   /* Loading state */
@@ -37,7 +39,7 @@
         content: "";
         position: absolute;
         inset: 0;
-        border: 2px solid transparent;
+        border: var(--border-width-thick) solid transparent;
         border-top: 2px solid hsl(var(--surface-interactive));
         border-radius: 50%;
         animation: avatar-spin 1s linear infinite;
@@ -54,7 +56,7 @@
       width: 25%;
       height: 25%;
       background-color: hsl(var(--status-success));
-      border: 2px solid hsl(var(--surface-primary));
+      border: var(--border-width-thick) solid hsl(var(--surface-primary));
       border-radius: 50%;
     }
   }
@@ -67,7 +69,7 @@
       width: 25%;
       height: 25%;
       background-color: hsl(var(--content-secondary));
-      border: 2px solid hsl(var(--surface-primary));
+      border: var(--border-width-thick) solid hsl(var(--surface-primary));
       border-radius: 50%;
     }
   }
@@ -87,7 +89,7 @@
   border-radius: 50%;
   background-color: hsl(var(--surface-secondary));
   color: hsl(var(--content-secondary));
-  font-weight: 500;
+  font-weight: var(--font-weight-medium);
   font-size: var(--text-sm);
 }
 /* Animations */
@@ -111,7 +113,7 @@
 /* High contrast mode support */
 @media (prefers-contrast: high) {
   .avatar {
-    outline: 1px solid hsl(var(--border-default));
+    outline: var(--border-width-thin) solid hsl(var(--border-default));
     &::after {
       border-width: 3px !important;
     }

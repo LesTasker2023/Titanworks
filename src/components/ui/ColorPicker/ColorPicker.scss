@@ -1,3 +1,5 @@
+@import '../../../styles/design-tokens';
+
 // ColorPicker Component Styles
 // BEM Methodology: .colorPicker__element--modifier
 .colorPicker {
@@ -11,7 +13,7 @@
     width: var(--spacing-4);
     height: var(--spacing-4);
     border-radius: var(--radius-full);
-    border: 1px solid var(--color-border);
+    border: var(--border-width-thin) solid var(--color-border);
   }
   &__icon {
     width: var(--spacing-4);
@@ -30,7 +32,7 @@
     margin-top: var(--spacing-2);
     padding: var(--spacing-4);
     background-color: var(--color-background);
-    border: 1px solid var(--color-border);
+    border: var(--border-width-thin) solid var(--color-border);
     border-radius: var(--radius-lg);
     box-shadow:
       0 10px 15px -3px rgba(0, 0, 0, 0.1),
@@ -46,7 +48,7 @@
   &__header {
     h3 {
       font-size: var(--font-size-sm);
-      font-weight: 500;
+      font-weight: var(--font-weight-medium);
       margin-bottom: var(--spacing-2);
       color: var(--color-foreground);
     }
@@ -59,7 +61,7 @@
   &__section {
     &-label {
       font-size: var(--font-size-xs);
-      font-weight: 500;
+      font-weight: var(--font-weight-medium);
       color: var(--color-muted-foreground);
       margin-bottom: var(--spacing-2);
       display: block;
@@ -74,7 +76,7 @@
     width: var(--spacing-8);
     height: var(--spacing-8);
     border-radius: var(--radius-full);
-    border: 2px solid var(--color-border);
+    border: var(--border-width-thick) solid var(--color-border);
     transition: all 0.2s ease-in-out;
     cursor: pointer;
     &:hover {
@@ -96,14 +98,14 @@
     width: var(--spacing-12);
     height: var(--spacing-8);
     border-radius: var(--radius);
-    border: 1px solid var(--color-border);
+    border: var(--border-width-thin) solid var(--color-border);
     cursor: pointer;
   }
   &__textInput {
     flex: 1;
     padding: var(--spacing-1) var(--spacing-2);
     font-size: var(--font-size-sm);
-    border: 1px solid var(--color-border);
+    border: var(--border-width-thin) solid var(--color-border);
     border-radius: var(--radius);
     background-color: var(--color-background);
     color: var(--color-foreground);
@@ -130,12 +132,12 @@
     color: var(--color-muted-foreground);
   }
   &__preview {
-    border: 1px solid var(--color-border);
+    border: var(--border-width-thin) solid var(--color-border);
     border-radius: var(--radius);
     padding: var(--spacing-2);
     &-title {
       font-size: var(--font-size-xs);
-      font-weight: 500;
+      font-weight: var(--font-weight-medium);
       margin-bottom: var(--spacing-2);
       color: var(--color-foreground);
     }
@@ -151,7 +153,7 @@
       text-align: center;
       &--outline {
         background-color: transparent;
-        border: 1px solid;
+        border: var(--border-width-thin) solid;
         // Border color applied via inline styles
       }
     }

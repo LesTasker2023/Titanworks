@@ -1,3 +1,5 @@
+@import '../../../styles/design-tokens';
+
 // Tabs SCSS Enhancements
 // Only features Tailwind can't handle
 .tabs {
@@ -18,7 +20,7 @@
         content: "";
         position: absolute;
         inset: -2px;
-        border: 2px solid hsl(var(--ring));
+        border: var(--border-width-thick) solid hsl(var(--ring));
         border-radius: inherit;
         animation: pulseRing 200ms ease-out;
       }
@@ -45,7 +47,7 @@
       content: "";
       width: 12px;
       height: 12px;
-      border: 2px solid hsl(var(--muted-foreground));
+      border: var(--border-width-thick) solid hsl(var(--muted-foreground));
       border-top-color: hsl(var(--primary));
       border-radius: 50%;
       animation: spin 1s linear infinite;
@@ -66,7 +68,7 @@
       color: hsl(var(--destructive-foreground));
       border-radius: 8px;
       font-size: 10px;
-      font-weight: 600;
+      font-weight: var(--font-weight-semibold);
       display: flex;
       align-items: center;
       justify-content: center;

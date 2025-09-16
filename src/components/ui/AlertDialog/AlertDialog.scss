@@ -1,3 +1,5 @@
+@import '../../../styles/design-tokens';
+
 /* AlertDialog Component - BEM Styling with Design Tokens */
 .alert-dialog__overlay {
   position: fixed;
@@ -22,7 +24,7 @@
   max-width: 32rem; /* 512px */
   transform: translate(-50%, -50%);
   gap: var(--spacing-4);
-  border: 1px solid hsl(var(--border-default));
+  border: var(--border-width-thin) solid hsl(var(--border-default));
   border-radius: var(--radius);
   background-color: hsl(var(--surface-primary));
   padding: var(--spacing-6);
@@ -60,7 +62,7 @@
 }
 .alert-dialog__title {
   font-size: var(--text-lg);
-  font-weight: 600;
+  font-weight: var(--font-weight-semibold);
   line-height: 1.25;
   color: hsl(var(--content-primary));
 }

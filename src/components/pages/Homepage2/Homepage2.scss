@@ -1,0 +1,137 @@
+@import "../../../styles/design-tokens";
+
+.homepage2 {
+  @include surface-primary;
+  min-height: 100vh;
+
+  &__container {
+    display: flex;
+    max-width: 1400px;
+    margin: 0 auto;
+    gap: $spacing-xl;
+  }
+
+  &__sidebar {
+    width: 280px;
+    flex-shrink: 0;
+    padding: $spacing-xl $spacing-lg;
+    @include surface-secondary;
+    @include border-subtle;
+    border-right: 1px solid;
+  }
+
+  &__nav {
+    position: sticky;
+    top: $spacing-xl;
+  }
+
+  &__nav-title {
+    @include content-primary;
+    font-size: $font-size-lg;
+    font-weight: $font-weight-semibold;
+    margin-bottom: $spacing-md;
+  }
+
+  &__nav-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  &__nav-item {
+    margin-bottom: $spacing-xs;
+  }
+
+  &__nav-link {
+    @include content-secondary;
+    text-decoration: none;
+    padding: $spacing-sm;
+    display: block;
+    border-radius: $border-radius-sm;
+    transition: all 0.2s ease;
+
+    &:hover {
+      @include surface-primary;
+      @include content-primary;
+    }
+  }
+
+  &__main {
+    flex: 1;
+    padding: $spacing-xl $spacing-lg;
+  }
+
+  &__header {
+    margin-bottom: $spacing-2xl;
+    padding-bottom: $spacing-lg;
+    @include border-subtle;
+    border-bottom: 1px solid;
+  }
+
+  &__title {
+    @include content-primary;
+    font-size: $font-size-3xl;
+    font-weight: $font-weight-bold;
+    margin-bottom: $spacing-sm;
+  }
+
+  &__subtitle {
+    @include content-secondary;
+    font-size: $font-size-lg;
+  }
+
+  &__section {
+    margin-bottom: $spacing-2xl;
+    padding: $spacing-lg;
+    @include surface-secondary;
+    @include border-subtle;
+    border-radius: $border-radius-md;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__section-title {
+    @include content-primary;
+    font-size: $font-size-xl;
+    font-weight: $font-weight-semibold;
+    margin-bottom: $spacing-md;
+  }
+
+  &__section-content {
+    @include content-secondary;
+    font-size: $font-size-base;
+    line-height: 1.6;
+  }
+
+  // Responsive design
+  @media (max-width: 768px) {
+    &__container {
+      flex-direction: column;
+    }
+
+    &__sidebar {
+      width: 100%;
+      position: relative;
+      border-right: none;
+      border-bottom: 1px solid;
+      @include border-subtle;
+    }
+
+    &__nav {
+      position: static;
+    }
+
+    &__nav-list {
+      display: flex;
+      gap: $spacing-sm;
+      overflow-x: auto;
+    }
+
+    &__nav-item {
+      margin-bottom: 0;
+      flex-shrink: 0;
+    }
+  }
+}

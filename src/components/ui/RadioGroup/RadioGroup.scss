@@ -1,3 +1,5 @@
+@import '../../../styles/design-tokens';
+
 .radioGroup {
   // Root container with label, input, and helper text
   &__container {
@@ -8,7 +10,7 @@
   // Label styles
   &__label {
     font-size: 0.875rem;
-    font-weight: 500;
+    font-weight: var(--font-weight-medium);
     line-height: 1;
     cursor: pointer;
     &--required::after {
@@ -35,7 +37,7 @@
     height: 1rem;
     width: 1rem;
     border-radius: 50%;
-    border: 1px solid var(--primary);
+    border: var(--border-width-thin) solid var(--primary);
     color: var(--primary);
     background: transparent;
     cursor: pointer;
@@ -46,7 +48,7 @@
     }
     &:focus-visible {
       box-shadow: 0 0 0 2px var(--ring);
-      outline-offset: 2px;
+      outline-offset: var(--border-width-thick);
     }
     &:disabled {
       cursor: not-allowed;

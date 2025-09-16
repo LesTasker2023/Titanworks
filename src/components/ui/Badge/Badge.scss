@@ -1,18 +1,20 @@
+@import '../../../styles/design-tokens';
+
 /* Badge Component - BEM Styling with Design Tokens */
 .badge {
   display: inline-flex;
   align-items: center;
   border-radius: var(--spacing-1);
-  border: 1px solid transparent;
-  font-weight: 600;
+  border: var(--border-width-thin) solid transparent;
+  font-weight: var(--font-weight-semibold);
   transition: var(--transition-fast);
   /* Focus styles */
   &:focus {
     outline: none;
   }
   &:focus-visible {
-    outline: 2px solid hsl(var(--ring));
-    outline-offset: 2px;
+    outline: var(--border-width-thick) solid hsl(var(--ring));
+    outline-offset: var(--border-width-thick);
   }
   /* Size variants */
   &--default {
@@ -122,8 +124,8 @@
     outline: none;
   }
   &:focus-visible {
-    outline: 2px solid hsl(var(--ring));
-    outline-offset: 2px;
+    outline: var(--border-width-thick) solid hsl(var(--ring));
+    outline-offset: var(--border-width-thick);
   }
 }
 .badge__remove-icon {
@@ -162,7 +164,7 @@
 /* High contrast mode support */
 @media (prefers-contrast: high) {
   .badge {
-    border-width: 2px;
+    border-width: var(--border-width-thick);
     &--outline {
       border-color: currentColor;
     }

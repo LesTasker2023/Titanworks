@@ -1,3 +1,5 @@
+@import "../../../styles/design-tokens";
+
 // Chart Component - BEM Styling with Design Tokens
 .chart {
   display: flex;
@@ -8,19 +10,19 @@
   .recharts-cartesian-axis-tick text {
     fill: hsl(var(--muted-foreground));
   }
-  .recharts-cartesian-grid line[stroke="#ccc"] {
+  .recharts-cartesian-grid line[stroke="var(--chart-grid-stroke)"] {
     stroke: hsl(var(--border) / 0.5);
   }
   .recharts-curve.recharts-tooltip-cursor {
     stroke: hsl(var(--border));
   }
-  .recharts-dot[stroke="#fff"] {
+  .recharts-dot[stroke="transparent"] {
     stroke: transparent;
   }
   .recharts-layer {
     outline: none;
   }
-  .recharts-polar-grid [stroke="#ccc"] {
+  .recharts-polar-grid [stroke="var(--chart-grid-stroke)"] {
     stroke: hsl(var(--border));
   }
   .recharts-radial-bar-background-sector {
@@ -29,10 +31,10 @@
   .recharts-rectangle.recharts-tooltip-cursor {
     fill: hsl(var(--muted));
   }
-  .recharts-reference-line [stroke="#ccc"] {
+  .recharts-reference-line [stroke="var(--chart-grid-stroke)"] {
     stroke: hsl(var(--border));
   }
-  .recharts-sector[stroke="#fff"] {
+  .recharts-sector[stroke="transparent"] {
     stroke: transparent;
   }
   .recharts-sector {
@@ -48,7 +50,7 @@
   align-items: start;
   gap: var(--spacing-2);
   border-radius: var(--radius-lg);
-  border: 1px solid hsl(var(--border) / 0.5);
+  border: var(--border-width-thin) solid hsl(var(--border) / 0.5);
   background-color: hsl(var(--background));
   padding: var(--spacing-2) var(--spacing-3);
   font-size: var(--font-size-xs);
@@ -92,7 +94,7 @@
   }
   &__indicator {
     flex-shrink: 0;
-    border-radius: 2px;
+    border-radius: var(--radius-xs);
     border: var(--color-border);
     background-color: var(--color-bg);
     &--dot {
@@ -163,6 +165,6 @@
     height: var(--spacing-2);
     width: var(--spacing-2);
     flex-shrink: 0;
-    border-radius: 2px;
+    border-radius: var(--radius-xs);
   }
 }

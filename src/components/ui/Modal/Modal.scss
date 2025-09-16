@@ -1,3 +1,5 @@
+@import '../../../styles/design-tokens';
+
 .modal {
   // Base overlay styles
   position: fixed;
@@ -26,7 +28,7 @@
   &__content {
     position: relative;
     background-color: var(--background);
-    border: 1px solid var(--border);
+    border: var(--border-width-thin) solid var(--border);
     border-radius: var(--radius);
     box-shadow: var(--shadow-lg);
     width: 100%;
@@ -81,7 +83,7 @@
   // Modal title
   &__title {
     font-size: 1.125rem;
-    font-weight: 600;
+    font-weight: var(--font-weight-semibold);
     line-height: 1;
     letter-spacing: -0.025em;
   }
@@ -124,8 +126,8 @@
       box-shadow: 0 0 0 2px var(--ring);
     }
     &:focus-visible {
-      outline: 2px solid var(--ring);
-      outline-offset: 2px;
+      outline: var(--border-width-thick) solid var(--ring);
+      outline-offset: var(--border-width-thick);
     }
     &:disabled {
       pointer-events: none;

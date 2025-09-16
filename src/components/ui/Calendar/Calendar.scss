@@ -1,3 +1,5 @@
+@import "../../../styles/design-tokens";
+
 // Calendar Component - BEM Styling with Design Tokens
 .calendar {
   background-color: hsl(var(--background));
@@ -85,7 +87,7 @@
   &__dropdown-root {
     position: relative;
     border-radius: var(--radius-md);
-    border: 1px solid hsl(var(--input));
+    border: var(--border-width-thin) solid hsl(var(--input));
     box-shadow: var(--shadow-xs);
     &:focus-within {
       border-color: hsl(var(--ring));
@@ -192,14 +194,14 @@
   }
   // Today styling
   &__today {
-    background-color: #1f2937;
-    color: white;
+    background-color: hsl(var(--surface-neutral));
+    color: hsl(var(--content-inverse));
     border: 0;
     font-weight: var(--font-weight-normal);
     &[data-selected="true"] {
       background-color: hsl(var(--primary)) !important;
-      color: white !important;
-      border: 2px solid hsl(var(--primary)) !important;
+      color: hsl(var(--content-inverse)) !important;
+      border: var(--border-width-thick) solid hsl(var(--primary)) !important;
     }
   }
   // Outside month
@@ -226,10 +228,10 @@
 }
 // Calendar Day Button specific styling
 .calendar-day-button {
-  // Base styling - black background with visible border
-  background-color: #000000;
-  color: white;
-  border: 2px solid #4b5563;
+  // Base styling - dark background with visible border
+  background-color: hsl(var(--surface-primary));
+  color: hsl(var(--content-inverse));
+  border: var(--border-width-thick) solid hsl(var(--border-muted));
   border-radius: var(--radius-md);
   transition: all 0.2s;
   display: flex;
@@ -255,8 +257,8 @@
   // Selected state
   &--selected {
     background-color: hsl(var(--primary)) !important;
-    color: white !important;
-    border: 2px solid hsl(var(--primary)) !important;
+    color: hsl(var(--content-inverse)) !important;
+    border: var(--border-width-thick) solid hsl(var(--primary)) !important;
     box-shadow: var(--shadow-lg) !important;
     font-weight: var(--font-weight-semibold) !important;
   }
@@ -270,14 +272,14 @@
   &--range-start,
   &--range-end {
     background-color: hsl(var(--primary)) !important;
-    color: white !important;
+    color: hsl(var(--content-inverse)) !important;
     border-color: hsl(var(--primary)) !important;
   }
   // Focus states
   &:focus-visible,
   .calendar__day[data-focused="true"] & {
-    outline: 2px solid hsl(var(--primary));
-    outline-offset: 2px;
+    outline: var(--border-width-thick) solid hsl(var(--primary));
+    outline-offset: var(--border-width-thick);
     position: relative;
     z-index: 10;
   }
