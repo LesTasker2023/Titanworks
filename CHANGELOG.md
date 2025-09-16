@@ -4,6 +4,16 @@ All notable changes to this project will be documented in this file. See [standa
 
 ## [Unreleased]
 
+### Added
+
+- **Simple Multi-Tenant System**: Environment-based metadata customization for multiple domains
+  - Site title, description, and branding now configurable via `NEXT_PUBLIC_SITE_*` environment variables
+  - Ready-to-deploy configurations for 4 domains: Daedalus, Titanworks, TitanDigital, TitanLabs
+  - Comprehensive deployment guide (`SIMPLE_MULTI_TENANT_GUIDE.md`) with Vercel setup instructions
+  - Example environment files (`.env.{domain}.example`) for quick copy-paste deployment
+  - Zero code changes required for new domains - only environment variable configuration
+  - Maintains unified functionality while enabling per-domain branding and SEO optimization
+
 ### Changed
 
 - **Major Simplification**: Removed multi-domain/tenant system to unify all deployments

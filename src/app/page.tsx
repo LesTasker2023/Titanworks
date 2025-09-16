@@ -3,7 +3,7 @@
 import { Badge } from '@/components/ui/Badge';
 import { Button } from '@/components/ui/Button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card';
-import { getSiteMetadata, getMetrics } from '@/lib/siteConfig';
+import { getMetrics, getSiteMetadata } from '@/lib/siteConfig';
 import {
   BarChart3,
   Brain,
@@ -26,7 +26,6 @@ import {
 } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
-import React from 'react';
 
 // Simple hero section - no more dynamic loading
 function HeroSection() {
