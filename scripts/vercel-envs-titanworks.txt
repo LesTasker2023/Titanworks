@@ -1,0 +1,49 @@
+﻿# =========================================
+# Vercel Environment Variables for TITANWORKS - 3D Printing Services
+# =========================================
+# Copy these values into Vercel Dashboard
+# Project: titanworks
+# URL: https://vercel.com/dashboard -> titanworks -> Settings -> Environment Variables
+
+# Instructions:
+# 1. Go to: https://vercel.com/dashboard
+# 2. Select project: titanworks
+# 3. Go to: Settings -> Environment Variables
+# 4. For each variable below, click "Add New"
+# 5. Set Environment: Production, Preview, Development (all three)
+# 6. Copy Key and Value exactly as shown
+
+# Core Site Metadata
+Key: NEXT_PUBLIC_SITE_NAME
+Value: Titanworks
+Key: NEXT_PUBLIC_SITE_TITLE
+Value: Titanworks - Professional 3D Printing Services
+Key: NEXT_PUBLIC_SITE_DESCRIPTION
+Value: Premium 3D printing services, prototyping, and manufacturing solutions for businesses and individuals.
+Key: NEXT_PUBLIC_SITE_URL
+Value: https://titanworks.uk
+# Brand Customization
+Key: NEXT_PUBLIC_BRAND_DISPLAY_NAME
+Value: Titanworks
+# Brand Customization
+Key: NEXT_PUBLIC_BRAND_TAGLINE
+Value: Professional 3D Printing Services
+# Theme Colors
+Key: NEXT_PUBLIC_THEME_PRIMARY_COLOR
+Value: #ea580c
+# Theme Colors
+Key: NEXT_PUBLIC_THEME_ACCENT_COLOR
+Value: #fb923c
+# Theme Colors
+Key: NEXT_PUBLIC_THEME_TEXT_COLOR
+Value: #1f2937
+# Theme Colors
+Key: NEXT_PUBLIC_THEME_BACKGROUND_COLOR
+Value: #fefefe
+# Theme Colors
+Key: NEXT_PUBLIC_THEME_BORDER_COLOR
+Value: #d1d5db
+# =========================================
+# TOTAL: 11 environment variables
+# NEXT STEP: After adding all variables, trigger a new deployment
+# =========================================

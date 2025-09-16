@@ -1,0 +1,49 @@
+﻿# =========================================
+# Vercel Environment Variables for LES TASKER - Portfolio
+# =========================================
+# Copy these values into Vercel Dashboard
+# Project: portfolio
+# URL: https://vercel.com/dashboard -> portfolio -> Settings -> Environment Variables
+
+# Instructions:
+# 1. Go to: https://vercel.com/dashboard
+# 2. Select project: portfolio
+# 3. Go to: Settings -> Environment Variables
+# 4. For each variable below, click "Add New"
+# 5. Set Environment: Production, Preview, Development (all three)
+# 6. Copy Key and Value exactly as shown
+
+# Core Site Metadata
+Key: NEXT_PUBLIC_SITE_NAME
+Value: Les Tasker
+Key: NEXT_PUBLIC_SITE_TITLE
+Value: Les Tasker - Full Stack Developer & Digital Creator
+Key: NEXT_PUBLIC_SITE_DESCRIPTION
+Value: Professional portfolio showcasing full stack development, 3D printing, and digital innovation projects.
+Key: NEXT_PUBLIC_SITE_URL
+Value: https://lestasker.co.uk
+# Brand Customization
+Key: NEXT_PUBLIC_BRAND_DISPLAY_NAME
+Value: Les Tasker
+# Brand Customization
+Key: NEXT_PUBLIC_BRAND_TAGLINE
+Value: Full Stack Developer & Digital Creator
+# Theme Colors
+Key: NEXT_PUBLIC_THEME_PRIMARY_COLOR
+Value: #1e40af
+# Theme Colors
+Key: NEXT_PUBLIC_THEME_ACCENT_COLOR
+Value: #3b82f6
+# Theme Colors
+Key: NEXT_PUBLIC_THEME_TEXT_COLOR
+Value: #111827
+# Theme Colors
+Key: NEXT_PUBLIC_THEME_BACKGROUND_COLOR
+Value: #f8fafc
+# Theme Colors
+Key: NEXT_PUBLIC_THEME_BORDER_COLOR
+Value: #cbd5e1
+# =========================================
+# TOTAL: 11 environment variables
+# NEXT STEP: After adding all variables, trigger a new deployment
+# =========================================

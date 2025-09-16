@@ -3,7 +3,7 @@
 import { Badge } from '@/components/ui/Badge';
 import { Button } from '@/components/ui/Button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card';
-import { getMetrics, getSiteMetadata } from '@/lib/siteConfig';
+import { getMetrics } from '@/lib/siteConfig';
 import {
   BarChart3,
   Brain,
@@ -27,9 +27,12 @@ import {
 import Image from 'next/image';
 import Link from 'next/link';
 
-// Simple hero section - no more dynamic loading
+// Simple hero section - get metadata from environment variables directly
 function HeroSection() {
-  const metadata = getSiteMetadata();
+  // Get metadata directly from environment variables to avoid hydration issues
+  const siteName = process.env.NEXT_PUBLIC_SITE_NAME || 'Daedalus';
+  const siteTitle = process.env.NEXT_PUBLIC_SITE_TITLE || 'Daedalus - Enterprise Component System';
+  const siteDescription = process.env.NEXT_PUBLIC_SITE_DESCRIPTION || 'Enterprise-grade Next.js component library with automated quality assurance, comprehensive testing, and real-time metrics dashboard.';
   const metrics = getMetrics();
 
   return (
@@ -37,10 +40,10 @@ function HeroSection() {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-            {metadata.title}
+            {siteTitle}
           </h1>
           <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto leading-relaxed">
-            {metadata.description}
+            {siteDescription}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
             <Button
