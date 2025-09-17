@@ -2,10 +2,10 @@
 
 /**
  * Vercel Environment Variables Checker
- * 
+ *
  * This script checks your Vercel project's environment variables.
  * You need to set VERCEL_API_TOKEN environment variable first.
- * 
+ *
  * Usage:
  * 1. Get your Vercel API token from https://vercel.com/account/tokens
  * 2. Set it as environment variable: $env:VERCEL_API_TOKEN="your-token-here"
@@ -18,7 +18,7 @@ async function vercelRequest(endpoint, token, options = {}) {
   const response = await fetch(`${VERCEL_API_BASE}${endpoint}`, {
     ...options,
     headers: {
-      'Authorization': `Bearer ${token}`,
+      Authorization: `Bearer ${token}`,
       'Content-Type': 'application/json',
       ...options.headers,
     },
@@ -50,7 +50,7 @@ async function main() {
 
     // Get all projects
     const { projects } = await vercelRequest('/v9/projects', token);
-    
+
     if (!projects || projects.length === 0) {
       console.log('❌ No projects found');
       return;
@@ -62,7 +62,7 @@ async function main() {
     });
 
     // Find target project
-    const targetProject = projects.find(p => 
+    const targetProject = projects.find(p =>
       p.name.toLowerCase().includes(targetProjectName.toLowerCase())
     );
 
@@ -76,10 +76,7 @@ async function main() {
     console.log(`📋 Project ID: ${targetProject.id}`);
 
     // Get environment variables
-    const { envs } = await vercelRequest(
-      `/v9/projects/${targetProject.id}/env`, 
-      token
-    );
+    const { envs } = await vercelRequest(`/v9/projects/${targetProject.id}/env`, token);
 
     if (!envs || envs.length === 0) {
       console.log('📭 No environment variables found');
@@ -102,10 +99,13 @@ async function main() {
       targetEnvs.forEach(env => {
         const isDesignToken = env.key.startsWith('NEXT_PUBLIC_');
         const icon = isDesignToken ? '🎨' : '⚙️';
-        const valuePreview = env.type === 'secret' ? '[HIDDEN]' : 
-                           env.value.length > 50 ? `${env.value.substring(0, 47)}...` : 
-                           env.value;
-        
+        const valuePreview =
+          env.type === 'secret'
+            ? '[HIDDEN]'
+            : env.value.length > 50
+              ? `${env.value.substring(0, 47)}...`
+              : env.value;
+
         console.log(`  ${icon} ${env.key}: ${valuePreview}`);
       });
       console.log('');
@@ -113,11 +113,11 @@ async function main() {
 
     // Check for design tokens specifically
     const designTokens = envs.filter(env => env.key.startsWith('NEXT_PUBLIC_'));
-    
+
     if (designTokens.length > 0) {
       console.log(`🎨 Design Tokens Found: ${designTokens.length}`);
       console.log('📋 Design token categories:');
-      
+
       const tokenCategories = {
         surface: designTokens.filter(env => env.key.includes('SURFACE')),
         content: designTokens.filter(env => env.key.includes('CONTENT')),
@@ -125,16 +125,17 @@ async function main() {
         spacing: designTokens.filter(env => env.key.includes('SPACING')),
         font: designTokens.filter(env => env.key.includes('FONT')),
         radius: designTokens.filter(env => env.key.includes('RADIUS')),
-        other: designTokens.filter(env => 
-          !env.key.includes('SURFACE') && 
-          !env.key.includes('CONTENT') && 
-          !env.key.includes('BORDER') &&
-          !env.key.includes('SPACING') &&
-          !env.key.includes('FONT') &&
-          !env.key.includes('RADIUS')
-        )
+        other: designTokens.filter(
+          env =>
+            !env.key.includes('SURFACE') &&
+            !env.key.includes('CONTENT') &&
+            !env.key.includes('BORDER') &&
+            !env.key.includes('SPACING') &&
+            !env.key.includes('FONT') &&
+            !env.key.includes('RADIUS')
+        ),
       };
-      
+
       Object.entries(tokenCategories).forEach(([category, tokens]) => {
         if (tokens.length > 0) {
           console.log(`  • ${category}: ${tokens.length} tokens`);
@@ -143,7 +144,6 @@ async function main() {
     }
 
     console.log(`\n✅ Environment check complete for ${targetProject.name}`);
-    
   } catch (error) {
     console.error('❌ Error:', error.message);
     process.exit(1);

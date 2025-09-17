@@ -40,15 +40,12 @@ class VercelAPIService {
     this.teamId = teamId;
   }
 
-  private async request<T>(
-    endpoint: string, 
-    options: RequestInit = {}
-  ): Promise<T> {
+  private async request<T>(endpoint: string, options: RequestInit = {}): Promise<T> {
     const url = `${VERCEL_API_BASE}${endpoint}`;
     const response = await fetch(url, {
       ...options,
       headers: {
-        'Authorization': `Bearer ${this.token}`,
+        Authorization: `Bearer ${this.token}`,
         'Content-Type': 'application/json',
         ...options.headers,
       },
@@ -71,7 +68,7 @@ class VercelAPIService {
   }
 
   async getProject(projectId: string): Promise<VercelProject> {
-    const endpoint = this.teamId 
+    const endpoint = this.teamId
       ? `/v9/projects/${projectId}?teamId=${this.teamId}`
       : `/v9/projects/${projectId}`;
     return this.request(endpoint);
@@ -85,7 +82,7 @@ class VercelAPIService {
   }
 
   async createEnvironmentVariable(
-    projectId: string, 
+    projectId: string,
     envVar: {
       key: string;
       value: string;
@@ -96,7 +93,7 @@ class VercelAPIService {
     const endpoint = this.teamId
       ? `/v9/projects/${projectId}/env?teamId=${this.teamId}`
       : `/v9/projects/${projectId}/env`;
-    
+
     return this.request(endpoint, {
       method: 'POST',
       body: JSON.stringify({
@@ -120,21 +117,18 @@ class VercelAPIService {
     const endpoint = this.teamId
       ? `/v9/projects/${projectId}/env/${envId}?teamId=${this.teamId}`
       : `/v9/projects/${projectId}/env/${envId}`;
-    
+
     return this.request(endpoint, {
       method: 'PATCH',
       body: JSON.stringify(updates),
     });
   }
 
-  async deleteEnvironmentVariable(
-    projectId: string,
-    envId: string
-  ): Promise<void> {
+  async deleteEnvironmentVariable(projectId: string, envId: string): Promise<void> {
     const endpoint = this.teamId
       ? `/v9/projects/${projectId}/env/${envId}?teamId=${this.teamId}`
       : `/v9/projects/${projectId}/env/${envId}`;
-    
+
     await this.request(endpoint, {
       method: 'DELETE',
     });

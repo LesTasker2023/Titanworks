@@ -1,5 +1,5 @@
-import { NextRequest, NextResponse } from 'next/server';
 import VercelAPIService from '@/services/vercelAPI';
+import { NextRequest, NextResponse } from 'next/server';
 
 export async function GET(request: NextRequest) {
   try {
@@ -12,10 +12,7 @@ export async function GET(request: NextRequest) {
     const vercelTeamId = process.env.VERCEL_TEAM_ID; // Optional
 
     if (!vercelToken) {
-      return NextResponse.json(
-        { error: 'VERCEL_API_TOKEN not configured' },
-        { status: 500 }
-      );
+      return NextResponse.json({ error: 'VERCEL_API_TOKEN not configured' }, { status: 500 });
     }
 
     const vercel = new VercelAPIService(vercelToken, vercelTeamId);
@@ -31,10 +28,7 @@ export async function GET(request: NextRequest) {
 
       case 'project':
         if (!projectId) {
-          return NextResponse.json(
-            { error: 'projectId parameter required' },
-            { status: 400 }
-          );
+          return NextResponse.json({ error: 'projectId parameter required' }, { status: 400 });
         }
         const project = await vercel.getProject(projectId);
         return NextResponse.json(project);
@@ -81,10 +75,7 @@ export async function POST(request: NextRequest) {
     const vercelTeamId = process.env.VERCEL_TEAM_ID;
 
     if (!vercelToken) {
-      return NextResponse.json(
-        { error: 'VERCEL_API_TOKEN not configured' },
-        { status: 500 }
-      );
+      return NextResponse.json({ error: 'VERCEL_API_TOKEN not configured' }, { status: 500 });
     }
 
     const body = await request.json();

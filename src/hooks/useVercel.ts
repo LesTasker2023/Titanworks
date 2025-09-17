@@ -1,5 +1,5 @@
-import { useState, useEffect } from 'react';
-import { VercelProject, VercelEnvVar, VercelTeam } from '@/services/vercelAPI';
+import { VercelEnvVar, VercelProject, VercelTeam } from '@/services/vercelAPI';
+import { useState } from 'react';
 
 interface UseVercelResult {
   teams: VercelTeam[] | null;
@@ -32,15 +32,15 @@ export const useVercel = (): UseVercelResult => {
   const apiCall = async (url: string, options: RequestInit = {}) => {
     setLoading(true);
     setError(null);
-    
+
     try {
       const response = await fetch(url, options);
       const data = await response.json();
-      
+
       if (!response.ok) {
         throw new Error(data.error || `HTTP ${response.status}`);
       }
-      
+
       return data;
     } catch (err) {
       const errorMessage = err instanceof Error ? err.message : 'Unknown error';
@@ -105,7 +105,7 @@ export const useVercel = (): UseVercelResult => {
         },
         body: JSON.stringify(envVar),
       });
-      
+
       // Refresh environment variables after creating one
       await getEnvironmentVariables(projectId);
       return data;
