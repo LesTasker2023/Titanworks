@@ -202,11 +202,26 @@ export function DesignTokenProvider() {
     root.style.setProperty('--border-width-thick', tokens.borderWidthThick);
 
     // CRITICAL: Also set theme color variables that the homepage expects
-    root.style.setProperty('--theme-primary-color', process.env.NEXT_PUBLIC_THEME_PRIMARY_COLOR || '#166534');
-    root.style.setProperty('--theme-accent-color', process.env.NEXT_PUBLIC_THEME_ACCENT_COLOR || '#22c55e');
-    root.style.setProperty('--theme-text-color', process.env.NEXT_PUBLIC_THEME_TEXT_COLOR || '#1f2937');
-    root.style.setProperty('--theme-background-color', process.env.NEXT_PUBLIC_THEME_BACKGROUND_COLOR || '#f0fdf4');
-    root.style.setProperty('--theme-border-color', process.env.NEXT_PUBLIC_THEME_BORDER_COLOR || '#bbf7d0');
+    root.style.setProperty(
+      '--theme-primary-color',
+      process.env.NEXT_PUBLIC_THEME_PRIMARY_COLOR || '#166534'
+    );
+    root.style.setProperty(
+      '--theme-accent-color',
+      process.env.NEXT_PUBLIC_THEME_ACCENT_COLOR || '#22c55e'
+    );
+    root.style.setProperty(
+      '--theme-text-color',
+      process.env.NEXT_PUBLIC_THEME_TEXT_COLOR || '#1f2937'
+    );
+    root.style.setProperty(
+      '--theme-background-color',
+      process.env.NEXT_PUBLIC_THEME_BACKGROUND_COLOR || '#f0fdf4'
+    );
+    root.style.setProperty(
+      '--theme-border-color',
+      process.env.NEXT_PUBLIC_THEME_BORDER_COLOR || '#bbf7d0'
+    );
   }, []);
 
   return null; // This component only sets CSS variables

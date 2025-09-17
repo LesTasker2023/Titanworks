@@ -1,4 +1,4 @@
-@import '@/styles/design-tokens.scss';
+@import "@/styles/design-tokens.scss";
 
 .color-showcase {
   padding: var(--spacing-section);
@@ -44,7 +44,9 @@
     border-radius: var(--radius-md);
     padding: var(--spacing-lg);
     border: 1px solid var(--border-muted);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition:
+      transform 0.2s ease,
+      box-shadow 0.2s ease;
 
     &:hover {
       transform: translateY(-2px);

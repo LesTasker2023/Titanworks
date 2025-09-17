@@ -8,13 +8,13 @@ export function ColorShowcase() {
       description: 'Main brand color',
     },
     {
-      name: 'Accent Color', 
+      name: 'Accent Color',
       key: 'theme-accent-color',
       description: 'Secondary brand color',
     },
     {
       name: 'Text Color',
-      key: 'theme-text-color', 
+      key: 'theme-text-color',
       description: 'Primary text color',
     },
     {
@@ -41,19 +41,19 @@ export function ColorShowcase() {
         <div className="color-showcase__header">
           <h2 className="color-showcase__title">Environment Colors</h2>
           <p className="color-showcase__description">
-            These colors are controlled by environment variables and will appear 
-            differently across platforms (development, preview, production).
+            These colors are controlled by environment variables and will appear differently across
+            platforms (development, preview, production).
           </p>
         </div>
 
         <div className="color-showcase__grid">
-          {brandColors.map((color) => (
+          {brandColors.map(color => (
             <div key={color.key} className="color-showcase__item">
-              <div 
+              <div
                 className="color-showcase__swatch"
-                style={{ 
+                style={{
                   backgroundColor: `var(--${color.key})`,
-                  border: `2px solid var(--theme-border-color)`
+                  border: `2px solid var(--theme-border-color)`,
                 }}
                 data-color={color.key}
               />
@@ -69,7 +69,7 @@ export function ColorShowcase() {
         <div className="color-showcase__env-info">
           <h3 className="color-showcase__env-title">Current Environment</h3>
           <div className="color-showcase__env-grid">
-            {envInfo.map((info) => (
+            {envInfo.map(info => (
               <div key={info.label} className="color-showcase__env-item">
                 <span className="color-showcase__env-label">{info.label}:</span>
                 <span className="color-showcase__env-value">{info.value || 'Not set'}</span>
@@ -81,9 +81,15 @@ export function ColorShowcase() {
         <div className="color-showcase__usage">
           <h3 className="color-showcase__usage-title">Platform Differences</h3>
           <ul className="color-showcase__usage-list">
-            <li><strong>Development:</strong> Uses .env.local values (Trigger Kings theme)</li>
-            <li><strong>Preview:</strong> Uses Vercel preview environment variables</li>
-            <li><strong>Production:</strong> Uses Vercel production environment variables</li>
+            <li>
+              <strong>Development:</strong> Uses .env.local values (Trigger Kings theme)
+            </li>
+            <li>
+              <strong>Preview:</strong> Uses Vercel preview environment variables
+            </li>
+            <li>
+              <strong>Production:</strong> Uses Vercel production environment variables
+            </li>
           </ul>
         </div>
       </div>

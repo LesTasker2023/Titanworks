@@ -5,7 +5,7 @@
  * from environment variables via CSS custom properties.
  */
 
-@import '@/styles/design-tokens.scss';
+@import "@/styles/design-tokens.scss";
 
 .token-demo {
   @include surface-primary;
